@@ -10,7 +10,7 @@
 
   <PropertyGroup Label="Nuget">
     <Description>Generated C# SDK based on Cohere OpenAPI specification.</Description>
-    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;huggingface;generated;nswag</PackageTags>
+    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;cohere;generated;nswag</PackageTags>
   </PropertyGroup>
   
   <ItemGroup>
