@@ -31,7 +31,7 @@ jobs:
 
       - name: Generate code
         run: |
-          cd src/libs/HuggingFace
+          cd src/libs/Cohere
           chmod +x ./generate.sh
           ./generate.sh
 
