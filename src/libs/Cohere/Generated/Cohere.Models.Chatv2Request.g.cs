@@ -9,14 +9,15 @@ namespace Cohere
     public sealed partial class Chatv2Request
     {
         /// <summary>
-        /// The model to use for the chat.
+        /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
 
         /// <summary>
-        /// A list of chat messages representing the list chat message turns.
+        /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
+        /// Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,8 +46,8 @@ namespace Cohere
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter))]
-        public global::Cohere.ResponseFormat? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormat2JsonConverter))]
+        public global::Cohere.ResponseFormat2? ResponseFormat { get; set; }
 
         /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.

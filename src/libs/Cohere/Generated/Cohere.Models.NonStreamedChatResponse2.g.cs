@@ -27,7 +27,7 @@ namespace Cohere
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public global::Cohere.AssistantMessage? Message { get; set; }
+        public global::Cohere.AssistantMessageResponse? Message { get; set; }
 
         /// <summary>
         /// 
