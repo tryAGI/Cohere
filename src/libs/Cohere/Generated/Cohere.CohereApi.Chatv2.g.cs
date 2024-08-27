@@ -90,7 +90,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponse2NullableStreamedChatResponse2) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponse2StreamedChatResponse2) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -168,7 +168,7 @@ namespace Cohere
             float frequencyPenalty = default,
             float presencePenalty = default,
             float k = 0,
-            float p = 0.75F,
+            float p = 0.75,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Cohere.Chatv2Request

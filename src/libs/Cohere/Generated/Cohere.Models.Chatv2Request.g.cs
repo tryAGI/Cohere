@@ -105,7 +105,7 @@ namespace Cohere
         /// Default Value: 0.75
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p")]
-        public float P { get; set; } = 0.75F;
+        public float P { get; set; } = 0.75;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
