@@ -22,7 +22,8 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Chat with the model
+        /// Chat with the model<br/>
+        /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -95,13 +96,15 @@ namespace Cohere
         }
 
         /// <summary>
-        /// Chat with the model
+        /// Chat with the model<br/>
+        /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
         /// <param name="model">
-        /// The model to use for the chat.
+        /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.
         /// </param>
         /// <param name="messages">
-        /// A list of chat messages representing the list chat message turns.
+        /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
+        /// Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/docs/chat-api).
         /// </param>
         /// <param name="tools">
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
@@ -160,7 +163,7 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.ChatMessage2> messages,
             global::System.Collections.Generic.IList<global::Cohere.Tool2>? tools = default,
             global::Cohere.Chatv2RequestCitationMode? citationMode = default,
-            global::Cohere.ResponseFormat? responseFormat = default,
+            global::Cohere.ResponseFormat2? responseFormat = default,
             int maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             float temperature = default,

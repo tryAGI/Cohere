@@ -8,48 +8,48 @@ namespace Cohere
     /// <summary>
     /// A Content block which contains information about the content type and the content itself.
     /// </summary>
-    public readonly partial struct Content2 : global::System.IEquatable<Content2>
+    public readonly partial struct Content : global::System.IEquatable<Content>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.TextContent? TextContent { get; init; }
+        public global::Cohere.TextContent? Text { get; init; }
 #else
-        public global::Cohere.TextContent? TextContent { get; }
+        public global::Cohere.TextContent? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsTextContent => TextContent != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content2(global::Cohere.TextContent value) => new Content2(value);
+        public static implicit operator Content(global::Cohere.TextContent value) => new Content(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.TextContent?(Content2 @this) => @this.TextContent;
+        public static implicit operator global::Cohere.TextContent?(Content @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public Content2(global::Cohere.TextContent? value)
+        public Content(global::Cohere.TextContent? value)
         {
-            TextContent = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            TextContent as object 
+            Text as object 
             ;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsTextContent;
+            return IsText;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                TextContent,
+                Text,
                 typeof(global::Cohere.TextContent),
             };
             const int offset = unchecked((int)2166136261);
@@ -81,25 +81,25 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(Content2 other)
+        public bool Equals(Content other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(TextContent, other.TextContent) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(Content2 obj1, Content2 obj2)
+        public static bool operator ==(Content obj1, Content obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<Content2>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<Content>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(Content2 obj1, Content2 obj2)
+        public static bool operator !=(Content obj1, Content obj2)
         {
             return !(obj1 == obj2);
         }
@@ -109,7 +109,7 @@ namespace Cohere
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is Content2 o && Equals(o);
+            return obj is Content o && Equals(o);
         }
     }
 }

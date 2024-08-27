@@ -14,41 +14,6 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.SystemMessage? SystemMessage { get; init; }
-#else
-        public global::Cohere.SystemMessage? SystemMessage { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemMessage))]
-#endif
-        public bool IsSystemMessage => SystemMessage != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatMessage2(global::Cohere.SystemMessage value) => new ChatMessage2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.SystemMessage?(ChatMessage2 @this) => @this.SystemMessage;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatMessage2(global::Cohere.SystemMessage? value)
-        {
-            SystemMessage = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
         public global::Cohere.UserMessage? UserMessage { get; init; }
 #else
         public global::Cohere.UserMessage? UserMessage { get; }
@@ -119,6 +84,41 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Cohere.SystemMessage? SystemMessage { get; init; }
+#else
+        public global::Cohere.SystemMessage? SystemMessage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemMessage))]
+#endif
+        public bool IsSystemMessage => SystemMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatMessage2(global::Cohere.SystemMessage value) => new ChatMessage2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.SystemMessage?(ChatMessage2 @this) => @this.SystemMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatMessage2(global::Cohere.SystemMessage? value)
+        {
+            SystemMessage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Cohere.ToolMessage2? Tool { get; init; }
 #else
         public global::Cohere.ToolMessage2? Tool { get; }
@@ -154,15 +154,15 @@ namespace Cohere
         /// 
         /// </summary>
         public ChatMessage2(
-            global::Cohere.SystemMessage? systemMessage,
             global::Cohere.UserMessage? userMessage,
             global::Cohere.AssistantMessage? assistantMessage,
+            global::Cohere.SystemMessage? systemMessage,
             global::Cohere.ToolMessage2? tool
             )
         {
-            SystemMessage = systemMessage;
             UserMessage = userMessage;
             AssistantMessage = assistantMessage;
+            SystemMessage = systemMessage;
             Tool = tool;
         }
 
@@ -171,9 +171,9 @@ namespace Cohere
         /// </summary>
         public object? Object =>
             Tool as object ??
+            SystemMessage as object ??
             AssistantMessage as object ??
-            UserMessage as object ??
-            SystemMessage as object 
+            UserMessage as object 
             ;
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsSystemMessage && !IsUserMessage && !IsAssistantMessage && !IsTool || !IsSystemMessage && IsUserMessage && !IsAssistantMessage && !IsTool || !IsSystemMessage && !IsUserMessage && IsAssistantMessage && !IsTool || !IsSystemMessage && !IsUserMessage && !IsAssistantMessage && IsTool;
+            return IsUserMessage && !IsAssistantMessage && !IsSystemMessage && !IsTool || !IsUserMessage && IsAssistantMessage && !IsSystemMessage && !IsTool || !IsUserMessage && !IsAssistantMessage && IsSystemMessage && !IsTool || !IsUserMessage && !IsAssistantMessage && !IsSystemMessage && IsTool;
         }
 
         /// <summary>
@@ -191,12 +191,12 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                SystemMessage,
-                typeof(global::Cohere.SystemMessage),
                 UserMessage,
                 typeof(global::Cohere.UserMessage),
                 AssistantMessage,
                 typeof(global::Cohere.AssistantMessage),
+                SystemMessage,
+                typeof(global::Cohere.SystemMessage),
                 Tool,
                 typeof(global::Cohere.ToolMessage2),
             };
@@ -214,9 +214,9 @@ namespace Cohere
         public bool Equals(ChatMessage2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.SystemMessage?>.Default.Equals(SystemMessage, other.SystemMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.UserMessage?>.Default.Equals(UserMessage, other.UserMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.AssistantMessage?>.Default.Equals(AssistantMessage, other.AssistantMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.SystemMessage?>.Default.Equals(SystemMessage, other.SystemMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolMessage2?>.Default.Equals(Tool, other.Tool) 
                 ;
         }
