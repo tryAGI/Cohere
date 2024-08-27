@@ -25,9 +25,9 @@ namespace Cohere
 
         /// <summary>
         /// Generate<br/>
-        /// &gt; 🚧 Warning<br/>
-        /// &gt; <br/>
-        /// &gt; This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
         /// Generates realistic text conditioned on a given input.
         /// </summary>
         /// <param name="xClientName"></param>
@@ -106,9 +106,9 @@ namespace Cohere
 
         /// <summary>
         /// Generate<br/>
-        /// &gt; 🚧 Warning<br/>
-        /// &gt; <br/>
-        /// &gt; This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
         /// Generates realistic text conditioned on a given input.
         /// </summary>
         /// <param name="xClientName"></param>

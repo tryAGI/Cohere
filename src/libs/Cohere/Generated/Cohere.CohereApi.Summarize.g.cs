@@ -25,9 +25,9 @@ namespace Cohere
 
         /// <summary>
         /// Summarize<br/>
-        /// &gt; 🚧 Warning<br/>
-        /// &gt; <br/>
-        /// &gt; This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
         /// Generates a summary in English for a given text.
         /// </summary>
         /// <param name="xClientName"></param>
@@ -106,9 +106,9 @@ namespace Cohere
 
         /// <summary>
         /// Summarize<br/>
-        /// &gt; 🚧 Warning<br/>
-        /// &gt; <br/>
-        /// &gt; This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
         /// Generates a summary in English for a given text.
         /// </summary>
         /// <param name="xClientName"></param>

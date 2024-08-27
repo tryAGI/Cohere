@@ -98,7 +98,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponseNullableStreamedChatResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponseStreamedChatResponse) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -160,10 +160,12 @@ namespace Cohere
         /// <param name="documents">
         /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.<br/>
         /// Example:<br/>
-        /// `[<br/>
+        /// ```<br/>
+        /// [<br/>
         ///   { "title": "Tall penguins", "text": "Emperor penguins are the tallest." },<br/>
         ///   { "title": "Penguin habitats", "text": "Emperor penguins only live in Antarctica." },<br/>
-        /// ]`<br/>
+        /// ]<br/>
+        /// ```<br/>
         /// Keys and values from each document will be serialized to a string and passed to the model. The resulting generation will include citations that reference some of these documents.<br/>
         /// Some suggested keys are "text", "author", and "date". For better generation quality, it is recommended to keep the total word count of the strings in the dictionary to under 300 words.<br/>
         /// An `id` field (string) can be optionally supplied to identify the document in the citations. This field will not be passed to the model.<br/>
