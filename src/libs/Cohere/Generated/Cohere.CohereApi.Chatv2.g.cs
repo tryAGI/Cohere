@@ -149,12 +149,12 @@ namespace Cohere
         /// <param name="k">
         /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="p">
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
-        /// Default Value: 0.75
+        /// Default Value: 0.75F
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -170,8 +170,8 @@ namespace Cohere
             int seed = default,
             float frequencyPenalty = default,
             float presencePenalty = default,
-            float k = 0,
-            float p = 0.75,
+            float k = 0F,
+            float p = 0.75F,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Cohere.Chatv2Request
