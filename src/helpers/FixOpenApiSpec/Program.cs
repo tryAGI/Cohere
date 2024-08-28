@@ -29,23 +29,6 @@ var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
 
 //openApiDocument.Components.Schemas["GenerateCompletionRequest"]!.Properties["stream"]!.Default = new OpenApiBoolean(true);
 
-openApiDocument.Components.SecuritySchemes.Add("Bearer", new OpenApiSecurityScheme
-{
-    Type = SecuritySchemeType.Http,
-    Scheme = "bearer",
-});
-openApiDocument.SecurityRequirements.Add(new OpenApiSecurityRequirement
-{
-    [new OpenApiSecurityScheme
-    {
-        Reference = new OpenApiReference
-        {
-            Id = "Bearer",
-            Type = ReferenceType.SecurityScheme
-        }
-    }] = new List<string>(),
-});
-
 text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
 _ = new OpenApiStringReader().Read(text, out diagnostics);
 
