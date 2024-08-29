@@ -91,7 +91,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponse2StreamedChatResponse2) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponse2NullableStreamedChatResponse2) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

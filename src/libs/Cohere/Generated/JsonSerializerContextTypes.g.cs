@@ -281,7 +281,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::Cohere.Content>>? Type67 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content>>? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -341,7 +341,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::Cohere.TextContent>>>? Type82 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::Cohere.TextContent>>>? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1157,11 +1157,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<string?, global::Cohere.RerankDocument>>? Type286 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<string, global::Cohere.RerankDocument>>? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::Cohere.RerankDocument>? Type287 { get; set; }
+        public global::System.OneOf<string, global::Cohere.RerankDocument>? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
