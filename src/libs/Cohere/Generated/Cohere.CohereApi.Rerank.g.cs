@@ -137,7 +137,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.RerankResponse> RerankAsync(
             string query,
-            global::System.Collections.Generic.IList<global::System.OneOf<string?, global::Cohere.RerankDocument>> documents,
+            global::System.Collections.Generic.IList<global::System.OneOf<string, global::Cohere.RerankDocument>> documents,
             string? xClientName = default,
             string? model = default,
             int topN = default,
