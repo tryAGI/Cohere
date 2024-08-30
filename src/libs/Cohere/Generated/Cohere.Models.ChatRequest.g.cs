@@ -17,7 +17,7 @@ namespace Cohere
         public required string Message { get; set; }
 
         /// <summary>
-        /// Defaults to `command-r-plus`.<br/>
+        /// Defaults to `command-r-plus-08-2024`.<br/>
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
         /// </summary>
@@ -64,7 +64,9 @@ namespace Cohere
         /// With `prompt_truncation` set to "AUTO", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.<br/>
         /// With `prompt_truncation` set to "AUTO_PRESERVE_ORDER", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.<br/>
         /// With `prompt_truncation` set to "OFF", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.<br/>
-        /// Compatible Deployments: Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: <br/>
+        ///  - AUTO: Cohere Platform Only<br/>
+        ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_truncation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
@@ -230,7 +232,7 @@ namespace Cohere
         public bool ForceSingleStep { get; set; }
 
         /// <summary>
-        /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
+        /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ "type": "json_object" }`.<br/>
         /// A [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.<br/>
         /// **Note**: When using  `{ "type": "json_object" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _"Generate a JSON ..."_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.<br/>
@@ -239,6 +241,17 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter))]
         public global::Cohere.ResponseFormat? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL.<br/>
+        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024]((/docs/command-r-plus#august-2024-release) and newer.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRequestSafetyModeJsonConverter))]
+        public global::Cohere.ChatRequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
