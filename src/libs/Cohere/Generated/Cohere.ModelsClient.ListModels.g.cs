@@ -40,10 +40,10 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ListModelsResponse> ListModelsAsync(
-            double pageSize,
-            string? pageToken,
-            global::Cohere.CompatibleEndpoint? endpoint,
-            bool defaultOnly,
+            double pageSize = default,
+            string? pageToken = default,
+            global::Cohere.CompatibleEndpoint? endpoint = default,
+            bool defaultOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -57,7 +57,7 @@ namespace Cohere
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/models?page_size={pageSize}&page_token={pageToken}&endpoint={endpoint}&default_only={defaultOnly}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/models?page_size={pageSize}&page_token={pageToken}&endpoint={(global::System.Uri.EscapeDataString(endpoint?.ToValueString() ?? string.Empty))}&default_only={defaultOnly}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

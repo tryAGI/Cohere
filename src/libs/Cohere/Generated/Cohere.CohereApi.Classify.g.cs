@@ -33,8 +33,8 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ClassifyResponse> ClassifyAsync(
-            string? xClientName,
             global::Cohere.ClassifyRequest request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
