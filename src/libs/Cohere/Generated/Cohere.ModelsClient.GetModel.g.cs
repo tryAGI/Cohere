@@ -35,7 +35,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.GetModelResponse> GetModelAsync(
             string model,
-            string? xClientName,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

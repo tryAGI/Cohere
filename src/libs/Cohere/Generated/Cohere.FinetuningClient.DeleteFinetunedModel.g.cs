@@ -32,7 +32,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.DeleteFinetunedModelResponse> DeleteFinetunedModelAsync(
             string id,
-            string? xClientName,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

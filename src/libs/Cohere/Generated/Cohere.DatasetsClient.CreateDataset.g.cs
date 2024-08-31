@@ -61,14 +61,14 @@ namespace Cohere
         public async global::System.Threading.Tasks.Task<global::Cohere.CreateDatasetResponse> CreateDatasetAsync(
             string name,
             global::Cohere.DatasetType type,
-            bool keepOriginalFile,
-            bool skipMalformedInput,
-            global::System.Collections.Generic.IList<string>? keepFields,
-            global::System.Collections.Generic.IList<string>? optionalFields,
-            string? textSeparator,
-            string? csvDelimiter,
-            string? xClientName,
             global::Cohere.CreateDatasetRequest request,
+            bool keepOriginalFile = default,
+            bool skipMalformedInput = default,
+            global::System.Collections.Generic.IList<string>? keepFields = default,
+            global::System.Collections.Generic.IList<string>? optionalFields = default,
+            string? textSeparator = default,
+            string? csvDelimiter = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -90,7 +90,7 @@ namespace Cohere
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={type}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={(global::System.Uri.EscapeDataString(type.ToValueString() ?? string.Empty))}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),

@@ -38,9 +38,9 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ListTrainingStepMetricsResponse> ListTrainingStepMetricsAsync(
             string finetunedModelId,
-            int pageSize,
-            string? pageToken,
-            string? xClientName,
+            int pageSize = default,
+            string? pageToken = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

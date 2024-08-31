@@ -49,13 +49,13 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ListDatasetsResponse> ListDatasetsAsync(
-            string? datasetType,
-            global::System.DateTime before,
-            global::System.DateTime after,
-            double limit,
-            double offset,
-            global::Cohere.DatasetValidationStatus? validationStatus,
-            string? xClientName,
+            string? datasetType = default,
+            global::System.DateTime before = default,
+            global::System.DateTime after = default,
+            double limit = default,
+            double offset = default,
+            global::Cohere.DatasetValidationStatus? validationStatus = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -72,7 +72,7 @@ namespace Cohere
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?datasetType={datasetType}&before={before:yyyy-MM-ddTHH:mm:ssZ}&after={after:yyyy-MM-ddTHH:mm:ssZ}&limit={limit}&offset={offset}&validationStatus={validationStatus}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?datasetType={datasetType}&before={before:yyyy-MM-ddTHH:mm:ssZ}&after={after:yyyy-MM-ddTHH:mm:ssZ}&limit={limit}&offset={offset}&validationStatus={(global::System.Uri.EscapeDataString(validationStatus?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

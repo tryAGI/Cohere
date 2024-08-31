@@ -36,8 +36,8 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.UpdateConnectorResponse> UpdateConnectorAsync(
             string id,
-            string? xClientName,
             global::Cohere.UpdateConnectorRequest request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

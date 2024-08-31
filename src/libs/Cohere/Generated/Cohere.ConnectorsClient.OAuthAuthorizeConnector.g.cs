@@ -36,8 +36,8 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.OAuthAuthorizeResponse> OAuthAuthorizeConnectorAsync(
             string id,
-            string? afterTokenRedirect,
-            string? xClientName,
+            string? afterTokenRedirect = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
