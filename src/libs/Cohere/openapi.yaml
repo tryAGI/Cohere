@@ -4556,16 +4556,16 @@ paths:
         - code-samples:
             - sdk: go
               name: Cohere Go SDK
-              code: "package main\n\nimport (\n\t\"context\"\n\t\"io\"\n\t\"log\"\n\t\"strings\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\ntype MyReader struct {\n\tio.Reader\n\tname string\n}\n\nfunc (m *MyReader) Name() string {\n\treturn m.name\n}\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(\"<<apiKey>>\"))\n\n\tresp, err := co.Datasets.Create(\n\t\tcontext.TODO(),\n\t\t&MyReader{Reader: strings.NewReader(`{\"text\": \"The quick brown fox jumps over the lazy dog\"}`), name: \"test.jsonl\"},\n\t\t&MyReader{Reader: strings.NewReader(\"\"), name: \"a.jsonl\"},\n\t\t&cohere.DatasetsCreateRequest{\n\t\t\tName: \"embed-dataset\",\n\t\t\tType: cohere.DatasetTypeEmbedResult,\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+              code: "package main\n\nimport (\n\t\"context\"\n\t\"io\"\n\t\"log\"\n\t\"strings\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\ntype MyReader struct {\n\tio.Reader\n\tname string\n}\n\nfunc (m *MyReader) Name() string {\n\treturn m.name\n}\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(\"<<apiKey>>\"))\n\n\tresp, err := co.Datasets.Create(\n\t\tcontext.TODO(),\n\t\t&MyReader{Reader: strings.NewReader(`{\"text\": \"The quick brown fox jumps over the lazy dog\"}`), name: \"test.jsonl\"},\n\t\t&MyReader{Reader: strings.NewReader(\"\"), name: \"a.jsonl\"},\n\t\t&cohere.DatasetsCreateRequest{\n\t\t\tName: \"prompt-completion-dataset\",\n\t\t\tType: cohere.DatasetTypeEmbedResult,\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
             - sdk: python
               name: Sync
-              code: "import cohere\n\nco = cohere.Client(\"<<apiKey>>\")\n\n# upload a dataset\nmy_dataset = co.datasets.create(\n    name=\"chat-dataset\",\n    data=open(\"./chat.jsonl\", \"rb\"),\n    type=\"chat-finetune-input\",\n)\n\n# wait for validation to complete\nresponse = co.wait(my_dataset)\n\nprint(response)\n"
+              code: "import cohere\n\nco = cohere.Client(\"<<apiKey>>\")\n\n# upload a dataset\nmy_dataset = co.datasets.create(\n    name=\"prompt-completion-dataset\",\n    data=open(\"./prompt-completion.jsonl\", \"rb\"),\n    type=\"prompt-completion-finetune-input\",\n)\n\n# wait for validation to complete\nresponse = co.wait(my_dataset)\n\nprint(response)\n"
             - sdk: python
               name: Async
-              code: "import cohere\nimport asyncio\n\nco = cohere.AsyncClient(\"<<apiKey>>\")\n\n\nasync def main():\n\n    # upload a dataset\n    response = await co.datasets.create(\n        name=\"chat-dataset\",\n        data=open(\"./chat.jsonl\", \"rb\"),\n        type=\"chat-finetune-input\",\n    )\n\n    # wait for validation to complete\n    response = await co.wait(response)\n\n    print(response)\n\nasyncio.run(main())\n"
+              code: "import cohere\nimport asyncio\n\nco = cohere.AsyncClient(\"<<apiKey>>\")\n\n\nasync def main():\n\n    # upload a dataset\n    response = await co.datasets.create(\n        name=\"prompt-completion-dataset\",\n        data=open(\"./prompt-completion.jsonl\", \"rb\"),\n        type=\"prompt-completion-finetune-input\",\n    )\n\n    # wait for validation to complete\n    response = await co.wait(response)\n\n    print(response)\n\nasyncio.run(main())\n"
             - sdk: java
               name: Cohere java SDK
-              code: "import com.cohere.api.Cohere;\nimport com.cohere.api.resources.datasets.requests.DatasetsCreateRequest;\nimport com.cohere.api.resources.datasets.types.DatasetsCreateResponse;\nimport com.cohere.api.types.DatasetType;\n\nimport java.util.Optional;\n\n\npublic class DatasetPost {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        DatasetsCreateResponse response = cohere.datasets().create(null, Optional.empty(), DatasetsCreateRequest.builder().name(\"chat-dataset\").type(DatasetType.CHAT_FINETUNE_INPUT).build());\n\n        System.out.println(response);\n    }\n}\n"
+              code: "import com.cohere.api.Cohere;\nimport com.cohere.api.resources.datasets.requests.DatasetsCreateRequest;\nimport com.cohere.api.resources.datasets.types.DatasetsCreateResponse;\nimport com.cohere.api.types.DatasetType;\n\nimport java.util.Optional;\n\n\npublic class DatasetPost {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        DatasetsCreateResponse response = cohere.datasets().create(null, Optional.empty(), DatasetsCreateRequest.builder().name(\"prompt-completion-dataset\").type(DatasetType.PROMPT_COMPLETION_FINETUNE_INPUT).build());\n\n        System.out.println(response);\n    }\n}\n"
             - sdk: typescript
               name: Cohere TypeScript SDK
               code: "const { CohereClient } = require('cohere-ai');\nconst fs = require('fs');\n\nconst cohere = new CohereClient({\n  token: '<<apiKey>>',\n});\n\n(async () => {\n  const file = fs.createReadStream('embed_jobs_sample_data.jsonl'); // {\"text\": \"The quick brown fox jumps over the lazy dog\"}\n\n  const dataset = await cohere.datasets.create({ name: 'my-dataset', type: 'embed-input' }, file);\n\n  console.log(dataset);\n})();\n"
@@ -6045,14 +6045,14 @@ paths:
               example:
                 finetuned_models:
                   - id: fee37446-7fc7-42f9-a026-c6ba2fcc422d
-                    name: chat-ft
+                    name: prompt-completion-ft
                     creator_id: 7a317d97-4d05-427d-9396-f31b9fb92c55
                     organization_id: 6bdca3d5-3eae-4de0-ac34-786d8063b7ee
                     settings:
                       base_model:
                         name: medium
                         version: 14.2.0
-                        base_type: BASE_TYPE_CHAT
+                        base_type: BASE_TYPE_GENERATIVE
                         strategy: STRATEGY_TFEW
                       dataset_id: my-dataset-d701tr
                       hyperparameters:
@@ -6157,7 +6157,7 @@ paths:
               name: api-test
               settings:
                 base_model:
-                  base_type: BASE_TYPE_CHAT
+                  base_type: BASE_TYPE_GENERATIVE
                 dataset_id: my-dataset-id
         required: true
       responses:
@@ -6207,13 +6207,13 @@ paths:
         - code-samples:
             - sdk: java
               name: Cohere java SDK
-              code: "package finetuning;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.finetuning.finetuning.types.*;\n\npublic class CreateFinetunedModel {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        CreateFinetunedModelResponse response = cohere.finetuning().createFinetunedModel(FinetunedModel.builder().name(\"test-finetuned-model\").settings(Settings.builder().baseModel(BaseModel.builder().baseType(BaseType.BASE_TYPE_CHAT).build()).datasetId(\"my-dataset-id\").build()).build());\n\n        System.out.println(response);\n    }\n}\n\n\n"
+              code: "package finetuning;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.finetuning.finetuning.types.*;\n\npublic class CreateFinetunedModel {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        CreateFinetunedModelResponse response = cohere.finetuning().createFinetunedModel(FinetunedModel.builder().name(\"test-finetuned-model\").settings(Settings.builder().baseModel(BaseModel.builder().baseType(BaseType.BASE_TYPE_GENERATIVE).build()).datasetId(\"my-dataset-id\").build()).build());\n\n        System.out.println(response);\n    }\n}\n\n\n"
             - sdk: go
               name: Cohere Go SDK
-              code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\n\t\"github.com/cohere-ai/cohere-go/v2/client\"\n\t\"github.com/cohere-ai/cohere-go/v2/finetuning\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(\"<<apiKey>>\"))\n\n\tresp, err := co.Finetuning.CreateFinetunedModel(\n\t\tcontext.TODO(),\n\t\t&finetuning.FinetunedModel{\n\t\t\tName: \"test-finetuned-model\",\n\t\t\tSettings: &finetuning.Settings{\n\t\t\t\tDatasetId: \"my-dataset-id\",\n\t\t\t\tBaseModel: &finetuning.BaseModel{\n\t\t\t\t\tBaseType: finetuning.BaseTypeBaseTypeChat,\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp.FinetunedModel)\n}\n"
+              code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\n\t\"github.com/cohere-ai/cohere-go/v2/client\"\n\t\"github.com/cohere-ai/cohere-go/v2/finetuning\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(\"<<apiKey>>\"))\n\n\tresp, err := co.Finetuning.CreateFinetunedModel(\n\t\tcontext.TODO(),\n\t\t&finetuning.FinetunedModel{\n\t\t\tName: \"test-finetuned-model\",\n\t\t\tSettings: &finetuning.Settings{\n\t\t\t\tDatasetId: \"my-dataset-id\",\n\t\t\t\tBaseModel: &finetuning.BaseModel{\n\t\t\t\t\tBaseType: finetuning.BaseTypeBaseTypeGenerative,\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp.FinetunedModel)\n}\n"
             - sdk: typescript
               name: Cohere TypeScript SDK
-              code: "const { Cohere, CohereClient } = require('cohere-ai');\n\nconst cohere = new CohereClient({\n  token: '<<apiKey>>',\n});\n\n(async () => {\n  const finetunedModel = await cohere.finetuning.createFinetunedModel({\n    name: 'test-finetuned-model',\n    settings: {\n      base_model: {\n        base_type: Cohere.Finetuning.BaseType.BaseTypeChat,\n      },\n      dataset_id: 'test-dataset-id',\n    },\n  });\n\n  console.log(finetunedModel);\n})();\n"
+              code: "const { Cohere, CohereClient } = require('cohere-ai');\n\nconst cohere = new CohereClient({\n  token: '<<apiKey>>',\n});\n\n(async () => {\n  const finetunedModel = await cohere.finetuning.createFinetunedModel({\n    name: 'test-finetuned-model',\n    settings: {\n      base_model: {\n        base_type: Cohere.Finetuning.BaseType.BaseTypeGenerative,\n      },\n      dataset_id: 'test-dataset-id',\n    },\n  });\n\n  console.log(finetunedModel);\n})();\n"
             - sdk: python
               name: Sync
               code: "from cohere.finetuning import (\n    BaseModel,\n    FinetunedModel,\n    Hyperparameters,\n    Settings,\n    WandbConfig\n)\nimport cohere\n\nco = cohere.Client(\"<<apiKey>>\")\nhp = Hyperparameters(\n    early_stopping_patience=10,\n    early_stopping_threshold=0.001,\n    train_batch_size=16,\n    train_epoch=1,\n    learning_rate=0.01,\n)\nwnb_config = WandbConfig(\n    project=\"test-project\",\n    api_key=\"<<wandbApiKey>>\",\n    entity=\"test-entity\",\n)\nfinetuned_model = co.finetuning.create_finetuned_model(\n    request=FinetunedModel(\n        name=\"test-finetuned-model\",\n        settings=Settings(\n            base_model=BaseModel(\n                base_type=\"BASE_TYPE_CHAT\",\n            ),\n            dataset_id=\"my-dataset-id\",\n            hyperparameters=hp,\n            wandb=wnb_config,\n        ),\n    )\n)\nprint(finetuned_model)\n"
@@ -6222,7 +6222,7 @@ paths:
               code: "from cohere.finetuning import (\n    BaseModel,\n    BaseType,\n    FinetunedModel,\n    Settings,\n)\nimport cohere\nimport asyncio\n\nco = cohere.AsyncClient(\"<<apiKey>>\")\n\n\nasync def main():\n    response = await co.finetuning.create_finetuned_model(\n        request=FinetunedModel(\n            name=\"test-finetuned-model\",\n            settings=Settings(\n                base_model=BaseModel(\n                    base_type=BaseType.BASE_TYPE_CHAT,\n                ),\n                dataset_id=\"my-dataset-id\",\n            ),\n        )\n    )\n    print(response)\n\nasyncio.run(main())\n"
             - sdk: curl
               name: cURL
-              code: "curl --request POST \\\n  --url https://api.cohere.com/v1/finetuning/finetuned-models \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n      \"name\": \"test-finetuned-model\",\n      \"settings\": {\n        \"base_model\": {\n          \"base_type\": \"BASE_TYPE_CHAT\",\n        },\n        \"dataset_id\": \"test-dataset-id\"\n      }\n  }'\n"
+              code: "curl --request POST \\\n  --url https://api.cohere.com/v1/finetuning/finetuned-models \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n      \"name\": \"test-finetuned-model\",\n      \"settings\": {\n        \"base_model\": {\n          \"base_type\": \"BASE_TYPE_GENERATIVE\",\n        },\n        \"dataset_id\": \"test-dataset-id\"\n      }\n  }'\n"
       x-fern-sdk-group-name: finetuning
       x-fern-audiences:
         - public
@@ -6334,7 +6334,7 @@ paths:
         - code-samples:
             - sdk: java
               name: Cohere java SDK
-              code: "package finetuning;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.finetuning.finetuning.types.BaseModel;\nimport com.cohere.api.resources.finetuning.finetuning.types.BaseType;\nimport com.cohere.api.resources.finetuning.finetuning.types.Settings;\nimport com.cohere.api.resources.finetuning.finetuning.types.UpdateFinetunedModelResponse;\nimport com.cohere.api.resources.finetuning.requests.FinetuningUpdateFinetunedModelRequest;\n\n\npublic class UpdateFinetunedModel {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        UpdateFinetunedModelResponse response = cohere.finetuning().updateFinetunedModel(\"test-id\", FinetuningUpdateFinetunedModelRequest.builder().name(\"new name\").settings(Settings.builder().baseModel(BaseModel.builder().baseType(BaseType.BASE_TYPE_CHAT).build()).datasetId(\"my-dataset-id\").build()).build());\n\n        System.out.println(response);\n    }\n}\n"
+              code: "package finetuning;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.finetuning.finetuning.types.BaseModel;\nimport com.cohere.api.resources.finetuning.finetuning.types.BaseType;\nimport com.cohere.api.resources.finetuning.finetuning.types.Settings;\nimport com.cohere.api.resources.finetuning.finetuning.types.UpdateFinetunedModelResponse;\nimport com.cohere.api.resources.finetuning.requests.FinetuningUpdateFinetunedModelRequest;\n\n\npublic class UpdateFinetunedModel {\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().token(\"<<apiKey>>\").clientName(\"snippet\").build();\n\n        UpdateFinetunedModelResponse response = cohere.finetuning().updateFinetunedModel(\"test-id\", FinetuningUpdateFinetunedModelRequest.builder().name(\"new name\").settings(Settings.builder().baseModel(BaseModel.builder().baseType(BaseType.BASE_TYPE_GENERATIVE).build()).datasetId(\"my-dataset-id\").build()).build());\n\n        System.out.println(response);\n    }\n}\n"
             - sdk: go
               name: Cohere Go SDK
               code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\t\"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(\"<<apiKey>>\"))\n\n\tresp, err := co.Finetuning.UpdateFinetunedModel(\n\t\tcontext.TODO(),\n\t\t\"test-id\",\n\t\t&cohere.FinetuningUpdateFinetunedModelRequest{\n\t\t\tName: \"new-name\",\n\t\t},\n\t)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp.FinetunedModel)\n}\n"
@@ -6377,14 +6377,14 @@ paths:
               example:
                 finetuned_model:
                   id: fee37446-7fc7-42f9-a026-c6ba2fcc422d
-                  name: chat-ft
+                  name: prompt-completion-ft
                   creator_id: 7a317d97-4d05-427d-9396-f31b9fb92c55
                   organization_id: 6bdca3d5-3eae-4de0-ac34-786d8063b7ee
                   settings:
                     base_model:
                       name: medium
                       version: 14.2.0
-                      base_type: BASE_TYPE_CHAT
+                      base_type: BASE_TYPE_GENERATIVE
                       strategy: STRATEGY_TFEW
                     dataset_id: my-dataset-d701tr
                     hyperparameters:
