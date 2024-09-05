@@ -7507,20 +7507,6 @@ components:
                   - $ref: '#/components/schemas/TextContent'
       description: A message from the system.
       x-fern-sdk-group-name: v2
-    ToolContent:
-      required:
-        - type
-        - output
-      type: object
-      properties:
-        type:
-          enum:
-            - tool_result_object
-          type: string
-        output:
-          type: object
-      description: Tool content result object
-      x-fern-sdk-group-name: v2
     ToolMessage-2:
       required:
         - role
@@ -7534,11 +7520,12 @@ components:
           type: string
         tool_call_id:
           type: string
+          description: The id of the associated tool call that has provided the given content
         tool_content:
           type: array
           items:
-            oneOf:
-              - $ref: '#/components/schemas/ToolContent'
+            type: string
+          description: A list of outputs from a tool. The content should formatted as a JSON object string
       description: A message from the system.
       x-fern-sdk-group-name: v2
     ChatMessage-2:
@@ -11654,7 +11641,7 @@ components:
         - BASE_TYPE_RERANK
         - BASE_TYPE_CHAT
       type: string
-      description: "The possible types of fine-tuned models.\n\n - BASE_TYPE_UNSPECIFIED: Unspecified model.\n - BASE_TYPE_GENERATIVE: Generative model.\n - BASE_TYPE_CLASSIFICATION: Classification model.\n - BASE_TYPE_RERANK: Rerank model.\n - BASE_TYPE_CHAT: Chat model."
+      description: "The possible types of fine-tuned models.\n\n - BASE_TYPE_UNSPECIFIED: Unspecified model.\n - BASE_TYPE_GENERATIVE: Deprecated: Generative model.\n - BASE_TYPE_CLASSIFICATION: Classification model.\n - BASE_TYPE_RERANK: Rerank model.\n - BASE_TYPE_CHAT: Chat model."
       default: BASE_TYPE_UNSPECIFIED
       x-fern-sdk-group-name:
         - finetuning
@@ -11665,7 +11652,7 @@ components:
         - STRATEGY_VANILLA
         - STRATEGY_TFEW
       type: string
-      description: "The possible strategy used to serve a fine-tuned models.\n\n - STRATEGY_UNSPECIFIED: Unspecified strategy.\n - STRATEGY_VANILLA: Serve the fine-tuned model on a dedicated GPU.\n - STRATEGY_TFEW: Serve the fine-tuned model on a shared GPU."
+      description: "The possible strategy used to serve a fine-tuned models.\n\n - STRATEGY_UNSPECIFIED: Unspecified strategy.\n - STRATEGY_VANILLA: Deprecated: Serve the fine-tuned model on a dedicated GPU.\n - STRATEGY_TFEW: Serve the fine-tuned model on a shared GPU."
       default: STRATEGY_UNSPECIFIED
       x-fern-sdk-group-name:
         - finetuning
