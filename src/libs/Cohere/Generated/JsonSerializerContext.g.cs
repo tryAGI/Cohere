@@ -33,8 +33,6 @@ namespace Cohere
             typeof(global::OpenApiGenerator.JsonConverters.AssistantMessageRoleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.SystemMessageRoleJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.SystemMessageRoleNullableJsonConverter),
-            typeof(global::OpenApiGenerator.JsonConverters.ToolContentTypeJsonConverter),
-            typeof(global::OpenApiGenerator.JsonConverters.ToolContentTypeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ToolMessage2RoleJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ToolMessage2RoleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.Tool2TypeJsonConverter),

@@ -6,7 +6,7 @@ namespace Cohere
     /// <summary>
     /// The possible types of fine-tuned models.<br/>
     ///  - BASE_TYPE_UNSPECIFIED: Unspecified model.<br/>
-    ///  - BASE_TYPE_GENERATIVE: Generative model.<br/>
+    ///  - BASE_TYPE_GENERATIVE: Deprecated: Generative model.<br/>
     ///  - BASE_TYPE_CLASSIFICATION: Classification model.<br/>
     ///  - BASE_TYPE_RERANK: Rerank model.<br/>
     ///  - BASE_TYPE_CHAT: Chat model.<br/>

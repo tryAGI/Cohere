@@ -6,7 +6,7 @@ namespace Cohere
     /// <summary>
     /// The possible strategy used to serve a fine-tuned models.<br/>
     ///  - STRATEGY_UNSPECIFIED: Unspecified strategy.<br/>
-    ///  - STRATEGY_VANILLA: Serve the fine-tuned model on a dedicated GPU.<br/>
+    ///  - STRATEGY_VANILLA: Deprecated: Serve the fine-tuned model on a dedicated GPU.<br/>
     ///  - STRATEGY_TFEW: Serve the fine-tuned model on a shared GPU.<br/>
     /// Default Value: STRATEGY_UNSPECIFIED
     /// </summary>
