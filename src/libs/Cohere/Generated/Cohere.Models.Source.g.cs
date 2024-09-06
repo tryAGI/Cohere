@@ -46,7 +46,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A document source object containing the unique identifier of the document and the document itself.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.DocumentSource? Document { get; init; }

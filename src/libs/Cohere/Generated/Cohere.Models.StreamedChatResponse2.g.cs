@@ -11,7 +11,7 @@ namespace Cohere
     public readonly partial struct StreamedChatResponse2 : global::System.IEquatable<StreamedChatResponse2>
     {
         /// <summary>
-        /// 
+        /// A streamed event which signifies that a stream has started.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageStartEvent? MessageStartEvent { get; init; }
@@ -46,7 +46,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatContentStartEvent? ContentStartEvent { get; init; }
@@ -81,7 +81,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which contains a delta of chat text content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatContentDeltaEvent? ContentDeltaEvent { get; init; }
@@ -116,7 +116,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatContentEndEvent? ContentEndEvent { get; init; }
@@ -151,7 +151,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed event which contains a delta of tool plan text.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolPlanDeltaEvent? ToolPlanDeltaEvent { get; init; }
@@ -186,7 +186,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallStartEvent? ToolCallStartEvent { get; init; }
@@ -221,7 +221,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a delta in tool call arguments.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallDeltaEvent? ToolCallDeltaEvent { get; init; }
@@ -256,7 +256,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallEndEvent? ToolCallEndEvent { get; init; }
@@ -291,7 +291,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A streamed event which signifies that the chat message has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageEndEvent? MessageEndEvent { get; init; }
