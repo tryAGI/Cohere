@@ -11,7 +11,7 @@ namespace Cohere
     public readonly partial struct Content : global::System.IEquatable<Content>
     {
         /// <summary>
-        /// 
+        /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.TextContent? Text { get; init; }

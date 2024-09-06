@@ -11,7 +11,7 @@ namespace Cohere
     public readonly partial struct ChatMessage2 : global::System.IEquatable<ChatMessage2>
     {
         /// <summary>
-        /// 
+        /// A message from the user.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.UserMessage? UserMessage { get; init; }
@@ -46,7 +46,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.AssistantMessage? AssistantMessage { get; init; }
@@ -81,7 +81,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A message from the system.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.SystemMessage? SystemMessage { get; init; }
@@ -116,7 +116,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// A message from the system.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ToolMessage2? Tool { get; init; }

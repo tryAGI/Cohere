@@ -11,7 +11,7 @@ namespace Cohere
     public readonly partial struct ChatContentStartEvent : global::System.IEquatable<ChatContentStartEvent>
     {
         /// <summary>
-        /// 
+        /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEventType? Value1 { get; init; }
