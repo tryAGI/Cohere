@@ -93,6 +93,8 @@ namespace Cohere
             typeof(global::OpenApiGenerator.JsonConverters.ChatRequestSafetyModeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestCitationModeJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestCitationModeNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestSafetyModeJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.GenerateRequestTruncateJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.GenerateRequestTruncateNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter),
