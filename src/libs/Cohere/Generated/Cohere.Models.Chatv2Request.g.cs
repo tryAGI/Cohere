@@ -50,6 +50,17 @@ namespace Cohere
         public global::Cohere.ResponseFormat2? ResponseFormat { get; set; }
 
         /// <summary>
+        /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
+        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestSafetyModeJsonConverter))]
+        public global::Cohere.Chatv2RequestSafetyMode? SafetyMode { get; set; }
+
+        /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
