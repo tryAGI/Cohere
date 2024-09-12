@@ -8,11 +8,13 @@ namespace Cohere
         partial void PrepareChatArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xClientName,
+            ref global::Cohere.ChatAccepts? accepts,
             global::Cohere.ChatRequest request);
         partial void PrepareChatRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xClientName,
+            global::Cohere.ChatAccepts? accepts,
             global::Cohere.ChatRequest request);
         partial void ProcessChatResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,12 +31,14 @@ namespace Cohere
         /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="accepts"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
             global::Cohere.ChatRequest request,
             string? xClientName = default,
+            global::Cohere.ChatAccepts? accepts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -44,6 +48,7 @@ namespace Cohere
             PrepareChatArguments(
                 httpClient: _httpClient,
                 xClientName: ref xClientName,
+                accepts: ref accepts,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -63,6 +68,7 @@ namespace Cohere
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 xClientName: xClientName,
+                accepts: accepts,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -108,6 +114,7 @@ namespace Cohere
         /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="accepts"></param>
         /// <param name="message">
         /// Text input for the model to respond to.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
@@ -278,6 +285,7 @@ namespace Cohere
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
             string message,
             string? xClientName = default,
+            global::Cohere.ChatAccepts? accepts = default,
             string? model = default,
             bool stream = default,
             string? preamble = default,
@@ -335,6 +343,7 @@ namespace Cohere
 
             return await ChatAsync(
                 xClientName: xClientName,
+                accepts: accepts,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -109,6 +109,8 @@ namespace Cohere
             typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestFormatNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestExtractivenessJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestExtractivenessNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.ChatAcceptsJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.ChatAcceptsNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ClassifyResponseClassificationClassificationTypeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.MessageJsonConverter),
