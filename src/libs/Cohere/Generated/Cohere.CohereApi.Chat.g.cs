@@ -157,7 +157,7 @@ namespace Cohere
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="connectors">
-        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
+        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/overview-rag-connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
         /// When specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).<br/>
         /// Compatible Deployments: Cohere Platform
         /// </param>

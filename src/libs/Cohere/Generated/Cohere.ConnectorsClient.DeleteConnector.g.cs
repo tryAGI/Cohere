@@ -25,7 +25,7 @@ namespace Cohere
 
         /// <summary>
         /// Delete a Connector<br/>
-        /// Delete a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/connectors) for more information.
+        /// Delete a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/overview-rag-connectors) for more information.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>

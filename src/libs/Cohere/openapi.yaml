@@ -87,7 +87,7 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/ChatConnector'
-                  description: "Accepts `{\"id\": \"web-search\"}`, and/or the `\"id\"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.\n\nWhen specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).\n\nCompatible Deployments: Cohere Platform\n"
+                  description: "Accepts `{\"id\": \"web-search\"}`, and/or the `\"id\"` for a custom [connector](https://docs.cohere.com/docs/overview-rag-connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.\n\nWhen specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).\n\nCompatible Deployments: Cohere Platform\n"
                   x-fern-audiences:
                     - public
                 search_queries_only:
@@ -1269,7 +1269,7 @@ paths:
                     - public
                 max_tokens:
                   type: integer
-                  description: "The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.\n\nThis parameter is off by default, and if it's not specified, the model will continue generating until it emits an EOS completion token. See [BPE Tokens](/bpe-tokens-wiki) for more details.\n\nCan only be set to `0` if `return_likelihoods` is set to `ALL` to get the likelihood of the prompt.\n"
+                  description: "The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.\n\nThis parameter is off by default, and if it's not specified, the model will continue generating until it emits an EOS completion token.\n\nCan only be set to `0` if `return_likelihoods` is set to `ALL` to get the likelihood of the prompt.\n"
                   writeOnly: true
                   x-fern-audiences:
                     - public
@@ -5556,7 +5556,7 @@ paths:
       tags:
         - /connectors
       summary: Get a Connector
-      description: 'Retrieve a connector by ID. See [''Connectors''](https://docs.cohere.com/docs/connectors) for more information.'
+      description: 'Retrieve a connector by ID. See [''Connectors''](https://docs.cohere.com/docs/overview-rag-connectors) for more information.'
       operationId: get-connector
       parameters:
         - name: id
@@ -5704,7 +5704,7 @@ paths:
       tags:
         - /connectors
       summary: Delete a Connector
-      description: 'Delete a connector by ID. See [''Connectors''](https://docs.cohere.com/docs/connectors) for more information.'
+      description: 'Delete a connector by ID. See [''Connectors''](https://docs.cohere.com/docs/overview-rag-connectors) for more information.'
       operationId: delete-connector
       parameters:
         - name: id
