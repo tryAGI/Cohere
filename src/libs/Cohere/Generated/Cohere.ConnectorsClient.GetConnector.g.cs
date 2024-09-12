@@ -25,7 +25,7 @@ namespace Cohere
 
         /// <summary>
         /// Get a Connector<br/>
-        /// Retrieve a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/connectors) for more information.
+        /// Retrieve a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/overview-rag-connectors) for more information.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>
