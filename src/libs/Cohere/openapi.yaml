@@ -18,7 +18,7 @@ paths:
   /v1/chat:
     post:
       summary: Chat
-      description: "Generates a text response to a user message.\nTo learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).\n"
+      description: "Generates a text response to a user message.\nTo learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).\n"
       operationId: chat
       parameters:
         - $ref: '#/components/parameters/RequestSource'
