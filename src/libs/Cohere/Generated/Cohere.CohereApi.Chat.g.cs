@@ -28,7 +28,7 @@ namespace Cohere
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
@@ -111,7 +111,7 @@ namespace Cohere
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
