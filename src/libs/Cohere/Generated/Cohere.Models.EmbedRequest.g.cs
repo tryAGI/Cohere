@@ -12,8 +12,7 @@ namespace Cohere
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Texts { get; set; }
+        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
 
         /// <summary>
         /// Defaults to embed-english-v2.0<br/>
