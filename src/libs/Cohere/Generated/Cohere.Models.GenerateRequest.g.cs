@@ -43,7 +43,7 @@ namespace Cohere
 
         /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.<br/>
-        /// This parameter is off by default, and if it's not specified, the model will continue generating until it emits an EOS completion token.<br/>
+        /// This parameter is off by default, and if it's not specified, the model will continue generating until it emits an EOS completion token. See [BPE Tokens](/bpe-tokens-wiki) for more details.<br/>
         /// Can only be set to `0` if `return_likelihoods` is set to `ALL` to get the likelihood of the prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]

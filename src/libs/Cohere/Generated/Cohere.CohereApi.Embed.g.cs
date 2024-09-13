@@ -149,8 +149,8 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::Cohere.EmbedFloatsResponse, global::Cohere.EmbedByTypeResponse>> EmbedAsync(
-            global::System.Collections.Generic.IList<string> texts,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? texts = default,
             string? model = default,
             global::Cohere.EmbedInputType? inputType = default,
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes = default,

@@ -28,7 +28,7 @@ namespace Cohere
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
@@ -111,7 +111,7 @@ namespace Cohere
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
@@ -157,7 +157,7 @@ namespace Cohere
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="connectors">
-        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/overview-rag-connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
+        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
         /// When specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).<br/>
         /// Compatible Deployments: Cohere Platform
         /// </param>
