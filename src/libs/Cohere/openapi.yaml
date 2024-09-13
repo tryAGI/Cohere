@@ -7604,28 +7604,49 @@ components:
               description: The parameters of the function as a JSON schema.
           description: The function to be executed.
       x-fern-sdk-group-name: v2
+    ResponseFormatType-2:
+      enum:
+        - text
+        - json_object
+      type: string
+      description: "Defaults to `\"text\"`.\n\nWhen set to `\"json_object\"`, the model's output will be a valid JSON Object.\n"
+      x-fern-sdk-group-name: v2
+      x-fern-audiences:
+        - public
+    TextResponseFormat-2:
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ResponseFormatType-2'
+      x-fern-sdk-group-name: v2
+      x-fern-audiences:
+        - public
     JSONResponseFormat-2:
       required:
         - type
       type: object
       properties:
         type:
-          $ref: '#/components/schemas/ResponseFormatType'
+          $ref: '#/components/schemas/ResponseFormatType-2'
         json_schema:
           type: object
           description: "[BETA] A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
+      x-fern-sdk-group-name: v2
       x-fern-audiences:
         - public
     ResponseFormat-2:
       oneOf:
-        - $ref: '#/components/schemas/TextResponseFormat'
+        - $ref: '#/components/schemas/TextResponseFormat-2'
         - $ref: '#/components/schemas/JSONResponseFormat-2'
       description: "Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.\n\nThe model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ \"type\": \"json_object\" }`.\n\nA [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.\n\n**Note**: When using  `{ \"type\": \"json_object\" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _\"Generate a JSON ...\"_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.\n**Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).\n"
       discriminator:
         propertyName: type
         mapping:
-          text: '#/components/schemas/TextResponseFormat'
+          text: '#/components/schemas/TextResponseFormat-2'
           json_object: '#/components/schemas/JSONResponseFormat-2'
+      x-fern-sdk-group-name: v2
     ChatFinishReason:
       enum:
         - complete
@@ -7891,6 +7912,7 @@ components:
                     citations:
                       $ref: '#/components/schemas/Citation'
       description: A streamed event which signifies a citation has been created.
+      x-fern-sdk-group-name: v2
     CitationEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7899,6 +7921,7 @@ components:
             index:
               type: integer
       description: A streamed event which signifies a citation has finished streaming.
+      x-fern-sdk-group-name: v2
     ChatMessageEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -8121,8 +8144,9 @@ components:
         - search_query
         - classification
         - clustering
+        - image
       type: string
-      description: "Specifies the type of input passed to the model. Required for embedding models v3 and higher.\n\n- `\"search_document\"`: Used for embeddings stored in a vector database for search use-cases.\n- `\"search_query\"`: Used for embeddings of search queries run against a vector DB to find relevant documents.\n- `\"classification\"`: Used for embeddings passed through a text classifier.\n- `\"clustering\"`: Used for the embeddings run through a clustering algorithm.\n"
+      description: "Specifies the type of input passed to the model. Required for embedding models v3 and higher.\n\n- `\"search_document\"`: Used for embeddings stored in a vector database for search use-cases.\n- `\"search_query\"`: Used for embeddings of search queries run against a vector DB to find relevant documents.\n- `\"classification\"`: Used for embeddings passed through a text classifier.\n- `\"clustering\"`: Used for the embeddings run through a clustering algorithm.\n- `\"image\"`: Used for embeddings with image input.\n"
     EmbeddingType:
       enum:
         - float

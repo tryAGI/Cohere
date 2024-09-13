@@ -37,6 +37,8 @@ namespace Cohere
             typeof(global::OpenApiGenerator.JsonConverters.ToolMessage2RoleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.Tool2TypeJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.Tool2TypeNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatType2JsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatType2NullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ChatFinishReasonJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ChatFinishReasonNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.AssistantMessageResponseRoleJsonConverter),

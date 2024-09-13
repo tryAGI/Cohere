@@ -18,35 +18,35 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.TextResponseFormat? TextFormat { get; init; }
+        public global::Cohere.TextResponseFormat2? Text { get; init; }
 #else
-        public global::Cohere.TextResponseFormat? TextFormat { get; }
+        public global::Cohere.TextResponseFormat2? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextFormat))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsTextFormat => TextFormat != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat2(global::Cohere.TextResponseFormat value) => new ResponseFormat2(value);
+        public static implicit operator ResponseFormat2(global::Cohere.TextResponseFormat2 value) => new ResponseFormat2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.TextResponseFormat?(ResponseFormat2 @this) => @this.TextFormat;
+        public static implicit operator global::Cohere.TextResponseFormat2?(ResponseFormat2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormat2(global::Cohere.TextResponseFormat? value)
+        public ResponseFormat2(global::Cohere.TextResponseFormat2? value)
         {
-            TextFormat = value;
+            Text = value;
         }
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace Cohere
         /// 
         /// </summary>
         public ResponseFormat2(
-            global::Cohere.TextResponseFormat? textFormat,
+            global::Cohere.TextResponseFormat2? text,
             global::Cohere.JSONResponseFormat2? jSON
             )
         {
-            TextFormat = textFormat;
+            Text = text;
             JSON = jSON;
         }
 
@@ -101,7 +101,7 @@ namespace Cohere
         /// </summary>
         public object? Object =>
             JSON as object ??
-            TextFormat as object 
+            Text as object 
             ;
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsTextFormat && !IsJSON || !IsTextFormat && IsJSON;
+            return IsText && !IsJSON || !IsText && IsJSON;
         }
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                TextFormat,
-                typeof(global::Cohere.TextResponseFormat),
+                Text,
+                typeof(global::Cohere.TextResponseFormat2),
                 JSON,
                 typeof(global::Cohere.JSONResponseFormat2),
             };
@@ -138,7 +138,7 @@ namespace Cohere
         public bool Equals(ResponseFormat2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextResponseFormat?>.Default.Equals(TextFormat, other.TextFormat) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextResponseFormat2?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.JSONResponseFormat2?>.Default.Equals(JSON, other.JSON) 
                 ;
         }
