@@ -30,7 +30,7 @@ namespace Cohere
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BaseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.BaseType BaseType { get; set; }
 
@@ -42,7 +42,7 @@ namespace Cohere
         /// Default Value: STRATEGY_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StrategyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.StrategyJsonConverter))]
         public global::Cohere.Strategy? Strategy { get; set; } = global::Cohere.Strategy.STRATEGYUNSPECIFIED;
 
         /// <summary>

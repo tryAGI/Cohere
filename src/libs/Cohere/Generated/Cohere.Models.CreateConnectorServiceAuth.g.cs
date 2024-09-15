@@ -13,7 +13,7 @@ namespace Cohere
         /// Default Value: noscheme
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthTokenTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.AuthTokenTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.AuthTokenType Type { get; set; }
 

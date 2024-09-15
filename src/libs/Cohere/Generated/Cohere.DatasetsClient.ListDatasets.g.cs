@@ -8,8 +8,8 @@ namespace Cohere
         partial void PrepareListDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? datasetType,
-            global::System.DateTime before,
-            global::System.DateTime after,
+            ref global::System.DateTime before,
+            ref global::System.DateTime after,
             ref double limit,
             ref double offset,
             ref global::Cohere.DatasetValidationStatus? validationStatus,
@@ -63,8 +63,8 @@ namespace Cohere
             PrepareListDatasetsArguments(
                 httpClient: _httpClient,
                 datasetType: ref datasetType,
-                before: before,
-                after: after,
+                before: ref before,
+                after: ref after,
                 limit: ref limit,
                 offset: ref offset,
                 validationStatus: ref validationStatus,
@@ -121,7 +121,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.ListDatasetsResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.ListDatasetsResponse), JsonSerializerContext) as global::Cohere.ListDatasetsResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

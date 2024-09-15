@@ -89,7 +89,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.DeleteConnectorResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.DeleteConnectorResponse), JsonSerializerContext) as global::Cohere.DeleteConnectorResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

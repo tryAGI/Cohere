@@ -38,7 +38,7 @@ namespace Cohere
         /// - `"image"`: Used for embeddings with image input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbedInputTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedInputTypeJsonConverter))]
         public global::Cohere.EmbedInputType? InputType { get; set; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Cohere
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbedRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedRequestTruncateJsonConverter))]
         public global::Cohere.EmbedRequestTruncate? Truncate { get; set; } = global::Cohere.EmbedRequestTruncate.END;
 
         /// <summary>

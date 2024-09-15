@@ -14,16 +14,16 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SystemMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SystemMessageRoleJsonConverter))]
         public global::Cohere.SystemMessageRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::Cohere.TextContent>>> Content { get; set; }
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

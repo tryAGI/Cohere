@@ -48,7 +48,7 @@ namespace Cohere
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/v1/rerank", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Cohere.SourceGenerationContext.Default.RerankRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -97,7 +97,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.RerankResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.RerankResponse), JsonSerializerContext) as global::Cohere.RerankResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -137,7 +137,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.RerankResponse> RerankAsync(
             string query,
-            global::System.Collections.Generic.IList<global::System.OneOf<string, global::Cohere.RerankDocument>> documents,
+            global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.RerankDocument>> documents,
             string? xClientName = default,
             string? model = default,
             int topN = default,

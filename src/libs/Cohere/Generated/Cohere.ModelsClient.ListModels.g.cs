@@ -103,7 +103,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.ListModelsResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.ListModelsResponse), JsonSerializerContext) as global::Cohere.ListModelsResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

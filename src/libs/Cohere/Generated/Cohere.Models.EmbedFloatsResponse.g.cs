@@ -12,7 +12,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter))]
         public global::Cohere.EmbedFloatsResponseResponseType? ResponseType { get; set; }
 
         /// <summary>

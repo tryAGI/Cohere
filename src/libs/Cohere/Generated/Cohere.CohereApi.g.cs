@@ -10,7 +10,7 @@ namespace Cohere
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class CohereApi : global::System.IDisposable
+    public sealed partial class CohereApi : global::Cohere.ICohereApi, global::System.IDisposable
     {
         /// <summary>
         /// production
@@ -19,31 +19,51 @@ namespace Cohere
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Cohere.SourceGenerationContext.Default;
+
 
         /// <summary>
         /// Datasets API
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient);
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Connectors API
         /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient);
+        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Embed Jobs API
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient);
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Finetuning API (Beta)
         /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(_httpClient);
+        public FinetuningClient Finetuning => new FinetuningClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient);
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Creates a new instance of the CohereApi.
@@ -54,8 +74,7 @@ namespace Cohere
         /// <param name="baseUri"></param> 
         public CohereApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null 
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);

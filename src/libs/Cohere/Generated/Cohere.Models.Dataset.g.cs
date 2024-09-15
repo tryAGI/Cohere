@@ -40,7 +40,7 @@ namespace Cohere
         /// The type of the dataset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DatasetTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.DatasetTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.DatasetType DatasetType { get; set; }
 
@@ -48,7 +48,7 @@ namespace Cohere
         /// The validation status of the dataset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DatasetValidationStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.DatasetValidationStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.DatasetValidationStatus ValidationStatus { get; set; }
 

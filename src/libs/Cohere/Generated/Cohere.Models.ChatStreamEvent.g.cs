@@ -12,7 +12,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatStreamEventEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatStreamEventEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ChatStreamEventEventType EventType { get; set; }
 

@@ -13,7 +13,7 @@ namespace Cohere
         /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ChatRole Role { get; set; }
 

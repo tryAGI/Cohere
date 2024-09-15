@@ -54,7 +54,7 @@ namespace Cohere
         /// Default Value: STATUS_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.StatusJsonConverter))]
         public global::Cohere.Status? Status { get; set; } = global::Cohere.Status.STATUSUNSPECIFIED;
 
         /// <summary>

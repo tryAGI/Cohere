@@ -25,7 +25,7 @@ namespace Cohere
         /// The status of the embed job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbedJobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.EmbedJobStatus Status { get; set; }
 
@@ -60,7 +60,7 @@ namespace Cohere
         /// The truncation option used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbedJobTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.EmbedJobTruncate Truncate { get; set; }
 

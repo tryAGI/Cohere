@@ -79,7 +79,7 @@ namespace Cohere
         /// The OAuth status for the user making the request. One of ["valid", "expired", ""]. Empty string (field is omitted) means the user has not authorized the connector yet.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ConnectorAuthStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ConnectorAuthStatusJsonConverter))]
         public global::Cohere.ConnectorAuthStatus? AuthStatus { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public class ResponseFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ResponseFormat>

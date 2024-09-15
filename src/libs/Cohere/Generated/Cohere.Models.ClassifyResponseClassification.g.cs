@@ -60,7 +60,7 @@ namespace Cohere
         /// The type of classification performed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ClassifyResponseClassificationClassificationType ClassificationType { get; set; }
 

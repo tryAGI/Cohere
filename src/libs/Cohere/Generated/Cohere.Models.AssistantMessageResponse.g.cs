@@ -14,7 +14,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantMessageResponseRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter))]
         public global::Cohere.AssistantMessageResponseRole Role { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::Cohere.TextContent>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>? Content { get; set; }
 
         /// <summary>
         /// 

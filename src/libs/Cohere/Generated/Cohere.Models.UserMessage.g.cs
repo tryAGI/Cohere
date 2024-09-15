@@ -14,7 +14,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.UserMessageRoleJsonConverter))]
         public global::Cohere.UserMessageRole Role { get; set; }
 
         /// <summary>
@@ -22,9 +22,9 @@ namespace Cohere
         /// If a string is provided, it will be treated as a text content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content>> Content { get; set; }
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content>> Content { get; set; }
 
         /// <summary>
         /// Documents seen by the model when generating the reply.

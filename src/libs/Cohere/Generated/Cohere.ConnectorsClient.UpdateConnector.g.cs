@@ -53,7 +53,7 @@ namespace Cohere
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/connectors/{id}", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Cohere.SourceGenerationContext.Default.UpdateConnectorRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -103,7 +103,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.UpdateConnectorResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.UpdateConnectorResponse), JsonSerializerContext) as global::Cohere.UpdateConnectorResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

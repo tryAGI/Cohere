@@ -44,7 +44,7 @@ namespace Cohere
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ClassifyRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ClassifyRequestTruncateJsonConverter))]
         public global::Cohere.ClassifyRequestTruncate? Truncate { get; set; } = global::Cohere.ClassifyRequestTruncate.END;
 
         /// <summary>

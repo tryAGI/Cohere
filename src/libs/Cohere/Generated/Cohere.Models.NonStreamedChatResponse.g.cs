@@ -19,7 +19,7 @@ namespace Cohere
         /// Unique identifier for the generated reply. Useful for submitting feedback.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_id")]
-        public string? GenerationId { get; set; }
+        public global::System.Guid GenerationId { get; set; }
 
         /// <summary>
         /// Inline citations for the generated reply.
@@ -55,7 +55,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
         public global::Cohere.FinishReason? FinishReason { get; set; }
 
         /// <summary>

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class Chatv2RequestCitationModeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.Chatv2RequestCitationMode>

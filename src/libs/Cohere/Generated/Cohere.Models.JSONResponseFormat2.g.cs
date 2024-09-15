@@ -13,7 +13,7 @@ namespace Cohere
         /// When set to `"json_object"`, the model's output will be a valid JSON Object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormatType2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ResponseFormatType2 Type { get; set; }
 

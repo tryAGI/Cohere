@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatContentStartEventVariant2DeltaMessageContentTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ChatContentStartEventVariant2DeltaMessageContentType>

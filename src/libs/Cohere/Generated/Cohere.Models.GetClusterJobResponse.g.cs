@@ -55,7 +55,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
         public global::Cohere.GetClusterJobResponseStatus? Status { get; set; }
 
         /// <summary>

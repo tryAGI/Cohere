@@ -20,7 +20,7 @@ namespace Cohere
         /// Default Value: medium
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("length")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestLengthJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter))]
         public global::Cohere.SummarizeRequestLength? Length { get; set; } = global::Cohere.SummarizeRequestLength.Medium;
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Cohere
         /// Default Value: paragraph
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter))]
         public global::Cohere.SummarizeRequestFormat? Format { get; set; } = global::Cohere.SummarizeRequestFormat.Paragraph;
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Cohere
         /// Default Value: low
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extractiveness")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
         public global::Cohere.SummarizeRequestExtractiveness? Extractiveness { get; set; } = global::Cohere.SummarizeRequestExtractiveness.Low;
 
         /// <summary>

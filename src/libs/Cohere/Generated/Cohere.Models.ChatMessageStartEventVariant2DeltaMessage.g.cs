@@ -12,7 +12,7 @@ namespace Cohere
         /// The role of the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter))]
         public global::Cohere.ChatMessageStartEventVariant2DeltaMessageRole? Role { get; set; }
 
         /// <summary>

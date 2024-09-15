@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ClassifyResponseClassificationClassificationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ClassifyResponseClassificationClassificationType>

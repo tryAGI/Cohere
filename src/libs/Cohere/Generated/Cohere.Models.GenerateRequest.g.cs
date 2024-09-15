@@ -56,7 +56,7 @@ namespace Cohere
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GenerateRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter))]
         public global::Cohere.GenerateRequestTruncate? Truncate { get; set; } = global::Cohere.GenerateRequestTruncate.END;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Cohere
         /// Default Value: NONE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_likelihoods")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
         public global::Cohere.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; } = global::Cohere.GenerateRequestReturnLikelihoods.NONE;
 
         /// <summary>

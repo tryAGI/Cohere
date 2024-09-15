@@ -89,7 +89,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.EmbedJob) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.EmbedJob), JsonSerializerContext) as global::Cohere.EmbedJob ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -18,7 +18,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatToolCallStartEventVariant2DeltaToolCallTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatToolCallStartEventVariant2DeltaToolCallTypeJsonConverter))]
         public global::Cohere.ChatToolCallStartEventVariant2DeltaToolCallType? Type { get; set; }
 
         /// <summary>

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EmbedInputTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.EmbedInputType?>

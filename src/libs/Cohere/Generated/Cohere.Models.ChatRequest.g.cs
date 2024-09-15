@@ -69,7 +69,7 @@ namespace Cohere
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_truncation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
         public global::Cohere.ChatRequestPromptTruncation? PromptTruncation { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Cohere
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation_quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRequestCitationQualityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatRequestCitationQualityJsonConverter))]
         public global::Cohere.ChatRequestCitationQuality? CitationQuality { get; set; }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Cohere
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormatJsonConverter))]
         public global::Cohere.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Cohere
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatRequestSafetyModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeJsonConverter))]
         public global::Cohere.ChatRequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>

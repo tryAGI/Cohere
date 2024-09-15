@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatStreamEventEventTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ChatStreamEventEventType?>

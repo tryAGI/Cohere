@@ -19,7 +19,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
         public global::Cohere.FinishReason? FinishReason { get; set; }
 
         /// <summary>

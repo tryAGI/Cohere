@@ -35,7 +35,7 @@ namespace Cohere
         /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
         public global::Cohere.Chatv2RequestCitationMode? CitationMode { get; set; }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Cohere
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormat2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormat2JsonConverter))]
         public global::Cohere.ResponseFormat2? ResponseFormat { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Cohere
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.Chatv2RequestSafetyModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter))]
         public global::Cohere.Chatv2RequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
             global::Cohere.ChatRequest request,
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,
@@ -54,7 +54,7 @@ namespace Cohere
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/v1/chat", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Cohere.SourceGenerationContext.Default.ChatRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -104,7 +104,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Cohere.SourceGenerationContext.Default.NullableOneOfNonStreamedChatResponseNullableStreamedChatResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>?), JsonSerializerContext) as global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>? ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -282,7 +282,7 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
             string message,
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
     public sealed class Tool2TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.Tool2Type?>

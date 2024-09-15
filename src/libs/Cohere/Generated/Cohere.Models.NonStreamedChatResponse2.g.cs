@@ -19,7 +19,7 @@ namespace Cohere
         /// The reason a chat request has finished.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ChatFinishReason FinishReason { get; set; }
 
