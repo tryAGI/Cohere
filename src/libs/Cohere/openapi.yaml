@@ -765,13 +765,8 @@ paths:
                       - type: string
                       - $ref: '#/components/schemas/Document'
                   description: "A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.\n"
-                citation_mode:
-                  enum:
-                    - FAST
-                    - ACCURATE
-                    - OFF
-                  type: string
-                  description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n"
+                citation_options:
+                  $ref: '#/components/schemas/CitationOptions'
                 response_format:
                   $ref: '#/components/schemas/ResponseFormat-2'
                 safety_mode:
@@ -7646,6 +7641,18 @@ components:
               type: object
               description: The parameters of the function as a JSON schema.
           description: The function to be executed.
+      x-fern-sdk-group-name: v2
+    CitationOptions:
+      type: object
+      properties:
+        mode:
+          enum:
+            - FAST
+            - ACCURATE
+            - OFF
+          type: string
+          description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n"
+      description: Options for controlling citation generation.
       x-fern-sdk-group-name: v2
     ResponseFormatType-2:
       enum:

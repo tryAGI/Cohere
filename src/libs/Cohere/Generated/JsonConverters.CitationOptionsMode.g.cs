@@ -3,10 +3,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class Chatv2RequestCitationModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.Chatv2RequestCitationMode?>
+    public sealed class CitationOptionsModeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.CitationOptionsMode>
     {
         /// <inheritdoc />
-        public override global::Cohere.Chatv2RequestCitationMode? Read(
+        public override global::Cohere.CitationOptionsMode Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Cohere.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Cohere.Chatv2RequestCitationModeExtensions.ToEnum(stringValue);
+                        return global::Cohere.CitationOptionsModeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Cohere.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Cohere.Chatv2RequestCitationMode)numValue;
+                    return (global::Cohere.CitationOptionsMode)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.Chatv2RequestCitationMode? value,
+            global::Cohere.CitationOptionsMode value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Cohere.Chatv2RequestCitationModeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Cohere.CitationOptionsModeExtensions.ToValueString(value));
         }
     }
 }
