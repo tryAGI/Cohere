@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Cohere
@@ -23,11 +25,12 @@ namespace Cohere
         public required string ToolCallId { get; set; }
 
         /// <summary>
-        /// A list of outputs from a tool. The content should formatted as a JSON object string
+        /// A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ToolContent { get; set; }
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> ToolContent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

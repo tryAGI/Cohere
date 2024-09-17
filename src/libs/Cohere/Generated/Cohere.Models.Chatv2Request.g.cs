@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Cohere
@@ -29,6 +31,12 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::Cohere.Tool2>? Tools { get; set; }
+
+        /// <summary>
+        /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
+        public global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? Documents { get; set; }
 
         /// <summary>
         /// Defaults to `"accurate"`.<br/>

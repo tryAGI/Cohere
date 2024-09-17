@@ -27,12 +27,6 @@ namespace Cohere
         public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content>> Content { get; set; }
 
         /// <summary>
-        /// Documents seen by the model when generating the reply.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public global::System.Collections.Generic.IList<global::Cohere.ChatDocument>? Documents { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
