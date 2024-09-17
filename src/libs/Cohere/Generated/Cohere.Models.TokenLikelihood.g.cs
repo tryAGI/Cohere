@@ -12,7 +12,7 @@ namespace Cohere
         /// Tokenized text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoded")]
-        public int Encoded { get; set; }
+        public int? Encoded { get; set; }
 
         /// <summary>
         /// Detokenized text
@@ -24,7 +24,7 @@ namespace Cohere
         /// Non normalized probability of the token
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_likelihood")]
-        public double LogLikelihood { get; set; }
+        public double? LogLikelihood { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

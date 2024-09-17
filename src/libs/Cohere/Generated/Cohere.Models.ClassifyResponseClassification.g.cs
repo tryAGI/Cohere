@@ -40,7 +40,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public float Confidence { get; set; }
+        public float? Confidence { get; set; }
 
         /// <summary>
         /// An array containing the confidence scores of all the predictions in the same order

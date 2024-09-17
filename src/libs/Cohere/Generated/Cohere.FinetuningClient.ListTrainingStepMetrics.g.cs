@@ -8,14 +8,14 @@ namespace Cohere
         partial void PrepareListTrainingStepMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string finetunedModelId,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             ref string? xClientName);
         partial void PrepareListTrainingStepMetricsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string finetunedModelId,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             string? xClientName);
         partial void ProcessListTrainingStepMetricsResponse(
@@ -38,7 +38,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ListTrainingStepMetricsResponse> ListTrainingStepMetricsAsync(
             string finetunedModelId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)

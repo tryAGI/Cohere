@@ -12,7 +12,7 @@ namespace Cohere
         /// Total number of examples for this label
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_examples")]
-        public double TotalExamples { get; set; }
+        public double? TotalExamples { get; set; }
 
         /// <summary>
         /// value of the label

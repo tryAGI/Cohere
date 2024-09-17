@@ -7,14 +7,14 @@ namespace Cohere
     {
         partial void PrepareListFinetunedModelsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             ref string? orderBy,
             ref string? xClientName);
         partial void PrepareListFinetunedModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             string? orderBy,
             string? xClientName);
@@ -37,7 +37,7 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.ListFinetunedModelsResponse> ListFinetunedModelsAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
             string? xClientName = default,

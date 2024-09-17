@@ -18,7 +18,7 @@ namespace Cohere
         /// Index of the tool call generated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public double Index { get; set; }
+        public double? Index { get; set; }
 
         /// <summary>
         /// Chunk of the tool parameters

@@ -21,10 +21,10 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.ListDatasetsResponse> ListDatasetsAsync(
             string? datasetType = default,
-            global::System.DateTime before = default,
-            global::System.DateTime after = default,
-            double limit = default,
-            double offset = default,
+            global::System.DateTime? before = default,
+            global::System.DateTime? after = default,
+            double? limit = default,
+            double? offset = default,
             global::Cohere.DatasetValidationStatus? validationStatus = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
