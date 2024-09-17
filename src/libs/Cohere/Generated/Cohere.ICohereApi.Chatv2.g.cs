@@ -33,9 +33,8 @@ namespace Cohere
         /// <param name="documents">
         /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
         /// </param>
-        /// <param name="citationMode">
-        /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// <param name="citationOptions">
+        /// Options for controlling citation generation.
         /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
@@ -93,7 +92,7 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.ChatMessage2> messages,
             global::System.Collections.Generic.IList<global::Cohere.Tool2>? tools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
-            global::Cohere.Chatv2RequestCitationMode? citationMode = default,
+            global::Cohere.CitationOptions? citationOptions = default,
             global::Cohere.ResponseFormat2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,
             int? maxTokens = default,

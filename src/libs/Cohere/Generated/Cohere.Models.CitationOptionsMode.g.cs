@@ -7,7 +7,7 @@ namespace Cohere
     /// Defaults to `"accurate"`.<br/>
     /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
     /// </summary>
-    public enum Chatv2RequestCitationMode
+    public enum CitationOptionsMode
     {
         /// <summary>
         /// 
@@ -26,31 +26,31 @@ namespace Cohere
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class Chatv2RequestCitationModeExtensions
+    public static class CitationOptionsModeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this Chatv2RequestCitationMode value)
+        public static string ToValueString(this CitationOptionsMode value)
         {
             return value switch
             {
-                Chatv2RequestCitationMode.FAST => "FAST",
-                Chatv2RequestCitationMode.ACCURATE => "ACCURATE",
-                Chatv2RequestCitationMode.OFF => "OFF",
+                CitationOptionsMode.FAST => "FAST",
+                CitationOptionsMode.ACCURATE => "ACCURATE",
+                CitationOptionsMode.OFF => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static Chatv2RequestCitationMode? ToEnum(string value)
+        public static CitationOptionsMode? ToEnum(string value)
         {
             return value switch
             {
-                "FAST" => Chatv2RequestCitationMode.FAST,
-                "ACCURATE" => Chatv2RequestCitationMode.ACCURATE,
-                "OFF" => Chatv2RequestCitationMode.OFF,
+                "FAST" => CitationOptionsMode.FAST,
+                "ACCURATE" => CitationOptionsMode.ACCURATE,
+                "OFF" => CitationOptionsMode.OFF,
                 _ => null,
             };
         }

@@ -39,12 +39,10 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? Documents { get; set; }
 
         /// <summary>
-        /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// Options for controlling citation generation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citation_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
-        public global::Cohere.Chatv2RequestCitationMode? CitationMode { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("citation_options")]
+        public global::Cohere.CitationOptions? CitationOptions { get; set; }
 
         /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
