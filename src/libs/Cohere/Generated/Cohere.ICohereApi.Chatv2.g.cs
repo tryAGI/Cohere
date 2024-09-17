@@ -92,14 +92,14 @@ namespace Cohere
             global::Cohere.Chatv2RequestCitationMode? citationMode = default,
             global::Cohere.ResponseFormat2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,
-            int maxTokens = default,
+            int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            float temperature = default,
-            int seed = default,
-            float frequencyPenalty = default,
-            float presencePenalty = default,
-            float k = 0F,
-            float p = 0.75F,
+            float? temperature = default,
+            int? seed = default,
+            float? frequencyPenalty = default,
+            float? presencePenalty = default,
+            float? k = 0F,
+            float? p = 0.75F,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

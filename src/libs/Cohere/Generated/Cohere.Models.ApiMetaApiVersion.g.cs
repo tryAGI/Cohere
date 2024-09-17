@@ -19,13 +19,13 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_deprecated")]
-        public bool IsDeprecated { get; set; }
+        public bool? IsDeprecated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_experimental")]
-        public bool IsExperimental { get; set; }
+        public bool? IsExperimental { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -32,7 +32,7 @@ namespace Cohere
         /// read-only. Whether the model is single-label or multi-label (only for classification).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multi_label")]
-        public bool MultiLabel { get; set; }
+        public bool? MultiLabel { get; set; }
 
         /// <summary>
         /// The Weights &amp; Biases configuration.

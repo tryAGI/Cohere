@@ -25,7 +25,7 @@ namespace Cohere
         /// Total count of results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_size")]
-        public int TotalSize { get; set; }
+        public int? TotalSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

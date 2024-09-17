@@ -12,13 +12,13 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
-        public int Start { get; set; }
+        public int? Start { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
-        public int End { get; set; }
+        public int? End { get; set; }
 
         /// <summary>
         /// 

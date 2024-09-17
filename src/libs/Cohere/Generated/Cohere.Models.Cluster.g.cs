@@ -30,7 +30,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 

@@ -16,7 +16,7 @@ namespace Cohere
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.ListEventsResponse> ListEventsAsync(
             string finetunedModelId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
             string? xClientName = default,

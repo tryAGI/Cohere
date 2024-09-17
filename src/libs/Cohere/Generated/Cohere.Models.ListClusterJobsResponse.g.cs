@@ -19,7 +19,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 

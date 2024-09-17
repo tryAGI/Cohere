@@ -154,10 +154,10 @@ namespace Cohere
             string? creatorId = default,
             string? organizationId = default,
             global::Cohere.Status? status = global::Cohere.Status.STATUSUNSPECIFIED,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime updatedAt = default,
-            global::System.DateTime completedAt = default,
-            global::System.DateTime lastUsed = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? updatedAt = default,
+            global::System.DateTime? completedAt = default,
+            global::System.DateTime? lastUsed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Cohere.FinetunedModel

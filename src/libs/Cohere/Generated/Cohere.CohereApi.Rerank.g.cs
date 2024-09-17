@@ -140,10 +140,10 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.RerankDocument>> documents,
             string? xClientName = default,
             string? model = default,
-            int topN = default,
+            int? topN = default,
             global::System.Collections.Generic.IList<string>? rankFields = default,
-            bool returnDocuments = false,
-            int maxChunksPerDoc = 10,
+            bool? returnDocuments = false,
+            int? maxChunksPerDoc = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Cohere.RerankRequest

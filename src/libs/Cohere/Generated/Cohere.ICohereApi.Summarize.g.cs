@@ -62,7 +62,7 @@ namespace Cohere
             global::Cohere.SummarizeRequestFormat? format = global::Cohere.SummarizeRequestFormat.Paragraph,
             string? model = default,
             global::Cohere.SummarizeRequestExtractiveness? extractiveness = global::Cohere.SummarizeRequestExtractiveness.Low,
-            double temperature = 0.3,
+            double? temperature = 0.3,
             string? additionalCommand = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
