@@ -65,6 +65,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.TextsTruncateJsonConverter),
+            typeof(global::Cohere.JsonConverters.TextsTruncateNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter),
             typeof(global::Cohere.JsonConverters.EmbedJobStatusNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter),
@@ -151,6 +153,7 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.GenerateStreamEndJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateStreamErrorJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateStreamedResponseJsonConverter),
+            typeof(global::Cohere.JsonConverters.V2EmbedRequestJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.JsonSerializerContextTypes))]
