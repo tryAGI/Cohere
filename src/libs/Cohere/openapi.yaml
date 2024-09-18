@@ -3677,6 +3677,61 @@ paths:
                 billed_units:
                   input_tokens: 2
               response_type: embeddings_floats
+  /v2/embed:
+    post:
+      summary: Embed
+      description: "This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.\n\nEmbeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.\n\nIf you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search)."
+      operationId: embedv2
+      parameters:
+        - $ref: '#/components/parameters/RequestSource'
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2EmbedRequest'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-API-Warning:
+              description: Warning description for incorrect usage of the API
+              schema:
+                type: string
+                x-fern-audiences:
+                  - public
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbedByTypeResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+        '498':
+          $ref: '#/components/responses/InvalidToken'
+        '499':
+          $ref: '#/components/responses/RequestCancelled'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-audiences:
+        - v2-beta
+      x-fern-sdk-group-name: v2
+      x-fern-sdk-method-name: embed
   /v1/embed-jobs:
     post:
       tags:
@@ -10576,6 +10631,95 @@ components:
               api_version:
                 version: '1'
             api_version: v2
+    Texts:
+      required:
+        - texts
+        - model
+        - input_type
+      type: object
+      properties:
+        texts:
+          maxItems: 96
+          minItems: 1
+          type: array
+          items:
+            type: string
+            writeOnly: true
+            x-fern-audiences:
+              - public
+          description: An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
+          writeOnly: true
+          x-fern-audiences:
+            - public
+        model:
+          type: string
+          description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+          writeOnly: true
+          x-fern-audiences:
+            - public
+        input_type:
+          $ref: '#/components/schemas/EmbedInputType'
+        embedding_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmbeddingType'
+          description: "Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.\n\n* `\"float\"`: Use this when you want to get back the default float embeddings. Valid for all models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models."
+          writeOnly: true
+          x-fern-audiences:
+            - public
+        truncate:
+          enum:
+            - NONE
+            - START
+            - END
+          type: string
+          description: "One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.\n\nPassing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.\n\nIf `NONE` is selected, when the input exceeds the maximum input token length an error will be returned."
+          default: END
+          writeOnly: true
+          x-fern-audiences:
+            - public
+      x-fern-sdk-group-name: v2
+      x-fern-audiences:
+        - public
+    Images:
+      required:
+        - images
+        - model
+        - input_type
+      type: object
+      properties:
+        model:
+          type: string
+          description: "Defaults to embed-english-v2.0\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\nAvailable models and corresponding embedding dimensions:\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+          writeOnly: true
+          x-fern-audiences:
+            - public
+        input_type:
+          $ref: '#/components/schemas/EmbedInputType'
+        embedding_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmbeddingType'
+          description: "Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.\n* `\"float\"`: Use this when you want to get back the default float embeddings. Valid for all models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models."
+          writeOnly: true
+          x-fern-audiences:
+            - public
+      x-fern-sdk-group-name: v2
+      x-fern-audiences:
+        - public
+    V2EmbedRequest:
+      oneOf:
+        - $ref: '#/components/schemas/Texts'
+        - $ref: '#/components/schemas/Images'
+      discriminator:
+        propertyName: input_type
+        mapping:
+          search_document: '#/components/schemas/Texts'
+          search_query: '#/components/schemas/Texts'
+          classification: '#/components/schemas/Texts'
+          clustering: '#/components/schemas/Texts'
+          image: '#/components/schemas/Images'
+      x-fern-sdk-group-name: v2
     EmbedJob:
       required:
         - job_id
