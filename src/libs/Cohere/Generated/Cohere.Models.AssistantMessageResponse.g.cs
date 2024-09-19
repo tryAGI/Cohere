@@ -21,7 +21,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::Cohere.ToolCall2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? ToolCalls { get; set; }
 
         /// <summary>
         /// 

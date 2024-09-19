@@ -11,7 +11,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse2, global::Cohere.StreamedChatResponse2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::Cohere.Chatv2Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -87,13 +87,13 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse2, global::Cohere.StreamedChatResponse2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             string model,
-            global::System.Collections.Generic.IList<global::Cohere.ChatMessage2> messages,
-            global::System.Collections.Generic.IList<global::Cohere.Tool2>? tools = default,
+            global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
+            global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
             global::Cohere.CitationOptions? citationOptions = default,
-            global::Cohere.ResponseFormat2? responseFormat = default,
+            global::Cohere.ResponseFormatV2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
