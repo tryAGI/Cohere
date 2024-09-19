@@ -756,7 +756,7 @@ paths:
                 tools:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Tool-2'
+                    $ref: '#/components/schemas/ToolV2'
                   description: "A list of available tools (functions) that the model may suggest invoking before producing a text response.\n\nWhen `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.\n"
                 documents:
                   type: array
@@ -768,7 +768,7 @@ paths:
                 citation_options:
                   $ref: '#/components/schemas/CitationOptions'
                 response_format:
-                  $ref: '#/components/schemas/ResponseFormat-2'
+                  $ref: '#/components/schemas/ResponseFormatV2'
                 safety_mode:
                   enum:
                     - CONTEXTUAL
@@ -823,8 +823,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                  - $ref: '#/components/schemas/NonStreamedChatResponse-2'
-                  - $ref: '#/components/schemas/StreamedChatResponse-2'
+                  - $ref: '#/components/schemas/ChatResponse'
+                  - $ref: '#/components/schemas/StreamedChatResponseV2'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -857,7 +857,6 @@ paths:
         format: sse
         stream-condition: $request.stream
         response:
-          x-fern-sdk-group-name: v2
           required:
             - id
             - finish_reason
@@ -873,7 +872,6 @@ paths:
             usage:
               $ref: '#/components/schemas/Usage'
         response-stream:
-          x-fern-sdk-group-name: v2
           description: StreamedChatResponse is returned in streaming mode (specified with `stream=True` in the request).
           oneOf:
             - $ref: '#/components/schemas/ChatMessageStartEvent'
@@ -3689,7 +3687,52 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/V2EmbedRequest'
+              required:
+                - model
+              type: object
+              properties:
+                texts:
+                  maxItems: 96
+                  minItems: 1
+                  type: array
+                  items:
+                    type: string
+                    writeOnly: true
+                    x-fern-audiences:
+                      - public
+                  description: An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
+                  writeOnly: true
+                  x-fern-audiences:
+                    - public
+                model:
+                  type: string
+                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+                  writeOnly: true
+                  x-fern-audiences:
+                    - public
+                input_type:
+                  $ref: '#/components/schemas/EmbedInputType'
+                embedding_types:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/EmbeddingType'
+                  description: "Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.\n\n* `\"float\"`: Use this when you want to get back the default float embeddings. Valid for all models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models."
+                  writeOnly: true
+                  x-fern-audiences:
+                    - public
+                truncate:
+                  enum:
+                    - NONE
+                    - START
+                    - END
+                  type: string
+                  description: "One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.\n\nPassing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.\n\nIf `NONE` is selected, when the input exceeds the maximum input token length an error will be returned."
+                  default: END
+                  writeOnly: true
+                  x-fern-audiences:
+                    - public
+              x-fern-audiences:
+                - public
       responses:
         '200':
           description: OK
@@ -4224,6 +4267,156 @@ paths:
                   version: '1'
                 billed_units:
                   search_units: 1
+  /v2/rerank:
+    post:
+      summary: Rerank
+      description: This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
+      operationId: rerankv2
+      parameters:
+        - $ref: '#/components/parameters/RequestSource'
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              required:
+                - query
+                - documents
+                - model
+              type: object
+              properties:
+                model:
+                  type: string
+                  description: 'The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`'
+                  x-fern-audiences:
+                    - public
+                query:
+                  type: string
+                  description: The search query
+                  x-fern-audiences:
+                    - public
+                documents:
+                  type: array
+                  items:
+                    oneOf:
+                      - type: string
+                      - $ref: '#/components/schemas/RerankDocument'
+                  description: "A list of document objects or strings to rerank.\nIf a document is provided the text fields is required and all other fields will be preserved in the response.\n\nThe total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.\n\nWe recommend a maximum of 1,000 documents for optimal endpoint performance."
+                  x-fern-audiences:
+                    - public
+                top_n:
+                  minimum: 1
+                  type: integer
+                  description: 'The number of most relevant documents or indices to return, defaults to the length of the documents'
+                  x-fern-audiences:
+                    - public
+                rank_fields:
+                  type: array
+                  items:
+                    type: string
+                    x-fern-audiences:
+                      - public
+                  description: 'If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=[''title'',''author'',''text''] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.'
+                  x-fern-audiences:
+                    - public
+                return_documents:
+                  type: boolean
+                  description: "- If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request.\n- If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request."
+                  default: false
+                  x-fern-audiences:
+                    - public
+                max_chunks_per_doc:
+                  type: integer
+                  description: The maximum number of chunks to produce internally from a document
+                  default: 10
+                  x-fern-audiences:
+                    - public
+              x-fern-audiences:
+                - public
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - results
+                type: object
+                properties:
+                  id:
+                    type: string
+                    x-fern-audiences:
+                      - public
+                  results:
+                    type: array
+                    items:
+                      required:
+                        - index
+                        - relevance_score
+                      type: object
+                      properties:
+                        document:
+                          required:
+                            - text
+                          type: object
+                          properties:
+                            text:
+                              type: string
+                              description: The text of the document to rerank
+                              x-fern-audiences:
+                                - public
+                          description: 'If `return_documents` is set as `false` this will return none, if `true` it will return the documents passed in'
+                          x-fern-audiences:
+                            - public
+                        index:
+                          type: integer
+                          description: 'Corresponds to the index in the original list of documents to which the ranked document belongs. (i.e. if the first value in the `results` object has an `index` value of 3, it means in the list of documents passed in, the document at `index=3` had the highest relevance)'
+                          x-fern-audiences:
+                            - public
+                        relevance_score:
+                          type: number
+                          description: 'Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45'
+                          format: float
+                          readOnly: true
+                          x-fern-audiences:
+                            - public
+                      x-fern-audiences:
+                        - public
+                    description: An ordered list of ranked documents
+                    x-fern-audiences:
+                      - public
+                  meta:
+                    $ref: '#/components/schemas/ApiMeta'
+                x-fern-audiences:
+                  - public
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+        '498':
+          $ref: '#/components/responses/InvalidToken'
+        '499':
+          $ref: '#/components/responses/RequestCancelled'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-audiences:
+        - v2-beta
+      x-fern-sdk-group-name: v2
+      x-fern-sdk-method-name: rerank
   /v1/classify:
     post:
       summary: Classify
@@ -7466,12 +7659,10 @@ components:
         text:
           type: string
       description: Text content of the message.
-      x-fern-sdk-group-name: v2
     Content:
       oneOf:
         - $ref: '#/components/schemas/TextContent'
       description: A Content block which contains information about the content type and the content itself.
-      x-fern-sdk-group-name: v2
     UserMessage:
       required:
         - role
@@ -7490,8 +7681,7 @@ components:
                 $ref: '#/components/schemas/Content'
           description: "The content of the message. This can be a string or a list of content blocks.\nIf a string is provided, it will be treated as a text content block.\n"
       description: A message from the user.
-      x-fern-sdk-group-name: v2
-    ToolCall-2:
+    ToolCallV2:
       type: object
       properties:
         id:
@@ -7508,7 +7698,6 @@ components:
             arguments:
               type: string
       description: A array of tool calls to be made.
-      x-fern-sdk-group-name: v2
     ToolSource:
       type: object
       properties:
@@ -7517,7 +7706,6 @@ components:
           description: The unique identifier of the document
         tool_output:
           type: object
-      x-fern-sdk-group-name: v2
     DocumentSource:
       type: object
       properties:
@@ -7527,13 +7715,11 @@ components:
         document:
           type: object
       description: A document source object containing the unique identifier of the document and the document itself.
-      x-fern-sdk-group-name: v2
     Source:
       oneOf:
         - $ref: '#/components/schemas/ToolSource'
         - $ref: '#/components/schemas/DocumentSource'
       description: A source object containing information about the source of the data cited.
-      x-fern-sdk-group-name: v2
     Citation:
       type: object
       properties:
@@ -7548,7 +7734,6 @@ components:
           items:
             $ref: '#/components/schemas/Source'
       description: Citation information containing sources and the text cited.
-      x-fern-sdk-group-name: v2
     AssistantMessage:
       required:
         - role
@@ -7561,7 +7746,7 @@ components:
         tool_calls:
           type: array
           items:
-            $ref: '#/components/schemas/ToolCall-2'
+            $ref: '#/components/schemas/ToolCallV2'
         tool_plan:
           type: string
         content:
@@ -7576,7 +7761,6 @@ components:
           items:
             $ref: '#/components/schemas/Citation'
       description: A message from the assistant role can contain text and tool call information.
-      x-fern-sdk-group-name: v2
     SystemMessage:
       required:
         - role
@@ -7595,7 +7779,6 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/TextContent'
       description: A message from the system.
-      x-fern-sdk-group-name: v2
     Document:
       required:
         - data
@@ -7611,7 +7794,6 @@ components:
           type: string
           description: Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated
       description: "Relevant information that could be used by the model to generate a more accurate reply.\nThe content of each document are generally short (should be under 300 words). Metadata should be used to provide additional information, both the key name and the value will be\npassed to the model.\n"
-      x-fern-sdk-group-name: v2
     DocumentContent:
       required:
         - type
@@ -7625,14 +7807,12 @@ components:
         document:
           $ref: '#/components/schemas/Document'
       description: Document content.
-      x-fern-sdk-group-name: v2
     ToolContent:
       oneOf:
         - $ref: '#/components/schemas/TextContent'
         - $ref: '#/components/schemas/DocumentContent'
       description: A content block which contains information about the content of a tool result
-      x-fern-sdk-group-name: v2
-    ToolMessage-2:
+    ToolMessageV2:
       required:
         - role
         - tool_call_id
@@ -7654,13 +7834,12 @@ components:
                 $ref: '#/components/schemas/ToolContent'
           description: 'A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks'
       description: A message from the system.
-      x-fern-sdk-group-name: v2
-    ChatMessage-2:
+    ChatMessageV2:
       oneOf:
         - $ref: '#/components/schemas/UserMessage'
         - $ref: '#/components/schemas/AssistantMessage'
         - $ref: '#/components/schemas/SystemMessage'
-        - $ref: '#/components/schemas/ToolMessage-2'
+        - $ref: '#/components/schemas/ToolMessageV2'
       description: Represents a single message in the chat history from a given role.
       discriminator:
         propertyName: role
@@ -7668,15 +7847,13 @@ components:
           user: '#/components/schemas/UserMessage'
           assistant: '#/components/schemas/AssistantMessage'
           system: '#/components/schemas/SystemMessage'
-          tool: '#/components/schemas/ToolMessage-2'
-      x-fern-sdk-group-name: v2
+          tool: '#/components/schemas/ToolMessageV2'
     ChatMessages:
       type: array
       items:
-        $ref: '#/components/schemas/ChatMessage-2'
+        $ref: '#/components/schemas/ChatMessageV2'
       description: "A list of chat messages in chronological order, representing a conversation between the user and the model.\n\nMessages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/docs/chat-api).\n"
-      x-fern-sdk-group-name: v2
-    Tool-2:
+    ToolV2:
       type: object
       properties:
         type:
@@ -7696,7 +7873,6 @@ components:
               type: object
               description: The parameters of the function as a JSON schema.
           description: The function to be executed.
-      x-fern-sdk-group-name: v2
     CitationOptions:
       type: object
       properties:
@@ -7708,50 +7884,45 @@ components:
           type: string
           description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n"
       description: Options for controlling citation generation.
-      x-fern-sdk-group-name: v2
-    ResponseFormatType-2:
+    ResponseFormatTypeV2:
       enum:
         - text
         - json_object
       type: string
       description: "Defaults to `\"text\"`.\n\nWhen set to `\"json_object\"`, the model's output will be a valid JSON Object.\n"
-      x-fern-sdk-group-name: v2
       x-fern-audiences:
         - public
-    TextResponseFormat-2:
+    TextResponseFormatV2:
       required:
         - type
       type: object
       properties:
         type:
-          $ref: '#/components/schemas/ResponseFormatType-2'
-      x-fern-sdk-group-name: v2
+          $ref: '#/components/schemas/ResponseFormatTypeV2'
       x-fern-audiences:
         - public
-    JSONResponseFormat-2:
+    JsonResponseFormatV2:
       required:
         - type
       type: object
       properties:
         type:
-          $ref: '#/components/schemas/ResponseFormatType-2'
+          $ref: '#/components/schemas/ResponseFormatTypeV2'
         json_schema:
           type: object
           description: "[BETA] A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
-      x-fern-sdk-group-name: v2
       x-fern-audiences:
         - public
-    ResponseFormat-2:
+    ResponseFormatV2:
       oneOf:
-        - $ref: '#/components/schemas/TextResponseFormat-2'
-        - $ref: '#/components/schemas/JSONResponseFormat-2'
+        - $ref: '#/components/schemas/TextResponseFormatV2'
+        - $ref: '#/components/schemas/JsonResponseFormatV2'
       description: "Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.\n\nThe model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ \"type\": \"json_object\" }`.\n\nA [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.\n\n**Note**: When using  `{ \"type\": \"json_object\" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _\"Generate a JSON ...\"_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.\n**Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).\n"
       discriminator:
         propertyName: type
         mapping:
-          text: '#/components/schemas/TextResponseFormat-2'
-          json_object: '#/components/schemas/JSONResponseFormat-2'
-      x-fern-sdk-group-name: v2
+          text: '#/components/schemas/TextResponseFormatV2'
+          json_object: '#/components/schemas/JsonResponseFormatV2'
     ChatFinishReason:
       enum:
         - complete
@@ -7763,7 +7934,6 @@ components:
         - error_limit
       type: string
       description: The reason a chat request has finished.
-      x-fern-sdk-group-name: v2
     AssistantMessageResponse:
       required:
         - role
@@ -7776,7 +7946,7 @@ components:
         tool_calls:
           type: array
           items:
-            $ref: '#/components/schemas/ToolCall-2'
+            $ref: '#/components/schemas/ToolCallV2'
         tool_plan:
           type: string
         content:
@@ -7793,7 +7963,6 @@ components:
           items:
             $ref: '#/components/schemas/Citation'
       description: A message from the assistant role can contain text and tool call information.
-      x-fern-sdk-group-name: v2
     Usage:
       type: object
       properties:
@@ -7821,8 +7990,7 @@ components:
             output_tokens:
               type: number
               description: "The number of tokens produced by the model.\n"
-      x-fern-sdk-group-name: v2
-    NonStreamedChatResponse-2:
+    ChatResponse:
       required:
         - id
         - finish_reason
@@ -7837,7 +8005,6 @@ components:
           $ref: '#/components/schemas/AssistantMessageResponse'
         usage:
           $ref: '#/components/schemas/Usage'
-      x-fern-sdk-group-name: v2
     ChatStreamEventType:
       required:
         - type
@@ -7857,7 +8024,6 @@ components:
             - message-end
           type: string
       description: The streamed event types
-      x-fern-sdk-group-name: v2
     ChatMessageStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7878,7 +8044,6 @@ components:
                       type: string
                       description: The role of the message.
       description: A streamed event which signifies that a stream has started.
-      x-fern-sdk-group-name: v2
     ChatContentStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7902,7 +8067,6 @@ components:
                             - text
                           type: string
       description: A streamed delta event which signifies that a new content block has started.
-      x-fern-sdk-group-name: v2
     ChatContentDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7922,7 +8086,6 @@ components:
                         text:
                           type: string
       description: A streamed delta event which contains a delta of chat text content.
-      x-fern-sdk-group-name: v2
     ChatContentEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7931,7 +8094,6 @@ components:
             index:
               type: integer
       description: A streamed delta event which signifies that the content block has ended.
-      x-fern-sdk-group-name: v2
     ChatToolPlanDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7943,7 +8105,6 @@ components:
                 tool_plan:
                   type: string
       description: A streamed event which contains a delta of tool plan text.
-      x-fern-sdk-group-name: v2
     ChatToolCallStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7971,7 +8132,6 @@ components:
                         arguments:
                           type: string
       description: A streamed event delta which signifies a tool call has started streaming.
-      x-fern-sdk-group-name: v2
     ChatToolCallDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -7991,7 +8151,6 @@ components:
                         arguments:
                           type: string
       description: A streamed event delta which signifies a delta in tool call arguments.
-      x-fern-sdk-group-name: v2
     ChatToolCallEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -8000,7 +8159,6 @@ components:
             index:
               type: integer
       description: A streamed event delta which signifies a tool call has finished streaming.
-      x-fern-sdk-group-name: v2
     CitationStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -8017,7 +8175,6 @@ components:
                     citations:
                       $ref: '#/components/schemas/Citation'
       description: A streamed event which signifies a citation has been created.
-      x-fern-sdk-group-name: v2
     CitationEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -8026,7 +8183,6 @@ components:
             index:
               type: integer
       description: A streamed event which signifies a citation has finished streaming.
-      x-fern-sdk-group-name: v2
     ChatMessageEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -8042,8 +8198,7 @@ components:
                 usage:
                   $ref: '#/components/schemas/Usage'
       description: A streamed event which signifies that the chat message has ended.
-      x-fern-sdk-group-name: v2
-    StreamedChatResponse-2:
+    StreamedChatResponseV2:
       oneOf:
         - $ref: '#/components/schemas/ChatMessageStartEvent'
         - $ref: '#/components/schemas/ChatContentStartEvent'
@@ -8055,7 +8210,6 @@ components:
         - $ref: '#/components/schemas/ChatToolCallEndEvent'
         - $ref: '#/components/schemas/ChatMessageEndEvent'
       description: StreamedChatResponse is returned in streaming mode (specified with `stream=True` in the request).
-      x-fern-sdk-group-name: v2
     SingleGeneration:
       required:
         - text
@@ -10631,95 +10785,6 @@ components:
               api_version:
                 version: '1'
             api_version: v2
-    Texts:
-      required:
-        - texts
-        - model
-        - input_type
-      type: object
-      properties:
-        texts:
-          maxItems: 96
-          minItems: 1
-          type: array
-          items:
-            type: string
-            writeOnly: true
-            x-fern-audiences:
-              - public
-          description: An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
-          writeOnly: true
-          x-fern-audiences:
-            - public
-        model:
-          type: string
-          description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
-          writeOnly: true
-          x-fern-audiences:
-            - public
-        input_type:
-          $ref: '#/components/schemas/EmbedInputType'
-        embedding_types:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmbeddingType'
-          description: "Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.\n\n* `\"float\"`: Use this when you want to get back the default float embeddings. Valid for all models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models."
-          writeOnly: true
-          x-fern-audiences:
-            - public
-        truncate:
-          enum:
-            - NONE
-            - START
-            - END
-          type: string
-          description: "One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.\n\nPassing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.\n\nIf `NONE` is selected, when the input exceeds the maximum input token length an error will be returned."
-          default: END
-          writeOnly: true
-          x-fern-audiences:
-            - public
-      x-fern-sdk-group-name: v2
-      x-fern-audiences:
-        - public
-    Images:
-      required:
-        - images
-        - model
-        - input_type
-      type: object
-      properties:
-        model:
-          type: string
-          description: "Defaults to embed-english-v2.0\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\nAvailable models and corresponding embedding dimensions:\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
-          writeOnly: true
-          x-fern-audiences:
-            - public
-        input_type:
-          $ref: '#/components/schemas/EmbedInputType'
-        embedding_types:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmbeddingType'
-          description: "Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.\n* `\"float\"`: Use this when you want to get back the default float embeddings. Valid for all models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models."
-          writeOnly: true
-          x-fern-audiences:
-            - public
-      x-fern-sdk-group-name: v2
-      x-fern-audiences:
-        - public
-    V2EmbedRequest:
-      oneOf:
-        - $ref: '#/components/schemas/Texts'
-        - $ref: '#/components/schemas/Images'
-      discriminator:
-        propertyName: input_type
-        mapping:
-          search_document: '#/components/schemas/Texts'
-          search_query: '#/components/schemas/Texts'
-          classification: '#/components/schemas/Texts'
-          clustering: '#/components/schemas/Texts'
-          image: '#/components/schemas/Images'
-      x-fern-sdk-group-name: v2
     EmbedJob:
       required:
         - job_id
@@ -11929,6 +11994,18 @@ components:
       x-fern-sdk-group-name:
         - finetuning
         - finetuning
+    LoraTargetModules:
+      enum:
+        - LORA_TARGET_MODULES_UNSPECIFIED
+        - LORA_TARGET_MODULES_QV
+        - LORA_TARGET_MODULES_QKVO
+        - LORA_TARGET_MODULES_QKVO_FFN
+      type: string
+      description: "The possible combinations of LoRA modules to target.\n\n - LORA_TARGET_MODULES_UNSPECIFIED: Unspecified LoRA target modules.\n - LORA_TARGET_MODULES_QV: LoRA adapts the query and value matrices in transformer attention layers.\n - LORA_TARGET_MODULES_QKVO: LoRA adapts query, key, value, and output matrices in attention layers.\n - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN)."
+      default: LORA_TARGET_MODULES_UNSPECIFIED
+      x-fern-sdk-group-name:
+        - finetuning
+        - finetuning
     Hyperparameters:
       type: object
       properties:
@@ -11952,6 +12029,16 @@ components:
           type: number
           description: The learning rate to be used during training.
           format: double
+        lora_alpha:
+          type: integer
+          description: "Controls the scaling factor for LoRA updates. Higher values make the\nupdates more impactful."
+          format: int32
+        lora_rank:
+          type: integer
+          description: "Specifies the rank for low-rank matrices. Lower ranks reduce parameters\nbut may limit model flexibility."
+          format: int32
+        lora_target_modules:
+          $ref: '#/components/schemas/LoraTargetModules'
       description: The fine-tuning hyperparameters.
       x-fern-sdk-group-name:
         - finetuning

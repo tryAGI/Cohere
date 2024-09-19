@@ -23,14 +23,14 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Cohere.ChatMessage2> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> Messages { get; set; }
 
         /// <summary>
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
         /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Cohere.Tool2>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ToolV2>? Tools { get; set; }
 
         /// <summary>
         /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
@@ -52,8 +52,8 @@ namespace Cohere
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormat2JsonConverter))]
-        public global::Cohere.ResponseFormat2? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormatV2JsonConverter))]
+        public global::Cohere.ResponseFormatV2? ResponseFormat { get; set; }
 
         /// <summary>
         /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
