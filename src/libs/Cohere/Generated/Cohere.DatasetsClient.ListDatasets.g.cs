@@ -70,9 +70,21 @@ namespace Cohere
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/datasets",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("datasetType", datasetType) 
+                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("after", after?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("validationStatus", validationStatus?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?datasetType={datasetType}&before={before:yyyy-MM-ddTHH:mm:ssZ}&after={after:yyyy-MM-ddTHH:mm:ssZ}&limit={limit}&offset={offset}&validationStatus={(global::System.Uri.EscapeDataString(validationStatus?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

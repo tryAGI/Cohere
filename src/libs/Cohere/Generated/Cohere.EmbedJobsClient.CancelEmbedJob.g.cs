@@ -43,9 +43,13 @@ namespace Cohere
                 id: ref id,
                 xClientName: ref xClientName);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v1/embed-jobs/{id}/cancel",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/embed-jobs/{id}/cancel", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -1,4 +1,3 @@
-using System.Linq;
 
 #nullable enable
 
@@ -88,9 +87,23 @@ namespace Cohere
                 xClientName: ref xClientName,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/datasets",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("name", name) 
+                .AddRequiredParameter("type", type.ToValueString()) 
+                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString()) 
+                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString()) 
+                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true) 
+                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true) 
+                .AddOptionalParameter("text_separator", textSeparator) 
+                .AddOptionalParameter("csv_delimiter", csvDelimiter) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={(global::System.Uri.EscapeDataString(type.ToValueString() ?? string.Empty))}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),
@@ -113,13 +126,13 @@ namespace Cohere
             if (keepFields != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", keepFields.Select(x => x))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
                     name: "keep_fields");
             } 
             if (optionalFields != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", optionalFields.Select(x => x))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
                     name: "optional_fields");
             } 
             if (textSeparator != default)
