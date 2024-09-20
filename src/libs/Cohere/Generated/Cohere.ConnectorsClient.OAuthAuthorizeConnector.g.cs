@@ -48,9 +48,16 @@ namespace Cohere
                 afterTokenRedirect: ref afterTokenRedirect,
                 xClientName: ref xClientName);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v1/connectors/{id}/oauth/authorize",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("after_token_redirect", afterTokenRedirect) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/connectors/{id}/oauth/authorize?after_token_redirect={afterTokenRedirect}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
