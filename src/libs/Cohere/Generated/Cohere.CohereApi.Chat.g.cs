@@ -57,7 +57,7 @@ namespace Cohere
             }
             if (accepts != default)
             {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accepts", accepts);
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
             }
 
             var __pathBuilder = new PathBuilder(
