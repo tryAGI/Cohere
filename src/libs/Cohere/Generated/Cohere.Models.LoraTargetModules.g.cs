@@ -14,21 +14,21 @@ namespace Cohere
     public enum LoraTargetModules
     {
         /// <summary>
-        /// 
+        /// Unspecified LoRA target modules.
         /// </summary>
-        LORATARGETMODULESUNSPECIFIED,
+        UNSPECIFIED,
         /// <summary>
-        /// 
+        /// LoRA adapts the query and value matrices in transformer attention layers.
         /// </summary>
-        LORATARGETMODULESQV,
+        QV,
         /// <summary>
-        /// 
+        /// LoRA adapts query, key, value, and output matrices in attention layers.
         /// </summary>
-        LORATARGETMODULESQKVO,
+        QKVO,
         /// <summary>
-        /// 
+        /// LoRA adapts attention projection matrices and feed-forward networks (FFN).
         /// </summary>
-        LORATARGETMODULESQKVOFFN,
+        QKVOFFN,
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ namespace Cohere
         {
             return value switch
             {
-                LoraTargetModules.LORATARGETMODULESUNSPECIFIED => "LORA_TARGET_MODULES_UNSPECIFIED",
-                LoraTargetModules.LORATARGETMODULESQV => "LORA_TARGET_MODULES_QV",
-                LoraTargetModules.LORATARGETMODULESQKVO => "LORA_TARGET_MODULES_QKVO",
-                LoraTargetModules.LORATARGETMODULESQKVOFFN => "LORA_TARGET_MODULES_QKVO_FFN",
+                LoraTargetModules.UNSPECIFIED => "LORA_TARGET_MODULES_UNSPECIFIED",
+                LoraTargetModules.QV => "LORA_TARGET_MODULES_QV",
+                LoraTargetModules.QKVO => "LORA_TARGET_MODULES_QKVO",
+                LoraTargetModules.QKVOFFN => "LORA_TARGET_MODULES_QKVO_FFN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,10 +57,10 @@ namespace Cohere
         {
             return value switch
             {
-                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.LORATARGETMODULESUNSPECIFIED,
-                "LORA_TARGET_MODULES_QV" => LoraTargetModules.LORATARGETMODULESQV,
-                "LORA_TARGET_MODULES_QKVO" => LoraTargetModules.LORATARGETMODULESQKVO,
-                "LORA_TARGET_MODULES_QKVO_FFN" => LoraTargetModules.LORATARGETMODULESQKVOFFN,
+                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.UNSPECIFIED,
+                "LORA_TARGET_MODULES_QV" => LoraTargetModules.QV,
+                "LORA_TARGET_MODULES_QKVO" => LoraTargetModules.QKVO,
+                "LORA_TARGET_MODULES_QKVO_FFN" => LoraTargetModules.QKVOFFN,
                 _ => null,
             };
         }

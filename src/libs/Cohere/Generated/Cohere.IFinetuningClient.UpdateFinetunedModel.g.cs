@@ -49,7 +49,7 @@ namespace Cohere
             string name,
             global::Cohere.Settings settings,
             string? xClientName = default,
-            global::Cohere.Status? status = global::Cohere.Status.STATUSUNSPECIFIED,
+            global::Cohere.Status? status = global::Cohere.Status.UNSPECIFIED,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
