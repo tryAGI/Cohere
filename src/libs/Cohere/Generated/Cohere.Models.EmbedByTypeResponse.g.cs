@@ -23,11 +23,11 @@ namespace Cohere
         public required string Id { get; set; }
 
         /// <summary>
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; }
+        public global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; } = default!;
 
         /// <summary>
         /// The text entries for which embeddings were returned.

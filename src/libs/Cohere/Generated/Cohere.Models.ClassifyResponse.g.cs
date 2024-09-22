@@ -9,18 +9,16 @@ namespace Cohere
     public sealed partial class ClassifyResponse
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> Classifications { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> Classifications { get; set; } = default!;
 
         /// <summary>
         /// 
