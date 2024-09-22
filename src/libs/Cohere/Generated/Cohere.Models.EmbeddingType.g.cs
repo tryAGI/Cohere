@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     public enum EmbeddingType
     {

@@ -4,18 +4,18 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     public sealed partial class ClassifyExample
     {
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }

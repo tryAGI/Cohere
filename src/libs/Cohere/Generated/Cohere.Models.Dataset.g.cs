@@ -89,7 +89,7 @@ namespace Cohere
         public global::System.Collections.Generic.IList<string>? ValidationWarnings { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_info")]
         public global::Cohere.ParseInfo? ParseInfo { get; set; }

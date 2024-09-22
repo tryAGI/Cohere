@@ -27,7 +27,8 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
@@ -39,7 +40,8 @@ namespace Cohere
         /// * `embed-multilingual-light-v3.0`  384<br/>
         /// * `embed-english-v2.0`  4096<br/>
         /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768
+        /// * `embed-multilingual-v2.0`  768<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -55,23 +57,25 @@ namespace Cohere
         /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
         /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
         /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="truncate">
         /// One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
         /// Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.<br/>
         /// If `NONE` is selected, when the input exceeds the maximum input token length an error will be returned.<br/>
-        /// Default Value: END
+        /// Default Value: END<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.EmbedByTypeResponse> Embedv2Async(
+            global::System.Collections.Generic.IList<string> texts,
             string model,
+            global::System.Collections.Generic.IList<global::Cohere.EmbeddingType> embeddingTypes,
+            global::Cohere.Embedv2RequestTruncate truncate,
             string? xClientName = default,
-            global::System.Collections.Generic.IList<string>? texts = default,
             global::Cohere.EmbedInputType? inputType = default,
-            global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes = default,
-            global::Cohere.Embedv2RequestTruncate? truncate = global::Cohere.Embedv2RequestTruncate.END,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

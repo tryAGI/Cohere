@@ -4,18 +4,18 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     public sealed partial class ParseInfo
     {
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("separator")]
         public string? Separator { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delimiter")]
         public string? Delimiter { get; set; }

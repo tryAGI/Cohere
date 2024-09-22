@@ -23,7 +23,8 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="tokens">
-        /// The list of tokens to be detokenized.
+        /// The list of tokens to be detokenized.<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="model">
         /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
