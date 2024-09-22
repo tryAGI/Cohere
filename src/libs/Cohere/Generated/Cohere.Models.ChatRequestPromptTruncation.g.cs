@@ -20,11 +20,11 @@ namespace Cohere
         /// </summary>
         OFF,
         /// <summary>
-        /// 
+        /// Cohere Platform Only
         /// </summary>
         AUTO,
         /// <summary>
-        /// 
+        /// Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         AUTOPRESERVEORDER,
     }

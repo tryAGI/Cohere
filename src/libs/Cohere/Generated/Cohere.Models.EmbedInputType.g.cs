@@ -14,23 +14,23 @@ namespace Cohere
     public enum EmbedInputType
     {
         /// <summary>
-        /// 
+        /// Used for embeddings stored in a vector database for search use-cases.
         /// </summary>
         SearchDocument,
         /// <summary>
-        /// 
+        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
         /// </summary>
         SearchQuery,
         /// <summary>
-        /// 
+        /// Used for embeddings passed through a text classifier.
         /// </summary>
         Classification,
         /// <summary>
-        /// 
+        /// Used for the embeddings run through a clustering algorithm.
         /// </summary>
         Clustering,
         /// <summary>
-        /// 
+        /// Used for embeddings with image input.
         /// </summary>
         Image,
     }

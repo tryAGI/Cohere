@@ -46,6 +46,11 @@ namespace Cohere
                 xClientName: ref xClientName,
                 request: request);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/v1/classify",
                 baseUri: _httpClient.BaseAddress); 

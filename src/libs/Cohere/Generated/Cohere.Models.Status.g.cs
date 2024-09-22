@@ -19,41 +19,41 @@ namespace Cohere
     public enum Status
     {
         /// <summary>
-        /// 
+        /// Unspecified status.
         /// </summary>
-        STATUSUNSPECIFIED,
+        UNSPECIFIED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being fine-tuned.
         /// </summary>
-        STATUSFINETUNING,
+        FINETUNING,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being deployed.
         /// </summary>
-        STATUSDEPLOYINGAPI,
+        DEPLOYINGAPI,
         /// <summary>
-        /// 
+        /// The fine-tuned model is ready to receive requests.
         /// </summary>
-        STATUSREADY,
+        READY,
         /// <summary>
-        /// 
+        /// The fine-tuned model failed.
         /// </summary>
-        STATUSFAILED,
+        FAILED,
         /// <summary>
-        /// 
+        /// The fine-tuned model was deleted.
         /// </summary>
-        STATUSDELETED,
+        DELETED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is temporarily unavailable.
         /// </summary>
-        STATUSTEMPORARILYOFFLINE,
+        TEMPORARILYOFFLINE,
         /// <summary>
-        /// 
+        /// The fine-tuned model is paused (Vanilla only).
         /// </summary>
-        STATUSPAUSED,
+        PAUSED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is queued for training.
         /// </summary>
-        STATUSQUEUED,
+        QUEUED,
     }
 
     /// <summary>
@@ -68,15 +68,15 @@ namespace Cohere
         {
             return value switch
             {
-                Status.STATUSUNSPECIFIED => "STATUS_UNSPECIFIED",
-                Status.STATUSFINETUNING => "STATUS_FINETUNING",
-                Status.STATUSDEPLOYINGAPI => "STATUS_DEPLOYING_API",
-                Status.STATUSREADY => "STATUS_READY",
-                Status.STATUSFAILED => "STATUS_FAILED",
-                Status.STATUSDELETED => "STATUS_DELETED",
-                Status.STATUSTEMPORARILYOFFLINE => "STATUS_TEMPORARILY_OFFLINE",
-                Status.STATUSPAUSED => "STATUS_PAUSED",
-                Status.STATUSQUEUED => "STATUS_QUEUED",
+                Status.UNSPECIFIED => "STATUS_UNSPECIFIED",
+                Status.FINETUNING => "STATUS_FINETUNING",
+                Status.DEPLOYINGAPI => "STATUS_DEPLOYING_API",
+                Status.READY => "STATUS_READY",
+                Status.FAILED => "STATUS_FAILED",
+                Status.DELETED => "STATUS_DELETED",
+                Status.TEMPORARILYOFFLINE => "STATUS_TEMPORARILY_OFFLINE",
+                Status.PAUSED => "STATUS_PAUSED",
+                Status.QUEUED => "STATUS_QUEUED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,15 +87,15 @@ namespace Cohere
         {
             return value switch
             {
-                "STATUS_UNSPECIFIED" => Status.STATUSUNSPECIFIED,
-                "STATUS_FINETUNING" => Status.STATUSFINETUNING,
-                "STATUS_DEPLOYING_API" => Status.STATUSDEPLOYINGAPI,
-                "STATUS_READY" => Status.STATUSREADY,
-                "STATUS_FAILED" => Status.STATUSFAILED,
-                "STATUS_DELETED" => Status.STATUSDELETED,
-                "STATUS_TEMPORARILY_OFFLINE" => Status.STATUSTEMPORARILYOFFLINE,
-                "STATUS_PAUSED" => Status.STATUSPAUSED,
-                "STATUS_QUEUED" => Status.STATUSQUEUED,
+                "STATUS_UNSPECIFIED" => Status.UNSPECIFIED,
+                "STATUS_FINETUNING" => Status.FINETUNING,
+                "STATUS_DEPLOYING_API" => Status.DEPLOYINGAPI,
+                "STATUS_READY" => Status.READY,
+                "STATUS_FAILED" => Status.FAILED,
+                "STATUS_DELETED" => Status.DELETED,
+                "STATUS_TEMPORARILY_OFFLINE" => Status.TEMPORARILYOFFLINE,
+                "STATUS_PAUSED" => Status.PAUSED,
+                "STATUS_QUEUED" => Status.QUEUED,
                 _ => null,
             };
         }

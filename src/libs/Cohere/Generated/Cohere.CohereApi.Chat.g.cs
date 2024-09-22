@@ -51,6 +51,15 @@ namespace Cohere
                 accepts: ref accepts,
                 request: request);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+            if (accepts != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accepts", accepts);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/v1/chat",
                 baseUri: _httpClient.BaseAddress); 

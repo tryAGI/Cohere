@@ -44,7 +44,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.StrategyJsonConverter))]
-        public global::Cohere.Strategy? Strategy { get; set; } = global::Cohere.Strategy.STRATEGYUNSPECIFIED;
+        public global::Cohere.Strategy? Strategy { get; set; } = global::Cohere.Strategy.UNSPECIFIED;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
