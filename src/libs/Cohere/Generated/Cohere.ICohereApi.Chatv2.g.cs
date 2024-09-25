@@ -45,7 +45,7 @@ namespace Cohere
         /// </param>
         /// <param name="safetyMode">
         /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
-        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// When `OFF` is specified, the safety instruction will be omitted.<br/>
         /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
         /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
