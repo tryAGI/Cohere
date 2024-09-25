@@ -27,10 +27,9 @@ namespace Cohere
         /// <summary>
         /// A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_content")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> ToolContent { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

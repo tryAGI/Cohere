@@ -5,7 +5,7 @@ namespace Cohere
 {
     /// <summary>
     /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
-    /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+    /// When `OFF` is specified, the safety instruction will be omitted.<br/>
     /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
     /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
     /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
@@ -23,7 +23,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        OFF,
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace Cohere
             {
                 Chatv2RequestSafetyMode.CONTEXTUAL => "CONTEXTUAL",
                 Chatv2RequestSafetyMode.STRICT => "STRICT",
-                Chatv2RequestSafetyMode.NONE => "NONE",
+                Chatv2RequestSafetyMode.OFF => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,7 +53,7 @@ namespace Cohere
             {
                 "CONTEXTUAL" => Chatv2RequestSafetyMode.CONTEXTUAL,
                 "STRICT" => Chatv2RequestSafetyMode.STRICT,
-                "NONE" => Chatv2RequestSafetyMode.NONE,
+                "OFF" => Chatv2RequestSafetyMode.OFF,
                 _ => null,
             };
         }

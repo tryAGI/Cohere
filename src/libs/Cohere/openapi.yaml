@@ -773,8 +773,8 @@ paths:
                   enum:
                     - CONTEXTUAL
                     - STRICT
-                    - NONE
-                  description: "Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `NONE` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                    - OFF
+                  description: "Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `OFF` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                 max_tokens:
                   type: integer
                   description: "The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.\n"
@@ -9957,7 +9957,7 @@ components:
         tool_call_id:
           type: string
           description: The id of the associated tool call that has provided the given content
-        tool_content:
+        content:
           oneOf:
             - type: string
             - type: array
