@@ -8,17 +8,20 @@ namespace Cohere
         /// Chat with the model<br/>
         /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::Cohere.Chatv2Request request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Chat with the model<br/>
         /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.
         /// </param>
@@ -90,6 +93,7 @@ namespace Cohere
         global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             string model,
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
+            string? xClientName = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
             global::Cohere.CitationOptions? citationOptions = default,

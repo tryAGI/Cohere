@@ -7,10 +7,12 @@ namespace Cohere
     {
         partial void PrepareChatv2Arguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xClientName,
             global::Cohere.Chatv2Request request);
         partial void PrepareChatv2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xClientName,
             global::Cohere.Chatv2Request request);
         partial void ProcessChatv2Response(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,11 +27,13 @@ namespace Cohere
         /// Chat with the model<br/>
         /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::Cohere.Chatv2Request request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,7 +42,13 @@ namespace Cohere
                 client: _httpClient);
             PrepareChatv2Arguments(
                 httpClient: _httpClient,
+                xClientName: ref xClientName,
                 request: request);
+
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
 
             var __pathBuilder = new PathBuilder(
                 path: "/v2/chat",
@@ -60,6 +70,7 @@ namespace Cohere
             PrepareChatv2Request(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                xClientName: xClientName,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -103,6 +114,7 @@ namespace Cohere
         /// Chat with the model<br/>
         /// Generates a message from the model in response to a provided conversation. To learn how to use the Chat API with Streaming and RAG follow our Text Generation guides.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.
         /// </param>
@@ -174,6 +186,7 @@ namespace Cohere
         public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             string model,
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
+            string? xClientName = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
             global::Cohere.CitationOptions? citationOptions = default,
@@ -209,6 +222,7 @@ namespace Cohere
             };
 
             return await Chatv2Async(
+                xClientName: xClientName,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
