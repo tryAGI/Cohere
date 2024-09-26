@@ -9,19 +9,19 @@ namespace Cohere
     public sealed partial class Citation
     {
         /// <summary>
-        /// 
+        /// Start index of the cited snippet in the original source text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         public int? Start { get; set; }
 
         /// <summary>
-        /// 
+        /// End index of the cited snippet in the original source text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         public int? End { get; set; }
 
         /// <summary>
-        /// 
+        /// Text snippet that is being cited.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }

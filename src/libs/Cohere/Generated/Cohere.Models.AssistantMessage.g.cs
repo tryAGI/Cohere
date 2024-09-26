@@ -24,7 +24,7 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? ToolCalls { get; set; }
 
         /// <summary>
-        /// 
+        /// A chain-of-thought style reflection and plan that the model generates when working with Tools.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_plan")]
         public string? ToolPlan { get; set; }

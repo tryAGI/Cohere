@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// A array of tool calls to be made.
+    /// An array of tool calls to be made.
     /// </summary>
     public sealed partial class ToolCallV2
     {
