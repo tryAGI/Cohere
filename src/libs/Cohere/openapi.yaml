@@ -9357,6 +9357,7 @@ components:
       x-fern-audiences:
         - public
     TextResponseFormat:
+      title: Text Response
       required:
         - type
       type: object
@@ -9366,6 +9367,7 @@ components:
       x-fern-audiences:
         - public
     JSONResponseFormat:
+      title: JSON Object Response
       required:
         - type
       type: object
