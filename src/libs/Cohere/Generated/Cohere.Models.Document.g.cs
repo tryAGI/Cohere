@@ -18,7 +18,7 @@ namespace Cohere
         public required global::Cohere.DocumentData Data { get; set; }
 
         /// <summary>
-        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated
+        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
