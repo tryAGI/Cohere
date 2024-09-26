@@ -18,7 +18,7 @@ namespace Cohere
         public required global::Cohere.ResponseFormatTypeV2 Type { get; set; }
 
         /// <summary>
-        /// [BETA] A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.<br/>
+        /// A [JSON schema](https://json-schema.org/overview/what-is-jsonschema) object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.<br/>
         /// Example (required name and age object):<br/>
         /// ```json<br/>
         /// {<br/>
