@@ -72,10 +72,10 @@ namespace Cohere
         global::System.Threading.Tasks.Task<global::Cohere.EmbedByTypeResponse> Embedv2Async(
             global::System.Collections.Generic.IList<string> texts,
             string model,
+            global::Cohere.EmbedInputType inputType,
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType> embeddingTypes,
             global::Cohere.Embedv2RequestTruncate truncate,
             string? xClientName = default,
-            global::Cohere.EmbedInputType? inputType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
