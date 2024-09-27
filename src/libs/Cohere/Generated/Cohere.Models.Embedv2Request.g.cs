@@ -41,7 +41,8 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedInputTypeJsonConverter))]
-        public global::Cohere.EmbedInputType? InputType { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.EmbedInputType InputType { get; set; }
 
         /// <summary>
         /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
