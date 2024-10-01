@@ -111,6 +111,54 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.TextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.DocumentContent?, TResult>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsDocument && document != null)
+            {
+                return document(Document!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.TextContent?>? text = null,
+            global::System.Action<global::Cohere.DocumentContent?>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

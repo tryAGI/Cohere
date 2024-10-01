@@ -149,6 +149,64 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.GenerateStreamText?, TResult>? streamText = null,
+            global::System.Func<global::Cohere.GenerateStreamEnd?, TResult>? streamEnd = null,
+            global::System.Func<global::Cohere.GenerateStreamError?, TResult>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamText && streamText != null)
+            {
+                return streamText(StreamText!);
+            }
+            else if (IsStreamEnd && streamEnd != null)
+            {
+                return streamEnd(StreamEnd!);
+            }
+            else if (IsStreamError && streamError != null)
+            {
+                return streamError(StreamError!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.GenerateStreamText?>? streamText = null,
+            global::System.Action<global::Cohere.GenerateStreamEnd?>? streamEnd = null,
+            global::System.Action<global::Cohere.GenerateStreamError?>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamText)
+            {
+                streamText?.Invoke(StreamText!);
+            }
+            else if (IsStreamEnd)
+            {
+                streamEnd?.Invoke(StreamEnd!);
+            }
+            else if (IsStreamError)
+            {
+                streamError?.Invoke(StreamError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

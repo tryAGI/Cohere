@@ -112,6 +112,54 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.ChatMessage?, TResult>? chat = null,
+            global::System.Func<global::Cohere.ToolMessage?, TResult>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat && chat != null)
+            {
+                return chat(Chat!);
+            }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.ChatMessage?>? chat = null,
+            global::System.Action<global::Cohere.ToolMessage?>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

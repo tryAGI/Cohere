@@ -187,6 +187,74 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.UserMessage?, TResult>? user = null,
+            global::System.Func<global::Cohere.AssistantMessage?, TResult>? assistant = null,
+            global::System.Func<global::Cohere.SystemMessage?, TResult>? system = null,
+            global::System.Func<global::Cohere.ToolMessageV2?, TResult>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUser && user != null)
+            {
+                return user(User!);
+            }
+            else if (IsAssistant && assistant != null)
+            {
+                return assistant(Assistant!);
+            }
+            else if (IsSystem && system != null)
+            {
+                return system(System!);
+            }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.UserMessage?>? user = null,
+            global::System.Action<global::Cohere.AssistantMessage?>? assistant = null,
+            global::System.Action<global::Cohere.SystemMessage?>? system = null,
+            global::System.Action<global::Cohere.ToolMessageV2?>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
