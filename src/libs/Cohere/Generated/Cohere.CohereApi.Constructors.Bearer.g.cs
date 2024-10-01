@@ -5,12 +5,12 @@ namespace Cohere
 {
     public sealed partial class CohereApi
     {
-        /// <inheritdoc cref="CohereApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::Cohere.EndPointAuthorization?)"/>
+        /// <inheritdoc cref="CohereApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Cohere.EndPointAuthorization}?)"/>
         public CohereApi(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::Cohere.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
+            global::System.Collections.Generic.List<global::Cohere.EndPointAuthorization>? authorizations = null) : this(httpClient, baseUri, authorizations)
         {
             Authorizing(_httpClient, ref apiKey);
 
