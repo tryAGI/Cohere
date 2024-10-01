@@ -377,6 +377,124 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.ChatMessageStartEvent?, TResult>? messageStartEvent = null,
+            global::System.Func<global::Cohere.ChatContentStartEvent?, TResult>? contentStartEvent = null,
+            global::System.Func<global::Cohere.ChatContentDeltaEvent?, TResult>? contentDeltaEvent = null,
+            global::System.Func<global::Cohere.ChatContentEndEvent?, TResult>? contentEndEvent = null,
+            global::System.Func<global::Cohere.ChatToolPlanDeltaEvent?, TResult>? toolPlanDeltaEvent = null,
+            global::System.Func<global::Cohere.ChatToolCallStartEvent?, TResult>? toolCallStartEvent = null,
+            global::System.Func<global::Cohere.ChatToolCallDeltaEvent?, TResult>? toolCallDeltaEvent = null,
+            global::System.Func<global::Cohere.ChatToolCallEndEvent?, TResult>? toolCallEndEvent = null,
+            global::System.Func<global::Cohere.ChatMessageEndEvent?, TResult>? messageEndEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStartEvent && messageStartEvent != null)
+            {
+                return messageStartEvent(MessageStartEvent!);
+            }
+            else if (IsContentStartEvent && contentStartEvent != null)
+            {
+                return contentStartEvent(ContentStartEvent!);
+            }
+            else if (IsContentDeltaEvent && contentDeltaEvent != null)
+            {
+                return contentDeltaEvent(ContentDeltaEvent!);
+            }
+            else if (IsContentEndEvent && contentEndEvent != null)
+            {
+                return contentEndEvent(ContentEndEvent!);
+            }
+            else if (IsToolPlanDeltaEvent && toolPlanDeltaEvent != null)
+            {
+                return toolPlanDeltaEvent(ToolPlanDeltaEvent!);
+            }
+            else if (IsToolCallStartEvent && toolCallStartEvent != null)
+            {
+                return toolCallStartEvent(ToolCallStartEvent!);
+            }
+            else if (IsToolCallDeltaEvent && toolCallDeltaEvent != null)
+            {
+                return toolCallDeltaEvent(ToolCallDeltaEvent!);
+            }
+            else if (IsToolCallEndEvent && toolCallEndEvent != null)
+            {
+                return toolCallEndEvent(ToolCallEndEvent!);
+            }
+            else if (IsMessageEndEvent && messageEndEvent != null)
+            {
+                return messageEndEvent(MessageEndEvent!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.ChatMessageStartEvent?>? messageStartEvent = null,
+            global::System.Action<global::Cohere.ChatContentStartEvent?>? contentStartEvent = null,
+            global::System.Action<global::Cohere.ChatContentDeltaEvent?>? contentDeltaEvent = null,
+            global::System.Action<global::Cohere.ChatContentEndEvent?>? contentEndEvent = null,
+            global::System.Action<global::Cohere.ChatToolPlanDeltaEvent?>? toolPlanDeltaEvent = null,
+            global::System.Action<global::Cohere.ChatToolCallStartEvent?>? toolCallStartEvent = null,
+            global::System.Action<global::Cohere.ChatToolCallDeltaEvent?>? toolCallDeltaEvent = null,
+            global::System.Action<global::Cohere.ChatToolCallEndEvent?>? toolCallEndEvent = null,
+            global::System.Action<global::Cohere.ChatMessageEndEvent?>? messageEndEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStartEvent)
+            {
+                messageStartEvent?.Invoke(MessageStartEvent!);
+            }
+            else if (IsContentStartEvent)
+            {
+                contentStartEvent?.Invoke(ContentStartEvent!);
+            }
+            else if (IsContentDeltaEvent)
+            {
+                contentDeltaEvent?.Invoke(ContentDeltaEvent!);
+            }
+            else if (IsContentEndEvent)
+            {
+                contentEndEvent?.Invoke(ContentEndEvent!);
+            }
+            else if (IsToolPlanDeltaEvent)
+            {
+                toolPlanDeltaEvent?.Invoke(ToolPlanDeltaEvent!);
+            }
+            else if (IsToolCallStartEvent)
+            {
+                toolCallStartEvent?.Invoke(ToolCallStartEvent!);
+            }
+            else if (IsToolCallDeltaEvent)
+            {
+                toolCallDeltaEvent?.Invoke(ToolCallDeltaEvent!);
+            }
+            else if (IsToolCallEndEvent)
+            {
+                toolCallEndEvent?.Invoke(ToolCallEndEvent!);
+            }
+            else if (IsMessageEndEvent)
+            {
+                messageEndEvent?.Invoke(MessageEndEvent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

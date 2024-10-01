@@ -18,6 +18,7 @@ namespace Cohere
         public const string BaseUrl = "https://api.cohere.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::Cohere.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -28,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// Datasets API
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -36,7 +37,7 @@ namespace Cohere
         /// <summary>
         /// Connectors API
         /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient)
+        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -44,7 +45,7 @@ namespace Cohere
         /// <summary>
         /// Embed Jobs API
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -52,7 +53,7 @@ namespace Cohere
         /// <summary>
         /// Finetuning API (Beta)
         /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(_httpClient)
+        public FinetuningClient Finetuning => new FinetuningClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -60,7 +61,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -71,13 +72,16 @@ namespace Cohere
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public CohereApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Cohere.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }
