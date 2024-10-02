@@ -14,25 +14,25 @@ namespace Cohere
     public enum ChatFinishReason
     {
         /// <summary>
-        /// The model finished sending a complete message.
+        /// 
         /// </summary>
-        Complete,
+        COMPLETE,
         /// <summary>
-        /// One of the provided `stop_sequence` entries was reached in the model's generation.
+        /// 
         /// </summary>
-        StopSequence,
+        STOPSEQUENCE,
         /// <summary>
-        /// The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.
+        /// 
         /// </summary>
-        MaxTokens,
+        MAXTOKENS,
         /// <summary>
-        /// The model generated a Tool Call and is expecting a Tool Message in return
+        /// 
         /// </summary>
-        ToolCall,
+        TOOLCALL,
         /// <summary>
-        /// The generation failed due to an internal error
+        /// 
         /// </summary>
-        Error,
+        ERROR,
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace Cohere
         {
             return value switch
             {
-                ChatFinishReason.Complete => "complete",
-                ChatFinishReason.StopSequence => "stop_sequence",
-                ChatFinishReason.MaxTokens => "max_tokens",
-                ChatFinishReason.ToolCall => "tool_call",
-                ChatFinishReason.Error => "error",
+                ChatFinishReason.COMPLETE => "COMPLETE",
+                ChatFinishReason.STOPSEQUENCE => "STOP_SEQUENCE",
+                ChatFinishReason.MAXTOKENS => "MAX_TOKENS",
+                ChatFinishReason.TOOLCALL => "TOOL_CALL",
+                ChatFinishReason.ERROR => "ERROR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,11 +62,11 @@ namespace Cohere
         {
             return value switch
             {
-                "complete" => ChatFinishReason.Complete,
-                "stop_sequence" => ChatFinishReason.StopSequence,
-                "max_tokens" => ChatFinishReason.MaxTokens,
-                "tool_call" => ChatFinishReason.ToolCall,
-                "error" => ChatFinishReason.Error,
+                "COMPLETE" => ChatFinishReason.COMPLETE,
+                "STOP_SEQUENCE" => ChatFinishReason.STOPSEQUENCE,
+                "MAX_TOKENS" => ChatFinishReason.MAXTOKENS,
+                "TOOL_CALL" => ChatFinishReason.TOOLCALL,
+                "ERROR" => ChatFinishReason.ERROR,
                 _ => null,
             };
         }

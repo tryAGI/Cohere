@@ -916,7 +916,7 @@ paths:
                 content:
                   - type: text
                     text: "LLMs stand for Large Language Models, which are a type of neural network model specialized in processing and generating human language. They are designed to understand and respond to natural language input and have become increasingly popular and valuable in recent years.\n\nLLMs are trained on vast amounts of text data, enabling them to learn patterns, grammar, and semantic meanings present in the language. These models can then be used for various natural language processing tasks, such as text generation, summarization, question answering, machine translation, sentiment analysis, and even some aspects of natural language understanding.\n\nSome well-known examples of LLMs include:\n\n1. GPT-3 (Generative Pre-trained Transformer 3) — An open-source LLM developed by OpenAI, capable of generating human-like text and performing various language tasks.\n\n2. BERT (Bidirectional Encoder Representations from Transformers) — A Google-developed LLM that is particularly good at understanding contextual relationships in text, and is widely used for natural language understanding tasks like sentiment analysis and named entity recognition.\n\n3. T5 (Text-to-Text Transfer Transformer) — Also from Google, T5 is a flexible LLM that frames all language tasks as text-to-text problems, where the model learns to generate output text based on input text prompts.\n\n4. RoBERTa (Robustly Optimized BERT Approach) — A variant of BERT that uses additional training techniques to improve performance.\n\n5. DeBERTa (Decoding-enhanced BERT with disentangled attention) — Another variant of BERT that introduces a new attention mechanism.\n\nLLMs have become increasingly powerful and larger in scale, improving the accuracy and sophistication of language tasks. They are also being used as a foundation for developing various applications, including chatbots, content recommendation systems, language translation services, and more. \n\nThe future of LLMs holds the potential for even more sophisticated language technologies, with ongoing research and development focused on enhancing their capabilities, improving efficiency, and exploring their applications in various domains."
-              finish_reason: complete
+              finish_reason: COMPLETE
               usage:
                 billed_units:
                   input_tokens: 5
@@ -1055,7 +1055,7 @@ paths:
                         document:
                           snippet: "1997, 1998, 2000 and 2001 also rank amongst some of the very best years.\nYet the way many music consumers – especially teenagers and young women’s – embraced their output deserves its own chapter. If Jonas Brothers and more recently One Direction reached a great level of popularity during the past decade, the type of success achieved by Backstreet Boys is in a completely different level as they really dominated the business for a few years all over the world, including in some countries that were traditionally hard to penetrate for Western artists.\n\nWe will try to analyze the extent of that hegemony with this new article with final results which will more than surprise many readers."
                           title: 'CSPC: Backstreet Boys Popularity Analysis - ChartMasters'
-              finish_reason: complete
+              finish_reason: COMPLETE
               usage:
                 billed_units:
                   input_tokens: 682
@@ -1180,7 +1180,7 @@ paths:
                 data:
                   type: message-end
                   delta:
-                    finish_reason: complete
+                    finish_reason: COMPLETE
                     usage:
                       billed_units:
                         input_tokens: 3
@@ -1249,7 +1249,7 @@ paths:
                     function:
                       name: query_product_catalog
                       arguments: '{"category": "Electronics"}'
-              finish_reason: tool_call
+              finish_reason: TOOL_CALL
               usage:
                 billed_units:
                   input_tokens: 127
@@ -10100,11 +10100,11 @@ components:
           json_object: '#/components/schemas/JsonResponseFormatV2'
     ChatFinishReason:
       enum:
-        - complete
-        - stop_sequence
-        - max_tokens
-        - tool_call
-        - error
+        - COMPLETE
+        - STOP_SEQUENCE
+        - MAX_TOKENS
+        - TOOL_CALL
+        - ERROR
       type: string
       description: "The reason a chat request has finished.\n\n- **complete**: The model finished sending a complete message.\n- **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.\n- **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.\n- **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return\n- **error**: The generation failed due to an internal error\n"
     AssistantMessageResponse:
