@@ -73,7 +73,7 @@ namespace Cohere
         public global::Cohere.ChatRequestPromptTruncation? PromptTruncation { get; set; }
 
         /// <summary>
-        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) one.<br/>
+        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
         /// When specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).<br/>
         /// Compatible Deployments: Cohere Platform
         /// </summary>
