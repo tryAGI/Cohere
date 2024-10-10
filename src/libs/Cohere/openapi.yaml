@@ -87,7 +87,7 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/ChatConnector'
-                  description: "Accepts `{\"id\": \"web-search\"}`, and/or the `\"id\"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.\n\nWhen specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).\n\nCompatible Deployments: Cohere Platform\n"
+                  description: "Accepts `{\"id\": \"web-search\"}`, and/or the `\"id\"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) one.\n\nWhen specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).\n\nCompatible Deployments: Cohere Platform\n"
                   x-fern-audiences:
                     - public
                 search_queries_only:
@@ -7902,7 +7902,7 @@ paths:
       tags:
         - /connectors
       summary: Create a Connector
-      description: 'Creates a new connector. The connector is tested during registration and will cancel registration when the test is unsuccessful. See [''Creating and Deploying a Connector''](https://docs.cohere.com/docs/creating-and-deploying-a-connector) for more information.'
+      description: 'Creates a new connector. The connector is tested during registration and will cancel registration when the test is unsuccessful. See [''Creating and Deploying a Connector''](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) for more information.'
       operationId: create-connector
       parameters:
         - $ref: '#/components/parameters/RequestSource'
