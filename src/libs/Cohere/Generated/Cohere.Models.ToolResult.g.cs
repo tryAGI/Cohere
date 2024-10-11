@@ -20,7 +20,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Cohere.ToolResultOutput> Outputs { get; set; }
+        public required global::System.Collections.Generic.IList<object> Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

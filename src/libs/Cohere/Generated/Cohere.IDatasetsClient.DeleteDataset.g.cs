@@ -12,7 +12,7 @@ namespace Cohere
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.DeleteDatasetResponse> DeleteDatasetAsync(
+        global::System.Threading.Tasks.Task<object> DeleteDatasetAsync(
             string id,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);

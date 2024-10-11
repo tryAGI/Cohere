@@ -33,7 +33,7 @@ namespace Cohere
         /// **Note**: This field must not be specified when the `type` is set to `"text"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        public global::Cohere.JSONResponseFormatSchema? Schema { get; set; }
+        public object? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

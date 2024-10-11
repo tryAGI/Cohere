@@ -56,7 +56,7 @@ namespace Cohere
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        public global::Cohere.ClassifyResponseClassificationLabels Labels { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ClassifyResponseClassificationLabels2> Labels { get; set; } = default!;
 
         /// <summary>
         /// The type of classification performed<br/>
