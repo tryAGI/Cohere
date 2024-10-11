@@ -15,7 +15,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.DocumentData Data { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 
         /// <summary>
         /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.

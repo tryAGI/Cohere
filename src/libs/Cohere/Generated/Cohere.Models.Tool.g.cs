@@ -35,7 +35,7 @@ namespace Cohere
         /// ```
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameter_definitions")]
-        public global::Cohere.ToolParameterDefinitions? ParameterDefinitions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ToolParameterDefinitions2>? ParameterDefinitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

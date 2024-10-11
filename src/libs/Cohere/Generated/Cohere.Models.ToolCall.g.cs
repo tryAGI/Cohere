@@ -20,7 +20,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.ToolCallParameters Parameters { get; set; }
+        public required object Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

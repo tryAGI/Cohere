@@ -18,7 +18,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
-        public global::Cohere.DocumentSourceDocument? Document { get; set; }
+        public object? Document { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

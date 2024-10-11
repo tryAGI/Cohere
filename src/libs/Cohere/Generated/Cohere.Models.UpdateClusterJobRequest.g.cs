@@ -43,13 +43,13 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tracking_metrics")]
-        public global::Cohere.UpdateClusterJobRequestInputTrackingMetrics? InputTrackingMetrics { get; set; }
+        public object? InputTrackingMetrics { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tracking_metrics")]
-        public global::Cohere.UpdateClusterJobRequestOutputTrackingMetrics? OutputTrackingMetrics { get; set; }
+        public object? OutputTrackingMetrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
