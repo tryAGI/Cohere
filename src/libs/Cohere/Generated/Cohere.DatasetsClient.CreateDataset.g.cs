@@ -250,7 +250,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.CreateDatasetResponse), JsonSerializerContext) as global::Cohere.CreateDatasetResponse ??
+                global::Cohere.CreateDatasetResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

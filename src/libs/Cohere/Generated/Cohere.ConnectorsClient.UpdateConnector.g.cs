@@ -79,7 +79,7 @@ namespace Cohere
                 httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
             }
 
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -129,7 +129,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.UpdateConnectorResponse), JsonSerializerContext) as global::Cohere.UpdateConnectorResponse ??
+                global::Cohere.UpdateConnectorResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

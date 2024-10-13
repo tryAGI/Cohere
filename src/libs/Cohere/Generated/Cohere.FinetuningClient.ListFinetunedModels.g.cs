@@ -131,7 +131,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.ListFinetunedModelsResponse), JsonSerializerContext) as global::Cohere.ListFinetunedModelsResponse ??
+                global::Cohere.ListFinetunedModelsResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
