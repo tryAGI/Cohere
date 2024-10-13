@@ -109,7 +109,7 @@ namespace Cohere
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.CheckAPIKeyResponse), JsonSerializerContext) as global::Cohere.CheckAPIKeyResponse ??
+                global::Cohere.CheckAPIKeyResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
