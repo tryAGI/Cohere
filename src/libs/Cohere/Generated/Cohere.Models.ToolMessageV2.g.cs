@@ -6,7 +6,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// A message from the system.
+    /// A message with Tool outputs.
     /// </summary>
     public sealed partial class ToolMessageV2
     {
@@ -25,11 +25,12 @@ namespace Cohere
         public required string ToolCallId { get; set; }
 
         /// <summary>
-        /// A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
+        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
