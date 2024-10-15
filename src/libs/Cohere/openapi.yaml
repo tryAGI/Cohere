@@ -9995,7 +9995,7 @@ components:
       required:
         - role
         - tool_call_id
-        - tool_content
+        - content
       type: object
       properties:
         role:
@@ -10011,8 +10011,8 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/ToolContent'
-          description: 'A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks'
-      description: A message from the system.
+          description: 'Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks'
+      description: A message with Tool outputs.
     ChatMessageV2:
       oneOf:
         - $ref: '#/components/schemas/UserMessage'
