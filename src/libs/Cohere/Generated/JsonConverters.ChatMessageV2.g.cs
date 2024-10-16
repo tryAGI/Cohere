@@ -15,53 +15,40 @@ namespace Cohere.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            global::Cohere.ChatMessageV2Discriminator? discriminator = default;
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessageV2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessageV2Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatMessageV2Discriminator)}");
+            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::Cohere.UserMessage? user = default;
-            try
+            if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.User)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.UserMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.UserMessage).Name}");
-                user = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.UserMessage)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::Cohere.AssistantMessage? assistant = default;
-            try
+            if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.Assistant)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.AssistantMessage).Name}");
-                assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessage)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::Cohere.SystemMessage? system = default;
-            try
+            if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.System)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.SystemMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.SystemMessage).Name}");
-                system = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.SystemMessage)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::Cohere.ToolMessageV2? tool = default;
-            try
+            if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.Tool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolMessageV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolMessageV2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolMessageV2).Name}");
-                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ToolMessageV2)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Cohere.ChatMessageV2(
@@ -70,31 +57,6 @@ namespace Cohere.JsonConverters
                 system,
                 tool
                 );
-
-            if (user != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.UserMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.UserMessage).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (assistant != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.AssistantMessage).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (system != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.SystemMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.SystemMessage).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (tool != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolMessageV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolMessageV2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolMessageV2).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }

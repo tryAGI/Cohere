@@ -4,40 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// A message from the assistant role can contain text and tool call information.
+    /// 
     /// </summary>
-    public sealed partial class AssistantMessageResponse
+    public sealed partial class ResponseFormatV2Discriminator
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter))]
-        public global::Cohere.AssistantMessageResponseRole Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? ToolCalls { get; set; }
-
-        /// <summary>
-        /// A chain-of-thought style reflection and plan that the model generates when working with Tools.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_plan")]
-        public string? ToolPlan { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::Cohere.ContentItem>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Cohere.Citation>? Citations { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter))]
+        public global::Cohere.ResponseFormatV2DiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,14 +52,14 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.AssistantMessageResponse? FromJson(
+        public static global::Cohere.ResponseFormatV2Discriminator? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Cohere.AssistantMessageResponse),
-                jsonSerializerContext) as global::Cohere.AssistantMessageResponse;
+                typeof(global::Cohere.ResponseFormatV2Discriminator),
+                jsonSerializerContext) as global::Cohere.ResponseFormatV2Discriminator;
         }
 
         /// <summary>
@@ -93,11 +69,11 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Cohere.AssistantMessageResponse? FromJson(
+        public static global::Cohere.ResponseFormatV2Discriminator? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.AssistantMessageResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.ResponseFormatV2Discriminator>(
                 json,
                 jsonSerializerOptions);
         }
