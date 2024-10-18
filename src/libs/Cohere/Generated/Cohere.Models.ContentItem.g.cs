@@ -11,6 +11,11 @@ namespace Cohere
     public readonly partial struct ContentItem : global::System.IEquatable<ContentItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.AssistantMessageResponseContentItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +48,19 @@ namespace Cohere
         public ContentItem(global::Cohere.TextContent? value)
         {
             Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentItem(
+            global::Cohere.AssistantMessageResponseContentItemDiscriminatorType? type,
+            global::Cohere.TextContent? text
+            )
+        {
+            Type = type;
+
+            Text = text;
         }
 
         /// <summary>

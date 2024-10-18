@@ -16,11 +16,10 @@ namespace Cohere.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Cohere.AssistantMessageResponseContentItemDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessageResponseContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessageResponseContentItemDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessageResponseContentItemDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Cohere.TextContent? text = default;
             if (discriminator?.Type == global::Cohere.AssistantMessageResponseContentItemDiscriminatorType.Text)
@@ -31,6 +30,7 @@ namespace Cohere.JsonConverters
             }
 
             var result = new global::Cohere.ContentItem(
+                discriminator?.Type,
                 text
                 );
 

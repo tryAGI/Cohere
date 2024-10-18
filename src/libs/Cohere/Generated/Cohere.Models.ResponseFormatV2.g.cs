@@ -18,6 +18,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ResponseFormatV2DiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.TextResponseFormatV2? Text { get; init; }
 #else
@@ -89,10 +94,13 @@ namespace Cohere
         /// 
         /// </summary>
         public ResponseFormatV2(
+            global::Cohere.ResponseFormatV2DiscriminatorType? type,
             global::Cohere.TextResponseFormatV2? text,
             global::Cohere.JsonResponseFormatV2? json
             )
         {
+            Type = type;
+
             Text = text;
             Json = json;
         }

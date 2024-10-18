@@ -35,6 +35,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.SystemMessageRoleNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.DocumentContentTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.DocumentContentTypeNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeJsonConverter),
+            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ToolMessageV2RoleJsonConverter),
             typeof(global::Cohere.JsonConverters.ToolMessageV2RoleNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter),

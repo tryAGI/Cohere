@@ -11,6 +11,11 @@ namespace Cohere
     public readonly partial struct ChatMessageV2 : global::System.IEquatable<ChatMessageV2>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatMessageV2DiscriminatorRole? Role { get; }
+
+        /// <summary>
         /// A message from the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -154,12 +159,15 @@ namespace Cohere
         /// 
         /// </summary>
         public ChatMessageV2(
+            global::Cohere.ChatMessageV2DiscriminatorRole? role,
             global::Cohere.UserMessage? user,
             global::Cohere.AssistantMessage? assistant,
             global::Cohere.SystemMessage? system,
             global::Cohere.ToolMessageV2? tool
             )
         {
+            Role = role;
+
             User = user;
             Assistant = assistant;
             System = system;

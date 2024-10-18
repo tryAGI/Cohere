@@ -16,11 +16,10 @@ namespace Cohere.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Cohere.ChatMessageV2Discriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessageV2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessageV2Discriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatMessageV2Discriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Cohere.UserMessage? user = default;
             if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.User)
@@ -52,6 +51,7 @@ namespace Cohere.JsonConverters
             }
 
             var result = new global::Cohere.ChatMessageV2(
+                discriminator?.Role,
                 user,
                 assistant,
                 system,
