@@ -11,6 +11,11 @@ namespace Cohere
     public readonly partial struct ToolContent : global::System.IEquatable<ToolContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ToolContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -84,10 +89,13 @@ namespace Cohere
         /// 
         /// </summary>
         public ToolContent(
+            global::Cohere.ToolContentDiscriminatorType? type,
             global::Cohere.TextContent? text,
             global::Cohere.DocumentContent? document
             )
         {
+            Type = type;
+
             Text = text;
             Document = document;
         }
