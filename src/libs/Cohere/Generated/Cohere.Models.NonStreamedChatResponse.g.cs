@@ -22,6 +22,12 @@ namespace Cohere
         public global::System.Guid? GenerationId { get; set; }
 
         /// <summary>
+        /// Unique identifier for the response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        public global::System.Guid? ResponseId { get; set; }
+
+        /// <summary>
         /// Inline citations for the generated reply.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
