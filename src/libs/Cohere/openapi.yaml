@@ -292,6 +292,12 @@ paths:
                 - public
               format: uuid
               description: Unique identifier for the generated reply. Useful for submitting feedback.
+            response_id:
+              type: string
+              x-fern-audiences:
+                - public
+              format: uuid
+              description: Unique identifier for the response.
             citations:
               type: array
               x-fern-audiences:
@@ -9579,6 +9585,12 @@ components:
         generation_id:
           type: string
           description: Unique identifier for the generated reply. Useful for submitting feedback.
+          format: uuid
+          x-fern-audiences:
+            - public
+        response_id:
+          type: string
+          description: Unique identifier for the response.
           format: uuid
           x-fern-audiences:
             - public
