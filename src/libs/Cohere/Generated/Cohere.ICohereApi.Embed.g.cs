@@ -6,8 +6,8 @@ namespace Cohere
     {
         /// <summary>
         /// Embed<br/>
-        /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
-        /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
@@ -21,8 +21,8 @@ namespace Cohere
 
         /// <summary>
         /// Embed<br/>
-        /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
-        /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
