@@ -16,6 +16,13 @@ namespace Cohere
         public global::System.Collections.Generic.IList<string>? Texts { get; set; }
 
         /// <summary>
+        /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
+        /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
+        public global::System.Collections.Generic.IList<string>? Images { get; set; }
+
+        /// <summary>
         /// Defaults to embed-english-v2.0<br/>
         /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Available models and corresponding embedding dimensions:<br/>
