@@ -140,6 +140,10 @@ namespace Cohere
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
         /// Included only in requests
         /// </param>
+        /// <param name="images">
+        /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
+        /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.
+        /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
         /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
@@ -186,11 +190,13 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType> embeddingTypes,
             global::Cohere.Embedv2RequestTruncate truncate,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? images = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Cohere.Embedv2Request
             {
                 Texts = texts,
+                Images = images,
                 Model = model,
                 InputType = inputType,
                 EmbeddingTypes = embeddingTypes,
