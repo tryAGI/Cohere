@@ -9,6 +9,12 @@ namespace Cohere
     public sealed partial class ApiMetaBilledUnits
     {
         /// <summary>
+        /// The number of billed images.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
+        public double? Images { get; set; }
+
+        /// <summary>
         /// The number of billed input tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]

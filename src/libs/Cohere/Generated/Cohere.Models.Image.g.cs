@@ -6,47 +6,35 @@ namespace Cohere
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class EmbedByTypeResponse
+    public sealed partial class Image
     {
         /// <summary>
-        /// 
+        /// Width of the image in pixels
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter))]
-        public global::Cohere.EmbedByTypeResponseResponseType? ResponseType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("width")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required double Width { get; set; }
 
         /// <summary>
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
+        /// Height of the image in pixels
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        public global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; } = default!;
-
-        /// <summary>
-        /// The text entries for which embeddings were returned.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("height")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Texts { get; set; }
+        public required double Height { get; set; }
 
         /// <summary>
-        /// The image entries for which embeddings were returned.
+        /// Format of the image
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        public global::System.Collections.Generic.IList<global::Cohere.Image>? Images { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Format { get; set; }
 
         /// <summary>
-        /// 
+        /// Bit depth of the image
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("bit_depth")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double BitDepth { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,14 +73,14 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.EmbedByTypeResponse? FromJson(
+        public static global::Cohere.Image? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Cohere.EmbedByTypeResponse),
-                jsonSerializerContext) as global::Cohere.EmbedByTypeResponse;
+                typeof(global::Cohere.Image),
+                jsonSerializerContext) as global::Cohere.Image;
         }
 
         /// <summary>
@@ -102,11 +90,11 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Cohere.EmbedByTypeResponse? FromJson(
+        public static global::Cohere.Image? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.EmbedByTypeResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.Image>(
                 json,
                 jsonSerializerOptions);
         }
