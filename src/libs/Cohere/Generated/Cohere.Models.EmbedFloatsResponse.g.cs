@@ -37,6 +37,12 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<string> Texts { get; set; }
 
         /// <summary>
+        /// The image entries for which embeddings were returned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
+        public global::System.Collections.Generic.IList<global::Cohere.Image>? Images { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
