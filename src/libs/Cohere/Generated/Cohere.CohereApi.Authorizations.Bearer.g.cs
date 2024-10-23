@@ -14,8 +14,8 @@ namespace Cohere
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _authorizations.Clear();
-            _authorizations.Add(new global::Cohere.EndPointAuthorization
+            Authorizations.Clear();
+            Authorizations.Add(new global::Cohere.EndPointAuthorization
             {
                 Type = "Http",
                 Location = "Header",
