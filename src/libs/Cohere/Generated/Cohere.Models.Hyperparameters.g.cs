@@ -64,7 +64,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lora_target_modules")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.LoraTargetModulesJsonConverter))]
-        public global::Cohere.LoraTargetModules? LoraTargetModules { get; set; } = global::Cohere.LoraTargetModules.UNSPECIFIED;
+        public global::Cohere.LoraTargetModules? LoraTargetModules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

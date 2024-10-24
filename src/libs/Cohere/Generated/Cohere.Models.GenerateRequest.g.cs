@@ -61,7 +61,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter))]
-        public global::Cohere.GenerateRequestTruncate? Truncate { get; set; } = global::Cohere.GenerateRequestTruncate.END;
+        public global::Cohere.GenerateRequestTruncate? Truncate { get; set; }
 
         /// <summary>
         /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations. See [Temperature](/temperature-wiki) for more details.<br/>
@@ -145,7 +145,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_likelihoods")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
-        public global::Cohere.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; } = global::Cohere.GenerateRequestReturnLikelihoods.NONE;
+        public global::Cohere.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; }
 
         /// <summary>
         /// When enabled, the user's prompt will be sent to the model without any pre-processing.

@@ -66,7 +66,7 @@ namespace Cohere
             string? xClientName = default,
             string? name = default,
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes = default,
-            global::Cohere.CreateEmbedJobRequestTruncate? truncate = global::Cohere.CreateEmbedJobRequestTruncate.END,
+            global::Cohere.CreateEmbedJobRequestTruncate? truncate = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
