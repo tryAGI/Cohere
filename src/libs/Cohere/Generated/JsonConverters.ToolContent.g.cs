@@ -26,14 +26,14 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.TextContent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Cohere.DocumentContent? document = default;
             if (discriminator?.Type == global::Cohere.ToolContentDiscriminatorType.Document)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.DocumentContent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Cohere.ToolContent(
