@@ -249,7 +249,7 @@ namespace Cohere
             string? xClientName = default,
             bool? stream = default,
             int? seed = default,
-            global::Cohere.GenerateRequestReturnLikelihoods? returnLikelihoods = global::Cohere.GenerateRequestReturnLikelihoods.NONE,
+            global::Cohere.GenerateRequestReturnLikelihoods? returnLikelihoods = default,
             bool? rawPrompting = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

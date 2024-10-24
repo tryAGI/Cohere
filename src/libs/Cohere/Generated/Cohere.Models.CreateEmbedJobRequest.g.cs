@@ -64,7 +64,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter))]
-        public global::Cohere.CreateEmbedJobRequestTruncate? Truncate { get; set; } = global::Cohere.CreateEmbedJobRequestTruncate.END;
+        public global::Cohere.CreateEmbedJobRequestTruncate? Truncate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

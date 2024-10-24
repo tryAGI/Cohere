@@ -33,7 +33,7 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.BaseType BaseType { get; set; }
+        public required global::Cohere.BaseType BaseType { get; set; } = global::Cohere.BaseType.UNSPECIFIED;
 
         /// <summary>
         /// The possible strategy used to serve a fine-tuned models.<br/>
@@ -44,7 +44,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.StrategyJsonConverter))]
-        public global::Cohere.Strategy? Strategy { get; set; } = global::Cohere.Strategy.UNSPECIFIED;
+        public global::Cohere.Strategy? Strategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

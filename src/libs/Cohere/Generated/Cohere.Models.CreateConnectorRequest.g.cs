@@ -45,14 +45,14 @@ namespace Cohere
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
-        public bool? Active { get; set; } = true;
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Whether a chat request should continue or not if the request to this connector fails.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("continue_on_failure")]
-        public bool? ContinueOnFailure { get; set; } = false;
+        public bool? ContinueOnFailure { get; set; }
 
         /// <summary>
         /// 

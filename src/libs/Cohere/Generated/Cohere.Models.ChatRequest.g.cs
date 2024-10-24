@@ -150,7 +150,7 @@ namespace Cohere
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k")]
-        public int? K { get; set; } = 0;
+        public int? K { get; set; }
 
         /// <summary>
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
@@ -160,7 +160,7 @@ namespace Cohere
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p")]
-        public double? P { get; set; } = 0.75;
+        public double? P { get; set; }
 
         /// <summary>
         /// If specified, the backend will make a best effort to sample tokens<br/>

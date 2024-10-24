@@ -168,8 +168,8 @@ namespace Cohere
             string? xClientName = default,
             int? topN = default,
             global::System.Collections.Generic.IList<string>? rankFields = default,
-            bool? returnDocuments = false,
-            int? maxChunksPerDoc = 10,
+            bool? returnDocuments = default,
+            int? maxChunksPerDoc = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Cohere.Rerankv2Request

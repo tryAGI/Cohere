@@ -22,7 +22,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("length")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter))]
-        public global::Cohere.SummarizeRequestLength? Length { get; set; } = global::Cohere.SummarizeRequestLength.Medium;
+        public global::Cohere.SummarizeRequestLength? Length { get; set; }
 
         /// <summary>
         /// One of `paragraph`, `bullets`, or `auto`, defaults to `auto`. Indicates the style in which the summary will be delivered - in a free form paragraph or in bullet points. If `auto` is selected, the best option will be picked based on the input text.<br/>
@@ -31,7 +31,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter))]
-        public global::Cohere.SummarizeRequestFormat? Format { get; set; } = global::Cohere.SummarizeRequestFormat.Paragraph;
+        public global::Cohere.SummarizeRequestFormat? Format { get; set; }
 
         /// <summary>
         /// The identifier of the model to generate the summary with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental). Smaller, "light" models are faster, while larger models will perform better.<br/>
@@ -47,7 +47,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extractiveness")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
-        public global::Cohere.SummarizeRequestExtractiveness? Extractiveness { get; set; } = global::Cohere.SummarizeRequestExtractiveness.Low;
+        public global::Cohere.SummarizeRequestExtractiveness? Extractiveness { get; set; }
 
         /// <summary>
         /// Ranges from 0 to 5. Controls the randomness of the output. Lower values tend to generate more “predictable” output, while higher values tend to generate more “creative” output. The sweet spot is typically between 0 and 1.<br/>
@@ -55,7 +55,7 @@ namespace Cohere
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 0.3;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// A free-form instruction for modifying how the summaries get generated. Should complete the sentence "Generate a summary _". Eg. "focusing on the next steps" or "written by Yoda"<br/>

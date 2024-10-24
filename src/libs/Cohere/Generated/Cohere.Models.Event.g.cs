@@ -29,7 +29,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.StatusJsonConverter))]
-        public global::Cohere.Status? Status { get; set; } = global::Cohere.Status.UNSPECIFIED;
+        public global::Cohere.Status? Status { get; set; }
 
         /// <summary>
         /// Timestamp when the event happened.

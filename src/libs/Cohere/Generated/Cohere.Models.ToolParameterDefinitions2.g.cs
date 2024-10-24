@@ -26,7 +26,7 @@ namespace Cohere
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool? Required { get; set; } = false;
+        public bool? Required { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -163,8 +163,8 @@ namespace Cohere
             string? description = default,
             global::System.Collections.Generic.IList<string>? excludes = default,
             global::Cohere.CreateConnectorOAuth? oauth = default,
-            bool? active = true,
-            bool? continueOnFailure = false,
+            bool? active = default,
+            bool? continueOnFailure = default,
             global::Cohere.CreateConnectorServiceAuth? serviceAuth = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
