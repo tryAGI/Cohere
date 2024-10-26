@@ -59,18 +59,18 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.JsonResponseFormatV2? Json { get; init; }
+        public global::Cohere.JsonResponseFormatV2? JsonObject { get; init; }
 #else
-        public global::Cohere.JsonResponseFormatV2? Json { get; }
+        public global::Cohere.JsonResponseFormatV2? JsonObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Json))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
-        public bool IsJson => Json != null;
+        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// 
@@ -80,14 +80,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.JsonResponseFormatV2?(ResponseFormatV2 @this) => @this.Json;
+        public static implicit operator global::Cohere.JsonResponseFormatV2?(ResponseFormatV2 @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponseFormatV2(global::Cohere.JsonResponseFormatV2? value)
         {
-            Json = value;
+            JsonObject = value;
         }
 
         /// <summary>
@@ -96,20 +96,20 @@ namespace Cohere
         public ResponseFormatV2(
             global::Cohere.ResponseFormatV2DiscriminatorType? type,
             global::Cohere.TextResponseFormatV2? text,
-            global::Cohere.JsonResponseFormatV2? json
+            global::Cohere.JsonResponseFormatV2? jsonObject
             )
         {
             Type = type;
 
             Text = text;
-            Json = json;
+            JsonObject = jsonObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Json as object ??
+            JsonObject as object ??
             Text as object 
             ;
 
@@ -118,7 +118,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsJson || !IsText && IsJson;
+            return IsText && !IsJsonObject || !IsText && IsJsonObject;
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.TextResponseFormatV2?, TResult>? text = null,
-            global::System.Func<global::Cohere.JsonResponseFormatV2?, TResult>? json = null,
+            global::System.Func<global::Cohere.JsonResponseFormatV2?, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -138,9 +138,9 @@ namespace Cohere
             {
                 return text(Text!);
             }
-            else if (IsJson && json != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return json(Json!);
+                return jsonObject(JsonObject!);
             }
 
             return default(TResult);
@@ -151,7 +151,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.TextResponseFormatV2?>? text = null,
-            global::System.Action<global::Cohere.JsonResponseFormatV2?>? json = null,
+            global::System.Action<global::Cohere.JsonResponseFormatV2?>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -163,9 +163,9 @@ namespace Cohere
             {
                 text?.Invoke(Text!);
             }
-            else if (IsJson)
+            else if (IsJsonObject)
             {
-                json?.Invoke(Json!);
+                jsonObject?.Invoke(JsonObject!);
             }
         }
 
@@ -178,7 +178,7 @@ namespace Cohere
             {
                 Text,
                 typeof(global::Cohere.TextResponseFormatV2),
-                Json,
+                JsonObject,
                 typeof(global::Cohere.JsonResponseFormatV2),
             };
             const int offset = unchecked((int)2166136261);
@@ -196,7 +196,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.TextResponseFormatV2?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.JsonResponseFormatV2?>.Default.Equals(Json, other.Json) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.JsonResponseFormatV2?>.Default.Equals(JsonObject, other.JsonObject) 
                 ;
         }
 
