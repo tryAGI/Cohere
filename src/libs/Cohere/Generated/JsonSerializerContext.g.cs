@@ -139,6 +139,7 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ChatToolCallsGenerationEventJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatStreamEndEventJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatToolCallsChunkEventJsonConverter),
+            typeof(global::Cohere.JsonConverters.ChatDebugEventJsonConverter),
             typeof(global::Cohere.JsonConverters.StreamedChatResponseJsonConverter),
             typeof(global::Cohere.JsonConverters.ContentJsonConverter),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2),
