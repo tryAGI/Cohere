@@ -76,91 +76,64 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="ConnectorLog" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// Unique identifier for the connector log
+        /// </param>
+        /// <param name="connectorId">
+        /// Unique identifier for the connector
+        /// </param>
+        /// <param name="requestId">
+        /// Unique identifier for the request
+        /// </param>
+        /// <param name="userId">
+        /// Unique identifier for the user
+        /// </param>
+        /// <param name="organizationId">
+        /// Unique identifier for the organization
+        /// </param>
+        /// <param name="createdAt">
+        /// Time of connector log creation in RFC3339 format
+        /// </param>
+        /// <param name="statusCode">
+        /// HTTP status code of the request
+        /// </param>
+        /// <param name="durationMillis">
+        /// Duration of the request in milliseconds
+        /// </param>
+        /// <param name="errorMessage">
+        /// Error message of the request
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ConnectorLog(
+            string id,
+            string connectorId,
+            string requestId,
+            string userId,
+            string organizationId,
+            global::System.DateTime createdAt,
+            int statusCode,
+            int durationMillis,
+            string? errorMessage)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.ConnectorId = connectorId ?? throw new global::System.ArgumentNullException(nameof(connectorId));
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.CreatedAt = createdAt;
+            this.StatusCode = statusCode;
+            this.DurationMillis = durationMillis;
+            this.ErrorMessage = errorMessage;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="ConnectorLog" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public ConnectorLog()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.ConnectorLog? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.ConnectorLog),
-                jsonSerializerContext) as global::Cohere.ConnectorLog;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.ConnectorLog? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.ConnectorLog>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.ConnectorLog?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.ConnectorLog),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.ConnectorLog;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.ConnectorLog?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.ConnectorLog?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

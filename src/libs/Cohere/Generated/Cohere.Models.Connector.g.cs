@@ -100,91 +100,84 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="Connector" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The unique identifier of the connector (used in both `/connectors` &amp; `/chat` endpoints).<br/>
+        /// This is automatically created from the name of the connector upon registration.
+        /// </param>
+        /// <param name="organizationId">
+        /// The organization to which this connector belongs. This is automatically set to<br/>
+        /// the organization of the user who created the connector.
+        /// </param>
+        /// <param name="name">
+        /// A human-readable name for the connector.
+        /// </param>
+        /// <param name="description">
+        /// A description of the connector.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the connector that will be used to search for documents.
+        /// </param>
+        /// <param name="createdAt">
+        /// The UTC time at which the connector was created.
+        /// </param>
+        /// <param name="updatedAt">
+        /// The UTC time at which the connector was last updated.
+        /// </param>
+        /// <param name="excludes">
+        /// A list of fields to exclude from the prompt (fields remain in the document).
+        /// </param>
+        /// <param name="authType">
+        /// The type of authentication/authorization used by the connector. Possible values: [oauth, service_auth]
+        /// </param>
+        /// <param name="oauth"></param>
+        /// <param name="authStatus">
+        /// The OAuth status for the user making the request. One of ["valid", "expired", ""]. Empty string (field is omitted) means the user has not authorized the connector yet.
+        /// </param>
+        /// <param name="active">
+        /// Whether the connector is active or not.
+        /// </param>
+        /// <param name="continueOnFailure">
+        /// Whether a chat request should continue or not if the request to this connector fails.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Connector(
+            string id,
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? organizationId,
+            string? description,
+            string? url,
+            global::System.Collections.Generic.IList<string>? excludes,
+            string? authType,
+            global::Cohere.ConnectorOAuth? oauth,
+            global::Cohere.ConnectorAuthStatus? authStatus,
+            bool? active,
+            bool? continueOnFailure)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.OrganizationId = organizationId;
+            this.Description = description;
+            this.Url = url;
+            this.Excludes = excludes;
+            this.AuthType = authType;
+            this.Oauth = oauth;
+            this.AuthStatus = authStatus;
+            this.Active = active;
+            this.ContinueOnFailure = continueOnFailure;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="Connector" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public Connector()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.Connector? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.Connector),
-                jsonSerializerContext) as global::Cohere.Connector;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.Connector? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.Connector>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.Connector?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.Connector),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.Connector;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.Connector?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.Connector?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

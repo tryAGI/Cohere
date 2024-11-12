@@ -110,91 +110,91 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="jobId"></param>
+        /// <param name="createdAt">
+        /// Time of job creation in RFC3339 format<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="embeddingsUrl">
+        /// The input file URL used for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="inputDatasetId">
+        /// The input dataset ID used for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="minClusterSize">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="nNeighbors">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="isDeterministic">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="isFinalState">
+        /// A boolean indicating whether the job is in a final state, whether completed or failed<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputClustersUrl">
+        /// The output file URL for the clusters (signed url that expires)<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputOutliersUrl">
+        /// The output file URL for the outliers (signed url that expires)<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="clusters">
+        /// The list of cluster summaries for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="error"></param>
+        /// <param name="meta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetClusterJobResponse(
+            string jobId,
+            global::System.DateTime? createdAt,
+            string? embeddingsUrl,
+            string? inputDatasetId,
+            int? minClusterSize,
+            int? nNeighbors,
+            bool? isDeterministic,
+            global::Cohere.GetClusterJobResponseStatus? status,
+            bool? isFinalState,
+            string? outputClustersUrl,
+            string? outputOutliersUrl,
+            global::System.Collections.Generic.IList<global::Cohere.Cluster>? clusters,
+            string? error,
+            global::Cohere.ApiMeta? meta)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+            this.CreatedAt = createdAt;
+            this.EmbeddingsUrl = embeddingsUrl;
+            this.InputDatasetId = inputDatasetId;
+            this.MinClusterSize = minClusterSize;
+            this.NNeighbors = nNeighbors;
+            this.IsDeterministic = isDeterministic;
+            this.Status = status;
+            this.IsFinalState = isFinalState;
+            this.OutputClustersUrl = outputClustersUrl;
+            this.OutputOutliersUrl = outputOutliersUrl;
+            this.Clusters = clusters;
+            this.Error = error;
+            this.Meta = meta;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public GetClusterJobResponse()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.GetClusterJobResponse? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.GetClusterJobResponse),
-                jsonSerializerContext) as global::Cohere.GetClusterJobResponse;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.GetClusterJobResponse? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.GetClusterJobResponse>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.GetClusterJobResponse?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.GetClusterJobResponse),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.GetClusterJobResponse;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.GetClusterJobResponse?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.GetClusterJobResponse?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
