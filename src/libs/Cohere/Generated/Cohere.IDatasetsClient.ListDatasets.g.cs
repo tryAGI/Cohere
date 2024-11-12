@@ -18,7 +18,7 @@ namespace Cohere
         /// </param>
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.ListDatasetsResponse> ListDatasetsAsync(
             string? datasetType = default,
             global::System.DateTime? before = default,

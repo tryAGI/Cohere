@@ -11,7 +11,7 @@ namespace Cohere
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.DetokenizeResponse> DetokenizeAsync(
             global::Cohere.DetokenizeRequest request,
             string? xClientName = default,

@@ -68,91 +68,58 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="FinetuneDatasetMetrics" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="trainableTokenCount">
+        /// The number of tokens of valid examples that can be used for training.
+        /// </param>
+        /// <param name="totalExamples">
+        /// The overall number of examples.
+        /// </param>
+        /// <param name="trainExamples">
+        /// The number of training examples.
+        /// </param>
+        /// <param name="trainSizeBytes">
+        /// The size in bytes of all training examples.
+        /// </param>
+        /// <param name="evalExamples">
+        /// Number of evaluation examples.
+        /// </param>
+        /// <param name="evalSizeBytes">
+        /// The size in bytes of all eval examples.
+        /// </param>
+        /// <param name="rerankerDataMetrics"></param>
+        /// <param name="chatDataMetrics"></param>
+        /// <param name="classifyDataMetrics"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FinetuneDatasetMetrics(
+            double? trainableTokenCount,
+            double? totalExamples,
+            double? trainExamples,
+            double? trainSizeBytes,
+            double? evalExamples,
+            double? evalSizeBytes,
+            global::Cohere.RerankerDataMetrics? rerankerDataMetrics,
+            global::Cohere.ChatDataMetrics? chatDataMetrics,
+            global::Cohere.ClassifyDataMetrics? classifyDataMetrics)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.TrainableTokenCount = trainableTokenCount;
+            this.TotalExamples = totalExamples;
+            this.TrainExamples = trainExamples;
+            this.TrainSizeBytes = trainSizeBytes;
+            this.EvalExamples = evalExamples;
+            this.EvalSizeBytes = evalSizeBytes;
+            this.RerankerDataMetrics = rerankerDataMetrics;
+            this.ChatDataMetrics = chatDataMetrics;
+            this.ClassifyDataMetrics = classifyDataMetrics;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="FinetuneDatasetMetrics" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public FinetuneDatasetMetrics()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.FinetuneDatasetMetrics? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.FinetuneDatasetMetrics),
-                jsonSerializerContext) as global::Cohere.FinetuneDatasetMetrics;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.FinetuneDatasetMetrics? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.FinetuneDatasetMetrics>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.FinetuneDatasetMetrics?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.FinetuneDatasetMetrics),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.FinetuneDatasetMetrics;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.FinetuneDatasetMetrics?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.FinetuneDatasetMetrics?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

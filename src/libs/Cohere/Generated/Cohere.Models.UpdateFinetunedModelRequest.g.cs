@@ -87,91 +87,80 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="name">
+        /// FinetunedModel name (e.g. `foobar`).
+        /// </param>
+        /// <param name="creatorId">
+        /// User ID of the creator.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="organizationId">
+        /// Organization ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="settings">
+        /// The configuration used for fine-tuning.
+        /// </param>
+        /// <param name="status">
+        /// The possible stages of a fine-tuned model life-cycle.<br/>
+        ///  - STATUS_UNSPECIFIED: Unspecified status.<br/>
+        ///  - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.<br/>
+        ///  - STATUS_DEPLOYING_API: The fine-tuned model is being deployed.<br/>
+        ///  - STATUS_READY: The fine-tuned model is ready to receive requests.<br/>
+        ///  - STATUS_FAILED: The fine-tuned model failed.<br/>
+        ///  - STATUS_DELETED: The fine-tuned model was deleted.<br/>
+        ///  - STATUS_TEMPORARILY_OFFLINE: The fine-tuned model is temporarily unavailable.<br/>
+        ///  - STATUS_PAUSED: The fine-tuned model is paused (Vanilla only).<br/>
+        ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
+        /// Default Value: STATUS_UNSPECIFIED
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation timestamp.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updatedAt">
+        /// Latest update timestamp.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="completedAt">
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="lastUsed">
+        /// Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateFinetunedModelRequest(
+            string name,
+            global::Cohere.Settings settings,
+            string? creatorId,
+            string? organizationId,
+            global::Cohere.Status? status,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.DateTime? completedAt,
+            global::System.DateTime? lastUsed)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
+            this.CreatorId = creatorId;
+            this.OrganizationId = organizationId;
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.CompletedAt = completedAt;
+            this.LastUsed = lastUsed;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public UpdateFinetunedModelRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.UpdateFinetunedModelRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.UpdateFinetunedModelRequest),
-                jsonSerializerContext) as global::Cohere.UpdateFinetunedModelRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.UpdateFinetunedModelRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.UpdateFinetunedModelRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.UpdateFinetunedModelRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.UpdateFinetunedModelRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.UpdateFinetunedModelRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.UpdateFinetunedModelRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.UpdateFinetunedModelRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

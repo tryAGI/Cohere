@@ -12,7 +12,7 @@ namespace Cohere
         /// <param name="afterTokenRedirect"></param>
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.OAuthAuthorizeResponse> OAuthAuthorizeConnectorAsync(
             string id,
             string? afterTokenRedirect = default,

@@ -106,91 +106,83 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="Dataset" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The dataset ID
+        /// </param>
+        /// <param name="name">
+        /// The name of the dataset
+        /// </param>
+        /// <param name="createdAt">
+        /// The creation date
+        /// </param>
+        /// <param name="updatedAt">
+        /// The last update date
+        /// </param>
+        /// <param name="datasetType">
+        /// The type of the dataset
+        /// </param>
+        /// <param name="validationStatus">
+        /// The validation status of the dataset
+        /// </param>
+        /// <param name="validationError">
+        /// Errors found during validation
+        /// </param>
+        /// <param name="schema">
+        /// the avro schema of the dataset
+        /// </param>
+        /// <param name="requiredFields"></param>
+        /// <param name="preserveFields"></param>
+        /// <param name="datasetParts">
+        /// the underlying files that make up the dataset
+        /// </param>
+        /// <param name="validationWarnings">
+        /// warnings found during validation
+        /// </param>
+        /// <param name="parseInfo">
+        /// Included only in requests
+        /// </param>
+        /// <param name="metrics"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Dataset(
+            string id,
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::Cohere.DatasetType datasetType,
+            global::Cohere.DatasetValidationStatus validationStatus,
+            string? validationError,
+            string? schema,
+            global::System.Collections.Generic.IList<string>? requiredFields,
+            global::System.Collections.Generic.IList<string>? preserveFields,
+            global::System.Collections.Generic.IList<global::Cohere.DatasetPart>? datasetParts,
+            global::System.Collections.Generic.IList<string>? validationWarnings,
+            global::Cohere.ParseInfo? parseInfo,
+            global::Cohere.Metrics? metrics)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.DatasetType = datasetType;
+            this.ValidationStatus = validationStatus;
+            this.ValidationError = validationError;
+            this.Schema = schema;
+            this.RequiredFields = requiredFields;
+            this.PreserveFields = preserveFields;
+            this.DatasetParts = datasetParts;
+            this.ValidationWarnings = validationWarnings;
+            this.ParseInfo = parseInfo;
+            this.Metrics = metrics;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="Dataset" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public Dataset()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Cohere.Dataset? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Cohere.Dataset),
-                jsonSerializerContext) as global::Cohere.Dataset;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Cohere.Dataset? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.Dataset>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.Dataset?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Cohere.Dataset),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.Dataset;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.Dataset?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.Dataset?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
