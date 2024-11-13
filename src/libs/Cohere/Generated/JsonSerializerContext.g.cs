@@ -142,9 +142,7 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ChatDebugEventJsonConverter),
             typeof(global::Cohere.JsonConverters.StreamedChatResponseJsonConverter),
             typeof(global::Cohere.JsonConverters.ContentJsonConverter),
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::Cohere.JsonConverters.SourceJsonConverter),
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory1),
             typeof(global::Cohere.JsonConverters.ToolContentJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatMessageV2JsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatV2JsonConverter),
@@ -165,6 +163,18 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.GenerateStreamEndJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateStreamErrorJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateStreamedResponseJsonConverter),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.Content>>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.TextContent>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.TextContent>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>),
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.EmbedFloatsResponse, global::Cohere.EmbedByTypeResponse>),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.JsonSerializerContextTypes))]

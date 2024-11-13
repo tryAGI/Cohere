@@ -21,7 +21,7 @@ namespace Cohere
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>> Content { get; set; }
 
