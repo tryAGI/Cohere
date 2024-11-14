@@ -7,7 +7,7 @@ namespace Cohere
         /// <summary>
         /// Summarize<br/>
         /// &lt;Warning&gt;<br/>
-        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
         /// &lt;/Warning&gt;<br/>
         /// Generates a summary in English for a given text.
         /// </summary>
@@ -23,7 +23,7 @@ namespace Cohere
         /// <summary>
         /// Summarize<br/>
         /// &lt;Warning&gt;<br/>
-        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
         /// &lt;/Warning&gt;<br/>
         /// Generates a summary in English for a given text.
         /// </summary>

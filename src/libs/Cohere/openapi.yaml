@@ -204,7 +204,7 @@ paths:
                     - CONTEXTUAL
                     - STRICT
                     - NONE
-                  description: "Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `NONE` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  description: "Used to select the [safety instruction](https://docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `NONE` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release), [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release) and newer.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                   x-fern-audiences:
                     - public
                   x-fern-availability: beta
@@ -1270,7 +1270,7 @@ paths:
   /v1/generate:
     post:
       summary: Generate
-      description: "<Warning>\nThis API is marked as \"Legacy\" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.\n</Warning>\nGenerates realistic text conditioned on a given input.\n"
+      description: "<Warning>\nThis API is marked as \"Legacy\" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.\n</Warning>\nGenerates realistic text conditioned on a given input.\n"
       operationId: generate
       parameters:
         - $ref: '#/components/parameters/RequestSource'
@@ -1292,7 +1292,7 @@ paths:
                     - public
                 model:
                   type: string
-                  description: "The identifier of the model to generate with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental).\nSmaller, \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID."
+                  description: "The identifier of the model to generate with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental).\nSmaller, \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID."
                   writeOnly: true
                   x-fern-audiences:
                     - public
@@ -1527,7 +1527,7 @@ paths:
   /v1/embed:
     post:
       summary: Embed
-      description: "This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.\n\nEmbeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.\n\nIf you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search)."
+      description: "This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.\n\nEmbeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.\n\nIf you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search)."
       operationId: embed
       parameters:
         - $ref: '#/components/parameters/RequestSource'
@@ -1565,7 +1565,7 @@ paths:
                     - public
                 model:
                   type: string
-                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
                   writeOnly: true
                   x-fern-audiences:
                     - public
@@ -4791,7 +4791,7 @@ paths:
   /v2/embed:
     post:
       summary: Embed
-      description: "This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.\n\nEmbeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.\n\nIf you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search)."
+      description: "This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.\n\nEmbeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.\n\nIf you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search)."
       operationId: embedv2
       parameters:
         - $ref: '#/components/parameters/RequestSource'
@@ -4833,7 +4833,7 @@ paths:
                     - public
                 model:
                   type: string
-                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
                   writeOnly: true
                   x-fern-audiences:
                     - public
@@ -9529,7 +9529,7 @@ paths:
   /v1/summarize:
     post:
       summary: Summarize
-      description: "<Warning>\nThis API is marked as \"Legacy\" and is no longer maintained. Follow the [migration guide](/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.\n</Warning>\nGenerates a summary in English for a given text.\n"
+      description: "<Warning>\nThis API is marked as \"Legacy\" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.\n</Warning>\nGenerates a summary in English for a given text.\n"
       operationId: summarize
       parameters:
         - $ref: '#/components/parameters/RequestSource'
@@ -11548,7 +11548,7 @@ components:
           $ref: '#/components/schemas/ResponseFormatType'
         schema:
           type: object
-          description: "A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
+          description: "A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
           x-fern-availability: beta
       x-fern-audiences:
         - public
@@ -12277,7 +12277,7 @@ components:
           $ref: '#/components/schemas/ResponseFormatTypeV2'
         json_schema:
           type: object
-          description: "A [JSON schema](https://json-schema.org/overview/what-is-jsonschema) object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
+          description: "A [JSON schema](https://json-schema.org/overview/what-is-jsonschema) object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
       x-fern-audiences:
         - public
     ResponseFormatV2:
@@ -12618,7 +12618,7 @@ components:
                   - public
             x-fern-audiences:
               - public
-          description: 'Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you''ve created a [custom model](/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.'
+          description: 'Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you''ve created a [custom model](https://docs.cohere.com/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.'
           x-fern-audiences:
             - public
     Generation:
