@@ -16510,7 +16510,7 @@ components:
         - STATUS_PAUSED
         - STATUS_QUEUED
       type: string
-      description: "The possible stages of a fine-tuned model life-cycle.\n\n - STATUS_UNSPECIFIED: Unspecified status.\n - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.\n - STATUS_DEPLOYING_API: The fine-tuned model is being deployed.\n - STATUS_READY: The fine-tuned model is ready to receive requests.\n - STATUS_FAILED: The fine-tuned model failed.\n - STATUS_DELETED: The fine-tuned model was deleted.\n - STATUS_TEMPORARILY_OFFLINE: The fine-tuned model is temporarily unavailable.\n - STATUS_PAUSED: The fine-tuned model is paused (Vanilla only).\n - STATUS_QUEUED: The fine-tuned model is queued for training."
+      description: "The possible stages of a fine-tuned model life-cycle.\n\n - STATUS_UNSPECIFIED: Unspecified status.\n - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.\n - STATUS_DEPLOYING_API: Deprecated: The fine-tuned model is being deployed.\n - STATUS_READY: The fine-tuned model is ready to receive requests.\n - STATUS_FAILED: The fine-tuned model failed.\n - STATUS_DELETED: The fine-tuned model was deleted.\n - STATUS_TEMPORARILY_OFFLINE: Deprecated: The fine-tuned model is temporarily unavailable.\n - STATUS_PAUSED: Deprecated: The fine-tuned model is paused (Vanilla only).\n - STATUS_QUEUED: The fine-tuned model is queued for training."
       default: STATUS_UNSPECIFIED
       x-fern-sdk-group-name:
         - finetuning
