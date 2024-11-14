@@ -24,7 +24,7 @@ namespace Cohere
 
         /// <summary>
         /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
+        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Available models and corresponding embedding dimensions:<br/>
         /// * `embed-english-v3.0`  1024<br/>
         /// * `embed-multilingual-v3.0`  1024<br/>
@@ -92,7 +92,7 @@ namespace Cohere
         /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
+        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Available models and corresponding embedding dimensions:<br/>
         /// * `embed-english-v3.0`  1024<br/>
         /// * `embed-multilingual-v3.0`  1024<br/>

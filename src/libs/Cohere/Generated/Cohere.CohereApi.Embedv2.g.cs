@@ -27,7 +27,7 @@ namespace Cohere
         /// Embed<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
         /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
-        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
@@ -508,7 +508,7 @@ namespace Cohere
         /// Embed<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
         /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
-        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="texts">
@@ -521,7 +521,7 @@ namespace Cohere
         /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
+        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Available models and corresponding embedding dimensions:<br/>
         /// * `embed-english-v3.0`  1024<br/>
         /// * `embed-multilingual-v3.0`  1024<br/>
