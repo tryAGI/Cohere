@@ -827,6 +827,9 @@ paths:
                   description: "Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.\nDefaults to `0.75`. min value of `0.01`, max value of `0.99`.\n"
                   format: float
                   default: 0.75
+                logprobs:
+                  type: boolean
+                  description: "Whether to return the log probabilities of the generated tokens. Defaults to false.\n"
       responses:
         '200':
           description: OK
@@ -872,7 +875,7 @@ paths:
           required:
             - id
             - finish_reason
-            - messages
+            - message
           properties:
             id:
               type: string
@@ -883,6 +886,10 @@ paths:
               $ref: '#/components/schemas/AssistantMessageResponse'
             usage:
               $ref: '#/components/schemas/Usage'
+            logprobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/LogprobItem'
         response-stream:
           description: StreamedChatResponse is returned in streaming mode (specified with `stream=True` in the request).
           oneOf:
@@ -12356,11 +12363,32 @@ components:
             output_tokens:
               type: number
               description: "The number of tokens produced by the model.\n"
+    LogprobItem:
+      required:
+        - token
+        - token_ids
+        - logprob
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text chunk for which the log probabilities was calculated.
+        token_ids:
+          type: array
+          items:
+            type: integer
+          description: The token ids of each token used to construct the text chunk.
+        logprobs:
+          type: array
+          items:
+            type: number
+            format: float
+          description: The log probability of each token used to construct the text chunk.
     ChatResponse:
       required:
         - id
         - finish_reason
-        - messages
+        - message
       properties:
         id:
           type: string
@@ -12371,6 +12399,10 @@ components:
           $ref: '#/components/schemas/AssistantMessageResponse'
         usage:
           $ref: '#/components/schemas/Usage'
+        logprobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogprobItem'
     ChatStreamEventType:
       required:
         - type
@@ -12451,6 +12483,8 @@ components:
                       properties:
                         text:
                           type: string
+            logprobs:
+              $ref: '#/components/schemas/LogprobItem'
       description: A streamed delta event which contains a delta of chat text content.
     ChatContentEndEvent:
       allOf:

@@ -576,6 +576,9 @@ namespace Cohere
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
         /// Default Value: 0.75F
         /// </param>
+        /// <param name="logprobs">
+        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
@@ -595,6 +598,7 @@ namespace Cohere
             float? presencePenalty = default,
             float? k = default,
             float? p = default,
+            bool? logprobs = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Cohere.Chatv2Request
@@ -614,6 +618,7 @@ namespace Cohere
                 PresencePenalty = presencePenalty,
                 K = k,
                 P = p,
+                Logprobs = logprobs,
             };
 
             return await Chatv2Async(

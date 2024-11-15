@@ -21,6 +21,12 @@ namespace Cohere
         public global::Cohere.ChatContentDeltaEventVariant2Delta? Delta { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::Cohere.LogprobItem? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -31,13 +37,16 @@ namespace Cohere
         /// </summary>
         /// <param name="index"></param>
         /// <param name="delta"></param>
+        /// <param name="logprobs"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ChatContentDeltaEventVariant2(
             int? index,
-            global::Cohere.ChatContentDeltaEventVariant2Delta? delta)
+            global::Cohere.ChatContentDeltaEventVariant2Delta? delta,
+            global::Cohere.LogprobItem? logprobs)
         {
             this.Index = index;
             this.Delta = delta;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

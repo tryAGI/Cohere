@@ -127,6 +127,12 @@ namespace Cohere
         public float? P { get; set; }
 
         /// <summary>
+        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public bool? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -202,6 +208,9 @@ namespace Cohere
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
         /// Default Value: 0.75F
         /// </param>
+        /// <param name="logprobs">
+        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Chatv2Request(
             string model,
@@ -218,7 +227,8 @@ namespace Cohere
             float? frequencyPenalty,
             float? presencePenalty,
             float? k,
-            float? p)
+            float? p,
+            bool? logprobs)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
@@ -235,6 +245,7 @@ namespace Cohere
             this.PresencePenalty = presencePenalty;
             this.K = k;
             this.P = p;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>
