@@ -111,7 +111,7 @@ namespace Cohere
         public float? PresencePenalty { get; set; }
 
         /// <summary>
-        /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
+        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled. <br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
         /// Default Value: 0F
         /// </summary>
@@ -193,7 +193,7 @@ namespace Cohere
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
         /// <param name="k">
-        /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
+        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled. <br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
         /// Default Value: 0F
         /// </param>
