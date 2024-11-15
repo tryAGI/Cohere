@@ -32,13 +32,20 @@ namespace Cohere
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public global::Cohere.AssistantMessageResponse? Message { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.AssistantMessageResponse Message { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::Cohere.Usage? Usage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,17 +71,20 @@ namespace Cohere
         /// A message from the assistant role can contain text and tool call information.
         /// </param>
         /// <param name="usage"></param>
+        /// <param name="logprobs"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ChatResponse(
             string id,
             global::Cohere.ChatFinishReason finishReason,
-            global::Cohere.AssistantMessageResponse? message,
-            global::Cohere.Usage? usage)
+            global::Cohere.AssistantMessageResponse message,
+            global::Cohere.Usage? usage,
+            global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? logprobs)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.FinishReason = finishReason;
-            this.Message = message;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Usage = usage;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>
