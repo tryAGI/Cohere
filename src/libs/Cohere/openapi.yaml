@@ -16416,7 +16416,7 @@ components:
         - STRATEGY_VANILLA
         - STRATEGY_TFEW
       type: string
-      description: "The possible strategy used to serve a fine-tuned models.\n\n - STRATEGY_UNSPECIFIED: Unspecified strategy.\n - STRATEGY_VANILLA: Deprecated: Serve the fine-tuned model on a dedicated GPU.\n - STRATEGY_TFEW: Serve the fine-tuned model on a shared GPU."
+      description: "The possible strategy used to serve a fine-tuned models.\n\n - STRATEGY_UNSPECIFIED: Unspecified strategy.\n - STRATEGY_VANILLA: Deprecated: Serve the fine-tuned model on a dedicated GPU.\n - STRATEGY_TFEW: Deprecated: Serve the fine-tuned model on a shared GPU."
       default: STRATEGY_UNSPECIFIED
       x-fern-sdk-group-name:
         - finetuning
