@@ -918,7 +918,7 @@ paths:
               code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Default {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-r-plus-08-2024\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessage.builder()\n                                    .content(UserMessageContent.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    System.out.println(response);\n  }\n}\n"
             - sdk: curl
               name: Default
-              code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"model\": \"command-r-plus-08-2024\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ],\n  }'"
+              code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"model\": \"command-r-plus-08-2024\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ]\n  }'\n"
           request:
             model: command-r
             messages:
@@ -1092,7 +1092,7 @@ paths:
               code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatStreamRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Stream {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    Iterable<StreamedChatResponseV2> response =\n        cohere\n            .v2()\n            .chatStream(\n                V2ChatStreamRequest.builder()\n                    .model(\"command-r-plus-08-2024\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessage.builder()\n                                    .content(UserMessageContent.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    for (StreamedChatResponseV2 chatResponse : response) {\n      if (chatResponse.isContentDelta()) {\n        System.out.println(\n            chatResponse\n                .getContentDelta()\n                .flatMap(ChatContentDeltaEvent::getDelta)\n                .flatMap(ChatContentDeltaEventDelta::getMessage)\n                .flatMap(ChatContentDeltaEventDeltaMessage::getContent)\n                .flatMap(ChatContentDeltaEventDeltaMessageContent::getText)\n                .orElse(\"\"));\n      }\n    }\n\n    System.out.println(response);\n  }\n}\n"
             - sdk: curl
               name: Streaming
-              code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"stream\": true,\n    \"model\": \"command-r-plus-08-2024\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ],\n  }'"
+              code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"stream\": true,\n    \"model\": \"command-r-plus-08-2024\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ]\n  }'\n"
           request:
             model: command-r
             messages:
@@ -10908,7 +10908,7 @@ paths:
                   readOnly: true
                 last_used:
                   type: string
-                  description: Timestamp for the latest request to this fine-tuned model.
+                  description: 'Deprecated: Timestamp for the latest request to this fine-tuned model.'
                   format: date-time
                   readOnly: true
         required: true
@@ -16591,7 +16591,7 @@ components:
           readOnly: true
         last_used:
           type: string
-          description: read-only. Timestamp for the latest request to this fine-tuned model.
+          description: 'read-only. Deprecated: Timestamp for the latest request to this fine-tuned model.'
           format: date-time
           readOnly: true
       description: This resource represents a fine-tuned model.
