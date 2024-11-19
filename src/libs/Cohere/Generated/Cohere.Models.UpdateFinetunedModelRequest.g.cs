@@ -75,7 +75,7 @@ namespace Cohere
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
@@ -130,7 +130,7 @@ namespace Cohere
         /// Included only in responses
         /// </param>
         /// <param name="lastUsed">
-        /// Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
