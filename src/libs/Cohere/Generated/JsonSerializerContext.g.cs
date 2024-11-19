@@ -175,6 +175,7 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.EmbedFloatsResponse, global::Cohere.EmbedByTypeResponse>),
+            typeof(global::Cohere.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.JsonSerializerContextTypes))]
