@@ -127,7 +127,7 @@ namespace Cohere
         public float? P { get; set; }
 
         /// <summary>
-        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public bool? Logprobs { get; set; }
@@ -209,7 +209,7 @@ namespace Cohere
         /// Default Value: 0.75F
         /// </param>
         /// <param name="logprobs">
-        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Chatv2Request(

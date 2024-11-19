@@ -577,7 +577,7 @@ namespace Cohere
         /// Default Value: 0.75F
         /// </param>
         /// <param name="logprobs">
-        /// Whether to return the log probabilities of the generated tokens. Defaults to false.
+        /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
