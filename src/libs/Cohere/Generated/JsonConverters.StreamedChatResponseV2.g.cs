@@ -124,6 +124,18 @@ namespace Cohere.JsonConverters
             {
             }
 
+            readerCopy = reader;
+            global::Cohere.ChatDebugEvent? debugEvent = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDebugEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDebugEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDebugEvent).Name}");
+                debugEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
             var result = new global::Cohere.StreamedChatResponseV2(
                 messageStartEvent,
                 contentStartEvent,
@@ -133,7 +145,8 @@ namespace Cohere.JsonConverters
                 toolCallStartEvent,
                 toolCallDeltaEvent,
                 toolCallEndEvent,
-                messageEndEvent
+                messageEndEvent,
+                debugEvent
                 );
 
             if (messageStartEvent != null)
@@ -188,6 +201,12 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessageEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessageEndEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatMessageEndEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (debugEvent != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDebugEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDebugEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDebugEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -256,6 +275,12 @@ namespace Cohere.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessageEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessageEndEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatMessageEndEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageEndEvent, typeInfo);
+            }
+            else if (value.IsDebugEvent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDebugEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDebugEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDebugEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DebugEvent, typeInfo);
             }
         }
     }

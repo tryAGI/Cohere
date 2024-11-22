@@ -902,6 +902,8 @@ paths:
             - $ref: '#/components/schemas/ChatToolCallDeltaEvent'
             - $ref: '#/components/schemas/ChatToolCallEndEvent'
             - $ref: '#/components/schemas/ChatMessageEndEvent'
+            - $ref: '#/components/schemas/ChatDebugEvent'
+              debug: '#/components/schemas/ChatDebugEvent'
       x-fern-examples:
         - code-samples:
             - sdk: typescript
@@ -12599,6 +12601,7 @@ components:
         - $ref: '#/components/schemas/ChatToolCallDeltaEvent'
         - $ref: '#/components/schemas/ChatToolCallEndEvent'
         - $ref: '#/components/schemas/ChatMessageEndEvent'
+        - $ref: '#/components/schemas/ChatDebugEvent'
       description: StreamedChatResponse is returned in streaming mode (specified with `stream=True` in the request).
     SingleGeneration:
       required:
