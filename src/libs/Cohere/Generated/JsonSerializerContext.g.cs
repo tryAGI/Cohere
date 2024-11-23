@@ -171,7 +171,6 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>),
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.EmbedFloatsResponse, global::Cohere.EmbedByTypeResponse>),
