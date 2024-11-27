@@ -759,6 +759,11 @@ paths:
                 - model
               type: object
               properties:
+                stream:
+                  type: boolean
+                  description: "Defaults to `false`.\n\nWhen `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `\"stream-end\"`.\n\nStreaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  x-fern-audiences:
+                    - public
                 model:
                   type: string
                   description: 'The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.'

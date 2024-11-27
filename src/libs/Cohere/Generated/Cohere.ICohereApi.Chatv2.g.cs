@@ -24,6 +24,12 @@ namespace Cohere
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="stream">
+        /// Defaults to `false`.<br/>
+        /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
@@ -104,6 +110,7 @@ namespace Cohere
             string model,
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
             string? xClientName = default,
+            bool? stream = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             bool? strictTools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
