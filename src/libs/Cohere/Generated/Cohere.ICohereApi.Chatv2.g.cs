@@ -35,6 +35,10 @@ namespace Cohere
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
         /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
         /// </param>
+        /// <param name="strictTools">
+        /// When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Strict Tools guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).<br/>
+        /// **Note**: The first few requests with a new set of tools will take longer to process.
+        /// </param>
         /// <param name="documents">
         /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
         /// </param>
@@ -82,7 +86,7 @@ namespace Cohere
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
         /// <param name="k">
-        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled. <br/>
+        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.<br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
         /// Default Value: 0F
         /// </param>
@@ -101,6 +105,7 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
             string? xClientName = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
+            bool? strictTools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
             global::Cohere.CitationOptions? citationOptions = default,
             global::Cohere.ResponseFormatV2? responseFormat = default,
