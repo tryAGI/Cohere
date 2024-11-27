@@ -11,6 +11,15 @@ namespace Cohere
     public sealed partial class Chatv2Request
     {
         /// <summary>
+        /// Defaults to `false`.<br/>
+        /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -148,6 +157,12 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="Chatv2Request" /> class.
         /// </summary>
+        /// <param name="stream">
+        /// Defaults to `false`.<br/>
+        /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) (such as command-r or command-r-plus) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
@@ -226,6 +241,7 @@ namespace Cohere
         public Chatv2Request(
             string model,
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
+            bool? stream,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools,
             bool? strictTools,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents,
@@ -244,6 +260,7 @@ namespace Cohere
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Stream = stream;
             this.Tools = tools;
             this.StrictTools = strictTools;
             this.Documents = documents;
