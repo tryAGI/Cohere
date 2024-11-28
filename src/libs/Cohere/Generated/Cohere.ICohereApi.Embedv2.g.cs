@@ -56,7 +56,7 @@ namespace Cohere
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
         /// <param name="embeddingTypes">
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// Specifies the types of embeddings you want to get back. Can be one or more of the following types.<br/>
         /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
         /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
         /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
