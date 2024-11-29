@@ -1457,11 +1457,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -1643,11 +1639,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -4911,11 +4903,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -8125,11 +8113,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -8195,11 +8179,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -8274,11 +8254,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning message for potentially incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -8353,11 +8329,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -9623,11 +9595,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -9746,11 +9714,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -9914,11 +9878,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -10467,11 +10427,7 @@ paths:
           description: OK
           headers:
             X-API-Warning:
-              description: Warning description for incorrect usage of the API
-              schema:
-                type: string
-                x-fern-audiences:
-                  - public
+              $ref: '#/components/headers/ApiWarning'
           content:
             application/json:
               schema:
@@ -16855,6 +16811,14 @@ components:
       schema:
         type: string
       example: my-cool-project
+      x-fern-audiences:
+        - public
+  headers:
+    ApiWarning:
+      description: The name of the project that is making the request.
+      schema:
+        type: string
+      example: 'Parameter xyz is deprecated, for more information please refer to https://docs.cohere.com/versioning-reference'
       x-fern-audiences:
         - public
   securitySchemes:
