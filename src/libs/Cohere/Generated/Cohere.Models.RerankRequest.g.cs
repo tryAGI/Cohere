@@ -11,7 +11,7 @@ namespace Cohere
     public sealed partial class RerankRequest
     {
         /// <summary>
-        /// The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -70,7 +70,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="RerankRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>
         /// <param name="query">
         /// The search query

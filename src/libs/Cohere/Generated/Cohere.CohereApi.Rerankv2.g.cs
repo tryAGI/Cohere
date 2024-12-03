@@ -512,12 +512,7 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="model">
-        /// The identifier of the model to use.<br/>
-        /// Supported models:<br/>
-        ///   - `rerank-english-v3.0`<br/>
-        ///   - `rerank-multilingual-v3.0`<br/>
-        ///   - `rerank-english-v2.0`<br/>
-        ///   - `rerank-multilingual-v2.0`
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>
         /// <param name="query">
         /// The search query
@@ -526,7 +521,7 @@ namespace Cohere
         /// A list of texts that will be compared to the `query`.<br/>
         /// For optimal performance we recommend against sending more than 1,000 documents in a single request.<br/>
         /// **Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.<br/>
-        /// **Note**: structured data should be formatted as YAML strings for best performance.
+        /// **Note**: structured data should be formatted as YAML strings for best performance.  
         /// </param>
         /// <param name="topN">
         /// Limits the number of returned rerank results to the specified value. If not passed, all the rerank results will be returned.
