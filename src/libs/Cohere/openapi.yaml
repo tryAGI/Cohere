@@ -780,7 +780,7 @@ paths:
                     - public
                 strict_tools:
                   type: boolean
-                  description: "When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Strict Tools guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).\n\n**Note**: The first few requests with a new set of tools will take longer to process.\n"
+                  description: "When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).\n\n**Note**: The first few requests with a new set of tools will take longer to process.\n"
                   x-fern-audiences:
                     - public
                   x-fern-availability: beta
