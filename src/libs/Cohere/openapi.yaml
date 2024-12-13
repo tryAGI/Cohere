@@ -79,7 +79,7 @@ paths:
                     - AUTO
                     - AUTO_PRESERVE_ORDER
                   type: string
-                  description: "Defaults to `AUTO` when `connectors` are specified and `OFF` in all other cases.\n\nDictates how the prompt will be constructed.\n\nWith `prompt_truncation` set to \"AUTO\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.\n\nWith `prompt_truncation` set to \"AUTO_PRESERVE_ORDER\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.\n\nWith `prompt_truncation` set to \"OFF\", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.\n\nCompatible Deployments: \n - AUTO: Cohere Platform Only\n - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  description: "Defaults to `AUTO` when `connectors` are specified and `OFF` in all other cases.\n\nDictates how the prompt will be constructed.\n\nWith `prompt_truncation` set to \"AUTO\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.\n\nWith `prompt_truncation` set to \"AUTO_PRESERVE_ORDER\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.\n\nWith `prompt_truncation` set to \"OFF\", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.\n\nCompatible Deployments:\n - AUTO: Cohere Platform Only\n - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                   x-fern-audiences:
                     - public
                 connectors:
@@ -204,7 +204,7 @@ paths:
                     - CONTEXTUAL
                     - STRICT
                     - NONE
-                  description: "Used to select the [safety instruction](https://docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `NONE` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release), [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release) and newer.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  description: "Used to select the [safety instruction](https://docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `NONE` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release), [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release) and newer.\n\n**Note**: `command-r7b-12-2024` only supports `\"CONTEXTUAL\"` and `\"STRICT\"` modes.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                   x-fern-audiences:
                     - public
                   x-fern-availability: beta
@@ -802,7 +802,7 @@ paths:
                     - CONTEXTUAL
                     - STRICT
                     - OFF
-                  description: "Used to select the [safety instruction](https://docs.cohere.com/v2/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `OFF` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](https://docs.cohere.com/v2/docs/command-r#august-2024-release), [Command R+ 08-2024](https://docs.cohere.com/v2/docs/command-r-plus#august-2024-release) and newer.\n"
+                  description: "Used to select the [safety instruction](https://docs.cohere.com/v2/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.\nWhen `OFF` is specified, the safety instruction will be omitted.\n\nSafety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.\n\n**Note**: This parameter is only compatible with models [Command R 08-2024](https://docs.cohere.com/v2/docs/command-r#august-2024-release), [Command R+ 08-2024](https://docs.cohere.com/v2/docs/command-r-plus#august-2024-release) and newer.\n\n**Note**: `command-r7b-12-2024` only supports `\"CONTEXTUAL\"` and `\"STRICT\"` modes.\n"
                   x-fern-audiences:
                     - public
                 max_tokens:
@@ -12218,7 +12218,7 @@ components:
             - ACCURATE
             - OFF
           type: string
-          description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n"
+          description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n\n**Note**: `command-r7b-12-2024` only supports `\"fast\"` and `\"off\"` modes. Its default is `\"fast\"`.\n"
       description: Options for controlling citation generation.
     ResponseFormatTypeV2:
       enum:
