@@ -4,9 +4,9 @@
 namespace Cohere
 {
     /// <summary>
-    /// One of `GENERATION|ALL|NONE` to specify how and if the token likelihoods are returned with the response. Defaults to `NONE`.<br/>
+    /// One of `GENERATION|NONE` to specify how and if the token likelihoods are returned with the response. Defaults to `NONE`.<br/>
     /// If `GENERATION` is selected, the token likelihoods will only be provided for generated text.<br/>
-    /// If `ALL` is selected, the token likelihoods will be provided both for the prompt and the generated text.<br/>
+    /// WARNING: `ALL` is deprecated, and will be removed in a future release.<br/>
     /// Default Value: NONE
     /// </summary>
     public enum GenerateRequestReturnLikelihoods
@@ -16,7 +16,7 @@ namespace Cohere
         /// </summary>
         GENERATION,
         /// <summary>
-        /// 
+        /// `ALL` is deprecated, and will be removed in a future release.
         /// </summary>
         ALL,
         /// <summary>
