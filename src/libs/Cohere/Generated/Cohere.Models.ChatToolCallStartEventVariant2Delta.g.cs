@@ -11,8 +11,8 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_call")]
-        public global::Cohere.ChatToolCallStartEventVariant2DeltaToolCall? ToolCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public global::Cohere.ChatToolCallStartEventVariant2DeltaMessage? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,12 +23,12 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallStartEventVariant2Delta" /> class.
         /// </summary>
-        /// <param name="toolCall"></param>
+        /// <param name="message"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ChatToolCallStartEventVariant2Delta(
-            global::Cohere.ChatToolCallStartEventVariant2DeltaToolCall? toolCall)
+            global::Cohere.ChatToolCallStartEventVariant2DeltaMessage? message)
         {
-            this.ToolCall = toolCall;
+            this.Message = message;
         }
 
         /// <summary>

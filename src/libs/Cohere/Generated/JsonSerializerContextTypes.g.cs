@@ -626,47 +626,47 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEvent? Type152 { get; set; }
+        public global::Cohere.ChatToolPlanDeltaEventVariant2DeltaMessage? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2? Type153 { get; set; }
+        public global::Cohere.ChatToolCallStartEvent? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2Delta? Type154 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2DeltaToolCall? Type155 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2Delta? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2DeltaToolCallType? Type156 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2DeltaMessage? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2DeltaToolCallFunction? Type157 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEvent? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEvent? Type158 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2? Type159 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2Delta? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2Delta? Type160 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessage? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaToolCall? Type161 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCalls? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaToolCallFunction? Type162 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>

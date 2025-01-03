@@ -6,13 +6,13 @@ namespace Cohere
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChatToolCallDeltaEventVariant2DeltaToolCall
+    public sealed partial class ChatToolCallDeltaEventVariant2DeltaMessageToolCalls
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaToolCallFunction? Function { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -21,20 +21,20 @@ namespace Cohere
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaToolCall" /> class.
+        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaMessageToolCalls" /> class.
         /// </summary>
         /// <param name="function"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public ChatToolCallDeltaEventVariant2DeltaToolCall(
-            global::Cohere.ChatToolCallDeltaEventVariant2DeltaToolCallFunction? function)
+        public ChatToolCallDeltaEventVariant2DeltaMessageToolCalls(
+            global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction? function)
         {
             this.Function = function;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaToolCall" /> class.
+        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaMessageToolCalls" /> class.
         /// </summary>
-        public ChatToolCallDeltaEventVariant2DeltaToolCall()
+        public ChatToolCallDeltaEventVariant2DeltaMessageToolCalls()
         {
         }
     }

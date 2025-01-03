@@ -6,14 +6,8 @@ namespace Cohere
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChatToolCallStartEventVariant2DeltaToolCallFunction
+    public sealed partial class ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -27,23 +21,20 @@ namespace Cohere
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatToolCallStartEventVariant2DeltaToolCallFunction" /> class.
+        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="arguments"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public ChatToolCallStartEventVariant2DeltaToolCallFunction(
-            string? name,
+        public ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction(
             string? arguments)
         {
-            this.Name = name;
             this.Arguments = arguments;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatToolCallStartEventVariant2DeltaToolCallFunction" /> class.
+        /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction" /> class.
         /// </summary>
-        public ChatToolCallStartEventVariant2DeltaToolCallFunction()
+        public ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction()
         {
         }
     }
