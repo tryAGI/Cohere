@@ -9273,22 +9273,22 @@ paths:
         - code-samples:
             - sdk: go
               name: Cohere Go SDK
-              code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient()\n\n\tresp, err := co.Datasets.Get(context.TODO(), \"dataset_id\")\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+              code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient()\n\n\tresp, err := co.Datasets.List(\n\t\tcontext.TODO(),\n\t\t&cohere.DatasetsListRequest{})\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
             - sdk: python
               name: Sync
-              code: "import cohere\n\nco = cohere.Client()\n\n# get dataset\nresponse = co.datasets.get(id=\"<<datasetId>>\")\n\nprint(response)\n"
+              code: "import cohere\n\nco = cohere.Client()\n\n# get list of datasets\nresponse = co.datasets.list()\n\nprint(response)\n"
             - sdk: python
               name: Async
-              code: "import cohere\nimport asyncio\n\nco = cohere.AsyncClient()\n\n\nasync def main():\n    response = await co.datasets.get(id=\"<<datasetId>>\")\n\n    print(response)\n\n\nasyncio.run(main())\n"
+              code: "import cohere\nimport asyncio\n\nco = cohere.AsyncClient()\n\n\nasync def main():\n    response = await co.datasets.list()\n\n    print(response)\n\n\nasyncio.run(main())\n"
             - sdk: java
               name: Cohere java SDK
-              code: "/* (C)2024 */\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.datasets.types.DatasetsGetResponse;\n\npublic class DatasetGet {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    DatasetsGetResponse response = cohere.datasets().get(\"dataset_id\");\n\n    System.out.println(response);\n  }\n}\n"
+              code: "/* (C)2024 */\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.datasets.types.DatasetsGetResponse;\n\npublic class DatasetGet {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    DatasetsGetResponse response = cohere.datasets().list();\n\n    System.out.println(response);\n  }\n}\n"
             - sdk: typescript
               name: Cohere TypeScript SDK
-              code: "const { CohereClient } = require('cohere-ai');\n\nconst cohere = new CohereClient({});\n\n(async () => {\n  const datasets = await cohere.datasets.get('<<datasetId>>');\n\n  console.log(datasets);\n})();\n"
+              code: "const { CohereClient } = require('cohere-ai');\n\nconst cohere = new CohereClient({});\n\n(async () => {\n  const datasets = await cohere.datasets.list();\n\n  console.log(datasets);\n})();\n"
             - sdk: curl
               name: cURL
-              code: "curl --request GET \\\n  --url https://api.cohere.com/v1/datasets \\\n  --header 'accept: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\""
+              code: "curl --request GET \\\n  --url https://api.cohere.com/v1/datasets \\\n  --header 'accept: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\"\n"
   /v1/datasets/usage:
     get:
       tags:
@@ -9440,7 +9440,7 @@ paths:
               code: "const { CohereClient } = require('cohere-ai');\n\nconst cohere = new CohereClient({});\n\n(async () => {\n  const datasets = await cohere.datasets.get('<<datasetId>>');\n\n  console.log(datasets);\n})();\n"
             - sdk: curl
               name: cURL
-              code: "curl --request GET \\\n  --url https://api.cohere.com/v1/datasets \\\n  --header 'accept: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\""
+              code: "curl --request GET \\\n  --url https://api.cohere.com/v1/datasets/id \\\n  --header 'accept: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\"\n"
     delete:
       tags:
         - /datasets
