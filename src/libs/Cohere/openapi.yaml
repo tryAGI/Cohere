@@ -12464,8 +12464,11 @@ components:
             delta:
               type: object
               properties:
-                tool_plan:
-                  type: string
+                message:
+                  type: object
+                  properties:
+                    tool_plan:
+                      type: string
       description: A streamed event which contains a delta of tool plan text.
     ChatToolCallStartEvent:
       allOf:
@@ -12477,22 +12480,11 @@ components:
             delta:
               type: object
               properties:
-                tool_call:
+                message:
                   type: object
                   properties:
-                    id:
-                      type: string
-                    type:
-                      enum:
-                        - function
-                      type: string
-                    function:
-                      type: object
-                      properties:
-                        name:
-                          type: string
-                        arguments:
-                          type: string
+                    tool_calls:
+                      $ref: '#/components/schemas/ToolCallV2'
       description: A streamed event delta which signifies a tool call has started streaming.
     ChatToolCallDeltaEvent:
       allOf:
@@ -12504,14 +12496,17 @@ components:
             delta:
               type: object
               properties:
-                tool_call:
+                message:
                   type: object
                   properties:
-                    function:
+                    tool_calls:
                       type: object
                       properties:
-                        arguments:
-                          type: string
+                        function:
+                          type: object
+                          properties:
+                            arguments:
+                              type: string
       description: A streamed event delta which signifies a delta in tool call arguments.
     ChatToolCallEndEvent:
       allOf:
