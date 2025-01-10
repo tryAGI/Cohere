@@ -150,6 +150,17 @@ namespace Cohere
         public bool? Logprobs { get; set; }
 
         /// <summary>
+        /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
+        /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
+        /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
+        /// **Note**: This parameter is only compatible with models [Command-r7b-12-2024](https://docs.cohere.com/v2/docs/command-r7b) and newer.<br/>
+        /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter))]
+        public global::Cohere.Chatv2RequestToolChoice? ToolChoice { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -239,6 +250,13 @@ namespace Cohere
         /// <param name="logprobs">
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
+        /// <param name="toolChoice">
+        /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
+        /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
+        /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
+        /// **Note**: This parameter is only compatible with models [Command-r7b-12-2024](https://docs.cohere.com/v2/docs/command-r7b) and newer.<br/>
+        /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Chatv2Request(
             string model,
@@ -258,7 +276,8 @@ namespace Cohere
             float? presencePenalty,
             float? k,
             float? p,
-            bool? logprobs)
+            bool? logprobs,
+            global::Cohere.Chatv2RequestToolChoice? toolChoice)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
@@ -278,6 +297,7 @@ namespace Cohere
             this.K = k;
             this.P = p;
             this.Logprobs = logprobs;
+            this.ToolChoice = toolChoice;
         }
 
         /// <summary>

@@ -105,6 +105,13 @@ namespace Cohere
         /// <param name="logprobs">
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
+        /// <param name="toolChoice">
+        /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
+        /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
+        /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
+        /// **Note**: This parameter is only compatible with models [Command-r7b-12-2024](https://docs.cohere.com/v2/docs/command-r7b) and newer.<br/>
+        /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
@@ -127,6 +134,7 @@ namespace Cohere
             float? k = default,
             float? p = default,
             bool? logprobs = default,
+            global::Cohere.Chatv2RequestToolChoice? toolChoice = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

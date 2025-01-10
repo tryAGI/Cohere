@@ -107,6 +107,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter),
             typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter),
+            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateRequestTruncateNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter),
