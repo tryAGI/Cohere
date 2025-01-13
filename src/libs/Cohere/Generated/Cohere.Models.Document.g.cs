@@ -11,11 +11,11 @@ namespace Cohere
     public sealed partial class Document
     {
         /// <summary>
-        /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
+        /// A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+        public required object Data { get; set; }
 
         /// <summary>
         /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
@@ -33,14 +33,14 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="Document" /> class.
         /// </summary>
         /// <param name="data">
-        /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
+        /// A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.
         /// </param>
         /// <param name="id">
         /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Document(
-            global::System.Collections.Generic.Dictionary<string, string> data,
+            object data,
             string? id)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
