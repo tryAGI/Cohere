@@ -37,6 +37,13 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<string> DocumentIds { get; set; }
 
         /// <summary>
+        /// The type of citation which indicates what part of the response the citation is for.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatCitationTypeJsonConverter))]
+        public global::Cohere.ChatCitationType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,17 +64,22 @@ namespace Cohere
         /// <param name="documentIds">
         /// Identifiers of documents cited by this section of the generated reply.
         /// </param>
+        /// <param name="type">
+        /// The type of citation which indicates what part of the response the citation is for.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ChatCitation(
             int start,
             int end,
             string text,
-            global::System.Collections.Generic.IList<string> documentIds)
+            global::System.Collections.Generic.IList<string> documentIds,
+            global::Cohere.ChatCitationType? type)
         {
             this.Start = start;
             this.End = end;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.DocumentIds = documentIds ?? throw new global::System.ArgumentNullException(nameof(documentIds));
+            this.Type = type;
         }
 
         /// <summary>

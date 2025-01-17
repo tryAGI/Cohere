@@ -11578,6 +11578,14 @@ components:
           description: "Identifiers of documents cited by this section of the generated reply.\n"
           x-fern-audiences:
             - public
+        type:
+          enum:
+            - TEXT_CONTENT
+            - PLAN
+          type: string
+          description: "The type of citation which indicates what part of the response the citation is for.\n"
+          x-fern-audiences:
+            - public
       description: "A section of the generated reply which cites external knowledge.\n"
     ChatSearchQuery:
       required:
@@ -12068,6 +12076,12 @@ components:
         - $ref: '#/components/schemas/ToolSource'
         - $ref: '#/components/schemas/DocumentSource'
       description: A source object containing information about the source of the data cited.
+    CitationType:
+      enum:
+        - TEXT_CONTENT
+        - PLAN
+      type: string
+      description: "The type of citation which indicates what part of the response the citation is for.\n"
     Citation:
       type: object
       properties:
@@ -12084,6 +12098,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Source'
+        type:
+          $ref: '#/components/schemas/CitationType'
       description: Citation information containing sources and the text cited.
     AssistantMessage:
       title: Assistant Message
