@@ -33,6 +33,13 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.Source>? Sources { get; set; }
 
         /// <summary>
+        /// The type of citation which indicates what part of the response the citation is for.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.CitationTypeJsonConverter))]
+        public global::Cohere.CitationType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -51,17 +58,22 @@ namespace Cohere
         /// Text snippet that is being cited.
         /// </param>
         /// <param name="sources"></param>
+        /// <param name="type">
+        /// The type of citation which indicates what part of the response the citation is for.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Citation(
             int? start,
             int? end,
             string? text,
-            global::System.Collections.Generic.IList<global::Cohere.Source>? sources)
+            global::System.Collections.Generic.IList<global::Cohere.Source>? sources,
+            global::Cohere.CitationType? type)
         {
             this.Start = start;
             this.End = end;
             this.Text = text;
             this.Sources = sources;
+            this.Type = type;
         }
 
         /// <summary>
