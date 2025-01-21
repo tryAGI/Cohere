@@ -12,7 +12,8 @@ namespace Cohere
         /// The name of the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// The description of the function.
@@ -24,7 +25,8 @@ namespace Cohere
         /// The parameters of the function as a JSON schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,13 +48,13 @@ namespace Cohere
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ToolV2Function(
-            string? name,
-            string? description,
-            object? parameters)
+            string name,
+            object parameters,
+            string? description)
         {
-            this.Name = name;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
-            this.Parameters = parameters;
         }
 
         /// <summary>

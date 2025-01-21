@@ -12229,6 +12229,9 @@ components:
             - function
           type: string
         function:
+          required:
+            - name
+            - parameters
           type: object
           properties:
             name:
