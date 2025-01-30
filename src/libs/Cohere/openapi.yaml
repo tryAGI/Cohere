@@ -1512,6 +1512,7 @@ paths:
         - public
       x-fern-streaming:
         stream-condition: $request.stream
+        stream-description: "<Warning>\nThis API is marked as \"Legacy\" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat with Streaming API.\n</Warning>\nGenerates realistic text conditioned on a given input.\n"
         response:
           type: object
           x-fern-type-name: Generation
