@@ -46,7 +46,9 @@ namespace Cohere
         /// <param name="parameters">
         /// The parameters of the function as a JSON schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolV2Function(
             string name,
             object parameters,

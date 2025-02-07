@@ -24,7 +24,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="Metrics" /> class.
         /// </summary>
         /// <param name="finetuneDatasetMetrics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Metrics(
             global::Cohere.FinetuneDatasetMetrics? finetuneDatasetMetrics)
         {

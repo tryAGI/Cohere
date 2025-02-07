@@ -24,7 +24,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="CitationStartEventVariant2Delta" /> class.
         /// </summary>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CitationStartEventVariant2Delta(
             global::Cohere.CitationStartEventVariant2DeltaMessage? message)
         {

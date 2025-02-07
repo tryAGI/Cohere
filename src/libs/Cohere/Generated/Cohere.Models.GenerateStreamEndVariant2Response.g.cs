@@ -39,7 +39,9 @@ namespace Cohere
         /// <param name="id"></param>
         /// <param name="prompt"></param>
         /// <param name="generations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateStreamEndVariant2Response(
             string id,
             string? prompt,

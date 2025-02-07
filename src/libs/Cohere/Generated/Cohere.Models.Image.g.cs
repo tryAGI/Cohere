@@ -57,7 +57,9 @@ namespace Cohere
         /// <param name="bitDepth">
         /// Bit depth of the image
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Image(
             double width,
             double height,

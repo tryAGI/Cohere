@@ -44,7 +44,9 @@ namespace Cohere
         /// <param name="preamble">
         /// The preamble of this dataset.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatDataMetrics(
             double? numTrainTurns,
             double? numEvalTurns,

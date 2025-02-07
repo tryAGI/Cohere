@@ -35,7 +35,9 @@ namespace Cohere
         /// <param name="documents">
         /// Documents fetched from searches or provided by the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSearchResultsEventVariant2(
             global::System.Collections.Generic.IList<global::Cohere.ChatSearchResult>? searchResults,
             global::System.Collections.Generic.IList<global::Cohere.ChatDocument>? documents)

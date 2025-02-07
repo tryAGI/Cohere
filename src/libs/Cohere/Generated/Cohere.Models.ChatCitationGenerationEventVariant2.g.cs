@@ -27,7 +27,9 @@ namespace Cohere
         /// <param name="citations">
         /// Citations for the generated reply.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCitationGenerationEventVariant2(
             global::System.Collections.Generic.IList<global::Cohere.ChatCitation> citations)
         {

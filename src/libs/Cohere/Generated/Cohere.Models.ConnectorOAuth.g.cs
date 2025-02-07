@@ -64,7 +64,9 @@ namespace Cohere
         /// <param name="scope">
         /// The OAuth scopes to request when users authorize the connector.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ConnectorOAuth(
             string authorizeUrl,
             string tokenUrl,

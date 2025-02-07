@@ -38,7 +38,9 @@ namespace Cohere
         /// <param name="index"></param>
         /// <param name="delta"></param>
         /// <param name="logprobs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatContentDeltaEventVariant2(
             int? index,
             global::Cohere.ChatContentDeltaEventVariant2Delta? delta,

@@ -41,7 +41,9 @@ namespace Cohere
         /// <param name="token">
         /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateConnectorServiceAuth(
             global::Cohere.AuthTokenType type,
             string token)

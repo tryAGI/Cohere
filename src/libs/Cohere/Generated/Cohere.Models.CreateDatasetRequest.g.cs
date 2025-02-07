@@ -55,7 +55,9 @@ namespace Cohere
         /// <param name="evalDataname">
         /// An optional evaluation file to upload
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateDatasetRequest(
             byte[] data,
             string dataname,

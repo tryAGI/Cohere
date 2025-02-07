@@ -34,7 +34,9 @@ namespace Cohere
         /// <param name="nextPageToken">
         /// A token to retrieve the next page of results. Provide in the page_token parameter of the next request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListModelsResponse(
             global::System.Collections.Generic.IList<global::Cohere.GetModelResponse> models,
             string? nextPageToken)

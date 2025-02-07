@@ -72,7 +72,9 @@ namespace Cohere
         /// </param>
         /// <param name="usage"></param>
         /// <param name="logprobs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatResponse(
             string id,
             global::Cohere.ChatFinishReason finishReason,

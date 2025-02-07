@@ -88,7 +88,9 @@ namespace Cohere
         /// Default Value: END<br/>
         /// Included only in requests
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassifyRequest(
             global::System.Collections.Generic.IList<string>? inputs,
             global::System.Collections.Generic.IList<global::Cohere.ClassifyExample>? examples,

@@ -31,7 +31,9 @@ namespace Cohere
         /// </summary>
         /// <param name="id"></param>
         /// <param name="delta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageEndEventVariant2(
             string? id,
             global::Cohere.ChatMessageEndEventVariant2Delta? delta)

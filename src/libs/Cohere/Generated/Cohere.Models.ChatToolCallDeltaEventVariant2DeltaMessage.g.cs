@@ -24,7 +24,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2DeltaMessage" /> class.
         /// </summary>
         /// <param name="toolCalls"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallDeltaEventVariant2DeltaMessage(
             global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCalls? toolCalls)
         {

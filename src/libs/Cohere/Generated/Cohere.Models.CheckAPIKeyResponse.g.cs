@@ -39,7 +39,9 @@ namespace Cohere
         /// <param name="valid"></param>
         /// <param name="organizationId"></param>
         /// <param name="ownerId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAPIKeyResponse(
             bool valid,
             string? organizationId,

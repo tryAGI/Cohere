@@ -37,7 +37,9 @@ namespace Cohere
         /// Pagination token to retrieve the next page of results. If the value is "",<br/>
         /// it means no further results for the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListTrainingStepMetricsResponse(
             global::System.Collections.Generic.IList<global::Cohere.TrainingStepMetrics>? stepMetrics,
             string? nextPageToken)

@@ -45,7 +45,9 @@ namespace Cohere
         /// <param name="billedUnits"></param>
         /// <param name="tokens"></param>
         /// <param name="warnings"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiMeta(
             global::Cohere.ApiMetaApiVersion? apiVersion,
             global::Cohere.ApiMetaBilledUnits? billedUnits,

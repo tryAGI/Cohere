@@ -34,7 +34,9 @@ namespace Cohere
         /// <param name="function">
         /// The function to be executed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolV2(
             global::Cohere.ToolV2Type? type,
             global::Cohere.ToolV2Function? function)

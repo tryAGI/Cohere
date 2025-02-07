@@ -34,7 +34,9 @@ namespace Cohere
         /// Contains the chunk of the tool call generation in the stream.
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallsChunkEventVariant2(
             global::Cohere.ToolCallDelta toolCallDelta,
             string? text)

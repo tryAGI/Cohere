@@ -26,7 +26,9 @@ namespace Cohere
         /// <param name="citations">
         /// Citation information containing sources and the text cited.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CitationStartEventVariant2DeltaMessage(
             global::Cohere.Citation? citations)
         {

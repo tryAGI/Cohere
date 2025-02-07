@@ -35,7 +35,9 @@ namespace Cohere
         /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </param>
         /// <param name="toolResults"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessage(
             global::Cohere.ChatRole role,
             global::System.Collections.Generic.IList<global::Cohere.ToolResult>? toolResults)

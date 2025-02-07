@@ -67,7 +67,9 @@ namespace Cohere
         /// <param name="error"></param>
         /// <param name="inputTrackingMetrics"></param>
         /// <param name="outputTrackingMetrics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateClusterJobRequest(
             global::Cohere.UpdateClusterJobRequestStatus? status,
             global::System.Collections.Generic.IList<global::Cohere.Cluster>? clusters,

@@ -27,7 +27,9 @@ namespace Cohere
         /// <param name="role">
         /// The role of the message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageStartEventVariant2DeltaMessage(
             global::Cohere.ChatMessageStartEventVariant2DeltaMessageRole? role)
         {

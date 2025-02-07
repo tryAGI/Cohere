@@ -71,7 +71,9 @@ namespace Cohere
         /// <param name="defaultEndpoints">
         /// The API endpoints that the model is default to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetModelResponse(
             string? name,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? endpoints,

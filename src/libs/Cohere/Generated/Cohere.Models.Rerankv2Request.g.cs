@@ -71,7 +71,9 @@ namespace Cohere
         /// <param name="maxTokensPerDoc">
         /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Rerankv2Request(
             string model,
             string query,

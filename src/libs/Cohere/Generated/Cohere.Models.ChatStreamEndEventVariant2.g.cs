@@ -44,7 +44,9 @@ namespace Cohere
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </param>
         /// <param name="response"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatStreamEndEventVariant2(
             global::Cohere.ChatStreamEndEventVariant2FinishReason finishReason,
             global::Cohere.NonStreamedChatResponse response)

@@ -72,7 +72,9 @@ namespace Cohere
         /// Default Value: true
         /// </param>
         /// <param name="generateDescriptions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateClusterJobRequest(
             string embeddingsUrl,
             string? inputDatasetId,

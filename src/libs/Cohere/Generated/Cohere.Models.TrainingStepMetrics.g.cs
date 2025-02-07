@@ -44,7 +44,9 @@ namespace Cohere
         /// <param name="metrics">
         /// Map of names and values for each evaluation metrics.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingStepMetrics(
             global::System.DateTime? createdAt,
             int? stepNumber,
