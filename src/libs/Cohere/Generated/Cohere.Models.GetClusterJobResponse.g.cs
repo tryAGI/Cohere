@@ -157,7 +157,9 @@ namespace Cohere
         /// </param>
         /// <param name="error"></param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetClusterJobResponse(
             string jobId,
             global::System.DateTime? createdAt,

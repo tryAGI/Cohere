@@ -24,7 +24,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ClassifyDataMetrics" /> class.
         /// </summary>
         /// <param name="labelMetrics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassifyDataMetrics(
             global::System.Collections.Generic.IList<global::Cohere.LabelMetric>? labelMetrics)
         {

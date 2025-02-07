@@ -26,7 +26,9 @@ namespace Cohere
         /// <param name="message">
         /// A developer-facing error message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Error(
             string? message)
         {

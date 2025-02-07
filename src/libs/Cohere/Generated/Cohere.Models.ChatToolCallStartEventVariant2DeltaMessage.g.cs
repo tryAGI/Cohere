@@ -26,7 +26,9 @@ namespace Cohere
         /// <param name="toolCalls">
         /// An array of tool calls to be made.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallStartEventVariant2DeltaMessage(
             global::Cohere.ToolCallV2? toolCalls)
         {

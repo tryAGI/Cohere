@@ -44,7 +44,9 @@ namespace Cohere
         /// - **error**: The generation failed due to an internal error
         /// </param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageEndEventVariant2Delta(
             global::Cohere.ChatFinishReason? finishReason,
             global::Cohere.Usage? usage)

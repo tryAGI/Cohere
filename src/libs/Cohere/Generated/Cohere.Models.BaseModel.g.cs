@@ -79,7 +79,9 @@ namespace Cohere
         ///  - STRATEGY_TFEW: Deprecated: Serve the fine-tuned model on a shared GPU.<br/>
         /// Default Value: STRATEGY_UNSPECIFIED
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BaseModel(
             global::Cohere.BaseType baseType,
             string? name,

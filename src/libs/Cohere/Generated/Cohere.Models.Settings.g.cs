@@ -66,7 +66,9 @@ namespace Cohere
         /// <param name="wandb">
         /// The Weights &amp; Biases configuration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Settings(
             global::Cohere.BaseModel baseModel,
             string datasetId,

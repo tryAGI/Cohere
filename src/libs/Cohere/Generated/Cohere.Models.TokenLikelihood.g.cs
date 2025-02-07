@@ -44,7 +44,9 @@ namespace Cohere
         /// <param name="logLikelihood">
         /// Non normalized probability of the token
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TokenLikelihood(
             int? encoded,
             string? decoded,

@@ -62,7 +62,9 @@ namespace Cohere
         /// Probabilities for tokens in the request raw_prompt
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LogLikelihoodResponse(
             string id,
             global::System.Collections.Generic.IList<global::Cohere.TokenLikelihood> promptTokens,

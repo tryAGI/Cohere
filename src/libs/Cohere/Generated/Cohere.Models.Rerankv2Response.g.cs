@@ -41,7 +41,9 @@ namespace Cohere
         /// An ordered list of ranked documents
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Rerankv2Response(
             global::System.Collections.Generic.IList<global::Cohere.Rerankv2ResponseResult> results,
             string? id,

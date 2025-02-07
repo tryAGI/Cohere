@@ -26,7 +26,9 @@ namespace Cohere
         /// <param name="id">
         /// The dataset ID
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateDatasetResponse(
             string? id)
         {

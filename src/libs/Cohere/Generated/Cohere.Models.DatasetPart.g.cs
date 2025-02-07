@@ -91,7 +91,9 @@ namespace Cohere
         /// <param name="samples">
         /// The first few rows of the parsed file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetPart(
             string id,
             string name,

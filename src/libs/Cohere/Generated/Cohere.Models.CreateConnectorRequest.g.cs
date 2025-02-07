@@ -91,7 +91,9 @@ namespace Cohere
         /// Default Value: false
         /// </param>
         /// <param name="serviceAuth"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateConnectorRequest(
             string name,
             string url,

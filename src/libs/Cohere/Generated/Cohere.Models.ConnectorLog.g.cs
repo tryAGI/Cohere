@@ -106,7 +106,9 @@ namespace Cohere
         /// <param name="errorMessage">
         /// Error message of the request
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ConnectorLog(
             string id,
             string connectorId,

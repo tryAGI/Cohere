@@ -61,7 +61,9 @@ namespace Cohere
         /// <param name="type">
         /// The type of citation which indicates what part of the response the citation is for.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Citation(
             int? start,
             int? end,

@@ -31,7 +31,9 @@ namespace Cohere
         /// </summary>
         /// <param name="name"></param>
         /// <param name="arguments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCallV2Function(
             string? name,
             string? arguments)

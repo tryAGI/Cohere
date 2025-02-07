@@ -39,7 +39,9 @@ namespace Cohere
         /// <param name="jobs"></param>
         /// <param name="totalCount"></param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListClusterJobsResponse(
             global::System.Collections.Generic.IList<global::Cohere.GetClusterJobResponse> jobs,
             int? totalCount,

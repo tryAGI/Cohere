@@ -24,7 +24,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ListDatasetsResponse" /> class.
         /// </summary>
         /// <param name="datasets"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListDatasetsResponse(
             global::System.Collections.Generic.IList<global::Cohere.Dataset>? datasets)
         {

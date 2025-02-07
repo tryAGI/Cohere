@@ -33,7 +33,9 @@ namespace Cohere
         /// The unique identifier of the document
         /// </param>
         /// <param name="document"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DocumentSource(
             string? id,
             object? document)

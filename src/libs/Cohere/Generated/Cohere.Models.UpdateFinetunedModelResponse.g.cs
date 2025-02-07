@@ -26,7 +26,9 @@ namespace Cohere
         /// <param name="finetunedModel">
         /// This resource represents a fine-tuned model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFinetunedModelResponse(
             global::Cohere.FinetunedModel? finetunedModel)
         {

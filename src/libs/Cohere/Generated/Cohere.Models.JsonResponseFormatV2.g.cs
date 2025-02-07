@@ -63,7 +63,9 @@ namespace Cohere
         /// ```<br/>
         /// **Note**: This field must not be specified when the `type` is set to `"text"`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public JsonResponseFormatV2(
             global::Cohere.ResponseFormatTypeV2 type,
             object? jsonSchema)

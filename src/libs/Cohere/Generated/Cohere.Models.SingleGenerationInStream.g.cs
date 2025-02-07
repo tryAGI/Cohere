@@ -53,7 +53,9 @@ namespace Cohere
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
         /// <param name="finishReason"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SingleGenerationInStream(
             string id,
             string text,

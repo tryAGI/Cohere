@@ -39,7 +39,9 @@ namespace Cohere
         /// The content of each document are generally short (should be under 300 words). Metadata should be used to provide additional information, both the key name and the value will be<br/>
         /// passed to the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DocumentContent(
             global::Cohere.Document document,
             global::Cohere.DocumentContentType type)

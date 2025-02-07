@@ -105,7 +105,9 @@ namespace Cohere
         /// A free-form instruction for modifying how the summaries get generated. Should complete the sentence "Generate a summary _". Eg. "focusing on the next steps" or "written by Yoda"<br/>
         /// Included only in requests
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SummarizeRequest(
             string? text,
             global::Cohere.SummarizeRequestLength? length,

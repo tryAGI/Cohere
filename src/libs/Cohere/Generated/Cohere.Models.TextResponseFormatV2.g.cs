@@ -30,7 +30,9 @@ namespace Cohere
         /// Defaults to `"text"`.<br/>
         /// When set to `"json_object"`, the model's output will be a valid JSON Object.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TextResponseFormatV2(
             global::Cohere.ResponseFormatTypeV2 type)
         {

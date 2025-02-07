@@ -46,7 +46,9 @@ namespace Cohere
         /// <param name="totalSize">
         /// Total count of results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListFinetunedModelsResponse(
             global::System.Collections.Generic.IList<global::Cohere.FinetunedModel>? finetunedModels,
             string? nextPageToken,

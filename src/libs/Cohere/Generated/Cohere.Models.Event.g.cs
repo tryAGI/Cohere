@@ -65,7 +65,9 @@ namespace Cohere
         /// <param name="createdAt">
         /// Timestamp when the event happened.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Event(
             string? userId,
             global::Cohere.Status? status,

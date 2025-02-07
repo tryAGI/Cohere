@@ -25,7 +25,9 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ResponseFormatV2Discriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseFormatV2Discriminator(
             global::Cohere.ResponseFormatV2DiscriminatorType? type)
         {

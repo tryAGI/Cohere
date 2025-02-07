@@ -33,7 +33,9 @@ namespace Cohere
         /// Unique identifier for the generated reply.
         /// </param>
         /// <param name="delta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageStartEventVariant2(
             string? id,
             global::Cohere.ChatMessageStartEventVariant2Delta? delta)

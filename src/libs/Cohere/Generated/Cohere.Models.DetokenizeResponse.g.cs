@@ -36,7 +36,9 @@ namespace Cohere
         /// Included only in responses
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DetokenizeResponse(
             global::Cohere.ApiMeta? meta,
             string text = default!)

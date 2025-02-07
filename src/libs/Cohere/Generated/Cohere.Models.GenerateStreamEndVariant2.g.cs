@@ -41,7 +41,9 @@ namespace Cohere
         /// <param name="isFinished"></param>
         /// <param name="finishReason"></param>
         /// <param name="response"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateStreamEndVariant2(
             bool isFinished,
             global::Cohere.GenerateStreamEndVariant2Response response,

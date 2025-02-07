@@ -38,7 +38,9 @@ namespace Cohere
         /// <param name="id">
         /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Document(
             object data,
             string? id)

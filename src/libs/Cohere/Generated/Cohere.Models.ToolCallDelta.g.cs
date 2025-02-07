@@ -53,7 +53,9 @@ namespace Cohere
         /// <param name="text">
         /// Chunk of the tool plan text
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCallDelta(
             string? name,
             double? index,

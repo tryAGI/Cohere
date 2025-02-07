@@ -45,7 +45,9 @@ namespace Cohere
         /// <param name="logprobs">
         /// The log probability of each token used to construct the text chunk.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LogprobItem(
             global::System.Collections.Generic.IList<int> tokenIds,
             string? text,
