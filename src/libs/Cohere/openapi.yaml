@@ -16367,6 +16367,11 @@ components:
           description: Public URL to the tokenizer's configuration file.
           x-fern-audiences:
             - public
+        supports_vision:
+          type: boolean
+          description: Whether the model supports image inputs or not.
+          x-fern-audiences:
+            - public
         default_endpoints:
           type: array
           items:
