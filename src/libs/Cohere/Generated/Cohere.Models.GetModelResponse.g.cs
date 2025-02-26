@@ -39,6 +39,12 @@ namespace Cohere
         public string? TokenizerUrl { get; set; }
 
         /// <summary>
+        /// Whether the model supports image inputs or not.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_vision")]
+        public bool? SupportsVision { get; set; }
+
+        /// <summary>
         /// The API endpoints that the model is default to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_endpoints")]
@@ -68,6 +74,9 @@ namespace Cohere
         /// <param name="tokenizerUrl">
         /// Public URL to the tokenizer's configuration file.
         /// </param>
+        /// <param name="supportsVision">
+        /// Whether the model supports image inputs or not.
+        /// </param>
         /// <param name="defaultEndpoints">
         /// The API endpoints that the model is default to.
         /// </param>
@@ -80,6 +89,7 @@ namespace Cohere
             bool? finetuned,
             double? contextLength,
             string? tokenizerUrl,
+            bool? supportsVision,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? defaultEndpoints)
         {
             this.Name = name;
@@ -87,6 +97,7 @@ namespace Cohere
             this.Finetuned = finetuned;
             this.ContextLength = contextLength;
             this.TokenizerUrl = tokenizerUrl;
+            this.SupportsVision = supportsVision;
             this.DefaultEndpoints = defaultEndpoints;
         }
 
