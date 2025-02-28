@@ -27,6 +27,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ChatStreamEndEventVariant2FinishReasonNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.TextContentTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.TextContentTypeNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.ContentTypeJsonConverter),
+            typeof(global::Cohere.JsonConverters.ContentTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.UserMessageRoleJsonConverter),
             typeof(global::Cohere.JsonConverters.UserMessageRoleNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter),

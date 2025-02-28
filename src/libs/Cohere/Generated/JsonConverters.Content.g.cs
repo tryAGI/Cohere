@@ -28,14 +28,33 @@ namespace Cohere.JsonConverters
             {
             }
 
+            readerCopy = reader;
+            global::Cohere.ImageContent? image = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ImageContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ImageContent).Name}");
+                image = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
             var result = new global::Cohere.Content(
-                text
+                text,
+                image
                 );
 
             if (text != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextContent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (image != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ImageContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ImageContent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -56,6 +75,12 @@ namespace Cohere.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextContent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+            }
+            else if (value.IsImage)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ImageContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ImageContent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
             }
         }
     }
