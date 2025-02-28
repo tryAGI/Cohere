@@ -12014,9 +12014,37 @@ components:
         text:
           type: string
       description: Text content of the message.
+    ContentType:
+      enum:
+        - text
+        - image_url
+      type: string
+      description: "Type of message content\n"
+      x-fern-audiences:
+        - public
+    ImageUrl:
+      required:
+        - url
+      type: object
+      properties:
+        url:
+          type: string
+      description: Base64 url of image.
+    ImageContent:
+      required:
+        - type
+        - image_url
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ContentType'
+        image_url:
+          $ref: '#/components/schemas/ImageUrl'
+      description: Image content of the message.
     Content:
       oneOf:
         - $ref: '#/components/schemas/TextContent'
+        - $ref: '#/components/schemas/ImageContent'
       description: A Content block which contains information about the content type and the content itself.
     UserMessage:
       title: User Message

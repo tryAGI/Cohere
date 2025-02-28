@@ -45,9 +45,57 @@ namespace Cohere
         }
 
         /// <summary>
+        /// Image content of the message.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ImageContent? Image { get; init; }
+#else
+        public global::Cohere.ImageContent? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Content(global::Cohere.ImageContent value) => new Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ImageContent?(Content @this) => @this.Image;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Content(global::Cohere.ImageContent? value)
+        {
+            Image = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Content(
+            global::Cohere.TextContent? text,
+            global::Cohere.ImageContent? image
+            )
+        {
+            Text = text;
+            Image = image;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Image as object ??
             Text as object 
             ;
 
@@ -56,7 +104,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsText && !IsImage || !IsText && IsImage;
         }
 
         /// <summary>
@@ -64,6 +112,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.TextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.ImageContent?, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -75,6 +124,10 @@ namespace Cohere
             {
                 return text(Text!);
             }
+            else if (IsImage && image != null)
+            {
+                return image(Image!);
+            }
 
             return default(TResult);
         }
@@ -84,6 +137,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.TextContent?>? text = null,
+            global::System.Action<global::Cohere.ImageContent?>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -94,6 +148,10 @@ namespace Cohere
             if (IsText)
             {
                 text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
             }
         }
 
@@ -106,6 +164,8 @@ namespace Cohere
             {
                 Text,
                 typeof(global::Cohere.TextContent),
+                Image,
+                typeof(global::Cohere.ImageContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -122,7 +182,8 @@ namespace Cohere
         public bool Equals(Content other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ImageContent?>.Default.Equals(Image, other.Image) 
                 ;
         }
 
