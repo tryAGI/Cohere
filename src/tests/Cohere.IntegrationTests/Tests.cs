@@ -3,15 +3,14 @@ namespace Cohere.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
-    [TestMethod]
-    public CohereApi GetAuthenticatedApi()
+    private static ICohereClient GetAuthenticatedClient()
     {
         var apiKey =
             Environment.GetEnvironmentVariable("COHERE_API_KEY") ??
             throw new AssertInconclusiveException("COHERE_API_KEY environment variable is not found.");
 
-        var api = new CohereApi(apiKey);
+        var client = new CohereClient(apiKey);
         
-        return api;
+        return client;
     }
 }

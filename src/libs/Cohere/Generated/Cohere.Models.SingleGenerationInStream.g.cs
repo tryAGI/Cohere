@@ -11,16 +11,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.FinishReason FinishReason { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
-
-        /// <summary>
-        /// Full text of the generation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
 
         /// <summary>
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
@@ -29,12 +30,11 @@ namespace Cohere
         public int? Index { get; set; }
 
         /// <summary>
-        /// 
+        /// Full text of the generation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.FinishReason FinishReason { get; set; }
+        public required string Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,26 +45,26 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="SingleGenerationInStream" /> class.
         /// </summary>
+        /// <param name="finishReason"></param>
         /// <param name="id"></param>
-        /// <param name="text">
-        /// Full text of the generation.
-        /// </param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
-        /// <param name="finishReason"></param>
+        /// <param name="text">
+        /// Full text of the generation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SingleGenerationInStream(
+            global::Cohere.FinishReason finishReason,
             string id,
             string text,
-            global::Cohere.FinishReason finishReason,
             int? index)
         {
+            this.FinishReason = finishReason;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.FinishReason = finishReason;
             this.Index = index;
         }
 

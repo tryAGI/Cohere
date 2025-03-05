@@ -9,34 +9,13 @@ namespace Cohere
     public sealed partial class ClassifyResponseClassification
     {
         /// <summary>
+        /// The type of classification performed<br/>
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// The input text that was classified<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public string? Input { get; set; }
-
-        /// <summary>
-        /// The predicted label for the associated query (only filled for single-label models)<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public string? Prediction { get; set; }
-
-        /// <summary>
-        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
-        /// Included only in responses
-        /// </summary>
-        /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
-        public global::System.Collections.Generic.IList<string> Predictions { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
+        public global::Cohere.ClassifyResponseClassificationClassificationType ClassificationType { get; set; } = default!;
 
         /// <summary>
         /// The confidence score for the top predicted class (only filled for single-label classification)<br/>
@@ -55,6 +34,20 @@ namespace Cohere
         public global::System.Collections.Generic.IList<float> Confidences { get; set; } = default!;
 
         /// <summary>
+        /// Included only in responses
+        /// </summary>
+        /// <default>default!</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// The input text that was classified<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public string? Input { get; set; }
+
+        /// <summary>
         /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
         /// Included only in responses
         /// </summary>
@@ -63,13 +56,20 @@ namespace Cohere
         public global::System.Collections.Generic.Dictionary<string, global::Cohere.ClassifyResponseClassificationLabels2> Labels { get; set; } = default!;
 
         /// <summary>
-        /// The type of classification performed<br/>
+        /// The predicted label for the associated query (only filled for single-label models)<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public string? Prediction { get; set; }
+
+        /// <summary>
+        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
-        public global::Cohere.ClassifyResponseClassificationClassificationType ClassificationType { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
+        public global::System.Collections.Generic.IList<string> Predictions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -80,6 +80,14 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponseClassification" /> class.
         /// </summary>
+        /// <param name="classificationType">
+        /// The type of classification performed<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="confidences">
+        /// An array containing the confidence scores of all the predictions in the same order<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="id">
         /// Included only in responses
         /// </param>
@@ -87,20 +95,12 @@ namespace Cohere
         /// The input text that was classified<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="predictions">
-        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="confidences">
-        /// An array containing the confidence scores of all the predictions in the same order<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="labels">
         /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="classificationType">
-        /// The type of classification performed<br/>
+        /// <param name="predictions">
+        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
         /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER
@@ -108,18 +108,18 @@ namespace Cohere
 #endif
         public ClassifyResponseClassification(
             string? input,
-            string id = default!,
-            global::System.Collections.Generic.IList<string> predictions = default!,
+            global::Cohere.ClassifyResponseClassificationClassificationType classificationType = default!,
             global::System.Collections.Generic.IList<float> confidences = default!,
+            string id = default!,
             global::System.Collections.Generic.Dictionary<string, global::Cohere.ClassifyResponseClassificationLabels2> labels = default!,
-            global::Cohere.ClassifyResponseClassificationClassificationType classificationType = default!)
+            global::System.Collections.Generic.IList<string> predictions = default!)
         {
+            this.ClassificationType = classificationType;
+            this.Confidences = confidences;
             this.Id = id;
             this.Input = input;
-            this.Predictions = predictions;
-            this.Confidences = confidences;
             this.Labels = labels;
-            this.ClassificationType = classificationType;
+            this.Predictions = predictions;
         }
 
         /// <summary>

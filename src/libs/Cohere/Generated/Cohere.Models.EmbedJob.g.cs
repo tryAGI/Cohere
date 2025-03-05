@@ -9,27 +9,6 @@ namespace Cohere
     public sealed partial class EmbedJob
     {
         /// <summary>
-        /// ID of the embed job
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string JobId { get; set; }
-
-        /// <summary>
-        /// The name of the embed job
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
-        /// The status of the embed job
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.EmbedJobStatus Status { get; set; }
-
-        /// <summary>
         /// The creation date of the embed job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -44,10 +23,17 @@ namespace Cohere
         public required string InputDatasetId { get; set; }
 
         /// <summary>
-        /// ID of the resulting output dataset
+        /// ID of the embed job
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_dataset_id")]
-        public string? OutputDatasetId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string JobId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// ID of the model used to embed
@@ -55,6 +41,26 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// The name of the embed job
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// ID of the resulting output dataset
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_dataset_id")]
+        public string? OutputDatasetId { get; set; }
+
+        /// <summary>
+        /// The status of the embed job
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.EmbedJobStatus Status { get; set; }
 
         /// <summary>
         /// The truncation option used
@@ -65,12 +71,6 @@ namespace Cohere
         public required global::Cohere.EmbedJobTruncate Truncate { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -79,54 +79,54 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedJob" /> class.
         /// </summary>
-        /// <param name="jobId">
-        /// ID of the embed job
-        /// </param>
-        /// <param name="name">
-        /// The name of the embed job
-        /// </param>
-        /// <param name="status">
-        /// The status of the embed job
-        /// </param>
         /// <param name="createdAt">
         /// The creation date of the embed job
         /// </param>
         /// <param name="inputDatasetId">
         /// ID of the input dataset
         /// </param>
+        /// <param name="jobId">
+        /// ID of the embed job
+        /// </param>
+        /// <param name="meta"></param>
+        /// <param name="model">
+        /// ID of the model used to embed
+        /// </param>
+        /// <param name="name">
+        /// The name of the embed job
+        /// </param>
         /// <param name="outputDatasetId">
         /// ID of the resulting output dataset
         /// </param>
-        /// <param name="model">
-        /// ID of the model used to embed
+        /// <param name="status">
+        /// The status of the embed job
         /// </param>
         /// <param name="truncate">
         /// The truncation option used
         /// </param>
-        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedJob(
-            string jobId,
-            global::Cohere.EmbedJobStatus status,
             global::System.DateTime createdAt,
             string inputDatasetId,
+            string jobId,
             string model,
+            global::Cohere.EmbedJobStatus status,
             global::Cohere.EmbedJobTruncate truncate,
+            global::Cohere.ApiMeta? meta,
             string? name,
-            string? outputDatasetId,
-            global::Cohere.ApiMeta? meta)
+            string? outputDatasetId)
         {
-            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
-            this.Status = status;
             this.CreatedAt = createdAt;
             this.InputDatasetId = inputDatasetId ?? throw new global::System.ArgumentNullException(nameof(inputDatasetId));
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Status = status;
             this.Truncate = truncate;
+            this.Meta = meta;
             this.Name = name;
             this.OutputDatasetId = outputDatasetId;
-            this.Meta = meta;
         }
 
         /// <summary>

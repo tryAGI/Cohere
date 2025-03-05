@@ -9,6 +9,21 @@ namespace Cohere
     public sealed partial class GenerateStreamErrorVariant2
     {
         /// <summary>
+        /// Error message
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("err")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Err { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.FinishReason FinishReason { get; set; }
+
+        /// <summary>
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -22,21 +37,6 @@ namespace Cohere
         public required bool IsFinished { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.FinishReason FinishReason { get; set; }
-
-        /// <summary>
-        /// Error message
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("err")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Err { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,26 +45,26 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamErrorVariant2" /> class.
         /// </summary>
+        /// <param name="err">
+        /// Error message
+        /// </param>
+        /// <param name="finishReason"></param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
         /// <param name="isFinished"></param>
-        /// <param name="finishReason"></param>
-        /// <param name="err">
-        /// Error message
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerateStreamErrorVariant2(
-            bool isFinished,
-            global::Cohere.FinishReason finishReason,
             string err,
+            global::Cohere.FinishReason finishReason,
+            bool isFinished,
             int? index)
         {
-            this.IsFinished = isFinished;
-            this.FinishReason = finishReason;
             this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
+            this.FinishReason = finishReason;
+            this.IsFinished = isFinished;
             this.Index = index;
         }
 

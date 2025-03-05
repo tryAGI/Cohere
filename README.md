@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
 ## Features 🔥
-- Fully generated C# SDK based on [official Cohere OpenAPI specification](https://raw.githubusercontent.com/cohere-ai/cohere-developer-experience/main/cohere-openapi.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Fully generated C# SDK based on [official Cohere OpenAPI specification](https://raw.githubusercontent.com/cohere-ai/cohere-developer-experience/main/cohere-openapi.yaml) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
 - Same day update to support new features
 - Updated and supported automatically if there are no breaking changes
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
@@ -16,7 +16,15 @@
 ```csharp
 using Cohere;
 
-using var api = new CohereApi(apiKey);
+using var client = new CohereClient(apiKey);
+
+var response = await client.GenerateAsync(new GenerateRequest
+{
+    Prompt = "Hello, Cohere! Can you tell me a joke?",
+});
+
+Console.WriteLine("Cohere Response:");
+Console.WriteLine(response.Generations[0].Text);
 ```
 
 ## Support

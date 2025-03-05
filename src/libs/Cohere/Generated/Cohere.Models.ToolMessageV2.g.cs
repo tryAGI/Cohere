@@ -11,6 +11,14 @@ namespace Cohere
     public sealed partial class ToolMessageV2
     {
         /// <summary>
+        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> Content { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
@@ -25,14 +33,6 @@ namespace Cohere
         public required string ToolCallId { get; set; }
 
         /// <summary>
-        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> Content { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,23 +41,23 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessageV2" /> class.
         /// </summary>
+        /// <param name="content">
+        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
+        /// </param>
         /// <param name="role"></param>
         /// <param name="toolCallId">
         /// The id of the associated tool call that has provided the given content
-        /// </param>
-        /// <param name="content">
-        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolMessageV2(
-            string toolCallId,
             global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>> content,
+            string toolCallId,
             global::Cohere.ToolMessageV2Role role)
         {
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Content = content;
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Role = role;
         }
 

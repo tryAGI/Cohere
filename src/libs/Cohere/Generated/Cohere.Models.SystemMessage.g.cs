@@ -13,17 +13,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SystemMessageRoleJsonConverter))]
-        public global::Cohere.SystemMessageRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>> Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>> Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.SystemMessageRoleJsonConverter))]
+        public global::Cohere.SystemMessageRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,13 +34,13 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SystemMessage(
-            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>> content,
+            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>> content,
             global::Cohere.SystemMessageRole role)
         {
             this.Content = content;

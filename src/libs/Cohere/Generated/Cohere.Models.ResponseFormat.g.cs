@@ -16,6 +16,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ResponseFormatDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.TextResponseFormat? Text { get; init; }
 #else
@@ -52,18 +57,18 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.JSONResponseFormat? JSON { get; init; }
+        public global::Cohere.JSONResponseFormat? JsonObject { get; init; }
 #else
-        public global::Cohere.JSONResponseFormat? JSON { get; }
+        public global::Cohere.JSONResponseFormat? JsonObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSON))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
-        public bool IsJSON => JSON != null;
+        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// 
@@ -73,33 +78,36 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.JSONResponseFormat?(ResponseFormat @this) => @this.JSON;
+        public static implicit operator global::Cohere.JSONResponseFormat?(ResponseFormat @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponseFormat(global::Cohere.JSONResponseFormat? value)
         {
-            JSON = value;
+            JsonObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResponseFormat(
+            global::Cohere.ResponseFormatDiscriminatorType? type,
             global::Cohere.TextResponseFormat? text,
-            global::Cohere.JSONResponseFormat? jSON
+            global::Cohere.JSONResponseFormat? jsonObject
             )
         {
+            Type = type;
+
             Text = text;
-            JSON = jSON;
+            JsonObject = jsonObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            JSON as object ??
+            JsonObject as object ??
             Text as object 
             ;
 
@@ -108,7 +116,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsJSON || !IsText && IsJSON;
+            return IsText && !IsJsonObject || !IsText && IsJsonObject;
         }
 
         /// <summary>
@@ -116,7 +124,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.TextResponseFormat?, TResult>? text = null,
-            global::System.Func<global::Cohere.JSONResponseFormat?, TResult>? jSON = null,
+            global::System.Func<global::Cohere.JSONResponseFormat?, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -128,9 +136,9 @@ namespace Cohere
             {
                 return text(Text!);
             }
-            else if (IsJSON && jSON != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return jSON(JSON!);
+                return jsonObject(JsonObject!);
             }
 
             return default(TResult);
@@ -141,7 +149,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.TextResponseFormat?>? text = null,
-            global::System.Action<global::Cohere.JSONResponseFormat?>? jSON = null,
+            global::System.Action<global::Cohere.JSONResponseFormat?>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -153,9 +161,9 @@ namespace Cohere
             {
                 text?.Invoke(Text!);
             }
-            else if (IsJSON)
+            else if (IsJsonObject)
             {
-                jSON?.Invoke(JSON!);
+                jsonObject?.Invoke(JsonObject!);
             }
         }
 
@@ -168,7 +176,7 @@ namespace Cohere
             {
                 Text,
                 typeof(global::Cohere.TextResponseFormat),
-                JSON,
+                JsonObject,
                 typeof(global::Cohere.JSONResponseFormat),
             };
             const int offset = unchecked((int)2166136261);
@@ -187,7 +195,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.TextResponseFormat?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.JSONResponseFormat?>.Default.Equals(JSON, other.JSON) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.JSONResponseFormat?>.Default.Equals(JsonObject, other.JsonObject) 
                 ;
         }
 

@@ -9,19 +9,19 @@ namespace Cohere
     public sealed partial class ImageContent
     {
         /// <summary>
+        /// Base64 url of image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.ImageUrl ImageUrl { get; set; }
+
+        /// <summary>
         /// Type of message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ContentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ContentType Type { get; set; }
-
-        /// <summary>
-        /// Base64 url of image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.ImageUrl ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,21 +32,21 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type of message content
-        /// </param>
         /// <param name="imageUrl">
         /// Base64 url of image.
+        /// </param>
+        /// <param name="type">
+        /// Type of message content
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageContent(
-            global::Cohere.ContentType type,
-            global::Cohere.ImageUrl imageUrl)
+            global::Cohere.ImageUrl imageUrl,
+            global::Cohere.ContentType type)
         {
-            this.Type = type;
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Type = type;
         }
 
         /// <summary>

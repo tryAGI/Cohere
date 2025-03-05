@@ -11,14 +11,14 @@ namespace Cohere
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string? Label { get; set; }
 
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
-        public string? Label { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyExample" /> class.
         /// </summary>
-        /// <param name="text">
+        /// <param name="label">
         /// Included only in requests
         /// </param>
-        /// <param name="label">
+        /// <param name="text">
         /// Included only in requests
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifyExample(
-            string? text,
-            string? label)
+            string? label,
+            string? text)
         {
-            this.Text = text;
             this.Label = label;
+            this.Text = text;
         }
 
         /// <summary>

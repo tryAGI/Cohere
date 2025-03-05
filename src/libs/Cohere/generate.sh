@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 fi
 autosdk generate openapi.yaml \
   --namespace Cohere \
-  --clientClassName CohereApi \
-  --targetFramework net8.0 \
+  --clientClassName CohereClient \
+  --targetFramework net9.0 \
   --output Generated \
   --exclude-deprecated-operations

@@ -15,16 +15,16 @@ namespace Cohere
         public string? Id { get; set; }
 
         /// <summary>
-        /// Generated summary for the text
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        public string? Summary { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }
+
+        /// <summary>
+        /// Generated summary for the text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        public string? Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,21 +38,21 @@ namespace Cohere
         /// <param name="id">
         /// Generated ID for the summary
         /// </param>
+        /// <param name="meta"></param>
         /// <param name="summary">
         /// Generated summary for the text
         /// </param>
-        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SummarizeResponse(
             string? id,
-            string? summary,
-            global::Cohere.ApiMeta? meta)
+            global::Cohere.ApiMeta? meta,
+            string? summary)
         {
             this.Id = id;
-            this.Summary = summary;
             this.Meta = meta;
+            this.Summary = summary;
         }
 
         /// <summary>

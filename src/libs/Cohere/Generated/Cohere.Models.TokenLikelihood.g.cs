@@ -9,16 +9,16 @@ namespace Cohere
     public sealed partial class TokenLikelihood
     {
         /// <summary>
-        /// Tokenized text
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encoded")]
-        public int? Encoded { get; set; }
-
-        /// <summary>
         /// Detokenized text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("decoded")]
         public string? Decoded { get; set; }
+
+        /// <summary>
+        /// Tokenized text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encoded")]
+        public int? Encoded { get; set; }
 
         /// <summary>
         /// Non normalized probability of the token
@@ -35,11 +35,11 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenLikelihood" /> class.
         /// </summary>
-        /// <param name="encoded">
-        /// Tokenized text
-        /// </param>
         /// <param name="decoded">
         /// Detokenized text
+        /// </param>
+        /// <param name="encoded">
+        /// Tokenized text
         /// </param>
         /// <param name="logLikelihood">
         /// Non normalized probability of the token
@@ -48,12 +48,12 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TokenLikelihood(
-            int? encoded,
             string? decoded,
+            int? encoded,
             double? logLikelihood)
         {
-            this.Encoded = encoded;
             this.Decoded = decoded;
+            this.Encoded = encoded;
             this.LogLikelihood = logLikelihood;
         }
 

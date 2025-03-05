@@ -9,6 +9,12 @@ namespace Cohere
     public sealed partial class UsageBilledUnits
     {
         /// <summary>
+        /// The number of billed classifications units.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
+        public double? Classifications { get; set; }
+
+        /// <summary>
         /// The number of billed input tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
@@ -27,12 +33,6 @@ namespace Cohere
         public double? SearchUnits { get; set; }
 
         /// <summary>
-        /// The number of billed classifications units.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public double? Classifications { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,6 +41,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageBilledUnits" /> class.
         /// </summary>
+        /// <param name="classifications">
+        /// The number of billed classifications units.
+        /// </param>
         /// <param name="inputTokens">
         /// The number of billed input tokens.
         /// </param>
@@ -50,22 +53,19 @@ namespace Cohere
         /// <param name="searchUnits">
         /// The number of billed search units.
         /// </param>
-        /// <param name="classifications">
-        /// The number of billed classifications units.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageBilledUnits(
+            double? classifications,
             double? inputTokens,
             double? outputTokens,
-            double? searchUnits,
-            double? classifications)
+            double? searchUnits)
         {
+            this.Classifications = classifications;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
             this.SearchUnits = searchUnits;
-            this.Classifications = classifications;
         }
 
         /// <summary>

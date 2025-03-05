@@ -9,11 +9,18 @@ namespace Cohere
     public sealed partial class UpdateFinetunedModelRequest
     {
         /// <summary>
-        /// FinetunedModel name (e.g. `foobar`).
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
+        public global::System.DateTime? CompletedAt { get; set; }
+
+        /// <summary>
+        /// Creation timestamp.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// User ID of the creator.<br/>
@@ -21,6 +28,20 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_id")]
         public string? CreatorId { get; set; }
+
+        /// <summary>
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
+        public global::System.DateTime? LastUsed { get; set; }
+
+        /// <summary>
+        /// FinetunedModel name (e.g. `foobar`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// Organization ID.<br/>
@@ -54,32 +75,11 @@ namespace Cohere
         public global::Cohere.Status? Status { get; set; }
 
         /// <summary>
-        /// Creation timestamp.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
-
-        /// <summary>
         /// Latest update timestamp.<br/>
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
-
-        /// <summary>
-        /// Timestamp for the completed fine-tuning.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public global::System.DateTime? CompletedAt { get; set; }
-
-        /// <summary>
-        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
-        public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,12 +90,24 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// FinetunedModel name (e.g. `foobar`).
+        /// <param name="completedAt">
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation timestamp.<br/>
+        /// Included only in responses
         /// </param>
         /// <param name="creatorId">
         /// User ID of the creator.<br/>
         /// Included only in responses
+        /// </param>
+        /// <param name="lastUsed">
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="name">
+        /// FinetunedModel name (e.g. `foobar`).
         /// </param>
         /// <param name="organizationId">
         /// Organization ID.<br/>
@@ -117,20 +129,8 @@ namespace Cohere
         ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
         /// Default Value: STATUS_UNSPECIFIED
         /// </param>
-        /// <param name="createdAt">
-        /// Creation timestamp.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="updatedAt">
         /// Latest update timestamp.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="completedAt">
-        /// Timestamp for the completed fine-tuning.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="lastUsed">
-        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER
@@ -139,23 +139,23 @@ namespace Cohere
         public UpdateFinetunedModelRequest(
             string name,
             global::Cohere.Settings settings,
+            global::System.DateTime? completedAt,
+            global::System.DateTime? createdAt,
             string? creatorId,
+            global::System.DateTime? lastUsed,
             string? organizationId,
             global::Cohere.Status? status,
-            global::System.DateTime? createdAt,
-            global::System.DateTime? updatedAt,
-            global::System.DateTime? completedAt,
-            global::System.DateTime? lastUsed)
+            global::System.DateTime? updatedAt)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
+            this.CompletedAt = completedAt;
+            this.CreatedAt = createdAt;
             this.CreatorId = creatorId;
+            this.LastUsed = lastUsed;
             this.OrganizationId = organizationId;
             this.Status = status;
-            this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.CompletedAt = completedAt;
-            this.LastUsed = lastUsed;
         }
 
         /// <summary>

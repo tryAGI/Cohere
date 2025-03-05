@@ -12,19 +12,24 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.GenerateStreamedResponseDiscriminatorEventType? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamText? StreamText { get; init; }
+        public global::Cohere.GenerateStreamText? TextGeneration { get; init; }
 #else
-        public global::Cohere.GenerateStreamText? StreamText { get; }
+        public global::Cohere.GenerateStreamText? TextGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
 #endif
-        public bool IsStreamText => StreamText != null;
+        public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
         /// 
@@ -34,14 +39,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.GenerateStreamText?(GenerateStreamedResponse @this) => @this.StreamText;
+        public static implicit operator global::Cohere.GenerateStreamText?(GenerateStreamedResponse @this) => @this.TextGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public GenerateStreamedResponse(global::Cohere.GenerateStreamText? value)
         {
-            StreamText = value;
+            TextGeneration = value;
         }
 
         /// <summary>
@@ -118,12 +123,15 @@ namespace Cohere
         /// 
         /// </summary>
         public GenerateStreamedResponse(
-            global::Cohere.GenerateStreamText? streamText,
+            global::Cohere.GenerateStreamedResponseDiscriminatorEventType? eventType,
+            global::Cohere.GenerateStreamText? textGeneration,
             global::Cohere.GenerateStreamEnd? streamEnd,
             global::Cohere.GenerateStreamError? streamError
             )
         {
-            StreamText = streamText;
+            EventType = eventType;
+
+            TextGeneration = textGeneration;
             StreamEnd = streamEnd;
             StreamError = streamError;
         }
@@ -134,7 +142,7 @@ namespace Cohere
         public object? Object =>
             StreamError as object ??
             StreamEnd as object ??
-            StreamText as object 
+            TextGeneration as object 
             ;
 
         /// <summary>
@@ -142,14 +150,14 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsStreamText && !IsStreamEnd && !IsStreamError || !IsStreamText && IsStreamEnd && !IsStreamError || !IsStreamText && !IsStreamEnd && IsStreamError;
+            return IsTextGeneration && !IsStreamEnd && !IsStreamError || !IsTextGeneration && IsStreamEnd && !IsStreamError || !IsTextGeneration && !IsStreamEnd && IsStreamError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.GenerateStreamText?, TResult>? streamText = null,
+            global::System.Func<global::Cohere.GenerateStreamText?, TResult>? textGeneration = null,
             global::System.Func<global::Cohere.GenerateStreamEnd?, TResult>? streamEnd = null,
             global::System.Func<global::Cohere.GenerateStreamError?, TResult>? streamError = null,
             bool validate = true)
@@ -159,9 +167,9 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamText && streamText != null)
+            if (IsTextGeneration && textGeneration != null)
             {
-                return streamText(StreamText!);
+                return textGeneration(TextGeneration!);
             }
             else if (IsStreamEnd && streamEnd != null)
             {
@@ -179,7 +187,7 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.GenerateStreamText?>? streamText = null,
+            global::System.Action<global::Cohere.GenerateStreamText?>? textGeneration = null,
             global::System.Action<global::Cohere.GenerateStreamEnd?>? streamEnd = null,
             global::System.Action<global::Cohere.GenerateStreamError?>? streamError = null,
             bool validate = true)
@@ -189,9 +197,9 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamText)
+            if (IsTextGeneration)
             {
-                streamText?.Invoke(StreamText!);
+                textGeneration?.Invoke(TextGeneration!);
             }
             else if (IsStreamEnd)
             {
@@ -210,7 +218,7 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                StreamText,
+                TextGeneration,
                 typeof(global::Cohere.GenerateStreamText),
                 StreamEnd,
                 typeof(global::Cohere.GenerateStreamEnd),
@@ -232,7 +240,7 @@ namespace Cohere
         public bool Equals(GenerateStreamedResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamText?>.Default.Equals(StreamText, other.StreamText) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamText?>.Default.Equals(TextGeneration, other.TextGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEnd?>.Default.Equals(StreamEnd, other.StreamEnd) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamError?>.Default.Equals(StreamError, other.StreamError) 
                 ;

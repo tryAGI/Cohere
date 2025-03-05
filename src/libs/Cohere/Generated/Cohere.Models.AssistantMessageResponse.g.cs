@@ -11,6 +11,18 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::System.Collections.Generic.IList<global::Cohere.Citation>? Citations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::Cohere.ContentItem>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter))]
         public global::Cohere.AssistantMessageResponseRole Role { get; set; }
@@ -28,18 +40,6 @@ namespace Cohere
         public string? ToolPlan { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::Cohere.ContentItem>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Cohere.Citation>? Citations { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,28 +48,28 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantMessageResponse" /> class.
         /// </summary>
+        /// <param name="citations"></param>
+        /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="toolCalls"></param>
         /// <param name="toolPlan">
         /// A chain-of-thought style reflection and plan that the model generates when working with Tools.
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="citations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantMessageResponse(
+            global::System.Collections.Generic.IList<global::Cohere.Citation>? citations,
+            global::System.Collections.Generic.IList<global::Cohere.ContentItem>? content,
             global::Cohere.AssistantMessageResponseRole role,
             global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? toolCalls,
-            string? toolPlan,
-            global::System.Collections.Generic.IList<global::Cohere.ContentItem>? content,
-            global::System.Collections.Generic.IList<global::Cohere.Citation>? citations)
+            string? toolPlan)
         {
+            this.Citations = citations;
+            this.Content = content;
             this.Role = role;
             this.ToolCalls = toolCalls;
             this.ToolPlan = toolPlan;
-            this.Content = content;
-            this.Citations = citations;
         }
 
         /// <summary>

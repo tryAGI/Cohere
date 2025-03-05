@@ -10,19 +10,19 @@ namespace Cohere
     public sealed partial class ChatMessage
     {
         /// <summary>
+        /// Contents of the chat message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Message { get; set; }
+
+        /// <summary>
         /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Cohere.ChatRole Role { get; set; }
-
-        /// <summary>
-        /// Contents of the chat message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
 
         /// <summary>
         /// 
@@ -39,23 +39,23 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
-        /// </param>
         /// <param name="message">
         /// Contents of the chat message.
+        /// </param>
+        /// <param name="role">
+        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </param>
         /// <param name="toolCalls"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatMessage(
-            global::Cohere.ChatRole role,
             string message,
+            global::Cohere.ChatRole role,
             global::System.Collections.Generic.IList<global::Cohere.ToolCall>? toolCalls)
         {
-            this.Role = role;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Role = role;
             this.ToolCalls = toolCalls;
         }
 

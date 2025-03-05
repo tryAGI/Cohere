@@ -9,16 +9,16 @@ namespace Cohere
     public sealed partial class ChatMessageStartEventVariant2
     {
         /// <summary>
-        /// Unique identifier for the generated reply.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         public global::Cohere.ChatMessageStartEventVariant2Delta? Delta { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the generated reply.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,19 +29,19 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessageStartEventVariant2" /> class.
         /// </summary>
+        /// <param name="delta"></param>
         /// <param name="id">
         /// Unique identifier for the generated reply.
         /// </param>
-        /// <param name="delta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatMessageStartEventVariant2(
-            string? id,
-            global::Cohere.ChatMessageStartEventVariant2Delta? delta)
+            global::Cohere.ChatMessageStartEventVariant2Delta? delta,
+            string? id)
         {
-            this.Id = id;
             this.Delta = delta;
+            this.Id = id;
         }
 
         /// <summary>

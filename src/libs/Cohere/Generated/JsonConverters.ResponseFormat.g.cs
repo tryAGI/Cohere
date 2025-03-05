@@ -15,48 +15,32 @@ namespace Cohere.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ResponseFormatDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ResponseFormatDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ResponseFormatDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::Cohere.TextResponseFormat? text = default;
-            try
+            if (discriminator?.Type == global::Cohere.ResponseFormatDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextResponseFormat).Name}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.TextResponseFormat)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::Cohere.JSONResponseFormat? jSON = default;
-            try
+            global::Cohere.JSONResponseFormat? jsonObject = default;
+            if (discriminator?.Type == global::Cohere.ResponseFormatDiscriminatorType.JsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.JSONResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.JSONResponseFormat).Name}");
-                jSON = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.JSONResponseFormat)}");
+                jsonObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Cohere.ResponseFormat(
+                discriminator?.Type,
                 text,
-                jSON
+                jsonObject
                 );
-
-            if (text != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextResponseFormat).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (jSON != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.JSONResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.JSONResponseFormat).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }
@@ -76,11 +60,11 @@ namespace Cohere.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextResponseFormat).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsJSON)
+            else if (value.IsJsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.JSONResponseFormat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.JSONResponseFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JSON, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject, typeInfo);
             }
         }
     }

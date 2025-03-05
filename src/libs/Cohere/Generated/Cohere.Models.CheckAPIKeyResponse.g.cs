@@ -11,13 +11,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("valid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Valid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         public string? OrganizationId { get; set; }
 
@@ -28,6 +21,13 @@ namespace Cohere
         public string? OwnerId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("valid")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Valid { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,9 +36,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
         /// </summary>
-        /// <param name="valid"></param>
         /// <param name="organizationId"></param>
         /// <param name="ownerId"></param>
+        /// <param name="valid"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

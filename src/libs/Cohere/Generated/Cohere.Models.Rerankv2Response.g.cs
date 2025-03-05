@@ -15,17 +15,17 @@ namespace Cohere
         public string? Id { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::Cohere.ApiMeta? Meta { get; set; }
+
+        /// <summary>
         /// An ordered list of ranked documents
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Cohere.Rerankv2ResponseResult> Results { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,10 +37,10 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="Rerankv2Response" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="meta"></param>
         /// <param name="results">
         /// An ordered list of ranked documents
         /// </param>
-        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

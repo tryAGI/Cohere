@@ -9,10 +9,16 @@ namespace Cohere
     public sealed partial class GetModelResponse
     {
         /// <summary>
-        /// Specify this name in the `model` parameter of API requests to use your chosen model.
+        /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
+        public double? ContextLength { get; set; }
+
+        /// <summary>
+        /// The API endpoints that the model is default to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_endpoints")]
+        public global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? DefaultEndpoints { get; set; }
 
         /// <summary>
         /// The API endpoints that the model is compatible with.
@@ -27,16 +33,10 @@ namespace Cohere
         public bool? Finetuned { get; set; }
 
         /// <summary>
-        /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
+        /// Specify this name in the `model` parameter of API requests to use your chosen model.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        public double? ContextLength { get; set; }
-
-        /// <summary>
-        /// Public URL to the tokenizer's configuration file.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer_url")]
-        public string? TokenizerUrl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Whether the model supports image inputs or not.
@@ -45,10 +45,10 @@ namespace Cohere
         public bool? SupportsVision { get; set; }
 
         /// <summary>
-        /// The API endpoints that the model is default to.
+        /// Public URL to the tokenizer's configuration file.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("default_endpoints")]
-        public global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? DefaultEndpoints { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer_url")]
+        public string? TokenizerUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +59,11 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="GetModelResponse" /> class.
         /// </summary>
-        /// <param name="name">
-        /// Specify this name in the `model` parameter of API requests to use your chosen model.
+        /// <param name="contextLength">
+        /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
+        /// </param>
+        /// <param name="defaultEndpoints">
+        /// The API endpoints that the model is default to.
         /// </param>
         /// <param name="endpoints">
         /// The API endpoints that the model is compatible with.
@@ -68,37 +71,34 @@ namespace Cohere
         /// <param name="finetuned">
         /// Whether the model has been fine-tuned or not.
         /// </param>
-        /// <param name="contextLength">
-        /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
-        /// </param>
-        /// <param name="tokenizerUrl">
-        /// Public URL to the tokenizer's configuration file.
+        /// <param name="name">
+        /// Specify this name in the `model` parameter of API requests to use your chosen model.
         /// </param>
         /// <param name="supportsVision">
         /// Whether the model supports image inputs or not.
         /// </param>
-        /// <param name="defaultEndpoints">
-        /// The API endpoints that the model is default to.
+        /// <param name="tokenizerUrl">
+        /// Public URL to the tokenizer's configuration file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetModelResponse(
-            string? name,
+            double? contextLength,
+            global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? defaultEndpoints,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? endpoints,
             bool? finetuned,
-            double? contextLength,
-            string? tokenizerUrl,
+            string? name,
             bool? supportsVision,
-            global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? defaultEndpoints)
+            string? tokenizerUrl)
         {
-            this.Name = name;
+            this.ContextLength = contextLength;
+            this.DefaultEndpoints = defaultEndpoints;
             this.Endpoints = endpoints;
             this.Finetuned = finetuned;
-            this.ContextLength = contextLength;
-            this.TokenizerUrl = tokenizerUrl;
+            this.Name = name;
             this.SupportsVision = supportsVision;
-            this.DefaultEndpoints = defaultEndpoints;
+            this.TokenizerUrl = tokenizerUrl;
         }
 
         /// <summary>

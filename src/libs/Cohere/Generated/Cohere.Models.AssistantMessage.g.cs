@@ -13,6 +13,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::System.Collections.Generic.IList<global::Cohere.Citation>? Citations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>))]
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.AssistantMessageRoleJsonConverter))]
         public global::Cohere.AssistantMessageRole Role { get; set; }
@@ -30,19 +43,6 @@ namespace Cohere
         public string? ToolPlan { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>))]
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Cohere.Citation>? Citations { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -51,28 +51,28 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantMessage" /> class.
         /// </summary>
+        /// <param name="citations"></param>
+        /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="toolCalls"></param>
         /// <param name="toolPlan">
         /// A chain-of-thought style reflection and plan that the model generates when working with Tools.
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="citations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantMessage(
+            global::System.Collections.Generic.IList<global::Cohere.Citation>? citations,
+            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? content,
             global::Cohere.AssistantMessageRole role,
             global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? toolCalls,
-            string? toolPlan,
-            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.OneOf<global::Cohere.TextContent>>>? content,
-            global::System.Collections.Generic.IList<global::Cohere.Citation>? citations)
+            string? toolPlan)
         {
+            this.Citations = citations;
+            this.Content = content;
             this.Role = role;
             this.ToolCalls = toolCalls;
             this.ToolPlan = toolPlan;
-            this.Content = content;
-            this.Citations = citations;
         }
 
         /// <summary>

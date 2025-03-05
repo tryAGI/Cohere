@@ -16,13 +16,6 @@ namespace Cohere
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -33,6 +26,13 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("likelihood")]
         public double? Likelihood { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
 
         /// <summary>
         /// Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you've created a [custom model](https://docs.cohere.com/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.
@@ -50,11 +50,11 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="SingleGeneration" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="text"></param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
         /// <param name="likelihood"></param>
+        /// <param name="text"></param>
         /// <param name="tokenLikelihoods">
         /// Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you've created a [custom model](https://docs.cohere.com/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.
         /// </param>

@@ -9,12 +9,10 @@ namespace Cohere
     public sealed partial class TokenizeResponse
     {
         /// <summary>
-        /// An array of tokens, where each token is an integer.<br/>
-        /// Included only in responses
+        /// 
         /// </summary>
-        /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
-        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// 
@@ -24,10 +22,12 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<string> TokenStrings { get; set; }
 
         /// <summary>
-        /// 
+        /// An array of tokens, where each token is an integer.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
+        /// <default>default!</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
+        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,12 +38,12 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenizeResponse" /> class.
         /// </summary>
+        /// <param name="meta"></param>
+        /// <param name="tokenStrings"></param>
         /// <param name="tokens">
         /// An array of tokens, where each token is an integer.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="tokenStrings"></param>
-        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,8 +53,8 @@ namespace Cohere
             global::System.Collections.Generic.IList<int> tokens = default!)
         {
             this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
-            this.Tokens = tokens;
             this.Meta = meta;
+            this.Tokens = tokens;
         }
 
         /// <summary>

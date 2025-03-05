@@ -9,12 +9,6 @@ namespace Cohere
     public sealed partial class LabelMetric
     {
         /// <summary>
-        /// Total number of examples for this label
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_examples")]
-        public double? TotalExamples { get; set; }
-
-        /// <summary>
         /// value of the label
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
@@ -27,6 +21,12 @@ namespace Cohere
         public global::System.Collections.Generic.IList<string>? Samples { get; set; }
 
         /// <summary>
+        /// Total number of examples for this label
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_examples")]
+        public double? TotalExamples { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,26 +35,26 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelMetric" /> class.
         /// </summary>
-        /// <param name="totalExamples">
-        /// Total number of examples for this label
-        /// </param>
         /// <param name="label">
         /// value of the label
         /// </param>
         /// <param name="samples">
         /// samples for this label
         /// </param>
+        /// <param name="totalExamples">
+        /// Total number of examples for this label
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LabelMetric(
-            double? totalExamples,
             string? label,
-            global::System.Collections.Generic.IList<string>? samples)
+            global::System.Collections.Generic.IList<string>? samples,
+            double? totalExamples)
         {
-            this.TotalExamples = totalExamples;
             this.Label = label;
             this.Samples = samples;
+            this.TotalExamples = totalExamples;
         }
 
         /// <summary>

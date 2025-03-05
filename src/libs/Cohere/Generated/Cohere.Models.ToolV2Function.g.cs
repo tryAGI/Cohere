@@ -9,17 +9,17 @@ namespace Cohere
     public sealed partial class ToolV2Function
     {
         /// <summary>
+        /// The description of the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// The name of the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
-
-        /// <summary>
-        /// The description of the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
 
         /// <summary>
         /// The parameters of the function as a JSON schema.
@@ -37,11 +37,11 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolV2Function" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the function.
-        /// </param>
         /// <param name="description">
         /// The description of the function.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function.
         /// </param>
         /// <param name="parameters">
         /// The parameters of the function as a JSON schema.

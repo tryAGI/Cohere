@@ -11,6 +11,12 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
+        public global::Cohere.ToolCallV2Function? Function { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -22,12 +28,6 @@ namespace Cohere
         public global::Cohere.ToolCallV2Type? Type { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        public global::Cohere.ToolCallV2Function? Function { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,20 +36,20 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCallV2" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="id"></param>
         /// <param name="type"></param>
-        /// <param name="function"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolCallV2(
+            global::Cohere.ToolCallV2Function? function,
             string? id,
-            global::Cohere.ToolCallV2Type? type,
-            global::Cohere.ToolCallV2Function? function)
+            global::Cohere.ToolCallV2Type? type)
         {
+            this.Function = function;
             this.Id = id;
             this.Type = type;
-            this.Function = function;
         }
 
         /// <summary>

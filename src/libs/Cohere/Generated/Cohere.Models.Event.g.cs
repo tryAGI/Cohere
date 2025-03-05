@@ -9,10 +9,10 @@ namespace Cohere
     public sealed partial class Event
     {
         /// <summary>
-        /// ID of the user who initiated the event. Empty if initiated by the system.
+        /// Timestamp when the event happened.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        public string? UserId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The possible stages of a fine-tuned model life-cycle.<br/>
@@ -32,10 +32,10 @@ namespace Cohere
         public global::Cohere.Status? Status { get; set; }
 
         /// <summary>
-        /// Timestamp when the event happened.
+        /// ID of the user who initiated the event. Empty if initiated by the system.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        public string? UserId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,8 +46,8 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.
         /// </summary>
-        /// <param name="userId">
-        /// ID of the user who initiated the event. Empty if initiated by the system.
+        /// <param name="createdAt">
+        /// Timestamp when the event happened.
         /// </param>
         /// <param name="status">
         /// The possible stages of a fine-tuned model life-cycle.<br/>
@@ -62,20 +62,20 @@ namespace Cohere
         ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
         /// Default Value: STATUS_UNSPECIFIED
         /// </param>
-        /// <param name="createdAt">
-        /// Timestamp when the event happened.
+        /// <param name="userId">
+        /// ID of the user who initiated the event. Empty if initiated by the system.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Event(
-            string? userId,
+            global::System.DateTime? createdAt,
             global::Cohere.Status? status,
-            global::System.DateTime? createdAt)
+            string? userId)
         {
-            this.UserId = userId;
-            this.Status = status;
             this.CreatedAt = createdAt;
+            this.Status = status;
+            this.UserId = userId;
         }
 
         /// <summary>
