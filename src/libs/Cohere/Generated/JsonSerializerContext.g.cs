@@ -109,6 +109,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ResponseFormatTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2JsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2NullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.ReasoningEffortJsonConverter),
+            typeof(global::Cohere.JsonConverters.ReasoningEffortNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter),
