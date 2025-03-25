@@ -15692,6 +15692,13 @@ components:
           description: The API endpoints that the model is compatible with.
           x-fern-audiences:
             - public
+        features:
+          type: array
+          items:
+            type: string
+          description: The features that the model supports.
+          x-fern-audiences:
+            - public
         finetuned:
           type: boolean
           description: Whether the model has been fine-tuned or not.

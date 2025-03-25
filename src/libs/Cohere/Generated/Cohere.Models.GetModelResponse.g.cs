@@ -27,6 +27,12 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? Endpoints { get; set; }
 
         /// <summary>
+        /// The features that the model supports.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("features")]
+        public global::System.Collections.Generic.IList<string>? Features { get; set; }
+
+        /// <summary>
         /// Whether the model has been fine-tuned or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetuned")]
@@ -68,6 +74,9 @@ namespace Cohere
         /// <param name="endpoints">
         /// The API endpoints that the model is compatible with.
         /// </param>
+        /// <param name="features">
+        /// The features that the model supports.
+        /// </param>
         /// <param name="finetuned">
         /// Whether the model has been fine-tuned or not.
         /// </param>
@@ -87,6 +96,7 @@ namespace Cohere
             double? contextLength,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? defaultEndpoints,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? endpoints,
+            global::System.Collections.Generic.IList<string>? features,
             bool? finetuned,
             string? name,
             bool? supportsVision,
@@ -95,6 +105,7 @@ namespace Cohere
             this.ContextLength = contextLength;
             this.DefaultEndpoints = defaultEndpoints;
             this.Endpoints = endpoints;
+            this.Features = features;
             this.Finetuned = finetuned;
             this.Name = name;
             this.SupportsVision = supportsVision;
