@@ -102,6 +102,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Tool?.ToString() ??
+            Document?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsTool && !IsDocument || !IsTool && IsDocument;

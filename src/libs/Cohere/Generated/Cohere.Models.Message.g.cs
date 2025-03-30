@@ -111,6 +111,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            CHATBOT?.ToString() ??
+            TOOL?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsCHATBOT && !IsTOOL || !IsCHATBOT && IsTOOL;

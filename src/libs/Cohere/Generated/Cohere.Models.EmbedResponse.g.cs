@@ -110,6 +110,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            EmbeddingsFloats?.ToString() ??
+            EmbeddingsByType?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsEmbeddingsFloats && !IsEmbeddingsByType || !IsEmbeddingsFloats && IsEmbeddingsByType;
