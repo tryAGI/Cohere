@@ -414,6 +414,22 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            MessageStart?.ToString() ??
+            ContentStart?.ToString() ??
+            ContentDelta?.ToString() ??
+            ContentEnd?.ToString() ??
+            ToolPlanDelta?.ToString() ??
+            ToolCallStart?.ToString() ??
+            ToolCallDelta?.ToString() ??
+            ToolCallEnd?.ToString() ??
+            MessageEnd?.ToString() ??
+            Debug?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && IsToolCallEnd && !IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && IsMessageEnd && !IsDebug || !IsMessageStart && !IsContentStart && !IsContentDelta && !IsContentEnd && !IsToolPlanDelta && !IsToolCallStart && !IsToolCallDelta && !IsToolCallEnd && !IsMessageEnd && IsDebug;

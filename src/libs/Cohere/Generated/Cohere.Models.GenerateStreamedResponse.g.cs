@@ -148,6 +148,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            TextGeneration?.ToString() ??
+            StreamEnd?.ToString() ??
+            StreamError?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsTextGeneration && !IsStreamEnd && !IsStreamError || !IsTextGeneration && IsStreamEnd && !IsStreamError || !IsTextGeneration && !IsStreamEnd && IsStreamError;

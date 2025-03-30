@@ -115,6 +115,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Text?.ToString() ??
+            JsonObject?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsText && !IsJsonObject || !IsText && IsJsonObject;
