@@ -128,8 +128,7 @@ namespace Cohere
         /// <summary>
         /// Defaults to `false`.<br/>
         /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
@@ -244,8 +243,7 @@ namespace Cohere
         /// <param name="stream">
         /// Defaults to `false`.<br/>
         /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </param>
         /// <param name="strictTools">
         /// When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).<br/>
