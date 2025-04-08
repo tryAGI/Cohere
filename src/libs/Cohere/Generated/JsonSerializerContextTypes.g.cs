@@ -930,7 +930,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedImageProperties? Type226 { get; set; }
+        public global::Cohere.EmbedImageUrl? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>

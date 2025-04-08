@@ -15231,40 +15231,20 @@ components:
     EmbedImage:
       type: object
       properties:
-        image:
-          $ref: '#/components/schemas/EmbedImageProperties'
+        image_url:
+          $ref: '#/components/schemas/EmbedImageUrl'
         type:
           $ref: '#/components/schemas/EmbedContentType'
       x-fern-audiences:
         - public
-    EmbedImageProperties:
+    EmbedImageUrl:
+      required:
+        - url
       type: object
       properties:
-        bit_depth:
-          type: number
-          description: Bit depth of the image
-          format: int64
-          x-fern-audiences:
-            - public
-        format:
+        url:
           type: string
-          description: Format of the image
-          x-fern-audiences:
-            - public
-        height:
-          type: number
-          description: Height of the image in pixels
-          format: int64
-          x-fern-audiences:
-            - public
-        width:
-          type: number
-          description: Width of the image in pixels
-          format: int64
-          x-fern-audiences:
-            - public
-      x-fern-audiences:
-        - public
+      description: Base64 url of image.
     EmbedInput:
       required:
         - content

@@ -9,10 +9,10 @@ namespace Cohere
     public sealed partial class EmbedImage
     {
         /// <summary>
-        /// 
+        /// Base64 url of image.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        public global::Cohere.EmbedImageProperties? Image { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        public global::Cohere.EmbedImageUrl? ImageUrl { get; set; }
 
         /// <summary>
         /// Included only in requests
@@ -30,7 +30,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedImage" /> class.
         /// </summary>
-        /// <param name="image"></param>
+        /// <param name="imageUrl">
+        /// Base64 url of image.
+        /// </param>
         /// <param name="type">
         /// Included only in requests
         /// </param>
@@ -38,10 +40,10 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedImage(
-            global::Cohere.EmbedImageProperties? image,
+            global::Cohere.EmbedImageUrl? imageUrl,
             global::Cohere.EmbedContentType? type)
         {
-            this.Image = image;
+            this.ImageUrl = imageUrl;
             this.Type = type;
         }
 
