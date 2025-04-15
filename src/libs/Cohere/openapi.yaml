@@ -7995,10 +7995,27 @@ paths:
                     - public
                 input_type:
                   $ref: '#/components/schemas/EmbedInputType'
+                inputs:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/EmbedInput'
+                  description: An array of inputs for the model to embed. Maximum number of inputs per call is `96`. An input can contain a mix of text and image components.
+                  x-fern-audiences:
+                    - public
+                max_tokens:
+                  type: integer
+                  description: 'The maximum number of tokens to embed per input. If the input text is longer than this, it will be truncated according to the `truncate` parameter.'
+                  x-fern-audiences:
+                    - public
                 model:
                   type: string
                   description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
                   writeOnly: true
+                  x-fern-audiences:
+                    - public
+                output_dimension:
+                  type: integer
+                  description: "The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.\nPossible values are `256`, `512`, `1024`, and `1536`. The default is `1536`."
                   x-fern-audiences:
                     - public
                 texts:
@@ -15235,6 +15252,7 @@ components:
           $ref: '#/components/schemas/EmbedImageUrl'
         type:
           $ref: '#/components/schemas/EmbedContentType'
+      description: Image content of the input.
       x-fern-audiences:
         - public
     EmbedImageUrl:
@@ -15254,6 +15272,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EmbedContent'
+          description: An array of objects containing the input data for the model to embed.
           x-fern-audiences:
             - public
       x-fern-audiences:
@@ -15338,6 +15357,7 @@ components:
             - public
         type:
           $ref: '#/components/schemas/EmbedContentType'
+      description: Text content of the input.
       x-fern-audiences:
         - public
     EmbeddingType:

@@ -15,7 +15,7 @@ namespace Cohere
         public global::Cohere.EmbedContentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Image content of the input.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedImage? ImageUrl { get; init; }
@@ -50,7 +50,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        /// Text content of the input.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedText? Text { get; init; }
