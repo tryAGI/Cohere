@@ -41,6 +41,18 @@ namespace Cohere
         public required global::Cohere.EmbedInputType InputType { get; set; }
 
         /// <summary>
+        /// An array of inputs for the model to embed. Maximum number of inputs per call is `96`. An input can contain a mix of text and image components.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
+        public global::System.Collections.Generic.IList<global::Cohere.EmbedInput>? Inputs { get; set; }
+
+        /// <summary>
+        /// The maximum number of tokens to embed per input. If the input text is longer than this, it will be truncated according to the `truncate` parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
+        public int? MaxTokens { get; set; }
+
+        /// <summary>
         /// Defaults to embed-english-v2.0<br/>
         /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Available models and corresponding embedding dimensions:<br/>
@@ -55,6 +67,13 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
+
+        /// <summary>
+        /// The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.<br/>
+        /// Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_dimension")]
+        public int? OutputDimension { get; set; }
 
         /// <summary>
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
@@ -104,6 +123,12 @@ namespace Cohere
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
+        /// <param name="inputs">
+        /// An array of inputs for the model to embed. Maximum number of inputs per call is `96`. An input can contain a mix of text and image components.
+        /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to embed per input. If the input text is longer than this, it will be truncated according to the `truncate` parameter.
+        /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
         /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
@@ -116,6 +141,10 @@ namespace Cohere
         /// * `embed-english-light-v2.0`  1024<br/>
         /// * `embed-multilingual-v2.0`  768<br/>
         /// Included only in requests
+        /// </param>
+        /// <param name="outputDimension">
+        /// The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.<br/>
+        /// Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.
         /// </param>
         /// <param name="texts">
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
@@ -135,14 +164,20 @@ namespace Cohere
             global::Cohere.EmbedInputType inputType,
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes,
             global::System.Collections.Generic.IList<string>? images,
+            global::System.Collections.Generic.IList<global::Cohere.EmbedInput>? inputs,
+            int? maxTokens,
             string? model,
+            int? outputDimension,
             global::System.Collections.Generic.IList<string>? texts,
             global::Cohere.Embedv2RequestTruncate? truncate)
         {
             this.InputType = inputType;
             this.EmbeddingTypes = embeddingTypes;
             this.Images = images;
+            this.Inputs = inputs;
+            this.MaxTokens = maxTokens;
             this.Model = model;
+            this.OutputDimension = outputDimension;
             this.Texts = texts;
             this.Truncate = truncate;
         }

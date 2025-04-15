@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// Text content of the input.
     /// </summary>
     public sealed partial class EmbedText
     {

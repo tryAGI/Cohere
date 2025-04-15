@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// Image content of the input.
     /// </summary>
     public sealed partial class EmbedImage
     {

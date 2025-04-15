@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class EmbedInput
     {
         /// <summary>
-        /// 
+        /// An array of objects containing the input data for the model to embed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedInput" /> class.
         /// </summary>
-        /// <param name="content"></param>
+        /// <param name="content">
+        /// An array of objects containing the input data for the model to embed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

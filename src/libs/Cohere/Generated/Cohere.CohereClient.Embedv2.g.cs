@@ -544,6 +544,12 @@ namespace Cohere
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
+        /// <param name="inputs">
+        /// An array of inputs for the model to embed. Maximum number of inputs per call is `96`. An input can contain a mix of text and image components.
+        /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to embed per input. If the input text is longer than this, it will be truncated according to the `truncate` parameter.
+        /// </param>
         /// <param name="model">
         /// Defaults to embed-english-v2.0<br/>
         /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
@@ -556,6 +562,10 @@ namespace Cohere
         /// * `embed-english-light-v2.0`  1024<br/>
         /// * `embed-multilingual-v2.0`  768<br/>
         /// Included only in requests
+        /// </param>
+        /// <param name="outputDimension">
+        /// The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.<br/>
+        /// Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.
         /// </param>
         /// <param name="texts">
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
@@ -578,6 +588,9 @@ namespace Cohere
             global::Cohere.Embedv2RequestTruncate truncate,
             string? xClientName = default,
             global::System.Collections.Generic.IList<string>? images = default,
+            global::System.Collections.Generic.IList<global::Cohere.EmbedInput>? inputs = default,
+            int? maxTokens = default,
+            int? outputDimension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Cohere.Embedv2Request
@@ -585,7 +598,10 @@ namespace Cohere
                 EmbeddingTypes = embeddingTypes,
                 Images = images,
                 InputType = inputType,
+                Inputs = inputs,
+                MaxTokens = maxTokens,
                 Model = model,
+                OutputDimension = outputDimension,
                 Texts = texts,
                 Truncate = truncate,
             };
