@@ -11798,6 +11798,11 @@ components:
             delta:
               type: object
               properties:
+                error:
+                  type: string
+                  description: "An error message if an error occurred during the generation.\n"
+                  x-fern-audiences:
+                    - public
                 finish_reason:
                   $ref: '#/components/schemas/ChatFinishReason'
                 usage:

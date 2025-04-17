@@ -9,6 +9,12 @@ namespace Cohere
     public sealed partial class ChatMessageEndEventVariant2Delta
     {
         /// <summary>
+        /// An error message if an error occurred during the generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         /// The reason a chat request has finished.<br/>
         /// - **complete**: The model finished sending a complete message.<br/>
         /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
@@ -35,6 +41,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessageEndEventVariant2Delta" /> class.
         /// </summary>
+        /// <param name="error">
+        /// An error message if an error occurred during the generation.
+        /// </param>
         /// <param name="finishReason">
         /// The reason a chat request has finished.<br/>
         /// - **complete**: The model finished sending a complete message.<br/>
@@ -48,9 +57,11 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatMessageEndEventVariant2Delta(
+            string? error,
             global::Cohere.ChatFinishReason? finishReason,
             global::Cohere.Usage? usage)
         {
+            this.Error = error;
             this.FinishReason = finishReason;
             this.Usage = usage;
         }
