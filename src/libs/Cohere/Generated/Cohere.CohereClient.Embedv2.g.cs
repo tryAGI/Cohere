@@ -551,16 +551,7 @@ namespace Cohere
         /// The maximum number of tokens to embed per input. If the input text is longer than this, it will be truncated according to the `truncate` parameter.
         /// </param>
         /// <param name="model">
-        /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
-        /// Available models and corresponding embedding dimensions:<br/>
-        /// * `embed-english-v3.0`  1024<br/>
-        /// * `embed-multilingual-v3.0`  1024<br/>
-        /// * `embed-english-light-v3.0`  384<br/>
-        /// * `embed-multilingual-light-v3.0`  384<br/>
-        /// * `embed-english-v2.0`  4096<br/>
-        /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768<br/>
+        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
         /// Included only in requests
         /// </param>
         /// <param name="outputDimension">

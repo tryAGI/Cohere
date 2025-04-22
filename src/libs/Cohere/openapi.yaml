@@ -2172,7 +2172,7 @@ paths:
                   $ref: '#/components/schemas/EmbedInputType'
                 model:
                   type: string
-                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+                  description: 'ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).'
                   writeOnly: true
                   x-fern-audiences:
                     - public
@@ -8009,7 +8009,7 @@ paths:
                     - public
                 model:
                   type: string
-                  description: "Defaults to embed-english-v2.0\n\nThe identifier of the model. Smaller \"light\" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.\n\nAvailable models and corresponding embedding dimensions:\n\n* `embed-english-v3.0`  1024\n* `embed-multilingual-v3.0`  1024\n* `embed-english-light-v3.0`  384\n* `embed-multilingual-light-v3.0`  384\n\n* `embed-english-v2.0`  4096\n* `embed-english-light-v2.0`  1024\n* `embed-multilingual-v2.0`  768"
+                  description: 'ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).'
                   writeOnly: true
                   x-fern-audiences:
                     - public
