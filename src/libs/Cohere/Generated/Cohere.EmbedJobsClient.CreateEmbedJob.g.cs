@@ -525,10 +525,10 @@ namespace Cohere
         /// <param name="embeddingTypes">
         /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
         /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for v3 and newer model versions.
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
