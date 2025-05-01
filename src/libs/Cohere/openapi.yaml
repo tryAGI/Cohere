@@ -7212,7 +7212,7 @@ paths:
               properties:
                 model:
                   type: string
-                  description: An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
+                  description: The input will be tokenized by the tokenizer that is used by this model.
                   x-fern-audiences:
                     - public
                 text:
