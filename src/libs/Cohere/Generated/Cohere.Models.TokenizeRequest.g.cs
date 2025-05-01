@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class TokenizeRequest
     {
         /// <summary>
-        /// An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
+        /// The input will be tokenized by the tokenizer that is used by this model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="TokenizeRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
+        /// The input will be tokenized by the tokenizer that is used by this model.
         /// </param>
         /// <param name="text">
         /// The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.
