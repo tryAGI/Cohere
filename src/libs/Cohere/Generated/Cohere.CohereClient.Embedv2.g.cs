@@ -559,7 +559,7 @@ namespace Cohere
         /// Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.
         /// </param>
         /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="truncate">
