@@ -47,7 +47,7 @@ namespace Cohere
         public string? Model { get; set; }
 
         /// <summary>
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
@@ -99,7 +99,7 @@ namespace Cohere
         /// Included only in requests
         /// </param>
         /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="truncate">
