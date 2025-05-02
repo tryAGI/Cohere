@@ -12863,7 +12863,6 @@ components:
       required:
         - id
         - embeddings
-        - texts
         - api_version
       type: object
       properties:
