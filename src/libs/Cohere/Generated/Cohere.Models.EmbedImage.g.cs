@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// Image content of the input.
+    /// Image content of the input. Supported with Embed v3.0 and newer models.
     /// </summary>
     public sealed partial class EmbedImage
     {
