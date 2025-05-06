@@ -15,7 +15,7 @@ namespace Cohere
         public global::Cohere.EmbedContentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Image content of the input.
+        /// Image content of the input. Supported with Embed v3.0 and newer models.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedImage? ImageUrl { get; init; }
