@@ -127,7 +127,7 @@ namespace Cohere
 
         /// <summary>
         /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
+        /// When `true`, the response will be a SSE stream of events.<br/>
         /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
@@ -242,7 +242,7 @@ namespace Cohere
         /// </param>
         /// <param name="stream">
         /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
+        /// When `true`, the response will be a SSE stream of events.<br/>
         /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </param>
         /// <param name="strictTools">
