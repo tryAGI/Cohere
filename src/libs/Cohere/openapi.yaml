@@ -7977,7 +7977,6 @@ paths:
               required:
                 - model
                 - input_type
-                - embedding_types
               type: object
               properties:
                 embedding_types:
@@ -7985,6 +7984,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/EmbeddingType'
                   description: "Specifies the types of embeddings you want to get back. Can be one or more of the following types.\n\n* `\"float\"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.\n* `\"int8\"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.\n* `\"uint8\"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.\n* `\"binary\"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.\n* `\"ubinary\"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models."
+                  default:
+                    - float
                   writeOnly: true
                   x-fern-audiences:
                     - public
