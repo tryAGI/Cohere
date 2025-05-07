@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class ImageContent
     {
         /// <summary>
-        /// Base64 url of image.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,9 +32,7 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageContent" /> class.
         /// </summary>
-        /// <param name="imageUrl">
-        /// Base64 url of image.
-        /// </param>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// Type of message content
         /// </param>
