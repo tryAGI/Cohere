@@ -47,6 +47,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.ChatRoleNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter),
             typeof(global::Cohere.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.ImageUrlDetailJsonConverter),
+            typeof(global::Cohere.JsonConverters.ImageUrlDetailNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ContentTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.ContentTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ContentDiscriminatorTypeJsonConverter),
