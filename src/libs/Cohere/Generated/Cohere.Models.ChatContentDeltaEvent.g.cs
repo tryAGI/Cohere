@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatStreamEventType value) => new ChatContentDeltaEvent(value);
+        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatStreamEventType value) => new ChatContentDeltaEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEventVariant2 value) => new ChatContentDeltaEvent(value);
+        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEventVariant2 value) => new ChatContentDeltaEvent((global::Cohere.ChatContentDeltaEventVariant2?)value);
 
         /// <summary>
         /// 

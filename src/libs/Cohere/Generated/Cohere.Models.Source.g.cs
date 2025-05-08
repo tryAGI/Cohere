@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Cohere.ToolSource value) => new Source(value);
+        public static implicit operator Source(global::Cohere.ToolSource value) => new Source((global::Cohere.ToolSource?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Cohere.DocumentSource value) => new Source(value);
+        public static implicit operator Source(global::Cohere.DocumentSource value) => new Source((global::Cohere.DocumentSource?)value);
 
         /// <summary>
         /// 

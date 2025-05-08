@@ -35,7 +35,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Message(global::Cohere.ChatMessage value) => new Message(value);
+        public static implicit operator Message(global::Cohere.ChatMessage value) => new Message((global::Cohere.ChatMessage?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Message(global::Cohere.ToolMessage value) => new Message(value);
+        public static implicit operator Message(global::Cohere.ToolMessage value) => new Message((global::Cohere.ToolMessage?)value);
 
         /// <summary>
         /// 

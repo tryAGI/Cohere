@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatSearchQueriesGenerationEvent(value);
+        public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatSearchQueriesGenerationEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatSearchQueriesGenerationEventVariant2 value) => new ChatSearchQueriesGenerationEvent(value);
+        public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatSearchQueriesGenerationEventVariant2 value) => new ChatSearchQueriesGenerationEvent((global::Cohere.ChatSearchQueriesGenerationEventVariant2?)value);
 
         /// <summary>
         /// 

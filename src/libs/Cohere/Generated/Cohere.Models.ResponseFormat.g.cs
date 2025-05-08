@@ -38,7 +38,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat(global::Cohere.TextResponseFormat value) => new ResponseFormat(value);
+        public static implicit operator ResponseFormat(global::Cohere.TextResponseFormat value) => new ResponseFormat((global::Cohere.TextResponseFormat?)value);
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat(global::Cohere.JSONResponseFormat value) => new ResponseFormat(value);
+        public static implicit operator ResponseFormat(global::Cohere.JSONResponseFormat value) => new ResponseFormat((global::Cohere.JSONResponseFormat?)value);
 
         /// <summary>
         /// 

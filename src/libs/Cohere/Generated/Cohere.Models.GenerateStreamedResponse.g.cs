@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamText value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamText value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamText?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamEnd value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamEnd value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamEnd?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamError value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamError value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamError?)value);
 
         /// <summary>
         /// 

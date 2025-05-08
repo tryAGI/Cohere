@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationStartEvent(global::Cohere.ChatStreamEventType value) => new CitationStartEvent(value);
+        public static implicit operator CitationStartEvent(global::Cohere.ChatStreamEventType value) => new CitationStartEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationStartEvent(global::Cohere.CitationStartEventVariant2 value) => new CitationStartEvent(value);
+        public static implicit operator CitationStartEvent(global::Cohere.CitationStartEventVariant2 value) => new CitationStartEvent((global::Cohere.CitationStartEventVariant2?)value);
 
         /// <summary>
         /// 

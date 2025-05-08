@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbedResponse(global::Cohere.EmbedFloatsResponse value) => new EmbedResponse(value);
+        public static implicit operator EmbedResponse(global::Cohere.EmbedFloatsResponse value) => new EmbedResponse((global::Cohere.EmbedFloatsResponse?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbedResponse(global::Cohere.EmbedByTypeResponse value) => new EmbedResponse(value);
+        public static implicit operator EmbedResponse(global::Cohere.EmbedByTypeResponse value) => new EmbedResponse((global::Cohere.EmbedByTypeResponse?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamEndEvent(global::Cohere.ChatStreamEvent value) => new ChatStreamEndEvent(value);
+        public static implicit operator ChatStreamEndEvent(global::Cohere.ChatStreamEvent value) => new ChatStreamEndEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamEndEvent(global::Cohere.ChatStreamEndEventVariant2 value) => new ChatStreamEndEvent(value);
+        public static implicit operator ChatStreamEndEvent(global::Cohere.ChatStreamEndEventVariant2 value) => new ChatStreamEndEvent((global::Cohere.ChatStreamEndEventVariant2?)value);
 
         /// <summary>
         /// 

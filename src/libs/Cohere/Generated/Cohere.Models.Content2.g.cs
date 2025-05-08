@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content2(global::Cohere.TextContent value) => new Content2(value);
+        public static implicit operator Content2(global::Cohere.TextContent value) => new Content2((global::Cohere.TextContent?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content2(global::Cohere.ImageContent value) => new Content2(value);
+        public static implicit operator Content2(global::Cohere.ImageContent value) => new Content2((global::Cohere.ImageContent?)value);
 
         /// <summary>
         /// 
