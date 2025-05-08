@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentStartEvent(global::Cohere.ChatStreamEventType value) => new ChatContentStartEvent(value);
+        public static implicit operator ChatContentStartEvent(global::Cohere.ChatStreamEventType value) => new ChatContentStartEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentStartEvent(global::Cohere.ChatContentStartEventVariant2 value) => new ChatContentStartEvent(value);
+        public static implicit operator ChatContentStartEvent(global::Cohere.ChatContentStartEventVariant2 value) => new ChatContentStartEvent((global::Cohere.ChatContentStartEventVariant2?)value);
 
         /// <summary>
         /// 

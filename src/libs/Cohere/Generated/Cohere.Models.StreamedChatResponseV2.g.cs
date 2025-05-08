@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageStartEvent?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentStartEvent?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentEndEvent?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolPlanDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallStartEvent?)value);
 
         /// <summary>
         /// 
@@ -244,7 +244,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -279,7 +279,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallEndEvent?)value);
 
         /// <summary>
         /// 
@@ -314,7 +314,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageEndEvent?)value);
 
         /// <summary>
         /// 
@@ -349,7 +349,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatDebugEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatDebugEvent value) => new StreamedChatResponseV2((global::Cohere.ChatDebugEvent?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbedContent(global::Cohere.EmbedImage value) => new EmbedContent(value);
+        public static implicit operator EmbedContent(global::Cohere.EmbedImage value) => new EmbedContent((global::Cohere.EmbedImage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbedContent(global::Cohere.EmbedText value) => new EmbedContent(value);
+        public static implicit operator EmbedContent(global::Cohere.EmbedText value) => new EmbedContent((global::Cohere.EmbedText?)value);
 
         /// <summary>
         /// 

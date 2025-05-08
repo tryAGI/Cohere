@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolContent(global::Cohere.TextContent value) => new ToolContent(value);
+        public static implicit operator ToolContent(global::Cohere.TextContent value) => new ToolContent((global::Cohere.TextContent?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolContent(global::Cohere.DocumentContent value) => new ToolContent(value);
+        public static implicit operator ToolContent(global::Cohere.DocumentContent value) => new ToolContent((global::Cohere.DocumentContent?)value);
 
         /// <summary>
         /// 

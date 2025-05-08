@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::Cohere.TextContent value) => new ContentItem(value);
+        public static implicit operator ContentItem(global::Cohere.TextContent value) => new ContentItem((global::Cohere.TextContent?)value);
 
         /// <summary>
         /// 

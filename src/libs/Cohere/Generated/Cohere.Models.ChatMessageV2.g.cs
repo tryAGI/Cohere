@@ -34,7 +34,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::Cohere.UserMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::Cohere.UserMessage value) => new ChatMessageV2((global::Cohere.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::Cohere.AssistantMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::Cohere.AssistantMessage value) => new ChatMessageV2((global::Cohere.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::Cohere.SystemMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::Cohere.SystemMessage value) => new ChatMessageV2((global::Cohere.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::Cohere.ToolMessageV2 value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::Cohere.ToolMessageV2 value) => new ChatMessageV2((global::Cohere.ToolMessageV2?)value);
 
         /// <summary>
         /// 

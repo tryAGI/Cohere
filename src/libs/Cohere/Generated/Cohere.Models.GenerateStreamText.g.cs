@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamEvent value) => new GenerateStreamText(value);
+        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamEvent value) => new GenerateStreamText((global::Cohere.GenerateStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextVariant2 value) => new GenerateStreamText(value);
+        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextVariant2 value) => new GenerateStreamText((global::Cohere.GenerateStreamTextVariant2?)value);
 
         /// <summary>
         /// 

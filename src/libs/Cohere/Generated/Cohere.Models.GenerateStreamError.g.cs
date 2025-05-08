@@ -29,7 +29,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamEvent value) => new GenerateStreamError(value);
+        public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamEvent value) => new GenerateStreamError((global::Cohere.GenerateStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamErrorVariant2 value) => new GenerateStreamError(value);
+        public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamErrorVariant2 value) => new GenerateStreamError((global::Cohere.GenerateStreamErrorVariant2?)value);
 
         /// <summary>
         /// 
