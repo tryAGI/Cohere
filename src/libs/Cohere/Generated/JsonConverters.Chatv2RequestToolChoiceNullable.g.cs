@@ -28,6 +28,10 @@ namespace Cohere.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Cohere.Chatv2RequestToolChoice)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Cohere.Chatv2RequestToolChoice?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
