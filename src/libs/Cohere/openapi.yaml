@@ -12989,7 +12989,6 @@ components:
       x-examples:
         Example:
           value:
-            api_version: v2
             embeddings:
               float:
                 - 
