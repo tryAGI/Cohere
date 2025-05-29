@@ -777,6 +777,7 @@ paths:
                     type: string
                   valid:
                     type: boolean
+                x-fern-type-name: CheckApiKeyResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1591,6 +1592,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: DatasetsListResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1729,6 +1731,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: dataset-dytngn
       responses:
         '200':
           description: A successful response.
@@ -1744,6 +1747,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: DatasetsCreateResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1817,6 +1821,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: DatasetsGetUsageResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1891,6 +1896,7 @@ paths:
                 type: object
                 x-fern-audiences:
                   - public
+                x-fern-type-name: dataset-id-g4eh6t
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1966,6 +1972,7 @@ paths:
                     $ref: '#/components/schemas/Dataset'
                 x-fern-audiences:
                   - public
+                x-fern-type-name: DatasetsGetResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2050,6 +2057,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: DetokenizeRequest
       responses:
         '200':
           description: OK
@@ -2073,6 +2081,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: DetokenizeResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2202,6 +2211,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: EmbedRequest
       responses:
         '200':
           description: OK
@@ -6640,7 +6650,7 @@ paths:
             body:
               generations:
                 - id: 8e6de35d-3007-43ab-9253-ac4f95dcb8a2
-                  text: "LLMs, or Large Language Models, are a type of neural network-based AI model that has been trained on massive amounts of text data and have become ubiquitous in the AI landscape. They possess astounding capabilities for comprehending and generating human-like language.\nThese models leverage neural networks that operate on a large scale, often involving millions or even billions of parameters. This substantial scale enables them to capture intricate patterns and connections within the vast amounts of text they have been trained on.\n\nThe training process for LLMs is fueled by colossal datasets of textual information, ranging from books and articles to websites and conversational transcripts. This extensive training enables them to develop a nuanced understanding of language patterns, grammar, and semantics.\n\nWhen posed with a new text input, LLMs employ their finely honed understanding of language to generate informed responses or undertake tasks such as language translation, text completion, or question answering. They do this by manipulating the input text through adding, removing, or altering elements to craft a desired output.\n\nOne of the underlying principles of their efficacy is the recurrent neural network (RNN) architecture they often adopt. This design enables them to process sequential data like natural language effectively. RNNs possess \"memory\" aspects via loops between layers, which allows them to retain and manipulate information gathered across long sequences, akin to the way humans process information.\n\nHowever, it's their size that arguably constitutes their most notable aspect. The sheer volume of these models – with counts of parameters often exceeding 100 million – enables them to capture correlations and patterns within language data effectively. This empowers them to generate coherent and contextually appropriate responses, posing a remarkable advancement in conversational AI.\n\nWhile LLMs have demonstrated extraordinary language prowess, it's vital to acknowledge their limitations and potential for improvement. Their biases often reflect those of the training data, and they may struggle with logical inconsistencies or factual errors. Ongoing research aims to enhance their robustness, diversity, and overall usability.\n\nIn essence, LLMs are a groundbreaking manifestation of AI's potential to simulate and even extend human language capabilities, while also serving as a testament to the ongoing journey towards refining and perfecting these technologies. "
+                  text: "LLMs, or Large Language Models, are a type of neural network-based AI model that has been trained on massive amounts of text data and have become ubiquitous in the AI landscape. They possess astounding capabilities for comprehending and generating human-like language.\nThese models leverage neural networks that operate on a large scale, often involving millions or even billions of parameters. This substantial scale enables them to capture intricate patterns and connections within the vast amounts of text they have been trained on.\n\nThe training process for LLMs is fueled by colossal datasets of textual information, ranging from books and articles to websites and conversational transcripts. This extensive training enables them to develop a nuanced understanding of language patterns, grammar, and semantics.\n\nWhen posed with a new text input, LLMs employ their finely honed understanding of language to generate informed responses or undertake tasks such as language translation, text completion, or question answering. They do this by manipulating the input text through adding, removing, or altering elements to craft a desired output.\n\nOne of the underlying principles of their efficacy is the recurrent neural network (RNN) architecture they often adopt. This design enables them to process sequential data like natural language effectively. RNNs possess \"memory\" aspects via loops between layers, which allows them to retain and manipulate information gathered across long sequences, akin to the way humans process information.\n\nHowever, it's their size that arguably constitutes their most notable aspect. The sheer volume of these models – with counts of parameters often exceeding 100 million – enables them to capture correlations and patterns within language data effectively. This empowers them to generate coherent and contextually appropriate responses, posing a remarkable advancement in conversational AI.\n\nWhile LLMs have demonstrated extraordinary language prowess, it's vital to acknowledge their limitations and potential for improvement. Their biases often reflect those of the training data, and they may struggle with logical inconsistencies or factual errors. Ongoing research aims to enhance their robustness, diversity, and overall usability.\n\nIn essence, LLMs are a groundbreaking manifestation of AI's potential to simulate and even extend human language capabilities, while also serving as a testament to the ongoing journey towards refining and perfecting these technologies."
               id: 6afae9c2-3375-4d0e-8d18-2e9eb7f2c3ec
               meta:
                 api_version:
@@ -6659,6 +6669,7 @@ paths:
                 type: object
                 x-fern-audiences:
                   - public
+                x-fern-type-name: Generation-9h264n
               type: array
               x-fern-audiences:
                 - public
@@ -6904,6 +6915,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: RerankRequest
       responses:
         '200':
           description: OK
@@ -6941,6 +6953,7 @@ paths:
                           description: 'If `return_documents` is set as `false` this will return none, if `true` it will return the documents passed in'
                           x-fern-audiences:
                             - public
+                          x-fern-type-name: RerankResponseResultsItemDocument
                         index:
                           type: integer
                           description: 'Corresponds to the index in the original list of documents to which the ranked document belongs. (i.e. if the first value in the `results` object has an `index` value of 3, it means in the list of documents passed in, the document at `index=3` had the highest relevance)'
@@ -6955,11 +6968,13 @@ paths:
                             - public
                       x-fern-audiences:
                         - public
+                      x-fern-type-name: RerankResponseResultsItem
                     description: An ordered list of ranked documents
                     x-fern-audiences:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: RerankResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -7110,6 +7125,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: SummarizeRequest
       responses:
         '200':
           description: OK
@@ -7135,6 +7151,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: SummarizeResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -7224,6 +7241,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: TokenizeRequest
             examples:
               Example:
                 value:
@@ -7266,6 +7284,7 @@ paths:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: TokenizeResponse
               examples:
                 Example:
                   value:
@@ -7557,7 +7576,7 @@ paths:
               id: c14c80c3-18eb-4519-9460-6c92edd8cfb4
               message:
                 content:
-                  - text: "LLMs stand for Large Language Models, which are a type of neural network model specialized in processing and generating human language. They are designed to understand and respond to natural language input and have become increasingly popular and valuable in recent years.\n\nLLMs are trained on vast amounts of text data, enabling them to learn patterns, grammar, and semantic meanings present in the language. These models can then be used for various natural language processing tasks, such as text generation, summarization, question answering, machine translation, sentiment analysis, and even some aspects of natural language understanding.\n\nSome well-known examples of LLMs include:\n\n1. GPT-3 (Generative Pre-trained Transformer 3) — An open-source LLM developed by OpenAI, capable of generating human-like text and performing various language tasks.\n\n2. BERT (Bidirectional Encoder Representations from Transformers) — A Google-developed LLM that is particularly good at understanding contextual relationships in text, and is widely used for natural language understanding tasks like sentiment analysis and named entity recognition.\n\n3. T5 (Text-to-Text Transfer Transformer) — Also from Google, T5 is a flexible LLM that frames all language tasks as text-to-text problems, where the model learns to generate output text based on input text prompts.\n\n4. RoBERTa (Robustly Optimized BERT Approach) — A variant of BERT that uses additional training techniques to improve performance.\n\n5. DeBERTa (Decoding-enhanced BERT with disentangled attention) — Another variant of BERT that introduces a new attention mechanism.\n\nLLMs have become increasingly powerful and larger in scale, improving the accuracy and sophistication of language tasks. They are also being used as a foundation for developing various applications, including chatbots, content recommendation systems, language translation services, and more. \n\nThe future of LLMs holds the potential for even more sophisticated language technologies, with ongoing research and development focused on enhancing their capabilities, improving efficiency, and exploring their applications in various domains."
+                  - text: "LLMs stand for Large Language Models, which are a type of neural network model specialized in processing and generating human language. They are designed to understand and respond to natural language input and have become increasingly popular and valuable in recent years.\n\nLLMs are trained on vast amounts of text data, enabling them to learn patterns, grammar, and semantic meanings present in the language. These models can then be used for various natural language processing tasks, such as text generation, summarization, question answering, machine translation, sentiment analysis, and even some aspects of natural language understanding.\n\nSome well-known examples of LLMs include:\n\n1. GPT-3 (Generative Pre-trained Transformer 3) — An open-source LLM developed by OpenAI, capable of generating human-like text and performing various language tasks.\n\n2. BERT (Bidirectional Encoder Representations from Transformers) — A Google-developed LLM that is particularly good at understanding contextual relationships in text, and is widely used for natural language understanding tasks like sentiment analysis and named entity recognition.\n\n3. T5 (Text-to-Text Transfer Transformer) — Also from Google, T5 is a flexible LLM that frames all language tasks as text-to-text problems, where the model learns to generate output text based on input text prompts.\n\n4. RoBERTa (Robustly Optimized BERT Approach) — A variant of BERT that uses additional training techniques to improve performance.\n\n5. DeBERTa (Decoding-enhanced BERT with disentangled attention) — Another variant of BERT that introduces a new attention mechanism.\n\nLLMs have become increasingly powerful and larger in scale, improving the accuracy and sophistication of language tasks. They are also being used as a foundation for developing various applications, including chatbots, content recommendation systems, language translation services, and more.\nThe future of LLMs holds the potential for even more sophisticated language technologies, with ongoing research and development focused on enhancing their capabilities, improving efficiency, and exploring their applications in various domains."
                     type: text
                 role: assistant
               usage:
@@ -7871,6 +7890,7 @@ paths:
                     required:
                       - day
                     type: object
+                    x-fern-type-name: tools-by6k68
                 type: function
               - function:
                   description: 'Connects to a a product catalog with information about all the products being sold, including categories, prices, and stock levels.'
@@ -7883,6 +7903,7 @@ paths:
                     required:
                       - category
                     type: object
+                    x-fern-type-name: tools-o09qd6
                 type: function
           response:
             body:
@@ -8052,6 +8073,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: V2EmbedRequest
       responses:
         '200':
           description: OK
@@ -11270,7 +11292,7 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: "A list of texts that will be compared to the `query`.\nFor optimal performance we recommend against sending more than 1,000 documents in a single request.\n\n**Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.\n\n**Note**: structured data should be formatted as YAML strings for best performance.  "
+                  description: "A list of texts that will be compared to the `query`.\nFor optimal performance we recommend against sending more than 1,000 documents in a single request.\n\n**Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.\n\n**Note**: structured data should be formatted as YAML strings for best performance."
                   x-fern-audiences:
                     - public
                 max_tokens_per_doc:
@@ -11296,6 +11318,7 @@ paths:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: V2RerankRequest
       responses:
         '200':
           description: OK
@@ -11334,11 +11357,13 @@ paths:
                             - public
                       x-fern-audiences:
                         - public
+                      x-fern-type-name: V2RerankResponseResultsItem
                     description: An ordered list of ranked documents
                     x-fern-audiences:
                       - public
                 x-fern-audiences:
                   - public
+                x-fern-type-name: V2RerankResponse
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -11434,6 +11459,7 @@ components:
                 - public
           x-fern-audiences:
             - public
+          x-fern-type-name: ApiMetaApiVersion
         billed_units:
           type: object
           properties:
@@ -11464,6 +11490,7 @@ components:
                 - public
           x-fern-audiences:
             - public
+          x-fern-type-name: ApiMetaBilledUnits
         tokens:
           type: object
           properties:
@@ -11479,6 +11506,7 @@ components:
                 - public
           x-fern-audiences:
             - public
+          x-fern-type-name: ApiMetaTokens
         warnings:
           type: array
           items:
@@ -11487,6 +11515,7 @@ components:
               - public
           x-fern-audiences:
             - public
+      x-fern-type-name: ApiMeta
     AssistantMessage:
       title: Assistant Message
       required:
@@ -11520,6 +11549,7 @@ components:
           type: string
           description: A chain-of-thought style reflection and plan that the model generates when working with Tools.
       description: A message from the assistant role can contain text and tool call information.
+      x-fern-type-name: AssistantMessage
     AssistantMessageResponse:
       required:
         - role
@@ -11550,6 +11580,7 @@ components:
           type: string
           description: A chain-of-thought style reflection and plan that the model generates when working with Tools.
       description: A message from the assistant role can contain text and tool call information.
+      x-fern-type-name: AssistantMessageResponse
     AuthTokenType:
       enum:
         - bearer
@@ -11558,6 +11589,7 @@ components:
       type: string
       description: 'The token_type specifies the way the token is passed in the Authorization header. Valid values are "bearer", "basic", and "noscheme".'
       default: noscheme
+      x-fern-type-name: AuthTokenType
     BaseModel:
       required:
         - base_type
@@ -11633,6 +11665,7 @@ components:
           x-fern-audiences:
             - public
       description: "A section of the generated reply which cites external knowledge.\n"
+      x-fern-type-name: ChatCitation
     ChatCitationGenerationEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -11647,6 +11680,8 @@ components:
               description: "Citations for the generated reply.\n"
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatCitationGenerationEvent-lg3v2o
+      x-fern-type-name: ChatCitationGenerationEvent
     ChatConnector:
       required:
         - id
@@ -11668,12 +11703,14 @@ components:
           description: "Provides the connector with different settings at request time. The key/value pairs of this object are specific to each connector.\n\nFor example, the connector `web-search` supports the `site` option, which limits search results to the specified domain.\n"
           x-fern-audiences:
             - public
+          x-fern-type-name: ChatConnector-7ur0eu
         user_access_token:
           type: string
           description: "When specified, this user access token will be passed to the connector in the Authorization header instead of the Cohere generated one.\n"
           x-fern-audiences:
             - public
       description: "The connector used for fetching documents.\n"
+      x-fern-type-name: ChatConnector
     ChatContentDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -11690,11 +11727,16 @@ components:
                       properties:
                         text:
                           type: string
+                      x-fern-type-name: ChatContentDeltaEventDeltaMessageContent
+                  x-fern-type-name: ChatContentDeltaEventDeltaMessage
+              x-fern-type-name: ChatContentDeltaEventDelta
             index:
               type: integer
             logprobs:
               $ref: '#/components/schemas/LogprobItem'
+          x-fern-type-name: ChatContentDeltaEvent-3m0vqs
       description: A streamed delta event which contains a delta of chat text content.
+      x-fern-type-name: ChatContentDeltaEvent
     ChatContentEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -11702,7 +11744,9 @@ components:
           properties:
             index:
               type: integer
+          x-fern-type-name: ChatContentEndEvent-ma278i
       description: A streamed delta event which signifies that the content block has ended.
+      x-fern-type-name: ChatContentEndEvent
     ChatContentStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -11723,9 +11767,14 @@ components:
                           enum:
                             - text
                           type: string
+                      x-fern-type-name: ChatContentStartEventDeltaMessageContent
+                  x-fern-type-name: ChatContentStartEventDeltaMessage
+              x-fern-type-name: ChatContentStartEventDelta
             index:
               type: integer
+          x-fern-type-name: ChatContentStartEvent-6xvlq1
       description: A streamed delta event which signifies that a new content block has started.
+      x-fern-type-name: ChatContentStartEvent
     ChatDataMetrics:
       type: object
       properties:
@@ -11746,6 +11795,7 @@ components:
           description: The preamble of this dataset.
           x-fern-audiences:
             - public
+      x-fern-type-name: ChatDataMetrics
     ChatDebugEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -11755,6 +11805,8 @@ components:
               type: string
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatDebugEvent-352j0t
+      x-fern-type-name: ChatDebugEvent
     ChatDocument:
       type: object
       properties:
@@ -11769,6 +11821,7 @@ components:
           - public
       description: "Relevant information that could be used by the model to generate a more accurate reply.\nThe contents of each document are generally short (under 300 words), and are passed in the form of a\ndictionary of strings. Some suggested keys are \"text\", \"author\", \"date\". Both the key name and the value will be\npassed to the model.\n"
       x-fern-type: 'map<string, string>'
+      x-fern-type-name: ChatDocument
     ChatFinishReason:
       enum:
         - COMPLETE
@@ -11778,6 +11831,7 @@ components:
         - ERROR
       type: string
       description: "The reason a chat request has finished.\n\n- **complete**: The model finished sending a complete message.\n- **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.\n- **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.\n- **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return\n- **error**: The generation failed due to an internal error\n"
+      x-fern-type-name: ChatFinishReason
     ChatMessage:
       required:
         - role
@@ -11798,6 +11852,7 @@ components:
           x-fern-audiences:
             - public
       description: "Represents a single message in the chat history, excluding the current user turn. It has two properties: `role` and `message`. The `role` identifies the sender (`CHATBOT`, `SYSTEM`, or `USER`), while the `message` contains the text content.\n\nThe chat_history parameter should not be used for `SYSTEM` messages in most cases. Instead, to add a `SYSTEM` role message at the beginning of a conversation, the `preamble` parameter should be used.\n"
+      x-fern-type-name: ChatMessage
     ChatMessageEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -11815,9 +11870,12 @@ components:
                   $ref: '#/components/schemas/ChatFinishReason'
                 usage:
                   $ref: '#/components/schemas/Usage'
+              x-fern-type-name: ChatMessageEndEventDelta
             id:
               type: string
+          x-fern-type-name: ChatMessageEndEvent-u3fzny
       description: A streamed event which signifies that the chat message has ended.
+      x-fern-type-name: ChatMessageEndEvent
     ChatMessageStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -11834,10 +11892,14 @@ components:
                         - assistant
                       type: string
                       description: The role of the message.
+                  x-fern-type-name: ChatMessageStartEventDeltaMessage
+              x-fern-type-name: ChatMessageStartEventDelta
             id:
               type: string
               description: Unique identifier for the generated reply.
+          x-fern-type-name: ChatMessageStartEvent-lsegeq
       description: A streamed event which signifies that a stream has started.
+      x-fern-type-name: ChatMessageStartEvent
     ChatMessageV2:
       oneOf:
         - $ref: '#/components/schemas/UserMessage'
@@ -11852,11 +11914,13 @@ components:
           system: '#/components/schemas/SystemMessage'
           tool: '#/components/schemas/ToolMessageV2'
           user: '#/components/schemas/UserMessage'
+      x-fern-type-name: ChatMessageV2
     ChatMessages:
       type: array
       items:
         $ref: '#/components/schemas/ChatMessageV2'
       description: "A list of chat messages in chronological order, representing a conversation between the user and the model.\n\nMessages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/v2/docs/chat-api).\n"
+      x-fern-type-name: ChatMessages
     ChatResponse:
       required:
         - id
@@ -11884,6 +11948,7 @@ components:
         - TOOL
       type: string
       description: "One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.\n"
+      x-fern-type-name: ChatRole
     ChatSearchQueriesGenerationEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -11898,6 +11963,8 @@ components:
               description: 'Generated search queries, meant to be used as part of the RAG flow.'
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatSearchQueriesGenerationEvent-6evypd
+      x-fern-type-name: ChatSearchQueriesGenerationEvent
     ChatSearchQuery:
       required:
         - text
@@ -11916,6 +11983,7 @@ components:
           x-fern-audiences:
             - public
       description: "The generated search query. Contains the text of the query and a unique identifier for the query.\n"
+      x-fern-type-name: ChatSearchQuery
     ChatSearchResult:
       required:
         - connector
@@ -11947,6 +12015,7 @@ components:
             - public
         search_query:
           $ref: '#/components/schemas/ChatSearchQuery'
+      x-fern-type-name: ChatSearchResult
     ChatSearchResultConnector:
       required:
         - id
@@ -11959,6 +12028,7 @@ components:
           x-fern-audiences:
             - public
       description: "The connector used for fetching documents.\n"
+      x-fern-type-name: ChatSearchResultConnector
     ChatSearchResultsEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -11980,6 +12050,8 @@ components:
               description: "Conducted searches and the ids of documents retrieved from each of them.\n"
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatSearchResultsEvent-44axt5
+      x-fern-type-name: ChatSearchResultsEvent
     ChatStreamEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12001,6 +12073,8 @@ components:
                 - public
             response:
               $ref: '#/components/schemas/NonStreamedChatResponse'
+          x-fern-type-name: ChatStreamEndEvent-y8gq2x
+      x-fern-type-name: ChatStreamEndEvent
     ChatStreamEvent:
       required:
         - event_type
@@ -12017,6 +12091,7 @@ components:
           type: string
           x-fern-audiences:
             - public
+      x-fern-type-name: ChatStreamEvent
     ChatStreamEventType:
       required:
         - type
@@ -12036,6 +12111,7 @@ components:
             - message-end
           type: string
       description: The streamed event types
+      x-fern-type-name: ChatStreamEventType
     ChatStreamStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12050,6 +12126,8 @@ components:
               format: uuid
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatStreamStartEvent-5v9jyv
+      x-fern-type-name: ChatStreamStartEvent
     ChatTextGenerationEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12063,6 +12141,8 @@ components:
               description: "The next batch of text generated by the model.\n"
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatTextGenerationEvent-8yyj22
+      x-fern-type-name: ChatTextGenerationEvent
     ChatToolCallDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12082,9 +12162,15 @@ components:
                           properties:
                             arguments:
                               type: string
+                          x-fern-type-name: ChatToolCallDeltaEventDeltaMessageToolCallsFunction
+                      x-fern-type-name: ChatToolCallDeltaEventDeltaMessageToolCalls
+                  x-fern-type-name: ChatToolCallDeltaEventDeltaMessage
+              x-fern-type-name: ChatToolCallDeltaEventDelta
             index:
               type: integer
+          x-fern-type-name: ChatToolCallDeltaEvent-2bxzoc
       description: A streamed event delta which signifies a delta in tool call arguments.
+      x-fern-type-name: ChatToolCallDeltaEvent
     ChatToolCallEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12092,7 +12178,9 @@ components:
           properties:
             index:
               type: integer
+          x-fern-type-name: ChatToolCallEndEvent-t6ph9s
       description: A streamed event delta which signifies a tool call has finished streaming.
+      x-fern-type-name: ChatToolCallEndEvent
     ChatToolCallStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12106,9 +12194,13 @@ components:
                   properties:
                     tool_calls:
                       $ref: '#/components/schemas/ToolCallV2'
+                  x-fern-type-name: ChatToolCallStartEventDeltaMessage
+              x-fern-type-name: ChatToolCallStartEventDelta
             index:
               type: integer
+          x-fern-type-name: ChatToolCallStartEvent-lv559x
       description: A streamed event delta which signifies a tool call has started streaming.
+      x-fern-type-name: ChatToolCallStartEvent
     ChatToolCallsChunkEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12122,6 +12214,8 @@ components:
                 - public
             tool_call_delta:
               $ref: '#/components/schemas/ToolCallDelta'
+          x-fern-type-name: ChatToolCallsChunkEvent-t7lliu
+      x-fern-type-name: ChatToolCallsChunkEvent
     ChatToolCallsGenerationEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12140,6 +12234,8 @@ components:
                 $ref: '#/components/schemas/ToolCall'
               x-fern-audiences:
                 - public
+          x-fern-type-name: ChatToolCallsGenerationEvent-nykiww
+      x-fern-type-name: ChatToolCallsGenerationEvent
     ChatToolPlanDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12153,7 +12249,11 @@ components:
                   properties:
                     tool_plan:
                       type: string
+                  x-fern-type-name: ChatToolPlanDeltaEventDeltaMessage
+              x-fern-type-name: ChatToolPlanDeltaEventDelta
+          x-fern-type-name: ChatToolPlanDeltaEvent-2obfex
       description: A streamed event which contains a delta of tool plan text.
+      x-fern-type-name: ChatToolPlanDeltaEvent
     Citation:
       type: object
       properties:
@@ -12173,6 +12273,7 @@ components:
         type:
           $ref: '#/components/schemas/CitationType'
       description: Citation information containing sources and the text cited.
+      x-fern-type-name: Citation
     CitationEndEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12180,7 +12281,9 @@ components:
           properties:
             index:
               type: integer
+          x-fern-type-name: CitationEndEvent-fs3igt
       description: A streamed event which signifies a citation has finished streaming.
+      x-fern-type-name: CitationEndEvent
     CitationOptions:
       type: object
       properties:
@@ -12192,6 +12295,7 @@ components:
           type: string
           description: "Defaults to `\"accurate\"`.\nDictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `\"accurate\"` results, `\"fast\"` results or no results.\n\n**Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `\"fast\"` and `\"off\"` modes. The default is `\"fast\"`.\n"
       description: Options for controlling citation generation.
+      x-fern-type-name: CitationOptions
     CitationStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12205,15 +12309,20 @@ components:
                   properties:
                     citations:
                       $ref: '#/components/schemas/Citation'
+                  x-fern-type-name: CitationStartEventDeltaMessage
+              x-fern-type-name: CitationStartEventDelta
             index:
               type: integer
+          x-fern-type-name: CitationStartEvent-t3df62
       description: A streamed event which signifies a citation has been created.
+      x-fern-type-name: CitationStartEvent
     CitationType:
       enum:
         - TEXT_CONTENT
         - PLAN
       type: string
       description: "The type of citation which indicates what part of the response the citation is for.\n"
+      x-fern-type-name: CitationType
     ClassifyDataMetrics:
       type: object
       properties:
@@ -12221,6 +12330,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LabelMetric'
+      x-fern-type-name: ClassifyDataMetrics
     ClassifyExample:
       type: object
       properties:
@@ -12235,6 +12345,7 @@ components:
           x-fern-audiences:
             - public
       writeOnly: true
+      x-fern-type-name: ClassifyExample
     Cluster:
       type: object
       properties:
@@ -12266,6 +12377,7 @@ components:
           type: integer
           x-fern-audiences:
             - public
+      x-fern-type-name: Cluster
     CompatibleEndpoint:
       enum:
         - chat
@@ -12277,6 +12389,7 @@ components:
         - generate
       type: string
       description: One of the Cohere API endpoints that the model can be used with.
+      x-fern-type-name: CompatibleEndpoint
     Connector:
       required:
         - id
@@ -12358,6 +12471,7 @@ components:
           x-fern-audiences:
             - public
       description: "A connector allows you to integrate data sources with the '/chat' endpoint to create grounded generations with citations to the data source.\ndocuments to help answer users."
+      x-fern-type-name: Connector
     ConnectorLog:
       required:
         - id
@@ -12399,6 +12513,7 @@ components:
         user_id:
           type: string
           description: Unique identifier for the user
+      x-fern-type-name: ConnectorLog
     ConnectorOAuth:
       required:
         - authorize_url
@@ -12430,6 +12545,7 @@ components:
           description: The OAuth 2.0 /token endpoint to use when users authorize the connector.
           x-fern-audiences:
             - public
+      x-fern-type-name: ConnectorOAuth
     Content:
       oneOf:
         - $ref: '#/components/schemas/TextContent'
@@ -12440,6 +12556,7 @@ components:
         mapping:
           image_url: '#/components/schemas/ImageContent'
           text: '#/components/schemas/TextContent'
+      x-fern-type-name: Content
     ContentType:
       enum:
         - text
@@ -12448,6 +12565,7 @@ components:
       description: "Type of message content\n"
       x-fern-audiences:
         - public
+      x-fern-type-name: ContentType
     CreateClusterJobRequest:
       required:
         - embeddings_url
@@ -12486,6 +12604,7 @@ components:
           default: 15
           x-fern-audiences:
             - public
+      x-fern-type-name: CreateClusterJobRequest
     CreateClusterJobResponse:
       required:
         - job_id
@@ -12496,6 +12615,7 @@ components:
           x-fern-audiences:
             - public
       description: Response for creating a cluster job.
+      x-fern-type-name: CreateClusterJobResponse
     CreateConnectorOAuth:
       required:
         - clientId
@@ -12529,6 +12649,7 @@ components:
           description: The OAuth 2.0 /token endpoint to use when users authorize the connector.
           x-fern-audiences:
             - public
+      x-fern-type-name: CreateConnectorOAuth
     CreateConnectorRequest:
       required:
         - name
@@ -12575,6 +12696,7 @@ components:
           description: The URL of the connector that will be used to search for documents.
           x-fern-audiences:
             - public
+      x-fern-type-name: CreateConnectorRequest
     CreateConnectorResponse:
       required:
         - connector
@@ -12582,6 +12704,7 @@ components:
       properties:
         connector:
           $ref: '#/components/schemas/Connector'
+      x-fern-type-name: CreateConnectorResponse
     CreateConnectorServiceAuth:
       required:
         - type
@@ -12595,6 +12718,7 @@ components:
             - public
         type:
           $ref: '#/components/schemas/AuthTokenType'
+      x-fern-type-name: CreateConnectorServiceAuth
     CreateEmbedJobRequest:
       required:
         - model
@@ -12636,6 +12760,7 @@ components:
           default: END
           x-fern-audiences:
             - public
+      x-fern-type-name: CreateEmbedJobRequest
     CreateEmbedJobResponse:
       required:
         - job_id
@@ -12648,6 +12773,7 @@ components:
         meta:
           $ref: '#/components/schemas/ApiMeta'
       description: Response from creating an embed job.
+      x-fern-type-name: CreateEmbedJobResponse
     CreateFinetunedModelResponse:
       type: object
       properties:
@@ -12739,6 +12865,7 @@ components:
           description: warnings found during validation
           x-fern-audiences:
             - public
+      x-fern-type-name: Dataset
     DatasetPart:
       required:
         - id
@@ -12792,6 +12919,7 @@ components:
           description: The download url of the file
           x-fern-audiences:
             - public
+      x-fern-type-name: DatasetPart
     DatasetType:
       enum:
         - embed-input
@@ -12806,6 +12934,7 @@ components:
       description: The type of the dataset
       x-fern-audiences:
         - public
+      x-fern-type-name: DatasetType
     DatasetValidationStatus:
       enum:
         - unknown
@@ -12818,8 +12947,10 @@ components:
       description: The validation status of the dataset
       x-fern-audiences:
         - public
+      x-fern-type-name: DatasetValidationStatus
     DeleteConnectorResponse:
       type: object
+      x-fern-type-name: DeleteConnectorResponse
     DeleteFinetunedModelResponse:
       type: object
       description: Response to request to delete a fine-tuned model.
@@ -12834,10 +12965,12 @@ components:
         data:
           type: object
           description: "A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.\n"
+          x-fern-type-name: Document-qmvpd9
         id:
           type: string
           description: Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
       description: "Relevant information that could be used by the model to generate a more accurate reply.\nThe content of each document are generally short (should be under 300 words). Metadata should be used to provide additional information, both the key name and the value will be\npassed to the model.\n"
+      x-fern-type-name: Document
     DocumentContent:
       required:
         - type
@@ -12851,15 +12984,18 @@ components:
             - document
           type: string
       description: Document content.
+      x-fern-type-name: DocumentContent
     DocumentSource:
       type: object
       properties:
         document:
           type: object
+          x-fern-type-name: DocumentSource-w70a62
         id:
           type: string
           description: The unique identifier of the document
       description: A document source object containing the unique identifier of the document and the document itself.
+      x-fern-type-name: DocumentSource
     EmbedByTypeResponse:
       required:
         - id
@@ -12957,6 +13093,7 @@ components:
           readOnly: true
           x-fern-audiences:
             - public
+          x-fern-type-name: EmbedByTypeResponseEmbeddings
         id:
           type: string
           x-fern-audiences:
@@ -14152,6 +14289,7 @@ components:
                 version: '1'
             texts:
               - hello world
+      x-fern-type-name: EmbedByTypeResponse
     EmbedContent:
       oneOf:
         - $ref: '#/components/schemas/EmbedImage'
@@ -14161,6 +14299,7 @@ components:
         mapping:
           image_url: '#/components/schemas/EmbedImage'
           text: '#/components/schemas/EmbedText'
+      x-fern-type-name: EmbedContent
     EmbedContentType:
       enum:
         - text
@@ -14169,6 +14308,7 @@ components:
       writeOnly: true
       x-fern-audiences:
         - public
+      x-fern-type-name: EmbedContentType
     EmbedFloatsResponse:
       required:
         - id
@@ -15257,6 +15397,7 @@ components:
                 version: '1'
             texts:
               - hello world
+      x-fern-type-name: EmbedFloatsResponse
     EmbedImage:
       type: object
       properties:
@@ -15267,6 +15408,7 @@ components:
       description: Image content of the input. Supported with Embed v3.0 and newer models.
       x-fern-audiences:
         - public
+      x-fern-type-name: EmbedImage
     EmbedImageUrl:
       required:
         - url
@@ -15275,6 +15417,7 @@ components:
         url:
           type: string
       description: Base64 url of image.
+      x-fern-type-name: EmbedImageUrl
     EmbedInput:
       required:
         - content
@@ -15289,6 +15432,7 @@ components:
             - public
       x-fern-audiences:
         - public
+      x-fern-type-name: EmbedInput
     EmbedInputType:
       enum:
         - search_document
@@ -15298,6 +15442,7 @@ components:
         - image
       type: string
       description: "Specifies the type of input passed to the model. Required for embedding models v3 and higher.\n\n- `\"search_document\"`: Used for embeddings stored in a vector database for search use-cases.\n- `\"search_query\"`: Used for embeddings of search queries run against a vector DB to find relevant documents.\n- `\"classification\"`: Used for embeddings passed through a text classifier.\n- `\"clustering\"`: Used for the embeddings run through a clustering algorithm.\n- `\"image\"`: Used for embeddings with image input.\n"
+      x-fern-type-name: EmbedInputType
     EmbedJob:
       required:
         - job_id
@@ -15360,6 +15505,7 @@ components:
           description: The truncation option used
           x-fern-audiences:
             - public
+      x-fern-type-name: EmbedJob
     EmbedText:
       type: object
       properties:
@@ -15372,6 +15518,7 @@ components:
       description: Text content of the input.
       x-fern-audiences:
         - public
+      x-fern-type-name: EmbedText
     EmbeddingType:
       enum:
         - float
@@ -15383,6 +15530,7 @@ components:
       writeOnly: true
       x-fern-audiences:
         - public
+      x-fern-type-name: EmbeddingType
     Error:
       type: object
       properties:
@@ -15411,6 +15559,7 @@ components:
         - finetuning
     FeedbackResponse:
       type: object
+      x-fern-type-name: FeedbackResponse
     FinetuneDatasetMetrics:
       type: object
       properties:
@@ -15456,6 +15605,7 @@ components:
           format: int64
           x-fern-audiences:
             - public
+      x-fern-type-name: FinetuneDatasetMetrics
     FinetunedModel:
       required:
         - name
@@ -15515,6 +15665,7 @@ components:
         - USER_CANCEL
         - MAX_TOKENS
       type: string
+      x-fern-type-name: FinishReason
     GenerateStreamEnd:
       allOf:
         - $ref: '#/components/schemas/GenerateStreamEvent'
@@ -15551,6 +15702,9 @@ components:
                     - public
               x-fern-audiences:
                 - public
+              x-fern-type-name: GenerateStreamEndResponse
+          x-fern-type-name: GenerateStreamEnd-ubzr0t
+      x-fern-type-name: GenerateStreamEnd
     GenerateStreamError:
       allOf:
         - $ref: '#/components/schemas/GenerateStreamEvent'
@@ -15576,6 +15730,8 @@ components:
               type: boolean
               x-fern-audiences:
                 - public
+          x-fern-type-name: GenerateStreamError-49d5xw
+      x-fern-type-name: GenerateStreamError
     GenerateStreamEvent:
       required:
         - event_type
@@ -15586,6 +15742,7 @@ components:
             - stream-end
             - stream-error
           type: string
+      x-fern-type-name: GenerateStreamEvent
     GenerateStreamText:
       allOf:
         - $ref: '#/components/schemas/GenerateStreamEvent'
@@ -15602,6 +15759,8 @@ components:
             text:
               type: string
               description: A segment of text of the generation.
+          x-fern-type-name: GenerateStreamText-yai5v6
+      x-fern-type-name: GenerateStreamText
     GenerateStreamedResponse:
       oneOf:
         - $ref: '#/components/schemas/GenerateStreamText'
@@ -15730,6 +15889,7 @@ components:
           x-fern-audiences:
             - public
       description: Response for getting a cluster job.
+      x-fern-type-name: GetClusterJobResponse
     GetConnectorResponse:
       required:
         - connector
@@ -15737,6 +15897,7 @@ components:
       properties:
         connector:
           $ref: '#/components/schemas/Connector'
+      x-fern-type-name: GetConnectorResponse
     GetConnectorsLogsResponse:
       required:
         - connector_logs
@@ -15751,6 +15912,7 @@ components:
           type: number
           description: Total number of connector logs
           readOnly: true
+      x-fern-type-name: GetConnectorsLogsResponse
     GetFinetunedModelResponse:
       type: object
       properties:
@@ -15810,6 +15972,7 @@ components:
           x-fern-audiences:
             - public
       description: Contains information about the model and which API endpoints it can be used with.
+      x-fern-type-name: GetModelResponse
     Hyperparameters:
       type: object
       properties:
@@ -15878,6 +16041,7 @@ components:
           format: int64
           x-fern-audiences:
             - public
+      x-fern-type-name: Image
     ImageContent:
       required:
         - type
@@ -15889,6 +16053,7 @@ components:
         type:
           $ref: '#/components/schemas/ContentType'
       description: Image content of the message.
+      x-fern-type-name: ImageContent
     ImageUrl:
       required:
         - url
@@ -15904,6 +16069,7 @@ components:
         url:
           type: string
           description: "URL of an image. Can be either a base64 data URI or a web URL.\n"
+      x-fern-type-name: ImageUrl
     JSONResponseFormat:
       title: JSON Object Response
       required:
@@ -15914,10 +16080,12 @@ components:
           type: object
           description: "A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
           x-fern-availability: beta
+          x-fern-type-name: JSONResponseFormat-g7xopi
         type:
           $ref: '#/components/schemas/ResponseFormatType'
       x-fern-audiences:
         - public
+      x-fern-type-name: JSONResponseFormat
     JsonResponseFormatV2:
       required:
         - type
@@ -15926,10 +16094,12 @@ components:
         json_schema:
           type: object
           description: "A [JSON schema](https://json-schema.org/overview/what-is-jsonschema) object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.\nExample (required name and age object):\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"age\": {\"type\": \"integer\"}\n  },\n  \"required\": [\"name\", \"age\"]\n}\n```\n\n**Note**: This field must not be specified when the `type` is set to `\"text\"`.\n"
+          x-fern-type-name: JsonResponseFormatV2-uu9wid
         type:
           $ref: '#/components/schemas/ResponseFormatTypeV2'
       x-fern-audiences:
         - public
+      x-fern-type-name: JsonResponseFormatV2
     LabelMetric:
       type: object
       properties:
@@ -15951,6 +16121,7 @@ components:
           format: int64
           x-fern-audiences:
             - public
+      x-fern-type-name: LabelMetric
     ListClusterJobsResponse:
       required:
         - jobs
@@ -15968,6 +16139,7 @@ components:
           type: integer
           x-fern-audiences:
             - public
+      x-fern-type-name: ListClusterJobsResponse
     ListConnectorsResponse:
       required:
         - connectors
@@ -15985,6 +16157,7 @@ components:
           readOnly: true
           x-fern-audiences:
             - public
+      x-fern-type-name: ListConnectorsResponse
     ListEmbedJobResponse:
       type: object
       properties:
@@ -15994,6 +16167,7 @@ components:
             $ref: '#/components/schemas/EmbedJob'
           x-fern-audiences:
             - public
+      x-fern-type-name: ListEmbedJobResponse
     ListEventsResponse:
       type: object
       properties:
@@ -16048,6 +16222,7 @@ components:
           description: A token to retrieve the next page of results. Provide in the page_token parameter of the next request.
           x-fern-audiences:
             - public
+      x-fern-type-name: ListModelsResponse
     ListTrainingStepMetricsResponse:
       type: object
       properties:
@@ -16098,6 +16273,7 @@ components:
           description: Probabilities for tokens in the request raw_prompt
           x-fern-audiences:
             - public
+      x-fern-type-name: LogLikelihoodResponse
     LogprobItem:
       required:
         - token
@@ -16119,6 +16295,7 @@ components:
           items:
             type: integer
           description: The token ids of each token used to construct the text chunk.
+      x-fern-type-name: LogprobItem
     LoraTargetModules:
       enum:
         - LORA_TARGET_MODULES_UNSPECIFIED
@@ -16142,11 +16319,13 @@ components:
           SYSTEM: '#/components/schemas/ChatMessage'
           TOOL: '#/components/schemas/ToolMessage'
           USER: '#/components/schemas/ChatMessage'
+      x-fern-type-name: Message
     Metrics:
       type: object
       properties:
         finetune_dataset_metrics:
           $ref: '#/components/schemas/FinetuneDatasetMetrics'
+      x-fern-type-name: Metrics
     NonStreamedChatResponse:
       required:
         - text
@@ -16232,6 +16411,7 @@ components:
           description: The OAuth 2.0 redirect url. Redirect the user to this url to authorize the connector.
           x-fern-audiences:
             - public
+      x-fern-type-name: OAuthAuthorizeResponse
     ParseInfo:
       type: object
       properties:
@@ -16246,6 +16426,7 @@ components:
           x-fern-audiences:
             - public
       writeOnly: true
+      x-fern-type-name: ParseInfo
     ReasoningEffort:
       enum:
         - low
@@ -16253,6 +16434,7 @@ components:
         - high
       type: string
       description: "The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.\n"
+      x-fern-type-name: ReasoningEffort
     RerankDocument:
       required:
         - text
@@ -16264,6 +16446,7 @@ components:
           x-fern-audiences:
             - public
       x-fern-type: 'map<string, string>'
+      x-fern-type-name: RerankDocument
     RerankerDataMetrics:
       type: object
       properties:
@@ -16303,6 +16486,7 @@ components:
           format: int64
           x-fern-audiences:
             - public
+      x-fern-type-name: RerankerDataMetrics
     ResponseFormat:
       oneOf:
         - $ref: '#/components/schemas/TextResponseFormat'
@@ -16313,6 +16497,7 @@ components:
         mapping:
           json_object: '#/components/schemas/JSONResponseFormat'
           text: '#/components/schemas/TextResponseFormat'
+      x-fern-type-name: ResponseFormat
     ResponseFormatType:
       enum:
         - text
@@ -16321,6 +16506,7 @@ components:
       description: "Defaults to `\"text\"`.\n\nWhen set to `\"json_object\"`, the model's output will be a valid JSON Object.\n"
       x-fern-audiences:
         - public
+      x-fern-type-name: ResponseFormatType
     ResponseFormatTypeV2:
       enum:
         - text
@@ -16329,6 +16515,7 @@ components:
       description: "Defaults to `\"text\"`.\n\nWhen set to `\"json_object\"`, the model's output will be a valid JSON Object.\n"
       x-fern-audiences:
         - public
+      x-fern-type-name: ResponseFormatTypeV2
     ResponseFormatV2:
       oneOf:
         - $ref: '#/components/schemas/TextResponseFormatV2'
@@ -16339,6 +16526,7 @@ components:
         mapping:
           json_object: '#/components/schemas/JsonResponseFormatV2'
           text: '#/components/schemas/TextResponseFormatV2'
+      x-fern-type-name: ResponseFormatV2
     Settings:
       required:
         - base_model
@@ -16404,9 +16592,11 @@ components:
                   - public
             x-fern-audiences:
               - public
+            x-fern-type-name: SingleGenerationTokenLikelihoodsItem
           description: 'Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you''ve created a [custom model](https://docs.cohere.com/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.'
           x-fern-audiences:
             - public
+      x-fern-type-name: SingleGeneration
     SingleGenerationInStream:
       required:
         - text
@@ -16430,11 +16620,13 @@ components:
           description: Full text of the generation.
           x-fern-audiences:
             - public
+      x-fern-type-name: SingleGenerationInStream
     Source:
       oneOf:
         - $ref: '#/components/schemas/ToolSource'
         - $ref: '#/components/schemas/DocumentSource'
       description: A source object containing information about the source of the data cited.
+      x-fern-type-name: Source
     Status:
       enum:
         - STATUS_UNSPECIFIED
@@ -16539,6 +16731,7 @@ components:
             - system
           type: string
       description: A message from the system.
+      x-fern-type-name: SystemMessage
     TextContent:
       required:
         - type
@@ -16552,6 +16745,7 @@ components:
             - text
           type: string
       description: Text content of the message.
+      x-fern-type-name: TextContent
     TextResponseFormat:
       title: Text Response
       required:
@@ -16562,6 +16756,7 @@ components:
           $ref: '#/components/schemas/ResponseFormatType'
       x-fern-audiences:
         - public
+      x-fern-type-name: TextResponseFormat
     TextResponseFormatV2:
       required:
         - type
@@ -16571,6 +16766,7 @@ components:
           $ref: '#/components/schemas/ResponseFormatTypeV2'
       x-fern-audiences:
         - public
+      x-fern-type-name: TextResponseFormatV2
     TokenLikelihood:
       type: object
       properties:
@@ -16589,6 +16785,7 @@ components:
           description: Non normalized probability of the token
           x-fern-audiences:
             - public
+      x-fern-type-name: TokenLikelihood
     Tool:
       required:
         - name
@@ -16618,7 +16815,10 @@ components:
               type:
                 type: string
                 description: "The type of the parameter. Must be a valid Python type.\n"
+            x-fern-type-name: ToolParameterDefinitionsValue
           description: "The input parameters of the tool. Accepts a dictionary where the key is the name of the parameter and the value is the parameter spec. Valid parameter names contain only the characters `a-z`, `A-Z`, `0-9`, `_` and must not begin with a digit.\n```\n{\n  \"my_param\": {\n    \"description\": <string>,\n    \"type\": <string>, // any python data type, such as 'str', 'bool'\n    \"required\": <boolean>\n  }\n}\n```\n"
+          x-fern-type-name: Tool-luhdwe
+      x-fern-type-name: Tool
     ToolCall:
       required:
         - name
@@ -16635,7 +16835,9 @@ components:
           description: The name and value of the parameters to use when invoking a tool.
           x-fern-audiences:
             - public
+          x-fern-type-name: ToolCall-iovxf2
       description: "Contains the tool calls generated by the model. Use it to invoke your tools.\n"
+      x-fern-type-name: ToolCall
     ToolCallDelta:
       type: object
       properties:
@@ -16660,6 +16862,7 @@ components:
           x-fern-audiences:
             - public
       description: "Contains the chunk of the tool call generation in the stream.\n"
+      x-fern-type-name: ToolCallDelta
     ToolCallV2:
       type: object
       properties:
@@ -16670,6 +16873,7 @@ components:
               type: string
             name:
               type: string
+          x-fern-type-name: ToolCallV2Function
         id:
           type: string
         type:
@@ -16677,6 +16881,7 @@ components:
             - function
           type: string
       description: An array of tool calls to be made.
+      x-fern-type-name: ToolCallV2
     ToolContent:
       oneOf:
         - $ref: '#/components/schemas/TextContent'
@@ -16687,6 +16892,7 @@ components:
         mapping:
           document: '#/components/schemas/DocumentContent'
           text: '#/components/schemas/TextContent'
+      x-fern-type-name: ToolContent
     ToolMessage:
       required:
         - role
@@ -16698,6 +16904,7 @@ components:
           items:
             $ref: '#/components/schemas/ToolResult'
       description: "Represents tool result in the chat history.\n"
+      x-fern-type-name: ToolMessage
     ToolMessageV2:
       title: Tool Message
       required:
@@ -16721,6 +16928,7 @@ components:
           type: string
           description: The id of the associated tool call that has provided the given content
       description: A message with Tool outputs.
+      x-fern-type-name: ToolMessageV2
     ToolResult:
       required:
         - call
@@ -16734,6 +16942,8 @@ components:
           type: array
           items:
             type: object
+            x-fern-type-name: ToolResult-68w0tx
+      x-fern-type-name: ToolResult
     ToolSource:
       title: Tool Output
       type: object
@@ -16743,6 +16953,8 @@ components:
           description: The unique identifier of the document
         tool_output:
           type: object
+          x-fern-type-name: ToolSource-z53ra6
+      x-fern-type-name: ToolSource
     ToolV2:
       type: object
       properties:
@@ -16761,11 +16973,14 @@ components:
             parameters:
               type: object
               description: The parameters of the function as a JSON schema.
+              x-fern-type-name: ToolV2-6eoehf
           description: The function to be executed.
+          x-fern-type-name: ToolV2Function
         type:
           enum:
             - function
           type: string
+      x-fern-type-name: ToolV2
     TrainingStepMetrics:
       type: object
       properties:
@@ -16789,6 +17004,7 @@ components:
         - finetuning
     TruncationStrategy:
       description: Describes the truncation strategy for when the prompt exceeds the context length. Defaults to 'none'
+      x-fern-type-name: TruncationStrategy
     UpdateClusterJobRequest:
       type: object
       properties:
@@ -16806,6 +17022,7 @@ components:
           type: object
           x-fern-audiences:
             - public
+          x-fern-type-name: UpdateClusterJobRequest-yyd5g8
         output_clusters_gs_path:
           type: string
           x-fern-audiences:
@@ -16818,6 +17035,7 @@ components:
           type: object
           x-fern-audiences:
             - public
+          x-fern-type-name: UpdateClusterJobRequest-6wlqkj
         status:
           enum:
             - unknown
@@ -16828,6 +17046,7 @@ components:
           type: string
           x-fern-audiences:
             - public
+      x-fern-type-name: UpdateClusterJobRequest
     UpdateClusterJobResponse:
       required:
         - job_id
@@ -16838,6 +17057,7 @@ components:
           x-fern-audiences:
             - public
       description: Response for updating a cluster job.
+      x-fern-type-name: UpdateClusterJobResponse
     UpdateConnectorRequest:
       type: object
       properties:
@@ -16874,6 +17094,7 @@ components:
           description: The URL of the connector that will be used to search for documents.
           x-fern-audiences:
             - public
+      x-fern-type-name: UpdateConnectorRequest
     UpdateConnectorResponse:
       required:
         - connector
@@ -16881,6 +17102,7 @@ components:
       properties:
         connector:
           $ref: '#/components/schemas/Connector'
+      x-fern-type-name: UpdateConnectorResponse
     UpdateFinetunedModelResponse:
       type: object
       properties:
@@ -16908,6 +17130,7 @@ components:
             search_units:
               type: number
               description: "The number of billed search units.\n"
+          x-fern-type-name: UsageBilledUnits
         tokens:
           type: object
           properties:
@@ -16917,6 +17140,8 @@ components:
             output_tokens:
               type: number
               description: "The number of tokens produced by the model.\n"
+          x-fern-type-name: UsageTokens
+      x-fern-type-name: Usage
     UserMessage:
       title: User Message
       required:
@@ -16936,6 +17161,7 @@ components:
             - user
           type: string
       description: A message from the user.
+      x-fern-type-name: UserMessage
     WandbConfig:
       required:
         - project
@@ -16965,6 +17191,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: NotFoundErrorBody
+      x-fern-type-name: BadRequest
     Forbidden:
       description: "This error indicates that the operation attempted to be performed is not allowed. This could be because:\n  - The api token is invalid\n  - The user does not have the necessary permissions\n"
       content:
@@ -16974,6 +17202,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: BadRequestErrorBody
+      x-fern-type-name: Forbidden
     GatewayTimeout:
       description: "This error is returned when a request to the server times out. This could be due to:\n  - An internal services taking too long to respond\n"
       content:
@@ -16983,6 +17213,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: InvalidTokenErrorBody
+      x-fern-type-name: GatewayTimeout
     InternalServerError:
       description: "This error is returned when an uncategorised internal server error occurs.\n"
       content:
@@ -16992,6 +17224,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: ServiceUnavailableErrorBody
+      x-fern-type-name: InternalServerError
     InvalidToken:
       description: "This error is returned when a request or response contains a deny-listed token.\n"
       content:
@@ -17001,6 +17235,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: ForbiddenErrorBody
+      x-fern-type-name: InvalidToken
     NotFound:
       description: "This error is returned when a resource is not found. This could be because:\n  - The endpoint does not exist\n  - The resource does not exist eg model id, dataset id\n"
       content:
@@ -17010,6 +17246,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: UnauthorizedErrorBody
+      x-fern-type-name: NotFound
     NotImplemented:
       description: "This error is returned when the requested feature is not implemented.\n"
       content:
@@ -17019,6 +17257,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: NotImplementedErrorBody
+      x-fern-type-name: NotImplemented
     RateLimit:
       description: Too many requests
       content:
@@ -17028,6 +17268,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: GatewayTimeoutErrorBody
+      x-fern-type-name: RateLimit
     RequestCancelled:
       description: "This error is returned when a request is cancelled by the user.\n"
       content:
@@ -17037,6 +17279,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: InternalServerErrorBody
+      x-fern-type-name: RequestCancelled
     ServiceUnavailable:
       description: "This error is returned when the service is unavailable. This could be due to:\n  - Too many users trying to access the service at the same time\n"
       content:
@@ -17046,6 +17290,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: TooManyRequestsErrorBody
+      x-fern-type-name: ServiceUnavailable
     Unauthorized:
       description: "This error indicates that the operation attempted to be performed is not allowed. This could be because:\n  - The api token is invalid\n  - The user does not have the necessary permissions\n"
       content:
@@ -17055,6 +17301,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: UnauthorizedErrorBody
+      x-fern-type-name: Unauthorized
     UnprocessableEntity:
       description: "This error is returned when the request is not well formed. This could be because:\n  - JSON is invalid\n  - The request is missing required fields\n  - The request contains an invalid combination of fields\n"
       content:
@@ -17064,6 +17312,8 @@ components:
             properties:
               data:
                 type: string
+            x-fern-type-name: UnprocessableEntityErrorBody
+      x-fern-type-name: UnprocessableEntity
   parameters:
     RequestSource:
       name: X-Client-Name
@@ -17074,6 +17324,7 @@ components:
       example: my-cool-project
       x-fern-audiences:
         - public
+      x-fern-type-name: RequestSource
   headers:
     ApiWarning:
       description: The name of the project that is making the request.
@@ -17082,6 +17333,7 @@ components:
       example: 'Parameter xyz is deprecated, for more information please refer to https://docs.cohere.com/versioning-reference'
       x-fern-audiences:
         - public
+      x-fern-type-name: ApiWarning
   securitySchemes:
     bearerAuth:
       type: http

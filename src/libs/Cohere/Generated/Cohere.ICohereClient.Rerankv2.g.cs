@@ -26,7 +26,7 @@ namespace Cohere
         /// A list of texts that will be compared to the `query`.<br/>
         /// For optimal performance we recommend against sending more than 1,000 documents in a single request.<br/>
         /// **Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.<br/>
-        /// **Note**: structured data should be formatted as YAML strings for best performance.  
+        /// **Note**: structured data should be formatted as YAML strings for best performance.
         /// </param>
         /// <param name="maxTokensPerDoc">
         /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
