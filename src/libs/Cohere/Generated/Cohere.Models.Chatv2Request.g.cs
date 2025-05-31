@@ -32,10 +32,10 @@ namespace Cohere
         /// <summary>
         /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.<br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
-        /// Default Value: 0F
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k")]
-        public float? K { get; set; }
+        public int? K { get; set; }
 
         /// <summary>
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
@@ -188,7 +188,7 @@ namespace Cohere
         /// <param name="k">
         /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.<br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
-        /// Default Value: 0F
+        /// Default Value: 0
         /// </param>
         /// <param name="logprobs">
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
@@ -274,7 +274,7 @@ namespace Cohere
             global::Cohere.CitationOptions? citationOptions,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents,
             float? frequencyPenalty,
-            float? k,
+            int? k,
             bool? logprobs,
             int? maxTokens,
             float? p,
