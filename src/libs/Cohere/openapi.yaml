@@ -6339,6 +6339,7 @@ paths:
               required:
                 - name
                 - settings
+                - finetuned_model
               type: object
               properties:
                 completed_at:
