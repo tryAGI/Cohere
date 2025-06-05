@@ -55,7 +55,7 @@ namespace Cohere
                 endpoint: ref endpoint,
                 defaultOnly: ref defaultOnly);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

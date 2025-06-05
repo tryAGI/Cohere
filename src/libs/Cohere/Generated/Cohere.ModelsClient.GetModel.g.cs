@@ -45,7 +45,7 @@ namespace Cohere
                 model: ref model,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: $"/v1/models/{model}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

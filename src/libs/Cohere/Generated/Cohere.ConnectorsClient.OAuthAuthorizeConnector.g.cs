@@ -48,7 +48,7 @@ namespace Cohere
                 afterTokenRedirect: ref afterTokenRedirect,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: $"/v1/connectors/{id}/oauth/authorize",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

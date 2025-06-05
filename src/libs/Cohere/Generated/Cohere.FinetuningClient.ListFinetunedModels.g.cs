@@ -52,7 +52,7 @@ namespace Cohere
                 orderBy: ref orderBy,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/finetuning/finetuned-models",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
