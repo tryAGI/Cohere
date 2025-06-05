@@ -51,7 +51,7 @@ namespace Cohere
                 accepts: ref accepts,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/chat",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

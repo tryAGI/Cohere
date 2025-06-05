@@ -43,7 +43,7 @@ namespace Cohere
                 id: ref id,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: $"/v1/datasets/{id}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

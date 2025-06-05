@@ -52,7 +52,7 @@ namespace Cohere
                 offset: ref offset,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/connectors",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

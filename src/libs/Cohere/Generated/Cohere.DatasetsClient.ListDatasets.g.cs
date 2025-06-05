@@ -70,7 +70,7 @@ namespace Cohere
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
