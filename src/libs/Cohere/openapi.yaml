@@ -7555,10 +7555,10 @@ paths:
             - code: "import cohere\nimport asyncio\n\nco = cohere.AsyncClientV2()\n\n\nasync def main():\n    response = await co.chat(\n        model=\"command-a-03-2025\",\n        messages=[cohere.UserChatMessageV2(content=\"hello world!\")],\n    )\n\n    print(response)\n\n\nasyncio.run(main())\n"
               name: Async
               sdk: python
-            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessage{Content: &cohere.UserMessageContent{\n\t\t\t\t\t\tString: \"Hello world!\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tString: \"Hello world!\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
               name: Default
               sdk: go
-            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Default {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessage.builder()\n                                    .content(UserMessageContent.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    System.out.println(response);\n  }\n}\n"
+            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Default {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessageV2.builder()\n                                    .content(UserMessageV2Content.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    System.out.println(response);\n  }\n}\n"
               name: Default
               sdk: java
             - code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"model\": \"command-a-03-2025\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ]\n  }'\n"
@@ -7593,10 +7593,10 @@ paths:
             - code: "import cohere\n\nco = cohere.ClientV2()\n\nresponse = co.chat(\n    model=\"command-a-03-2025\",\n    documents=[\n        {\"id\": \"1\", \"data\": {\"text\": \"Cohere is the best!\", \"title\": \"The best\"}}\n    ],\n    messages=[{\"role\": \"user\", \"content\": \"Who's the best?\"}],\n)\n\nprint(response)\n"
               name: Documents
               sdk: python
-            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.resources.v2.types.V2ChatRequestDocumentsItem;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Documents {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessage.builder()\n                                    .content(\n                                        UserMessageContent.of(\"Who is\" + \" the most\" + \" popular?\"))\n                                    .build())))\n                    .documents(\n                        List.of(\n                            V2ChatRequestDocumentsItem.of(\n                                \"↓ Skip to Main Content\\n\\n\"\n                                    + \"Music industry – One step\"\n                                    + \" closer to being\"\n                                    + \" accurate\\n\\n\"\n                                    + \"CSPC: Backstreet Boys\"\n                                    + \" Popularity Analysis\\n\\n\"\n                                    + \"Hernán Lopez Posted on\"\n                                    + \" February 9, 2017 Posted in\"\n                                    + \" CSPC 72 Comments Tagged\"\n                                    + \" with Backstreet Boys, Boy\"\n                                    + \" band\\n\\n\"\n                                    + \"At one point, Backstreet\"\n                                    + \" Boys defined success:\"\n                                    + \" massive albums sales across\"\n                                    + \" the globe, great singles\"\n                                    + \" sales, plenty of chart\"\n                                    + \" topping releases, hugely\"\n                                    + \" hyped tours and tremendous\"\n                                    + \" media coverage.\\n\\n\"\n                                    + \"It is true that they\"\n                                    + \" benefited from\"\n                                    + \" extraordinarily good market\"\n                                    + \" conditions in all markets.\"\n                                    + \" After all, the all-time\"\n                                    + \" record year for the music\"\n                                    + \" business, as far as\"\n                                    + \" revenues in billion dollars\"\n                                    + \" are concerned, was actually\"\n                                    + \" 1999. That is, back when\"\n                                    + \" this five men group was at\"\n                                    + \" its peak.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \"↓ Skip to Main Content\\n\\n\"\n                                    + \"Music industry – One step\"\n                                    + \" closer to being\"\n                                    + \" accurate\\n\\n\"\n                                    + \"CSPC: NSYNC Popularity\"\n                                    + \" Analysis\\n\\n\"\n                                    + \"MJD Posted on February 9,\"\n                                    + \" 2018 Posted in CSPC 27\"\n                                    + \" Comments Tagged with Boy\"\n                                    + \" band, N'Sync\\n\\n\"\n                                    + \"At the turn of the\"\n                                    + \" millennium three teen acts\"\n                                    + \" were huge in the US, the\"\n                                    + \" Backstreet Boys, Britney\"\n                                    + \" Spears and NSYNC. The\"\n                                    + \" latter is the only one we\"\n                                    + \" haven’t study so far. It\"\n                                    + \" took 15 years and Adele to\"\n                                    + \" break their record of 2,4\"\n                                    + \" million units sold of No\"\n                                    + \" Strings Attached in its\"\n                                    + \" first week alone.\\n\\n\"\n                                    + \"It wasn’t a fluke, as the\"\n                                    + \" second fastest selling\"\n                                    + \" album of the Soundscan era\"\n                                    + \" prior 2015, was also theirs\"\n                                    + \" since Celebrity debuted\"\n                                    + \" with 1,88 million units\"\n                                    + \" sold.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \" 1997, 1998, 2000 and 2001 also\"\n                                    + \" rank amongst some of the\"\n                                    + \" very best years.\\n\\n\"\n                                    + \"Yet the way many music\"\n                                    + \" consumers – especially\"\n                                    + \" teenagers and young women’s\"\n                                    + \" – embraced their output\"\n                                    + \" deserves its own chapter.\"\n                                    + \" If Jonas Brothers and more\"\n                                    + \" recently One Direction\"\n                                    + \" reached a great level of\"\n                                    + \" popularity during the past\"\n                                    + \" decade, the type of success\"\n                                    + \" achieved by Backstreet Boys\"\n                                    + \" is in a completely\"\n                                    + \" different level as they\"\n                                    + \" really dominated the\"\n                                    + \" business for a few years\"\n                                    + \" all over the world,\"\n                                    + \" including in some countries\"\n                                    + \" that were traditionally\"\n                                    + \" hard to penetrate for\"\n                                    + \" Western artists.\\n\\n\"\n                                    + \"We will try to analyze the\"\n                                    + \" extent of that hegemony\"\n                                    + \" with this new article with\"\n                                    + \" final results which will\"\n                                    + \" more than surprise many\"\n                                    + \" readers.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \" Was the teen group led by Justin\"\n                                    + \" Timberlake really that big?\"\n                                    + \" Was it only in the US where\"\n                                    + \" they found success? Or were\"\n                                    + \" they a global\"\n                                    + \" phenomenon?\\n\\n\"\n                                    + \"As usual, I’ll be using the\"\n                                    + \" Commensurate Sales to\"\n                                    + \" Popularity Concept in order\"\n                                    + \" to relevantly gauge their\"\n                                    + \" results. This concept will\"\n                                    + \" not only bring you sales\"\n                                    + \" information for all NSYNC‘s\"\n                                    + \" albums, physical and\"\n                                    + \" download singles, as well\"\n                                    + \" as audio and video\"\n                                    + \" streaming, but it will also\"\n                                    + \" determine their true\"\n                                    + \" popularity. If you are not\"\n                                    + \" yet familiar with the CSPC\"\n                                    + \" method, the next page\"\n                                    + \" explains it with a short\"\n                                    + \" video. I fully recommend\"\n                                    + \" watching the video before\"\n                                    + \" getting into the sales\"\n                                    + \" figures.\")))\n                    .build());\n    System.out.println(response);\n  }\n}\n"
+            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.resources.v2.types.V2ChatRequestDocumentsItem;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Documents {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessageV2.builder()\n                                    .content(\n                                        UserMessageV2Content.of(\"Who is\" + \" the most\" + \" popular?\"))\n                                    .build())))\n                    .documents(\n                        List.of(\n                            V2ChatRequestDocumentsItem.of(\n                                \"↓ Skip to Main Content\\n\\n\"\n                                    + \"Music industry – One step\"\n                                    + \" closer to being\"\n                                    + \" accurate\\n\\n\"\n                                    + \"CSPC: Backstreet Boys\"\n                                    + \" Popularity Analysis\\n\\n\"\n                                    + \"Hernán Lopez Posted on\"\n                                    + \" February 9, 2017 Posted in\"\n                                    + \" CSPC 72 Comments Tagged\"\n                                    + \" with Backstreet Boys, Boy\"\n                                    + \" band\\n\\n\"\n                                    + \"At one point, Backstreet\"\n                                    + \" Boys defined success:\"\n                                    + \" massive albums sales across\"\n                                    + \" the globe, great singles\"\n                                    + \" sales, plenty of chart\"\n                                    + \" topping releases, hugely\"\n                                    + \" hyped tours and tremendous\"\n                                    + \" media coverage.\\n\\n\"\n                                    + \"It is true that they\"\n                                    + \" benefited from\"\n                                    + \" extraordinarily good market\"\n                                    + \" conditions in all markets.\"\n                                    + \" After all, the all-time\"\n                                    + \" record year for the music\"\n                                    + \" business, as far as\"\n                                    + \" revenues in billion dollars\"\n                                    + \" are concerned, was actually\"\n                                    + \" 1999. That is, back when\"\n                                    + \" this five men group was at\"\n                                    + \" its peak.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \"↓ Skip to Main Content\\n\\n\"\n                                    + \"Music industry – One step\"\n                                    + \" closer to being\"\n                                    + \" accurate\\n\\n\"\n                                    + \"CSPC: NSYNC Popularity\"\n                                    + \" Analysis\\n\\n\"\n                                    + \"MJD Posted on February 9,\"\n                                    + \" 2018 Posted in CSPC 27\"\n                                    + \" Comments Tagged with Boy\"\n                                    + \" band, N'Sync\\n\\n\"\n                                    + \"At the turn of the\"\n                                    + \" millennium three teen acts\"\n                                    + \" were huge in the US, the\"\n                                    + \" Backstreet Boys, Britney\"\n                                    + \" Spears and NSYNC. The\"\n                                    + \" latter is the only one we\"\n                                    + \" haven’t study so far. It\"\n                                    + \" took 15 years and Adele to\"\n                                    + \" break their record of 2,4\"\n                                    + \" million units sold of No\"\n                                    + \" Strings Attached in its\"\n                                    + \" first week alone.\\n\\n\"\n                                    + \"It wasn’t a fluke, as the\"\n                                    + \" second fastest selling\"\n                                    + \" album of the Soundscan era\"\n                                    + \" prior 2015, was also theirs\"\n                                    + \" since Celebrity debuted\"\n                                    + \" with 1,88 million units\"\n                                    + \" sold.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \" 1997, 1998, 2000 and 2001 also\"\n                                    + \" rank amongst some of the\"\n                                    + \" very best years.\\n\\n\"\n                                    + \"Yet the way many music\"\n                                    + \" consumers – especially\"\n                                    + \" teenagers and young women’s\"\n                                    + \" – embraced their output\"\n                                    + \" deserves its own chapter.\"\n                                    + \" If Jonas Brothers and more\"\n                                    + \" recently One Direction\"\n                                    + \" reached a great level of\"\n                                    + \" popularity during the past\"\n                                    + \" decade, the type of success\"\n                                    + \" achieved by Backstreet Boys\"\n                                    + \" is in a completely\"\n                                    + \" different level as they\"\n                                    + \" really dominated the\"\n                                    + \" business for a few years\"\n                                    + \" all over the world,\"\n                                    + \" including in some countries\"\n                                    + \" that were traditionally\"\n                                    + \" hard to penetrate for\"\n                                    + \" Western artists.\\n\\n\"\n                                    + \"We will try to analyze the\"\n                                    + \" extent of that hegemony\"\n                                    + \" with this new article with\"\n                                    + \" final results which will\"\n                                    + \" more than surprise many\"\n                                    + \" readers.\"),\n                            V2ChatRequestDocumentsItem.of(\n                                \" Was the teen group led by Justin\"\n                                    + \" Timberlake really that big?\"\n                                    + \" Was it only in the US where\"\n                                    + \" they found success? Or were\"\n                                    + \" they a global\"\n                                    + \" phenomenon?\\n\\n\"\n                                    + \"As usual, I’ll be using the\"\n                                    + \" Commensurate Sales to\"\n                                    + \" Popularity Concept in order\"\n                                    + \" to relevantly gauge their\"\n                                    + \" results. This concept will\"\n                                    + \" not only bring you sales\"\n                                    + \" information for all NSYNC‘s\"\n                                    + \" albums, physical and\"\n                                    + \" download singles, as well\"\n                                    + \" as audio and video\"\n                                    + \" streaming, but it will also\"\n                                    + \" determine their true\"\n                                    + \" popularity. If you are not\"\n                                    + \" yet familiar with the CSPC\"\n                                    + \" method, the next page\"\n                                    + \" explains it with a short\"\n                                    + \" video. I fully recommend\"\n                                    + \" watching the video before\"\n                                    + \" getting into the sales\"\n                                    + \" figures.\")))\n                    .build());\n    System.out.println(response);\n  }\n}\n"
               name: Documents
               sdk: java
-            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tDocuments: []*cohere.V2ChatRequestDocumentsItem{\n\t\t\t\t{\n\t\t\t\t\tString: \"Cohere is the best!\",\n\t\t\t\t},\n\t\t\t},\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessage{Content: &cohere.UserMessageContent{\n\t\t\t\t\t\tString: \"Who's the best?\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tDocuments: []*cohere.V2ChatRequestDocumentsItem{\n\t\t\t\t{\n\t\t\t\t\tString: \"Cohere is the best!\",\n\t\t\t\t},\n\t\t\t},\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tString: \"Who's the best?\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
               name: Documents
               sdk: go
             - code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"model\": \"command-a-03-2025\",\n    \"documents\": [\n      {\n        \"id\": \"1\",\n        \"data\": \"Cohere is the best!\"\n      }\n    ],\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Who's the best?\"\n      }\n    ]\n  }'"
@@ -7735,10 +7735,10 @@ paths:
             - code: "import cohere\n\nco = cohere.ClientV2()\n\nresponse = co.chat_stream(\n    model=\"command-a-03-2025\",\n    messages=[{\"role\": \"user\", \"content\": \"hello world!\"}],\n)\n\nfor event in response:\n    if event.type == \"content-delta\":\n        print(event.delta.message.content.text, end=\"\")\n"
               name: Streaming
               sdk: python
-            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatStreamRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Stream {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    Iterable<StreamedChatResponseV2> response =\n        cohere\n            .v2()\n            .chatStream(\n                V2ChatStreamRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessage.builder()\n                                    .content(UserMessageContent.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    for (StreamedChatResponseV2 chatResponse : response) {\n      if (chatResponse.isContentDelta()) {\n        System.out.println(\n            chatResponse\n                .getContentDelta()\n                .flatMap(ChatContentDeltaEvent::getDelta)\n                .flatMap(ChatContentDeltaEventDelta::getMessage)\n                .flatMap(ChatContentDeltaEventDeltaMessage::getContent)\n                .flatMap(ChatContentDeltaEventDeltaMessageContent::getText)\n                .orElse(\"\"));\n      }\n    }\n\n    System.out.println(response);\n  }\n}\n"
+            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatStreamRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\n\npublic class Stream {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    Iterable<StreamedChatResponseV2> response =\n        cohere\n            .v2()\n            .chatStream(\n                V2ChatStreamRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .messages(\n                        List.of(\n                            ChatMessageV2.user(\n                                UserMessageV2.builder()\n                                    .content(UserMessageV2Content.of(\"Who discovered\" + \" gravity?\"))\n                                    .build()),\n                            ChatMessageV2.assistant(\n                                AssistantMessage.builder()\n                                    .content(\n                                        AssistantMessageContent.of(\n                                            \"The man\"\n                                                + \" who is\"\n                                                + \" widely\"\n                                                + \" credited\"\n                                                + \" with\"\n                                                + \" discovering\"\n                                                + \" gravity\"\n                                                + \" is Sir\"\n                                                + \" Isaac\"\n                                                + \" Newton\"))\n                                    .build())))\n                    .build());\n\n    for (StreamedChatResponseV2 chatResponse : response) {\n      if (chatResponse.isContentDelta()) {\n        System.out.println(\n            chatResponse\n                .getContentDelta()\n                .flatMap(ChatContentDeltaEvent::getDelta)\n                .flatMap(ChatContentDeltaEventDelta::getMessage)\n                .flatMap(ChatContentDeltaEventDeltaMessage::getContent)\n                .flatMap(ChatContentDeltaEventDeltaMessageContent::getText)\n                .orElse(\"\"));\n      }\n    }\n\n    System.out.println(response);\n  }\n}\n"
               name: Streaming
               sdk: java
-            - code: "package main\n\nimport (\n\t\"context\"\n\t\"errors\"\n\t\"io\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.ChatStream(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatStreamRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessage{Content: &cohere.UserMessageContent{\n\t\t\t\t\t\tString: \"Hello world!\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\t// Make sure to close the stream when you're done reading.\n\t// This is easily handled with defer.\n\tdefer resp.Close()\n\n\tfor {\n\t\tmessage, err := resp.Recv()\n\n\t\tif errors.Is(err, io.EOF) {\n\t\t\t// An io.EOF error means the server is done sending messages\n\t\t\t// and should be treated as a success.\n\t\t\tbreak\n\t\t}\n\n\t\tif message.ContentDelta != nil {\n\t\t\tlog.Printf(\"%+v\", resp)\n\t\t}\n\t}\n}\n"
+            - code: "package main\n\nimport (\n\t\"context\"\n\t\"errors\"\n\t\"io\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.ChatStream(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatStreamRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tString: \"Hello world!\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\t// Make sure to close the stream when you're done reading.\n\t// This is easily handled with defer.\n\tdefer resp.Close()\n\n\tfor {\n\t\tmessage, err := resp.Recv()\n\n\t\tif errors.Is(err, io.EOF) {\n\t\t\t// An io.EOF error means the server is done sending messages\n\t\t\t// and should be treated as a success.\n\t\t\tbreak\n\t\t}\n\n\t\tif message.ContentDelta != nil {\n\t\t\tlog.Printf(\"%+v\", resp)\n\t\t}\n\t}\n}\n"
               name: Streaming
               sdk: go
             - code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"stream\": true,\n    \"model\": \"command-a-03-2025\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world!\"\n      }\n    ]\n  }'\n"
@@ -7866,7 +7866,7 @@ paths:
             - code: "/* (C)2024 */\npackage chatv2post;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.*;\nimport java.util.List;\nimport java.util.Map;\n\npublic class Tools {\n  public static void main(String[] args) {\n    Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n    ChatResponse response =\n        cohere\n            .v2()\n            .chat(\n                V2ChatRequest.builder()\n                    .model(\"command-a-03-2025\")\n                    .tools(\n                        List.of(\n                            ToolV2.builder()\n                                .function(\n                                    ToolV2Function.builder()\n                                        .name(\"query_daily_sales_report\")\n                                        .description(\n                                            \"Connects\"\n                                                + \" to a\"\n                                                + \" database\"\n                                                + \" to retrieve\"\n                                                + \" overall\"\n                                                + \" sales\"\n                                                + \" volumes\"\n                                                + \" and sales\"\n                                                + \" information\"\n                                                + \" for a\"\n                                                + \" given\"\n                                                + \" day.\")\n                                        .parameters(\n                                            Map.of(\n                                                \"day\",\n                                                ToolParameterDefinitionsValue.builder()\n                                                    .type(\"str\")\n                                                    .description(\n                                                        \"Retrieves\"\n                                                            + \" sales\"\n                                                            + \" data\"\n                                                            + \" for this\"\n                                                            + \" day,\"\n                                                            + \" formatted\"\n                                                            + \" as YYYY-MM-DD.\")\n                                                    .required(true)\n                                                    .build()))\n                                        .build())\n                                .build(),\n                            ToolV2.builder()\n                                .function(\n                                    ToolV2Function.builder()\n                                        .name(\"query_product_catalog\")\n                                        .description(\n                                            \"Connects\"\n                                                + \" to a\"\n                                                + \" a product\"\n                                                + \" catalog\"\n                                                + \" with\"\n                                                + \" information\"\n                                                + \" about\"\n                                                + \" all the\"\n                                                + \" products\"\n                                                + \" being\"\n                                                + \" sold,\"\n                                                + \" including\"\n                                                + \" categories,\"\n                                                + \" prices,\"\n                                                + \" and stock\"\n                                                + \" levels.\")\n                                        .parameters(\n                                            Map.of(\n                                                \"category\",\n                                                ToolParameterDefinitionsValue.builder()\n                                                    .type(\"str\")\n                                                    .description(\n                                                        \"Retrieves\"\n                                                            + \" product\"\n                                                            + \" information\"\n                                                            + \" data\"\n                                                            + \" for all\"\n                                                            + \" products\"\n                                                            + \" in this\"\n                                                            + \" category.\")\n                                                    .required(true)\n                                                    .build()))\n                                        .build())\n                                .build()))\n                    .build());\n\n    System.out.println(response);\n  }\n}\n"
               name: Tools
               sdk: java
-            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tTools: []*cohere.ToolV2{\n\t\t\t\t{\n\t\t\t\t\tType: cohere.String(\"function\"),\n\t\t\t\t\tFunction: &cohere.ToolV2Function{\n\t\t\t\t\t\tName:        \"query_daily_sales_report\",\n\t\t\t\t\t\tDescription: cohere.String(\"Connects to a database to retrieve overall sales volumes and sales information for a given day.\"),\n\t\t\t\t\t\tParameters: map[string]interface{}{\n\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\"properties\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\"date\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\t\"type\":        \"string\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Retrieves sales data from this day, formatted as YYYY-MM-DD\",\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"required\": []string{\"date\"},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tType: cohere.String(\"function\"),\n\t\t\t\t\tFunction: &cohere.ToolV2Function{\n\t\t\t\t\t\tName:        \"query_product_catalog\",\n\t\t\t\t\t\tDescription: cohere.String(\"Connects to a a product catalog with information about all the products being sold, including categories, prices, and stock levels.\"),\n\t\t\t\t\t\tParameters: map[string]interface{}{\n\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\"properties\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\"category\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\t\"type\":        \"string\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Retrieves product information data for all products in this category.\",\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"required\": []string{\"category\"},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessage{Content: &cohere.UserMessageContent{\n\t\t\t\t\t\tString: \"Can you provide a sales summary for 29th September 2023, and also give me some details about the products in the 'Electronics' category, for example their prices and stock levels?\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tTools: []*cohere.ToolV2{\n\t\t\t\t{\n\t\t\t\t\tType: cohere.String(\"function\"),\n\t\t\t\t\tFunction: &cohere.ToolV2Function{\n\t\t\t\t\t\tName:        \"query_daily_sales_report\",\n\t\t\t\t\t\tDescription: cohere.String(\"Connects to a database to retrieve overall sales volumes and sales information for a given day.\"),\n\t\t\t\t\t\tParameters: map[string]interface{}{\n\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\"properties\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\"date\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\t\"type\":        \"string\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Retrieves sales data from this day, formatted as YYYY-MM-DD\",\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"required\": []string{\"date\"},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tType: cohere.String(\"function\"),\n\t\t\t\t\tFunction: &cohere.ToolV2Function{\n\t\t\t\t\t\tName:        \"query_product_catalog\",\n\t\t\t\t\t\tDescription: cohere.String(\"Connects to a a product catalog with information about all the products being sold, including categories, prices, and stock levels.\"),\n\t\t\t\t\t\tParameters: map[string]interface{}{\n\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\"properties\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\"category\": map[string]interface{}{\n\t\t\t\t\t\t\t\t\t\"type\":        \"string\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Retrieves product information data for all products in this category.\",\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"required\": []string{\"category\"},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tString: \"Can you provide a sales summary for 29th September 2023, and also give me some details about the products in the 'Electronics' category, for example their prices and stock levels?\",\n\t\t\t\t\t}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
               name: Tools
               sdk: go
             - code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n        \"model\": \"command-a-03-2025\",\n        \"tools\": [\n            {\n                \"type\": \"function\",\n                \"function\": {\n                    \"name\": \"query_daily_sales_report\",\n                    \"description\": \"Connects to a database to retrieve overall sales volumes and sales information for a given day.\",\n                    \"parameters\": {\n                        \"type\": \"object\",\n                        \"properties\": {\n                            \"day\": {\n                                \"description\": \"Retrieves sales data for this day, formatted as YYYY-MM-DD.\",\n                                \"type\": \"string\"\n                            }\n                        }\n                    }\n                }\n            },\n            {\n                \"type\": \"function\",\n                \"function\": {\n                    \"name\": \"query_product_catalog\",\n                    \"description\": \"Connects to a a product catalog with information about all the products being sold, including categories, prices, and stock levels.\",\n                    \"parameters\": {\n                        \"type\": \"object\",\n                        \"properties\": {\n                            \"category\": {\n                                \"description\": \"Retrieves product information data for all products in this category.\",\n                                \"type\": \"string\"\n                            }\n                        }\n                    }\n                }\n            }\n        ],\n        \"messages\": [\n            {\n                \"role\": \"user\",\n                \"content\": \"Can you provide a sales summary for 29th September 2023, and also give me some details about the products in the 'Electronics' category, for example their prices and stock levels?\"\n            }\n        ]\n    }'\n"
@@ -7935,52 +7935,9 @@ paths:
       x-fern-streaming:
         format: sse
         response:
-          properties:
-            finish_reason:
-              $ref: '#/components/schemas/ChatFinishReason'
-            id:
-              description: Unique identifier for the generated reply. Useful for submitting feedback.
-              type: string
-            logprobs:
-              items:
-                $ref: '#/components/schemas/LogprobItem'
-              type: array
-            message:
-              $ref: '#/components/schemas/AssistantMessageResponse'
-            usage:
-              $ref: '#/components/schemas/Usage'
-          required:
-            - id
-            - finish_reason
-            - message
+          $ref: '#/components/schemas/ChatResponse'
         response-stream:
-          description: StreamedChatResponse is returned in streaming mode (specified with `stream=True` in the request).
-          discriminator:
-            mapping:
-              citation-end: '#/components/schemas/CitationEndEvent'
-              citation-start: '#/components/schemas/CitationStartEvent'
-              content-delta: '#/components/schemas/ChatContentDeltaEvent'
-              content-end: '#/components/schemas/ChatContentEndEvent'
-              content-start: '#/components/schemas/ChatContentStartEvent'
-              debug: '#/components/schemas/ChatDebugEvent'
-              message-end: '#/components/schemas/ChatMessageEndEvent'
-              message-start: '#/components/schemas/ChatMessageStartEvent'
-              tool-call-delta: '#/components/schemas/ChatToolCallDeltaEvent'
-              tool-call-end: '#/components/schemas/ChatToolCallEndEvent'
-              tool-call-start: '#/components/schemas/ChatToolCallStartEvent'
-              tool-plan-delta: '#/components/schemas/ChatToolPlanDeltaEvent'
-            propertyName: type
-          oneOf:
-            - $ref: '#/components/schemas/ChatMessageStartEvent'
-            - $ref: '#/components/schemas/ChatContentStartEvent'
-            - $ref: '#/components/schemas/ChatContentDeltaEvent'
-            - $ref: '#/components/schemas/ChatContentEndEvent'
-            - $ref: '#/components/schemas/ChatToolPlanDeltaEvent'
-            - $ref: '#/components/schemas/ChatToolCallStartEvent'
-            - $ref: '#/components/schemas/ChatToolCallDeltaEvent'
-            - $ref: '#/components/schemas/ChatToolCallEndEvent'
-            - $ref: '#/components/schemas/ChatMessageEndEvent'
-            - $ref: '#/components/schemas/ChatDebugEvent'
+          $ref: '#/components/schemas/StreamedChatResponseV2'
         stream-condition: $request.stream
         stream-description: "Generates a text response to a user message. To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/v2/docs/chat-api).\n\nFollow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.\n"
   /v2/embed:
@@ -11532,11 +11489,11 @@ components:
             - type: array
               items:
                 oneOf:
-                  - $ref: '#/components/schemas/TextContent'
+                  - $ref: '#/components/schemas/ChatTextContent'
                 discriminator:
                   propertyName: type
                   mapping:
-                    text: '#/components/schemas/TextContent'
+                    text: '#/components/schemas/ChatTextContent'
         role:
           enum:
             - assistant
@@ -11563,11 +11520,11 @@ components:
           type: array
           items:
             oneOf:
-              - $ref: '#/components/schemas/TextContent'
+              - $ref: '#/components/schemas/ChatTextContent'
             discriminator:
               propertyName: type
               mapping:
-                text: '#/components/schemas/TextContent'
+                text: '#/components/schemas/ChatTextContent'
         role:
           enum:
             - assistant
@@ -11822,6 +11779,17 @@ components:
       description: "Relevant information that could be used by the model to generate a more accurate reply.\nThe contents of each document are generally short (under 300 words), and are passed in the form of a\ndictionary of strings. Some suggested keys are \"text\", \"author\", \"date\". Both the key name and the value will be\npassed to the model.\n"
       x-fern-type: 'map<string, string>'
       x-fern-type-name: ChatDocument
+    ChatDocumentSource:
+      type: object
+      properties:
+        document:
+          type: object
+          x-fern-type-name: ChatDocumentSource-w70a62
+        id:
+          type: string
+          description: The unique identifier of the document
+      description: A document source object containing the unique identifier of the document and the document itself.
+      x-fern-type-name: ChatDocumentSource
     ChatFinishReason:
       enum:
         - COMPLETE
@@ -11902,18 +11870,18 @@ components:
       x-fern-type-name: ChatMessageStartEvent
     ChatMessageV2:
       oneOf:
-        - $ref: '#/components/schemas/UserMessage'
+        - $ref: '#/components/schemas/UserMessageV2'
         - $ref: '#/components/schemas/AssistantMessage'
-        - $ref: '#/components/schemas/SystemMessage'
+        - $ref: '#/components/schemas/SystemMessageV2'
         - $ref: '#/components/schemas/ToolMessageV2'
       description: Represents a single message in the chat history from a given role.
       discriminator:
         propertyName: role
         mapping:
           assistant: '#/components/schemas/AssistantMessage'
-          system: '#/components/schemas/SystemMessage'
+          system: '#/components/schemas/SystemMessageV2'
           tool: '#/components/schemas/ToolMessageV2'
-          user: '#/components/schemas/UserMessage'
+          user: '#/components/schemas/UserMessageV2'
       x-fern-type-name: ChatMessageV2
     ChatMessages:
       type: array
@@ -12128,6 +12096,20 @@ components:
                 - public
           x-fern-type-name: ChatStreamStartEvent-5v9jyv
       x-fern-type-name: ChatStreamStartEvent
+    ChatTextContent:
+      required:
+        - type
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+        type:
+          enum:
+            - text
+          type: string
+      description: Text content of the message.
+      x-fern-type-name: ChatTextContent
     ChatTextGenerationEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
@@ -12143,6 +12125,27 @@ components:
                 - public
           x-fern-type-name: ChatTextGenerationEvent-8yyj22
       x-fern-type-name: ChatTextGenerationEvent
+    ChatTextResponseFormat:
+      title: Text Response
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ResponseFormatType'
+      x-fern-audiences:
+        - public
+      x-fern-type-name: ChatTextResponseFormat
+    ChatTextResponseFormatV2:
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ResponseFormatTypeV2'
+      x-fern-audiences:
+        - public
+      x-fern-type-name: ChatTextResponseFormatV2
     ChatToolCallDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12236,6 +12239,18 @@ components:
                 - public
           x-fern-type-name: ChatToolCallsGenerationEvent-nykiww
       x-fern-type-name: ChatToolCallsGenerationEvent
+    ChatToolMessage:
+      required:
+        - role
+      properties:
+        role:
+          $ref: '#/components/schemas/ChatRole'
+        tool_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolResult'
+      description: "Represents tool result in the chat history.\n"
+      x-fern-type-name: ChatToolMessage
     ChatToolPlanDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -12254,6 +12269,17 @@ components:
           x-fern-type-name: ChatToolPlanDeltaEvent-2obfex
       description: A streamed event which contains a delta of tool plan text.
       x-fern-type-name: ChatToolPlanDeltaEvent
+    ChatToolSource:
+      title: Tool Output
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the document
+        tool_output:
+          type: object
+          x-fern-type-name: ChatToolSource-z53ra6
+      x-fern-type-name: ChatToolSource
     Citation:
       type: object
       properties:
@@ -12546,17 +12572,6 @@ components:
           x-fern-audiences:
             - public
       x-fern-type-name: ConnectorOAuth
-    Content:
-      oneOf:
-        - $ref: '#/components/schemas/TextContent'
-        - $ref: '#/components/schemas/ImageContent'
-      description: A Content block which contains information about the content type and the content itself.
-      discriminator:
-        propertyName: type
-        mapping:
-          image_url: '#/components/schemas/ImageContent'
-          text: '#/components/schemas/TextContent'
-      x-fern-type-name: Content
     ContentType:
       enum:
         - text
@@ -12985,21 +13000,11 @@ components:
           type: string
       description: Document content.
       x-fern-type-name: DocumentContent
-    DocumentSource:
-      type: object
-      properties:
-        document:
-          type: object
-          x-fern-type-name: DocumentSource-w70a62
-        id:
-          type: string
-          description: The unique identifier of the document
-      description: A document source object containing the unique identifier of the document and the document itself.
-      x-fern-type-name: DocumentSource
     EmbedByTypeResponse:
       required:
         - id
         - embeddings
+        - texts
         - api_version
       type: object
       properties:
@@ -16311,15 +16316,26 @@ components:
     Message:
       oneOf:
         - $ref: '#/components/schemas/ChatMessage'
-        - $ref: '#/components/schemas/ToolMessage'
+        - $ref: '#/components/schemas/ChatToolMessage'
       discriminator:
         propertyName: role
         mapping:
           CHATBOT: '#/components/schemas/ChatMessage'
           SYSTEM: '#/components/schemas/ChatMessage'
-          TOOL: '#/components/schemas/ToolMessage'
+          TOOL: '#/components/schemas/ChatToolMessage'
           USER: '#/components/schemas/ChatMessage'
       x-fern-type-name: Message
+    MessageContent:
+      oneOf:
+        - $ref: '#/components/schemas/ChatTextContent'
+        - $ref: '#/components/schemas/ImageContent'
+      description: A Content block which contains information about the content type and the content itself.
+      discriminator:
+        propertyName: type
+        mapping:
+          image_url: '#/components/schemas/ImageContent'
+          text: '#/components/schemas/ChatTextContent'
+      x-fern-type-name: Content
     Metrics:
       type: object
       properties:
@@ -16489,14 +16505,14 @@ components:
       x-fern-type-name: RerankerDataMetrics
     ResponseFormat:
       oneOf:
-        - $ref: '#/components/schemas/TextResponseFormat'
+        - $ref: '#/components/schemas/ChatTextResponseFormat'
         - $ref: '#/components/schemas/JSONResponseFormat'
       description: "Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.\n\nThe model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ \"type\": \"json_object\" }`.\n\nA [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.\n\n**Note**: When using  `{ \"type\": \"json_object\" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _\"Generate a JSON ...\"_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.\n**Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).\n"
       discriminator:
         propertyName: type
         mapping:
           json_object: '#/components/schemas/JSONResponseFormat'
-          text: '#/components/schemas/TextResponseFormat'
+          text: '#/components/schemas/ChatTextResponseFormat'
       x-fern-type-name: ResponseFormat
     ResponseFormatType:
       enum:
@@ -16518,14 +16534,14 @@ components:
       x-fern-type-name: ResponseFormatTypeV2
     ResponseFormatV2:
       oneOf:
-        - $ref: '#/components/schemas/TextResponseFormatV2'
+        - $ref: '#/components/schemas/ChatTextResponseFormatV2'
         - $ref: '#/components/schemas/JsonResponseFormatV2'
       description: "Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.\n\nThe model can be forced into outputting JSON objects by setting `{ \"type\": \"json_object\" }`.\n\nA [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.\n\n**Note**: When using  `{ \"type\": \"json_object\" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _\"Generate a JSON ...\"_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.\n\n**Note**: When `json_schema` is not specified, the generated object can have up to 5 layers of nesting.\n\n**Limitation**: The parameter is not supported when used in combinations with the `documents` or `tools` parameters.\n"
       discriminator:
         propertyName: type
         mapping:
           json_object: '#/components/schemas/JsonResponseFormatV2'
-          text: '#/components/schemas/TextResponseFormatV2'
+          text: '#/components/schemas/ChatTextResponseFormatV2'
       x-fern-type-name: ResponseFormatV2
     Settings:
       required:
@@ -16623,8 +16639,8 @@ components:
       x-fern-type-name: SingleGenerationInStream
     Source:
       oneOf:
-        - $ref: '#/components/schemas/ToolSource'
-        - $ref: '#/components/schemas/DocumentSource'
+        - $ref: '#/components/schemas/ChatToolSource'
+        - $ref: '#/components/schemas/ChatDocumentSource'
       description: A source object containing information about the source of the data cited.
       x-fern-type-name: Source
     Status:
@@ -16708,7 +16724,7 @@ components:
           tool-call-end: '#/components/schemas/ChatToolCallEndEvent'
           tool-call-start: '#/components/schemas/ChatToolCallStartEvent'
           tool-plan-delta: '#/components/schemas/ChatToolPlanDeltaEvent'
-    SystemMessage:
+    SystemMessageV2:
       title: System Message
       required:
         - role
@@ -16721,52 +16737,17 @@ components:
             - type: array
               items:
                 oneOf:
-                  - $ref: '#/components/schemas/TextContent'
+                  - $ref: '#/components/schemas/ChatTextContent'
                 discriminator:
                   propertyName: type
                   mapping:
-                    text: '#/components/schemas/TextContent'
+                    text: '#/components/schemas/ChatTextContent'
         role:
           enum:
             - system
           type: string
       description: A message from the system.
-      x-fern-type-name: SystemMessage
-    TextContent:
-      required:
-        - type
-        - text
-      type: object
-      properties:
-        text:
-          type: string
-        type:
-          enum:
-            - text
-          type: string
-      description: Text content of the message.
-      x-fern-type-name: TextContent
-    TextResponseFormat:
-      title: Text Response
-      required:
-        - type
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/ResponseFormatType'
-      x-fern-audiences:
-        - public
-      x-fern-type-name: TextResponseFormat
-    TextResponseFormatV2:
-      required:
-        - type
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/ResponseFormatTypeV2'
-      x-fern-audiences:
-        - public
-      x-fern-type-name: TextResponseFormatV2
+      x-fern-type-name: SystemMessageV2
     TokenLikelihood:
       type: object
       properties:
@@ -16884,27 +16865,15 @@ components:
       x-fern-type-name: ToolCallV2
     ToolContent:
       oneOf:
-        - $ref: '#/components/schemas/TextContent'
+        - $ref: '#/components/schemas/ChatTextContent'
         - $ref: '#/components/schemas/DocumentContent'
       description: A content block which contains information about the content of a tool result
       discriminator:
         propertyName: type
         mapping:
           document: '#/components/schemas/DocumentContent'
-          text: '#/components/schemas/TextContent'
+          text: '#/components/schemas/ChatTextContent'
       x-fern-type-name: ToolContent
-    ToolMessage:
-      required:
-        - role
-      properties:
-        role:
-          $ref: '#/components/schemas/ChatRole'
-        tool_results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolResult'
-      description: "Represents tool result in the chat history.\n"
-      x-fern-type-name: ToolMessage
     ToolMessageV2:
       title: Tool Message
       required:
@@ -16944,17 +16913,6 @@ components:
             type: object
             x-fern-type-name: ToolResult-68w0tx
       x-fern-type-name: ToolResult
-    ToolSource:
-      title: Tool Output
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the document
-        tool_output:
-          type: object
-          x-fern-type-name: ToolSource-z53ra6
-      x-fern-type-name: ToolSource
     ToolV2:
       type: object
       properties:
@@ -17142,7 +17100,7 @@ components:
               description: "The number of tokens produced by the model.\n"
           x-fern-type-name: UsageTokens
       x-fern-type-name: Usage
-    UserMessage:
+    UserMessageV2:
       title: User Message
       required:
         - role
@@ -17154,14 +17112,14 @@ components:
             - type: string
             - type: array
               items:
-                $ref: '#/components/schemas/Content'
+                $ref: '#/components/schemas/MessageContent'
           description: "The content of the message. This can be a string or a list of content blocks.\nIf a string is provided, it will be treated as a text content block.\n"
         role:
           enum:
             - user
           type: string
       description: A message from the user.
-      x-fern-type-name: UserMessage
+      x-fern-type-name: UserMessageV2
     WandbConfig:
       required:
         - project

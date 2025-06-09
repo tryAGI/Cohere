@@ -13,98 +13,98 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ToolSource? Tool { get; init; }
+        public global::Cohere.ChatToolSource? ChatTool { get; init; }
 #else
-        public global::Cohere.ToolSource? Tool { get; }
+        public global::Cohere.ChatToolSource? ChatTool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatTool))]
 #endif
-        public bool IsTool => Tool != null;
+        public bool IsChatTool => ChatTool != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Cohere.ToolSource value) => new Source((global::Cohere.ToolSource?)value);
+        public static implicit operator Source(global::Cohere.ChatToolSource value) => new Source((global::Cohere.ChatToolSource?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ToolSource?(Source @this) => @this.Tool;
+        public static implicit operator global::Cohere.ChatToolSource?(Source @this) => @this.ChatTool;
 
         /// <summary>
         /// 
         /// </summary>
-        public Source(global::Cohere.ToolSource? value)
+        public Source(global::Cohere.ChatToolSource? value)
         {
-            Tool = value;
+            ChatTool = value;
         }
 
         /// <summary>
         /// A document source object containing the unique identifier of the document and the document itself.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.DocumentSource? Document { get; init; }
+        public global::Cohere.ChatDocumentSource? ChatDocument { get; init; }
 #else
-        public global::Cohere.DocumentSource? Document { get; }
+        public global::Cohere.ChatDocumentSource? ChatDocument { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatDocument))]
 #endif
-        public bool IsDocument => Document != null;
+        public bool IsChatDocument => ChatDocument != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Cohere.DocumentSource value) => new Source((global::Cohere.DocumentSource?)value);
+        public static implicit operator Source(global::Cohere.ChatDocumentSource value) => new Source((global::Cohere.ChatDocumentSource?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.DocumentSource?(Source @this) => @this.Document;
+        public static implicit operator global::Cohere.ChatDocumentSource?(Source @this) => @this.ChatDocument;
 
         /// <summary>
         /// 
         /// </summary>
-        public Source(global::Cohere.DocumentSource? value)
+        public Source(global::Cohere.ChatDocumentSource? value)
         {
-            Document = value;
+            ChatDocument = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Source(
-            global::Cohere.ToolSource? tool,
-            global::Cohere.DocumentSource? document
+            global::Cohere.ChatToolSource? chatTool,
+            global::Cohere.ChatDocumentSource? chatDocument
             )
         {
-            Tool = tool;
-            Document = document;
+            ChatTool = chatTool;
+            ChatDocument = chatDocument;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Document as object ??
-            Tool as object 
+            ChatDocument as object ??
+            ChatTool as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Tool?.ToString() ??
-            Document?.ToString() 
+            ChatTool?.ToString() ??
+            ChatDocument?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsTool && !IsDocument || !IsTool && IsDocument;
+            return IsChatTool && !IsChatDocument || !IsChatTool && IsChatDocument;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ToolSource?, TResult>? tool = null,
-            global::System.Func<global::Cohere.DocumentSource?, TResult>? document = null,
+            global::System.Func<global::Cohere.ChatToolSource?, TResult>? chatTool = null,
+            global::System.Func<global::Cohere.ChatDocumentSource?, TResult>? chatDocument = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsTool && tool != null)
+            if (IsChatTool && chatTool != null)
             {
-                return tool(Tool!);
+                return chatTool(ChatTool!);
             }
-            else if (IsDocument && document != null)
+            else if (IsChatDocument && chatDocument != null)
             {
-                return document(Document!);
+                return chatDocument(ChatDocument!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ToolSource?>? tool = null,
-            global::System.Action<global::Cohere.DocumentSource?>? document = null,
+            global::System.Action<global::Cohere.ChatToolSource?>? chatTool = null,
+            global::System.Action<global::Cohere.ChatDocumentSource?>? chatDocument = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsTool)
+            if (IsChatTool)
             {
-                tool?.Invoke(Tool!);
+                chatTool?.Invoke(ChatTool!);
             }
-            else if (IsDocument)
+            else if (IsChatDocument)
             {
-                document?.Invoke(Document!);
+                chatDocument?.Invoke(ChatDocument!);
             }
         }
 
@@ -170,10 +170,10 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                Tool,
-                typeof(global::Cohere.ToolSource),
-                Document,
-                typeof(global::Cohere.DocumentSource),
+                ChatTool,
+                typeof(global::Cohere.ChatToolSource),
+                ChatDocument,
+                typeof(global::Cohere.ChatDocumentSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +190,8 @@ namespace Cohere
         public bool Equals(Source other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolSource?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.DocumentSource?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolSource?>.Default.Equals(ChatTool, other.ChatTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatDocumentSource?>.Default.Equals(ChatDocument, other.ChatDocument) 
                 ;
         }
 

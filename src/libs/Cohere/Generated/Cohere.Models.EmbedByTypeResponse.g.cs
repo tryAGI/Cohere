@@ -46,7 +46,8 @@ namespace Cohere
         /// The text entries for which embeddings were returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Texts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,18 +76,18 @@ namespace Cohere
 #endif
         public EmbedByTypeResponse(
             string id,
+            global::System.Collections.Generic.IList<string> texts,
             global::System.Collections.Generic.IList<global::Cohere.Image>? images,
             global::Cohere.ApiMeta? meta,
             global::Cohere.EmbedByTypeResponseResponseType? responseType,
-            global::System.Collections.Generic.IList<string>? texts,
             global::Cohere.EmbedByTypeResponseEmbeddings embeddings = default!)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
             this.Embeddings = embeddings;
             this.Images = images;
             this.Meta = meta;
             this.ResponseType = responseType;
-            this.Texts = texts;
         }
 
         /// <summary>

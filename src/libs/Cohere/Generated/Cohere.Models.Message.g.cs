@@ -54,9 +54,9 @@ namespace Cohere
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ToolMessage? TOOL { get; init; }
+        public global::Cohere.ChatToolMessage? TOOL { get; init; }
 #else
-        public global::Cohere.ToolMessage? TOOL { get; }
+        public global::Cohere.ChatToolMessage? TOOL { get; }
 #endif
 
         /// <summary>
@@ -70,17 +70,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Message(global::Cohere.ToolMessage value) => new Message((global::Cohere.ToolMessage?)value);
+        public static implicit operator Message(global::Cohere.ChatToolMessage value) => new Message((global::Cohere.ChatToolMessage?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ToolMessage?(Message @this) => @this.TOOL;
+        public static implicit operator global::Cohere.ChatToolMessage?(Message @this) => @this.TOOL;
 
         /// <summary>
         /// 
         /// </summary>
-        public Message(global::Cohere.ToolMessage? value)
+        public Message(global::Cohere.ChatToolMessage? value)
         {
             TOOL = value;
         }
@@ -91,7 +91,7 @@ namespace Cohere
         public Message(
             global::Cohere.MessageDiscriminatorRole? role,
             global::Cohere.ChatMessage? cHATBOT,
-            global::Cohere.ToolMessage? tOOL
+            global::Cohere.ChatToolMessage? tOOL
             )
         {
             Role = role;
@@ -129,7 +129,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatMessage?, TResult>? cHATBOT = null,
-            global::System.Func<global::Cohere.ToolMessage?, TResult>? tOOL = null,
+            global::System.Func<global::Cohere.ChatToolMessage?, TResult>? tOOL = null,
             bool validate = true)
         {
             if (validate)
@@ -154,7 +154,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatMessage?>? cHATBOT = null,
-            global::System.Action<global::Cohere.ToolMessage?>? tOOL = null,
+            global::System.Action<global::Cohere.ChatToolMessage?>? tOOL = null,
             bool validate = true)
         {
             if (validate)
@@ -182,7 +182,7 @@ namespace Cohere
                 CHATBOT,
                 typeof(global::Cohere.ChatMessage),
                 TOOL,
-                typeof(global::Cohere.ToolMessage),
+                typeof(global::Cohere.ChatToolMessage),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -200,7 +200,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessage?>.Default.Equals(CHATBOT, other.CHATBOT) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolMessage?>.Default.Equals(TOOL, other.TOOL) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolMessage?>.Default.Equals(TOOL, other.TOOL) 
                 ;
         }
 
