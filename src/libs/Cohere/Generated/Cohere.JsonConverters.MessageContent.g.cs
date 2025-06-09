@@ -4,10 +4,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public class ToolContentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ToolContent>
+    public class MessageContentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.MessageContent>
     {
         /// <inheritdoc />
-        public override global::Cohere.ToolContent Read(
+        public override global::Cohere.MessageContent Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -17,29 +17,29 @@ namespace Cohere.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolContentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolContentDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ToolContentDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.MessageContentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.MessageContentDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.MessageContentDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Cohere.ChatTextContent? text = default;
-            if (discriminator?.Type == global::Cohere.ToolContentDiscriminatorType.Text)
+            if (discriminator?.Type == global::Cohere.MessageContentDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatTextContent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Cohere.DocumentContent? document = default;
-            if (discriminator?.Type == global::Cohere.ToolContentDiscriminatorType.Document)
+            global::Cohere.ImageContent? imageUrl = default;
+            if (discriminator?.Type == global::Cohere.MessageContentDiscriminatorType.ImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.DocumentContent)}");
-                document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ImageContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ImageContent)}");
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.ToolContent(
+            var result = new global::Cohere.MessageContent(
                 discriminator?.Type,
                 text,
-                document
+                imageUrl
                 );
 
             return result;
@@ -48,7 +48,7 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.ToolContent value,
+            global::Cohere.MessageContent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
@@ -60,11 +60,11 @@ namespace Cohere.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsDocument)
+            else if (value.IsImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentContent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.DocumentContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ImageContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ImageContent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
         }
     }

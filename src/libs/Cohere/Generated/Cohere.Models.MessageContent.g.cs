@@ -5,14 +5,14 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    /// A Content block which contains information about the content type and the content itself.
     /// </summary>
-    public readonly partial struct ContentVariant2Item : global::System.IEquatable<ContentVariant2Item>
+    public readonly partial struct MessageContent : global::System.IEquatable<MessageContent>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::Cohere.MessageContentDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Text content of the message.
@@ -34,38 +34,76 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item(global::Cohere.ChatTextContent value) => new ContentVariant2Item((global::Cohere.ChatTextContent?)value);
+        public static implicit operator MessageContent(global::Cohere.ChatTextContent value) => new MessageContent((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatTextContent?(ContentVariant2Item @this) => @this.Text;
+        public static implicit operator global::Cohere.ChatTextContent?(MessageContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item(global::Cohere.ChatTextContent? value)
+        public MessageContent(global::Cohere.ChatTextContent? value)
         {
             Text = value;
         }
 
         /// <summary>
+        /// Image content of the message.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ImageContent? ImageUrl { get; init; }
+#else
+        public global::Cohere.ImageContent? ImageUrl { get; }
+#endif
+
+        /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item(
-            global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? type,
-            global::Cohere.ChatTextContent? text
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
+#endif
+        public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator MessageContent(global::Cohere.ImageContent value) => new MessageContent((global::Cohere.ImageContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ImageContent?(MessageContent @this) => @this.ImageUrl;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessageContent(global::Cohere.ImageContent? value)
+        {
+            ImageUrl = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessageContent(
+            global::Cohere.MessageContentDiscriminatorType? type,
+            global::Cohere.ChatTextContent? text,
+            global::Cohere.ImageContent? imageUrl
             )
         {
             Type = type;
 
             Text = text;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ImageUrl as object ??
             Text as object 
             ;
 
@@ -73,7 +111,8 @@ namespace Cohere
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() 
+            Text?.ToString() ??
+            ImageUrl?.ToString() 
             ;
 
         /// <summary>
@@ -81,7 +120,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsText && !IsImageUrl || !IsText && IsImageUrl;
         }
 
         /// <summary>
@@ -89,6 +128,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.ImageContent?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -100,6 +140,10 @@ namespace Cohere
             {
                 return text(Text!);
             }
+            else if (IsImageUrl && imageUrl != null)
+            {
+                return imageUrl(ImageUrl!);
+            }
 
             return default(TResult);
         }
@@ -109,6 +153,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextContent?>? text = null,
+            global::System.Action<global::Cohere.ImageContent?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -119,6 +164,10 @@ namespace Cohere
             if (IsText)
             {
                 text?.Invoke(Text!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -131,6 +180,8 @@ namespace Cohere
             {
                 Text,
                 typeof(global::Cohere.ChatTextContent),
+                ImageUrl,
+                typeof(global::Cohere.ImageContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -144,25 +195,26 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(ContentVariant2Item other)
+        public bool Equals(MessageContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ImageContent?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(ContentVariant2Item obj1, ContentVariant2Item obj2)
+        public static bool operator ==(MessageContent obj1, MessageContent obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ContentVariant2Item>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<MessageContent>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(ContentVariant2Item obj1, ContentVariant2Item obj2)
+        public static bool operator !=(MessageContent obj1, MessageContent obj2)
         {
             return !(obj1 == obj2);
         }
@@ -172,7 +224,7 @@ namespace Cohere
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ContentVariant2Item o && Equals(o);
+            return obj is MessageContent o && Equals(o);
         }
     }
 }
