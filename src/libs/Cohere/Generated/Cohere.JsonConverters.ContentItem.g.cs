@@ -21,11 +21,11 @@ namespace Cohere.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessageResponseContentItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Cohere.ChatTextContent? text = default;
+            global::Cohere.TextContent? text = default;
             if (discriminator?.Type == global::Cohere.AssistantMessageResponseContentItemDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatTextContent)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.TextContent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -48,8 +48,8 @@ namespace Cohere.JsonConverters
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextContent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextContent).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
         }
