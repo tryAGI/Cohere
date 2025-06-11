@@ -18,9 +18,9 @@ namespace Cohere
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatTextContent? Text { get; init; }
+        public global::Cohere.TextContent? Text { get; init; }
 #else
-        public global::Cohere.ChatTextContent? Text { get; }
+        public global::Cohere.TextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::Cohere.ChatTextContent value) => new ContentItem((global::Cohere.ChatTextContent?)value);
+        public static implicit operator ContentItem(global::Cohere.TextContent value) => new ContentItem((global::Cohere.TextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatTextContent?(ContentItem @this) => @this.Text;
+        public static implicit operator global::Cohere.TextContent?(ContentItem @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::Cohere.ChatTextContent? value)
+        public ContentItem(global::Cohere.TextContent? value)
         {
             Text = value;
         }
@@ -54,7 +54,7 @@ namespace Cohere
         /// </summary>
         public ContentItem(
             global::Cohere.AssistantMessageResponseContentItemDiscriminatorType? type,
-            global::Cohere.ChatTextContent? text
+            global::Cohere.TextContent? text
             )
         {
             Type = type;
@@ -88,7 +88,7 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.TextContent?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +108,7 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatTextContent?>? text = null,
+            global::System.Action<global::Cohere.TextContent?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -130,7 +130,7 @@ namespace Cohere
             var fields = new object?[]
             {
                 Text,
-                typeof(global::Cohere.ChatTextContent),
+                typeof(global::Cohere.TextContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -147,7 +147,7 @@ namespace Cohere
         public bool Equals(ContentItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

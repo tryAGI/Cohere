@@ -5,7 +5,7 @@ namespace Cohere
     public partial interface ICohereClient
     {
         /// <summary>
-        /// Rerank<br/>
+        /// Rerank V2 API<br/>
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>
@@ -18,7 +18,7 @@ namespace Cohere
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Rerank<br/>
+        /// Rerank V2 API<br/>
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>

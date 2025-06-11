@@ -82,7 +82,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolSource? Type14 { get; set; }
+        public global::Cohere.ToolSource? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -90,7 +90,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatDocumentSource? Type16 { get; set; }
+        public global::Cohere.DocumentSource? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -110,11 +110,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatTextContent? Type21 { get; set; }
+        public global::Cohere.TextContent? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatTextContentType? Type22 { get; set; }
+        public global::Cohere.TextContentType? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -378,19 +378,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.UserMessageV2? Type88 { get; set; }
+        public global::Cohere.UserMessage? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.MessageContent>>? Type89 { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content2>>? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.MessageContent>? Type90 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Content2>? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.MessageContent? Type91 { get; set; }
+        public global::Cohere.Content2? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -410,19 +410,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.MessageContentDiscriminator? Type96 { get; set; }
+        public global::Cohere.ContentDiscriminator? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.MessageContentDiscriminatorType? Type97 { get; set; }
+        public global::Cohere.ContentDiscriminatorType? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.UserMessageV2Role? Type98 { get; set; }
+        public global::Cohere.UserMessageRole? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SystemMessageV2? Type99 { get; set; }
+        public global::Cohere.SystemMessage? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -438,15 +438,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminator? Type103 { get; set; }
+        public global::Cohere.SystemMessageContentVariant2ItemDiscriminator? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType? Type104 { get; set; }
+        public global::Cohere.SystemMessageContentVariant2ItemDiscriminatorType? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SystemMessageV2Role? Type105 { get; set; }
+        public global::Cohere.SystemMessageRole? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -578,7 +578,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolMessage? Type138 { get; set; }
+        public global::Cohere.ToolMessage? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -622,611 +622,611 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatTextResponseFormat? Type149 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEvent? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormatType? Type150 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatTextResponseFormatV2? Type151 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2Delta? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormatTypeV2? Type152 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessage? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEvent? Type153 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCalls? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2? Type154 { get; set; }
+        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2Delta? Type155 { get; set; }
+        public global::Cohere.ChatToolCallEndEvent? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessage? Type156 { get; set; }
+        public global::Cohere.ChatToolCallEndEventVariant2? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCalls? Type157 { get; set; }
+        public global::Cohere.ChatToolCallStartEvent? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallDeltaEventVariant2DeltaMessageToolCallsFunction? Type158 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallEndEvent? Type159 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2Delta? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallEndEventVariant2? Type160 { get; set; }
+        public global::Cohere.ChatToolCallStartEventVariant2DeltaMessage? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEvent? Type161 { get; set; }
+        public global::Cohere.ChatToolCallsChunkEvent? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2? Type162 { get; set; }
+        public global::Cohere.ChatToolCallsChunkEventVariant2? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2Delta? Type163 { get; set; }
+        public global::Cohere.ToolCallDelta? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallStartEventVariant2DeltaMessage? Type164 { get; set; }
+        public global::Cohere.ChatToolCallsGenerationEvent? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallsChunkEvent? Type165 { get; set; }
+        public global::Cohere.ChatToolCallsGenerationEventVariant2? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallsChunkEventVariant2? Type166 { get; set; }
+        public global::Cohere.ChatToolPlanDeltaEvent? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ToolCallDelta? Type167 { get; set; }
+        public global::Cohere.ChatToolPlanDeltaEventVariant2? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallsGenerationEvent? Type168 { get; set; }
+        public global::Cohere.ChatToolPlanDeltaEventVariant2Delta? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolCallsGenerationEventVariant2? Type169 { get; set; }
+        public global::Cohere.ChatToolPlanDeltaEventVariant2DeltaMessage? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolPlanDeltaEvent? Type170 { get; set; }
+        public global::Cohere.CitationEndEvent? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolPlanDeltaEventVariant2? Type171 { get; set; }
+        public global::Cohere.CitationEndEventVariant2? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolPlanDeltaEventVariant2Delta? Type172 { get; set; }
+        public global::Cohere.CitationOptions? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ChatToolPlanDeltaEventVariant2DeltaMessage? Type173 { get; set; }
+        public global::Cohere.CitationOptionsMode? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationEndEvent? Type174 { get; set; }
+        public global::Cohere.CitationStartEvent? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationEndEventVariant2? Type175 { get; set; }
+        public global::Cohere.CitationStartEventVariant2? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationOptions? Type176 { get; set; }
+        public global::Cohere.CitationStartEventVariant2Delta? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationOptionsMode? Type177 { get; set; }
+        public global::Cohere.CitationStartEventVariant2DeltaMessage? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationStartEvent? Type178 { get; set; }
+        public global::Cohere.ClassifyDataMetrics? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationStartEventVariant2? Type179 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.LabelMetric>? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationStartEventVariant2Delta? Type180 { get; set; }
+        public global::Cohere.LabelMetric? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CitationStartEventVariant2DeltaMessage? Type181 { get; set; }
+        public global::Cohere.ClassifyExample? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ClassifyDataMetrics? Type182 { get; set; }
+        public global::Cohere.Cluster? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.LabelMetric>? Type183 { get; set; }
+        public global::Cohere.CompatibleEndpoint? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.LabelMetric? Type184 { get; set; }
+        public global::Cohere.Connector? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ClassifyExample? Type185 { get; set; }
+        public global::Cohere.ConnectorAuthStatus? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Cluster? Type186 { get; set; }
+        public global::System.DateTime? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CompatibleEndpoint? Type187 { get; set; }
+        public global::Cohere.ConnectorOAuth? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Connector? Type188 { get; set; }
+        public global::Cohere.ConnectorLog? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ConnectorAuthStatus? Type189 { get; set; }
+        public global::Cohere.CreateClusterJobRequest? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type190 { get; set; }
+        public global::Cohere.CreateClusterJobResponse? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ConnectorOAuth? Type191 { get; set; }
+        public global::Cohere.CreateConnectorOAuth? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ConnectorLog? Type192 { get; set; }
+        public global::Cohere.CreateConnectorRequest? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateClusterJobRequest? Type193 { get; set; }
+        public global::Cohere.CreateConnectorServiceAuth? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateClusterJobResponse? Type194 { get; set; }
+        public global::Cohere.CreateConnectorResponse? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateConnectorOAuth? Type195 { get; set; }
+        public global::Cohere.CreateEmbedJobRequest? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateConnectorRequest? Type196 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateConnectorServiceAuth? Type197 { get; set; }
+        public global::Cohere.EmbeddingType? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateConnectorResponse? Type198 { get; set; }
+        public global::Cohere.EmbedInputType? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateEmbedJobRequest? Type199 { get; set; }
+        public global::Cohere.CreateEmbedJobRequestTruncate? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? Type200 { get; set; }
+        public global::Cohere.CreateEmbedJobResponse? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbeddingType? Type201 { get; set; }
+        public global::Cohere.CreateFinetunedModelResponse? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedInputType? Type202 { get; set; }
+        public global::Cohere.FinetunedModel? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateEmbedJobRequestTruncate? Type203 { get; set; }
+        public global::Cohere.Settings? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateEmbedJobResponse? Type204 { get; set; }
+        public global::Cohere.Hyperparameters? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.CreateFinetunedModelResponse? Type205 { get; set; }
+        public global::Cohere.LoraTargetModules? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.FinetunedModel? Type206 { get; set; }
+        public global::Cohere.WandbConfig? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Settings? Type207 { get; set; }
+        public global::Cohere.Status? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Hyperparameters? Type208 { get; set; }
+        public global::Cohere.Dataset? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.LoraTargetModules? Type209 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.DatasetPart>? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.WandbConfig? Type210 { get; set; }
+        public global::Cohere.DatasetPart? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Status? Type211 { get; set; }
+        public global::Cohere.DatasetType? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Dataset? Type212 { get; set; }
+        public global::Cohere.Metrics? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.DatasetPart>? Type213 { get; set; }
+        public global::Cohere.FinetuneDatasetMetrics? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.DatasetPart? Type214 { get; set; }
+        public global::Cohere.RerankerDataMetrics? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.DatasetType? Type215 { get; set; }
+        public global::Cohere.ParseInfo? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Metrics? Type216 { get; set; }
+        public global::Cohere.DatasetValidationStatus? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.FinetuneDatasetMetrics? Type217 { get; set; }
+        public global::Cohere.EmbedByTypeResponse? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.RerankerDataMetrics? Type218 { get; set; }
+        public global::Cohere.EmbedByTypeResponseEmbeddings? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ParseInfo? Type219 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.DatasetValidationStatus? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedByTypeResponse? Type221 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedByTypeResponseEmbeddings? Type222 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Image>? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type223 { get; set; }
+        public global::Cohere.Image? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type224 { get; set; }
+        public global::Cohere.EmbedByTypeResponseResponseType? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type225 { get; set; }
+        public global::Cohere.EmbedContent? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.Image>? Type226 { get; set; }
+        public global::Cohere.EmbedImage? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Image? Type227 { get; set; }
+        public global::Cohere.EmbedImageUrl? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedByTypeResponseResponseType? Type228 { get; set; }
+        public global::Cohere.EmbedContentType? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedContent? Type229 { get; set; }
+        public global::Cohere.EmbedText? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedImage? Type230 { get; set; }
+        public global::Cohere.EmbedContentDiscriminator? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedImageUrl? Type231 { get; set; }
+        public global::Cohere.EmbedContentDiscriminatorType? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedContentType? Type232 { get; set; }
+        public global::Cohere.EmbedFloatsResponse? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedText? Type233 { get; set; }
+        public global::Cohere.EmbedFloatsResponseResponseType? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedContentDiscriminator? Type234 { get; set; }
+        public global::Cohere.EmbedInput? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedContentDiscriminatorType? Type235 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.EmbedContent>? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedFloatsResponse? Type236 { get; set; }
+        public global::Cohere.EmbedJob? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedFloatsResponseResponseType? Type237 { get; set; }
+        public global::Cohere.EmbedJobStatus? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedInput? Type238 { get; set; }
+        public global::Cohere.EmbedJobTruncate? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.EmbedContent>? Type239 { get; set; }
+        public global::Cohere.Error? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedJob? Type240 { get; set; }
+        public global::Cohere.Event? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedJobStatus? Type241 { get; set; }
+        public global::Cohere.GenerateStreamEnd? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.EmbedJobTruncate? Type242 { get; set; }
+        public global::Cohere.GenerateStreamEvent? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Error? Type243 { get; set; }
+        public global::Cohere.GenerateStreamEventEventType? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Event? Type244 { get; set; }
+        public global::Cohere.GenerateStreamEndVariant2? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamEnd? Type245 { get; set; }
+        public global::Cohere.GenerateStreamEndVariant2Response? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamEvent? Type246 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationInStream>? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamEventEventType? Type247 { get; set; }
+        public global::Cohere.SingleGenerationInStream? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamEndVariant2? Type248 { get; set; }
+        public global::Cohere.GenerateStreamError? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamEndVariant2Response? Type249 { get; set; }
+        public global::Cohere.GenerateStreamErrorVariant2? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationInStream>? Type250 { get; set; }
+        public global::Cohere.GenerateStreamText? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SingleGenerationInStream? Type251 { get; set; }
+        public global::Cohere.GenerateStreamTextVariant2? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamError? Type252 { get; set; }
+        public global::Cohere.GenerateStreamedResponse? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamErrorVariant2? Type253 { get; set; }
+        public global::Cohere.GenerateStreamedResponseDiscriminator? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamText? Type254 { get; set; }
+        public global::Cohere.GenerateStreamedResponseDiscriminatorEventType? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamTextVariant2? Type255 { get; set; }
+        public global::Cohere.Generation? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamedResponse? Type256 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.SingleGeneration>? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamedResponseDiscriminator? Type257 { get; set; }
+        public global::Cohere.SingleGeneration? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GenerateStreamedResponseDiscriminatorEventType? Type258 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihood>? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.Generation? Type259 { get; set; }
+        public global::Cohere.SingleGenerationTokenLikelihood? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.SingleGeneration>? Type260 { get; set; }
+        public global::Cohere.GetClusterJobResponse? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SingleGeneration? Type261 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihood>? Type262 { get; set; }
+        public global::Cohere.GetClusterJobResponseStatus? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.SingleGenerationTokenLikelihood? Type263 { get; set; }
+        public global::Cohere.GetConnectorResponse? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetClusterJobResponse? Type264 { get; set; }
+        public global::Cohere.GetConnectorsLogsResponse? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Type265 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ConnectorLog>? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetClusterJobResponseStatus? Type266 { get; set; }
+        public global::Cohere.GetFinetunedModelResponse? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetConnectorResponse? Type267 { get; set; }
+        public global::Cohere.GetModelResponse? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetConnectorsLogsResponse? Type268 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.ConnectorLog>? Type269 { get; set; }
+        public global::Cohere.JSONResponseFormat? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetFinetunedModelResponse? Type270 { get; set; }
+        public global::Cohere.ResponseFormatType? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.GetModelResponse? Type271 { get; set; }
+        public global::Cohere.JsonResponseFormatV2? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? Type272 { get; set; }
+        public global::Cohere.ResponseFormatTypeV2? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.JSONResponseFormat? Type273 { get; set; }
+        public global::Cohere.ListClusterJobsResponse? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.JsonResponseFormatV2? Type274 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.GetClusterJobResponse>? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListClusterJobsResponse? Type275 { get; set; }
+        public global::Cohere.ListConnectorsResponse? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.GetClusterJobResponse>? Type276 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Connector>? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListConnectorsResponse? Type277 { get; set; }
+        public global::Cohere.ListEmbedJobResponse? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.Connector>? Type278 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.EmbedJob>? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListEmbedJobResponse? Type279 { get; set; }
+        public global::Cohere.ListEventsResponse? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.EmbedJob>? Type280 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Event>? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListEventsResponse? Type281 { get; set; }
+        public global::Cohere.ListFinetunedModelsResponse? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.Event>? Type282 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.FinetunedModel>? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListFinetunedModelsResponse? Type283 { get; set; }
+        public global::Cohere.ListModelsResponse? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.FinetunedModel>? Type284 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.GetModelResponse>? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListModelsResponse? Type285 { get; set; }
+        public global::Cohere.ListTrainingStepMetricsResponse? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.GetModelResponse>? Type286 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.TrainingStepMetrics>? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ListTrainingStepMetricsResponse? Type287 { get; set; }
+        public global::Cohere.TrainingStepMetrics? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.TrainingStepMetrics>? Type288 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.TrainingStepMetrics? Type289 { get; set; }
+        public global::Cohere.LogLikelihoodResponse? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type290 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.TokenLikelihood>? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.LogLikelihoodResponse? Type291 { get; set; }
+        public global::Cohere.TokenLikelihood? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.TokenLikelihood>? Type292 { get; set; }
+        public global::Cohere.OAuthAuthorizeResponse? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.TokenLikelihood? Type293 { get; set; }
+        public global::Cohere.ReasoningEffort? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.OAuthAuthorizeResponse? Type294 { get; set; }
+        public global::Cohere.RerankDocument? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ReasoningEffort? Type295 { get; set; }
+        public global::Cohere.ResponseFormat? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.RerankDocument? Type296 { get; set; }
+        public global::Cohere.TextResponseFormat? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormat? Type297 { get; set; }
+        public global::Cohere.ResponseFormatDiscriminator? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormatDiscriminator? Type298 { get; set; }
+        public global::Cohere.ResponseFormatDiscriminatorType? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormatDiscriminatorType? Type299 { get; set; }
+        public global::Cohere.ResponseFormatV2? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.ResponseFormatV2? Type300 { get; set; }
+        public global::Cohere.TextResponseFormatV2? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
