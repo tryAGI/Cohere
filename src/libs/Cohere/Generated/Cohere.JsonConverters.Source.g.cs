@@ -17,44 +17,44 @@ namespace Cohere.JsonConverters
 
             var
             readerCopy = reader;
-            global::Cohere.ChatToolSource? chatTool = default;
+            global::Cohere.ToolSource? tool = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatToolSource).Name}");
-                chatTool = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolSource).Name}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::Cohere.ChatDocumentSource? chatDocument = default;
+            global::Cohere.DocumentSource? document = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDocumentSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDocumentSource).Name}");
-                chatDocument = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.DocumentSource).Name}");
+                document = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::Cohere.Source(
-                chatTool,
-                chatDocument
+                tool,
+                document
                 );
 
-            if (chatTool != null)
+            if (tool != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatToolSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolSource).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (chatDocument != null)
+            else if (document != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDocumentSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDocumentSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.DocumentSource).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -70,17 +70,17 @@ namespace Cohere.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsChatTool)
+            if (value.IsTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatToolSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatTool, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
             }
-            else if (value.IsChatDocument)
+            else if (value.IsDocument)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatDocumentSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatDocumentSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatDocument, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.DocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.DocumentSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.DocumentSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
             }
         }
     }

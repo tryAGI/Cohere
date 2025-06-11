@@ -21,11 +21,11 @@ namespace Cohere.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ResponseFormatV2Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Cohere.ChatTextResponseFormatV2? text = default;
+            global::Cohere.TextResponseFormatV2? text = default;
             if (discriminator?.Type == global::Cohere.ResponseFormatV2DiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextResponseFormatV2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatTextResponseFormatV2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextResponseFormatV2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.TextResponseFormatV2)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Cohere.JsonResponseFormatV2? jsonObject = default;
@@ -56,8 +56,8 @@ namespace Cohere.JsonConverters
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextResponseFormatV2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextResponseFormatV2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.TextResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.TextResponseFormatV2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.TextResponseFormatV2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
             else if (value.IsJsonObject)

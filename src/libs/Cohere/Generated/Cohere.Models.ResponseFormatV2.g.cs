@@ -23,9 +23,9 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatTextResponseFormatV2? Text { get; init; }
+        public global::Cohere.TextResponseFormatV2? Text { get; init; }
 #else
-        public global::Cohere.ChatTextResponseFormatV2? Text { get; }
+        public global::Cohere.TextResponseFormatV2? Text { get; }
 #endif
 
         /// <summary>
@@ -39,17 +39,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormatV2(global::Cohere.ChatTextResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.ChatTextResponseFormatV2?)value);
+        public static implicit operator ResponseFormatV2(global::Cohere.TextResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.TextResponseFormatV2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatTextResponseFormatV2?(ResponseFormatV2 @this) => @this.Text;
+        public static implicit operator global::Cohere.TextResponseFormatV2?(ResponseFormatV2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormatV2(global::Cohere.ChatTextResponseFormatV2? value)
+        public ResponseFormatV2(global::Cohere.TextResponseFormatV2? value)
         {
             Text = value;
         }
@@ -94,7 +94,7 @@ namespace Cohere
         /// </summary>
         public ResponseFormatV2(
             global::Cohere.ResponseFormatV2DiscriminatorType? type,
-            global::Cohere.ChatTextResponseFormatV2? text,
+            global::Cohere.TextResponseFormatV2? text,
             global::Cohere.JsonResponseFormatV2? jsonObject
             )
         {
@@ -132,7 +132,7 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatTextResponseFormatV2?, TResult>? text = null,
+            global::System.Func<global::Cohere.TextResponseFormatV2?, TResult>? text = null,
             global::System.Func<global::Cohere.JsonResponseFormatV2?, TResult>? jsonObject = null,
             bool validate = true)
         {
@@ -157,7 +157,7 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatTextResponseFormatV2?>? text = null,
+            global::System.Action<global::Cohere.TextResponseFormatV2?>? text = null,
             global::System.Action<global::Cohere.JsonResponseFormatV2?>? jsonObject = null,
             bool validate = true)
         {
@@ -184,7 +184,7 @@ namespace Cohere
             var fields = new object?[]
             {
                 Text,
-                typeof(global::Cohere.ChatTextResponseFormatV2),
+                typeof(global::Cohere.TextResponseFormatV2),
                 JsonObject,
                 typeof(global::Cohere.JsonResponseFormatV2),
             };
@@ -203,7 +203,7 @@ namespace Cohere
         public bool Equals(ResponseFormatV2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextResponseFormatV2?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextResponseFormatV2?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.JsonResponseFormatV2?>.Default.Equals(JsonObject, other.JsonObject) 
                 ;
         }
