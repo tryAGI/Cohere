@@ -102,7 +102,7 @@ namespace Cohere
         /// <summary>
         /// Used to select the [safety instruction](https://docs.cohere.com/v2/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
         /// When `OFF` is specified, the safety instruction will be omitted.<br/>
-        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// Safety modes are not yet configurable in combination with `tools` and `documents` parameters.<br/>
         /// **Note**: This parameter is only compatible newer Cohere models, starting with [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release) and [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release).<br/>
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </summary>
@@ -161,7 +161,7 @@ namespace Cohere
 
         /// <summary>
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
-        /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
+        /// The tool definition follows the [JSON Schema](https://json-schema.org/) with the following fields: `name`, `parameters`, and `description`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::Cohere.ToolV2>? Tools { get; set; }
@@ -227,7 +227,7 @@ namespace Cohere
         /// <param name="safetyMode">
         /// Used to select the [safety instruction](https://docs.cohere.com/v2/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
         /// When `OFF` is specified, the safety instruction will be omitted.<br/>
-        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// Safety modes are not yet configurable in combination with `tools` and `documents` parameters.<br/>
         /// **Note**: This parameter is only compatible newer Cohere models, starting with [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release) and [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release).<br/>
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </param>
@@ -263,7 +263,7 @@ namespace Cohere
         /// </param>
         /// <param name="tools">
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
-        /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
+        /// The tool definition follows the [JSON Schema](https://json-schema.org/) with the following fields: `name`, `parameters`, and `description`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
