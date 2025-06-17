@@ -17189,7 +17189,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: NotFoundErrorBody
       x-fern-type-name: BadRequest
@@ -17200,7 +17202,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: BadRequestErrorBody
       x-fern-type-name: Forbidden
@@ -17211,7 +17215,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: InvalidTokenErrorBody
       x-fern-type-name: GatewayTimeout
@@ -17222,7 +17228,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: ServiceUnavailableErrorBody
       x-fern-type-name: InternalServerError
@@ -17233,7 +17241,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: ForbiddenErrorBody
       x-fern-type-name: InvalidToken
@@ -17244,7 +17254,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: UnauthorizedErrorBody
       x-fern-type-name: NotFound
@@ -17255,7 +17267,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: NotImplementedErrorBody
       x-fern-type-name: NotImplemented
@@ -17266,7 +17280,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: GatewayTimeoutErrorBody
       x-fern-type-name: RateLimit
@@ -17277,7 +17293,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: InternalServerErrorBody
       x-fern-type-name: RequestCancelled
@@ -17288,7 +17306,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: TooManyRequestsErrorBody
       x-fern-type-name: ServiceUnavailable
@@ -17299,7 +17319,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: UnauthorizedErrorBody
       x-fern-type-name: Unauthorized
@@ -17310,7 +17332,9 @@ components:
           schema:
             type: object
             properties:
-              data:
+              id:
+                type: string
+              message:
                 type: string
             x-fern-type-name: UnprocessableEntityErrorBody
       x-fern-type-name: UnprocessableEntity
