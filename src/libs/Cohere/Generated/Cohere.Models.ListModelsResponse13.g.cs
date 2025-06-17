@@ -11,8 +11,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public string? Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,14 +29,17 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ListModelsResponse13" /> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="id"></param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListModelsResponse13(
-            string? data)
+            string? id,
+            string? message)
         {
-            this.Data = data;
+            this.Id = id;
+            this.Message = message;
         }
 
         /// <summary>
