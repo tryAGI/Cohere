@@ -564,7 +564,9 @@ namespace Cohere
                 Examples = examples,
                 Inputs = inputs,
                 Model = model,
+#pragma warning disable CS0618 // Type or member is obsolete
                 Preset = preset,
+#pragma warning restore CS0618 // Type or member is obsolete
                 Truncate = truncate,
             };
 
