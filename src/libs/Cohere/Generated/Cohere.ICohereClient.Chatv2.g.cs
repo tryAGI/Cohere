@@ -111,8 +111,8 @@ namespace Cohere
         /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
         /// </param>
         /// <param name="tools">
-        /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
-        /// The tool definition follows the [JSON Schema](https://json-schema.org/) with the following fields: `name`, `parameters`, and `description`.
+        /// A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.<br/>
+        /// Learn more in the [Tool Use guide](https://docs.cohere.com/docs/tools).
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
