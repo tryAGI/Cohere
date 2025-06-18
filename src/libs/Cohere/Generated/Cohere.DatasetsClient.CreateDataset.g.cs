@@ -224,20 +224,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
                 global::Cohere.CreateDatasetResponse2? __value_400 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = global::Cohere.CreateDatasetResponse2.FromJson(__content_400, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::Cohere.CreateDatasetResponse2.FromJson(__content_400, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = await global::Cohere.CreateDatasetResponse2.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = await global::Cohere.CreateDatasetResponse2.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_400 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse2>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
@@ -252,20 +261,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
                 global::Cohere.CreateDatasetResponse3? __value_401 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = global::Cohere.CreateDatasetResponse3.FromJson(__content_401, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::Cohere.CreateDatasetResponse3.FromJson(__content_401, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = await global::Cohere.CreateDatasetResponse3.FromJsonStreamAsync(__contentStream_401, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = await global::Cohere.CreateDatasetResponse3.FromJsonStreamAsync(__contentStream_401, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_401 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse3>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -280,20 +298,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
                 global::Cohere.CreateDatasetResponse4? __value_403 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = global::Cohere.CreateDatasetResponse4.FromJson(__content_403, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::Cohere.CreateDatasetResponse4.FromJson(__content_403, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = await global::Cohere.CreateDatasetResponse4.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = await global::Cohere.CreateDatasetResponse4.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_403 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse4>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -308,20 +335,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
                 global::Cohere.CreateDatasetResponse5? __value_404 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = global::Cohere.CreateDatasetResponse5.FromJson(__content_404, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::Cohere.CreateDatasetResponse5.FromJson(__content_404, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = await global::Cohere.CreateDatasetResponse5.FromJsonStreamAsync(__contentStream_404, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = await global::Cohere.CreateDatasetResponse5.FromJsonStreamAsync(__contentStream_404, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_404 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse5>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -336,20 +372,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
                 global::Cohere.CreateDatasetResponse6? __value_422 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = global::Cohere.CreateDatasetResponse6.FromJson(__content_422, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::Cohere.CreateDatasetResponse6.FromJson(__content_422, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::Cohere.CreateDatasetResponse6.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = await global::Cohere.CreateDatasetResponse6.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_422 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse6>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -364,20 +409,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 429)
             {
                 string? __content_429 = null;
+                global::System.Exception? __exception_429 = null;
                 global::Cohere.CreateDatasetResponse7? __value_429 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_429 = global::Cohere.CreateDatasetResponse7.FromJson(__content_429, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_429 = global::Cohere.CreateDatasetResponse7.FromJson(__content_429, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_429 = await global::Cohere.CreateDatasetResponse7.FromJsonStreamAsync(__contentStream_429, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_429 = await global::Cohere.CreateDatasetResponse7.FromJsonStreamAsync(__contentStream_429, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_429 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse7>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_429,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_429,
@@ -392,20 +446,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 498)
             {
                 string? __content_498 = null;
+                global::System.Exception? __exception_498 = null;
                 global::Cohere.CreateDatasetResponse8? __value_498 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_498 = global::Cohere.CreateDatasetResponse8.FromJson(__content_498, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_498 = global::Cohere.CreateDatasetResponse8.FromJson(__content_498, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_498 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_498 = await global::Cohere.CreateDatasetResponse8.FromJsonStreamAsync(__contentStream_498, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_498 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_498 = await global::Cohere.CreateDatasetResponse8.FromJsonStreamAsync(__contentStream_498, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_498 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse8>(
                     message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_498,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_498,
@@ -420,20 +483,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 499)
             {
                 string? __content_499 = null;
+                global::System.Exception? __exception_499 = null;
                 global::Cohere.CreateDatasetResponse9? __value_499 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_499 = global::Cohere.CreateDatasetResponse9.FromJson(__content_499, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_499 = global::Cohere.CreateDatasetResponse9.FromJson(__content_499, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_499 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_499 = await global::Cohere.CreateDatasetResponse9.FromJsonStreamAsync(__contentStream_499, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_499 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_499 = await global::Cohere.CreateDatasetResponse9.FromJsonStreamAsync(__contentStream_499, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_499 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse9>(
                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_499,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_499,
@@ -448,20 +520,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
                 global::Cohere.CreateDatasetResponse10? __value_500 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_500 = global::Cohere.CreateDatasetResponse10.FromJson(__content_500, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = global::Cohere.CreateDatasetResponse10.FromJson(__content_500, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = await global::Cohere.CreateDatasetResponse10.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_500 = await global::Cohere.CreateDatasetResponse10.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_500 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse10>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
@@ -476,20 +557,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 501)
             {
                 string? __content_501 = null;
+                global::System.Exception? __exception_501 = null;
                 global::Cohere.CreateDatasetResponse11? __value_501 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_501 = global::Cohere.CreateDatasetResponse11.FromJson(__content_501, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_501 = global::Cohere.CreateDatasetResponse11.FromJson(__content_501, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_501 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_501 = await global::Cohere.CreateDatasetResponse11.FromJsonStreamAsync(__contentStream_501, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_501 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_501 = await global::Cohere.CreateDatasetResponse11.FromJsonStreamAsync(__contentStream_501, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_501 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse11>(
                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_501,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_501,
@@ -504,20 +594,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
+                global::System.Exception? __exception_503 = null;
                 global::Cohere.CreateDatasetResponse12? __value_503 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_503 = global::Cohere.CreateDatasetResponse12.FromJson(__content_503, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_503 = global::Cohere.CreateDatasetResponse12.FromJson(__content_503, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_503 = await global::Cohere.CreateDatasetResponse12.FromJsonStreamAsync(__contentStream_503, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_503 = await global::Cohere.CreateDatasetResponse12.FromJsonStreamAsync(__contentStream_503, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_503 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse12>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_503,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,
@@ -532,20 +631,29 @@ namespace Cohere
             if ((int)__response.StatusCode == 504)
             {
                 string? __content_504 = null;
+                global::System.Exception? __exception_504 = null;
                 global::Cohere.CreateDatasetResponse13? __value_504 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_504 = global::Cohere.CreateDatasetResponse13.FromJson(__content_504, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_504 = global::Cohere.CreateDatasetResponse13.FromJson(__content_504, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_504 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_504 = await global::Cohere.CreateDatasetResponse13.FromJsonStreamAsync(__contentStream_504, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_504 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_504 = await global::Cohere.CreateDatasetResponse13.FromJsonStreamAsync(__contentStream_504, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_504 = __ex;
                 }
 
                 throw new global::Cohere.ApiException<global::Cohere.CreateDatasetResponse13>(
                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_504,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_504,
@@ -577,8 +685,12 @@ namespace Cohere
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::Cohere.CreateDatasetResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Cohere.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -592,18 +704,24 @@ namespace Cohere
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::Cohere.CreateDatasetResponse.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::Cohere.CreateDatasetResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Cohere.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -616,16 +734,6 @@ namespace Cohere
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::Cohere.CreateDatasetResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
