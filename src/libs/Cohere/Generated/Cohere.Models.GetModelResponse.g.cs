@@ -39,6 +39,12 @@ namespace Cohere
         public bool? Finetuned { get; set; }
 
         /// <summary>
+        /// Whether the model is deprecated or not.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deprecated")]
+        public bool? IsDeprecated { get; set; }
+
+        /// <summary>
         /// Specify this name in the `model` parameter of API requests to use your chosen model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -80,6 +86,9 @@ namespace Cohere
         /// <param name="finetuned">
         /// Whether the model has been fine-tuned or not.
         /// </param>
+        /// <param name="isDeprecated">
+        /// Whether the model is deprecated or not.
+        /// </param>
         /// <param name="name">
         /// Specify this name in the `model` parameter of API requests to use your chosen model.
         /// </param>
@@ -98,6 +107,7 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? endpoints,
             global::System.Collections.Generic.IList<string>? features,
             bool? finetuned,
+            bool? isDeprecated,
             string? name,
             bool? supportsVision,
             string? tokenizerUrl)
@@ -107,6 +117,7 @@ namespace Cohere
             this.Endpoints = endpoints;
             this.Features = features;
             this.Finetuned = finetuned;
+            this.IsDeprecated = isDeprecated;
             this.Name = name;
             this.SupportsVision = supportsVision;
             this.TokenizerUrl = tokenizerUrl;
