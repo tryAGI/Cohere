@@ -32,7 +32,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
+        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::Cohere.Chatv2Request request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -573,7 +573,7 @@ namespace Cohere
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>.FromJson(__content, JsonSerializerContext) ??
+                        global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -604,7 +604,7 @@ namespace Cohere
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -721,7 +721,7 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
+        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
             string model,
             string? xClientName = default,

@@ -15,12 +15,11 @@ namespace Cohere
         public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
-        /// A string representing the list of tokens.<br/>
-        /// Included only in responses
+        /// A string representing the list of tokens.
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string Text { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,18 +32,17 @@ namespace Cohere
         /// </summary>
         /// <param name="meta"></param>
         /// <param name="text">
-        /// A string representing the list of tokens.<br/>
-        /// Included only in responses
+        /// A string representing the list of tokens.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DetokenizeResponse(
-            global::Cohere.ApiMeta? meta,
-            string text = default!)
+            string text,
+            global::Cohere.ApiMeta? meta)
         {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Meta = meta;
-            this.Text = text;
         }
 
         /// <summary>

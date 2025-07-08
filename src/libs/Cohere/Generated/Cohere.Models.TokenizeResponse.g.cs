@@ -22,12 +22,11 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<string> TokenStrings { get; set; }
 
         /// <summary>
-        /// An array of tokens, where each token is an integer.<br/>
-        /// Included only in responses
+        /// An array of tokens, where each token is an integer.
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
-        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<int> Tokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,20 +40,19 @@ namespace Cohere
         /// <param name="meta"></param>
         /// <param name="tokenStrings"></param>
         /// <param name="tokens">
-        /// An array of tokens, where each token is an integer.<br/>
-        /// Included only in responses
+        /// An array of tokens, where each token is an integer.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TokenizeResponse(
             global::System.Collections.Generic.IList<string> tokenStrings,
-            global::Cohere.ApiMeta? meta,
-            global::System.Collections.Generic.IList<int> tokens = default!)
+            global::System.Collections.Generic.IList<int> tokens,
+            global::Cohere.ApiMeta? meta)
         {
             this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
+            this.Tokens = tokens ?? throw new global::System.ArgumentNullException(nameof(tokens));
             this.Meta = meta;
-            this.Tokens = tokens;
         }
 
         /// <summary>

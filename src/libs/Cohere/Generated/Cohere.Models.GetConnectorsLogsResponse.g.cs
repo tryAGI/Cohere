@@ -16,12 +16,11 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<global::Cohere.ConnectorLog> ConnectorLogs { get; set; }
 
         /// <summary>
-        /// Total number of connector logs<br/>
-        /// Included only in responses
+        /// Total number of connector logs
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        public double Total { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Total { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,15 +33,14 @@ namespace Cohere
         /// </summary>
         /// <param name="connectorLogs"></param>
         /// <param name="total">
-        /// Total number of connector logs<br/>
-        /// Included only in responses
+        /// Total number of connector logs
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetConnectorsLogsResponse(
             global::System.Collections.Generic.IList<global::Cohere.ConnectorLog> connectorLogs,
-            double total = default!)
+            double total)
         {
             this.ConnectorLogs = connectorLogs ?? throw new global::System.ArgumentNullException(nameof(connectorLogs));
             this.Total = total;

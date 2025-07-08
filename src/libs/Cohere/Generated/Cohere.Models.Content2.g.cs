@@ -18,9 +18,9 @@ namespace Cohere
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.TextContent? Text { get; init; }
+        public global::Cohere.ChatTextContent? Text { get; init; }
 #else
-        public global::Cohere.TextContent? Text { get; }
+        public global::Cohere.ChatTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content2(global::Cohere.TextContent value) => new Content2((global::Cohere.TextContent?)value);
+        public static implicit operator Content2(global::Cohere.ChatTextContent value) => new Content2((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.TextContent?(Content2 @this) => @this.Text;
+        public static implicit operator global::Cohere.ChatTextContent?(Content2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public Content2(global::Cohere.TextContent? value)
+        public Content2(global::Cohere.ChatTextContent? value)
         {
             Text = value;
         }
@@ -89,7 +89,7 @@ namespace Cohere
         /// </summary>
         public Content2(
             global::Cohere.ContentDiscriminatorType? type,
-            global::Cohere.TextContent? text,
+            global::Cohere.ChatTextContent? text,
             global::Cohere.ImageContent? imageUrl
             )
         {
@@ -127,7 +127,7 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.TextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
             global::System.Func<global::Cohere.ImageContent?, TResult>? imageUrl = null,
             bool validate = true)
         {
@@ -152,7 +152,7 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.TextContent?>? text = null,
+            global::System.Action<global::Cohere.ChatTextContent?>? text = null,
             global::System.Action<global::Cohere.ImageContent?>? imageUrl = null,
             bool validate = true)
         {
@@ -179,7 +179,7 @@ namespace Cohere
             var fields = new object?[]
             {
                 Text,
-                typeof(global::Cohere.TextContent),
+                typeof(global::Cohere.ChatTextContent),
                 ImageUrl,
                 typeof(global::Cohere.ImageContent),
             };
@@ -198,7 +198,7 @@ namespace Cohere
         public bool Equals(Content2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ImageContent?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }

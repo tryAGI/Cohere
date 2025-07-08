@@ -9,12 +9,11 @@ namespace Cohere
     public sealed partial class EmbedByTypeResponse
     {
         /// <summary>
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        public global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; }
 
         /// <summary>
         /// 
@@ -58,8 +57,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
         /// </summary>
         /// <param name="embeddings">
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
         /// </param>
         /// <param name="id"></param>
         /// <param name="images">
@@ -74,15 +72,15 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedByTypeResponse(
+            global::Cohere.EmbedByTypeResponseEmbeddings embeddings,
             string id,
             global::System.Collections.Generic.IList<global::Cohere.Image>? images,
             global::Cohere.ApiMeta? meta,
             global::Cohere.EmbedByTypeResponseResponseType? responseType,
-            global::System.Collections.Generic.IList<string>? texts,
-            global::Cohere.EmbedByTypeResponseEmbeddings embeddings = default!)
+            global::System.Collections.Generic.IList<string>? texts)
         {
+            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Embeddings = embeddings;
             this.Images = images;
             this.Meta = meta;
             this.ResponseType = responseType;
