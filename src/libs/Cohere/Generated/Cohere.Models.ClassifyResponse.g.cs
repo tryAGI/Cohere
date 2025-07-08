@@ -9,18 +9,18 @@ namespace Cohere
     public sealed partial class ClassifyResponse
     {
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> Classifications { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> Classifications { get; set; }
 
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string Id { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -37,23 +37,19 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
         /// </summary>
-        /// <param name="classifications">
-        /// Included only in responses
-        /// </param>
-        /// <param name="id">
-        /// Included only in responses
-        /// </param>
+        /// <param name="classifications"></param>
+        /// <param name="id"></param>
         /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifyResponse(
-            global::Cohere.ApiMeta? meta,
-            global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> classifications = default!,
-            string id = default!)
+            global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification> classifications,
+            string id,
+            global::Cohere.ApiMeta? meta)
         {
-            this.Classifications = classifications;
-            this.Id = id;
+            this.Classifications = classifications ?? throw new global::System.ArgumentNullException(nameof(classifications));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Meta = meta;
         }
 

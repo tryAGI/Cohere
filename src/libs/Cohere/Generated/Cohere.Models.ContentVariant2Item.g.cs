@@ -12,15 +12,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::Cohere.AssistantMessageV2ContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.TextContent? Text { get; init; }
+        public global::Cohere.ChatTextContent? Text { get; init; }
 #else
-        public global::Cohere.TextContent? Text { get; }
+        public global::Cohere.ChatTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item(global::Cohere.TextContent value) => new ContentVariant2Item((global::Cohere.TextContent?)value);
+        public static implicit operator ContentVariant2Item(global::Cohere.ChatTextContent value) => new ContentVariant2Item((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.TextContent?(ContentVariant2Item @this) => @this.Text;
+        public static implicit operator global::Cohere.ChatTextContent?(ContentVariant2Item @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item(global::Cohere.TextContent? value)
+        public ContentVariant2Item(global::Cohere.ChatTextContent? value)
         {
             Text = value;
         }
@@ -53,8 +53,8 @@ namespace Cohere
         /// 
         /// </summary>
         public ContentVariant2Item(
-            global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? type,
-            global::Cohere.TextContent? text
+            global::Cohere.AssistantMessageV2ContentVariant2ItemDiscriminatorType? type,
+            global::Cohere.ChatTextContent? text
             )
         {
             Type = type;
@@ -88,7 +88,7 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.TextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +108,7 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.TextContent?>? text = null,
+            global::System.Action<global::Cohere.ChatTextContent?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -130,7 +130,7 @@ namespace Cohere
             var fields = new object?[]
             {
                 Text,
-                typeof(global::Cohere.TextContent),
+                typeof(global::Cohere.ChatTextContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -147,7 +147,7 @@ namespace Cohere
         public bool Equals(ContentVariant2Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.TextContent?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

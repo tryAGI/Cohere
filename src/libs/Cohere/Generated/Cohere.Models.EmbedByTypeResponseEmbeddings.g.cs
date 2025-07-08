@@ -4,28 +4,24 @@
 namespace Cohere
 {
     /// <summary>
-    /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
-    /// Included only in responses
+    /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
     /// </summary>
     public sealed partial class EmbedByTypeResponseEmbeddings
     {
         /// <summary>
-        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
-        /// Included only in responses
+        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("binary")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Binary { get; set; }
 
         /// <summary>
-        /// An array of float embeddings.<br/>
-        /// Included only in responses
+        /// An array of float embeddings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Float { get; set; }
 
         /// <summary>
-        /// An array of signed int8 embeddings. Each value is between -128 and 127.<br/>
-        /// Included only in responses
+        /// An array of signed int8 embeddings. Each value is between -128 and 127.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int8")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Int8 { get; set; }
@@ -37,8 +33,7 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Ubinary { get; set; }
 
         /// <summary>
-        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.<br/>
-        /// Included only in responses
+        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uint8")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Uint8 { get; set; }
@@ -53,23 +48,19 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="EmbedByTypeResponseEmbeddings" /> class.
         /// </summary>
         /// <param name="binary">
-        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
-        /// Included only in responses
+        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.
         /// </param>
         /// <param name="float">
-        /// An array of float embeddings.<br/>
-        /// Included only in responses
+        /// An array of float embeddings.
         /// </param>
         /// <param name="int8">
-        /// An array of signed int8 embeddings. Each value is between -128 and 127.<br/>
-        /// Included only in responses
+        /// An array of signed int8 embeddings. Each value is between -128 and 127.
         /// </param>
         /// <param name="ubinary">
         /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
         /// </param>
         /// <param name="uint8">
-        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.<br/>
-        /// Included only in responses
+        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

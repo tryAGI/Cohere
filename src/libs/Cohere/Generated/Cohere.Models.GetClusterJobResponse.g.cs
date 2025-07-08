@@ -9,22 +9,19 @@ namespace Cohere
     public sealed partial class GetClusterJobResponse
     {
         /// <summary>
-        /// The list of cluster summaries for the job<br/>
-        /// Included only in responses
+        /// The list of cluster summaries for the job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
         public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Clusters { get; set; }
 
         /// <summary>
-        /// Time of job creation in RFC3339 format<br/>
-        /// Included only in responses
+        /// Time of job creation in RFC3339 format
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The input file URL used for the job<br/>
-        /// Included only in responses
+        /// The input file URL used for the job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings_url")]
         public string? EmbeddingsUrl { get; set; }
@@ -36,22 +33,19 @@ namespace Cohere
         public string? Error { get; set; }
 
         /// <summary>
-        /// The input dataset ID used for the job<br/>
-        /// Included only in responses
+        /// The input dataset ID used for the job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dataset_id")]
         public string? InputDatasetId { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
         public bool? IsDeterministic { get; set; }
 
         /// <summary>
-        /// A boolean indicating whether the job is in a final state, whether completed or failed<br/>
-        /// Included only in responses
+        /// A boolean indicating whether the job is in a final state, whether completed or failed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_final_state")]
         public bool? IsFinalState { get; set; }
@@ -70,29 +64,25 @@ namespace Cohere
         public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_cluster_size")]
         public int? MinClusterSize { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_neighbors")]
         public int? NNeighbors { get; set; }
 
         /// <summary>
-        /// The output file URL for the clusters (signed url that expires)<br/>
-        /// Included only in responses
+        /// The output file URL for the clusters (signed url that expires)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_clusters_url")]
         public string? OutputClustersUrl { get; set; }
 
         /// <summary>
-        /// The output file URL for the outliers (signed url that expires)<br/>
-        /// Included only in responses
+        /// The output file URL for the outliers (signed url that expires)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_outliers_url")]
         public string? OutputOutliersUrl { get; set; }
@@ -114,47 +104,37 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
         /// </summary>
         /// <param name="clusters">
-        /// The list of cluster summaries for the job<br/>
-        /// Included only in responses
+        /// The list of cluster summaries for the job
         /// </param>
         /// <param name="createdAt">
-        /// Time of job creation in RFC3339 format<br/>
-        /// Included only in responses
+        /// Time of job creation in RFC3339 format
         /// </param>
         /// <param name="embeddingsUrl">
-        /// The input file URL used for the job<br/>
-        /// Included only in responses
+        /// The input file URL used for the job
         /// </param>
         /// <param name="error"></param>
         /// <param name="inputDatasetId">
-        /// The input dataset ID used for the job<br/>
-        /// Included only in responses
+        /// The input dataset ID used for the job
         /// </param>
         /// <param name="isDeterministic">
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </param>
         /// <param name="isFinalState">
-        /// A boolean indicating whether the job is in a final state, whether completed or failed<br/>
-        /// Included only in responses
+        /// A boolean indicating whether the job is in a final state, whether completed or failed
         /// </param>
         /// <param name="jobId"></param>
         /// <param name="meta"></param>
         /// <param name="minClusterSize">
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </param>
         /// <param name="nNeighbors">
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
-        /// Included only in responses
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </param>
         /// <param name="outputClustersUrl">
-        /// The output file URL for the clusters (signed url that expires)<br/>
-        /// Included only in responses
+        /// The output file URL for the clusters (signed url that expires)
         /// </param>
         /// <param name="outputOutliersUrl">
-        /// The output file URL for the outliers (signed url that expires)<br/>
-        /// Included only in responses
+        /// The output file URL for the outliers (signed url that expires)
         /// </param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER

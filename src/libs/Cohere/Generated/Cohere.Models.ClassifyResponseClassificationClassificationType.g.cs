@@ -4,8 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// The type of classification performed<br/>
-    /// Included only in responses
+    /// The type of classification performed
     /// </summary>
     public enum ClassifyResponseClassificationClassificationType
     {

@@ -9,12 +9,11 @@ namespace Cohere
     public sealed partial class EmbedFloatsResponse
     {
         /// <summary>
-        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
+        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Embeddings { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Embeddings { get; set; }
 
         /// <summary>
         /// 
@@ -59,8 +58,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="EmbedFloatsResponse" /> class.
         /// </summary>
         /// <param name="embeddings">
-        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
+        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.
         /// </param>
         /// <param name="id"></param>
         /// <param name="images">
@@ -75,16 +73,16 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedFloatsResponse(
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> embeddings,
             string id,
             global::System.Collections.Generic.IList<string> texts,
             global::System.Collections.Generic.IList<global::Cohere.Image>? images,
             global::Cohere.ApiMeta? meta,
-            global::Cohere.EmbedFloatsResponseResponseType? responseType,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> embeddings = default!)
+            global::Cohere.EmbedFloatsResponseResponseType? responseType)
         {
+            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
-            this.Embeddings = embeddings;
             this.Images = images;
             this.Meta = meta;
             this.ResponseType = responseType;

@@ -22,12 +22,11 @@ namespace Cohere
         public required int Index { get; set; }
 
         /// <summary>
-        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45<br/>
-        /// Included only in responses
+        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45
         /// </summary>
-        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("relevance_score")]
-        public float RelevanceScore { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required float RelevanceScore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,20 +44,19 @@ namespace Cohere
         /// Corresponds to the index in the original list of documents to which the ranked document belongs. (i.e. if the first value in the `results` object has an `index` value of 3, it means in the list of documents passed in, the document at `index=3` had the highest relevance)
         /// </param>
         /// <param name="relevanceScore">
-        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45<br/>
-        /// Included only in responses
+        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankResponseResult(
             int index,
-            global::Cohere.RerankResponseResultDocument? document,
-            float relevanceScore = default!)
+            float relevanceScore,
+            global::Cohere.RerankResponseResultDocument? document)
         {
             this.Index = index;
-            this.Document = document;
             this.RelevanceScore = relevanceScore;
+            this.Document = document;
         }
 
         /// <summary>

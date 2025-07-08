@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// Included only in responses
+    /// 
     /// </summary>
     public sealed partial class ClassifyResponseClassificationLabels2
     {
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         public float? Confidence { get; set; }
@@ -23,9 +23,7 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponseClassificationLabels2" /> class.
         /// </summary>
-        /// <param name="confidence">
-        /// Included only in responses
-        /// </param>
+        /// <param name="confidence"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

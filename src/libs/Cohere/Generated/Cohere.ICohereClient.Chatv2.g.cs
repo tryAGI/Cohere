@@ -13,7 +13,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::Cohere.Chatv2Request request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -116,7 +116,7 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponse, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chatv2Async(
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
             string model,
             string? xClientName = default,

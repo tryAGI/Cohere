@@ -28,11 +28,11 @@ namespace Cohere.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatMessage)}");
                 cHATBOT = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Cohere.ToolMessage? tOOL = default;
+            global::Cohere.ChatToolMessage? tOOL = default;
             if (discriminator?.Role == global::Cohere.MessageDiscriminatorRole.TOOL)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolMessage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ToolMessage)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatToolMessage)}");
                 tOOL = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -62,8 +62,8 @@ namespace Cohere.JsonConverters
             }
             else if (value.IsTOOL)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ToolMessage?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ToolMessage).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatToolMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.TOOL, typeInfo);
             }
         }

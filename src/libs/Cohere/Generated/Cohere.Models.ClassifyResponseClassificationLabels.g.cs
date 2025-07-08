@@ -4,8 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
-    /// Included only in responses
+    /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.
     /// </summary>
     public sealed partial class ClassifyResponseClassificationLabels
     {

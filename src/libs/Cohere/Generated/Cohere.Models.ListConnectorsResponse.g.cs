@@ -16,8 +16,7 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<global::Cohere.Connector> Connectors { get; set; }
 
         /// <summary>
-        /// Total number of connectors.<br/>
-        /// Included only in responses
+        /// Total number of connectors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         public double? TotalCount { get; set; }
@@ -33,8 +32,7 @@ namespace Cohere
         /// </summary>
         /// <param name="connectors"></param>
         /// <param name="totalCount">
-        /// Total number of connectors.<br/>
-        /// Included only in responses
+        /// Total number of connectors.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
