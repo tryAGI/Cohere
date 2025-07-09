@@ -40,7 +40,7 @@ namespace Cohere
         /// Included only in requests
         /// </param>
         /// <param name="preset">
-        /// The ID of a custom playground preset. You can create presets in the [playground](https://dashboard.cohere.com/playground/classify?model=large). If you use a preset, all other parameters become optional, and any included parameters will override the preset's parameters.<br/>
+        /// The ID of a custom playground preset. You can create presets in the [playground](https://dashboard.cohere.com/playground). If you use a preset, all other parameters become optional, and any included parameters will override the preset's parameters.<br/>
         /// Included only in requests<br/>
         /// Example: my-preset-a58sbd
         /// </param>
