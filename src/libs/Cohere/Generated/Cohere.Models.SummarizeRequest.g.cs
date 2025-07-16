@@ -43,7 +43,7 @@ namespace Cohere
         public global::Cohere.SummarizeRequestLength? Length { get; set; }
 
         /// <summary>
-        /// The identifier of the model to generate the summary with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental). Smaller, "light" models are faster, while larger models will perform better.<br/>
+        /// The identifier of the model to generate the summary with.<br/>
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -93,7 +93,7 @@ namespace Cohere
         /// Included only in requests
         /// </param>
         /// <param name="model">
-        /// The identifier of the model to generate the summary with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental). Smaller, "light" models are faster, while larger models will perform better.<br/>
+        /// The identifier of the model to generate the summary with.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="temperature">
