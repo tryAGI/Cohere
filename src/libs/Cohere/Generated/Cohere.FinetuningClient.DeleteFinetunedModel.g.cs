@@ -24,7 +24,9 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Deletes a fine-tuned model.
+        /// Deletes a fine-tuned model.<br/>
+        /// Deletes a fine-tuned model. The model will be removed from the system and will no longer be available for use.<br/>
+        /// This operation is irreversible.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>

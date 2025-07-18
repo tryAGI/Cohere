@@ -24,7 +24,8 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Trains and deploys a fine-tuned model.
+        /// Trains and deploys a fine-tuned model.<br/>
+        /// Creates a new fine-tuned model. The model will be trained on the dataset specified in the request body. The training process may take some time, and the model will be available once the training is complete.
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
@@ -400,7 +401,8 @@ namespace Cohere
         }
 
         /// <summary>
-        /// Trains and deploys a fine-tuned model.
+        /// Trains and deploys a fine-tuned model.<br/>
+        /// Creates a new fine-tuned model. The model will be trained on the dataset specified in the request body. The training process may take some time, and the model will be available once the training is complete.
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="name">

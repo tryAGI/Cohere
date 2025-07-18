@@ -24,7 +24,8 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Returns a fine-tuned model by ID.
+        /// Returns a fine-tuned model by ID.<br/>
+        /// Retrieve a fine-tuned model by its ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>

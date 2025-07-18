@@ -5,7 +5,8 @@ namespace Cohere
     public partial interface IFinetuningClient
     {
         /// <summary>
-        /// Lists fine-tuned models.
+        /// Lists fine-tuned models.<br/>
+        /// Returns a list of fine-tuned models that the user has access to.
         /// </summary>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>

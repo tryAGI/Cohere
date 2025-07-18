@@ -5,7 +5,10 @@ namespace Cohere
     public partial interface IFinetuningClient
     {
         /// <summary>
-        /// Retrieves the chronology of statuses the fine-tuned model has been through.
+        /// Retrieves the chronology of statuses the fine-tuned model has been through.<br/>
+        /// Returns a list of events that occurred during the life-cycle of the fine-tuned model.<br/>
+        /// The events are ordered by creation time, with the most recent event first.<br/>
+        /// The list can be paginated using `page_size` and `page_token` parameters.
         /// </summary>
         /// <param name="finetunedModelId"></param>
         /// <param name="pageSize"></param>

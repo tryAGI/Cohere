@@ -5,7 +5,8 @@ namespace Cohere
     public partial interface IFinetuningClient
     {
         /// <summary>
-        /// Updates a fine-tuned model.
+        /// Updates a fine-tuned model.<br/>
+        /// Updates the fine-tuned model with the given ID. The model will be updated with the new settings and name provided in the request body.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>
@@ -19,7 +20,8 @@ namespace Cohere
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates a fine-tuned model.
+        /// Updates a fine-tuned model.<br/>
+        /// Updates the fine-tuned model with the given ID. The model will be updated with the new settings and name provided in the request body.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>
