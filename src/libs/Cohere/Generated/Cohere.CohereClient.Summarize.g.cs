@@ -653,7 +653,7 @@ namespace Cohere
         /// Included only in requests
         /// </param>
         /// <param name="model">
-        /// The identifier of the model to generate the summary with.<br/>
+        /// The identifier of the model to generate the summary with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental). Smaller, "light" models are faster, while larger models will perform better.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="temperature">
