@@ -28,7 +28,10 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Retrieves metrics measured during the training of a fine-tuned model.
+        /// Retrieves metrics measured during the training of a fine-tuned model.<br/>
+        /// Returns a list of metrics measured during the training of a fine-tuned model.<br/>
+        /// The metrics are ordered by step number, with the most recent step first.<br/>
+        /// The list can be paginated using `page_size` and `page_token` parameters.
         /// </summary>
         /// <param name="finetunedModelId"></param>
         /// <param name="pageSize"></param>

@@ -12,6 +12,10 @@ namespace Cohere
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Cohere
             return value switch
             {
                 AssistantMessageResponseContentItemDiscriminatorType.Text => "text",
+                AssistantMessageResponseContentItemDiscriminatorType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Cohere
             return value switch
             {
                 "text" => AssistantMessageResponseContentItemDiscriminatorType.Text,
+                "thinking" => AssistantMessageResponseContentItemDiscriminatorType.Thinking,
                 _ => null,
             };
         }

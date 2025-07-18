@@ -12,6 +12,10 @@ namespace Cohere
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Cohere
             return value switch
             {
                 ChatContentStartEventVariant2DeltaMessageContentType.Text => "text",
+                ChatContentStartEventVariant2DeltaMessageContentType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Cohere
             return value switch
             {
                 "text" => ChatContentStartEventVariant2DeltaMessageContentType.Text,
+                "thinking" => ChatContentStartEventVariant2DeltaMessageContentType.Thinking,
                 _ => null,
             };
         }

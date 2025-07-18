@@ -5684,6 +5684,7 @@ paths:
       tags:
         - /finetuning
       summary: Lists fine-tuned models.
+      description: Returns a list of fine-tuned models that the user has access to.
       operationId: ListFinetunedModels
       parameters:
         - name: page_size
@@ -5813,6 +5814,7 @@ paths:
       tags:
         - /finetuning
       summary: Trains and deploys a fine-tuned model.
+      description: 'Creates a new fine-tuned model. The model will be trained on the dataset specified in the request body. The training process may take some time, and the model will be available once the training is complete.'
       operationId: CreateFinetunedModel
       parameters:
         - $ref: '#/components/parameters/RequestSource'
@@ -5901,6 +5903,7 @@ paths:
       tags:
         - /finetuning
       summary: Retrieves the chronology of statuses the fine-tuned model has been through.
+      description: "Returns a list of events that occurred during the life-cycle of the fine-tuned model.\nThe events are ordered by creation time, with the most recent event first.\nThe list can be paginated using `page_size` and `page_token` parameters."
       operationId: ListEvents
       parameters:
         - name: finetuned_model_id
@@ -6013,6 +6016,7 @@ paths:
       tags:
         - /finetuning
       summary: Retrieves metrics measured during the training of a fine-tuned model.
+      description: "Returns a list of metrics measured during the training of a fine-tuned model.\nThe metrics are ordered by step number, with the most recent step first.\nThe list can be paginated using `page_size` and `page_token` parameters."
       operationId: ListTrainingStepMetrics
       parameters:
         - name: finetuned_model_id
@@ -6123,6 +6127,7 @@ paths:
       tags:
         - /finetuning
       summary: Deletes a fine-tuned model.
+      description: "Deletes a fine-tuned model. The model will be removed from the system and will no longer be available for use.\nThis operation is irreversible."
       operationId: DeleteFinetunedModel
       parameters:
         - name: id
@@ -6203,6 +6208,7 @@ paths:
       tags:
         - /finetuning
       summary: Returns a fine-tuned model by ID.
+      description: Retrieve a fine-tuned model by its ID.
       operationId: GetFinetunedModel
       parameters:
         - name: id
@@ -6307,6 +6313,7 @@ paths:
       tags:
         - /finetuning
       summary: Updates a fine-tuned model.
+      description: Updates the fine-tuned model with the given ID. The model will be updated with the new settings and name provided in the request body.
       operationId: UpdateFinetunedModel
       parameters:
         - name: id
@@ -12357,6 +12364,7 @@ components:
               propertyName: type
               mapping:
                 text: '#/components/schemas/ChatTextContent'
+                thinking: '#/components/schemas/ChatThinkingContent'
         role:
           enum:
             - assistant
@@ -12589,6 +12597,7 @@ components:
                         type:
                           enum:
                             - text
+                            - thinking
                           type: string
                       x-fern-type-name: ChatContentStartEventDeltaMessageContent
                   x-fern-type-name: ChatContentStartEventDeltaMessage
