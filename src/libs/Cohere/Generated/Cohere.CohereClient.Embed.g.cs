@@ -24,7 +24,7 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Embed V1 API<br/>
+        /// Embed API (v1)<br/>
         /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
         /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
@@ -625,7 +625,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// Embed V1 API<br/>
+        /// Embed API (v1)<br/>
         /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
         /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).

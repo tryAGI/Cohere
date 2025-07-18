@@ -26,7 +26,7 @@ namespace Cohere
             ref string content);
 
         /// <summary>
-        /// Chat V1 API<br/>
+        /// Chat API (v1)<br/>
         /// Generates a text response to a user message.<br/>
         /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
@@ -634,7 +634,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// Chat V1 API<br/>
+        /// Chat API (v1)<br/>
         /// Generates a text response to a user message.<br/>
         /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>

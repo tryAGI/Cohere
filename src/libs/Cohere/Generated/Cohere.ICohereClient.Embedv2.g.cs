@@ -5,7 +5,7 @@ namespace Cohere
     public partial interface ICohereClient
     {
         /// <summary>
-        /// Embed V2 API<br/>
+        /// Embed API (v2)<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
         /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
@@ -20,7 +20,7 @@ namespace Cohere
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Embed V2 API<br/>
+        /// Embed API (v2)<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
         /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).

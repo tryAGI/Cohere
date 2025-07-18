@@ -41,7 +41,8 @@ namespace Cohere
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// The identifier of the model to generate with.<br/>
+        /// The identifier of the model to generate with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental).<br/>
+        /// Smaller, "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -184,7 +185,8 @@ namespace Cohere
         /// Included only in requests
         /// </param>
         /// <param name="model">
-        /// The identifier of the model to generate with.<br/>
+        /// The identifier of the model to generate with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental).<br/>
+        /// Smaller, "light" models are faster, while larger models will perform better. [Custom models](https://docs.cohere.com/docs/training-custom-models) can also be supplied with their full ID.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="numGenerations">
