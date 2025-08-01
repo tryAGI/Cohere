@@ -9,6 +9,12 @@ namespace Cohere
     public sealed partial class Citation
     {
         /// <summary>
+        /// Index of the content block in which this citation appears.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        public int? ContentIndex { get; set; }
+
+        /// <summary>
         /// End index of the cited snippet in the original source text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
@@ -48,6 +54,9 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="Citation" /> class.
         /// </summary>
+        /// <param name="contentIndex">
+        /// Index of the content block in which this citation appears.
+        /// </param>
         /// <param name="end">
         /// End index of the cited snippet in the original source text.
         /// </param>
@@ -65,12 +74,14 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Citation(
+            int? contentIndex,
             int? end,
             global::System.Collections.Generic.IList<global::Cohere.Source>? sources,
             int? start,
             string? text,
             global::Cohere.CitationType? type)
         {
+            this.ContentIndex = contentIndex;
             this.End = end;
             this.Sources = sources;
             this.Start = start;

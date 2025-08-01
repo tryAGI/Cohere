@@ -15,6 +15,10 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        THINKINGCONTENT,
+        /// <summary>
+        /// 
+        /// </summary>
         PLAN,
     }
 
@@ -31,6 +35,7 @@ namespace Cohere
             return value switch
             {
                 CitationType.TEXTCONTENT => "TEXT_CONTENT",
+                CitationType.THINKINGCONTENT => "THINKING_CONTENT",
                 CitationType.PLAN => "PLAN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Cohere
             return value switch
             {
                 "TEXT_CONTENT" => CitationType.TEXTCONTENT,
+                "THINKING_CONTENT" => CitationType.THINKINGCONTENT,
                 "PLAN" => CitationType.PLAN,
                 _ => null,
             };
