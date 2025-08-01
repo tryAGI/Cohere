@@ -13174,6 +13174,9 @@ components:
     Citation:
       type: object
       properties:
+        content_index:
+          type: integer
+          description: Index of the content block in which this citation appears.
         end:
           type: integer
           description: End index of the cited snippet in the original source text.
@@ -13236,6 +13239,7 @@ components:
     CitationType:
       enum:
         - TEXT_CONTENT
+        - THINKING_CONTENT
         - PLAN
       type: string
       description: "The type of citation which indicates what part of the response the citation is for.\n"
