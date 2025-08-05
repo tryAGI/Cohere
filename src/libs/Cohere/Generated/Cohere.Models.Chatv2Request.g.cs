@@ -81,6 +81,14 @@ namespace Cohere
         public float? PresencePenalty { get; set; }
 
         /// <summary>
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("raw_prompting")]
+        public bool? RawPrompting { get; set; }
+
+        /// <summary>
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
@@ -213,6 +221,11 @@ namespace Cohere
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
+        /// <param name="rawPrompting">
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </param>
         /// <param name="reasoningEffort">
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
         /// </param>
@@ -279,6 +292,7 @@ namespace Cohere
             int? maxTokens,
             float? p,
             float? presencePenalty,
+            bool? rawPrompting,
             global::Cohere.ReasoningEffort? reasoningEffort,
             global::Cohere.ResponseFormatV2? responseFormat,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode,
@@ -300,6 +314,7 @@ namespace Cohere
             this.MaxTokens = maxTokens;
             this.P = p;
             this.PresencePenalty = presencePenalty;
+            this.RawPrompting = rawPrompting;
             this.ReasoningEffort = reasoningEffort;
             this.ResponseFormat = responseFormat;
             this.SafetyMode = safetyMode;
