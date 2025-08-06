@@ -62,11 +62,6 @@ namespace Cohere
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
-        /// <param name="rawPrompting">
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="reasoningEffort">
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
         /// </param>
@@ -133,7 +128,6 @@ namespace Cohere
             int? maxTokens = default,
             float? p = default,
             float? presencePenalty = default,
-            bool? rawPrompting = default,
             global::Cohere.ReasoningEffort? reasoningEffort = default,
             global::Cohere.ResponseFormatV2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,

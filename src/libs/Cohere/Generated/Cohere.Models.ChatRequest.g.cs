@@ -160,14 +160,6 @@ namespace Cohere
         public global::Cohere.ChatRequestPromptTruncation? PromptTruncation { get; set; }
 
         /// <summary>
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("raw_prompting")]
-        public bool? RawPrompting { get; set; }
-
-        /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ "type": "json_object" }`.<br/>
         /// A [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.<br/>
@@ -377,11 +369,6 @@ namespace Cohere
         ///  - AUTO: Cohere Platform Only<br/>
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
-        /// <param name="rawPrompting">
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ "type": "json_object" }`.<br/>
@@ -474,7 +461,6 @@ namespace Cohere
             string? preamble,
             double? presencePenalty,
             global::Cohere.ChatRequestPromptTruncation? promptTruncation,
-            bool? rawPrompting,
             global::Cohere.ResponseFormat? responseFormat,
             global::Cohere.ChatRequestSafetyMode? safetyMode,
             bool? searchQueriesOnly,
@@ -501,7 +487,6 @@ namespace Cohere
             this.Preamble = preamble;
             this.PresencePenalty = presencePenalty;
             this.PromptTruncation = promptTruncation;
-            this.RawPrompting = rawPrompting;
             this.ResponseFormat = responseFormat;
             this.SafetyMode = safetyMode;
             this.SearchQueriesOnly = searchQueriesOnly;
