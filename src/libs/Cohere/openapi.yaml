@@ -148,11 +148,6 @@ paths:
                   description: "Defaults to `AUTO` when `connectors` are specified and `OFF` in all other cases.\n\nDictates how the prompt will be constructed.\n\nWith `prompt_truncation` set to \"AUTO\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.\n\nWith `prompt_truncation` set to \"AUTO_PRESERVE_ORDER\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.\n\nWith `prompt_truncation` set to \"OFF\", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.\n\nCompatible Deployments:\n - AUTO: Cohere Platform Only\n - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                   x-fern-audiences:
                     - public
-                raw_prompting:
-                  type: boolean
-                  description: "When enabled, the user's prompt will be sent to the model without\nany pre-processing.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
-                  x-fern-audiences:
-                    - sdk-only
                 response_format:
                   $ref: '#/components/schemas/ResponseFormat'
                 safety_mode:
@@ -7445,11 +7440,6 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
-                raw_prompting:
-                  type: boolean
-                  description: "When enabled, the user's prompt will be sent to the model without\nany pre-processing.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
-                  x-fern-audiences:
-                    - sdk-only
                 reasoning_effort:
                   $ref: '#/components/schemas/ReasoningEffort'
                 response_format:
