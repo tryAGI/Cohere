@@ -5902,7 +5902,7 @@ paths:
     get:
       tags:
         - /finetuning
-      summary: Retrieves the chronology of statuses the fine-tuned model has been through.
+      summary: Fetch history of statuses for a fine-tuned model.
       description: "Returns a list of events that occurred during the life-cycle of the fine-tuned model.\nThe events are ordered by creation time, with the most recent event first.\nThe list can be paginated using `page_size` and `page_token` parameters."
       operationId: ListEvents
       parameters:
@@ -6015,7 +6015,7 @@ paths:
     get:
       tags:
         - /finetuning
-      summary: Retrieves metrics measured during the training of a fine-tuned model.
+      summary: Retrieve training metrics for fine-tuned models.
       description: "Returns a list of metrics measured during the training of a fine-tuned model.\nThe metrics are ordered by step number, with the most recent step first.\nThe list can be paginated using `page_size` and `page_token` parameters."
       operationId: ListTrainingStepMetrics
       parameters:
