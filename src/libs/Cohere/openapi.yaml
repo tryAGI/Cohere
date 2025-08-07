@@ -7440,8 +7440,6 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
-                reasoning_effort:
-                  $ref: '#/components/schemas/ReasoningEffort'
                 response_format:
                   $ref: '#/components/schemas/ResponseFormatV2'
                 safety_mode:
@@ -17317,14 +17315,6 @@ components:
             - public
       writeOnly: true
       x-fern-type-name: ParseInfo
-    ReasoningEffort:
-      enum:
-        - low
-        - medium
-        - high
-      type: string
-      description: "The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.\n"
-      x-fern-type-name: ReasoningEffort
     RerankDocument:
       required:
         - text
