@@ -148,6 +148,11 @@ paths:
                   description: "Defaults to `AUTO` when `connectors` are specified and `OFF` in all other cases.\n\nDictates how the prompt will be constructed.\n\nWith `prompt_truncation` set to \"AUTO\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.\n\nWith `prompt_truncation` set to \"AUTO_PRESERVE_ORDER\", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.\n\nWith `prompt_truncation` set to \"OFF\", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.\n\nCompatible Deployments:\n - AUTO: Cohere Platform Only\n - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
                   x-fern-audiences:
                     - public
+                raw_prompting:
+                  type: boolean
+                  description: "When enabled, the user's prompt will be sent to the model without\nany pre-processing.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  x-fern-audiences:
+                    - sdk-only
                 response_format:
                   $ref: '#/components/schemas/ResponseFormat'
                 safety_mode:
@@ -7415,7 +7420,7 @@ paths:
                     - public
                 max_tokens:
                   type: integer
-                  description: "The maximum number of tokens the model will generate as part of the response.\n\n**Note**: Setting a low value may result in incomplete generations.\n"
+                  description: "The maximum number of output tokens the model will generate in the response. If not set, `max_tokens` defaults to the model's maximum output token limit. You can find the maximum output token limits for each model in the [model documentation](https://docs.cohere.com/docs/models).\n\n**Note**: Setting a low value may result in incomplete generations. In such cases, the `finish_reason` field in the response will be set to `\"MAX_TOKENS\"`.\n\n**Note**: If `max_tokens` is set higher than the model's maximum output token limit, the generation will be capped at that model-specific maximum limit.\n"
                   x-fern-audiences:
                     - public
                 messages:
@@ -7440,6 +7445,11 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
+                raw_prompting:
+                  type: boolean
+                  description: "When enabled, the user's prompt will be sent to the model without\nany pre-processing.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  x-fern-audiences:
+                    - sdk-only
                 response_format:
                   $ref: '#/components/schemas/ResponseFormatV2'
                 safety_mode:
@@ -7483,7 +7493,8 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
-                thinking: 
+                thinking:
+                  $ref: '#/components/schemas/Thinking'
                 tool_choice:
                   enum:
                     - REQUIRED
@@ -17613,6 +17624,27 @@ components:
           type: string
       description: A message from the system.
       x-fern-type-name: SystemMessageV2
+    Thinking:
+      required:
+        - type
+      type: object
+      properties:
+        token_budget:
+          minimum: 1
+          type: integer
+          description: "The maximum number of tokens the model can use for thinking, which must be set to a positive integer.\nThe model will stop thinking if it reaches the thinking token budget and will proceed with the response.\n"
+          x-fern-audiences:
+            - public
+        type:
+          enum:
+            - enabled
+            - disabled
+          type: string
+          x-fern-audiences:
+            - public
+      description: "Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.\nWhen thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.\nWhen thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.\n"
+      x-fern-audiences:
+        - public
     TokenLikelihood:
       type: object
       properties:

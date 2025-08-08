@@ -123,6 +123,8 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter),
             typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter),
+            typeof(global::Cohere.JsonConverters.ThinkingTypeJsonConverter),
+            typeof(global::Cohere.JsonConverters.ThinkingTypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.ToolV2TypeJsonConverter),
             typeof(global::Cohere.JsonConverters.ToolV2TypeNullableJsonConverter),
             typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter),

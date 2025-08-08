@@ -648,8 +648,9 @@ namespace Cohere
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
         /// <param name="maxTokens">
-        /// The maximum number of tokens the model will generate as part of the response.<br/>
-        /// **Note**: Setting a low value may result in incomplete generations.
+        /// The maximum number of output tokens the model will generate in the response. If not set, `max_tokens` defaults to the model's maximum output token limit. You can find the maximum output token limits for each model in the [model documentation](https://docs.cohere.com/docs/models).<br/>
+        /// **Note**: Setting a low value may result in incomplete generations. In such cases, the `finish_reason` field in the response will be set to `"MAX_TOKENS"`.<br/>
+        /// **Note**: If `max_tokens` is set higher than the model's maximum output token limit, the generation will be capped at that model-specific maximum limit.
         /// </param>
         /// <param name="messages">
         /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
@@ -666,6 +667,11 @@ namespace Cohere
         /// <param name="presencePenalty">
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
+        /// </param>
+        /// <param name="rawPrompting">
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
@@ -705,6 +711,11 @@ namespace Cohere
         /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations, and higher temperatures mean more random generations.<br/>
         /// Randomness can be further maximized by increasing the  value of the `p` parameter.
         /// </param>
+        /// <param name="thinking">
+        /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
+        /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
+        /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+        /// </param>
         /// <param name="toolChoice">
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
         /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
@@ -730,6 +741,7 @@ namespace Cohere
             int? maxTokens = default,
             float? p = default,
             float? presencePenalty = default,
+            bool? rawPrompting = default,
             global::Cohere.ResponseFormatV2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,
             int? seed = default,
@@ -737,6 +749,7 @@ namespace Cohere
             bool? stream = default,
             bool? strictTools = default,
             float? temperature = default,
+            global::Cohere.Thinking? thinking = default,
             global::Cohere.Chatv2RequestToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -753,6 +766,7 @@ namespace Cohere
                 Model = model,
                 P = p,
                 PresencePenalty = presencePenalty,
+                RawPrompting = rawPrompting,
                 ResponseFormat = responseFormat,
                 SafetyMode = safetyMode,
                 Seed = seed,
@@ -760,6 +774,7 @@ namespace Cohere
                 Stream = stream,
                 StrictTools = strictTools,
                 Temperature = temperature,
+                Thinking = thinking,
                 ToolChoice = toolChoice,
                 Tools = tools,
             };
