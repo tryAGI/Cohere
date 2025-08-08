@@ -7483,6 +7483,7 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
+                thinking: 
                 tool_choice:
                   enum:
                     - REQUIRED
