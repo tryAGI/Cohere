@@ -44,8 +44,9 @@ namespace Cohere
         public bool? Logprobs { get; set; }
 
         /// <summary>
-        /// The maximum number of tokens the model will generate as part of the response.<br/>
-        /// **Note**: Setting a low value may result in incomplete generations.
+        /// The maximum number of output tokens the model will generate in the response. If not set, `max_tokens` defaults to the model's maximum output token limit. You can find the maximum output token limits for each model in the [model documentation](https://docs.cohere.com/docs/models).<br/>
+        /// **Note**: Setting a low value may result in incomplete generations. In such cases, the `finish_reason` field in the response will be set to `"MAX_TOKENS"`.<br/>
+        /// **Note**: If `max_tokens` is set higher than the model's maximum output token limit, the generation will be capped at that model-specific maximum limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         public int? MaxTokens { get; set; }
@@ -79,6 +80,14 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
         public float? PresencePenalty { get; set; }
+
+        /// <summary>
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("raw_prompting")]
+        public bool? RawPrompting { get; set; }
 
         /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
@@ -142,6 +151,14 @@ namespace Cohere
         public float? Temperature { get; set; }
 
         /// <summary>
+        /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
+        /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
+        /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        public global::Cohere.Thinking? Thinking { get; set; }
+
+        /// <summary>
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
         /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
         /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
@@ -187,8 +204,9 @@ namespace Cohere
         /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
         /// <param name="maxTokens">
-        /// The maximum number of tokens the model will generate as part of the response.<br/>
-        /// **Note**: Setting a low value may result in incomplete generations.
+        /// The maximum number of output tokens the model will generate in the response. If not set, `max_tokens` defaults to the model's maximum output token limit. You can find the maximum output token limits for each model in the [model documentation](https://docs.cohere.com/docs/models).<br/>
+        /// **Note**: Setting a low value may result in incomplete generations. In such cases, the `finish_reason` field in the response will be set to `"MAX_TOKENS"`.<br/>
+        /// **Note**: If `max_tokens` is set higher than the model's maximum output token limit, the generation will be capped at that model-specific maximum limit.
         /// </param>
         /// <param name="messages">
         /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
@@ -205,6 +223,11 @@ namespace Cohere
         /// <param name="presencePenalty">
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
+        /// </param>
+        /// <param name="rawPrompting">
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
@@ -244,6 +267,11 @@ namespace Cohere
         /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations, and higher temperatures mean more random generations.<br/>
         /// Randomness can be further maximized by increasing the  value of the `p` parameter.
         /// </param>
+        /// <param name="thinking">
+        /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
+        /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
+        /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+        /// </param>
         /// <param name="toolChoice">
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
         /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
@@ -269,6 +297,7 @@ namespace Cohere
             int? maxTokens,
             float? p,
             float? presencePenalty,
+            bool? rawPrompting,
             global::Cohere.ResponseFormatV2? responseFormat,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode,
             int? seed,
@@ -276,6 +305,7 @@ namespace Cohere
             bool? stream,
             bool? strictTools,
             float? temperature,
+            global::Cohere.Thinking? thinking,
             global::Cohere.Chatv2RequestToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools)
         {
@@ -289,6 +319,7 @@ namespace Cohere
             this.MaxTokens = maxTokens;
             this.P = p;
             this.PresencePenalty = presencePenalty;
+            this.RawPrompting = rawPrompting;
             this.ResponseFormat = responseFormat;
             this.SafetyMode = safetyMode;
             this.Seed = seed;
@@ -296,6 +327,7 @@ namespace Cohere
             this.Stream = stream;
             this.StrictTools = strictTools;
             this.Temperature = temperature;
+            this.Thinking = thinking;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
         }

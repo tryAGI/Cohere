@@ -740,6 +740,11 @@ namespace Cohere
         ///  - AUTO: Cohere Platform Only<br/>
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
+        /// <param name="rawPrompting">
+        /// When enabled, the user's prompt will be sent to the model without<br/>
+        /// any pre-processing.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ "type": "json_object" }`.<br/>
@@ -834,6 +839,7 @@ namespace Cohere
             string? model = default,
             string? preamble = default,
             global::Cohere.ChatRequestPromptTruncation? promptTruncation = default,
+            bool? rawPrompting = default,
             global::Cohere.ResponseFormat? responseFormat = default,
             global::Cohere.ChatRequestSafetyMode? safetyMode = default,
             bool? searchQueriesOnly = default,
@@ -862,6 +868,7 @@ namespace Cohere
                 Preamble = preamble,
                 PresencePenalty = presencePenalty,
                 PromptTruncation = promptTruncation,
+                RawPrompting = rawPrompting,
                 ResponseFormat = responseFormat,
                 SafetyMode = safetyMode,
                 SearchQueriesOnly = searchQueriesOnly,
