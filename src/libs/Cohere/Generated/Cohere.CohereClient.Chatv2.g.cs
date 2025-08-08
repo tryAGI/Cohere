@@ -720,8 +720,7 @@ namespace Cohere
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
         /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
         /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
-        /// **Note**: This parameter is only compatible with models [Command-r7b](https://docs.cohere.com/v2/docs/command-r7b) and newer.<br/>
-        /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
+        /// **Note**: This parameter is only compatible with models [Command-r7b](https://docs.cohere.com/v2/docs/command-r7b) and newer.
         /// </param>
         /// <param name="tools">
         /// A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.<br/>
