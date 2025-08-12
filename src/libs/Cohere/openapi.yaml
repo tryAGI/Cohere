@@ -12425,6 +12425,7 @@ components:
                   propertyName: type
                   mapping:
                     text: '#/components/schemas/ChatTextContent'
+                    thinking: '#/components/schemas/ChatThinkingContent'
         role:
           enum:
             - assistant
@@ -12583,6 +12584,8 @@ components:
                       type: object
                       properties:
                         text:
+                          type: string
+                        thinking:
                           type: string
                       x-fern-type-name: ChatContentDeltaEventDeltaMessageContent
                   x-fern-type-name: ChatContentDeltaEventDeltaMessage
