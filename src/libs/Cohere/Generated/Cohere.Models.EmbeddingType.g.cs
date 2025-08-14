@@ -28,6 +28,10 @@ namespace Cohere
         /// 
         /// </summary>
         Ubinary,
+        /// <summary>
+        /// 
+        /// </summary>
+        Base64,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Cohere
                 EmbeddingType.Uint8 => "uint8",
                 EmbeddingType.Binary => "binary",
                 EmbeddingType.Ubinary => "ubinary",
+                EmbeddingType.Base64 => "base64",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Cohere
                 "uint8" => EmbeddingType.Uint8,
                 "binary" => EmbeddingType.Binary,
                 "ubinary" => EmbeddingType.Ubinary,
+                "base64" => EmbeddingType.Base64,
                 _ => null,
             };
         }
