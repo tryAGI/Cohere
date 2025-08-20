@@ -4,46 +4,40 @@
 namespace Cohere
 {
     /// <summary>
-    /// Reasoning is enabled by default for models that support it, but can be turned off by setting `"type": "disabled"`.
+    /// 
     /// </summary>
-    public enum ThinkingType
+    public enum ChatThinkingContentType
     {
         /// <summary>
-        /// "disabled"`.
+        /// 
         /// </summary>
-        Enabled,
-        /// <summary>
-        /// "disabled"`.
-        /// </summary>
-        Disabled,
+        Thinking,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ThinkingTypeExtensions
+    public static class ChatThinkingContentTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ThinkingType value)
+        public static string ToValueString(this ChatThinkingContentType value)
         {
             return value switch
             {
-                ThinkingType.Enabled => "enabled",
-                ThinkingType.Disabled => "disabled",
+                ChatThinkingContentType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ThinkingType? ToEnum(string value)
+        public static ChatThinkingContentType? ToEnum(string value)
         {
             return value switch
             {
-                "enabled" => ThinkingType.Enabled,
-                "disabled" => ThinkingType.Disabled,
+                "thinking" => ChatThinkingContentType.Thinking,
                 _ => null,
             };
         }

@@ -4,9 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
-    /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
-    /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+    /// Configuration for [reasoning features](https://docs.cohere.com/docs/reasoning).
     /// </summary>
     public sealed partial class Thinking
     {
@@ -18,7 +16,7 @@ namespace Cohere
         public int? TokenBudget { get; set; }
 
         /// <summary>
-        /// 
+        /// Reasoning is enabled by default for models that support it, but can be turned off by setting `"type": "disabled"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ThinkingTypeJsonConverter))]
@@ -38,7 +36,9 @@ namespace Cohere
         /// The maximum number of tokens the model can use for thinking, which must be set to a positive integer.<br/>
         /// The model will stop thinking if it reaches the thinking token budget and will proceed with the response.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Reasoning is enabled by default for models that support it, but can be turned off by setting `"type": "disabled"`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
