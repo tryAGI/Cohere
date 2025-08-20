@@ -12386,6 +12386,7 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/ChatTextContent'
+              - $ref: '#/components/schemas/ChatThinkingContent'
             discriminator:
               propertyName: type
               mapping:
@@ -12421,6 +12422,7 @@ components:
               items:
                 oneOf:
                   - $ref: '#/components/schemas/ChatTextContent'
+                  - $ref: '#/components/schemas/ChatThinkingContent'
                 discriminator:
                   propertyName: type
                   mapping:
@@ -12622,6 +12624,8 @@ components:
                       type: object
                       properties:
                         text:
+                          type: string
+                        thinking:
                           type: string
                         type:
                           enum:
@@ -13050,6 +13054,19 @@ components:
       x-fern-audiences:
         - public
       x-fern-type-name: ChatTextResponseFormatV2
+    ChatThinkingContent:
+      required:
+        - type
+        - thinking
+      type: object
+      properties:
+        thinking:
+          type: string
+        type:
+          enum:
+            - thinking
+          type: string
+      description: 'Thinking content of the message. This will be present when `thinking` is enabled, and will contain the models internal reasoning.'
     ChatToolCallDeltaEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEventType'
@@ -17653,9 +17670,10 @@ components:
             - enabled
             - disabled
           type: string
+          description: "Reasoning is enabled by default for models that support it, but can be turned off by setting `\"type\": \"disabled\"`.\n"
           x-fern-audiences:
             - public
-      description: "Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.\nWhen thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.\nWhen thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.\n"
+      description: "Configuration for [reasoning features](https://docs.cohere.com/docs/reasoning).\n"
       x-fern-audiences:
         - public
     TokenLikelihood:

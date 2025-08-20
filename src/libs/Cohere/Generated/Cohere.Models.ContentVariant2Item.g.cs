@@ -50,22 +50,60 @@ namespace Cohere
         }
 
         /// <summary>
+        /// Thinking content of the message. This will be present when `thinking` is enabled, and will contain the models internal reasoning.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatThinkingContent? Thinking { get; init; }
+#else
+        public global::Cohere.ChatThinkingContent? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant2Item(global::Cohere.ChatThinkingContent value) => new ContentVariant2Item((global::Cohere.ChatThinkingContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatThinkingContent?(ContentVariant2Item @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item(global::Cohere.ChatThinkingContent? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(
             global::Cohere.AssistantMessageV2ContentVariant2ItemDiscriminatorType? type,
-            global::Cohere.ChatTextContent? text
+            global::Cohere.ChatTextContent? text,
+            global::Cohere.ChatThinkingContent? thinking
             )
         {
             Type = type;
 
             Text = text;
+            Thinking = thinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Thinking as object ??
             Text as object 
             ;
 
@@ -73,7 +111,8 @@ namespace Cohere
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() 
+            Text?.ToString() ??
+            Thinking?.ToString() 
             ;
 
         /// <summary>
@@ -81,7 +120,7 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsText && !IsThinking || !IsText && IsThinking;
         }
 
         /// <summary>
@@ -89,6 +128,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
+            global::System.Func<global::Cohere.ChatThinkingContent?, TResult>? thinking = null,
             bool validate = true)
         {
             if (validate)
@@ -100,6 +140,10 @@ namespace Cohere
             {
                 return text(Text!);
             }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
 
             return default(TResult);
         }
@@ -109,6 +153,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextContent?>? text = null,
+            global::System.Action<global::Cohere.ChatThinkingContent?>? thinking = null,
             bool validate = true)
         {
             if (validate)
@@ -119,6 +164,10 @@ namespace Cohere
             if (IsText)
             {
                 text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
             }
         }
 
@@ -131,6 +180,8 @@ namespace Cohere
             {
                 Text,
                 typeof(global::Cohere.ChatTextContent),
+                Thinking,
+                typeof(global::Cohere.ChatThinkingContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -147,7 +198,8 @@ namespace Cohere
         public bool Equals(ContentVariant2Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatThinkingContent?>.Default.Equals(Thinking, other.Thinking) 
                 ;
         }
 

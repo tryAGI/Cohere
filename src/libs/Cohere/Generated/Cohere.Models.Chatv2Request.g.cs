@@ -151,9 +151,7 @@ namespace Cohere
         public float? Temperature { get; set; }
 
         /// <summary>
-        /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
-        /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
-        /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+        /// Configuration for [reasoning features](https://docs.cohere.com/docs/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         public global::Cohere.Thinking? Thinking { get; set; }
@@ -267,9 +265,7 @@ namespace Cohere
         /// Randomness can be further maximized by increasing the  value of the `p` parameter.
         /// </param>
         /// <param name="thinking">
-        /// Thinking gives the model enhanced reasoning capabilities for complex tasks, while also providing transparency into its step-by-step thought process before it delivers its final answer.<br/>
-        /// When thinking is turned on, the model creates thinking content blocks where it outputs its internal reasoning. The model will incorporate insights from this reasoning before crafting a final response.<br/>
-        /// When thinking is used without tools, the API response will include both thinking and text content blocks. Meanwhile, when thinking is used alongside tools and the model makes tool calls, the API response will include the thinking content block and `tool_calls`.
+        /// Configuration for [reasoning features](https://docs.cohere.com/docs/reasoning).
         /// </param>
         /// <param name="toolChoice">
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
