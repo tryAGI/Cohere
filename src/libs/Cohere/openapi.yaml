@@ -7439,11 +7439,6 @@ paths:
                   format: float
                   x-fern-audiences:
                     - public
-                raw_prompting:
-                  type: boolean
-                  description: "When enabled, the user's prompt will be sent to the model without\nany pre-processing.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
-                  x-fern-audiences:
-                    - sdk-only
                 response_format:
                   $ref: '#/components/schemas/ResponseFormatV2'
                 safety_mode:
