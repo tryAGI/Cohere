@@ -82,14 +82,6 @@ namespace Cohere
         public float? PresencePenalty { get; set; }
 
         /// <summary>
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("raw_prompting")]
-        public bool? RawPrompting { get; set; }
-
-        /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects by setting `{ "type": "json_object" }`.<br/>
         /// A [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.<br/>
@@ -221,11 +213,6 @@ namespace Cohere
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
-        /// <param name="rawPrompting">
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects by setting `{ "type": "json_object" }`.<br/>
@@ -291,7 +278,6 @@ namespace Cohere
             int? maxTokens,
             float? p,
             float? presencePenalty,
-            bool? rawPrompting,
             global::Cohere.ResponseFormatV2? responseFormat,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode,
             int? seed,
@@ -313,7 +299,6 @@ namespace Cohere
             this.MaxTokens = maxTokens;
             this.P = p;
             this.PresencePenalty = presencePenalty;
-            this.RawPrompting = rawPrompting;
             this.ResponseFormat = responseFormat;
             this.SafetyMode = safetyMode;
             this.Seed = seed;

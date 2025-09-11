@@ -668,11 +668,6 @@ namespace Cohere
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
-        /// <param name="rawPrompting">
-        /// When enabled, the user's prompt will be sent to the model without<br/>
-        /// any pre-processing.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects by setting `{ "type": "json_object" }`.<br/>
@@ -738,7 +733,6 @@ namespace Cohere
             int? maxTokens = default,
             float? p = default,
             float? presencePenalty = default,
-            bool? rawPrompting = default,
             global::Cohere.ResponseFormatV2? responseFormat = default,
             global::Cohere.Chatv2RequestSafetyMode? safetyMode = default,
             int? seed = default,
@@ -763,7 +757,6 @@ namespace Cohere
                 Model = model,
                 P = p,
                 PresencePenalty = presencePenalty,
-                RawPrompting = rawPrompting,
                 ResponseFormat = responseFormat,
                 SafetyMode = safetyMode,
                 Seed = seed,
