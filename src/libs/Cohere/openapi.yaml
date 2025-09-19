@@ -63,6 +63,7 @@ paths:
                   items:
                     $ref: '#/components/schemas/ChatConnector'
                   description: "Accepts `{\"id\": \"web-search\"}`, and/or the `\"id\"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) one.\n\nWhen specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).\n\nCompatible Deployments: Cohere Platform\n"
+                  deprecated: true
                   x-fern-audiences:
                     - public
                 conversation_id:
@@ -167,6 +168,7 @@ paths:
                 search_queries_only:
                   type: boolean
                   description: "Defaults to `false`.\n\nWhen `true`, the response will only contain a list of generated search queries, but no search will take place, and no reply from the model to the user's `message` will be generated.\n\nCompatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments\n"
+                  deprecated: true
                   x-fern-audiences:
                     - public
                 seed:
@@ -1002,6 +1004,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1125,6 +1128,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1194,6 +1198,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1266,6 +1271,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1337,6 +1343,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1414,6 +1421,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -1493,6 +1501,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -6614,6 +6623,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -7168,6 +7178,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         '504':
           $ref: '#/components/responses/GatewayTimeout'
+      deprecated: true
       x-fern-audiences:
         - public
       x-fern-examples:
@@ -8761,16 +8772,16 @@ paths:
                   type: message-end
                 event: message-end
         - code-samples:
-            - code: "const { CohereClientV2 } = require('cohere-ai');\n\nconst cohere = new CohereClientV2({});\n\n(async () => {\n  const response = await cohere.chat({\n    model: 'command-a-vision-07-2025',\n    messages: [\n      {\n        role: 'user',\n        content: [\n          { type: 'text', text: 'Describe the logo!' },\n          {\n            type: 'image_url',\n            imageUrl: {\n              url: 'https://cohere.com/favicon-32x32.png',\n              detail: 'auto',\n            },\n          },\n        ],\n      },\n    ],\n  });\n  console.log(response.message.content[0].text);\n})();\n"
+            - code: "const { CohereClientV2 } = require('cohere-ai');\n\nconst cohere = new CohereClientV2({});\n\n(async () => {\n  const response = await cohere.chat({\n    model: 'command-a-vision-07-2025',\n    messages: [\n      {\n        role: 'user',\n        content: [\n          { type: 'text', text: 'Describe the logo!' },\n          {\n            type: 'image_url',\n            imageUrl: {\n              // Can be either a base64 data URI or a web URL.\n              url: 'https://cohere.com/favicon-32x32.png',\n              detail: 'auto',\n            },\n          },\n        ],\n      },\n    ],\n  });\n  console.log(response.message.content[0].text);\n})();\n"
               name: Images
               sdk: typescript
-            - code: "import cohere\n\nco = cohere.ClientV2()\n\nresponse = co.chat(\n    model=\"command-a-vision-07-2025\",\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\n                    \"type\": \"text\",\n                    \"text\": \"Describe the logo!\"\n                },\n                {\n                    \"type\": \"image_url\",\n                    \"image_url\": {\n                        \"url\": \"https://cohere.com/favicon-32x32.png\",\n                        \"detail\": \"auto\"\n                    }\n                }\n            ]\n            \n        }\n    ]\n)\n\nprint(response)"
+            - code: "import cohere\n\nco = cohere.ClientV2()\n\nresponse = co.chat(\n    model=\"command-a-vision-07-2025\",\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\n                    \"type\": \"text\",\n                    \"text\": \"Describe the logo!\"\n                },\n                {\n                    \"type\": \"image_url\",\n                    \"image_url\": {\n                        # Can be either a base64 data URI or a web URL.\n                        \"url\": \"https://cohere.com/favicon-32x32.png\",\n                        \"detail\": \"auto\"\n                    }\n                }\n            ]\n            \n        }\n    ]\n)\n\nprint(response)"
               name: Images
               sdk: python
-            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport java.util.List;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.ChatMessageV2;\nimport com.cohere.api.types.ChatResponse;\nimport com.cohere.api.types.Content;\nimport com.cohere.api.types.ImageContent;\nimport com.cohere.api.types.ImageUrl;\nimport com.cohere.api.types.TextContent;\nimport com.cohere.api.types.UserMessage;\nimport com.cohere.api.types.UserMessageContent;\n\npublic class Image {\n\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n        ChatResponse response\n                = cohere\n                        .v2()\n                        .chat(\n                                V2ChatRequest.builder()\n                                        .model(\"command-a-vision-07-2025\")\n                                        .messages(\n                                                List.of(\n                                                        ChatMessageV2.user(\n                                                                UserMessage.builder()\n                                                                        .content(\n                                                                                UserMessageContent.of(\n                                                                                        List.of(\n                                                                                                Content.text(\n                                                                                                        TextContent.builder()\n                                                                                                                .text(\"Describe the logo!\")\n                                                                                                                .build()),\n                                                                                                Content.imageUrl(\n                                                                                                        ImageContent.builder()\n                                                                                                                .imageUrl(\n                                                                                                                        ImageUrl.builder()\n                                                                                                                                .url(\n                                                                                                                                        \"https://cohere.com/favicon-32x32.png\")\n                                                                                                                                .build())\n                                                                                                                .build()))))\n                                                                        .build())))\n                                        .build());\n        System.out.println(response);\n    }\n}\n"
+            - code: "/* (C)2024 */\npackage chatv2post;\n\nimport java.util.List;\n\nimport com.cohere.api.Cohere;\nimport com.cohere.api.resources.v2.requests.V2ChatRequest;\nimport com.cohere.api.types.ChatMessageV2;\nimport com.cohere.api.types.ChatResponse;\nimport com.cohere.api.types.Content;\nimport com.cohere.api.types.ImageContent;\nimport com.cohere.api.types.ImageUrl;\nimport com.cohere.api.types.TextContent;\nimport com.cohere.api.types.UserMessage;\nimport com.cohere.api.types.UserMessageContent;\n\npublic class Image {\n\n    public static void main(String[] args) {\n        Cohere cohere = Cohere.builder().clientName(\"snippet\").build();\n\n        ChatResponse response\n                = cohere\n                        .v2()\n                        .chat(\n                                V2ChatRequest.builder()\n                                        .model(\"command-a-vision-07-2025\")\n                                        .messages(\n                                                List.of(\n                                                        ChatMessageV2.user(\n                                                                UserMessage.builder()\n                                                                        .content(\n                                                                                UserMessageContent.of(\n                                                                                        List.of(\n                                                                                                Content.text(\n                                                                                                        TextContent.builder()\n                                                                                                                .text(\"Describe the logo!\")\n                                                                                                                .build()),\n                                                                                                Content.imageUrl(\n                                                                                                        ImageContent.builder()\n                                                                                                                .imageUrl(\n                                                                                                                        ImageUrl.builder()\n                                                                                                                                // Can be either a base64 data URI or a web URL.\n                                                                                                                                .url(\n                                                                                                                                        \"https://cohere.com/favicon-32x32.png\")\n                                                                                                                                .build())\n                                                                                                                .build()))))\n                                                                        .build())))\n                                        .build());\n        System.out.println(response);\n    }\n}\n"
               name: Images
               sdk: java
-            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tContentList: []*cohere.Content{\n\t\t\t\t\t\t\t{Type: \"text\", Text: &cohere.ChatTextContent{Text: \"Describe the logo!\"}},\n\t\t\t\t\t\t\t{Type: \"image_url\", ImageUrl: &cohere.ImageContent{\n\t\t\t\t\t\t\t\tImageUrl: &cohere.ImageUrl{\n\t\t\t\t\t\t\t\t\tUrl:    \"https://cohere.com/favicon-32x32.png\",\n\t\t\t\t\t\t\t\t\tDetail: cohere.ImageUrlDetailAuto.Ptr(),\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t}},\n\t\t\t\t\t\t}}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
+            - code: "package main\n\nimport (\n\t\"context\"\n\t\"log\"\n\t\"os\"\n\n\tcohere \"github.com/cohere-ai/cohere-go/v2\"\n\tclient \"github.com/cohere-ai/cohere-go/v2/client\"\n)\n\nfunc main() {\n\tco := client.NewClient(client.WithToken(os.Getenv(\"CO_API_KEY\")))\n\n\tresp, err := co.V2.Chat(\n\t\tcontext.TODO(),\n\t\t&cohere.V2ChatRequest{\n\t\t\tModel: \"command-a-03-2025\",\n\t\t\tMessages: cohere.ChatMessages{\n\t\t\t\t{\n\t\t\t\t\tRole: \"user\",\n\t\t\t\t\tUser: &cohere.UserMessageV2{Content: &cohere.UserMessageV2Content{\n\t\t\t\t\t\tContentList: []*cohere.Content{\n\t\t\t\t\t\t\t{Type: \"text\", Text: &cohere.ChatTextContent{Text: \"Describe the logo!\"}},\n\t\t\t\t\t\t\t{Type: \"image_url\", ImageUrl: &cohere.ImageContent{\n\t\t\t\t\t\t\t\tImageUrl: &cohere.ImageUrl{\n\t\t\t\t\t\t\t\t\t// Can be either a base64 data URI or a web URL.\n\t\t\t\t\t\t\t\t\tUrl:    \"https://cohere.com/favicon-32x32.png\",\n\t\t\t\t\t\t\t\t\tDetail: cohere.ImageUrlDetailAuto.Ptr(),\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t}},\n\t\t\t\t\t\t}}},\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t)\n\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tlog.Printf(\"%+v\", resp)\n}\n"
               name: Images
               sdk: go
             - code: "curl --request POST \\\n  --url https://api.cohere.com/v2/chat \\\n  --header 'accept: application/json' \\\n  --header 'content-type: application/json' \\\n  --header \"Authorization: bearer $CO_API_KEY\" \\\n  --data '{\n    \"model\": \"command-a-vision-07-2025\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"Describe the logo!\"\n          },\n          {\n            \"type\": \"image_url\",\n            \"image_url\": {\n              \"url\": \"https://cohere.com/favicon-32x32.png\",\n              \"detail\": \"auto\"\n            }\n          }\n        ]\n      }\n    ]\n  }'\n"
