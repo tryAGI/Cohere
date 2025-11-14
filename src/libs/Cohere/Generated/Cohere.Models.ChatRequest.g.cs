@@ -32,6 +32,7 @@ namespace Cohere
         /// Compatible Deployments: Cohere Platform
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connectors")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Cohere.ChatConnector>? Connectors { get; set; }
 
         /// <summary>
@@ -196,6 +197,7 @@ namespace Cohere
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_queries_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SearchQueriesOnly { get; set; }
 
         /// <summary>
@@ -287,11 +289,6 @@ namespace Cohere
         /// Defaults to `"accurate"`.<br/>
         /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
-        /// <param name="connectors">
-        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) one.<br/>
-        /// When specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).<br/>
-        /// Compatible Deployments: Cohere Platform
         /// </param>
         /// <param name="conversationId">
         /// An alternative to `chat_history`.<br/>
@@ -397,11 +394,6 @@ namespace Cohere
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
-        /// <param name="searchQueriesOnly">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will only contain a list of generated search queries, but no search will take place, and no reply from the model to the user's `message` will be generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="seed">
         /// If specified, the backend will make a best effort to sample tokens<br/>
         /// deterministically, such that repeated requests with the same<br/>
@@ -461,7 +453,6 @@ namespace Cohere
             string message,
             global::System.Collections.Generic.IList<global::Cohere.Message>? chatHistory,
             global::Cohere.ChatRequestCitationQuality? citationQuality,
-            global::System.Collections.Generic.IList<global::Cohere.ChatConnector>? connectors,
             string? conversationId,
             global::System.Collections.Generic.IList<global::Cohere.ChatDocument>? documents,
             bool? forceSingleStep,
@@ -477,7 +468,6 @@ namespace Cohere
             bool? rawPrompting,
             global::Cohere.ResponseFormat? responseFormat,
             global::Cohere.ChatRequestSafetyMode? safetyMode,
-            bool? searchQueriesOnly,
             int? seed,
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
@@ -488,7 +478,6 @@ namespace Cohere
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.ChatHistory = chatHistory;
             this.CitationQuality = citationQuality;
-            this.Connectors = connectors;
             this.ConversationId = conversationId;
             this.Documents = documents;
             this.ForceSingleStep = forceSingleStep;
@@ -504,7 +493,6 @@ namespace Cohere
             this.RawPrompting = rawPrompting;
             this.ResponseFormat = responseFormat;
             this.SafetyMode = safetyMode;
-            this.SearchQueriesOnly = searchQueriesOnly;
             this.Seed = seed;
             this.StopSequences = stopSequences;
             this.Stream = stream;
