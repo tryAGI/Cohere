@@ -38,11 +38,6 @@ namespace Cohere
         /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
-        /// <param name="connectors">
-        /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) one.<br/>
-        /// When specified, the model's reply will be enriched with information found by querying each of the connectors (RAG).<br/>
-        /// Compatible Deployments: Cohere Platform
-        /// </param>
         /// <param name="conversationId">
         /// An alternative to `chat_history`.<br/>
         /// Providing a `conversation_id` creates or resumes a persisted conversation with the specified ID. The ID can be any non empty string.<br/>
@@ -147,11 +142,6 @@ namespace Cohere
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
-        /// <param name="searchQueriesOnly">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will only contain a list of generated search queries, but no search will take place, and no reply from the model to the user's `message` will be generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
-        /// </param>
         /// <param name="seed">
         /// If specified, the backend will make a best effort to sample tokens<br/>
         /// deterministically, such that repeated requests with the same<br/>
@@ -219,7 +209,6 @@ namespace Cohere
             global::Cohere.ChatAccepts? accepts = default,
             global::System.Collections.Generic.IList<global::Cohere.Message>? chatHistory = default,
             global::Cohere.ChatRequestCitationQuality? citationQuality = default,
-            global::System.Collections.Generic.IList<global::Cohere.ChatConnector>? connectors = default,
             string? conversationId = default,
             global::System.Collections.Generic.IList<global::Cohere.ChatDocument>? documents = default,
             bool? forceSingleStep = default,
@@ -229,7 +218,6 @@ namespace Cohere
             bool? rawPrompting = default,
             global::Cohere.ResponseFormat? responseFormat = default,
             global::Cohere.ChatRequestSafetyMode? safetyMode = default,
-            bool? searchQueriesOnly = default,
             int? seed = default,
             bool? stream = default,
             float? temperature = default,
