@@ -10,10 +10,10 @@ C# SDK for the [Cohere](https://cohere.com/) AI platform, auto-generated from th
 
 ```bash
 # Build the solution
-dotnet build Cohere.sln
+dotnet build Cohere.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Cohere.sln -c Release
+dotnet build Cohere.slnx -c Release
 
 # Run integration tests (requires COHERE_API_KEY env var)
 dotnet test src/tests/Cohere.IntegrationTests/Cohere.IntegrationTests.csproj
