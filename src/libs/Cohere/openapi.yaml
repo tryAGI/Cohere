@@ -22980,6 +22980,11 @@ components:
       description: Describes the truncation strategy for when the prompt exceeds the
         context length. Defaults to 'none'
       oneOf: []
+      discriminator:
+        propertyName: type
+        mapping:
+          auto: "#/components/schemas/TruncationStrategyAutoPreserveOrder"
+          none: "#/components/schemas/TruncationStrategyNone"
       x-fern-type-name: TruncationStrategy
     ResponseFormatTypeV2:
       x-fern-audiences:

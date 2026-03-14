@@ -29,9 +29,8 @@ cd src/libs/Cohere && ./generate.sh
 The SDK code is **entirely auto-generated** -- do not manually edit files in `src/libs/Cohere/Generated/`.
 
 1. `src/libs/Cohere/openapi.yaml` -- the Cohere OpenAPI spec (fetched from the `cohere-developer-experience` repo)
-2. `src/helpers/FixOpenApiSpec/` -- converts OpenAPI 3.1 to 3.0 format for compatibility
-3. `src/libs/Cohere/generate.sh` -- orchestrates: download spec, fix spec, run AutoSDK CLI, output to `Generated/`
-4. CI auto-updates the spec and creates PRs if changes are detected
+2. `src/libs/Cohere/generate.sh` -- orchestrates: download the official spec, run AutoSDK CLI, output to `Generated/`
+3. CI auto-updates the spec and creates PRs if changes are detected
 
 ### Project Layout
 
@@ -39,7 +38,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 |---------|---------|
 | `src/libs/Cohere/` | Main SDK library (`CohereClient`) |
 | `src/tests/Cohere.IntegrationTests/` | Integration tests against real Cohere API |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 | `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
