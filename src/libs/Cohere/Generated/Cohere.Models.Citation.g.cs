@@ -9,10 +9,10 @@ namespace Cohere
     public sealed partial class Citation
     {
         /// <summary>
-        /// Index of the content block in which this citation appears.
+        /// Start index of the cited snippet in the original source text.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        public int? ContentIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("start")]
+        public int? Start { get; set; }
 
         /// <summary>
         /// End index of the cited snippet in the original source text.
@@ -21,22 +21,22 @@ namespace Cohere
         public int? End { get; set; }
 
         /// <summary>
+        /// Text snippet that is being cited.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         public global::System.Collections.Generic.IList<global::Cohere.Source>? Sources { get; set; }
 
         /// <summary>
-        /// Start index of the cited snippet in the original source text.
+        /// Index of the content block in which this citation appears.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start")]
-        public int? Start { get; set; }
-
-        /// <summary>
-        /// Text snippet that is being cited.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        public int? ContentIndex { get; set; }
 
         /// <summary>
         /// The type of citation which indicates what part of the response the citation is for.
@@ -54,18 +54,18 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="Citation" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// Index of the content block in which this citation appears.
+        /// <param name="start">
+        /// Start index of the cited snippet in the original source text.
         /// </param>
         /// <param name="end">
         /// End index of the cited snippet in the original source text.
         /// </param>
-        /// <param name="sources"></param>
-        /// <param name="start">
-        /// Start index of the cited snippet in the original source text.
-        /// </param>
         /// <param name="text">
         /// Text snippet that is being cited.
+        /// </param>
+        /// <param name="sources"></param>
+        /// <param name="contentIndex">
+        /// Index of the content block in which this citation appears.
         /// </param>
         /// <param name="type">
         /// The type of citation which indicates what part of the response the citation is for.
@@ -74,18 +74,18 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Citation(
-            int? contentIndex,
-            int? end,
-            global::System.Collections.Generic.IList<global::Cohere.Source>? sources,
             int? start,
+            int? end,
             string? text,
+            global::System.Collections.Generic.IList<global::Cohere.Source>? sources,
+            int? contentIndex,
             global::Cohere.CitationType? type)
         {
-            this.ContentIndex = contentIndex;
-            this.End = end;
-            this.Sources = sources;
             this.Start = start;
+            this.End = end;
             this.Text = text;
+            this.Sources = sources;
+            this.ContentIndex = contentIndex;
             this.Type = type;
         }
 

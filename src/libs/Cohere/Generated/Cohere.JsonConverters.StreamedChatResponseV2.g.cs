@@ -92,21 +92,30 @@ namespace Cohere.JsonConverters
                 debug = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.StreamedChatResponseV2(
+            var __value = new global::Cohere.StreamedChatResponseV2(
                 discriminator?.Type,
                 messageStart,
+
                 contentStart,
+
                 contentDelta,
+
                 contentEnd,
+
                 toolPlanDelta,
+
                 toolCallStart,
+
                 toolCallDelta,
+
                 toolCallEnd,
+
                 messageEnd,
+
                 debug
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

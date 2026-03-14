@@ -21,28 +21,29 @@ namespace Cohere.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.MessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Cohere.ChatMessage? cHATBOT = default;
-            if (discriminator?.Role == global::Cohere.MessageDiscriminatorRole.CHATBOT)
+            global::Cohere.ChatMessage? chatbot = default;
+            if (discriminator?.Role == global::Cohere.MessageDiscriminatorRole.Chatbot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatMessage)}");
-                cHATBOT = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                chatbot = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Cohere.ChatToolMessage? tOOL = default;
-            if (discriminator?.Role == global::Cohere.MessageDiscriminatorRole.TOOL)
+            global::Cohere.ChatToolMessage? tool = default;
+            if (discriminator?.Role == global::Cohere.MessageDiscriminatorRole.Tool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatToolMessage)}");
-                tOOL = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.Message(
+            var __value = new global::Cohere.Message(
                 discriminator?.Role,
-                cHATBOT,
-                tOOL
+                chatbot,
+
+                tool
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
@@ -54,17 +55,17 @@ namespace Cohere.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCHATBOT)
+            if (value.IsChatbot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CHATBOT, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chatbot, typeInfo);
             }
-            else if (value.IsTOOL)
+            else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatToolMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatToolMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TOOL, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
             }
         }
     }

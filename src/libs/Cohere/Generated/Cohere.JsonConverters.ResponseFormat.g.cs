@@ -36,13 +36,14 @@ namespace Cohere.JsonConverters
                 jsonObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.ResponseFormat(
+            var __value = new global::Cohere.ResponseFormat(
                 discriminator?.Type,
                 text,
+
                 jsonObject
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

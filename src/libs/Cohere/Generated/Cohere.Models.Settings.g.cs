@@ -6,13 +6,15 @@ namespace Cohere
     /// <summary>
     /// The configuration used for fine-tuning.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class Settings
     {
         /// <summary>
-        /// The base model used for fine-tuning.
+        /// The base model to fine-tune.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_model")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required global::Cohere.BaseModel BaseModel { get; set; }
 
         /// <summary>
@@ -20,12 +22,14 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string DatasetId { get; set; }
 
         /// <summary>
-        /// The fine-tuning hyperparameters.
+        /// Fine-tuning hyper-parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Cohere.Hyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
@@ -33,12 +37,14 @@ namespace Cohere
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multi_label")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? MultiLabel { get; set; }
 
         /// <summary>
-        /// The Weights &amp; Biases configuration.
+        /// The Weights &amp; Biases configuration (Chat fine-tuning only).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Cohere.WandbConfig? Wandb { get; set; }
 
         /// <summary>
@@ -51,20 +57,14 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="Settings" /> class.
         /// </summary>
         /// <param name="baseModel">
-        /// The base model used for fine-tuning.
+        /// The base model to fine-tune.
         /// </param>
         /// <param name="datasetId">
         /// The data used for training and evaluating the fine-tuned model.
         /// </param>
-        /// <param name="hyperparameters">
-        /// The fine-tuning hyperparameters.
-        /// </param>
         /// <param name="multiLabel">
         /// read-only. Whether the model is single-label or multi-label (only for classification).<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="wandb">
-        /// The Weights &amp; Biases configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,15 +72,11 @@ namespace Cohere
         public Settings(
             global::Cohere.BaseModel baseModel,
             string datasetId,
-            global::Cohere.Hyperparameters? hyperparameters,
-            bool? multiLabel,
-            global::Cohere.WandbConfig? wandb)
+            bool? multiLabel)
         {
             this.BaseModel = baseModel ?? throw new global::System.ArgumentNullException(nameof(baseModel));
             this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
-            this.Hyperparameters = hyperparameters;
             this.MultiLabel = multiLabel;
-            this.Wandb = wandb;
         }
 
         /// <summary>

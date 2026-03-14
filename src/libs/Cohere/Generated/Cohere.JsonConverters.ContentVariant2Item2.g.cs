@@ -29,12 +29,12 @@ namespace Cohere.JsonConverters
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.ContentVariant2Item2(
+            var __value = new global::Cohere.ContentVariant2Item2(
                 discriminator?.Type,
                 text
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

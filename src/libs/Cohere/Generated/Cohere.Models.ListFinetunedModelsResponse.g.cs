@@ -6,12 +6,14 @@ namespace Cohere
     /// <summary>
     /// Response to a request to list fine-tuned models.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ListFinetunedModelsResponse
     {
         /// <summary>
         /// List of fine-tuned models matching the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetuned_models")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Cohere.FinetunedModel>? FinetunedModels { get; set; }
 
         /// <summary>
@@ -19,12 +21,14 @@ namespace Cohere
         /// it means no further results for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page_token")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? NextPageToken { get; set; }
 
         /// <summary>
         /// Total count of results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_size")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? TotalSize { get; set; }
 
         /// <summary>

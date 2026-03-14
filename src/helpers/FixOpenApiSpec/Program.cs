@@ -1,41 +1,42 @@
-using AutoSDK.Helpers;
-using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Validations;
-
 var path = args[0];
-var yamlOrJson = await File.ReadAllTextAsync(path);
+var lines = await File.ReadAllLinesAsync(path);
+var output = new List<string>(lines.Length);
 
-yamlOrJson = yamlOrJson.Replace("18446744073709552000", $"{int.MaxValue}");
+var insideTruncationStrategy = false;
+var skippingDiscriminator = false;
 
-if (OpenApi31Support.IsOpenApi31(yamlOrJson))
+foreach (var line in lines)
 {
-    yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
-}
-
-var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
-{
-    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
-}).Read(yamlOrJson, out var diagnostics);
-
-//openApiDocument.Components.Schemas["GenerateCompletionRequest"]!.Properties["stream"]!.Default = new OpenApiBoolean(true);
-
-openApiDocument.Components.Schemas["Source"]!.Discriminator = null;
-openApiDocument.Components.Schemas["TruncationStrategy"]!.Discriminator = null;
-
-yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(yamlOrJson, out diagnostics);
-
-if (diagnostics.Errors.Count > 0)
-{
-    foreach (var error in diagnostics.Errors)
+    if (line == "    TruncationStrategy:")
     {
-        Console.WriteLine(error.Message);
+        insideTruncationStrategy = true;
+        output.Add(line);
+        continue;
     }
-    // Return Exit code 1
-    Environment.Exit(1);
+
+    if (insideTruncationStrategy && line.StartsWith("    ") && !line.StartsWith("      "))
+    {
+        insideTruncationStrategy = false;
+    }
+
+    if (insideTruncationStrategy && line == "      discriminator:")
+    {
+        // The upstream spec maps this discriminator to schemas that are not present.
+        skippingDiscriminator = true;
+        continue;
+    }
+
+    if (skippingDiscriminator)
+    {
+        if (line.Length == 0 || line.StartsWith("        "))
+        {
+            continue;
+        }
+
+        skippingDiscriminator = false;
+    }
+
+    output.Add(line);
 }
 
-await File.WriteAllTextAsync(path, yamlOrJson);
-return;
+await File.WriteAllLinesAsync(path, output);

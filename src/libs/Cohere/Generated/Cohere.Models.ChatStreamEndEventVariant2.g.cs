@@ -21,7 +21,7 @@ namespace Cohere
         public required global::Cohere.ChatStreamEndEventVariant2FinishReason FinishReason { get; set; }
 
         /// <summary>
-        /// 
+        /// The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,7 +43,9 @@ namespace Cohere
         /// - `ERROR` - something went wrong when generating the reply<br/>
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </param>
-        /// <param name="response"></param>
+        /// <param name="response">
+        /// The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

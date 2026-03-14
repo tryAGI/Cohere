@@ -50,15 +50,18 @@ namespace Cohere.JsonConverters
                 tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.ChatMessageV2(
+            var __value = new global::Cohere.ChatMessageV2(
                 discriminator?.Role,
                 user,
+
                 assistant,
+
                 system,
+
                 tool
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

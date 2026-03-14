@@ -34,6 +34,141 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
+#else
+        public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
+#endif
+        public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatSearchResultsEvent? SearchResults { get; init; }
+#else
+        public global::Cohere.ChatSearchResultsEvent? SearchResults { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
+#endif
+        public bool IsSearchResults => SearchResults != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; init; }
+#else
+        public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
+#endif
+        public bool IsTextGeneration => TextGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatCitationGenerationEvent? CitationGeneration { get; init; }
+#else
+        public global::Cohere.ChatCitationGenerationEvent? CitationGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
+#endif
+        public bool IsCitationGeneration => CitationGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
+#else
+        public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
+#endif
+        public bool IsToolCallsGeneration => ToolCallsGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatStreamEndEvent? StreamEnd { get; init; }
+#else
+        public global::Cohere.ChatStreamEndEvent? StreamEnd { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
+#endif
+        public bool IsStreamEnd => StreamEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
+#else
+        public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
+#endif
+        public bool IsToolCallsChunk => ToolCallsChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatDebugEvent? Debug { get; init; }
+#else
+        public global::Cohere.ChatDebugEvent? Debug { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
+#endif
+        public bool IsDebug => Debug != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatStreamStartEvent value) => new StreamedChatResponse((global::Cohere.ChatStreamStartEvent?)value);
 
         /// <summary>
@@ -48,23 +183,6 @@ namespace Cohere
         {
             StreamStart = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
-#else
-        public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
-#endif
-        public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
 
         /// <summary>
         /// 
@@ -87,23 +205,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatSearchResultsEvent? SearchResults { get; init; }
-#else
-        public global::Cohere.ChatSearchResultsEvent? SearchResults { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
-#endif
-        public bool IsSearchResults => SearchResults != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatSearchResultsEvent value) => new StreamedChatResponse((global::Cohere.ChatSearchResultsEvent?)value);
 
         /// <summary>
@@ -118,23 +219,6 @@ namespace Cohere
         {
             SearchResults = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; init; }
-#else
-        public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
-#endif
-        public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
         /// 
@@ -157,23 +241,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatCitationGenerationEvent? CitationGeneration { get; init; }
-#else
-        public global::Cohere.ChatCitationGenerationEvent? CitationGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
-#endif
-        public bool IsCitationGeneration => CitationGeneration != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatCitationGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatCitationGenerationEvent?)value);
 
         /// <summary>
@@ -188,23 +255,6 @@ namespace Cohere
         {
             CitationGeneration = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
-#else
-        public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
-#endif
-        public bool IsToolCallsGeneration => ToolCallsGeneration != null;
 
         /// <summary>
         /// 
@@ -227,23 +277,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatStreamEndEvent? StreamEnd { get; init; }
-#else
-        public global::Cohere.ChatStreamEndEvent? StreamEnd { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
-#endif
-        public bool IsStreamEnd => StreamEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatStreamEndEvent value) => new StreamedChatResponse((global::Cohere.ChatStreamEndEvent?)value);
 
         /// <summary>
@@ -262,23 +295,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
-#else
-        public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
-#endif
-        public bool IsToolCallsChunk => ToolCallsChunk != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatToolCallsChunkEvent value) => new StreamedChatResponse((global::Cohere.ChatToolCallsChunkEvent?)value);
 
         /// <summary>
@@ -293,23 +309,6 @@ namespace Cohere
         {
             ToolCallsChunk = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatDebugEvent? Debug { get; init; }
-#else
-        public global::Cohere.ChatDebugEvent? Debug { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
-#endif
-        public bool IsDebug => Debug != null;
 
         /// <summary>
         /// 

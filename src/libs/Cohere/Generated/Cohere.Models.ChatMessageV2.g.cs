@@ -32,6 +32,56 @@ namespace Cohere
         public bool IsUser => User != null;
 
         /// <summary>
+        /// A message from the assistant role can contain text and tool call information.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.AssistantMessageV2? Assistant { get; init; }
+#else
+        public global::Cohere.AssistantMessageV2? Assistant { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// A message from the system.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.SystemMessageV2? System { get; init; }
+#else
+        public global::Cohere.SystemMessageV2? System { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
+#endif
+        public bool IsSystem => System != null;
+
+        /// <summary>
+        /// A message with Tool outputs.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ToolMessageV2? Tool { get; init; }
+#else
+        public global::Cohere.ToolMessageV2? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.UserMessageV2 value) => new ChatMessageV2((global::Cohere.UserMessageV2?)value);
@@ -48,23 +98,6 @@ namespace Cohere
         {
             User = value;
         }
-
-        /// <summary>
-        /// A message from the assistant role can contain text and tool call information.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.AssistantMessageV2? Assistant { get; init; }
-#else
-        public global::Cohere.AssistantMessageV2? Assistant { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         /// 
@@ -85,23 +118,6 @@ namespace Cohere
         }
 
         /// <summary>
-        /// A message from the system.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.SystemMessageV2? System { get; init; }
-#else
-        public global::Cohere.SystemMessageV2? System { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
-#endif
-        public bool IsSystem => System != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.SystemMessageV2 value) => new ChatMessageV2((global::Cohere.SystemMessageV2?)value);
@@ -118,23 +134,6 @@ namespace Cohere
         {
             System = value;
         }
-
-        /// <summary>
-        /// A message with Tool outputs.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ToolMessageV2? Tool { get; init; }
-#else
-        public global::Cohere.ToolMessageV2? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
 
         /// <summary>
         /// 

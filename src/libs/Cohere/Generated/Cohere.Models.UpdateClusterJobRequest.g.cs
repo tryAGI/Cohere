@@ -11,20 +11,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter))]
+        public global::Cohere.UpdateClusterJobRequestStatus? Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
         public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Clusters { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_tracking_metrics")]
-        public object? InputTrackingMetrics { get; set; }
 
         /// <summary>
         /// 
@@ -41,15 +36,20 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_tracking_metrics")]
-        public object? OutputTrackingMetrics { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter))]
-        public global::Cohere.UpdateClusterJobRequestStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_tracking_metrics")]
+        public object? InputTrackingMetrics { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tracking_metrics")]
+        public object? OutputTrackingMetrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,32 +60,32 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateClusterJobRequest" /> class.
         /// </summary>
+        /// <param name="status"></param>
         /// <param name="clusters"></param>
-        /// <param name="error"></param>
-        /// <param name="inputTrackingMetrics"></param>
         /// <param name="outputClustersGsPath"></param>
         /// <param name="outputOutliersGsPath"></param>
+        /// <param name="error"></param>
+        /// <param name="inputTrackingMetrics"></param>
         /// <param name="outputTrackingMetrics"></param>
-        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateClusterJobRequest(
+            global::Cohere.UpdateClusterJobRequestStatus? status,
             global::System.Collections.Generic.IList<global::Cohere.Cluster>? clusters,
-            string? error,
-            object? inputTrackingMetrics,
             string? outputClustersGsPath,
             string? outputOutliersGsPath,
-            object? outputTrackingMetrics,
-            global::Cohere.UpdateClusterJobRequestStatus? status)
+            string? error,
+            object? inputTrackingMetrics,
+            object? outputTrackingMetrics)
         {
+            this.Status = status;
             this.Clusters = clusters;
-            this.Error = error;
-            this.InputTrackingMetrics = inputTrackingMetrics;
             this.OutputClustersGsPath = outputClustersGsPath;
             this.OutputOutliersGsPath = outputOutliersGsPath;
+            this.Error = error;
+            this.InputTrackingMetrics = inputTrackingMetrics;
             this.OutputTrackingMetrics = outputTrackingMetrics;
-            this.Status = status;
         }
 
         /// <summary>

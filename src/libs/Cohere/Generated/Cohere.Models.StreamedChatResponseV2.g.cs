@@ -32,24 +32,6 @@ namespace Cohere
         public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatMessageStartEvent?(StreamedChatResponseV2 @this) => @this.MessageStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent? value)
-        {
-            MessageStart = value;
-        }
-
-        /// <summary>
         /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -65,24 +47,6 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentStart))]
 #endif
         public bool IsContentStart => ContentStart != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatContentStartEvent?(StreamedChatResponseV2 @this) => @this.ContentStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatContentStartEvent? value)
-        {
-            ContentStart = value;
-        }
 
         /// <summary>
         /// A streamed delta event which contains a delta of chat text content.
@@ -102,24 +66,6 @@ namespace Cohere
         public bool IsContentDelta => ContentDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatContentDeltaEvent?(StreamedChatResponseV2 @this) => @this.ContentDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent? value)
-        {
-            ContentDelta = value;
-        }
-
-        /// <summary>
         /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,24 +81,6 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentEnd))]
 #endif
         public bool IsContentEnd => ContentEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentEndEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatContentEndEvent?(StreamedChatResponseV2 @this) => @this.ContentEnd;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatContentEndEvent? value)
-        {
-            ContentEnd = value;
-        }
 
         /// <summary>
         /// A streamed event which contains a delta of tool plan text.
@@ -172,24 +100,6 @@ namespace Cohere
         public bool IsToolPlanDelta => ToolPlanDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolPlanDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatToolPlanDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolPlanDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent? value)
-        {
-            ToolPlanDelta = value;
-        }
-
-        /// <summary>
         /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -205,24 +115,6 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallStart))]
 #endif
         public bool IsToolCallStart => ToolCallStart != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatToolCallStartEvent?(StreamedChatResponseV2 @this) => @this.ToolCallStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent? value)
-        {
-            ToolCallStart = value;
-        }
 
         /// <summary>
         /// A streamed event delta which signifies a delta in tool call arguments.
@@ -242,24 +134,6 @@ namespace Cohere
         public bool IsToolCallDelta => ToolCallDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatToolCallDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolCallDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent? value)
-        {
-            ToolCallDelta = value;
-        }
-
-        /// <summary>
         /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -275,24 +149,6 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallEnd))]
 #endif
         public bool IsToolCallEnd => ToolCallEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallEndEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Cohere.ChatToolCallEndEvent?(StreamedChatResponseV2 @this) => @this.ToolCallEnd;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent? value)
-        {
-            ToolCallEnd = value;
-        }
 
         /// <summary>
         /// A streamed event which signifies that the chat message has ended.
@@ -314,6 +170,166 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatDebugEvent? Debug { get; init; }
+#else
+        public global::Cohere.ChatDebugEvent? Debug { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
+#endif
+        public bool IsDebug => Debug != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatMessageStartEvent?(StreamedChatResponseV2 @this) => @this.MessageStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent? value)
+        {
+            MessageStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatContentStartEvent?(StreamedChatResponseV2 @this) => @this.ContentStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatContentStartEvent? value)
+        {
+            ContentStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatContentDeltaEvent?(StreamedChatResponseV2 @this) => @this.ContentDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent? value)
+        {
+            ContentDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentEndEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatContentEndEvent?(StreamedChatResponseV2 @this) => @this.ContentEnd;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatContentEndEvent? value)
+        {
+            ContentEnd = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolPlanDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatToolPlanDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolPlanDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent? value)
+        {
+            ToolPlanDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatToolCallStartEvent?(StreamedChatResponseV2 @this) => @this.ToolCallStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent? value)
+        {
+            ToolCallStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatToolCallDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolCallDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent? value)
+        {
+            ToolCallDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallEndEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ChatToolCallEndEvent?(StreamedChatResponseV2 @this) => @this.ToolCallEnd;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent? value)
+        {
+            ToolCallEnd = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageEndEvent?)value);
 
         /// <summary>
@@ -328,23 +344,6 @@ namespace Cohere
         {
             MessageEnd = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatDebugEvent? Debug { get; init; }
-#else
-        public global::Cohere.ChatDebugEvent? Debug { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
-#endif
-        public bool IsDebug => Debug != null;
 
         /// <summary>
         /// 

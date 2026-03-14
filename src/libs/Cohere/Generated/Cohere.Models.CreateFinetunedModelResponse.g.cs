@@ -6,12 +6,14 @@ namespace Cohere
     /// <summary>
     /// Response to request to create a fine-tuned model.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class CreateFinetunedModelResponse
     {
         /// <summary>
-        /// This resource represents a fine-tuned model.
+        /// Information about the fine-tuned model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetuned_model")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Cohere.FinetunedModel? FinetunedModel { get; set; }
 
         /// <summary>
@@ -19,27 +21,5 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateFinetunedModelResponse" /> class.
-        /// </summary>
-        /// <param name="finetunedModel">
-        /// This resource represents a fine-tuned model.
-        /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-#endif
-        public CreateFinetunedModelResponse(
-            global::Cohere.FinetunedModel? finetunedModel)
-        {
-            this.FinetunedModel = finetunedModel;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateFinetunedModelResponse" /> class.
-        /// </summary>
-        public CreateFinetunedModelResponse()
-        {
-        }
     }
 }

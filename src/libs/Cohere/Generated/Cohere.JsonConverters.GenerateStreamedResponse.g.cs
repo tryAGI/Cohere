@@ -43,14 +43,16 @@ namespace Cohere.JsonConverters
                 streamError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.GenerateStreamedResponse(
+            var __value = new global::Cohere.GenerateStreamedResponse(
                 discriminator?.EventType,
                 textGeneration,
+
                 streamEnd,
+
                 streamError
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

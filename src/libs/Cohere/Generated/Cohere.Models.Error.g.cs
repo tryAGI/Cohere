@@ -6,12 +6,14 @@ namespace Cohere
     /// <summary>
     /// Error is the response for any unsuccessful event.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class Error
     {
         /// <summary>
         /// A developer-facing error message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Message { get; set; }
 
         /// <summary>

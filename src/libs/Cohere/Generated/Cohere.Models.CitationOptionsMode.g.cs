@@ -4,24 +4,31 @@
 namespace Cohere
 {
     /// <summary>
-    /// Defaults to `"accurate"`.<br/>
-    /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
-    /// **Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `"fast"` and `"off"` modes. The default is `"fast"`.
+    /// Defaults to `"enabled"`.<br/>
+    /// Citations are enabled by default for models that support it, but can be turned off by setting `"type": "disabled"`.
     /// </summary>
     public enum CitationOptionsMode
     {
         /// <summary>
         /// 
         /// </summary>
-        FAST,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
-        ACCURATE,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        OFF,
+        Fast,
+        /// <summary>
+        /// 
+        /// </summary>
+        Accurate,
+        /// <summary>
+        /// 
+        /// </summary>
+        Off,
     }
 
     /// <summary>
@@ -36,9 +43,11 @@ namespace Cohere
         {
             return value switch
             {
-                CitationOptionsMode.FAST => "FAST",
-                CitationOptionsMode.ACCURATE => "ACCURATE",
-                CitationOptionsMode.OFF => "OFF",
+                CitationOptionsMode.Enabled => "ENABLED",
+                CitationOptionsMode.Disabled => "DISABLED",
+                CitationOptionsMode.Fast => "FAST",
+                CitationOptionsMode.Accurate => "ACCURATE",
+                CitationOptionsMode.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +58,11 @@ namespace Cohere
         {
             return value switch
             {
-                "FAST" => CitationOptionsMode.FAST,
-                "ACCURATE" => CitationOptionsMode.ACCURATE,
-                "OFF" => CitationOptionsMode.OFF,
+                "ENABLED" => CitationOptionsMode.Enabled,
+                "DISABLED" => CitationOptionsMode.Disabled,
+                "FAST" => CitationOptionsMode.Fast,
+                "ACCURATE" => CitationOptionsMode.Accurate,
+                "OFF" => CitationOptionsMode.Off,
                 _ => null,
             };
         }

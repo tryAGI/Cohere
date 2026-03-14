@@ -14,11 +14,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        REQUIRED,
+        Required,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace Cohere
         {
             return value switch
             {
-                Chatv2RequestToolChoice.REQUIRED => "REQUIRED",
-                Chatv2RequestToolChoice.NONE => "NONE",
+                Chatv2RequestToolChoice.Required => "REQUIRED",
+                Chatv2RequestToolChoice.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace Cohere
         {
             return value switch
             {
-                "REQUIRED" => Chatv2RequestToolChoice.REQUIRED,
-                "NONE" => Chatv2RequestToolChoice.NONE,
+                "REQUIRED" => Chatv2RequestToolChoice.Required,
+                "NONE" => Chatv2RequestToolChoice.None,
                 _ => null,
             };
         }

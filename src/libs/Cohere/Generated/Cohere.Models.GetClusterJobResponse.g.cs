@@ -9,14 +9,17 @@ namespace Cohere
     public sealed partial class GetClusterJobResponse
     {
         /// <summary>
-        /// The list of cluster summaries for the job
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
-        public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Clusters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string JobId { get; set; }
 
         /// <summary>
-        /// Time of job creation in RFC3339 format
+        /// Time of job creation in RFC3339 format<br/>
+        /// Example: 2023-04-28T21:00:56.646257Z
         /// </summary>
+        /// <example>2023-04-28T21:00:56.646257Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
@@ -27,41 +30,10 @@ namespace Cohere
         public string? EmbeddingsUrl { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
-
-        /// <summary>
         /// The input dataset ID used for the job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dataset_id")]
         public string? InputDatasetId { get; set; }
-
-        /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
-        public bool? IsDeterministic { get; set; }
-
-        /// <summary>
-        /// A boolean indicating whether the job is in a final state, whether completed or failed
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_final_state")]
-        public bool? IsFinalState { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string JobId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
@@ -76,6 +48,25 @@ namespace Cohere
         public int? NNeighbors { get; set; }
 
         /// <summary>
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
+        public bool? IsDeterministic { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
+        public global::Cohere.GetClusterJobResponseStatus? Status { get; set; }
+
+        /// <summary>
+        /// A boolean indicating whether the job is in a final state, whether completed or failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_final_state")]
+        public bool? IsFinalState { get; set; }
+
+        /// <summary>
         /// The output file URL for the clusters (signed url that expires)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_clusters_url")]
@@ -88,11 +79,22 @@ namespace Cohere
         public string? OutputOutliersUrl { get; set; }
 
         /// <summary>
+        /// The list of cluster summaries for the job
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
+        public global::System.Collections.Generic.IList<global::Cohere.Cluster>? Clusters { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
-        public global::Cohere.GetClusterJobResponseStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,32 +105,29 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
         /// </summary>
-        /// <param name="clusters">
-        /// The list of cluster summaries for the job
-        /// </param>
+        /// <param name="jobId"></param>
         /// <param name="createdAt">
-        /// Time of job creation in RFC3339 format
+        /// Time of job creation in RFC3339 format<br/>
+        /// Example: 2023-04-28T21:00:56.646257Z
         /// </param>
         /// <param name="embeddingsUrl">
         /// The input file URL used for the job
         /// </param>
-        /// <param name="error"></param>
         /// <param name="inputDatasetId">
         /// The input dataset ID used for the job
         /// </param>
-        /// <param name="isDeterministic">
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
-        /// </param>
-        /// <param name="isFinalState">
-        /// A boolean indicating whether the job is in a final state, whether completed or failed
-        /// </param>
-        /// <param name="jobId"></param>
-        /// <param name="meta"></param>
         /// <param name="minClusterSize">
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </param>
         /// <param name="nNeighbors">
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// </param>
+        /// <param name="isDeterministic">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="isFinalState">
+        /// A boolean indicating whether the job is in a final state, whether completed or failed
         /// </param>
         /// <param name="outputClustersUrl">
         /// The output file URL for the clusters (signed url that expires)
@@ -136,40 +135,44 @@ namespace Cohere
         /// <param name="outputOutliersUrl">
         /// The output file URL for the outliers (signed url that expires)
         /// </param>
-        /// <param name="status"></param>
+        /// <param name="clusters">
+        /// The list of cluster summaries for the job
+        /// </param>
+        /// <param name="error"></param>
+        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetClusterJobResponse(
             string jobId,
-            global::System.Collections.Generic.IList<global::Cohere.Cluster>? clusters,
             global::System.DateTime? createdAt,
             string? embeddingsUrl,
-            string? error,
             string? inputDatasetId,
-            bool? isDeterministic,
-            bool? isFinalState,
-            global::Cohere.ApiMeta? meta,
             int? minClusterSize,
             int? nNeighbors,
+            bool? isDeterministic,
+            global::Cohere.GetClusterJobResponseStatus? status,
+            bool? isFinalState,
             string? outputClustersUrl,
             string? outputOutliersUrl,
-            global::Cohere.GetClusterJobResponseStatus? status)
+            global::System.Collections.Generic.IList<global::Cohere.Cluster>? clusters,
+            string? error,
+            global::Cohere.ApiMeta? meta)
         {
             this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
-            this.Clusters = clusters;
             this.CreatedAt = createdAt;
             this.EmbeddingsUrl = embeddingsUrl;
-            this.Error = error;
             this.InputDatasetId = inputDatasetId;
-            this.IsDeterministic = isDeterministic;
-            this.IsFinalState = isFinalState;
-            this.Meta = meta;
             this.MinClusterSize = minClusterSize;
             this.NNeighbors = nNeighbors;
+            this.IsDeterministic = isDeterministic;
+            this.Status = status;
+            this.IsFinalState = isFinalState;
             this.OutputClustersUrl = outputClustersUrl;
             this.OutputOutliersUrl = outputOutliersUrl;
-            this.Status = status;
+            this.Clusters = clusters;
+            this.Error = error;
+            this.Meta = meta;
         }
 
         /// <summary>

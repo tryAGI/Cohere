@@ -9,10 +9,22 @@ namespace Cohere
     public sealed partial class RerankerDataMetrics
     {
         /// <summary>
-        /// The sum of all hard negatives of valid eval examples.
+        /// The number of training queries.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_eval_hard_negatives")]
-        public double? NumEvalHardNegatives { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_queries")]
+        public double? NumTrainQueries { get; set; }
+
+        /// <summary>
+        /// The sum of all relevant passages of valid training examples.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_relevant_passages")]
+        public double? NumTrainRelevantPassages { get; set; }
+
+        /// <summary>
+        /// The sum of all hard negatives of valid training examples.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_hard_negatives")]
+        public double? NumTrainHardNegatives { get; set; }
 
         /// <summary>
         /// The number of evaluation queries.
@@ -27,22 +39,10 @@ namespace Cohere
         public double? NumEvalRelevantPassages { get; set; }
 
         /// <summary>
-        /// The sum of all hard negatives of valid training examples.
+        /// The sum of all hard negatives of valid eval examples.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_hard_negatives")]
-        public double? NumTrainHardNegatives { get; set; }
-
-        /// <summary>
-        /// The number of training queries.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_queries")]
-        public double? NumTrainQueries { get; set; }
-
-        /// <summary>
-        /// The sum of all relevant passages of valid training examples.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_train_relevant_passages")]
-        public double? NumTrainRelevantPassages { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_eval_hard_negatives")]
+        public double? NumEvalHardNegatives { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,8 +53,14 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankerDataMetrics" /> class.
         /// </summary>
-        /// <param name="numEvalHardNegatives">
-        /// The sum of all hard negatives of valid eval examples.
+        /// <param name="numTrainQueries">
+        /// The number of training queries.
+        /// </param>
+        /// <param name="numTrainRelevantPassages">
+        /// The sum of all relevant passages of valid training examples.
+        /// </param>
+        /// <param name="numTrainHardNegatives">
+        /// The sum of all hard negatives of valid training examples.
         /// </param>
         /// <param name="numEvalQueries">
         /// The number of evaluation queries.
@@ -62,32 +68,26 @@ namespace Cohere
         /// <param name="numEvalRelevantPassages">
         /// The sum of all relevant passages of valid eval examples.
         /// </param>
-        /// <param name="numTrainHardNegatives">
-        /// The sum of all hard negatives of valid training examples.
-        /// </param>
-        /// <param name="numTrainQueries">
-        /// The number of training queries.
-        /// </param>
-        /// <param name="numTrainRelevantPassages">
-        /// The sum of all relevant passages of valid training examples.
+        /// <param name="numEvalHardNegatives">
+        /// The sum of all hard negatives of valid eval examples.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankerDataMetrics(
-            double? numEvalHardNegatives,
+            double? numTrainQueries,
+            double? numTrainRelevantPassages,
+            double? numTrainHardNegatives,
             double? numEvalQueries,
             double? numEvalRelevantPassages,
-            double? numTrainHardNegatives,
-            double? numTrainQueries,
-            double? numTrainRelevantPassages)
+            double? numEvalHardNegatives)
         {
-            this.NumEvalHardNegatives = numEvalHardNegatives;
-            this.NumEvalQueries = numEvalQueries;
-            this.NumEvalRelevantPassages = numEvalRelevantPassages;
-            this.NumTrainHardNegatives = numTrainHardNegatives;
             this.NumTrainQueries = numTrainQueries;
             this.NumTrainRelevantPassages = numTrainRelevantPassages;
+            this.NumTrainHardNegatives = numTrainHardNegatives;
+            this.NumEvalQueries = numEvalQueries;
+            this.NumEvalRelevantPassages = numEvalRelevantPassages;
+            this.NumEvalHardNegatives = numEvalHardNegatives;
         }
 
         /// <summary>

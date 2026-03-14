@@ -17,23 +17,23 @@ namespace Cohere
         /// <summary>
         /// Unspecified model.
         /// </summary>
-        UNSPECIFIED,
+        Unspecified,
         /// <summary>
         /// Deprecated: Generative model.
         /// </summary>
-        GENERATIVE,
+        Generative,
         /// <summary>
         /// Classification model.
         /// </summary>
-        CLASSIFICATION,
+        Classification,
         /// <summary>
         /// Rerank model.
         /// </summary>
-        RERANK,
+        Rerank,
         /// <summary>
         /// Chat model.
         /// </summary>
-        CHAT,
+        Chat,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace Cohere
         {
             return value switch
             {
-                BaseType.UNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
-                BaseType.GENERATIVE => "BASE_TYPE_GENERATIVE",
-                BaseType.CLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
-                BaseType.RERANK => "BASE_TYPE_RERANK",
-                BaseType.CHAT => "BASE_TYPE_CHAT",
+                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
+                BaseType.Generative => "BASE_TYPE_GENERATIVE",
+                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
+                BaseType.Rerank => "BASE_TYPE_RERANK",
+                BaseType.Chat => "BASE_TYPE_CHAT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,11 +63,11 @@ namespace Cohere
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.UNSPECIFIED,
-                "BASE_TYPE_GENERATIVE" => BaseType.GENERATIVE,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.CLASSIFICATION,
-                "BASE_TYPE_RERANK" => BaseType.RERANK,
-                "BASE_TYPE_CHAT" => BaseType.CHAT,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
+                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
+                "BASE_TYPE_RERANK" => BaseType.Rerank,
+                "BASE_TYPE_CHAT" => BaseType.Chat,
                 _ => null,
             };
         }

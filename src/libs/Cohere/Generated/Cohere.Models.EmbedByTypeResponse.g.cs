@@ -9,11 +9,11 @@ namespace Cohere
     public sealed partial class EmbedByTypeResponse
     {
         /// <summary>
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter))]
+        public global::Cohere.EmbedByTypeResponseResponseType? ResponseType { get; set; }
 
         /// <summary>
         /// 
@@ -21,6 +21,19 @@ namespace Cohere
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.EmbedByTypeResponseEmbeddings Embeddings { get; set; }
+
+        /// <summary>
+        /// The text entries for which embeddings were returned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
+        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
 
         /// <summary>
         /// The image entries for which embeddings were returned.
@@ -35,19 +48,6 @@ namespace Cohere
         public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter))]
-        public global::Cohere.EmbedByTypeResponseResponseType? ResponseType { get; set; }
-
-        /// <summary>
-        /// The text entries for which embeddings were returned.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,35 +56,35 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
         /// </summary>
+        /// <param name="responseType"></param>
+        /// <param name="id"></param>
         /// <param name="embeddings">
         /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
         /// </param>
-        /// <param name="id"></param>
+        /// <param name="texts">
+        /// The text entries for which embeddings were returned.
+        /// </param>
         /// <param name="images">
         /// The image entries for which embeddings were returned.
         /// </param>
         /// <param name="meta"></param>
-        /// <param name="responseType"></param>
-        /// <param name="texts">
-        /// The text entries for which embeddings were returned.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedByTypeResponse(
-            global::Cohere.EmbedByTypeResponseEmbeddings embeddings,
             string id,
-            global::System.Collections.Generic.IList<global::Cohere.Image>? images,
-            global::Cohere.ApiMeta? meta,
+            global::Cohere.EmbedByTypeResponseEmbeddings embeddings,
             global::Cohere.EmbedByTypeResponseResponseType? responseType,
-            global::System.Collections.Generic.IList<string>? texts)
+            global::System.Collections.Generic.IList<string>? texts,
+            global::System.Collections.Generic.IList<global::Cohere.Image>? images,
+            global::Cohere.ApiMeta? meta)
         {
-            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Images = images;
-            this.Meta = meta;
+            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.ResponseType = responseType;
             this.Texts = texts;
+            this.Images = images;
+            this.Meta = meta;
         }
 
         /// <summary>

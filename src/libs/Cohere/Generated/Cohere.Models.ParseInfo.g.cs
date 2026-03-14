@@ -11,14 +11,14 @@ namespace Cohere
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delimiter")]
-        public string? Delimiter { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("separator")]
+        public string? Separator { get; set; }
 
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("separator")]
-        public string? Separator { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delimiter")]
+        public string? Delimiter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ParseInfo" /> class.
         /// </summary>
-        /// <param name="delimiter">
+        /// <param name="separator">
         /// Included only in requests
         /// </param>
-        /// <param name="separator">
+        /// <param name="delimiter">
         /// Included only in requests
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ParseInfo(
-            string? delimiter,
-            string? separator)
+            string? separator,
+            string? delimiter)
         {
-            this.Delimiter = delimiter;
             this.Separator = separator;
+            this.Delimiter = delimiter;
         }
 
         /// <summary>

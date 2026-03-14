@@ -9,12 +9,6 @@ namespace Cohere
     public sealed partial class ApiMetaBilledUnits
     {
         /// <summary>
-        /// The number of billed classifications units.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public double? Classifications { get; set; }
-
-        /// <summary>
         /// The number of billed images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
@@ -25,6 +19,12 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         public double? InputTokens { get; set; }
+
+        /// <summary>
+        /// The number of billed image tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_tokens")]
+        public double? ImageTokens { get; set; }
 
         /// <summary>
         /// The number of billed output tokens.
@@ -39,6 +39,12 @@ namespace Cohere
         public double? SearchUnits { get; set; }
 
         /// <summary>
+        /// The number of billed classifications units.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
+        public double? Classifications { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,14 +53,14 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiMetaBilledUnits" /> class.
         /// </summary>
-        /// <param name="classifications">
-        /// The number of billed classifications units.
-        /// </param>
         /// <param name="images">
         /// The number of billed images.
         /// </param>
         /// <param name="inputTokens">
         /// The number of billed input tokens.
+        /// </param>
+        /// <param name="imageTokens">
+        /// The number of billed image tokens.
         /// </param>
         /// <param name="outputTokens">
         /// The number of billed output tokens.
@@ -62,21 +68,26 @@ namespace Cohere
         /// <param name="searchUnits">
         /// The number of billed search units.
         /// </param>
+        /// <param name="classifications">
+        /// The number of billed classifications units.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ApiMetaBilledUnits(
-            double? classifications,
             double? images,
             double? inputTokens,
+            double? imageTokens,
             double? outputTokens,
-            double? searchUnits)
+            double? searchUnits,
+            double? classifications)
         {
-            this.Classifications = classifications;
             this.Images = images;
             this.InputTokens = inputTokens;
+            this.ImageTokens = imageTokens;
             this.OutputTokens = outputTokens;
             this.SearchUnits = searchUnits;
+            this.Classifications = classifications;
         }
 
         /// <summary>

@@ -6,25 +6,29 @@ namespace Cohere
     /// <summary>
     /// The evaluation metrics at a given step of the training of a fine-tuned model.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TrainingStepMetrics
     {
         /// <summary>
         /// Creation timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? CreatedAt { get; set; }
-
-        /// <summary>
-        /// Map of names and values for each evaluation metrics.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
-        public global::System.Collections.Generic.Dictionary<string, double>? Metrics { get; set; }
 
         /// <summary>
         /// Step number.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_number")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? StepNumber { get; set; }
+
+        /// <summary>
+        /// Map of names and values for each evaluation metrics.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::System.Collections.Generic.Dictionary<string, double>? Metrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,23 +42,23 @@ namespace Cohere
         /// <param name="createdAt">
         /// Creation timestamp.
         /// </param>
-        /// <param name="metrics">
-        /// Map of names and values for each evaluation metrics.
-        /// </param>
         /// <param name="stepNumber">
         /// Step number.
+        /// </param>
+        /// <param name="metrics">
+        /// Map of names and values for each evaluation metrics.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TrainingStepMetrics(
             global::System.DateTime? createdAt,
-            global::System.Collections.Generic.Dictionary<string, double>? metrics,
-            int? stepNumber)
+            int? stepNumber,
+            global::System.Collections.Generic.Dictionary<string, double>? metrics)
         {
             this.CreatedAt = createdAt;
-            this.Metrics = metrics;
             this.StepNumber = stepNumber;
+            this.Metrics = metrics;
         }
 
         /// <summary>

@@ -36,13 +36,14 @@ namespace Cohere.JsonConverters
                 thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.ContentItem(
+            var __value = new global::Cohere.ContentItem(
                 discriminator?.Type,
                 text,
+
                 thinking
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

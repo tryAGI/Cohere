@@ -9,30 +9,35 @@ namespace Cohere
     /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
     /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
     /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
-    /// - **error**: The generation failed due to an internal error
+    /// - **error**: The generation failed due to an internal error<br/>
+    /// - **timeout**: The generation was stopped because it exceeded the allowed time limit.
     /// </summary>
     public enum ChatFinishReason
     {
         /// <summary>
         /// 
         /// </summary>
-        COMPLETE,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
-        STOPSEQUENCE,
+        StopSequence,
         /// <summary>
         /// 
         /// </summary>
-        MAXTOKENS,
+        MaxTokens,
         /// <summary>
         /// 
         /// </summary>
-        TOOLCALL,
+        ToolCall,
         /// <summary>
         /// 
         /// </summary>
-        ERROR,
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
+        Timeout,
     }
 
     /// <summary>
@@ -47,11 +52,12 @@ namespace Cohere
         {
             return value switch
             {
-                ChatFinishReason.COMPLETE => "COMPLETE",
-                ChatFinishReason.STOPSEQUENCE => "STOP_SEQUENCE",
-                ChatFinishReason.MAXTOKENS => "MAX_TOKENS",
-                ChatFinishReason.TOOLCALL => "TOOL_CALL",
-                ChatFinishReason.ERROR => "ERROR",
+                ChatFinishReason.Complete => "COMPLETE",
+                ChatFinishReason.StopSequence => "STOP_SEQUENCE",
+                ChatFinishReason.MaxTokens => "MAX_TOKENS",
+                ChatFinishReason.ToolCall => "TOOL_CALL",
+                ChatFinishReason.Error => "ERROR",
+                ChatFinishReason.Timeout => "TIMEOUT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,11 +68,12 @@ namespace Cohere
         {
             return value switch
             {
-                "COMPLETE" => ChatFinishReason.COMPLETE,
-                "STOP_SEQUENCE" => ChatFinishReason.STOPSEQUENCE,
-                "MAX_TOKENS" => ChatFinishReason.MAXTOKENS,
-                "TOOL_CALL" => ChatFinishReason.TOOLCALL,
-                "ERROR" => ChatFinishReason.ERROR,
+                "COMPLETE" => ChatFinishReason.Complete,
+                "STOP_SEQUENCE" => ChatFinishReason.StopSequence,
+                "MAX_TOKENS" => ChatFinishReason.MaxTokens,
+                "TOOL_CALL" => ChatFinishReason.ToolCall,
+                "ERROR" => ChatFinishReason.Error,
+                "TIMEOUT" => ChatFinishReason.Timeout,
                 _ => null,
             };
         }

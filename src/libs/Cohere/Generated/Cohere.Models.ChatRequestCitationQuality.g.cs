@@ -4,12 +4,20 @@
 namespace Cohere
 {
     /// <summary>
-    /// Defaults to `"accurate"`.<br/>
-    /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
+    /// Defaults to `"enabled"`.<br/>
+    /// Citations are enabled by default for models that support it, but can be turned off by setting `"type": "disabled"`.<br/>
     /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
     /// </summary>
     public enum ChatRequestCitationQuality
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Enabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
@@ -36,9 +44,11 @@ namespace Cohere
         {
             return value switch
             {
-                ChatRequestCitationQuality.Fast => "fast",
-                ChatRequestCitationQuality.Accurate => "accurate",
-                ChatRequestCitationQuality.Off => "off",
+                ChatRequestCitationQuality.Enabled => "ENABLED",
+                ChatRequestCitationQuality.Disabled => "DISABLED",
+                ChatRequestCitationQuality.Fast => "FAST",
+                ChatRequestCitationQuality.Accurate => "ACCURATE",
+                ChatRequestCitationQuality.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +59,11 @@ namespace Cohere
         {
             return value switch
             {
-                "fast" => ChatRequestCitationQuality.Fast,
-                "accurate" => ChatRequestCitationQuality.Accurate,
-                "off" => ChatRequestCitationQuality.Off,
+                "ENABLED" => ChatRequestCitationQuality.Enabled,
+                "DISABLED" => ChatRequestCitationQuality.Disabled,
+                "FAST" => ChatRequestCitationQuality.Fast,
+                "ACCURATE" => ChatRequestCitationQuality.Accurate,
+                "OFF" => ChatRequestCitationQuality.Off,
                 _ => null,
             };
         }

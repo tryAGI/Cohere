@@ -9,17 +9,17 @@ namespace Cohere
     public sealed partial class EmbedImage
     {
         /// <summary>
-        /// Base64 url of image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        public global::Cohere.EmbedImageUrl? ImageUrl { get; set; }
-
-        /// <summary>
         /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedContentTypeJsonConverter))]
         public global::Cohere.EmbedContentType? Type { get; set; }
+
+        /// <summary>
+        /// Base64 url of image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        public global::Cohere.EmbedImageUrl? ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +30,21 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedImage" /> class.
         /// </summary>
-        /// <param name="imageUrl">
-        /// Base64 url of image.
-        /// </param>
         /// <param name="type">
         /// Included only in requests
+        /// </param>
+        /// <param name="imageUrl">
+        /// Base64 url of image.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedImage(
-            global::Cohere.EmbedImageUrl? imageUrl,
-            global::Cohere.EmbedContentType? type)
+            global::Cohere.EmbedContentType? type,
+            global::Cohere.EmbedImageUrl? imageUrl)
         {
-            this.ImageUrl = imageUrl;
             this.Type = type;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>

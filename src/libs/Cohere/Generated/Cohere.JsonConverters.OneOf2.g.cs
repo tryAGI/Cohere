@@ -39,8 +39,9 @@ namespace Cohere.JsonConverters
             {
             }
 
-            var result = new global::Cohere.OneOf<T1, T2>(
+            var __value = new global::Cohere.OneOf<T1, T2>(
                 value1,
+
                 value2
                 );
 
@@ -57,7 +58,7 @@ namespace Cohere.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

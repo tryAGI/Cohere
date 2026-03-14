@@ -6,7 +6,7 @@ namespace Cohere
     {
         /// <summary>
         /// List Models<br/>
-        /// Returns a list of models available for use. The list contains models from Cohere as well as your fine-tuned models.
+        /// Returns a list of models available for use.
         /// </summary>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>

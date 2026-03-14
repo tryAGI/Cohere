@@ -32,6 +32,22 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
+        /// Thinking content of the message. This will be present when `thinking` is enabled, and will contain the models internal reasoning.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatThinkingContent? Thinking { get; init; }
+#else
+        public global::Cohere.ChatThinkingContent? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Cohere.ChatTextContent value) => new ContentVariant2Item((global::Cohere.ChatTextContent?)value);
@@ -48,23 +64,6 @@ namespace Cohere
         {
             Text = value;
         }
-
-        /// <summary>
-        /// Thinking content of the message. This will be present when `thinking` is enabled, and will contain the models internal reasoning.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatThinkingContent? Thinking { get; init; }
-#else
-        public global::Cohere.ChatThinkingContent? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
 
         /// <summary>
         /// 

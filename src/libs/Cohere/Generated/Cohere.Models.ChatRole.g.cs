@@ -11,19 +11,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        CHATBOT,
+        Chatbot,
         /// <summary>
         /// 
         /// </summary>
-        SYSTEM,
+        System,
         /// <summary>
         /// 
         /// </summary>
-        USER,
+        User,
         /// <summary>
         /// 
         /// </summary>
-        TOOL,
+        Tool,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Cohere
         {
             return value switch
             {
-                ChatRole.CHATBOT => "CHATBOT",
-                ChatRole.SYSTEM => "SYSTEM",
-                ChatRole.USER => "USER",
-                ChatRole.TOOL => "TOOL",
+                ChatRole.Chatbot => "CHATBOT",
+                ChatRole.System => "SYSTEM",
+                ChatRole.User => "USER",
+                ChatRole.Tool => "TOOL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Cohere
         {
             return value switch
             {
-                "CHATBOT" => ChatRole.CHATBOT,
-                "SYSTEM" => ChatRole.SYSTEM,
-                "USER" => ChatRole.USER,
-                "TOOL" => ChatRole.TOOL,
+                "CHATBOT" => ChatRole.Chatbot,
+                "SYSTEM" => ChatRole.System,
+                "USER" => ChatRole.User,
+                "TOOL" => ChatRole.Tool,
                 _ => null,
             };
         }

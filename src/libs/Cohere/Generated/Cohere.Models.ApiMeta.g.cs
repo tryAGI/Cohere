@@ -27,6 +27,12 @@ namespace Cohere
         public global::Cohere.ApiMetaTokens? Tokens { get; set; }
 
         /// <summary>
+        /// The number of prompt tokens that hit the inference cache.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
+        public double? CachedTokens { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warnings")]
@@ -44,6 +50,9 @@ namespace Cohere
         /// <param name="apiVersion"></param>
         /// <param name="billedUnits"></param>
         /// <param name="tokens"></param>
+        /// <param name="cachedTokens">
+        /// The number of prompt tokens that hit the inference cache.
+        /// </param>
         /// <param name="warnings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,11 +61,13 @@ namespace Cohere
             global::Cohere.ApiMetaApiVersion? apiVersion,
             global::Cohere.ApiMetaBilledUnits? billedUnits,
             global::Cohere.ApiMetaTokens? tokens,
+            double? cachedTokens,
             global::System.Collections.Generic.IList<string>? warnings)
         {
             this.ApiVersion = apiVersion;
             this.BilledUnits = billedUnits;
             this.Tokens = tokens;
+            this.CachedTokens = cachedTokens;
             this.Warnings = warnings;
         }
 

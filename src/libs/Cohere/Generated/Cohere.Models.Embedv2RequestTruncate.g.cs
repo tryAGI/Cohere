@@ -15,15 +15,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        START,
+        Start,
         /// <summary>
         /// 
         /// </summary>
-        END,
+        End,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace Cohere
         {
             return value switch
             {
-                Embedv2RequestTruncate.NONE => "NONE",
-                Embedv2RequestTruncate.START => "START",
-                Embedv2RequestTruncate.END => "END",
+                Embedv2RequestTruncate.None => "NONE",
+                Embedv2RequestTruncate.Start => "START",
+                Embedv2RequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace Cohere
         {
             return value switch
             {
-                "NONE" => Embedv2RequestTruncate.NONE,
-                "START" => Embedv2RequestTruncate.START,
-                "END" => Embedv2RequestTruncate.END,
+                "NONE" => Embedv2RequestTruncate.None,
+                "START" => Embedv2RequestTruncate.Start,
+                "END" => Embedv2RequestTruncate.End,
                 _ => null,
             };
         }

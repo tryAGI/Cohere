@@ -34,6 +34,22 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; init; }
+#else
+        public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
+#endif
+        public bool IsEmbeddingsByType => EmbeddingsByType != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedResponse(global::Cohere.EmbedFloatsResponse value) => new EmbedResponse((global::Cohere.EmbedFloatsResponse?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Cohere
         {
             EmbeddingsFloats = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; init; }
-#else
-        public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
-#endif
-        public bool IsEmbeddingsByType => EmbeddingsByType != null;
 
         /// <summary>
         /// 

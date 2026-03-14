@@ -25,6 +25,7 @@ namespace Cohere
         global::System.Threading.Tasks.Task<global::Cohere.CreateDatasetResponse> CreateDatasetAsync(
             string name,
             global::Cohere.DatasetType type,
+
             global::Cohere.CreateDatasetRequest request,
             bool? keepOriginalFile = default,
             bool? skipMalformedInput = default,

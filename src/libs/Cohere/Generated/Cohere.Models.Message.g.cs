@@ -19,19 +19,35 @@ namespace Cohere
         /// The chat_history parameter should not be used for `SYSTEM` messages in most cases. Instead, to add a `SYSTEM` role message at the beginning of a conversation, the `preamble` parameter should be used.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatMessage? CHATBOT { get; init; }
+        public global::Cohere.ChatMessage? Chatbot { get; init; }
 #else
-        public global::Cohere.ChatMessage? CHATBOT { get; }
+        public global::Cohere.ChatMessage? Chatbot { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CHATBOT))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chatbot))]
 #endif
-        public bool IsCHATBOT => CHATBOT != null;
+        public bool IsChatbot => Chatbot != null;
 
+        /// <summary>
+        /// Represents tool result in the chat history.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatToolMessage? Tool { get; init; }
+#else
+        public global::Cohere.ChatToolMessage? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
         /// <summary>
         /// 
         /// </summary>
@@ -40,32 +56,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatMessage?(Message @this) => @this.CHATBOT;
+        public static implicit operator global::Cohere.ChatMessage?(Message @this) => @this.Chatbot;
 
         /// <summary>
         /// 
         /// </summary>
         public Message(global::Cohere.ChatMessage? value)
         {
-            CHATBOT = value;
+            Chatbot = value;
         }
-
-        /// <summary>
-        /// Represents tool result in the chat history.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolMessage? TOOL { get; init; }
-#else
-        public global::Cohere.ChatToolMessage? TOOL { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TOOL))]
-#endif
-        public bool IsTOOL => TOOL != null;
 
         /// <summary>
         /// 
@@ -75,14 +74,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatToolMessage?(Message @this) => @this.TOOL;
+        public static implicit operator global::Cohere.ChatToolMessage?(Message @this) => @this.Tool;
 
         /// <summary>
         /// 
         /// </summary>
         public Message(global::Cohere.ChatToolMessage? value)
         {
-            TOOL = value;
+            Tool = value;
         }
 
         /// <summary>
@@ -90,30 +89,30 @@ namespace Cohere
         /// </summary>
         public Message(
             global::Cohere.MessageDiscriminatorRole? role,
-            global::Cohere.ChatMessage? cHATBOT,
-            global::Cohere.ChatToolMessage? tOOL
+            global::Cohere.ChatMessage? chatbot,
+            global::Cohere.ChatToolMessage? tool
             )
         {
             Role = role;
 
-            CHATBOT = cHATBOT;
-            TOOL = tOOL;
+            Chatbot = chatbot;
+            Tool = tool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            TOOL as object ??
-            CHATBOT as object 
+            Tool as object ??
+            Chatbot as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            CHATBOT?.ToString() ??
-            TOOL?.ToString() 
+            Chatbot?.ToString() ??
+            Tool?.ToString() 
             ;
 
         /// <summary>
@@ -121,15 +120,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsCHATBOT && !IsTOOL || !IsCHATBOT && IsTOOL;
+            return IsChatbot && !IsTool || !IsChatbot && IsTool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatMessage?, TResult>? cHATBOT = null,
-            global::System.Func<global::Cohere.ChatToolMessage?, TResult>? tOOL = null,
+            global::System.Func<global::Cohere.ChatMessage?, TResult>? chatbot = null,
+            global::System.Func<global::Cohere.ChatToolMessage?, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -137,13 +136,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsCHATBOT && cHATBOT != null)
+            if (IsChatbot && chatbot != null)
             {
-                return cHATBOT(CHATBOT!);
+                return chatbot(Chatbot!);
             }
-            else if (IsTOOL && tOOL != null)
+            else if (IsTool && tool != null)
             {
-                return tOOL(TOOL!);
+                return tool(Tool!);
             }
 
             return default(TResult);
@@ -153,8 +152,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatMessage?>? cHATBOT = null,
-            global::System.Action<global::Cohere.ChatToolMessage?>? tOOL = null,
+            global::System.Action<global::Cohere.ChatMessage?>? chatbot = null,
+            global::System.Action<global::Cohere.ChatToolMessage?>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -162,13 +161,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsCHATBOT)
+            if (IsChatbot)
             {
-                cHATBOT?.Invoke(CHATBOT!);
+                chatbot?.Invoke(Chatbot!);
             }
-            else if (IsTOOL)
+            else if (IsTool)
             {
-                tOOL?.Invoke(TOOL!);
+                tool?.Invoke(Tool!);
             }
         }
 
@@ -179,9 +178,9 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                CHATBOT,
+                Chatbot,
                 typeof(global::Cohere.ChatMessage),
-                TOOL,
+                Tool,
                 typeof(global::Cohere.ChatToolMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -199,8 +198,8 @@ namespace Cohere
         public bool Equals(Message other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessage?>.Default.Equals(CHATBOT, other.CHATBOT) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolMessage?>.Default.Equals(TOOL, other.TOOL) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessage?>.Default.Equals(Chatbot, other.Chatbot) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolMessage?>.Default.Equals(Tool, other.Tool) 
                 ;
         }
 

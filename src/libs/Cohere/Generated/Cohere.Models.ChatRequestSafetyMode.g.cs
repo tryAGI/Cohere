@@ -16,15 +16,15 @@ namespace Cohere
         /// <summary>
         /// //docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.
         /// </summary>
-        CONTEXTUAL,
+        Contextual,
         /// <summary>
         /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </summary>
-        STRICT,
+        Strict,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace Cohere
         {
             return value switch
             {
-                ChatRequestSafetyMode.CONTEXTUAL => "CONTEXTUAL",
-                ChatRequestSafetyMode.STRICT => "STRICT",
-                ChatRequestSafetyMode.NONE => "NONE",
+                ChatRequestSafetyMode.Contextual => "CONTEXTUAL",
+                ChatRequestSafetyMode.Strict => "STRICT",
+                ChatRequestSafetyMode.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace Cohere
         {
             return value switch
             {
-                "CONTEXTUAL" => ChatRequestSafetyMode.CONTEXTUAL,
-                "STRICT" => ChatRequestSafetyMode.STRICT,
-                "NONE" => ChatRequestSafetyMode.NONE,
+                "CONTEXTUAL" => ChatRequestSafetyMode.Contextual,
+                "STRICT" => ChatRequestSafetyMode.Strict,
+                "NONE" => ChatRequestSafetyMode.None,
                 _ => null,
             };
         }

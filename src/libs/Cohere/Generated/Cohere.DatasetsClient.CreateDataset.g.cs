@@ -60,6 +60,7 @@ namespace Cohere
         public async global::System.Threading.Tasks.Task<global::Cohere.CreateDatasetResponse> CreateDatasetAsync(
             string name,
             global::Cohere.DatasetType type,
+
             global::Cohere.CreateDatasetRequest request,
             bool? keepOriginalFile = default,
             bool? skipMalformedInput = default,
@@ -90,14 +91,14 @@ namespace Cohere
             var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("name", name) 
-                .AddRequiredParameter("type", type.ToValueString()) 
-                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString()) 
-                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString()) 
-                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true) 
-                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true) 
-                .AddOptionalParameter("text_separator", textSeparator) 
+            __pathBuilder
+                .AddRequiredParameter("name", name)
+                .AddRequiredParameter("type", type.ToValueString())
+                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString())
+                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString())
+                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true)
+                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true)
+                .AddOptionalParameter("text_separator", textSeparator)
                 .AddOptionalParameter("csv_delimiter", csvDelimiter) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -133,62 +134,80 @@ namespace Cohere
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),
-                name: "name");
+                name: "\"name\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{type.ToValueString()}"),
-                name: "type");
+                name: "\"type\"");
             if (keepOriginalFile != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{keepOriginalFile}"),
-                    name: "keep_original_file");
+                    name: "\"keep_original_file\"");
             } 
             if (skipMalformedInput != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{skipMalformedInput}"),
-                    name: "skip_malformed_input");
+                    name: "\"skip_malformed_input\"");
             } 
             if (keepFields != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
-                    name: "keep_fields");
+                    name: "\"keep_fields\"");
             } 
             if (optionalFields != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
-                    name: "optional_fields");
+                    name: "\"optional_fields\"");
             } 
             if (textSeparator != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{textSeparator}"),
-                    name: "text_separator");
+                    name: "\"text_separator\"");
             } 
             if (csvDelimiter != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{csvDelimiter}"),
-                    name: "csv_delimiter");
+                    name: "\"csv_delimiter\"");
             } 
             if (xClientName != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xClientName}"),
-                    name: "X-Client-Name");
-            } 
+                    name: "\"X-Client-Name\"");
+            }
+            var __contentData = new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>()),
-                name: "data",
-                fileName: request.Dataname ?? string.Empty);
+                content: __contentData,
+                name: "\"data\"",
+                fileName: request.Dataname != null ? $"\"{request.Dataname}\"" : string.Empty);
+            if (__contentData.Headers.ContentDisposition != null)
+            {
+                __contentData.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.EvalData != default)
             {
+
+                var __contentEvalData = new global::System.Net.Http.ByteArrayContent(request.EvalData ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.EvalData ?? global::System.Array.Empty<byte>()),
-                    name: "eval_data",
-                    fileName: request.EvalDataname ?? string.Empty);
+                    content: __contentEvalData,
+                    name: "\"eval_data\"",
+                    fileName: request.EvalDataname != null ? $"\"{request.EvalDataname}\"" : string.Empty);
+                if (__contentEvalData.Headers.ContentDisposition != null)
+                {
+                    __contentEvalData.Headers.ContentDisposition.FileNameStar = null;
+                }
             }
             __httpRequest.Content = __httpRequestContent;
 

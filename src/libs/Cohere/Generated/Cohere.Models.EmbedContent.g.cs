@@ -32,6 +32,22 @@ namespace Cohere
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
+        /// Text content of the input.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.EmbedText? Text { get; init; }
+#else
+        public global::Cohere.EmbedText? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator EmbedContent(global::Cohere.EmbedImage value) => new EmbedContent((global::Cohere.EmbedImage?)value);
@@ -48,23 +64,6 @@ namespace Cohere
         {
             ImageUrl = value;
         }
-
-        /// <summary>
-        /// Text content of the input.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.EmbedText? Text { get; init; }
-#else
-        public global::Cohere.EmbedText? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 

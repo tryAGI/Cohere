@@ -21,6 +21,12 @@ namespace Cohere
         public global::Cohere.UsageTokens? Tokens { get; set; }
 
         /// <summary>
+        /// The number of prompt tokens that hit the inference cache.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
+        public double? CachedTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -31,15 +37,20 @@ namespace Cohere
         /// </summary>
         /// <param name="billedUnits"></param>
         /// <param name="tokens"></param>
+        /// <param name="cachedTokens">
+        /// The number of prompt tokens that hit the inference cache.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Usage(
             global::Cohere.UsageBilledUnits? billedUnits,
-            global::Cohere.UsageTokens? tokens)
+            global::Cohere.UsageTokens? tokens,
+            double? cachedTokens)
         {
             this.BilledUnits = billedUnits;
             this.Tokens = tokens;
+            this.CachedTokens = cachedTokens;
         }
 
         /// <summary>

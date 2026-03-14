@@ -11,14 +11,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? Message { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string? Message { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,17 +29,17 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ListEmbedJobsResponse5" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="message"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListEmbedJobsResponse5(
-            string? id,
-            string? message)
+            string? message,
+            string? id)
         {
-            this.Id = id;
             this.Message = message;
+            this.Id = id;
         }
 
         /// <summary>

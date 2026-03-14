@@ -40,6 +40,22 @@ namespace Cohere
         /// 
         /// </summary>
         MultiLabelClassificationFinetuneInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchChatInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchOpenaiChatInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchEmbedV2Input,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchChatV2Input,
     }
 
     /// <summary>
@@ -62,6 +78,10 @@ namespace Cohere
                 DatasetType.SingleLabelClassificationFinetuneInput => "single-label-classification-finetune-input",
                 DatasetType.ChatFinetuneInput => "chat-finetune-input",
                 DatasetType.MultiLabelClassificationFinetuneInput => "multi-label-classification-finetune-input",
+                DatasetType.BatchChatInput => "batch-chat-input",
+                DatasetType.BatchOpenaiChatInput => "batch-openai-chat-input",
+                DatasetType.BatchEmbedV2Input => "batch-embed-v2-input",
+                DatasetType.BatchChatV2Input => "batch-chat-v2-input",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +100,10 @@ namespace Cohere
                 "single-label-classification-finetune-input" => DatasetType.SingleLabelClassificationFinetuneInput,
                 "chat-finetune-input" => DatasetType.ChatFinetuneInput,
                 "multi-label-classification-finetune-input" => DatasetType.MultiLabelClassificationFinetuneInput,
+                "batch-chat-input" => DatasetType.BatchChatInput,
+                "batch-openai-chat-input" => DatasetType.BatchOpenaiChatInput,
+                "batch-embed-v2-input" => DatasetType.BatchEmbedV2Input,
+                "batch-chat-v2-input" => DatasetType.BatchChatV2Input,
                 _ => null,
             };
         }

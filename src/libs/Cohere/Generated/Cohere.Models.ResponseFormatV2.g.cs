@@ -39,6 +39,22 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.JsonResponseFormatV2? JsonObject { get; init; }
+#else
+        public global::Cohere.JsonResponseFormatV2? JsonObject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
+#endif
+        public bool IsJsonObject => JsonObject != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormatV2(global::Cohere.ChatTextResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.ChatTextResponseFormatV2?)value);
 
         /// <summary>
@@ -53,23 +69,6 @@ namespace Cohere
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.JsonResponseFormatV2? JsonObject { get; init; }
-#else
-        public global::Cohere.JsonResponseFormatV2? JsonObject { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
-#endif
-        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// 

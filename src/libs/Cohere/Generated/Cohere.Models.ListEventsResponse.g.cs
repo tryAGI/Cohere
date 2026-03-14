@@ -6,12 +6,14 @@ namespace Cohere
     /// <summary>
     /// Response to a request to list events of a fine-tuned model.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ListEventsResponse
     {
         /// <summary>
         /// List of events for the fine-tuned model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Cohere.Event>? Events { get; set; }
 
         /// <summary>
@@ -19,12 +21,14 @@ namespace Cohere
         /// it means no further results for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page_token")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? NextPageToken { get; set; }
 
         /// <summary>
         /// Total count of results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_size")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? TotalSize { get; set; }
 
         /// <summary>

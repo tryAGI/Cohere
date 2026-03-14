@@ -29,6 +29,22 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ChatToolCallEndEventVariant2? Value2 { get; init; }
+#else
+        public global::Cohere.ChatToolCallEndEventVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallEndEvent(global::Cohere.ChatStreamEventType value) => new ChatToolCallEndEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
@@ -43,23 +59,6 @@ namespace Cohere
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolCallEndEventVariant2? Value2 { get; init; }
-#else
-        public global::Cohere.ChatToolCallEndEventVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

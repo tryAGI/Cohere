@@ -8,9 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AutoSDK" Version="0.28.1-dev.75" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.28" />
-  </ItemGroup>
-
 </Project>

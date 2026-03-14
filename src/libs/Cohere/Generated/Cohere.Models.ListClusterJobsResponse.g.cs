@@ -18,14 +18,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::Cohere.ApiMeta? Meta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int? TotalCount { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::Cohere.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,19 +37,19 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ListClusterJobsResponse" /> class.
         /// </summary>
         /// <param name="jobs"></param>
-        /// <param name="meta"></param>
         /// <param name="totalCount"></param>
+        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListClusterJobsResponse(
             global::System.Collections.Generic.IList<global::Cohere.GetClusterJobResponse> jobs,
-            global::Cohere.ApiMeta? meta,
-            int? totalCount)
+            int? totalCount,
+            global::Cohere.ApiMeta? meta)
         {
             this.Jobs = jobs ?? throw new global::System.ArgumentNullException(nameof(jobs));
-            this.Meta = meta;
             this.TotalCount = totalCount;
+            this.Meta = meta;
         }
 
         /// <summary>

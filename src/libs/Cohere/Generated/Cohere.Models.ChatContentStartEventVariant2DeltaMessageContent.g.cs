@@ -11,14 +11,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        public string? Thinking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
-        public string? Thinking { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -36,19 +36,19 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatContentStartEventVariant2DeltaMessageContent" /> class.
         /// </summary>
-        /// <param name="text"></param>
         /// <param name="thinking"></param>
+        /// <param name="text"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatContentStartEventVariant2DeltaMessageContent(
-            string? text,
             string? thinking,
+            string? text,
             global::Cohere.ChatContentStartEventVariant2DeltaMessageContentType? type)
         {
-            this.Text = text;
             this.Thinking = thinking;
+            this.Text = text;
             this.Type = type;
         }
 

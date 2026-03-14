@@ -9,19 +9,6 @@ namespace Cohere
     public sealed partial class ChatResponseV2
     {
         /// <summary>
-        /// The reason a chat request has finished.<br/>
-        /// - **complete**: The model finished sending a complete message.<br/>
-        /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
-        /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
-        /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
-        /// - **error**: The generation failed due to an internal error
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.ChatFinishReason FinishReason { get; set; }
-
-        /// <summary>
         /// Unique identifier for the generated reply. Useful for submitting feedback.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -29,10 +16,18 @@ namespace Cohere
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The reason a chat request has finished.<br/>
+        /// - **complete**: The model finished sending a complete message.<br/>
+        /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
+        /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
+        /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
+        /// - **error**: The generation failed due to an internal error<br/>
+        /// - **timeout**: The generation was stopped because it exceeded the allowed time limit.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? Logprobs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Cohere.ChatFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// A message from the assistant role can contain text and tool call information.
@@ -48,6 +43,12 @@ namespace Cohere
         public global::Cohere.Usage? Usage { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,37 +57,38 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatResponseV2" /> class.
         /// </summary>
+        /// <param name="id">
+        /// Unique identifier for the generated reply. Useful for submitting feedback.
+        /// </param>
         /// <param name="finishReason">
         /// The reason a chat request has finished.<br/>
         /// - **complete**: The model finished sending a complete message.<br/>
         /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
         /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
         /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
-        /// - **error**: The generation failed due to an internal error
+        /// - **error**: The generation failed due to an internal error<br/>
+        /// - **timeout**: The generation was stopped because it exceeded the allowed time limit.
         /// </param>
-        /// <param name="id">
-        /// Unique identifier for the generated reply. Useful for submitting feedback.
-        /// </param>
-        /// <param name="logprobs"></param>
         /// <param name="message">
         /// A message from the assistant role can contain text and tool call information.
         /// </param>
         /// <param name="usage"></param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatResponseV2(
-            global::Cohere.ChatFinishReason finishReason,
             string id,
+            global::Cohere.ChatFinishReason finishReason,
             global::Cohere.AssistantMessageResponse message,
-            global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? logprobs,
-            global::Cohere.Usage? usage)
+            global::Cohere.Usage? usage,
+            global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? logprobs)
         {
-            this.FinishReason = finishReason;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.FinishReason = finishReason;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Logprobs = logprobs;
             this.Usage = usage;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

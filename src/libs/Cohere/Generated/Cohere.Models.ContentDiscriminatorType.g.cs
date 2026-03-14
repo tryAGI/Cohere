@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        ImageUrl,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        ImageUrl,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ContentDiscriminatorType.ImageUrl => "image_url",
                 ContentDiscriminatorType.Text => "text",
+                ContentDiscriminatorType.ImageUrl => "image_url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "image_url" => ContentDiscriminatorType.ImageUrl,
                 "text" => ContentDiscriminatorType.Text,
+                "image_url" => ContentDiscriminatorType.ImageUrl,
                 _ => null,
             };
         }

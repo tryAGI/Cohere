@@ -6,6 +6,7 @@ namespace Cohere
     /// <summary>
     /// Response to request to delete a fine-tuned model.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class DeleteFinetunedModelResponse
     {
 

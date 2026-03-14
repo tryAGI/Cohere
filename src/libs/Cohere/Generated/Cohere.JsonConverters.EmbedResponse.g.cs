@@ -36,13 +36,14 @@ namespace Cohere.JsonConverters
                 embeddingsByType = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Cohere.EmbedResponse(
+            var __value = new global::Cohere.EmbedResponse(
                 discriminator?.ResponseType,
                 embeddingsFloats,
+
                 embeddingsByType
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

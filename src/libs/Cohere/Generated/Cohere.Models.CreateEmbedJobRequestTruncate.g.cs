@@ -13,11 +13,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        START,
+        Start,
         /// <summary>
         /// 
         /// </summary>
-        END,
+        End,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace Cohere
         {
             return value switch
             {
-                CreateEmbedJobRequestTruncate.START => "START",
-                CreateEmbedJobRequestTruncate.END => "END",
+                CreateEmbedJobRequestTruncate.Start => "START",
+                CreateEmbedJobRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace Cohere
         {
             return value switch
             {
-                "START" => CreateEmbedJobRequestTruncate.START,
-                "END" => CreateEmbedJobRequestTruncate.END,
+                "START" => CreateEmbedJobRequestTruncate.Start,
+                "END" => CreateEmbedJobRequestTruncate.End,
                 _ => null,
             };
         }

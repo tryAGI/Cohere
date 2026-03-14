@@ -20,7 +20,8 @@ namespace Cohere
         /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
         /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
         /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
-        /// - **error**: The generation failed due to an internal error
+        /// - **error**: The generation failed due to an internal error<br/>
+        /// - **timeout**: The generation was stopped because it exceeded the allowed time limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter))]
@@ -50,7 +51,8 @@ namespace Cohere
         /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
         /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
         /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
-        /// - **error**: The generation failed due to an internal error
+        /// - **error**: The generation failed due to an internal error<br/>
+        /// - **timeout**: The generation was stopped because it exceeded the allowed time limit.
         /// </param>
         /// <param name="usage"></param>
 #if NET7_0_OR_GREATER

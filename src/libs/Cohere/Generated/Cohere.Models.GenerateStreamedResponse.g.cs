@@ -34,6 +34,39 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.GenerateStreamEnd? StreamEnd { get; init; }
+#else
+        public global::Cohere.GenerateStreamEnd? StreamEnd { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
+#endif
+        public bool IsStreamEnd => StreamEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.GenerateStreamError? StreamError { get; init; }
+#else
+        public global::Cohere.GenerateStreamError? StreamError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
+#endif
+        public bool IsStreamError => StreamError != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamText value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamText?)value);
 
         /// <summary>
@@ -52,23 +85,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamEnd? StreamEnd { get; init; }
-#else
-        public global::Cohere.GenerateStreamEnd? StreamEnd { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
-#endif
-        public bool IsStreamEnd => StreamEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamEnd value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamEnd?)value);
 
         /// <summary>
@@ -83,23 +99,6 @@ namespace Cohere
         {
             StreamEnd = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamError? StreamError { get; init; }
-#else
-        public global::Cohere.GenerateStreamError? StreamError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
-#endif
-        public bool IsStreamError => StreamError != null;
 
         /// <summary>
         /// 

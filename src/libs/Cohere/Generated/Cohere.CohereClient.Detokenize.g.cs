@@ -32,6 +32,7 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.DetokenizeResponse> DetokenizeAsync(
+
             global::Cohere.DetokenizeRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -627,25 +628,25 @@ namespace Cohere
         /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="model">
-        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
-        /// </param>
         /// <param name="tokens">
         /// The list of tokens to be detokenized.<br/>
         /// Included only in requests
         /// </param>
+        /// <param name="model">
+        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.DetokenizeResponse> DetokenizeAsync(
-            string model,
             global::System.Collections.Generic.IList<int> tokens,
+            string model,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Cohere.DetokenizeRequest
             {
-                Model = model,
                 Tokens = tokens,
+                Model = model,
             };
 
             return await DetokenizeAsync(
