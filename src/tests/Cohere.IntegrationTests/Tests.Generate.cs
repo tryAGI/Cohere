@@ -3,17 +3,18 @@ namespace Cohere.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
-    public async Task Generate()
+    public async Task Chat()
     {
         using var client = GetAuthenticatedClient();
-        
-        var response = await client.GenerateAsync(new GenerateRequest
+
+        var response = await client.ChatAsync(new ChatRequest
         {
-            Prompt = "Hello, Cohere! Can you tell me a joke?",
+            Message = "Hello, Cohere! Can you tell me a joke?",
         });
 
-        // Display the generated text
+        response.IsValue1.Should().BeTrue();
+
         Console.WriteLine("Cohere Response:");
-        Console.WriteLine(response.Generations[0].Text);
+        Console.WriteLine(response.Value1!.Text);
     }
 }
