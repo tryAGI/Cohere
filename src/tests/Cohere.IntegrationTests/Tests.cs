@@ -10,7 +10,18 @@ public partial class Tests
             throw new AssertInconclusiveException("COHERE_API_KEY environment variable is not found.");
 
         var client = new CohereClient(apiKey);
-        
+
         return client;
     }
+
+    private static CohereClient GetAuthenticatedCohereClient()
+    {
+        var apiKey =
+            Environment.GetEnvironmentVariable("COHERE_API_KEY") ??
+            throw new AssertInconclusiveException("COHERE_API_KEY environment variable is not found.");
+
+        return new CohereClient(apiKey);
+    }
+
+    private static CohereClient CreateTestClient()=> new(apiKey: "test-key");
 }
