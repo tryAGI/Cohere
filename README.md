@@ -27,6 +27,28 @@ Console.WriteLine("Cohere Response:");
 Console.WriteLine(response.Generations[0].Text);
 ```
 
+### Microsoft.Extensions.AI
+
+The SDK implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) and [`IEmbeddingGenerator`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.iembeddinggenerator-2):
+```csharp
+using Cohere;
+using Meai = Microsoft.Extensions.AI;
+
+// IChatClient
+Meai.IChatClient chatClient = new CohereClient(apiKey);
+var response = await chatClient.GetResponseAsync(
+    [new Meai.ChatMessage(Meai.ChatRole.User, "Hello!")],
+    new Meai.ChatOptions { ModelId = "command-r-08-2024" });
+
+// IEmbeddingGenerator
+Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = new CohereClient(apiKey);
+var embeddings = await generator.GenerateAsync(
+    ["Hello, world!"],
+    new Meai.EmbeddingGenerationOptions { ModelId = "embed-english-v3.0" });
+```
+
+> **Note:** Use the `Meai` alias because the Cohere SDK has its own generated `IChatClient` interface.
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Cohere/issues  
