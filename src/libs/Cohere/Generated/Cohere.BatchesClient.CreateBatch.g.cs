@@ -121,8 +121,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_400 = global::Cohere.BatchError.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -158,8 +159,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_401, JsonSerializerContext).ConfigureAwait(false);
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::Cohere.BatchError.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -195,8 +197,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_403 = global::Cohere.BatchError.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -232,8 +235,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_404, JsonSerializerContext).ConfigureAwait(false);
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::Cohere.BatchError.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -269,8 +273,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_500 = global::Cohere.BatchError.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -306,8 +311,9 @@ namespace Cohere
                     }
                     else
                     {
-                        var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = await global::Cohere.BatchError.FromJsonStreamAsync(__contentStream_503, JsonSerializerContext).ConfigureAwait(false);
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_503 = global::Cohere.BatchError.FromJson(__content_503, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -387,11 +393,25 @@ namespace Cohere
                 }
                 catch (global::System.Exception __ex)
                 {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
                     throw new global::Cohere.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)
                     {
+                        ResponseBody = __content,
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
