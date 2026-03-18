@@ -39,7 +39,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 | `src/libs/Cohere/` | Main SDK library (`CohereClient`) |
 | `src/tests/Cohere.IntegrationTests/` | Integration tests against real Cohere API |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
-| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
 ### Build Configuration
 
