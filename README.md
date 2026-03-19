@@ -50,6 +50,9 @@ var embeddings = await generator.GenerateAsync(
 
 > **Note:** Use the `Meai` alias because the Cohere SDK has its own generated `IChatClient` interface.
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Cohere/issues  
