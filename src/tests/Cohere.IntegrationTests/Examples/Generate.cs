@@ -1,3 +1,9 @@
+/*
+order: 130
+title: Generate
+slug: generate
+*/
+
 namespace Cohere.IntegrationTests;
 
 public partial class Tests
