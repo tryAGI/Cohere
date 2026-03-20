@@ -36,7 +36,7 @@ namespace Cohere.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Cohere.ChatStreamEvent? value1 = default;
-            global::Cohere.ChatTextGenerationEventVariant2? value2 = default;
+            global::Cohere.ChatTextGenerationEvent8yyj22? value2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -58,8 +58,8 @@ namespace Cohere.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEventVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEventVariant2).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEvent8yyj22), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEvent8yyj22> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEvent8yyj22).Name}");
                         value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -88,8 +88,8 @@ namespace Cohere.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEventVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEventVariant2).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEvent8yyj22), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEvent8yyj22> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEvent8yyj22).Name}");
                     value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -126,8 +126,8 @@ namespace Cohere.JsonConverters
             }
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEventVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEventVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextGenerationEvent8yyj22), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextGenerationEvent8yyj22?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextGenerationEvent8yyj22).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
         }

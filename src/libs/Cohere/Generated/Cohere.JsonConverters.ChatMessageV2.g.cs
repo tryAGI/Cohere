@@ -28,11 +28,11 @@ namespace Cohere.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.UserMessageV2)}");
                 user = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Cohere.AssistantMessageV2? assistant = default;
+            global::Cohere.AssistantMessage? assistant = default;
             if (discriminator?.Role == global::Cohere.ChatMessageV2DiscriminatorRole.Assistant)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessageV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessageV2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessageV2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessage)}");
                 assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Cohere.SystemMessageV2? system = default;
@@ -81,8 +81,8 @@ namespace Cohere.JsonConverters
             }
             else if (value.IsAssistant)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessageV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessageV2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.AssistantMessageV2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.AssistantMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Assistant, typeInfo);
             }
             else if (value.IsSystem)

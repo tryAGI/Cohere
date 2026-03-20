@@ -30,9 +30,9 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatTextGenerationEventVariant2? Value2 { get; init; }
+        public global::Cohere.ChatTextGenerationEvent8yyj22? Value2 { get; init; }
 #else
-        public global::Cohere.ChatTextGenerationEventVariant2? Value2 { get; }
+        public global::Cohere.ChatTextGenerationEvent8yyj22? Value2 { get; }
 #endif
 
         /// <summary>
@@ -63,17 +63,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEventVariant2 value) => new ChatTextGenerationEvent((global::Cohere.ChatTextGenerationEventVariant2?)value);
+        public static implicit operator ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEvent8yyj22 value) => new ChatTextGenerationEvent((global::Cohere.ChatTextGenerationEvent8yyj22?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatTextGenerationEventVariant2?(ChatTextGenerationEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.ChatTextGenerationEvent8yyj22?(ChatTextGenerationEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEventVariant2? value)
+        public ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEvent8yyj22? value)
         {
             Value2 = value;
         }
@@ -83,7 +83,7 @@ namespace Cohere
         /// </summary>
         public ChatTextGenerationEvent(
             global::Cohere.ChatStreamEvent? value1,
-            global::Cohere.ChatTextGenerationEventVariant2? value2
+            global::Cohere.ChatTextGenerationEvent8yyj22? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.ChatTextGenerationEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatTextGenerationEvent8yyj22?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +144,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::Cohere.ChatTextGenerationEventVariant2?>? value2 = null,
+            global::System.Action<global::Cohere.ChatTextGenerationEvent8yyj22?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -172,7 +172,7 @@ namespace Cohere
                 Value1,
                 typeof(global::Cohere.ChatStreamEvent),
                 Value2,
-                typeof(global::Cohere.ChatTextGenerationEventVariant2),
+                typeof(global::Cohere.ChatTextGenerationEvent8yyj22),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextGenerationEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextGenerationEvent8yyj22?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

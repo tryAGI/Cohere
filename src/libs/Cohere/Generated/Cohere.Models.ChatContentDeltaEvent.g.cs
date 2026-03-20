@@ -30,9 +30,9 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatContentDeltaEventVariant2? Value2 { get; init; }
+        public global::Cohere.ChatContentDeltaEvent3m0vqs? Value2 { get; init; }
 #else
-        public global::Cohere.ChatContentDeltaEventVariant2? Value2 { get; }
+        public global::Cohere.ChatContentDeltaEvent3m0vqs? Value2 { get; }
 #endif
 
         /// <summary>
@@ -63,17 +63,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEventVariant2 value) => new ChatContentDeltaEvent((global::Cohere.ChatContentDeltaEventVariant2?)value);
+        public static implicit operator ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEvent3m0vqs value) => new ChatContentDeltaEvent((global::Cohere.ChatContentDeltaEvent3m0vqs?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatContentDeltaEventVariant2?(ChatContentDeltaEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.ChatContentDeltaEvent3m0vqs?(ChatContentDeltaEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEventVariant2? value)
+        public ChatContentDeltaEvent(global::Cohere.ChatContentDeltaEvent3m0vqs? value)
         {
             Value2 = value;
         }
@@ -83,7 +83,7 @@ namespace Cohere
         /// </summary>
         public ChatContentDeltaEvent(
             global::Cohere.ChatStreamEventType? value1,
-            global::Cohere.ChatContentDeltaEventVariant2? value2
+            global::Cohere.ChatContentDeltaEvent3m0vqs? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.ChatContentDeltaEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatContentDeltaEvent3m0vqs?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +144,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::Cohere.ChatContentDeltaEventVariant2?>? value2 = null,
+            global::System.Action<global::Cohere.ChatContentDeltaEvent3m0vqs?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -172,7 +172,7 @@ namespace Cohere
                 Value1,
                 typeof(global::Cohere.ChatStreamEventType),
                 Value2,
-                typeof(global::Cohere.ChatContentDeltaEventVariant2),
+                typeof(global::Cohere.ChatContentDeltaEvent3m0vqs),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatContentDeltaEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatContentDeltaEvent3m0vqs?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

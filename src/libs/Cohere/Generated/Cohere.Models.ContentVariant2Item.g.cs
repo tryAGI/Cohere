@@ -12,7 +12,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.AssistantMessageV2ContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Text content of the message.
@@ -87,7 +87,7 @@ namespace Cohere
         /// 
         /// </summary>
         public ContentVariant2Item(
-            global::Cohere.AssistantMessageV2ContentVariant2ItemDiscriminatorType? type,
+            global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType? type,
             global::Cohere.ChatTextContent? text,
             global::Cohere.ChatThinkingContent? thinking
             )

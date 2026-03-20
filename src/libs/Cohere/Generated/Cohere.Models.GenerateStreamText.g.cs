@@ -30,9 +30,9 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamTextVariant2? Value2 { get; init; }
+        public global::Cohere.GenerateStreamTextYai5v6? Value2 { get; init; }
 #else
-        public global::Cohere.GenerateStreamTextVariant2? Value2 { get; }
+        public global::Cohere.GenerateStreamTextYai5v6? Value2 { get; }
 #endif
 
         /// <summary>
@@ -63,17 +63,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextVariant2 value) => new GenerateStreamText((global::Cohere.GenerateStreamTextVariant2?)value);
+        public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextYai5v6 value) => new GenerateStreamText((global::Cohere.GenerateStreamTextYai5v6?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.GenerateStreamTextVariant2?(GenerateStreamText @this) => @this.Value2;
+        public static implicit operator global::Cohere.GenerateStreamTextYai5v6?(GenerateStreamText @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public GenerateStreamText(global::Cohere.GenerateStreamTextVariant2? value)
+        public GenerateStreamText(global::Cohere.GenerateStreamTextYai5v6? value)
         {
             Value2 = value;
         }
@@ -83,7 +83,7 @@ namespace Cohere
         /// </summary>
         public GenerateStreamText(
             global::Cohere.GenerateStreamEvent? value1,
-            global::Cohere.GenerateStreamTextVariant2? value2
+            global::Cohere.GenerateStreamTextYai5v6? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.GenerateStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.GenerateStreamTextVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.GenerateStreamTextYai5v6?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +144,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.GenerateStreamEvent?>? value1 = null,
-            global::System.Action<global::Cohere.GenerateStreamTextVariant2?>? value2 = null,
+            global::System.Action<global::Cohere.GenerateStreamTextYai5v6?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -172,7 +172,7 @@ namespace Cohere
                 Value1,
                 typeof(global::Cohere.GenerateStreamEvent),
                 Value2,
-                typeof(global::Cohere.GenerateStreamTextVariant2),
+                typeof(global::Cohere.GenerateStreamTextYai5v6),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamTextVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamTextYai5v6?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

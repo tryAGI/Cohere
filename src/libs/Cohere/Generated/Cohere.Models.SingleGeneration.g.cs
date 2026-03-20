@@ -38,7 +38,7 @@ namespace Cohere
         /// Only returned if `return_likelihoods` is set to `GENERATION` or `ALL`. The likelihood refers to the average log-likelihood of the entire specified string, which is useful for [evaluating the performance of your model](likelihood-eval), especially if you've created a [custom model](https://docs.cohere.com/docs/training-custom-models). Individual token likelihoods provide the log-likelihood of each token. The first token will not have a likelihood.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_likelihoods")]
-        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihood>? TokenLikelihoods { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihoodsItem>? TokenLikelihoods { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,7 +66,7 @@ namespace Cohere
             string text,
             int? index,
             double? likelihood,
-            global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihood>? tokenLikelihoods)
+            global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihoodsItem>? tokenLikelihoods)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));

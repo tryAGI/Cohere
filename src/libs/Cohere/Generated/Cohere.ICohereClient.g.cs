@@ -41,34 +41,29 @@ namespace Cohere
 
 
         /// <summary>
-        /// Datasets API
+        /// 
         /// </summary>
-        public DatasetsClient Datasets { get; }
-
-        /// <summary>
-        /// Connectors API
-        /// </summary>
-        public ConnectorsClient Connectors { get; }
-
-        /// <summary>
-        /// Embed Jobs API
-        /// </summary>
-        public EmbedJobsClient EmbedJobs { get; }
-
-        /// <summary>
-        /// Finetuning API (Beta)
-        /// </summary>
-        public FinetuningClient Finetuning { get; }
+        public V2Client V2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public BatchesClient Batches { get; }
+        public Batches2Client Batches2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models { get; }
+        public EmbedJobs2Client EmbedJobs2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Datasets2Client Datasets2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Models2Client Models2 { get; }
 
     }
 }

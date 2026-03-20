@@ -35,9 +35,9 @@ namespace Cohere
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.AssistantMessageV2? Assistant { get; init; }
+        public global::Cohere.AssistantMessage? Assistant { get; init; }
 #else
-        public global::Cohere.AssistantMessageV2? Assistant { get; }
+        public global::Cohere.AssistantMessage? Assistant { get; }
 #endif
 
         /// <summary>
@@ -102,17 +102,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::Cohere.AssistantMessageV2 value) => new ChatMessageV2((global::Cohere.AssistantMessageV2?)value);
+        public static implicit operator ChatMessageV2(global::Cohere.AssistantMessage value) => new ChatMessageV2((global::Cohere.AssistantMessage?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.AssistantMessageV2?(ChatMessageV2 @this) => @this.Assistant;
+        public static implicit operator global::Cohere.AssistantMessage?(ChatMessageV2 @this) => @this.Assistant;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatMessageV2(global::Cohere.AssistantMessageV2? value)
+        public ChatMessageV2(global::Cohere.AssistantMessage? value)
         {
             Assistant = value;
         }
@@ -159,7 +159,7 @@ namespace Cohere
         public ChatMessageV2(
             global::Cohere.ChatMessageV2DiscriminatorRole? role,
             global::Cohere.UserMessageV2? user,
-            global::Cohere.AssistantMessageV2? assistant,
+            global::Cohere.AssistantMessage? assistant,
             global::Cohere.SystemMessageV2? system,
             global::Cohere.ToolMessageV2? tool
             )
@@ -205,7 +205,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.UserMessageV2?, TResult>? user = null,
-            global::System.Func<global::Cohere.AssistantMessageV2?, TResult>? assistant = null,
+            global::System.Func<global::Cohere.AssistantMessage?, TResult>? assistant = null,
             global::System.Func<global::Cohere.SystemMessageV2?, TResult>? system = null,
             global::System.Func<global::Cohere.ToolMessageV2?, TResult>? tool = null,
             bool validate = true)
@@ -240,7 +240,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.UserMessageV2?>? user = null,
-            global::System.Action<global::Cohere.AssistantMessageV2?>? assistant = null,
+            global::System.Action<global::Cohere.AssistantMessage?>? assistant = null,
             global::System.Action<global::Cohere.SystemMessageV2?>? system = null,
             global::System.Action<global::Cohere.ToolMessageV2?>? tool = null,
             bool validate = true)
@@ -278,7 +278,7 @@ namespace Cohere
                 User,
                 typeof(global::Cohere.UserMessageV2),
                 Assistant,
-                typeof(global::Cohere.AssistantMessageV2),
+                typeof(global::Cohere.AssistantMessage),
                 System,
                 typeof(global::Cohere.SystemMessageV2),
                 Tool,
@@ -300,7 +300,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.UserMessageV2?>.Default.Equals(User, other.User) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.AssistantMessageV2?>.Default.Equals(Assistant, other.Assistant) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.AssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.SystemMessageV2?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolMessageV2?>.Default.Equals(Tool, other.Tool) 
                 ;

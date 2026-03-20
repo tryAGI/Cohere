@@ -1,0 +1,52 @@
+
+#nullable enable
+
+namespace Cohere
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GatewayTimeoutErrorBody15
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? Message { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GatewayTimeoutErrorBody15" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="id"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public GatewayTimeoutErrorBody15(
+            string? message,
+            string? id)
+        {
+            this.Message = message;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GatewayTimeoutErrorBody15" /> class.
+        /// </summary>
+        public GatewayTimeoutErrorBody15()
+        {
+        }
+    }
+}

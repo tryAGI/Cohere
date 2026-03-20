@@ -35,7 +35,7 @@ namespace Cohere
         /// ```
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameter_definitions")]
-        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ToolParameterDefinitions2>? ParameterDefinitions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ToolParameterDefinitionsValue>? ParameterDefinitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +70,7 @@ namespace Cohere
         public Tool(
             string name,
             string description,
-            global::System.Collections.Generic.Dictionary<string, global::Cohere.ToolParameterDefinitions2>? parameterDefinitions)
+            global::System.Collections.Generic.Dictionary<string, global::Cohere.ToolParameterDefinitionsValue>? parameterDefinitions)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

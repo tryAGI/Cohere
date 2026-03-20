@@ -11,7 +11,7 @@ namespace Cohere
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.CheckAPIKeyResponse> CheckAPIKeyAsync(
+        global::System.Threading.Tasks.Task<global::Cohere.CheckApiKeyResponse> CheckAPIKeyAsync(
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

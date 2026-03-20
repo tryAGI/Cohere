@@ -30,9 +30,9 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatMessageStartEventVariant2? Value2 { get; init; }
+        public global::Cohere.ChatMessageStartEventLsegeq? Value2 { get; init; }
 #else
-        public global::Cohere.ChatMessageStartEventVariant2? Value2 { get; }
+        public global::Cohere.ChatMessageStartEventLsegeq? Value2 { get; }
 #endif
 
         /// <summary>
@@ -63,17 +63,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageStartEvent(global::Cohere.ChatMessageStartEventVariant2 value) => new ChatMessageStartEvent((global::Cohere.ChatMessageStartEventVariant2?)value);
+        public static implicit operator ChatMessageStartEvent(global::Cohere.ChatMessageStartEventLsegeq value) => new ChatMessageStartEvent((global::Cohere.ChatMessageStartEventLsegeq?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatMessageStartEventVariant2?(ChatMessageStartEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.ChatMessageStartEventLsegeq?(ChatMessageStartEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatMessageStartEvent(global::Cohere.ChatMessageStartEventVariant2? value)
+        public ChatMessageStartEvent(global::Cohere.ChatMessageStartEventLsegeq? value)
         {
             Value2 = value;
         }
@@ -83,7 +83,7 @@ namespace Cohere
         /// </summary>
         public ChatMessageStartEvent(
             global::Cohere.ChatStreamEventType? value1,
-            global::Cohere.ChatMessageStartEventVariant2? value2
+            global::Cohere.ChatMessageStartEventLsegeq? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace Cohere
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.ChatMessageStartEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatMessageStartEventLsegeq?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +144,7 @@ namespace Cohere
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::Cohere.ChatMessageStartEventVariant2?>? value2 = null,
+            global::System.Action<global::Cohere.ChatMessageStartEventLsegeq?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -172,7 +172,7 @@ namespace Cohere
                 Value1,
                 typeof(global::Cohere.ChatStreamEventType),
                 Value2,
-                typeof(global::Cohere.ChatMessageStartEventVariant2),
+                typeof(global::Cohere.ChatMessageStartEventLsegeq),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace Cohere
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessageStartEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessageStartEventLsegeq?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

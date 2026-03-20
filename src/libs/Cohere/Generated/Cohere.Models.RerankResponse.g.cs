@@ -19,7 +19,7 @@ namespace Cohere
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Cohere.RerankResponseResult> Results { get; set; }
+        public required global::System.Collections.Generic.IList<global::Cohere.RerankResponseResultsItem> Results { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankResponse(
-            global::System.Collections.Generic.IList<global::Cohere.RerankResponseResult> results,
+            global::System.Collections.Generic.IList<global::Cohere.RerankResponseResultsItem> results,
             string? id,
             global::Cohere.ApiMeta? meta)
         {
