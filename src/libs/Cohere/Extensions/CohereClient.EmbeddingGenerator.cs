@@ -26,16 +26,16 @@ public partial class CohereClient : Meai.IEmbeddingGenerator<string, Meai.Embedd
 
         var texts = values as IList<string> ?? values.ToList();
 
-        var request = new Embedv2Request
+        var request = new V2EmbedRequest
         {
             Model = options?.ModelId ?? "embed-english-v3.0",
             Texts = texts,
             InputType = EmbedInputType.SearchDocument,
             EmbeddingTypes = [EmbeddingType.Float],
-            Truncate = Embedv2RequestTruncate.End,
+            Truncate = V2EmbedRequestTruncate.End,
         };
 
-        var response = await Embedv2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        var response = await V2.Embed2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         var embeddings = new Meai.GeneratedEmbeddings<Meai.Embedding<float>>();
 
