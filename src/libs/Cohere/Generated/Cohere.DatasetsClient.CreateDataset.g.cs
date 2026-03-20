@@ -781,7 +781,6 @@ namespace Cohere
                 }
             }
         }
-
         /// <summary>
         /// Create a Dataset<br/>
         /// Create a dataset by uploading a file. See ['Dataset Creation'](https://docs.cohere.com/docs/datasets#dataset-creation) for more information.

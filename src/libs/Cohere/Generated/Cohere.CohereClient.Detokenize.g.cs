@@ -648,7 +648,6 @@ namespace Cohere
                 }
             }
         }
-
         /// <summary>
         /// Detokenize<br/>
         /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.

@@ -17,7 +17,6 @@ namespace Cohere
             global::Cohere.DetokenizeRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Detokenize<br/>
         /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.

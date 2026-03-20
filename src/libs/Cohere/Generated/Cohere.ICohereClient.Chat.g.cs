@@ -20,7 +20,6 @@ namespace Cohere
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Chat API (v1)<br/>
         /// Generates a text response to a user message.<br/>

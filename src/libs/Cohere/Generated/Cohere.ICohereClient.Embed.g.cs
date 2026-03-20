@@ -19,7 +19,6 @@ namespace Cohere
             global::Cohere.EmbedRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Embed API (v1)<br/>
         /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>

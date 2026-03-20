@@ -17,7 +17,6 @@ namespace Cohere
             global::Cohere.Batch request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a batch<br/>
         /// Creates and executes a batch from an uploaded dataset of requests
