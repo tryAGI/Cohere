@@ -72,7 +72,7 @@ public partial class CohereClient : Meai.IChatClient
         yield return update;
     }
 
-    private Chatv2Request CreateChatRequest(
+    private static Chatv2Request CreateChatRequest(
         IEnumerable<Meai.ChatMessage> messages,
         Meai.ChatOptions? options)
     {
