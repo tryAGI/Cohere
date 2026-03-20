@@ -4,7 +4,20 @@ nav:
 - Guides:
   - Microsoft.Extensions.AI: guides/meai.md
 # EXAMPLES:START
-
+- Examples:
+  - Chat Client Five Random Words Streaming: examples/chat-client-five-random-words-streaming.md
+  - Chat Client Five Random Words: examples/chat-client-five-random-words.md
+  - Chat Client Get Service Returns Chat Client Metadata: examples/chat-client-get-service-returns-chat-client-metadata.md
+  - Chat Client Get Service Returns Null For Unknown Key: examples/chat-client-get-service-returns-null-for-unknown-key.md
+  - Chat Client Get Service Returns Self: examples/chat-client-get-service-returns-self.md
+  - Chat Client Tool Calling Multi Turn: examples/chat-client-tool-calling-multi-turn.md
+  - Chat Client Tool Calling Single Turn: examples/chat-client-tool-calling-single-turn.md
+  - Embedding Generator Batch Texts: examples/embedding-generator-batch-texts.md
+  - Embedding Generator Get Service Returns Metadata: examples/embedding-generator-get-service-returns-metadata.md
+  - Embedding Generator Get Service Returns Null For Unknown Key: examples/embedding-generator-get-service-returns-null-for-unknown-key.md
+  - Embedding Generator Get Service Returns Self: examples/embedding-generator-get-service-returns-self.md
+  - Embedding Generator Single Text: examples/embedding-generator-single-text.md
+  - Generate: examples/generate.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
