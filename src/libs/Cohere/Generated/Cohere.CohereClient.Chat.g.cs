@@ -659,7 +659,6 @@ namespace Cohere
                 }
             }
         }
-
         /// <summary>
         /// Chat API (v1)<br/>
         /// Generates a text response to a user message.<br/>

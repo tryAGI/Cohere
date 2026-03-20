@@ -420,7 +420,6 @@ namespace Cohere
                 }
             }
         }
-
         /// <summary>
         /// Create a batch<br/>
         /// Creates and executes a batch from an uploaded dataset of requests

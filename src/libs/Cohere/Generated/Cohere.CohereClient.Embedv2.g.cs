@@ -650,7 +650,6 @@ namespace Cohere
                 }
             }
         }
-
         /// <summary>
         /// Embed API (v2)<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
