@@ -43,17 +43,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public Batches2Client Batches2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbedJobs2Client EmbedJobs2 { get; }
 
         /// <summary>
         /// 
@@ -63,7 +53,17 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public EmbedJobs2Client EmbedJobs2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Models2Client Models2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public V2Client V2 { get; }
 
     }
 }
