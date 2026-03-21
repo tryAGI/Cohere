@@ -62,7 +62,7 @@ namespace Cohere
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page_token", pageToken)
                 .AddOptionalParameter("endpoint", endpoint?.ToValueString())
-                .AddOptionalParameter("default_only", defaultOnly?.ToString()) 
+                .AddOptionalParameter("default_only", defaultOnly?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
