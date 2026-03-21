@@ -94,8 +94,8 @@ namespace Cohere
             __pathBuilder
                 .AddRequiredParameter("name", name)
                 .AddRequiredParameter("type", type.ToValueString())
-                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString())
-                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString())
+                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true)
                 .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true)
                 .AddOptionalParameter("text_separator", textSeparator)
