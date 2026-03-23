@@ -13,7 +13,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
-        Accurate,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
@@ -44,10 +44,10 @@ namespace Cohere
         {
             return value switch
             {
-                ChatRequestCitationQuality.Enabled => "ENABLED",
-                ChatRequestCitationQuality.Disabled => "DISABLED",
-                ChatRequestCitationQuality.Fast => "FAST",
                 ChatRequestCitationQuality.Accurate => "ACCURATE",
+                ChatRequestCitationQuality.Disabled => "DISABLED",
+                ChatRequestCitationQuality.Enabled => "ENABLED",
+                ChatRequestCitationQuality.Fast => "FAST",
                 ChatRequestCitationQuality.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -59,10 +59,10 @@ namespace Cohere
         {
             return value switch
             {
-                "ENABLED" => ChatRequestCitationQuality.Enabled,
-                "DISABLED" => ChatRequestCitationQuality.Disabled,
-                "FAST" => ChatRequestCitationQuality.Fast,
                 "ACCURATE" => ChatRequestCitationQuality.Accurate,
+                "DISABLED" => ChatRequestCitationQuality.Disabled,
+                "ENABLED" => ChatRequestCitationQuality.Enabled,
+                "FAST" => ChatRequestCitationQuality.Fast,
                 "OFF" => ChatRequestCitationQuality.Off,
                 _ => null,
             };

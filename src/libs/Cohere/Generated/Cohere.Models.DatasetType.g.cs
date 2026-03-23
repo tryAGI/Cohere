@@ -11,6 +11,34 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        BatchChatInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchChatV2Input,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchEmbedV2Input,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchOpenaiChatInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        ChatFinetuneInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        ClusterOutliers,
+        /// <summary>
+        /// 
+        /// </summary>
+        ClusterResult,
+        /// <summary>
+        /// 
+        /// </summary>
         EmbedInput,
         /// <summary>
         /// 
@@ -19,11 +47,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        ClusterResult,
-        /// <summary>
-        /// 
-        /// </summary>
-        ClusterOutliers,
+        MultiLabelClassificationFinetuneInput,
         /// <summary>
         /// 
         /// </summary>
@@ -32,30 +56,6 @@ namespace Cohere
         /// 
         /// </summary>
         SingleLabelClassificationFinetuneInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        ChatFinetuneInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        MultiLabelClassificationFinetuneInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        BatchChatInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        BatchOpenaiChatInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        BatchEmbedV2Input,
-        /// <summary>
-        /// 
-        /// </summary>
-        BatchChatV2Input,
     }
 
     /// <summary>
@@ -70,18 +70,18 @@ namespace Cohere
         {
             return value switch
             {
+                DatasetType.BatchChatInput => "batch-chat-input",
+                DatasetType.BatchChatV2Input => "batch-chat-v2-input",
+                DatasetType.BatchEmbedV2Input => "batch-embed-v2-input",
+                DatasetType.BatchOpenaiChatInput => "batch-openai-chat-input",
+                DatasetType.ChatFinetuneInput => "chat-finetune-input",
+                DatasetType.ClusterOutliers => "cluster-outliers",
+                DatasetType.ClusterResult => "cluster-result",
                 DatasetType.EmbedInput => "embed-input",
                 DatasetType.EmbedResult => "embed-result",
-                DatasetType.ClusterResult => "cluster-result",
-                DatasetType.ClusterOutliers => "cluster-outliers",
+                DatasetType.MultiLabelClassificationFinetuneInput => "multi-label-classification-finetune-input",
                 DatasetType.RerankerFinetuneInput => "reranker-finetune-input",
                 DatasetType.SingleLabelClassificationFinetuneInput => "single-label-classification-finetune-input",
-                DatasetType.ChatFinetuneInput => "chat-finetune-input",
-                DatasetType.MultiLabelClassificationFinetuneInput => "multi-label-classification-finetune-input",
-                DatasetType.BatchChatInput => "batch-chat-input",
-                DatasetType.BatchOpenaiChatInput => "batch-openai-chat-input",
-                DatasetType.BatchEmbedV2Input => "batch-embed-v2-input",
-                DatasetType.BatchChatV2Input => "batch-chat-v2-input",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,18 +92,18 @@ namespace Cohere
         {
             return value switch
             {
+                "batch-chat-input" => DatasetType.BatchChatInput,
+                "batch-chat-v2-input" => DatasetType.BatchChatV2Input,
+                "batch-embed-v2-input" => DatasetType.BatchEmbedV2Input,
+                "batch-openai-chat-input" => DatasetType.BatchOpenaiChatInput,
+                "chat-finetune-input" => DatasetType.ChatFinetuneInput,
+                "cluster-outliers" => DatasetType.ClusterOutliers,
+                "cluster-result" => DatasetType.ClusterResult,
                 "embed-input" => DatasetType.EmbedInput,
                 "embed-result" => DatasetType.EmbedResult,
-                "cluster-result" => DatasetType.ClusterResult,
-                "cluster-outliers" => DatasetType.ClusterOutliers,
+                "multi-label-classification-finetune-input" => DatasetType.MultiLabelClassificationFinetuneInput,
                 "reranker-finetune-input" => DatasetType.RerankerFinetuneInput,
                 "single-label-classification-finetune-input" => DatasetType.SingleLabelClassificationFinetuneInput,
-                "chat-finetune-input" => DatasetType.ChatFinetuneInput,
-                "multi-label-classification-finetune-input" => DatasetType.MultiLabelClassificationFinetuneInput,
-                "batch-chat-input" => DatasetType.BatchChatInput,
-                "batch-openai-chat-input" => DatasetType.BatchOpenaiChatInput,
-                "batch-embed-v2-input" => DatasetType.BatchEmbedV2Input,
-                "batch-chat-v2-input" => DatasetType.BatchChatV2Input,
                 _ => null,
             };
         }

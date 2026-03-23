@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Tool,
+        Document,
         /// <summary>
         /// 
         /// </summary>
-        Document,
+        Tool,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                SourceDiscriminatorType.Tool => "tool",
                 SourceDiscriminatorType.Document => "document",
+                SourceDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "tool" => SourceDiscriminatorType.Tool,
                 "document" => SourceDiscriminatorType.Document,
+                "tool" => SourceDiscriminatorType.Tool,
                 _ => null,
             };
         }

@@ -11,15 +11,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        TextGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
         StreamEnd,
         /// <summary>
         /// 
         /// </summary>
         StreamError,
+        /// <summary>
+        /// 
+        /// </summary>
+        TextGeneration,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Cohere
         {
             return value switch
             {
-                GenerateStreamEventEventType.TextGeneration => "text-generation",
                 GenerateStreamEventEventType.StreamEnd => "stream-end",
                 GenerateStreamEventEventType.StreamError => "stream-error",
+                GenerateStreamEventEventType.TextGeneration => "text-generation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Cohere
         {
             return value switch
             {
-                "text-generation" => GenerateStreamEventEventType.TextGeneration,
                 "stream-end" => GenerateStreamEventEventType.StreamEnd,
                 "stream-error" => GenerateStreamEventEventType.StreamError,
+                "text-generation" => GenerateStreamEventEventType.TextGeneration,
                 _ => null,
             };
         }

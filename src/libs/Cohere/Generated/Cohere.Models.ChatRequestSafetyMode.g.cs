@@ -18,13 +18,13 @@ namespace Cohere
         /// </summary>
         Contextual,
         /// <summary>
-        /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
-        /// </summary>
-        Strict,
-        /// <summary>
         /// 
         /// </summary>
         None,
+        /// <summary>
+        /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
+        /// </summary>
+        Strict,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace Cohere
             return value switch
             {
                 ChatRequestSafetyMode.Contextual => "CONTEXTUAL",
-                ChatRequestSafetyMode.Strict => "STRICT",
                 ChatRequestSafetyMode.None => "NONE",
+                ChatRequestSafetyMode.Strict => "STRICT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace Cohere
             return value switch
             {
                 "CONTEXTUAL" => ChatRequestSafetyMode.Contextual,
-                "STRICT" => ChatRequestSafetyMode.Strict,
                 "NONE" => ChatRequestSafetyMode.None,
+                "STRICT" => ChatRequestSafetyMode.Strict,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Valid,
+        Expired,
         /// <summary>
         /// 
         /// </summary>
-        Expired,
+        Valid,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ConnectorAuthStatus.Valid => "valid",
                 ConnectorAuthStatus.Expired => "expired",
+                ConnectorAuthStatus.Valid => "valid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "valid" => ConnectorAuthStatus.Valid,
                 "expired" => ConnectorAuthStatus.Expired,
+                "valid" => ConnectorAuthStatus.Valid,
                 _ => null,
             };
         }

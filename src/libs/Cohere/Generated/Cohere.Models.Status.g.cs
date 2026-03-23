@@ -19,33 +19,21 @@ namespace Cohere
     public enum Status
     {
         /// <summary>
-        /// Unspecified status.
+        /// The fine-tuned model was deleted.
         /// </summary>
-        Unspecified,
-        /// <summary>
-        /// The fine-tuned model is being fine-tuned.
-        /// </summary>
-        Finetuning,
+        Deleted,
         /// <summary>
         /// Deprecated: The fine-tuned model is being deployed.
         /// </summary>
         DeployingApi,
         /// <summary>
-        /// The fine-tuned model is ready to receive requests.
-        /// </summary>
-        Ready,
-        /// <summary>
         /// The fine-tuned model failed.
         /// </summary>
         Failed,
         /// <summary>
-        /// The fine-tuned model was deleted.
+        /// The fine-tuned model is being fine-tuned.
         /// </summary>
-        Deleted,
-        /// <summary>
-        /// Deprecated: The fine-tuned model is temporarily unavailable.
-        /// </summary>
-        TemporarilyOffline,
+        Finetuning,
         /// <summary>
         /// Deprecated: The fine-tuned model is paused (Vanilla only).
         /// </summary>
@@ -54,6 +42,18 @@ namespace Cohere
         /// The fine-tuned model is queued for training.
         /// </summary>
         Queued,
+        /// <summary>
+        /// The fine-tuned model is ready to receive requests.
+        /// </summary>
+        Ready,
+        /// <summary>
+        /// Deprecated: The fine-tuned model is temporarily unavailable.
+        /// </summary>
+        TemporarilyOffline,
+        /// <summary>
+        /// Unspecified status.
+        /// </summary>
+        Unspecified,
     }
 
     /// <summary>
@@ -68,15 +68,15 @@ namespace Cohere
         {
             return value switch
             {
-                Status.Unspecified => "STATUS_UNSPECIFIED",
-                Status.Finetuning => "STATUS_FINETUNING",
-                Status.DeployingApi => "STATUS_DEPLOYING_API",
-                Status.Ready => "STATUS_READY",
-                Status.Failed => "STATUS_FAILED",
                 Status.Deleted => "STATUS_DELETED",
-                Status.TemporarilyOffline => "STATUS_TEMPORARILY_OFFLINE",
+                Status.DeployingApi => "STATUS_DEPLOYING_API",
+                Status.Failed => "STATUS_FAILED",
+                Status.Finetuning => "STATUS_FINETUNING",
                 Status.Paused => "STATUS_PAUSED",
                 Status.Queued => "STATUS_QUEUED",
+                Status.Ready => "STATUS_READY",
+                Status.TemporarilyOffline => "STATUS_TEMPORARILY_OFFLINE",
+                Status.Unspecified => "STATUS_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,15 +87,15 @@ namespace Cohere
         {
             return value switch
             {
-                "STATUS_UNSPECIFIED" => Status.Unspecified,
-                "STATUS_FINETUNING" => Status.Finetuning,
-                "STATUS_DEPLOYING_API" => Status.DeployingApi,
-                "STATUS_READY" => Status.Ready,
-                "STATUS_FAILED" => Status.Failed,
                 "STATUS_DELETED" => Status.Deleted,
-                "STATUS_TEMPORARILY_OFFLINE" => Status.TemporarilyOffline,
+                "STATUS_DEPLOYING_API" => Status.DeployingApi,
+                "STATUS_FAILED" => Status.Failed,
+                "STATUS_FINETUNING" => Status.Finetuning,
                 "STATUS_PAUSED" => Status.Paused,
                 "STATUS_QUEUED" => Status.Queued,
+                "STATUS_READY" => Status.Ready,
+                "STATUS_TEMPORARILY_OFFLINE" => Status.TemporarilyOffline,
+                "STATUS_UNSPECIFIED" => Status.Unspecified,
                 _ => null,
             };
         }

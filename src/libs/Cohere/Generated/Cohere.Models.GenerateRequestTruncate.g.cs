@@ -15,15 +15,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        End,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
         /// </summary>
         Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        End,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace Cohere
         {
             return value switch
             {
+                GenerateRequestTruncate.End => "END",
                 GenerateRequestTruncate.None => "NONE",
                 GenerateRequestTruncate.Start => "START",
-                GenerateRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace Cohere
         {
             return value switch
             {
+                "END" => GenerateRequestTruncate.End,
                 "NONE" => GenerateRequestTruncate.None,
                 "START" => GenerateRequestTruncate.Start,
-                "END" => GenerateRequestTruncate.End,
                 _ => null,
             };
         }

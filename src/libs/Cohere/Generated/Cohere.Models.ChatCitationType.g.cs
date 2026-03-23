@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        TextContent,
+        Plan,
         /// <summary>
         /// 
         /// </summary>
-        Plan,
+        TextContent,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ChatCitationType.TextContent => "TEXT_CONTENT",
                 ChatCitationType.Plan => "PLAN",
+                ChatCitationType.TextContent => "TEXT_CONTENT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "TEXT_CONTENT" => ChatCitationType.TextContent,
                 "PLAN" => ChatCitationType.Plan,
+                "TEXT_CONTENT" => ChatCitationType.TextContent,
                 _ => null,
             };
         }

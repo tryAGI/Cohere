@@ -12,7 +12,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
-        Accurate,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace Cohere
         {
             return value switch
             {
-                CitationOptionsMode.Enabled => "ENABLED",
-                CitationOptionsMode.Disabled => "DISABLED",
-                CitationOptionsMode.Fast => "FAST",
                 CitationOptionsMode.Accurate => "ACCURATE",
+                CitationOptionsMode.Disabled => "DISABLED",
+                CitationOptionsMode.Enabled => "ENABLED",
+                CitationOptionsMode.Fast => "FAST",
                 CitationOptionsMode.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace Cohere
         {
             return value switch
             {
-                "ENABLED" => CitationOptionsMode.Enabled,
-                "DISABLED" => CitationOptionsMode.Disabled,
-                "FAST" => CitationOptionsMode.Fast,
                 "ACCURATE" => CitationOptionsMode.Accurate,
+                "DISABLED" => CitationOptionsMode.Disabled,
+                "ENABLED" => CitationOptionsMode.Enabled,
+                "FAST" => CitationOptionsMode.Fast,
                 "OFF" => CitationOptionsMode.Off,
                 _ => null,
             };

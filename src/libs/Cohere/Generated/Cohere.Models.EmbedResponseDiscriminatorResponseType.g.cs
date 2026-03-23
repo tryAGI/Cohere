@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        EmbeddingsFloats,
+        EmbeddingsByType,
         /// <summary>
         /// 
         /// </summary>
-        EmbeddingsByType,
+        EmbeddingsFloats,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                EmbedResponseDiscriminatorResponseType.EmbeddingsFloats => "embeddings_floats",
                 EmbedResponseDiscriminatorResponseType.EmbeddingsByType => "embeddings_by_type",
+                EmbedResponseDiscriminatorResponseType.EmbeddingsFloats => "embeddings_floats",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "embeddings_floats" => EmbedResponseDiscriminatorResponseType.EmbeddingsFloats,
                 "embeddings_by_type" => EmbedResponseDiscriminatorResponseType.EmbeddingsByType,
+                "embeddings_floats" => EmbedResponseDiscriminatorResponseType.EmbeddingsFloats,
                 _ => null,
             };
         }

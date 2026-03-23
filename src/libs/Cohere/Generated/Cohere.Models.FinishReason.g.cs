@@ -15,15 +15,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        StopSequence,
-        /// <summary>
-        /// 
-        /// </summary>
         Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        ErrorToxic,
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +23,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        UserCancel,
+        ErrorToxic,
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +31,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        StopSequence,
+        /// <summary>
+        /// 
+        /// </summary>
         Timeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserCancel,
     }
 
     /// <summary>
@@ -55,13 +55,13 @@ namespace Cohere
             return value switch
             {
                 FinishReason.Complete => "COMPLETE",
-                FinishReason.StopSequence => "STOP_SEQUENCE",
                 FinishReason.Error => "ERROR",
-                FinishReason.ErrorToxic => "ERROR_TOXIC",
                 FinishReason.ErrorLimit => "ERROR_LIMIT",
-                FinishReason.UserCancel => "USER_CANCEL",
+                FinishReason.ErrorToxic => "ERROR_TOXIC",
                 FinishReason.MaxTokens => "MAX_TOKENS",
+                FinishReason.StopSequence => "STOP_SEQUENCE",
                 FinishReason.Timeout => "TIMEOUT",
+                FinishReason.UserCancel => "USER_CANCEL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,13 +73,13 @@ namespace Cohere
             return value switch
             {
                 "COMPLETE" => FinishReason.Complete,
-                "STOP_SEQUENCE" => FinishReason.StopSequence,
                 "ERROR" => FinishReason.Error,
-                "ERROR_TOXIC" => FinishReason.ErrorToxic,
                 "ERROR_LIMIT" => FinishReason.ErrorLimit,
-                "USER_CANCEL" => FinishReason.UserCancel,
+                "ERROR_TOXIC" => FinishReason.ErrorToxic,
                 "MAX_TOKENS" => FinishReason.MaxTokens,
+                "STOP_SEQUENCE" => FinishReason.StopSequence,
                 "TIMEOUT" => FinishReason.Timeout,
+                "USER_CANCEL" => FinishReason.UserCancel,
                 _ => null,
             };
         }

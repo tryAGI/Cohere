@@ -18,17 +18,9 @@ namespace Cohere
     public enum BatchStatus
     {
         /// <summary>
-        /// Unspecified status.
+        /// The batch has been canceled.
         /// </summary>
-        Unspecified,
-        /// <summary>
-        /// The batch has been queued.
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// The batch is in-progress.
-        /// </summary>
-        InProgress,
+        Canceled,
         /// <summary>
         /// The batch is being canceled.
         /// </summary>
@@ -42,9 +34,17 @@ namespace Cohere
         /// </summary>
         Failed,
         /// <summary>
-        /// The batch has been canceled.
+        /// The batch is in-progress.
         /// </summary>
-        Canceled,
+        InProgress,
+        /// <summary>
+        /// The batch has been queued.
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// Unspecified status.
+        /// </summary>
+        Unspecified,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace Cohere
         {
             return value switch
             {
-                BatchStatus.Unspecified => "BATCH_STATUS_UNSPECIFIED",
-                BatchStatus.Queued => "BATCH_STATUS_QUEUED",
-                BatchStatus.InProgress => "BATCH_STATUS_IN_PROGRESS",
+                BatchStatus.Canceled => "BATCH_STATUS_CANCELED",
                 BatchStatus.Canceling => "BATCH_STATUS_CANCELING",
                 BatchStatus.Completed => "BATCH_STATUS_COMPLETED",
                 BatchStatus.Failed => "BATCH_STATUS_FAILED",
-                BatchStatus.Canceled => "BATCH_STATUS_CANCELED",
+                BatchStatus.InProgress => "BATCH_STATUS_IN_PROGRESS",
+                BatchStatus.Queued => "BATCH_STATUS_QUEUED",
+                BatchStatus.Unspecified => "BATCH_STATUS_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace Cohere
         {
             return value switch
             {
-                "BATCH_STATUS_UNSPECIFIED" => BatchStatus.Unspecified,
-                "BATCH_STATUS_QUEUED" => BatchStatus.Queued,
-                "BATCH_STATUS_IN_PROGRESS" => BatchStatus.InProgress,
+                "BATCH_STATUS_CANCELED" => BatchStatus.Canceled,
                 "BATCH_STATUS_CANCELING" => BatchStatus.Canceling,
                 "BATCH_STATUS_COMPLETED" => BatchStatus.Completed,
                 "BATCH_STATUS_FAILED" => BatchStatus.Failed,
-                "BATCH_STATUS_CANCELED" => BatchStatus.Canceled,
+                "BATCH_STATUS_IN_PROGRESS" => BatchStatus.InProgress,
+                "BATCH_STATUS_QUEUED" => BatchStatus.Queued,
+                "BATCH_STATUS_UNSPECIFIED" => BatchStatus.Unspecified,
                 _ => null,
             };
         }

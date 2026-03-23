@@ -13,7 +13,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Short,
+        Long,
         /// <summary>
         /// 
         /// </summary>
@@ -21,7 +21,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Long,
+        Short,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace Cohere
         {
             return value switch
             {
-                SummarizeRequestLength.Short => "short",
-                SummarizeRequestLength.Medium => "medium",
                 SummarizeRequestLength.Long => "long",
+                SummarizeRequestLength.Medium => "medium",
+                SummarizeRequestLength.Short => "short",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace Cohere
         {
             return value switch
             {
-                "short" => SummarizeRequestLength.Short,
-                "medium" => SummarizeRequestLength.Medium,
                 "long" => SummarizeRequestLength.Long,
+                "medium" => SummarizeRequestLength.Medium,
+                "short" => SummarizeRequestLength.Short,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// "disabled"`.
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// "disabled"`.
         /// </summary>
-        Disabled,
+        Enabled,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ThinkingType.Enabled => "enabled",
                 ThinkingType.Disabled => "disabled",
+                ThinkingType.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "enabled" => ThinkingType.Enabled,
                 "disabled" => ThinkingType.Disabled,
+                "enabled" => ThinkingType.Enabled,
                 _ => null,
             };
         }

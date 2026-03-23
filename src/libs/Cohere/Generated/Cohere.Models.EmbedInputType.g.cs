@@ -14,14 +14,6 @@ namespace Cohere
     public enum EmbedInputType
     {
         /// <summary>
-        /// Used for embeddings stored in a vector database for search use-cases.
-        /// </summary>
-        SearchDocument,
-        /// <summary>
-        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
-        /// </summary>
-        SearchQuery,
-        /// <summary>
         /// Used for embeddings passed through a text classifier.
         /// </summary>
         Classification,
@@ -33,6 +25,14 @@ namespace Cohere
         /// Used for embeddings with image input.
         /// </summary>
         Image,
+        /// <summary>
+        /// Used for embeddings stored in a vector database for search use-cases.
+        /// </summary>
+        SearchDocument,
+        /// <summary>
+        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
+        /// </summary>
+        SearchQuery,
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace Cohere
         {
             return value switch
             {
-                EmbedInputType.SearchDocument => "search_document",
-                EmbedInputType.SearchQuery => "search_query",
                 EmbedInputType.Classification => "classification",
                 EmbedInputType.Clustering => "clustering",
                 EmbedInputType.Image => "image",
+                EmbedInputType.SearchDocument => "search_document",
+                EmbedInputType.SearchQuery => "search_query",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,11 +62,11 @@ namespace Cohere
         {
             return value switch
             {
-                "search_document" => EmbedInputType.SearchDocument,
-                "search_query" => EmbedInputType.SearchQuery,
                 "classification" => EmbedInputType.Classification,
                 "clustering" => EmbedInputType.Clustering,
                 "image" => EmbedInputType.Image,
+                "search_document" => EmbedInputType.SearchDocument,
+                "search_query" => EmbedInputType.SearchQuery,
                 _ => null,
             };
         }

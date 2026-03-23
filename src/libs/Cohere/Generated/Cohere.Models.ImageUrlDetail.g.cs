@@ -15,11 +15,11 @@ namespace Cohere
         /// <summary>
         /// `"low"`.
         /// </summary>
-        Low,
+        High,
         /// <summary>
         /// `"low"`.
         /// </summary>
-        High,
+        Low,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace Cohere
             return value switch
             {
                 ImageUrlDetail.Auto => "auto",
-                ImageUrlDetail.Low => "low",
                 ImageUrlDetail.High => "high",
+                ImageUrlDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace Cohere
             return value switch
             {
                 "auto" => ImageUrlDetail.Auto,
-                "low" => ImageUrlDetail.Low,
                 "high" => ImageUrlDetail.High,
+                "low" => ImageUrlDetail.Low,
                 _ => null,
             };
         }
