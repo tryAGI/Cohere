@@ -12,13 +12,13 @@ namespace Cohere
     public enum GenerateRequestReturnLikelihoods
     {
         /// <summary>
-        /// 
-        /// </summary>
-        Generation,
-        /// <summary>
         /// `ALL` is deprecated, and will be removed in a future release.
         /// </summary>
         All,
+        /// <summary>
+        /// 
+        /// </summary>
+        Generation,
         /// <summary>
         /// 
         /// </summary>
@@ -37,8 +37,8 @@ namespace Cohere
         {
             return value switch
             {
-                GenerateRequestReturnLikelihoods.Generation => "GENERATION",
                 GenerateRequestReturnLikelihoods.All => "ALL",
+                GenerateRequestReturnLikelihoods.Generation => "GENERATION",
                 GenerateRequestReturnLikelihoods.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,8 +50,8 @@ namespace Cohere
         {
             return value switch
             {
-                "GENERATION" => GenerateRequestReturnLikelihoods.Generation,
                 "ALL" => GenerateRequestReturnLikelihoods.All,
+                "GENERATION" => GenerateRequestReturnLikelihoods.Generation,
                 "NONE" => GenerateRequestReturnLikelihoods.None,
                 _ => null,
             };

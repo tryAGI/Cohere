@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        SingleLabel,
+        MultiLabel,
         /// <summary>
         /// 
         /// </summary>
-        MultiLabel,
+        SingleLabel,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ClassifyResponseClassificationClassificationType.SingleLabel => "single-label",
                 ClassifyResponseClassificationClassificationType.MultiLabel => "multi-label",
+                ClassifyResponseClassificationClassificationType.SingleLabel => "single-label",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "single-label" => ClassifyResponseClassificationClassificationType.SingleLabel,
                 "multi-label" => ClassifyResponseClassificationClassificationType.MultiLabel,
+                "single-label" => ClassifyResponseClassificationClassificationType.SingleLabel,
                 _ => null,
             };
         }

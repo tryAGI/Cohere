@@ -11,6 +11,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        Base64,
+        /// <summary>
+        /// 
+        /// </summary>
+        Binary,
+        /// <summary>
+        /// 
+        /// </summary>
         Float,
         /// <summary>
         /// 
@@ -19,19 +27,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Uint8,
-        /// <summary>
-        /// 
-        /// </summary>
-        Binary,
-        /// <summary>
-        /// 
-        /// </summary>
         Ubinary,
         /// <summary>
         /// 
         /// </summary>
-        Base64,
+        Uint8,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace Cohere
         {
             return value switch
             {
+                EmbeddingType.Base64 => "base64",
+                EmbeddingType.Binary => "binary",
                 EmbeddingType.Float => "float",
                 EmbeddingType.Int8 => "int8",
-                EmbeddingType.Uint8 => "uint8",
-                EmbeddingType.Binary => "binary",
                 EmbeddingType.Ubinary => "ubinary",
-                EmbeddingType.Base64 => "base64",
+                EmbeddingType.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace Cohere
         {
             return value switch
             {
+                "base64" => EmbeddingType.Base64,
+                "binary" => EmbeddingType.Binary,
                 "float" => EmbeddingType.Float,
                 "int8" => EmbeddingType.Int8,
-                "uint8" => EmbeddingType.Uint8,
-                "binary" => EmbeddingType.Binary,
                 "ubinary" => EmbeddingType.Ubinary,
-                "base64" => EmbeddingType.Base64,
+                "uint8" => EmbeddingType.Uint8,
                 _ => null,
             };
         }

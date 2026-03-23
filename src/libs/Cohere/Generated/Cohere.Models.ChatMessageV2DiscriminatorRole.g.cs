@@ -11,10 +11,6 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
@@ -24,6 +20,10 @@ namespace Cohere
         /// 
         /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Cohere
         {
             return value switch
             {
-                ChatMessageV2DiscriminatorRole.User => "user",
                 ChatMessageV2DiscriminatorRole.Assistant => "assistant",
                 ChatMessageV2DiscriminatorRole.System => "system",
                 ChatMessageV2DiscriminatorRole.Tool => "tool",
+                ChatMessageV2DiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Cohere
         {
             return value switch
             {
-                "user" => ChatMessageV2DiscriminatorRole.User,
                 "assistant" => ChatMessageV2DiscriminatorRole.Assistant,
                 "system" => ChatMessageV2DiscriminatorRole.System,
                 "tool" => ChatMessageV2DiscriminatorRole.Tool,
+                "user" => ChatMessageV2DiscriminatorRole.User,
                 _ => null,
             };
         }

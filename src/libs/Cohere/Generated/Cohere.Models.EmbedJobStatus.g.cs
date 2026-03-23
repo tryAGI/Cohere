@@ -11,11 +11,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Processing,
-        /// <summary>
-        /// 
-        /// </summary>
-        Complete,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +19,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Processing,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Cohere
         {
             return value switch
             {
-                EmbedJobStatus.Processing => "processing",
-                EmbedJobStatus.Complete => "complete",
-                EmbedJobStatus.Cancelling => "cancelling",
                 EmbedJobStatus.Cancelled => "cancelled",
+                EmbedJobStatus.Cancelling => "cancelling",
+                EmbedJobStatus.Complete => "complete",
                 EmbedJobStatus.Failed => "failed",
+                EmbedJobStatus.Processing => "processing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Cohere
         {
             return value switch
             {
-                "processing" => EmbedJobStatus.Processing,
-                "complete" => EmbedJobStatus.Complete,
-                "cancelling" => EmbedJobStatus.Cancelling,
                 "cancelled" => EmbedJobStatus.Cancelled,
+                "cancelling" => EmbedJobStatus.Cancelling,
+                "complete" => EmbedJobStatus.Complete,
                 "failed" => EmbedJobStatus.Failed,
+                "processing" => EmbedJobStatus.Processing,
                 _ => null,
             };
         }

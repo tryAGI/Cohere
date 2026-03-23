@@ -21,7 +21,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        StopSequence,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -29,15 +29,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        ToolCall,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
+        StopSequence,
         /// <summary>
         /// 
         /// </summary>
         Timeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolCall,
     }
 
     /// <summary>
@@ -53,11 +53,11 @@ namespace Cohere
             return value switch
             {
                 ChatFinishReason.Complete => "COMPLETE",
-                ChatFinishReason.StopSequence => "STOP_SEQUENCE",
-                ChatFinishReason.MaxTokens => "MAX_TOKENS",
-                ChatFinishReason.ToolCall => "TOOL_CALL",
                 ChatFinishReason.Error => "ERROR",
+                ChatFinishReason.MaxTokens => "MAX_TOKENS",
+                ChatFinishReason.StopSequence => "STOP_SEQUENCE",
                 ChatFinishReason.Timeout => "TIMEOUT",
+                ChatFinishReason.ToolCall => "TOOL_CALL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,11 +69,11 @@ namespace Cohere
             return value switch
             {
                 "COMPLETE" => ChatFinishReason.Complete,
-                "STOP_SEQUENCE" => ChatFinishReason.StopSequence,
-                "MAX_TOKENS" => ChatFinishReason.MaxTokens,
-                "TOOL_CALL" => ChatFinishReason.ToolCall,
                 "ERROR" => ChatFinishReason.Error,
+                "MAX_TOKENS" => ChatFinishReason.MaxTokens,
+                "STOP_SEQUENCE" => ChatFinishReason.StopSequence,
                 "TIMEOUT" => ChatFinishReason.Timeout,
+                "TOOL_CALL" => ChatFinishReason.ToolCall,
                 _ => null,
             };
         }

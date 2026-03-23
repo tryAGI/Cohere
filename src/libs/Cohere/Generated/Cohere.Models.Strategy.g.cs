@@ -13,6 +13,10 @@ namespace Cohere
     public enum Strategy
     {
         /// <summary>
+        /// Deprecated: Serve the fine-tuned model on a shared GPU.
+        /// </summary>
+        Tfew,
+        /// <summary>
         /// Unspecified strategy.
         /// </summary>
         Unspecified,
@@ -20,10 +24,6 @@ namespace Cohere
         /// Deprecated: Serve the fine-tuned model on a dedicated GPU.
         /// </summary>
         Vanilla,
-        /// <summary>
-        /// Deprecated: Serve the fine-tuned model on a shared GPU.
-        /// </summary>
-        Tfew,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace Cohere
         {
             return value switch
             {
+                Strategy.Tfew => "STRATEGY_TFEW",
                 Strategy.Unspecified => "STRATEGY_UNSPECIFIED",
                 Strategy.Vanilla => "STRATEGY_VANILLA",
-                Strategy.Tfew => "STRATEGY_TFEW",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace Cohere
         {
             return value switch
             {
+                "STRATEGY_TFEW" => Strategy.Tfew,
                 "STRATEGY_UNSPECIFIED" => Strategy.Unspecified,
                 "STRATEGY_VANILLA" => Strategy.Vanilla,
-                "STRATEGY_TFEW" => Strategy.Tfew,
                 _ => null,
             };
         }

@@ -11,11 +11,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Processing,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +19,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Complete,
+        Processing,
         /// <summary>
         /// 
         /// </summary>
         Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Cohere
         {
             return value switch
             {
-                GetClusterJobResponseStatus.Unknown => "unknown",
-                GetClusterJobResponseStatus.Processing => "processing",
-                GetClusterJobResponseStatus.Failed => "failed",
                 GetClusterJobResponseStatus.Complete => "complete",
+                GetClusterJobResponseStatus.Failed => "failed",
+                GetClusterJobResponseStatus.Processing => "processing",
                 GetClusterJobResponseStatus.Queued => "queued",
+                GetClusterJobResponseStatus.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Cohere
         {
             return value switch
             {
-                "unknown" => GetClusterJobResponseStatus.Unknown,
-                "processing" => GetClusterJobResponseStatus.Processing,
-                "failed" => GetClusterJobResponseStatus.Failed,
                 "complete" => GetClusterJobResponseStatus.Complete,
+                "failed" => GetClusterJobResponseStatus.Failed,
+                "processing" => GetClusterJobResponseStatus.Processing,
                 "queued" => GetClusterJobResponseStatus.Queued,
+                "unknown" => GetClusterJobResponseStatus.Unknown,
                 _ => null,
             };
         }

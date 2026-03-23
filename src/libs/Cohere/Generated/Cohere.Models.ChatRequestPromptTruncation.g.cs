@@ -16,10 +16,6 @@ namespace Cohere
     public enum ChatRequestPromptTruncation
     {
         /// <summary>
-        /// 
-        /// </summary>
-        Off,
-        /// <summary>
         /// Cohere Platform Only
         /// </summary>
         Auto,
@@ -27,6 +23,10 @@ namespace Cohere
         /// Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         AutoPreserveOrder,
+        /// <summary>
+        /// 
+        /// </summary>
+        Off,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace Cohere
         {
             return value switch
             {
-                ChatRequestPromptTruncation.Off => "OFF",
                 ChatRequestPromptTruncation.Auto => "AUTO",
                 ChatRequestPromptTruncation.AutoPreserveOrder => "AUTO_PRESERVE_ORDER",
+                ChatRequestPromptTruncation.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace Cohere
         {
             return value switch
             {
-                "OFF" => ChatRequestPromptTruncation.Off,
                 "AUTO" => ChatRequestPromptTruncation.Auto,
                 "AUTO_PRESERVE_ORDER" => ChatRequestPromptTruncation.AutoPreserveOrder,
+                "OFF" => ChatRequestPromptTruncation.Off,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        ImageUrl,
         /// <summary>
         /// 
         /// </summary>
-        ImageUrl,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                EmbedContentType.Text => "text",
                 EmbedContentType.ImageUrl => "image_url",
+                EmbedContentType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "text" => EmbedContentType.Text,
                 "image_url" => EmbedContentType.ImageUrl,
+                "text" => EmbedContentType.Text,
                 _ => null,
             };
         }

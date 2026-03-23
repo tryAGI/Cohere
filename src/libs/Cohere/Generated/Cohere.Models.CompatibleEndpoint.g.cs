@@ -15,19 +15,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Embed,
-        /// <summary>
-        /// 
-        /// </summary>
         Classify,
         /// <summary>
         /// 
         /// </summary>
-        Summarize,
+        Embed,
         /// <summary>
         /// 
         /// </summary>
-        Rerank,
+        Generate,
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +31,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Generate,
+        Rerank,
+        /// <summary>
+        /// 
+        /// </summary>
+        Summarize,
     }
 
     /// <summary>
@@ -51,12 +51,12 @@ namespace Cohere
             return value switch
             {
                 CompatibleEndpoint.Chat => "chat",
-                CompatibleEndpoint.Embed => "embed",
                 CompatibleEndpoint.Classify => "classify",
-                CompatibleEndpoint.Summarize => "summarize",
-                CompatibleEndpoint.Rerank => "rerank",
-                CompatibleEndpoint.Rate => "rate",
+                CompatibleEndpoint.Embed => "embed",
                 CompatibleEndpoint.Generate => "generate",
+                CompatibleEndpoint.Rate => "rate",
+                CompatibleEndpoint.Rerank => "rerank",
+                CompatibleEndpoint.Summarize => "summarize",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,12 +68,12 @@ namespace Cohere
             return value switch
             {
                 "chat" => CompatibleEndpoint.Chat,
-                "embed" => CompatibleEndpoint.Embed,
                 "classify" => CompatibleEndpoint.Classify,
-                "summarize" => CompatibleEndpoint.Summarize,
-                "rerank" => CompatibleEndpoint.Rerank,
-                "rate" => CompatibleEndpoint.Rate,
+                "embed" => CompatibleEndpoint.Embed,
                 "generate" => CompatibleEndpoint.Generate,
+                "rate" => CompatibleEndpoint.Rate,
+                "rerank" => CompatibleEndpoint.Rerank,
+                "summarize" => CompatibleEndpoint.Summarize,
                 _ => null,
             };
         }

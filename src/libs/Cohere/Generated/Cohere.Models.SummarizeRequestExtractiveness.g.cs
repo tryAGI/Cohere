@@ -13,15 +13,15 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace Cohere
         {
             return value switch
             {
+                SummarizeRequestExtractiveness.High => "high",
                 SummarizeRequestExtractiveness.Low => "low",
                 SummarizeRequestExtractiveness.Medium => "medium",
-                SummarizeRequestExtractiveness.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace Cohere
         {
             return value switch
             {
+                "high" => SummarizeRequestExtractiveness.High,
                 "low" => SummarizeRequestExtractiveness.Low,
                 "medium" => SummarizeRequestExtractiveness.Medium,
-                "high" => SummarizeRequestExtractiveness.High,
                 _ => null,
             };
         }

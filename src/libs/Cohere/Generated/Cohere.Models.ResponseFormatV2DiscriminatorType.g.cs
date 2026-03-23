@@ -11,11 +11,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        JsonObject,
         /// <summary>
         /// 
         /// </summary>
-        JsonObject,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Cohere
         {
             return value switch
             {
-                ResponseFormatV2DiscriminatorType.Text => "text",
                 ResponseFormatV2DiscriminatorType.JsonObject => "json_object",
+                ResponseFormatV2DiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Cohere
         {
             return value switch
             {
-                "text" => ResponseFormatV2DiscriminatorType.Text,
                 "json_object" => ResponseFormatV2DiscriminatorType.JsonObject,
+                "text" => ResponseFormatV2DiscriminatorType.Text,
                 _ => null,
             };
         }

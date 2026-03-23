@@ -15,25 +15,25 @@ namespace Cohere
     public enum BaseType
     {
         /// <summary>
-        /// Unspecified model.
+        /// Chat model.
         /// </summary>
-        Unspecified,
-        /// <summary>
-        /// Deprecated: Generative model.
-        /// </summary>
-        Generative,
+        Chat,
         /// <summary>
         /// Classification model.
         /// </summary>
         Classification,
         /// <summary>
+        /// Deprecated: Generative model.
+        /// </summary>
+        Generative,
+        /// <summary>
         /// Rerank model.
         /// </summary>
         Rerank,
         /// <summary>
-        /// Chat model.
+        /// Unspecified model.
         /// </summary>
-        Chat,
+        Unspecified,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace Cohere
         {
             return value switch
             {
-                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
-                BaseType.Generative => "BASE_TYPE_GENERATIVE",
-                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
-                BaseType.Rerank => "BASE_TYPE_RERANK",
                 BaseType.Chat => "BASE_TYPE_CHAT",
+                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
+                BaseType.Generative => "BASE_TYPE_GENERATIVE",
+                BaseType.Rerank => "BASE_TYPE_RERANK",
+                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,11 +63,11 @@ namespace Cohere
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
-                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
-                "BASE_TYPE_RERANK" => BaseType.Rerank,
                 "BASE_TYPE_CHAT" => BaseType.Chat,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
+                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
+                "BASE_TYPE_RERANK" => BaseType.Rerank,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
                 _ => null,
             };
         }
