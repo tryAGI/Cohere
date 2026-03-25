@@ -4,11 +4,10 @@
 namespace Cohere
 {
     /// <summary>
-    /// The Cohere API for interacting with Chat, Embed and Rerank models.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface ICohereClient : global::System.IDisposable
+    public partial interface IAudioTranscriptionsClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.
@@ -39,36 +38,6 @@ namespace Cohere
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AudioTranscriptionsClient AudioTranscriptions { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Batches2Client Batches2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Datasets2Client Datasets2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbedJobs2Client EmbedJobs2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Models2Client Models2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public V2Client V2 { get; }
 
     }
 }
