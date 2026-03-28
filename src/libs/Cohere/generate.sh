@@ -14,3 +14,11 @@ autosdk generate openapi.yaml \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations
+
+# Fix CS0618: Generated UpdateFinetunedModelRequest references the deprecated Settings type.
+# Since TreatWarningsAsErrors is enabled, suppress this specific warning in affected files.
+for file in Generated/Cohere.Models.UpdateFinetunedModelRequest.g.cs; do
+  if [ -f "$file" ]; then
+    sed -i '' '1s/^/#pragma warning disable CS0618\n/' "$file"
+  fi
+done
