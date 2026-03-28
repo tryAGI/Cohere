@@ -20,6 +20,6 @@ autosdk generate openapi.yaml \
 # Since TreatWarningsAsErrors is enabled, suppress this specific warning in affected files.
 for file in Generated/Cohere.Models.UpdateFinetunedModelRequest.g.cs; do
   if [ -f "$file" ]; then
-    sed -i '' '1s/^/#pragma warning disable CS0618\n/' "$file"
+    printf '%s\n' '#pragma warning disable CS0618' "$(cat "$file")" > "$file"
   fi
 done
