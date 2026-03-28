@@ -1,4 +1,5 @@
-#pragma warning disable CS0618
+
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
