@@ -3,7 +3,7 @@
 !!! tip "Cross-SDK comparison"
     See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
 
-The `Cohere` SDK implements both `IChatClient` and `IEmbeddingGenerator` interfaces from `Microsoft.Extensions.AI`, enabling you to use Cohere models through standardized .NET AI abstractions.
+The Cohere SDK implements `IChatClient` and `IEmbeddingGenerator<string, Embedding<float>>` and provides `AIFunction` tool wrappers, all compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
 
 !!! warning "Namespace Conflict"
     This SDK has a generated `IChatClient` interface that conflicts with `Microsoft.Extensions.AI.IChatClient`. Use the `Meai` alias pattern shown below.
