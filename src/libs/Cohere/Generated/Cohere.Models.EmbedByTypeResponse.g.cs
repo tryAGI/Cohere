@@ -56,11 +56,11 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
         /// </summary>
-        /// <param name="responseType"></param>
         /// <param name="id"></param>
         /// <param name="embeddings">
         /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
         /// </param>
+        /// <param name="responseType"></param>
         /// <param name="texts">
         /// The text entries for which embeddings were returned.
         /// </param>
@@ -79,9 +79,9 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.Image>? images,
             global::Cohere.ApiMeta? meta)
         {
+            this.ResponseType = responseType;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
-            this.ResponseType = responseType;
             this.Texts = texts;
             this.Images = images;
             this.Meta = meta;

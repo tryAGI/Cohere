@@ -32,7 +32,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chat2Async(
+        public async global::System.Threading.Tasks.Task<global::Cohere.ChatResponseV2> Chat2Async(
 
             global::Cohere.Chatv2Request request,
             string? xClientName = default,
@@ -40,6 +40,31 @@ namespace Cohere
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::Cohere.Chatv2Request
+            {
+                Stream = false,
+                Model = request.Model,
+                Messages = request.Messages,
+                Tools = request.Tools,
+                StrictTools = request.StrictTools,
+                Documents = request.Documents,
+                CitationOptions = request.CitationOptions,
+                ResponseFormat = request.ResponseFormat,
+                SafetyMode = request.SafetyMode,
+                MaxTokens = request.MaxTokens,
+                StopSequences = request.StopSequences,
+                Temperature = request.Temperature,
+                Seed = request.Seed,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                K = request.K,
+                P = request.P,
+                Logprobs = request.Logprobs,
+                ToolChoice = request.ToolChoice,
+                Thinking = request.Thinking,
+                Priority = request.Priority,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareChat2Arguments(
@@ -586,7 +611,7 @@ namespace Cohere
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>.FromJson(__content, JsonSerializerContext) ??
+                        global::Cohere.ChatResponseV2.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -617,7 +642,7 @@ namespace Cohere
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Cohere.ChatResponseV2.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -655,11 +680,6 @@ namespace Cohere
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
-        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models).
         /// </param>
@@ -751,11 +771,10 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>> Chat2Async(
+        public async global::System.Threading.Tasks.Task<global::Cohere.ChatResponseV2> Chat2Async(
             string model,
             global::System.Collections.Generic.IList<global::Cohere.ChatMessageV2> messages,
             string? xClientName = default,
-            bool? stream = default,
             global::System.Collections.Generic.IList<global::Cohere.ToolV2>? tools = default,
             bool? strictTools = default,
             global::System.Collections.Generic.IList<global::Cohere.OneOf<string, global::Cohere.Document>>? documents = default,
@@ -778,7 +797,7 @@ namespace Cohere
         {
             var __request = new global::Cohere.Chatv2Request
             {
-                Stream = stream,
+                Stream = false,
                 Model = model,
                 Messages = messages,
                 Tools = tools,

@@ -57,7 +57,6 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedFloatsResponse" /> class.
         /// </summary>
-        /// <param name="responseType"></param>
         /// <param name="id"></param>
         /// <param name="embeddings">
         /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.
@@ -65,6 +64,7 @@ namespace Cohere
         /// <param name="texts">
         /// The text entries for which embeddings were returned.
         /// </param>
+        /// <param name="responseType"></param>
         /// <param name="images">
         /// The image entries for which embeddings were returned.
         /// </param>
@@ -80,10 +80,10 @@ namespace Cohere
             global::System.Collections.Generic.IList<global::Cohere.Image>? images,
             global::Cohere.ApiMeta? meta)
         {
+            this.ResponseType = responseType;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
-            this.ResponseType = responseType;
             this.Images = images;
             this.Meta = meta;
         }

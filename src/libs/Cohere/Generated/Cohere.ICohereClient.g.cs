@@ -48,22 +48,22 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public Batches2Client Batches2 { get; }
+        public BatchesClient Batches { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Datasets2Client Datasets2 { get; }
+        public DatasetsClient Datasets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobs2Client EmbedJobs2 { get; }
+        public EmbedJobsClient EmbedJobs { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Models2Client Models2 { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
         /// 

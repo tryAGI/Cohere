@@ -57,14 +57,14 @@ namespace Cohere
         /// <param name="language">
         /// The language of the input audio, supplied in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.
         /// </param>
-        /// <param name="temperature">
-        /// The sampling temperature, between 0 and 1. Higher values like 0.8 make the output more random, while lower values like 0.2 make it more focused and deterministic.
-        /// </param>
         /// <param name="file">
         /// The audio file object to transcribe. Supported file extensions are flac, mp3, mpeg, mpga, ogg, and wav.
         /// </param>
         /// <param name="filename">
         /// The audio file object to transcribe. Supported file extensions are flac, mp3, mpeg, mpga, ogg, and wav.
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature, between 0 and 1. Higher values like 0.8 make the output more random, while lower values like 0.2 make it more focused and deterministic.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,9 +78,9 @@ namespace Cohere
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Temperature = temperature;
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Temperature = temperature;
         }
 
         /// <summary>

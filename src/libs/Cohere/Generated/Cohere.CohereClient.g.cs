@@ -49,7 +49,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public Batches2Client Batches2 => new Batches2Client(HttpClient, authorizations: Authorizations)
+        public BatchesClient Batches => new BatchesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -58,7 +58,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public Datasets2Client Datasets2 => new Datasets2Client(HttpClient, authorizations: Authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -67,7 +67,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobs2Client EmbedJobs2 => new EmbedJobs2Client(HttpClient, authorizations: Authorizations)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -76,7 +76,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public Models2Client Models2 => new Models2Client(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

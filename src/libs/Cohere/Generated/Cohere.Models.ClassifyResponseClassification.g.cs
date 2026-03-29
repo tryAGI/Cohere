@@ -76,9 +76,6 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ClassifyResponseClassification" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="input">
-        /// The input text that was classified
-        /// </param>
         /// <param name="predictions">
         /// An array containing the predicted labels for the associated query (only filled for single-label classification)
         /// </param>
@@ -90,6 +87,9 @@ namespace Cohere
         /// </param>
         /// <param name="classificationType">
         /// The type of classification performed
+        /// </param>
+        /// <param name="input">
+        /// The input text that was classified
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -103,11 +103,11 @@ namespace Cohere
             string? input)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Input = input;
             this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
             this.Confidences = confidences ?? throw new global::System.ArgumentNullException(nameof(confidences));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.ClassificationType = classificationType;
-            this.Input = input;
         }
 
         /// <summary>

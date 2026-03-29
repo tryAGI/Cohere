@@ -33,11 +33,11 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMessageV2" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content">
         /// The content of the message. This can be a string or a list of content blocks.<br/>
         /// If a string is provided, it will be treated as a text content block.
         /// </param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -45,8 +45,8 @@ namespace Cohere
             global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.Content>> content,
             global::Cohere.UserMessageV2Role role)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

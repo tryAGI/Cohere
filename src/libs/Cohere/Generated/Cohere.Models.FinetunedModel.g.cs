@@ -102,12 +102,15 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="FinetunedModel" /> class.
         /// </summary>
+        /// <param name="name">
+        /// FinetunedModel name (e.g. `foobar`).
+        /// </param>
+        /// <param name="settings">
+        /// FinetunedModel settings such as dataset, hyperparameters...
+        /// </param>
         /// <param name="id">
         /// read-only. FinetunedModel ID.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// FinetunedModel name (e.g. `foobar`).
         /// </param>
         /// <param name="creatorId">
         /// read-only. User ID of the creator.<br/>
@@ -116,9 +119,6 @@ namespace Cohere
         /// <param name="organizationId">
         /// read-only. Organization ID.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="settings">
-        /// FinetunedModel settings such as dataset, hyperparameters...
         /// </param>
         /// <param name="createdAt">
         /// read-only. Creation timestamp.<br/>
@@ -150,11 +150,11 @@ namespace Cohere
             global::System.DateTime? completedAt,
             global::System.DateTime? lastUsed)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatorId = creatorId;
             this.OrganizationId = organizationId;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.CompletedAt = completedAt;

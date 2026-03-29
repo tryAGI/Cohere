@@ -32,8 +32,8 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemMessageV2" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Cohere
             global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>> content,
             global::Cohere.SystemMessageV2Role role)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>
