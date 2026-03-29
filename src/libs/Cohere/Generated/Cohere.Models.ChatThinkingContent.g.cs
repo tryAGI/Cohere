@@ -31,8 +31,8 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatThinkingContent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="thinking"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Cohere
             string thinking,
             global::Cohere.ChatThinkingContentType type)
         {
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Type = type;
+            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
         }
 
         /// <summary>

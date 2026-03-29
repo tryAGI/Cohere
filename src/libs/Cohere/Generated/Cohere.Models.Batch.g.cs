@@ -130,12 +130,18 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
+        /// <param name="name">
+        /// Batch name (e.g. `foobar`).
+        /// </param>
+        /// <param name="inputDatasetId">
+        /// ID of the dataset the batch reads inputs from.
+        /// </param>
+        /// <param name="model">
+        /// The name of the model the batch uses.
+        /// </param>
         /// <param name="id">
         /// read-only. Batch ID.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// Batch name (e.g. `foobar`).
         /// </param>
         /// <param name="creatorId">
         /// read-only. User ID of the creator.<br/>
@@ -158,9 +164,6 @@ namespace Cohere
         /// read-only. Latest update timestamp.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="inputDatasetId">
-        /// ID of the dataset the batch reads inputs from.
-        /// </param>
         /// <param name="outputDatasetId">
         /// Included only in responses
         /// </param>
@@ -171,9 +174,6 @@ namespace Cohere
         /// <param name="outputTokens">
         /// read-only. The total number of output tokens in the batch.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="model">
-        /// The name of the model the batch uses.
         /// </param>
         /// <param name="numRecords">
         /// read-only. The total number of records in the batch.<br/>
@@ -212,18 +212,18 @@ namespace Cohere
             int? numFailedRecords,
             string? statusReason)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputDatasetId = inputDatasetId ?? throw new global::System.ArgumentNullException(nameof(inputDatasetId));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatorId = creatorId;
             this.OrgId = orgId;
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.InputDatasetId = inputDatasetId ?? throw new global::System.ArgumentNullException(nameof(inputDatasetId));
             this.OutputDatasetId = outputDatasetId;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.NumRecords = numRecords;
             this.NumSuccessfulRecords = numSuccessfulRecords;
             this.NumFailedRecords = numFailedRecords;

@@ -49,14 +49,14 @@ namespace Cohere
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatSearchResult" /> class.
         /// </summary>
-        /// <param name="searchQuery">
-        /// The generated search query. Contains the text of the query and a unique identifier for the query.
-        /// </param>
         /// <param name="connector">
         /// The connector from which this result comes from.
         /// </param>
         /// <param name="documentIds">
         /// Identifiers of documents found by this search query.
+        /// </param>
+        /// <param name="searchQuery">
+        /// The generated search query. Contains the text of the query and a unique identifier for the query.
         /// </param>
         /// <param name="errorMessage">
         /// An error message if the search failed.
@@ -74,9 +74,9 @@ namespace Cohere
             string? errorMessage,
             bool? continueOnFailure)
         {
+            this.SearchQuery = searchQuery;
             this.Connector = connector ?? throw new global::System.ArgumentNullException(nameof(connector));
             this.DocumentIds = documentIds ?? throw new global::System.ArgumentNullException(nameof(documentIds));
-            this.SearchQuery = searchQuery;
             this.ErrorMessage = errorMessage;
             this.ContinueOnFailure = continueOnFailure;
         }

@@ -82,9 +82,6 @@ namespace Cohere
         /// <param name="jobId">
         /// ID of the embed job
         /// </param>
-        /// <param name="name">
-        /// The name of the embed job
-        /// </param>
         /// <param name="status">
         /// The status of the embed job
         /// </param>
@@ -94,14 +91,17 @@ namespace Cohere
         /// <param name="inputDatasetId">
         /// ID of the input dataset
         /// </param>
-        /// <param name="outputDatasetId">
-        /// ID of the resulting output dataset
-        /// </param>
         /// <param name="model">
         /// ID of the model used to embed
         /// </param>
         /// <param name="truncate">
         /// The truncation option used
+        /// </param>
+        /// <param name="name">
+        /// The name of the embed job
+        /// </param>
+        /// <param name="outputDatasetId">
+        /// ID of the resulting output dataset
         /// </param>
         /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
@@ -119,13 +119,13 @@ namespace Cohere
             global::Cohere.ApiMeta? meta)
         {
             this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+            this.Name = name;
             this.Status = status;
             this.CreatedAt = createdAt;
             this.InputDatasetId = inputDatasetId ?? throw new global::System.ArgumentNullException(nameof(inputDatasetId));
+            this.OutputDatasetId = outputDatasetId;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Truncate = truncate;
-            this.Name = name;
-            this.OutputDatasetId = outputDatasetId;
             this.Meta = meta;
         }
 

@@ -16,7 +16,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
 
             global::Cohere.ChatRequest request,
             string? xClientName = default,
@@ -36,12 +36,6 @@ namespace Cohere
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
-        /// </param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a JSON stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="preamble">
         /// When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style, and use the `SYSTEM` role.<br/>
@@ -198,7 +192,7 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
             string message,
             int maxTokens,
             int maxInputTokens,
@@ -210,7 +204,6 @@ namespace Cohere
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,
             string? model = default,
-            bool? stream = default,
             string? preamble = default,
             global::System.Collections.Generic.IList<global::Cohere.Message>? chatHistory = default,
             string? conversationId = default,

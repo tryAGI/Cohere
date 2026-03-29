@@ -72,11 +72,11 @@ namespace Cohere
         /// <param name="name">
         /// A human-readable name for the connector.
         /// </param>
-        /// <param name="description">
-        /// A description of the connector.
-        /// </param>
         /// <param name="url">
         /// The URL of the connector that will be used to search for documents.
+        /// </param>
+        /// <param name="description">
+        /// A description of the connector.
         /// </param>
         /// <param name="excludes">
         /// A list of fields to exclude from the prompt (fields remain in the document).
@@ -109,8 +109,8 @@ namespace Cohere
             global::Cohere.CreateConnectorServiceAuth? serviceAuth)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Description = description;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Excludes = excludes;
             this.Oauth = oauth;
             this.Active = active;

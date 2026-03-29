@@ -37,7 +37,7 @@ namespace Cohere
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
 
             global::Cohere.ChatRequest request,
             string? xClientName = default,
@@ -46,6 +46,40 @@ namespace Cohere
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::Cohere.ChatRequest
+            {
+                Message = request.Message,
+                Model = request.Model,
+                Stream = false,
+                Preamble = request.Preamble,
+                ChatHistory = request.ChatHistory,
+                ConversationId = request.ConversationId,
+                PromptTruncation = request.PromptTruncation,
+#pragma warning disable CS0618 // Type or member is obsolete
+                Connectors = request.Connectors,
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+                SearchQueriesOnly = request.SearchQueriesOnly,
+#pragma warning restore CS0618 // Type or member is obsolete
+                Documents = request.Documents,
+                CitationQuality = request.CitationQuality,
+                Temperature = request.Temperature,
+                MaxTokens = request.MaxTokens,
+                MaxInputTokens = request.MaxInputTokens,
+                K = request.K,
+                P = request.P,
+                Seed = request.Seed,
+                StopSequences = request.StopSequences,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                RawPrompting = request.RawPrompting,
+                Tools = request.Tools,
+                ToolResults = request.ToolResults,
+                ForceSingleStep = request.ForceSingleStep,
+                ResponseFormat = request.ResponseFormat,
+                SafetyMode = request.SafetyMode,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareChatArguments(
@@ -598,7 +632,7 @@ namespace Cohere
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>.FromJson(__content, JsonSerializerContext) ??
+                        (global::Cohere.NonStreamedChatResponse?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Cohere.NonStreamedChatResponse), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -629,7 +663,7 @@ namespace Cohere
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        (global::Cohere.NonStreamedChatResponse?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::Cohere.NonStreamedChatResponse), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -675,12 +709,6 @@ namespace Cohere
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
-        /// </param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a JSON stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="preamble">
         /// When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style, and use the `SYSTEM` role.<br/>
@@ -837,7 +865,7 @@ namespace Cohere
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
             string message,
             int maxTokens,
             int maxInputTokens,
@@ -849,7 +877,6 @@ namespace Cohere
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,
             string? model = default,
-            bool? stream = default,
             string? preamble = default,
             global::System.Collections.Generic.IList<global::Cohere.Message>? chatHistory = default,
             string? conversationId = default,
@@ -870,7 +897,7 @@ namespace Cohere
             {
                 Message = message,
                 Model = model,
-                Stream = stream,
+                Stream = false,
                 Preamble = preamble,
                 ChatHistory = chatHistory,
                 ConversationId = conversationId,

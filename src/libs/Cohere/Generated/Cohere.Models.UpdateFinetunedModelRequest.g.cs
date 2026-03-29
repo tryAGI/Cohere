@@ -88,6 +88,9 @@ namespace Cohere
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
         /// </param>
+        /// <param name="settings">
+        /// FinetunedModel settings such as dataset, hyperparameters...
+        /// </param>
         /// <param name="creatorId">
         /// User ID of the creator.<br/>
         /// Included only in responses
@@ -95,9 +98,6 @@ namespace Cohere
         /// <param name="organizationId">
         /// Organization ID.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="settings">
-        /// FinetunedModel settings such as dataset, hyperparameters...
         /// </param>
         /// <param name="createdAt">
         /// Creation timestamp.<br/>
@@ -129,9 +129,9 @@ namespace Cohere
             global::System.DateTime? lastUsed)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatorId = creatorId;
             this.OrganizationId = organizationId;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.CompletedAt = completedAt;
