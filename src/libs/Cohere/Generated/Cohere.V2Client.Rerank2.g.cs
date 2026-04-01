@@ -687,7 +687,6 @@ namespace Cohere
             int? priority = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Cohere.V2RerankRequest
             {
                 Model = model,

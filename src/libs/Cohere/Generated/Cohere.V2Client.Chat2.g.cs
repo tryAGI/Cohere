@@ -40,7 +40,6 @@ namespace Cohere
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::Cohere.Chatv2Request
             {
                 Stream = false,
@@ -795,7 +794,6 @@ namespace Cohere
             int? priority = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Cohere.Chatv2Request
             {
                 Stream = false,

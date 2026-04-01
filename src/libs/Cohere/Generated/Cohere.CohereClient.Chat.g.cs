@@ -46,7 +46,6 @@ namespace Cohere
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::Cohere.ChatRequest
             {
                 Message = request.Message,
@@ -887,7 +886,6 @@ namespace Cohere
             global::Cohere.ChatRequestSafetyMode? safetyMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Cohere.ChatRequest
             {
                 Message = message,
