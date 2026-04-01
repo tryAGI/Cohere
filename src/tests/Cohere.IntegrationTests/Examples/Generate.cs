@@ -18,9 +18,9 @@ public partial class Tests
             Message = "Hello, Cohere! Can you tell me a joke?",
         });
 
-        response.IsValue1.Should().BeTrue();
+        response.Should().NotBeNull();
 
         Console.WriteLine("Cohere Response:");
-        Console.WriteLine(response.Value1!.Text);
+        Console.WriteLine(response.Text);
     }
 }

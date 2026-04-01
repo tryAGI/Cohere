@@ -29,8 +29,7 @@ public partial class CohereClient : Meai.IChatClient
         var request = CreateChatRequest(messages, options);
         request.Stream = false;
 
-        var response = await V2.Chat2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        var chatResponse = response.Value1 ?? throw new InvalidOperationException("Expected a non-streaming response.");
+        var chatResponse = await V2.Chat2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         return CreateChatResponse(chatResponse, options?.ModelId);
     }
@@ -47,8 +46,7 @@ public partial class CohereClient : Meai.IChatClient
         var request = CreateChatRequest(messages, options);
         request.Stream = false;
 
-        var response = await V2.Chat2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        var chatResponse = response.Value1 ?? throw new InvalidOperationException("Expected a non-streaming response.");
+        var chatResponse = await V2.Chat2Async(request, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         var update = new Meai.ChatResponseUpdate
         {
