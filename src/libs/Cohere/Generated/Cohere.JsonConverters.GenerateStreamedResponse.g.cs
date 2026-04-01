@@ -68,19 +68,19 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.GenerateStreamText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.GenerateStreamText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGeneration, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGeneration!.Value, typeInfo);
             }
             else if (value.IsStreamEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.GenerateStreamEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.GenerateStreamEnd> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.GenerateStreamEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamEnd, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamEnd!.Value, typeInfo);
             }
             else if (value.IsStreamError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.GenerateStreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.GenerateStreamError> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.GenerateStreamError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamError!.Value, typeInfo);
             }
         }
     }

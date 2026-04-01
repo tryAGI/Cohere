@@ -59,13 +59,13 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.EmbedImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.EmbedImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.EmbedImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl!, typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.EmbedText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.EmbedText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.EmbedText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
         }
     }

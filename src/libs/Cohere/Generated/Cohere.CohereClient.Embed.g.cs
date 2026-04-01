@@ -706,6 +706,7 @@ namespace Cohere
             global::Cohere.EmbedInputType? inputType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Cohere.EmbedRequest
             {
                 Texts = texts,
