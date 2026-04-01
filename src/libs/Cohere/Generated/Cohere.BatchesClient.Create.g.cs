@@ -443,7 +443,6 @@ namespace Cohere
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Cohere.Batch
             {
                 Name = name,
