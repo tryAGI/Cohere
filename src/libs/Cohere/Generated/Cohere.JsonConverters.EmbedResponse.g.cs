@@ -59,13 +59,13 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.EmbedFloatsResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.EmbedFloatsResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.EmbedFloatsResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsFloats, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsFloats!, typeInfo);
             }
             else if (value.IsEmbeddingsByType)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.EmbedByTypeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.EmbedByTypeResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.EmbedByTypeResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsByType, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsByType!, typeInfo);
             }
         }
     }

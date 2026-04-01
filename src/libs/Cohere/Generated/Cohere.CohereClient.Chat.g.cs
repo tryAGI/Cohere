@@ -56,12 +56,6 @@ namespace Cohere
                 ChatHistory = request.ChatHistory,
                 ConversationId = request.ConversationId,
                 PromptTruncation = request.PromptTruncation,
-#pragma warning disable CS0618 // Type or member is obsolete
-                Connectors = request.Connectors,
-#pragma warning restore CS0618 // Type or member is obsolete
-#pragma warning disable CS0618 // Type or member is obsolete
-                SearchQueriesOnly = request.SearchQueriesOnly,
-#pragma warning restore CS0618 // Type or member is obsolete
                 Documents = request.Documents,
                 CitationQuality = request.CitationQuality,
                 Temperature = request.Temperature,
@@ -893,6 +887,7 @@ namespace Cohere
             global::Cohere.ChatRequestSafetyMode? safetyMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Cohere.ChatRequest
             {
                 Message = message,
