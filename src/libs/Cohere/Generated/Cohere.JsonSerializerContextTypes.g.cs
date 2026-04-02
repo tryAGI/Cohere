@@ -1528,7 +1528,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public global::Cohere.UpdateFinetunedModelRequest? Type375 { get; set; }
+        public global::Cohere.FinetuningUpdateFinetunedModelRequest? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>

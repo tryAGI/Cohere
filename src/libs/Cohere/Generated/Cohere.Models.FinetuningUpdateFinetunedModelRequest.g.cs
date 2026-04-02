@@ -8,7 +8,7 @@ namespace Cohere
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UpdateFinetunedModelRequest
+    public sealed partial class FinetuningUpdateFinetunedModelRequest
     {
         /// <summary>
         /// FinetunedModel name (e.g. `foobar`).
@@ -83,7 +83,7 @@ namespace Cohere
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
@@ -118,7 +118,7 @@ namespace Cohere
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UpdateFinetunedModelRequest(
+        public FinetuningUpdateFinetunedModelRequest(
             string name,
             global::Cohere.Settings settings,
             string? creatorId,
@@ -139,9 +139,9 @@ namespace Cohere
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
-        public UpdateFinetunedModelRequest()
+        public FinetuningUpdateFinetunedModelRequest()
         {
         }
     }
