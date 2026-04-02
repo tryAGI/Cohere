@@ -32,6 +32,24 @@ namespace Cohere
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListAsResponseAsync(
+                xClientName: xClientName,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Embed Jobs<br/>
+        /// The list embed job endpoint allows users to view all embed jobs history for that specific user.
+        /// </summary>
+        /// <param name="xClientName"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.ListEmbedJobResponse>> ListAsResponseAsync(
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListArguments(
@@ -569,9 +587,12 @@ namespace Cohere
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Cohere.ListEmbedJobResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::Cohere.ListEmbedJobResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.ListEmbedJobResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -600,9 +621,12 @@ namespace Cohere
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Cohere.ListEmbedJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::Cohere.ListEmbedJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.ListEmbedJobResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

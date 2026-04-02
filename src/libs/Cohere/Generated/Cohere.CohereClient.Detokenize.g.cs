@@ -37,6 +37,29 @@ namespace Cohere
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await DetokenizeAsResponseAsync(
+
+                request: request,
+                xClientName: xClientName,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Detokenize<br/>
+        /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.
+        /// </summary>
+        /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.DetokenizeResponse>> DetokenizeAsResponseAsync(
+
+            global::Cohere.DetokenizeRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -584,9 +607,12 @@ namespace Cohere
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Cohere.DetokenizeResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::Cohere.DetokenizeResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.DetokenizeResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -615,9 +641,12 @@ namespace Cohere
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Cohere.DetokenizeResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::Cohere.DetokenizeResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.DetokenizeResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

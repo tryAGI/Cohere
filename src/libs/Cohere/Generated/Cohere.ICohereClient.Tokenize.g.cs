@@ -22,6 +22,19 @@ namespace Cohere
         /// This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.TokenizeResponse>> TokenizeAsResponseAsync(
+
+            global::Cohere.TokenizeRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Tokenize<br/>
+        /// This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="text">
         /// The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.
         /// </param>
