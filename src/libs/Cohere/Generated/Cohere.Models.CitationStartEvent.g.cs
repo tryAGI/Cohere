@@ -13,35 +13,35 @@ namespace Cohere
         /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatStreamEventType? Value1 { get; init; }
+        public global::Cohere.ChatStreamEventType? ChatStreamType { get; init; }
 #else
-        public global::Cohere.ChatStreamEventType? Value1 { get; }
+        public global::Cohere.ChatStreamEventType? ChatStreamType { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatStreamType))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatStreamType => ChatStreamType != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.CitationStartEventT3df62? Value2 { get; init; }
+        public global::Cohere.CitationStartEventT3df62? T3df62 { get; init; }
 #else
-        public global::Cohere.CitationStartEventT3df62? Value2 { get; }
+        public global::Cohere.CitationStartEventT3df62? T3df62 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T3df62))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsT3df62 => T3df62 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatStreamEventType?(CitationStartEvent @this) => @this.Value1;
+        public static implicit operator global::Cohere.ChatStreamEventType?(CitationStartEvent @this) => @this.ChatStreamType;
 
         /// <summary>
         /// 
         /// </summary>
         public CitationStartEvent(global::Cohere.ChatStreamEventType? value)
         {
-            Value1 = value;
+            ChatStreamType = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.CitationStartEventT3df62?(CitationStartEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.CitationStartEventT3df62?(CitationStartEvent @this) => @this.T3df62;
 
         /// <summary>
         /// 
         /// </summary>
         public CitationStartEvent(global::Cohere.CitationStartEventT3df62? value)
         {
-            Value2 = value;
+            T3df62 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CitationStartEvent(
-            global::Cohere.ChatStreamEventType? value1,
-            global::Cohere.CitationStartEventT3df62? value2
+            global::Cohere.ChatStreamEventType? chatStreamType,
+            global::Cohere.CitationStartEventT3df62? t3df62
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ChatStreamType = chatStreamType;
+            T3df62 = t3df62;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            T3df62 as object ??
+            ChatStreamType as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ChatStreamType?.ToString() ??
+            T3df62?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsChatStreamType && IsT3df62;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.CitationStartEventT3df62?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? chatStreamType = null,
+            global::System.Func<global::Cohere.CitationStartEventT3df62?, TResult>? t3df62 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatStreamType && chatStreamType != null)
             {
-                return value1(Value1!);
+                return chatStreamType(ChatStreamType!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsT3df62 && t3df62 != null)
             {
-                return value2(Value2!);
+                return t3df62(T3df62!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::Cohere.CitationStartEventT3df62?>? value2 = null,
+            global::System.Action<global::Cohere.ChatStreamEventType?>? chatStreamType = null,
+            global::System.Action<global::Cohere.CitationStartEventT3df62?>? t3df62 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatStreamType)
             {
-                value1?.Invoke(Value1!);
+                chatStreamType?.Invoke(ChatStreamType!);
             }
-            else if (IsValue2)
+            else if (IsT3df62)
             {
-                value2?.Invoke(Value2!);
+                t3df62?.Invoke(T3df62!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatStreamType,
                 typeof(global::Cohere.ChatStreamEventType),
-                Value2,
+                T3df62,
                 typeof(global::Cohere.CitationStartEventT3df62),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Cohere
         public bool Equals(CitationStartEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.CitationStartEventT3df62?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(ChatStreamType, other.ChatStreamType) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.CitationStartEventT3df62?>.Default.Equals(T3df62, other.T3df62) 
                 ;
         }
 

@@ -13,35 +13,35 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamEvent? Value1 { get; init; }
+        public global::Cohere.GenerateStreamEvent? Event { get; init; }
 #else
-        public global::Cohere.GenerateStreamEvent? Value1 { get; }
+        public global::Cohere.GenerateStreamEvent? Event { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEvent => Event != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.GenerateStreamEndUbzr0t? Value2 { get; init; }
+        public global::Cohere.GenerateStreamEndUbzr0t? Ubzr0t { get; init; }
 #else
-        public global::Cohere.GenerateStreamEndUbzr0t? Value2 { get; }
+        public global::Cohere.GenerateStreamEndUbzr0t? Ubzr0t { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ubzr0t))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUbzr0t => Ubzr0t != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.GenerateStreamEvent?(GenerateStreamEnd @this) => @this.Value1;
+        public static implicit operator global::Cohere.GenerateStreamEvent?(GenerateStreamEnd @this) => @this.Event;
 
         /// <summary>
         /// 
         /// </summary>
         public GenerateStreamEnd(global::Cohere.GenerateStreamEvent? value)
         {
-            Value1 = value;
+            Event = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.GenerateStreamEndUbzr0t?(GenerateStreamEnd @this) => @this.Value2;
+        public static implicit operator global::Cohere.GenerateStreamEndUbzr0t?(GenerateStreamEnd @this) => @this.Ubzr0t;
 
         /// <summary>
         /// 
         /// </summary>
         public GenerateStreamEnd(global::Cohere.GenerateStreamEndUbzr0t? value)
         {
-            Value2 = value;
+            Ubzr0t = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public GenerateStreamEnd(
-            global::Cohere.GenerateStreamEvent? value1,
-            global::Cohere.GenerateStreamEndUbzr0t? value2
+            global::Cohere.GenerateStreamEvent? @event,
+            global::Cohere.GenerateStreamEndUbzr0t? ubzr0t
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Event = @event;
+            Ubzr0t = ubzr0t;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Ubzr0t as object ??
+            Event as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Event?.ToString() ??
+            Ubzr0t?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsEvent && IsUbzr0t;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.GenerateStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.GenerateStreamEndUbzr0t?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.GenerateStreamEvent?, TResult>? @event = null,
+            global::System.Func<global::Cohere.GenerateStreamEndUbzr0t?, TResult>? ubzr0t = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEvent && @event != null)
             {
-                return value1(Value1!);
+                return @event(Event!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUbzr0t && ubzr0t != null)
             {
-                return value2(Value2!);
+                return ubzr0t(Ubzr0t!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.GenerateStreamEvent?>? value1 = null,
-            global::System.Action<global::Cohere.GenerateStreamEndUbzr0t?>? value2 = null,
+            global::System.Action<global::Cohere.GenerateStreamEvent?>? @event = null,
+            global::System.Action<global::Cohere.GenerateStreamEndUbzr0t?>? ubzr0t = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEvent)
             {
-                value1?.Invoke(Value1!);
+                @event?.Invoke(Event!);
             }
-            else if (IsValue2)
+            else if (IsUbzr0t)
             {
-                value2?.Invoke(Value2!);
+                ubzr0t?.Invoke(Ubzr0t!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                Value1,
+                Event,
                 typeof(global::Cohere.GenerateStreamEvent),
-                Value2,
+                Ubzr0t,
                 typeof(global::Cohere.GenerateStreamEndUbzr0t),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Cohere
         public bool Equals(GenerateStreamEnd other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEndUbzr0t?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Event, other.Event) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEndUbzr0t?>.Default.Equals(Ubzr0t, other.Ubzr0t) 
                 ;
         }
 
