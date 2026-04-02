@@ -13,35 +13,35 @@ namespace Cohere
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatStreamEvent? Value1 { get; init; }
+        public global::Cohere.ChatStreamEvent? Stream { get; init; }
 #else
-        public global::Cohere.ChatStreamEvent? Value1 { get; }
+        public global::Cohere.ChatStreamEvent? Stream { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStream => Stream != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolCallsChunkEventT7lliu? Value2 { get; init; }
+        public global::Cohere.ChatToolCallsChunkEventT7lliu? T7lliu { get; init; }
 #else
-        public global::Cohere.ChatToolCallsChunkEventT7lliu? Value2 { get; }
+        public global::Cohere.ChatToolCallsChunkEventT7lliu? T7lliu { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T7lliu))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsT7lliu => T7lliu != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatStreamEvent?(ChatToolCallsChunkEvent @this) => @this.Value1;
+        public static implicit operator global::Cohere.ChatStreamEvent?(ChatToolCallsChunkEvent @this) => @this.Stream;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallsChunkEvent(global::Cohere.ChatStreamEvent? value)
         {
-            Value1 = value;
+            Stream = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatToolCallsChunkEventT7lliu?(ChatToolCallsChunkEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.ChatToolCallsChunkEventT7lliu?(ChatToolCallsChunkEvent @this) => @this.T7lliu;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallsChunkEvent(global::Cohere.ChatToolCallsChunkEventT7lliu? value)
         {
-            Value2 = value;
+            T7lliu = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallsChunkEvent(
-            global::Cohere.ChatStreamEvent? value1,
-            global::Cohere.ChatToolCallsChunkEventT7lliu? value2
+            global::Cohere.ChatStreamEvent? stream,
+            global::Cohere.ChatToolCallsChunkEventT7lliu? t7lliu
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Stream = stream;
+            T7lliu = t7lliu;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            T7lliu as object ??
+            Stream as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Stream?.ToString() ??
+            T7lliu?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStream && IsT7lliu;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.ChatToolCallsChunkEventT7lliu?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatToolCallsChunkEventT7lliu?, TResult>? t7lliu = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStream && stream != null)
             {
-                return value1(Value1!);
+                return stream(Stream!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsT7lliu && t7lliu != null)
             {
-                return value2(Value2!);
+                return t7lliu(T7lliu!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::Cohere.ChatToolCallsChunkEventT7lliu?>? value2 = null,
+            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
+            global::System.Action<global::Cohere.ChatToolCallsChunkEventT7lliu?>? t7lliu = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStream)
             {
-                value1?.Invoke(Value1!);
+                stream?.Invoke(Stream!);
             }
-            else if (IsValue2)
+            else if (IsT7lliu)
             {
-                value2?.Invoke(Value2!);
+                t7lliu?.Invoke(T7lliu!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                Value1,
+                Stream,
                 typeof(global::Cohere.ChatStreamEvent),
-                Value2,
+                T7lliu,
                 typeof(global::Cohere.ChatToolCallsChunkEventT7lliu),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Cohere
         public bool Equals(ChatToolCallsChunkEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsChunkEventT7lliu?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsChunkEventT7lliu?>.Default.Equals(T7lliu, other.T7lliu) 
                 ;
         }
 

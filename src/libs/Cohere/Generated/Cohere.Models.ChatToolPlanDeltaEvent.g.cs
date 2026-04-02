@@ -13,35 +13,35 @@ namespace Cohere
         /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatStreamEventType? Value1 { get; init; }
+        public global::Cohere.ChatStreamEventType? StreamType { get; init; }
 #else
-        public global::Cohere.ChatStreamEventType? Value1 { get; }
+        public global::Cohere.ChatStreamEventType? StreamType { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamType))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStreamType => StreamType != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Cohere.ChatToolPlanDeltaEvent2obfex? Value2 { get; init; }
+        public global::Cohere.ChatToolPlanDeltaEvent2obfex? Event2obfex { get; init; }
 #else
-        public global::Cohere.ChatToolPlanDeltaEvent2obfex? Value2 { get; }
+        public global::Cohere.ChatToolPlanDeltaEvent2obfex? Event2obfex { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event2obfex))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEvent2obfex => Event2obfex != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatStreamEventType?(ChatToolPlanDeltaEvent @this) => @this.Value1;
+        public static implicit operator global::Cohere.ChatStreamEventType?(ChatToolPlanDeltaEvent @this) => @this.StreamType;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolPlanDeltaEvent(global::Cohere.ChatStreamEventType? value)
         {
-            Value1 = value;
+            StreamType = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Cohere.ChatToolPlanDeltaEvent2obfex?(ChatToolPlanDeltaEvent @this) => @this.Value2;
+        public static implicit operator global::Cohere.ChatToolPlanDeltaEvent2obfex?(ChatToolPlanDeltaEvent @this) => @this.Event2obfex;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolPlanDeltaEvent(global::Cohere.ChatToolPlanDeltaEvent2obfex? value)
         {
-            Value2 = value;
+            Event2obfex = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolPlanDeltaEvent(
-            global::Cohere.ChatStreamEventType? value1,
-            global::Cohere.ChatToolPlanDeltaEvent2obfex? value2
+            global::Cohere.ChatStreamEventType? streamType,
+            global::Cohere.ChatToolPlanDeltaEvent2obfex? event2obfex
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            StreamType = streamType;
+            Event2obfex = event2obfex;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Event2obfex as object ??
+            StreamType as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            StreamType?.ToString() ??
+            Event2obfex?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Cohere
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStreamType && IsEvent2obfex;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::Cohere.ChatToolPlanDeltaEvent2obfex?, TResult>? value2 = null,
+            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? streamType = null,
+            global::System.Func<global::Cohere.ChatToolPlanDeltaEvent2obfex?, TResult>? event2obfex = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStreamType && streamType != null)
             {
-                return value1(Value1!);
+                return streamType(StreamType!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEvent2obfex && event2obfex != null)
             {
-                return value2(Value2!);
+                return event2obfex(Event2obfex!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::Cohere.ChatToolPlanDeltaEvent2obfex?>? value2 = null,
+            global::System.Action<global::Cohere.ChatStreamEventType?>? streamType = null,
+            global::System.Action<global::Cohere.ChatToolPlanDeltaEvent2obfex?>? event2obfex = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStreamType)
             {
-                value1?.Invoke(Value1!);
+                streamType?.Invoke(StreamType!);
             }
-            else if (IsValue2)
+            else if (IsEvent2obfex)
             {
-                value2?.Invoke(Value2!);
+                event2obfex?.Invoke(Event2obfex!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Cohere
         {
             var fields = new object?[]
             {
-                Value1,
+                StreamType,
                 typeof(global::Cohere.ChatStreamEventType),
-                Value2,
+                Event2obfex,
                 typeof(global::Cohere.ChatToolPlanDeltaEvent2obfex),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Cohere
         public bool Equals(ChatToolPlanDeltaEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolPlanDeltaEvent2obfex?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(StreamType, other.StreamType) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolPlanDeltaEvent2obfex?>.Default.Equals(Event2obfex, other.Event2obfex) 
                 ;
         }
 
