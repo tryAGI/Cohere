@@ -22,6 +22,19 @@ namespace Cohere
         /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.DetokenizeResponse>> DetokenizeAsResponseAsync(
+
+            global::Cohere.DetokenizeRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Detokenize<br/>
+        /// This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="tokens">
         /// The list of tokens to be detokenized.<br/>
         /// Included only in requests

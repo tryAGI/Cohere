@@ -39,6 +39,31 @@ namespace Cohere
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await EmbedAsResponseAsync(
+
+                request: request,
+                xClientName: xClientName,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Embed API (v1)<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
+        /// </summary>
+        /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.EmbedResponse>> EmbedAsResponseAsync(
+
+            global::Cohere.EmbedRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -586,9 +611,12 @@ namespace Cohere
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Cohere.EmbedResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::Cohere.EmbedResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.EmbedResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -617,9 +645,12 @@ namespace Cohere
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Cohere.EmbedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::Cohere.EmbedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.EmbedResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -38,6 +38,29 @@ namespace Cohere
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetAsResponseAsync(
+                model: model,
+                xClientName: xClientName,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get a Model<br/>
+        /// Returns the details of a model, provided its name.
+        /// </summary>
+        /// <param name="model">
+        /// Example: command-a-03-2025
+        /// </param>
+        /// <param name="xClientName"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.GetModelResponse>> GetAsResponseAsync(
+            string model,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetArguments(
@@ -577,9 +600,12 @@ namespace Cohere
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Cohere.GetModelResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::Cohere.GetModelResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.GetModelResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -608,9 +634,12 @@ namespace Cohere
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Cohere.GetModelResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::Cohere.GetModelResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Cohere.AutoSDKHttpResponse<global::Cohere.GetModelResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Cohere.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
