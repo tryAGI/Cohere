@@ -57,6 +57,12 @@ namespace Cohere
         public global::System.Collections.Generic.IList<string>? Features { get; set; }
 
         /// <summary>
+        /// Default sampling parameters for this model when omitted from API requests.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sampling_defaults")]
+        public global::Cohere.GetModelResponseSamplingDefaults? SamplingDefaults { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -89,6 +95,9 @@ namespace Cohere
         /// <param name="features">
         /// The features that the model supports.
         /// </param>
+        /// <param name="samplingDefaults">
+        /// Default sampling parameters for this model when omitted from API requests.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +109,8 @@ namespace Cohere
             double? contextLength,
             string? tokenizerUrl,
             global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>? defaultEndpoints,
-            global::System.Collections.Generic.IList<string>? features)
+            global::System.Collections.Generic.IList<string>? features,
+            global::Cohere.GetModelResponseSamplingDefaults? samplingDefaults)
         {
             this.Name = name;
             this.IsDeprecated = isDeprecated;
@@ -110,6 +120,7 @@ namespace Cohere
             this.TokenizerUrl = tokenizerUrl;
             this.DefaultEndpoints = defaultEndpoints;
             this.Features = features;
+            this.SamplingDefaults = samplingDefaults;
         }
 
         /// <summary>
