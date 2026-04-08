@@ -730,6 +730,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.CompatibleEndpoint), TypeInfoPropertyName = "CompatibleEndpoint2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GetModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.CompatibleEndpoint>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GetModelResponseSamplingDefaults))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ListModelsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.GetModelResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BaseType), TypeInfoPropertyName = "BaseType2")]
