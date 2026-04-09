@@ -6,6 +6,7 @@ namespace Cohere
     public sealed partial class CohereClient
     {
         /// <inheritdoc cref="CohereClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Cohere.EndPointAuthorization}?, bool)"/>
+
         public CohereClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

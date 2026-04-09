@@ -5,6 +5,25 @@ namespace Cohere
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::Cohere.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::Cohere.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Cohere.EndPointAuthorizationRequirement[]
+                {                    new global::Cohere.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Cohere.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::Cohere.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? datasetType,
@@ -70,6 +89,12 @@ namespace Cohere
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
+
+            var __authorizations = global::Cohere.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::Cohere.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
@@ -80,7 +105,7 @@ namespace Cohere
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("validationStatus", validationStatus?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -90,7 +115,7 @@ namespace Cohere
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
