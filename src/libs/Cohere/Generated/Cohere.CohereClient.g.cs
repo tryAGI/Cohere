@@ -13,7 +13,7 @@ namespace Cohere
         /// <summary>
         /// production
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.cohere.com";
+        public const string DefaultBaseUrl = "https://api.cohere.com/";
 
         private bool _disposeHttpClient = true;
 
