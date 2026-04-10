@@ -10,12 +10,14 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.CreateEmbedJobResponse> CreateAsync(
 
             global::Cohere.CreateEmbedJobRequest request,
             string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an Embed Job<br/>
@@ -23,12 +25,14 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.CreateEmbedJobResponse>> CreateAsResponseAsync(
 
             global::Cohere.CreateEmbedJobRequest request,
             string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an Embed Job<br/>
@@ -70,6 +74,7 @@ namespace Cohere
         /// Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.<br/>
         /// Default Value: END
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.CreateEmbedJobResponse> CreateAsync(
@@ -80,6 +85,7 @@ namespace Cohere
             string? name = default,
             global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes = default,
             global::Cohere.CreateEmbedJobRequestTruncate? truncate = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

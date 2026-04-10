@@ -9,11 +9,13 @@ namespace Cohere
         /// Transcribe an audio file.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.AudioTranscriptionsCreateResponse> CreateAsync(
 
             global::Cohere.AudioTranscriptionsCreateRequest request,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a transcription<br/>
@@ -34,6 +36,7 @@ namespace Cohere
         /// <param name="filename">
         /// The audio file object to transcribe. Supported file extensions are flac, mp3, mpeg, mpga, ogg, and wav.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.AudioTranscriptionsCreateResponse> CreateAsync(
@@ -42,6 +45,7 @@ namespace Cohere
             byte[] file,
             string filename,
             double? temperature = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
