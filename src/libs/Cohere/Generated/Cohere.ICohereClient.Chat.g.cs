@@ -14,6 +14,7 @@ namespace Cohere
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
@@ -21,6 +22,7 @@ namespace Cohere
             global::Cohere.ChatRequest request,
             string? xClientName = default,
             global::Cohere.ChatAccepts? accepts = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat API (v1)<br/>
@@ -190,6 +192,7 @@ namespace Cohere
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.NonStreamedChatResponse> ChatAsync(
@@ -218,6 +221,7 @@ namespace Cohere
             bool? forceSingleStep = default,
             global::Cohere.ResponseFormat? responseFormat = default,
             global::Cohere.ChatRequestSafetyMode? safetyMode = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

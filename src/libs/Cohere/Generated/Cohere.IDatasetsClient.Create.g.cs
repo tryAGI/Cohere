@@ -20,6 +20,7 @@ namespace Cohere
         /// <param name="csvDelimiter"></param>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.DatasetsCreateResponse> CreateAsync(
@@ -34,6 +35,7 @@ namespace Cohere
             string? textSeparator = default,
             string? csvDelimiter = default,
             string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Dataset<br/>
@@ -62,6 +64,7 @@ namespace Cohere
         /// <param name="evalDataname">
         /// An optional evaluation file to upload
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.DatasetsCreateResponse> CreateAsync(
@@ -78,6 +81,7 @@ namespace Cohere
             string? xClientName = default,
             byte[]? evalData = default,
             string? evalDataname = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

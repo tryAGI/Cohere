@@ -12,12 +12,14 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.EmbedByTypeResponse> Embed2Async(
 
             global::Cohere.V2EmbedRequest request,
             string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Embed API (v2)<br/>
@@ -27,12 +29,14 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Cohere.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.EmbedByTypeResponse>> Embed2AsResponseAsync(
 
             global::Cohere.V2EmbedRequest request,
             string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Embed API (v2)<br/>
@@ -94,6 +98,7 @@ namespace Cohere
         /// Controls how early the request is handled. Lower numbers indicate higher priority (default: 0, the highest). When the system is under load, higher-priority requests are processed first and are the least likely to be dropped.<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.EmbedByTypeResponse> Embed2Async(
@@ -108,6 +113,7 @@ namespace Cohere
             int? maxTokens = default,
             int? outputDimension = default,
             int? priority = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
