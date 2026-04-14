@@ -175,10 +175,10 @@ namespace Cohere
                 } 
             }
 
-                if (xClientName != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-                }
+            if (xClientName != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
