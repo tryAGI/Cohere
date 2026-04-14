@@ -158,14 +158,14 @@ namespace Cohere
                 } 
             }
 
-                if (xClientName != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-                }
-                if (accepts != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
-                }
+            if (xClientName != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+            if (accepts != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(

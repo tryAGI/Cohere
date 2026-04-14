@@ -144,10 +144,10 @@ namespace Cohere
                 } 
             }
 
-                if (xClientName != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-                }
+            if (xClientName != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
 
                 global::Cohere.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
