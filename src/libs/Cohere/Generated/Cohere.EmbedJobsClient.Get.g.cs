@@ -160,7 +160,7 @@ namespace Cohere
                 PrepareGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     xClientName: xClientName);
 
                 return __httpRequest;

@@ -164,7 +164,7 @@ namespace Cohere
                 PrepareGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    model: model,
+                    model: model!,
                     xClientName: xClientName);
 
                 return __httpRequest;
