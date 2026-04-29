@@ -182,23 +182,23 @@ namespace Cohere
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{name}"),
+                                content: new global::System.Net.Http.StringContent(name ?? string.Empty),
                                 name: "\"name\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{type.ToValueString()}"),
+                                content: new global::System.Net.Http.StringContent(type.ToValueString()),
                                 name: "\"type\"");
                             if (keepOriginalFile != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{keepOriginalFile}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(keepOriginalFile, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"keep_original_file\"");
                             } 
                             if (skipMalformedInput != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{skipMalformedInput}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(skipMalformedInput, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"skip_malformed_input\"");
                             } 
                             if (keepFields != default)
@@ -219,24 +219,52 @@ namespace Cohere
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{textSeparator}"),
+                                    content: new global::System.Net.Http.StringContent(textSeparator ?? string.Empty),
                                     name: "\"text_separator\"");
                             } 
                             if (csvDelimiter != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{csvDelimiter}"),
+                                    content: new global::System.Net.Http.StringContent(csvDelimiter ?? string.Empty),
                                     name: "\"csv_delimiter\"");
                             } 
                             if (xClientName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{xClientName}"),
+                                    content: new global::System.Net.Http.StringContent(xClientName ?? string.Empty),
                                     name: "\"X-Client-Name\"");
                             }
                             var __contentData = new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>());
+                            __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Dataname is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Dataname) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentData,
                                 name: "\"data\"",
@@ -249,6 +277,34 @@ namespace Cohere
                             {
 
                                 var __contentEvalData = new global::System.Net.Http.ByteArrayContent(request.EvalData ?? global::System.Array.Empty<byte>());
+                                __contentEvalData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.EvalDataname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.EvalDataname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentEvalData,
                                     name: "\"eval_data\"",
@@ -270,8 +326,8 @@ namespace Cohere
                 PrepareCreateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name,
-                    type: type,
+                    name: name!,
+                    type: type!,
                     keepOriginalFile: keepOriginalFile,
                     skipMalformedInput: skipMalformedInput,
                     keepFields: keepFields,
