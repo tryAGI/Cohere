@@ -43,7 +43,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -52,7 +52,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public BatchesClient Batches => new BatchesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BatchesClient Batches => new BatchesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -61,7 +61,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -70,7 +70,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -79,7 +79,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -88,7 +88,7 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public V2Client V2 => new V2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -127,10 +127,10 @@ namespace Cohere
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public CohereClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Cohere.EndPointAuthorization>? authorizations = null,
-            global::Cohere.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Cohere.EndPointAuthorization>? authorizations,
+            global::Cohere.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

@@ -26,6 +26,22 @@ namespace Cohere
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Cohere.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Cohere.AutoSDKHttpResponse<global::Cohere.ChatResponseV2>> Chat2AsResponseAsync(
+
+            global::Cohere.Chatv2Request request,
+            string? xClientName = default,
+            global::Cohere.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Chat API (v2)<br/>
+        /// Generates a text response to a user message and streams it down, token by token. To learn how to use the Chat API with streaming follow our [Text Generation guides](https://docs.cohere.com/v2/docs/chat-api).<br/>
+        /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models).
         /// </param>
