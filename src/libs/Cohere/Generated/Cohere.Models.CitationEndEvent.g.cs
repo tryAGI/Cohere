@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEventType? value)
+        {
+            value = ChatStreamType;
+            return IsChatStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.CitationEndEventFs3igt? Fs3igt { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fs3igt))]
 #endif
         public bool IsFs3igt => Fs3igt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFs3igt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.CitationEndEventFs3igt? value)
+        {
+            value = Fs3igt;
+            return IsFs3igt;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? chatStreamType = null,
-            global::System.Func<global::Cohere.CitationEndEventFs3igt?, TResult>? fs3igt = null,
+            global::System.Func<global::Cohere.ChatStreamEventType, TResult>? chatStreamType = null,
+            global::System.Func<global::Cohere.CitationEndEventFs3igt, TResult>? fs3igt = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? chatStreamType = null,
-            global::System.Action<global::Cohere.CitationEndEventFs3igt?>? fs3igt = null,
+            global::System.Action<global::Cohere.ChatStreamEventType>? chatStreamType = null,
+
+            global::System.Action<global::Cohere.CitationEndEventFs3igt>? fs3igt = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatStreamType)
+            {
+                chatStreamType?.Invoke(ChatStreamType!);
+            }
+            else if (IsFs3igt)
+            {
+                fs3igt?.Invoke(Fs3igt!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEventType>? chatStreamType = null,
+            global::System.Action<global::Cohere.CitationEndEventFs3igt>? fs3igt = null,
             bool validate = true)
         {
             if (validate)

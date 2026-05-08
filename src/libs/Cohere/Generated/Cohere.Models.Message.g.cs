@@ -33,6 +33,19 @@ namespace Cohere
         public bool IsChatbot => Chatbot != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatbot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatMessage? value)
+        {
+            value = Chatbot;
+            return IsChatbot;
+        }
+
+        /// <summary>
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatMessage?, TResult>? chatbot = null,
-            global::System.Func<global::Cohere.ChatToolMessage?, TResult>? tool = null,
+            global::System.Func<global::Cohere.ChatMessage, TResult>? chatbot = null,
+            global::System.Func<global::Cohere.ChatToolMessage, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatMessage?>? chatbot = null,
-            global::System.Action<global::Cohere.ChatToolMessage?>? tool = null,
+            global::System.Action<global::Cohere.ChatMessage>? chatbot = null,
+
+            global::System.Action<global::Cohere.ChatToolMessage>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatbot)
+            {
+                chatbot?.Invoke(Chatbot!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatMessage>? chatbot = null,
+            global::System.Action<global::Cohere.ChatToolMessage>? tool = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamStartEvent? value)
+        {
+            value = StreamStart;
+            return IsStreamStart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
 #endif
         public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchQueriesGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatSearchQueriesGenerationEvent? value)
+        {
+            value = SearchQueriesGeneration;
+            return IsSearchQueriesGeneration;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchResults(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatSearchResultsEvent? value)
+        {
+            value = SearchResults;
+            return IsSearchResults;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
 #endif
         public bool IsTextGeneration => TextGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatTextGenerationEvent? value)
+        {
+            value = TextGeneration;
+            return IsTextGeneration;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCitationGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatCitationGenerationEvent? value)
+        {
+            value = CitationGeneration;
+            return IsCitationGeneration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
 #endif
         public bool IsToolCallsGeneration => ToolCallsGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolCallsGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallsGenerationEvent? value)
+        {
+            value = ToolCallsGeneration;
+            return IsToolCallsGeneration;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEndEvent? value)
+        {
+            value = StreamEnd;
+            return IsStreamEnd;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
 #else
@@ -153,6 +244,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolCallsChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallsChunkEvent? value)
+        {
+            value = ToolCallsChunk;
+            return IsToolCallsChunk;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
 #else
@@ -166,6 +270,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
 #endif
         public bool IsDebug => Debug != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDebug(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatDebugEvent? value)
+        {
+            value = Debug;
+            return IsDebug;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -459,6 +576,72 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Cohere.ChatStreamStartEvent?>? streamStart = null,
+
+            global::System.Action<global::Cohere.ChatSearchQueriesGenerationEvent?>? searchQueriesGeneration = null,
+
+            global::System.Action<global::Cohere.ChatSearchResultsEvent?>? searchResults = null,
+
+            global::System.Action<global::Cohere.ChatTextGenerationEvent?>? textGeneration = null,
+
+            global::System.Action<global::Cohere.ChatCitationGenerationEvent?>? citationGeneration = null,
+
+            global::System.Action<global::Cohere.ChatToolCallsGenerationEvent?>? toolCallsGeneration = null,
+
+            global::System.Action<global::Cohere.ChatStreamEndEvent?>? streamEnd = null,
+
+            global::System.Action<global::Cohere.ChatToolCallsChunkEvent?>? toolCallsChunk = null,
+
+            global::System.Action<global::Cohere.ChatDebugEvent?>? debug = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamStart)
+            {
+                streamStart?.Invoke(StreamStart!);
+            }
+            else if (IsSearchQueriesGeneration)
+            {
+                searchQueriesGeneration?.Invoke(SearchQueriesGeneration!);
+            }
+            else if (IsSearchResults)
+            {
+                searchResults?.Invoke(SearchResults!);
+            }
+            else if (IsTextGeneration)
+            {
+                textGeneration?.Invoke(TextGeneration!);
+            }
+            else if (IsCitationGeneration)
+            {
+                citationGeneration?.Invoke(CitationGeneration!);
+            }
+            else if (IsToolCallsGeneration)
+            {
+                toolCallsGeneration?.Invoke(ToolCallsGeneration!);
+            }
+            else if (IsStreamEnd)
+            {
+                streamEnd?.Invoke(StreamEnd!);
+            }
+            else if (IsToolCallsChunk)
+            {
+                toolCallsChunk?.Invoke(ToolCallsChunk!);
+            }
+            else if (IsDebug)
+            {
+                debug?.Invoke(Debug!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Cohere.ChatStreamStartEvent?>? streamStart = null,
             global::System.Action<global::Cohere.ChatSearchQueriesGenerationEvent?>? searchQueriesGeneration = null,
             global::System.Action<global::Cohere.ChatSearchResultsEvent?>? searchResults = null,

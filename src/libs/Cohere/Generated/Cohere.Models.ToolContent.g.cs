@@ -32,6 +32,19 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatTextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// Document content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.DocumentContent? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatTextContent?, TResult>? text = null,
-            global::System.Func<global::Cohere.DocumentContent?, TResult>? document = null,
+            global::System.Func<global::Cohere.ChatTextContent, TResult>? text = null,
+            global::System.Func<global::Cohere.DocumentContent, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatTextContent?>? text = null,
-            global::System.Action<global::Cohere.DocumentContent?>? document = null,
+            global::System.Action<global::Cohere.ChatTextContent>? text = null,
+
+            global::System.Action<global::Cohere.DocumentContent>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatTextContent>? text = null,
+            global::System.Action<global::Cohere.DocumentContent>? document = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallDeltaEvent2bxzoc? Event2bxzoc { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event2bxzoc))]
 #endif
         public bool IsEvent2bxzoc => Event2bxzoc != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent2bxzoc(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallDeltaEvent2bxzoc? value)
+        {
+            value = Event2bxzoc;
+            return IsEvent2bxzoc;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::Cohere.ChatToolCallDeltaEvent2bxzoc?, TResult>? event2bxzoc = null,
+            global::System.Func<global::Cohere.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::Cohere.ChatToolCallDeltaEvent2bxzoc, TResult>? event2bxzoc = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::Cohere.ChatToolCallDeltaEvent2bxzoc?>? event2bxzoc = null,
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::Cohere.ChatToolCallDeltaEvent2bxzoc>? event2bxzoc = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsEvent2bxzoc)
+            {
+                event2bxzoc?.Invoke(Event2bxzoc!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::Cohere.ChatToolCallDeltaEvent2bxzoc>? event2bxzoc = null,
             bool validate = true)
         {
             if (validate)

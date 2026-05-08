@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lg3v2o))]
 #endif
         public bool IsLg3v2o => Lg3v2o != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLg3v2o(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatCitationGenerationEventLg3v2o? value)
+        {
+            value = Lg3v2o;
+            return IsLg3v2o;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::Cohere.ChatCitationGenerationEventLg3v2o?, TResult>? lg3v2o = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatCitationGenerationEventLg3v2o, TResult>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::Cohere.ChatCitationGenerationEventLg3v2o?>? lg3v2o = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::Cohere.ChatCitationGenerationEventLg3v2o>? lg3v2o = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsLg3v2o)
+            {
+                lg3v2o?.Invoke(Lg3v2o!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+            global::System.Action<global::Cohere.ChatCitationGenerationEventLg3v2o>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)

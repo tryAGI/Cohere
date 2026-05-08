@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageEndEventU3fzny? U3fzny { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(U3fzny))]
 #endif
         public bool IsU3fzny => U3fzny != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickU3fzny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatMessageEndEventU3fzny? value)
+        {
+            value = U3fzny;
+            return IsU3fzny;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::Cohere.ChatMessageEndEventU3fzny?, TResult>? u3fzny = null,
+            global::System.Func<global::Cohere.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::Cohere.ChatMessageEndEventU3fzny, TResult>? u3fzny = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::Cohere.ChatMessageEndEventU3fzny?>? u3fzny = null,
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::Cohere.ChatMessageEndEventU3fzny>? u3fzny = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsU3fzny)
+            {
+                u3fzny?.Invoke(U3fzny!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::Cohere.ChatMessageEndEventU3fzny>? u3fzny = null,
             bool validate = true)
         {
             if (validate)
