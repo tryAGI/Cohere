@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent8yyj22? Event8yyj22 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event8yyj22))]
 #endif
         public bool IsEvent8yyj22 => Event8yyj22 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent8yyj22(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatTextGenerationEvent8yyj22? value)
+        {
+            value = Event8yyj22;
+            return IsEvent8yyj22;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::Cohere.ChatTextGenerationEvent8yyj22?, TResult>? event8yyj22 = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatTextGenerationEvent8yyj22, TResult>? event8yyj22 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::Cohere.ChatTextGenerationEvent8yyj22?>? event8yyj22 = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::Cohere.ChatTextGenerationEvent8yyj22>? event8yyj22 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsEvent8yyj22)
+            {
+                event8yyj22?.Invoke(Event8yyj22!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+            global::System.Action<global::Cohere.ChatTextGenerationEvent8yyj22>? event8yyj22 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamTextYai5v6? Yai5v6 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Yai5v6))]
 #endif
         public bool IsYai5v6 => Yai5v6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickYai5v6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamTextYai5v6? value)
+        {
+            value = Yai5v6;
+            return IsYai5v6;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.GenerateStreamEvent?, TResult>? @event = null,
-            global::System.Func<global::Cohere.GenerateStreamTextYai5v6?, TResult>? yai5v6 = null,
+            global::System.Func<global::Cohere.GenerateStreamEvent, TResult>? @event = null,
+            global::System.Func<global::Cohere.GenerateStreamTextYai5v6, TResult>? yai5v6 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.GenerateStreamEvent?>? @event = null,
-            global::System.Action<global::Cohere.GenerateStreamTextYai5v6?>? yai5v6 = null,
+            global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
+
+            global::System.Action<global::Cohere.GenerateStreamTextYai5v6>? yai5v6 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsYai5v6)
+            {
+                yai5v6?.Invoke(Yai5v6!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
+            global::System.Action<global::Cohere.GenerateStreamTextYai5v6>? yai5v6 = null,
             bool validate = true)
         {
             if (validate)

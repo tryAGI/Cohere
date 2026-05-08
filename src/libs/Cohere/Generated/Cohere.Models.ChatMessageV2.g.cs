@@ -32,6 +32,19 @@ namespace Cohere
         public bool IsUser => User != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.UserMessageV2? value)
+        {
+            value = User;
+            return IsUser;
+        }
+
+        /// <summary>
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
 #endif
         public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.AssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
 
         /// <summary>
         /// A message from the system.
@@ -66,6 +92,19 @@ namespace Cohere
         public bool IsSystem => System != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.SystemMessageV2? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
         /// A message with Tool outputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +120,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ToolMessageV2? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.UserMessageV2?, TResult>? user = null,
-            global::System.Func<global::Cohere.AssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::Cohere.SystemMessageV2?, TResult>? system = null,
-            global::System.Func<global::Cohere.ToolMessageV2?, TResult>? tool = null,
+            global::System.Func<global::Cohere.UserMessageV2, TResult>? user = null,
+            global::System.Func<global::Cohere.AssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::Cohere.SystemMessageV2, TResult>? system = null,
+            global::System.Func<global::Cohere.ToolMessageV2, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.UserMessageV2?>? user = null,
-            global::System.Action<global::Cohere.AssistantMessage?>? assistant = null,
-            global::System.Action<global::Cohere.SystemMessageV2?>? system = null,
-            global::System.Action<global::Cohere.ToolMessageV2?>? tool = null,
+            global::System.Action<global::Cohere.UserMessageV2>? user = null,
+
+            global::System.Action<global::Cohere.AssistantMessage>? assistant = null,
+
+            global::System.Action<global::Cohere.SystemMessageV2>? system = null,
+
+            global::System.Action<global::Cohere.ToolMessageV2>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.UserMessageV2>? user = null,
+            global::System.Action<global::Cohere.AssistantMessage>? assistant = null,
+            global::System.Action<global::Cohere.SystemMessageV2>? system = null,
+            global::System.Action<global::Cohere.ToolMessageV2>? tool = null,
             bool validate = true)
         {
             if (validate)

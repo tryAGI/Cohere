@@ -32,6 +32,19 @@ namespace Cohere
         public bool IsTool => Tool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolSource? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
         /// A document source object containing the unique identifier of the document and the document itself.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatDocumentSource? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatToolSource?, TResult>? tool = null,
-            global::System.Func<global::Cohere.ChatDocumentSource?, TResult>? document = null,
+            global::System.Func<global::Cohere.ChatToolSource, TResult>? tool = null,
+            global::System.Func<global::Cohere.ChatDocumentSource, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatToolSource?>? tool = null,
-            global::System.Action<global::Cohere.ChatDocumentSource?>? document = null,
+            global::System.Action<global::Cohere.ChatToolSource>? tool = null,
+
+            global::System.Action<global::Cohere.ChatDocumentSource>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatToolSource>? tool = null,
+            global::System.Action<global::Cohere.ChatDocumentSource>? document = null,
             bool validate = true)
         {
             if (validate)

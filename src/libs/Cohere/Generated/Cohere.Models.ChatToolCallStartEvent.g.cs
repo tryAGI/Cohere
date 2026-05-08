@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallStartEventLv559x? Lv559x { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lv559x))]
 #endif
         public bool IsLv559x => Lv559x != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLv559x(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallStartEventLv559x? value)
+        {
+            value = Lv559x;
+            return IsLv559x;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::Cohere.ChatToolCallStartEventLv559x?, TResult>? lv559x = null,
+            global::System.Func<global::Cohere.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::Cohere.ChatToolCallStartEventLv559x, TResult>? lv559x = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::Cohere.ChatToolCallStartEventLv559x?>? lv559x = null,
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::Cohere.ChatToolCallStartEventLv559x>? lv559x = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsLv559x)
+            {
+                lv559x?.Invoke(Lv559x!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::Cohere.ChatToolCallStartEventLv559x>? lv559x = null,
             bool validate = true)
         {
             if (validate)

@@ -32,6 +32,19 @@ namespace Cohere
         public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessageStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatMessageStartEvent? value)
+        {
+            value = MessageStart;
+            return IsMessageStart;
+        }
+
+        /// <summary>
         /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentStart))]
 #endif
         public bool IsContentStart => ContentStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatContentStartEvent? value)
+        {
+            value = ContentStart;
+            return IsContentStart;
+        }
 
         /// <summary>
         /// A streamed delta event which contains a delta of chat text content.
@@ -66,6 +92,19 @@ namespace Cohere
         public bool IsContentDelta => ContentDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatContentDeltaEvent? value)
+        {
+            value = ContentDelta;
+            return IsContentDelta;
+        }
+
+        /// <summary>
         /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +120,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentEnd))]
 #endif
         public bool IsContentEnd => ContentEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatContentEndEvent? value)
+        {
+            value = ContentEnd;
+            return IsContentEnd;
+        }
 
         /// <summary>
         /// A streamed event which contains a delta of tool plan text.
@@ -100,6 +152,19 @@ namespace Cohere
         public bool IsToolPlanDelta => ToolPlanDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolPlanDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolPlanDeltaEvent? value)
+        {
+            value = ToolPlanDelta;
+            return IsToolPlanDelta;
+        }
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -115,6 +180,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallStart))]
 #endif
         public bool IsToolCallStart => ToolCallStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolCallStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallStartEvent? value)
+        {
+            value = ToolCallStart;
+            return IsToolCallStart;
+        }
 
         /// <summary>
         /// A streamed event delta which signifies a delta in tool call arguments.
@@ -134,6 +212,19 @@ namespace Cohere
         public bool IsToolCallDelta => ToolCallDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolCallDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallDeltaEvent? value)
+        {
+            value = ToolCallDelta;
+            return IsToolCallDelta;
+        }
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -149,6 +240,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallEnd))]
 #endif
         public bool IsToolCallEnd => ToolCallEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolCallEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallEndEvent? value)
+        {
+            value = ToolCallEnd;
+            return IsToolCallEnd;
+        }
 
         /// <summary>
         /// A streamed event which signifies that the chat message has ended.
@@ -170,6 +274,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatMessageEndEvent? value)
+        {
+            value = MessageEnd;
+            return IsMessageEnd;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
 #else
@@ -183,6 +300,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
 #endif
         public bool IsDebug => Debug != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDebug(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatDebugEvent? value)
+        {
+            value = Debug;
+            return IsDebug;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -503,6 +633,78 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Cohere.ChatMessageStartEvent?>? messageStart = null,
+
+            global::System.Action<global::Cohere.ChatContentStartEvent?>? contentStart = null,
+
+            global::System.Action<global::Cohere.ChatContentDeltaEvent?>? contentDelta = null,
+
+            global::System.Action<global::Cohere.ChatContentEndEvent?>? contentEnd = null,
+
+            global::System.Action<global::Cohere.ChatToolPlanDeltaEvent?>? toolPlanDelta = null,
+
+            global::System.Action<global::Cohere.ChatToolCallStartEvent?>? toolCallStart = null,
+
+            global::System.Action<global::Cohere.ChatToolCallDeltaEvent?>? toolCallDelta = null,
+
+            global::System.Action<global::Cohere.ChatToolCallEndEvent?>? toolCallEnd = null,
+
+            global::System.Action<global::Cohere.ChatMessageEndEvent?>? messageEnd = null,
+
+            global::System.Action<global::Cohere.ChatDebugEvent?>? debug = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStart)
+            {
+                messageStart?.Invoke(MessageStart!);
+            }
+            else if (IsContentStart)
+            {
+                contentStart?.Invoke(ContentStart!);
+            }
+            else if (IsContentDelta)
+            {
+                contentDelta?.Invoke(ContentDelta!);
+            }
+            else if (IsContentEnd)
+            {
+                contentEnd?.Invoke(ContentEnd!);
+            }
+            else if (IsToolPlanDelta)
+            {
+                toolPlanDelta?.Invoke(ToolPlanDelta!);
+            }
+            else if (IsToolCallStart)
+            {
+                toolCallStart?.Invoke(ToolCallStart!);
+            }
+            else if (IsToolCallDelta)
+            {
+                toolCallDelta?.Invoke(ToolCallDelta!);
+            }
+            else if (IsToolCallEnd)
+            {
+                toolCallEnd?.Invoke(ToolCallEnd!);
+            }
+            else if (IsMessageEnd)
+            {
+                messageEnd?.Invoke(MessageEnd!);
+            }
+            else if (IsDebug)
+            {
+                debug?.Invoke(Debug!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Cohere.ChatMessageStartEvent?>? messageStart = null,
             global::System.Action<global::Cohere.ChatContentStartEvent?>? contentStart = null,
             global::System.Action<global::Cohere.ChatContentDeltaEvent?>? contentDelta = null,

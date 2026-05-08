@@ -38,6 +38,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatTextResponseFormat? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.JSONResponseFormat? JsonObject { get; init; }
 #else
@@ -51,6 +64,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.JSONResponseFormat? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -130,8 +156,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatTextResponseFormat?, TResult>? text = null,
-            global::System.Func<global::Cohere.JSONResponseFormat?, TResult>? jsonObject = null,
+            global::System.Func<global::Cohere.ChatTextResponseFormat, TResult>? text = null,
+            global::System.Func<global::Cohere.JSONResponseFormat, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -155,8 +181,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatTextResponseFormat?>? text = null,
-            global::System.Action<global::Cohere.JSONResponseFormat?>? jsonObject = null,
+            global::System.Action<global::Cohere.ChatTextResponseFormat>? text = null,
+
+            global::System.Action<global::Cohere.JSONResponseFormat>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatTextResponseFormat>? text = null,
+            global::System.Action<global::Cohere.JSONResponseFormat>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
