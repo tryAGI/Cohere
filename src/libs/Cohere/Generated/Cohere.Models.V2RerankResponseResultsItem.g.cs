@@ -54,5 +54,6 @@ namespace Cohere
         public V2RerankResponseResultsItem()
         {
         }
+
     }
 }

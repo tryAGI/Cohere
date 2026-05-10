@@ -134,5 +134,6 @@ namespace Cohere
         public Hyperparameters()
         {
         }
+
     }
 }

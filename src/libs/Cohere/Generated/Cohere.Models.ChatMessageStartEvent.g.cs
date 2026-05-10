@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageStartEventLsegeq? Lsegeq { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Lsegeq;
             return IsLsegeq;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatMessageStartEventLsegeq PickLsegeq() => IsLsegeq
+            ? Lsegeq!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lsegeq' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

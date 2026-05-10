@@ -39,5 +39,6 @@ namespace Cohere
         public ChatToolPlanDeltaEvent2obfex()
         {
         }
+
     }
 }

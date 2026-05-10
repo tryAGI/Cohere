@@ -52,5 +52,6 @@ namespace Cohere
         public ChatSearchResultsEvent44axt5()
         {
         }
+
     }
 }

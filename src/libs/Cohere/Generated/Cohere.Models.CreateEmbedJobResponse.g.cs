@@ -49,5 +49,6 @@ namespace Cohere
         public CreateEmbedJobResponse()
         {
         }
+
     }
 }

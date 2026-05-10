@@ -80,5 +80,6 @@ namespace Cohere
         public JsonResponseFormatV2()
         {
         }
+
     }
 }

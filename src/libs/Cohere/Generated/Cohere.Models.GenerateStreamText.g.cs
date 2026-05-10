@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
+            ? Event!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamTextYai5v6? Yai5v6 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Yai5v6;
             return IsYai5v6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.GenerateStreamTextYai5v6 PickYai5v6() => IsYai5v6
+            ? Yai5v6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Yai5v6' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

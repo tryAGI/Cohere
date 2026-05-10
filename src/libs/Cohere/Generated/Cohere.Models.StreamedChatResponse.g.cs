@@ -47,6 +47,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamStartEvent PickStreamStart() => IsStreamStart
+            ? StreamStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Cohere
             value = SearchQueriesGeneration;
             return IsSearchQueriesGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatSearchQueriesGenerationEvent PickSearchQueriesGeneration() => IsSearchQueriesGeneration
+            ? SearchQueriesGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchQueriesGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatSearchResultsEvent PickSearchResults() => IsSearchResults
+            ? SearchResults!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResults' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Cohere
             value = TextGeneration;
             return IsTextGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatTextGenerationEvent PickTextGeneration() => IsTextGeneration
+            ? TextGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatCitationGenerationEvent PickCitationGeneration() => IsCitationGeneration
+            ? CitationGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CitationGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Cohere
             value = ToolCallsGeneration;
             return IsToolCallsGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallsGenerationEvent PickToolCallsGeneration() => IsToolCallsGeneration
+            ? ToolCallsGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEndEvent PickStreamEnd() => IsStreamEnd
+            ? StreamEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
 #else
@@ -257,6 +306,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatToolCallsChunkEvent PickToolCallsChunk() => IsToolCallsChunk
+            ? ToolCallsChunk!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsChunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace Cohere
             value = Debug;
             return IsDebug;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatDebugEvent PickDebug() => IsDebug
+            ? Debug!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

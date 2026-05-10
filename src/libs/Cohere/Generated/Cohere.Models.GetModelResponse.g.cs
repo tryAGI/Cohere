@@ -129,5 +129,6 @@ namespace Cohere
         public GetModelResponse()
         {
         }
+
     }
 }

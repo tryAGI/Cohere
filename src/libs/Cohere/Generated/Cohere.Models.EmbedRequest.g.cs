@@ -136,5 +136,6 @@ namespace Cohere
         public EmbedRequest()
         {
         }
+
     }
 }

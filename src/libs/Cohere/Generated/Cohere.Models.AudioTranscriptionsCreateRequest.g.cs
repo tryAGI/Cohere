@@ -89,5 +89,6 @@ namespace Cohere
         public AudioTranscriptionsCreateRequest()
         {
         }
+
     }
 }

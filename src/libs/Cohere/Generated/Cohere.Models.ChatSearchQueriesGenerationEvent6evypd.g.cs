@@ -42,5 +42,6 @@ namespace Cohere
         public ChatSearchQueriesGenerationEvent6evypd()
         {
         }
+
     }
 }
