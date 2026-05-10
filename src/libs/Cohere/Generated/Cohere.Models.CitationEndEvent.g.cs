@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static CitationEndEvent FromChatStreamType(global::Cohere.ChatStreamEventType? value) => new CitationEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationEndEvent(global::Cohere.CitationEndEventFs3igt value) => new CitationEndEvent((global::Cohere.CitationEndEventFs3igt?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Fs3igt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationEndEvent FromFs3igt(global::Cohere.CitationEndEventFs3igt? value) => new CitationEndEvent(value);
 
         /// <summary>
         /// 

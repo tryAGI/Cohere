@@ -95,6 +95,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static Message FromChatbot(global::Cohere.ChatMessage? value) => new Message(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Message(global::Cohere.ChatToolMessage value) => new Message((global::Cohere.ChatToolMessage?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace Cohere
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Message FromTool(global::Cohere.ChatToolMessage? value) => new Message(value);
 
         /// <summary>
         /// 

@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedResponse FromEmbeddingsFloats(global::Cohere.EmbedFloatsResponse? value) => new EmbedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedResponse(global::Cohere.EmbedByTypeResponse value) => new EmbedResponse((global::Cohere.EmbedByTypeResponse?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             EmbeddingsByType = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedResponse FromEmbeddingsByType(global::Cohere.EmbedByTypeResponse? value) => new EmbedResponse(value);
 
         /// <summary>
         /// 

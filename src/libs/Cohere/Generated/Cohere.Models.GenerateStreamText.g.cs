@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamText FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamText(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextYai5v6 value) => new GenerateStreamText((global::Cohere.GenerateStreamTextYai5v6?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Yai5v6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamText FromYai5v6(global::Cohere.GenerateStreamTextYai5v6? value) => new GenerateStreamText(value);
 
         /// <summary>
         /// 

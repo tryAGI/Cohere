@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageEndEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatMessageEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageEndEvent(global::Cohere.ChatMessageEndEventU3fzny value) => new ChatMessageEndEvent((global::Cohere.ChatMessageEndEventU3fzny?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             U3fzny = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageEndEvent FromU3fzny(global::Cohere.ChatMessageEndEventU3fzny? value) => new ChatMessageEndEvent(value);
 
         /// <summary>
         /// 

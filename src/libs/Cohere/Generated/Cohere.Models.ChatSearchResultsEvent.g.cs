@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatSearchResultsEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatSearchResultsEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatSearchResultsEvent(global::Cohere.ChatSearchResultsEvent44axt5 value) => new ChatSearchResultsEvent((global::Cohere.ChatSearchResultsEvent44axt5?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Event44axt5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatSearchResultsEvent FromEvent44axt5(global::Cohere.ChatSearchResultsEvent44axt5? value) => new ChatSearchResultsEvent(value);
 
         /// <summary>
         /// 

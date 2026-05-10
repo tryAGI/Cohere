@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentEndEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatContentEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentEndEvent(global::Cohere.ChatContentEndEventMa278i value) => new ChatContentEndEvent((global::Cohere.ChatContentEndEventMa278i?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Ma278i = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentEndEvent FromMa278i(global::Cohere.ChatContentEndEventMa278i? value) => new ChatContentEndEvent(value);
 
         /// <summary>
         /// 

@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromTool(global::Cohere.ChatToolSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::Cohere.ChatDocumentSource value) => new Source((global::Cohere.ChatDocumentSource?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromDocument(global::Cohere.ChatDocumentSource? value) => new Source(value);
 
         /// <summary>
         /// 

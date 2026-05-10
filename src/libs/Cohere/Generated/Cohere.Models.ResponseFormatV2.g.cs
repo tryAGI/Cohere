@@ -99,6 +99,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormatV2 FromText(global::Cohere.ChatTextResponseFormatV2? value) => new ResponseFormatV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormatV2(global::Cohere.JsonResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.JsonResponseFormatV2?)value);
 
         /// <summary>
@@ -113,6 +118,11 @@ namespace Cohere
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseFormatV2 FromJsonObject(global::Cohere.JsonResponseFormatV2? value) => new ResponseFormatV2(value);
 
         /// <summary>
         /// 

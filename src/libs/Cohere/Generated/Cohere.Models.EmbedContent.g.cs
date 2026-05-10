@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedContent FromImageUrl(global::Cohere.EmbedImage? value) => new EmbedContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedContent(global::Cohere.EmbedText value) => new EmbedContent((global::Cohere.EmbedText?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedContent FromText(global::Cohere.EmbedText? value) => new EmbedContent(value);
 
         /// <summary>
         /// 

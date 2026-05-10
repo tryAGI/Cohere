@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageStartEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatMessageStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageStartEvent(global::Cohere.ChatMessageStartEventLsegeq value) => new ChatMessageStartEvent((global::Cohere.ChatMessageStartEventLsegeq?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Lsegeq = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageStartEvent FromLsegeq(global::Cohere.ChatMessageStartEventLsegeq? value) => new ChatMessageStartEvent(value);
 
         /// <summary>
         /// 

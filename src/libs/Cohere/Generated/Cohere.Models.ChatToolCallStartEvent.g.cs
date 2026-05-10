@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallStartEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatToolCallStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallStartEvent(global::Cohere.ChatToolCallStartEventLv559x value) => new ChatToolCallStartEvent((global::Cohere.ChatToolCallStartEventLv559x?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Lv559x = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallStartEvent FromLv559x(global::Cohere.ChatToolCallStartEventLv559x? value) => new ChatToolCallStartEvent(value);
 
         /// <summary>
         /// 

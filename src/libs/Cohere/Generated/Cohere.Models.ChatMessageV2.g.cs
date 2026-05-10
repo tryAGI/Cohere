@@ -154,6 +154,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageV2 FromUser(global::Cohere.UserMessageV2? value) => new ChatMessageV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.AssistantMessage value) => new ChatMessageV2((global::Cohere.AssistantMessage?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace Cohere
         {
             Assistant = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageV2 FromAssistant(global::Cohere.AssistantMessage? value) => new ChatMessageV2(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageV2 FromSystem(global::Cohere.SystemMessageV2? value) => new ChatMessageV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.ToolMessageV2 value) => new ChatMessageV2((global::Cohere.ToolMessageV2?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace Cohere
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageV2 FromTool(global::Cohere.ToolMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
         /// 

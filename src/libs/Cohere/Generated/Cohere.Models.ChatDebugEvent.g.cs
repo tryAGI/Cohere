@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatDebugEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatDebugEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatDebugEvent(global::Cohere.ChatDebugEvent352j0t value) => new ChatDebugEvent((global::Cohere.ChatDebugEvent352j0t?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Event352j0t = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatDebugEvent FromEvent352j0t(global::Cohere.ChatDebugEvent352j0t? value) => new ChatDebugEvent(value);
 
         /// <summary>
         /// 
