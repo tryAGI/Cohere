@@ -76,6 +76,7 @@ namespace Cohere.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatStreamEvent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatStreamEvent).Name}");
                     stream = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace Cohere.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (stream == null && event6evypd == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatSearchQueriesGenerationEvent6evypd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatSearchQueriesGenerationEvent6evypd> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatSearchQueriesGenerationEvent6evypd).Name}");
                     event6evypd = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
