@@ -304,6 +304,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponse FromStreamStart(global::Cohere.ChatStreamStartEvent? value) => new StreamedChatResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatSearchQueriesGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatSearchQueriesGenerationEvent?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace Cohere
         {
             SearchQueriesGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponse FromSearchQueriesGeneration(global::Cohere.ChatSearchQueriesGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponse FromSearchResults(global::Cohere.ChatSearchResultsEvent? value) => new StreamedChatResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatTextGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatTextGenerationEvent?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace Cohere
         {
             TextGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponse FromTextGeneration(global::Cohere.ChatTextGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponse FromCitationGeneration(global::Cohere.ChatCitationGenerationEvent? value) => new StreamedChatResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatToolCallsGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatToolCallsGenerationEvent?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace Cohere
         {
             ToolCallsGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponse FromToolCallsGeneration(global::Cohere.ChatToolCallsGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponse FromStreamEnd(global::Cohere.ChatStreamEndEvent? value) => new StreamedChatResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatToolCallsChunkEvent value) => new StreamedChatResponse((global::Cohere.ChatToolCallsChunkEvent?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponse FromToolCallsChunk(global::Cohere.ChatToolCallsChunkEvent? value) => new StreamedChatResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatDebugEvent value) => new StreamedChatResponse((global::Cohere.ChatDebugEvent?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace Cohere
         {
             Debug = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponse FromDebug(global::Cohere.ChatDebugEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
         /// 

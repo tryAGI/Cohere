@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ToolContent FromText(global::Cohere.ChatTextContent? value) => new ToolContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolContent(global::Cohere.DocumentContent value) => new ToolContent((global::Cohere.DocumentContent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolContent FromDocument(global::Cohere.DocumentContent? value) => new ToolContent(value);
 
         /// <summary>
         /// 

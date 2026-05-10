@@ -124,6 +124,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamedResponse FromTextGeneration(global::Cohere.GenerateStreamText? value) => new GenerateStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamEnd value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamEnd?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamedResponse FromStreamEnd(global::Cohere.GenerateStreamEnd? value) => new GenerateStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamError value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamError?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Cohere
         {
             StreamError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamedResponse FromStreamError(global::Cohere.GenerateStreamError? value) => new GenerateStreamedResponse(value);
 
         /// <summary>
         /// 

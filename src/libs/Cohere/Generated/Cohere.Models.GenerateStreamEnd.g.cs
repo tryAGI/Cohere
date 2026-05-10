@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamEnd FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamEnd(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamEnd(global::Cohere.GenerateStreamEndUbzr0t value) => new GenerateStreamEnd((global::Cohere.GenerateStreamEndUbzr0t?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Ubzr0t = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamEnd FromUbzr0t(global::Cohere.GenerateStreamEndUbzr0t? value) => new GenerateStreamEnd(value);
 
         /// <summary>
         /// 

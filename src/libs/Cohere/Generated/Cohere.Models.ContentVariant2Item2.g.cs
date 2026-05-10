@@ -64,6 +64,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item2 FromText(global::Cohere.ChatTextContent? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentVariant2Item2(
             global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType? type,
             global::Cohere.ChatTextContent? text

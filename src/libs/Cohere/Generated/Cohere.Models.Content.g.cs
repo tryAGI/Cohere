@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static Content FromText(global::Cohere.ChatTextContent? value) => new Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Content(global::Cohere.ImageContent value) => new Content((global::Cohere.ImageContent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Content FromImageUrl(global::Cohere.ImageContent? value) => new Content(value);
 
         /// <summary>
         /// 

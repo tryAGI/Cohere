@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static CitationStartEvent FromChatStreamType(global::Cohere.ChatStreamEventType? value) => new CitationStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationStartEvent(global::Cohere.CitationStartEventT3df62 value) => new CitationStartEvent((global::Cohere.CitationStartEventT3df62?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             T3df62 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationStartEvent FromT3df62(global::Cohere.CitationStartEventT3df62? value) => new CitationStartEvent(value);
 
         /// <summary>
         /// 

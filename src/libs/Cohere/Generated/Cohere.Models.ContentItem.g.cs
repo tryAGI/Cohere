@@ -94,6 +94,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromText(global::Cohere.ChatTextContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::Cohere.ChatThinkingContent value) => new ContentItem((global::Cohere.ChatThinkingContent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Cohere
         {
             Thinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromThinking(global::Cohere.ChatThinkingContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 

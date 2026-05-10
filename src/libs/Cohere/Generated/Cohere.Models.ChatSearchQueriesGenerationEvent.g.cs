@@ -89,6 +89,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatSearchQueriesGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatSearchQueriesGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatSearchQueriesGenerationEvent6evypd value) => new ChatSearchQueriesGenerationEvent((global::Cohere.ChatSearchQueriesGenerationEvent6evypd?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Cohere
         {
             Event6evypd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatSearchQueriesGenerationEvent FromEvent6evypd(global::Cohere.ChatSearchQueriesGenerationEvent6evypd? value) => new ChatSearchQueriesGenerationEvent(value);
 
         /// <summary>
         /// 
