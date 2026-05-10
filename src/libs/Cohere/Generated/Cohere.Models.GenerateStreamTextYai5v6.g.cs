@@ -63,5 +63,6 @@ namespace Cohere
         public GenerateStreamTextYai5v6()
         {
         }
+
     }
 }

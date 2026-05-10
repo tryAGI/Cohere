@@ -509,5 +509,6 @@ namespace Cohere
         public ChatRequest()
         {
         }
+
     }
 }

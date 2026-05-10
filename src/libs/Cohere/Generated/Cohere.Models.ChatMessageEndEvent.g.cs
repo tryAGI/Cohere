@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageEndEventU3fzny? U3fzny { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = U3fzny;
             return IsU3fzny;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatMessageEndEventU3fzny PickU3fzny() => IsU3fzny
+            ? U3fzny!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'U3fzny' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

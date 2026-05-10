@@ -167,5 +167,6 @@ namespace Cohere
         public FinetunedModel()
         {
         }
+
     }
 }

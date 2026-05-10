@@ -328,5 +328,6 @@ namespace Cohere
         public Chatv2Request()
         {
         }
+
     }
 }

@@ -66,5 +66,6 @@ namespace Cohere
         public ToolParameterDefinitionsValue()
         {
         }
+
     }
 }

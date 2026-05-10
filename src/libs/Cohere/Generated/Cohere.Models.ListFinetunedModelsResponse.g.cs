@@ -71,5 +71,6 @@ namespace Cohere
         public ListFinetunedModelsResponse()
         {
         }
+
     }
 }

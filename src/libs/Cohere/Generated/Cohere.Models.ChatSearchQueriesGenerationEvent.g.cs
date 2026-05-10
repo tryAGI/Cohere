@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent6evypd? Event6evypd { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event6evypd;
             return IsEvent6evypd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatSearchQueriesGenerationEvent6evypd PickEvent6evypd() => IsEvent6evypd
+            ? Event6evypd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event6evypd' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

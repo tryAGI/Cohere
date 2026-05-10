@@ -74,5 +74,6 @@ namespace Cohere
         public GenerateStreamError49d5xw()
         {
         }
+
     }
 }

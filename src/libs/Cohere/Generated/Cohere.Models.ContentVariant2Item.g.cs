@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatTextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Thinking content of the message. This will be present when `thinking` is enabled, and will contain the models internal reasoning.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = Thinking;
             return IsThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatThinkingContent PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -47,6 +47,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.GenerateStreamText PickTextGeneration() => IsTextGeneration
+            ? TextGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEnd? StreamEnd { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.GenerateStreamEnd PickStreamEnd() => IsStreamEnd
+            ? StreamEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError? StreamError { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Cohere
             value = StreamError;
             return IsStreamError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.GenerateStreamError PickStreamError() => IsStreamError
+            ? StreamError!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -64,5 +64,6 @@ namespace Cohere
         public LogprobItem()
         {
         }
+
     }
 }

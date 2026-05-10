@@ -121,5 +121,6 @@ namespace Cohere
         public RerankRequest()
         {
         }
+
     }
 }
