@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Lg3v2o;
             return IsLg3v2o;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatCitationGenerationEventLg3v2o PickLg3v2o() => IsLg3v2o
+            ? Lg3v2o!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lg3v2o' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCitationGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatCitationGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCitationGenerationEvent(global::Cohere.ChatCitationGenerationEventLg3v2o value) => new ChatCitationGenerationEvent((global::Cohere.ChatCitationGenerationEventLg3v2o?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Lg3v2o = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCitationGenerationEvent FromLg3v2o(global::Cohere.ChatCitationGenerationEventLg3v2o? value) => new ChatCitationGenerationEvent(value);
 
         /// <summary>
         /// 

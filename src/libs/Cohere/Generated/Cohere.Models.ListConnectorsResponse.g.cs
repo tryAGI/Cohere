@@ -51,5 +51,6 @@ namespace Cohere
         public ListConnectorsResponse()
         {
         }
+
     }
 }

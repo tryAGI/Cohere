@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
+            ? Event!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError49d5xw? Error49d5xw { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Error49d5xw;
             return IsError49d5xw;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.GenerateStreamError49d5xw PickError49d5xw() => IsError49d5xw
+            ? Error49d5xw!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error49d5xw' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamError FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamError49d5xw value) => new GenerateStreamError((global::Cohere.GenerateStreamError49d5xw?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Error49d5xw = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamError FromError49d5xw(global::Cohere.GenerateStreamError49d5xw? value) => new GenerateStreamError(value);
 
         /// <summary>
         /// 

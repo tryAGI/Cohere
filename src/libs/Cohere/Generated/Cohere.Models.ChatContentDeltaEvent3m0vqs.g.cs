@@ -57,5 +57,6 @@ namespace Cohere
         public ChatContentDeltaEvent3m0vqs()
         {
         }
+
     }
 }

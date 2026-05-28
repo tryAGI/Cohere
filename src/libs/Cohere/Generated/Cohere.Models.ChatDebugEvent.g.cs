@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent352j0t? Event352j0t { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event352j0t;
             return IsEvent352j0t;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatDebugEvent352j0t PickEvent352j0t() => IsEvent352j0t
+            ? Event352j0t!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event352j0t' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatDebugEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatDebugEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatDebugEvent(global::Cohere.ChatDebugEvent352j0t value) => new ChatDebugEvent((global::Cohere.ChatDebugEvent352j0t?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Event352j0t = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatDebugEvent FromEvent352j0t(global::Cohere.ChatDebugEvent352j0t? value) => new ChatDebugEvent(value);
 
         /// <summary>
         /// 

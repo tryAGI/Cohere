@@ -48,5 +48,6 @@ namespace Cohere
         public CitationStartEventT3df62()
         {
         }
+
     }
 }

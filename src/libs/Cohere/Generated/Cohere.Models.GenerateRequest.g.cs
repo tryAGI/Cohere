@@ -303,5 +303,6 @@ namespace Cohere
         public GenerateRequest()
         {
         }
+
     }
 }

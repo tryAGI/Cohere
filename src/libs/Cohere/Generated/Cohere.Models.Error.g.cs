@@ -43,5 +43,6 @@ namespace Cohere
         public Error()
         {
         }
+
     }
 }

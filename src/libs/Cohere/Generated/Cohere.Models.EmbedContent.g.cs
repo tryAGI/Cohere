@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.EmbedImage PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text content of the input.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.EmbedText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedContent FromImageUrl(global::Cohere.EmbedImage? value) => new EmbedContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedContent(global::Cohere.EmbedText value) => new EmbedContent((global::Cohere.EmbedText?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Cohere
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedContent FromText(global::Cohere.EmbedText? value) => new EmbedContent(value);
 
         /// <summary>
         /// 

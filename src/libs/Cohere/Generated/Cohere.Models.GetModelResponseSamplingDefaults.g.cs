@@ -84,5 +84,6 @@ namespace Cohere
         public GetModelResponseSamplingDefaults()
         {
         }
+
     }
 }

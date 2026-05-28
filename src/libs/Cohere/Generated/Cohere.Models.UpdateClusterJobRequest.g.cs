@@ -94,5 +94,6 @@ namespace Cohere
         public UpdateClusterJobRequest()
         {
         }
+
     }
 }

@@ -53,5 +53,6 @@ namespace Cohere
         public EmbedImage()
         {
         }
+
     }
 }

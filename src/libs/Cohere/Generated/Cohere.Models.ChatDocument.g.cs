@@ -44,5 +44,6 @@ namespace Cohere
         public ChatDocument()
         {
         }
+
     }
 }

@@ -47,6 +47,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.EmbedFloatsResponse PickEmbeddingsFloats() => IsEmbeddingsFloats
+            ? EmbeddingsFloats!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsFloats' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Cohere
             value = EmbeddingsByType;
             return IsEmbeddingsByType;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.EmbedByTypeResponse PickEmbeddingsByType() => IsEmbeddingsByType
+            ? EmbeddingsByType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsByType' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedResponse FromEmbeddingsFloats(global::Cohere.EmbedFloatsResponse? value) => new EmbedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedResponse(global::Cohere.EmbedByTypeResponse value) => new EmbedResponse((global::Cohere.EmbedByTypeResponse?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Cohere
         {
             EmbeddingsByType = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedResponse FromEmbeddingsByType(global::Cohere.EmbedByTypeResponse? value) => new EmbedResponse(value);
 
         /// <summary>
         /// 

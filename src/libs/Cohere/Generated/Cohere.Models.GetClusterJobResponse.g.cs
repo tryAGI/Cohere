@@ -181,5 +181,6 @@ namespace Cohere
         public GetClusterJobResponse()
         {
         }
+
     }
 }

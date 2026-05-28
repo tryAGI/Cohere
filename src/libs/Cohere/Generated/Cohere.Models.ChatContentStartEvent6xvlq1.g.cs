@@ -48,5 +48,6 @@ namespace Cohere
         public ChatContentStartEvent6xvlq1()
         {
         }
+
     }
 }

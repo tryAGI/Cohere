@@ -51,6 +51,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatTextResponseFormat PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.JSONResponseFormat? JsonObject { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Cohere
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.JSONResponseFormat PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +112,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormat FromText(global::Cohere.ChatTextResponseFormat? value) => new ResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormat(global::Cohere.JSONResponseFormat value) => new ResponseFormat((global::Cohere.JSONResponseFormat?)value);
 
         /// <summary>
@@ -112,6 +131,11 @@ namespace Cohere
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseFormat FromJsonObject(global::Cohere.JSONResponseFormat? value) => new ResponseFormat(value);
 
         /// <summary>
         /// 

@@ -189,5 +189,6 @@ namespace Cohere
         public V2EmbedRequest()
         {
         }
+
     }
 }

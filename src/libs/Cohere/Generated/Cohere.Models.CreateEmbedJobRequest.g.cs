@@ -135,5 +135,6 @@ namespace Cohere
         public CreateEmbedJobRequest()
         {
         }
+
     }
 }

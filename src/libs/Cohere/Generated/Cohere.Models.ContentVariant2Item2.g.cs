@@ -43,6 +43,13 @@ namespace Cohere
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatTextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +67,11 @@ namespace Cohere
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item2 FromText(global::Cohere.ChatTextContent? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 

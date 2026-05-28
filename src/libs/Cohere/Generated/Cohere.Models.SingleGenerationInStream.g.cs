@@ -74,5 +74,6 @@ namespace Cohere
         public SingleGenerationInStream()
         {
         }
+
     }
 }

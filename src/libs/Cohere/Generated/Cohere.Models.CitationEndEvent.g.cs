@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickChatStreamType() => IsChatStreamType
+            ? ChatStreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.CitationEndEventFs3igt? Fs3igt { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Fs3igt;
             return IsFs3igt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.CitationEndEventFs3igt PickFs3igt() => IsFs3igt
+            ? Fs3igt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fs3igt' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static CitationEndEvent FromChatStreamType(global::Cohere.ChatStreamEventType? value) => new CitationEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationEndEvent(global::Cohere.CitationEndEventFs3igt value) => new CitationEndEvent((global::Cohere.CitationEndEventFs3igt?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Fs3igt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationEndEvent FromFs3igt(global::Cohere.CitationEndEventFs3igt? value) => new CitationEndEvent(value);
 
         /// <summary>
         /// 

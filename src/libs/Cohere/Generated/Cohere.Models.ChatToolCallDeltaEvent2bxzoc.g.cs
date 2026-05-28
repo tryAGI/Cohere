@@ -48,5 +48,6 @@ namespace Cohere
         public ChatToolCallDeltaEvent2bxzoc()
         {
         }
+
     }
 }

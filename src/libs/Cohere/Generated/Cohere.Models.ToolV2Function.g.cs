@@ -65,5 +65,6 @@ namespace Cohere
         public ToolV2Function()
         {
         }
+
     }
 }

@@ -59,5 +59,6 @@ namespace Cohere
         public ClassifyResponse()
         {
         }
+
     }
 }

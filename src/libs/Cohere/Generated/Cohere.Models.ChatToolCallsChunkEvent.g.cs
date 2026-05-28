@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsChunkEventT7lliu? T7lliu { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = T7lliu;
             return IsT7lliu;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallsChunkEventT7lliu PickT7lliu() => IsT7lliu
+            ? T7lliu!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'T7lliu' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallsChunkEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatToolCallsChunkEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallsChunkEvent(global::Cohere.ChatToolCallsChunkEventT7lliu value) => new ChatToolCallsChunkEvent((global::Cohere.ChatToolCallsChunkEventT7lliu?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             T7lliu = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallsChunkEvent FromT7lliu(global::Cohere.ChatToolCallsChunkEventT7lliu? value) => new ChatToolCallsChunkEvent(value);
 
         /// <summary>
         /// 

@@ -140,5 +140,6 @@ namespace Cohere
         public ConnectorLog()
         {
         }
+
     }
 }

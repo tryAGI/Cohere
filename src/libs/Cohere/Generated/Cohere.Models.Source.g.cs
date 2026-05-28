@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolSource PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
         /// A document source object containing the unique identifier of the document and the document itself.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = Document;
             return IsDocument;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatDocumentSource PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromTool(global::Cohere.ChatToolSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::Cohere.ChatDocumentSource value) => new Source((global::Cohere.ChatDocumentSource?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Cohere
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromDocument(global::Cohere.ChatDocumentSource? value) => new Source(value);
 
         /// <summary>
         /// 

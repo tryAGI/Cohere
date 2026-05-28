@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallDeltaEvent2bxzoc? Event2bxzoc { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event2bxzoc;
             return IsEvent2bxzoc;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallDeltaEvent2bxzoc PickEvent2bxzoc() => IsEvent2bxzoc
+            ? Event2bxzoc!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event2bxzoc' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallDeltaEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatToolCallDeltaEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallDeltaEvent(global::Cohere.ChatToolCallDeltaEvent2bxzoc value) => new ChatToolCallDeltaEvent((global::Cohere.ChatToolCallDeltaEvent2bxzoc?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Event2bxzoc = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallDeltaEvent FromEvent2bxzoc(global::Cohere.ChatToolCallDeltaEvent2bxzoc? value) => new ChatToolCallDeltaEvent(value);
 
         /// <summary>
         /// 

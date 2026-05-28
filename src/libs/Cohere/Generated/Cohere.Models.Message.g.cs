@@ -46,6 +46,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatMessage PickChatbot() => IsChatbot
+            ? Chatbot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chatbot' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace Cohere
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolMessage PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -95,6 +109,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static Message FromChatbot(global::Cohere.ChatMessage? value) => new Message(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Message(global::Cohere.ChatToolMessage value) => new Message((global::Cohere.ChatToolMessage?)value);
 
         /// <summary>
@@ -109,6 +128,11 @@ namespace Cohere
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Message FromTool(global::Cohere.ChatToolMessage? value) => new Message(value);
 
         /// <summary>
         /// 

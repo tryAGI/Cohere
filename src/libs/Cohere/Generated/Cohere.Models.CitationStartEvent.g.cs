@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickChatStreamType() => IsChatStreamType
+            ? ChatStreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.CitationStartEventT3df62? T3df62 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = T3df62;
             return IsT3df62;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.CitationStartEventT3df62 PickT3df62() => IsT3df62
+            ? T3df62!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'T3df62' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static CitationStartEvent FromChatStreamType(global::Cohere.ChatStreamEventType? value) => new CitationStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationStartEvent(global::Cohere.CitationStartEventT3df62 value) => new CitationStartEvent((global::Cohere.CitationStartEventT3df62?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             T3df62 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationStartEvent FromT3df62(global::Cohere.CitationStartEventT3df62? value) => new CitationStartEvent(value);
 
         /// <summary>
         /// 

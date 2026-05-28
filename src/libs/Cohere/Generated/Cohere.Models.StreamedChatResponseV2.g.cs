@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatMessageStartEvent PickMessageStart() => IsMessageStart
+            ? MessageStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = ContentStart;
             return IsContentStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatContentStartEvent PickContentStart() => IsContentStart
+            ? ContentStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentStart' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed delta event which contains a delta of chat text content.
@@ -105,6 +119,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatContentDeltaEvent PickContentDelta() => IsContentDelta
+            ? ContentDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace Cohere
             value = ContentEnd;
             return IsContentEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatContentEndEvent PickContentEnd() => IsContentEnd
+            ? ContentEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event which contains a delta of tool plan text.
@@ -165,6 +193,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolPlanDeltaEvent PickToolPlanDelta() => IsToolPlanDelta
+            ? ToolPlanDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolPlanDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace Cohere
             value = ToolCallStart;
             return IsToolCallStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallStartEvent PickToolCallStart() => IsToolCallStart
+            ? ToolCallStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallStart' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event delta which signifies a delta in tool call arguments.
@@ -225,6 +267,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallDeltaEvent PickToolCallDelta() => IsToolCallDelta
+            ? ToolCallDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -253,6 +302,13 @@ namespace Cohere
             value = ToolCallEnd;
             return IsToolCallEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallEndEvent PickToolCallEnd() => IsToolCallEnd
+            ? ToolCallEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event which signifies that the chat message has ended.
@@ -287,6 +343,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatMessageEndEvent PickMessageEnd() => IsMessageEnd
+            ? MessageEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
 #else
@@ -313,6 +376,13 @@ namespace Cohere
             value = Debug;
             return IsDebug;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatDebugEvent PickDebug() => IsDebug
+            ? Debug!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -330,6 +400,11 @@ namespace Cohere
         {
             MessageStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromMessageStart(global::Cohere.ChatMessageStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -352,6 +427,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromContentStart(global::Cohere.ChatContentStartEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentDeltaEvent?)value);
 
         /// <summary>
@@ -366,6 +446,11 @@ namespace Cohere
         {
             ContentDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromContentDelta(global::Cohere.ChatContentDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -388,6 +473,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromContentEnd(global::Cohere.ChatContentEndEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolPlanDeltaEvent?)value);
 
         /// <summary>
@@ -402,6 +492,11 @@ namespace Cohere
         {
             ToolPlanDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromToolPlanDelta(global::Cohere.ChatToolPlanDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -424,6 +519,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromToolCallStart(global::Cohere.ChatToolCallStartEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallDeltaEvent?)value);
 
         /// <summary>
@@ -438,6 +538,11 @@ namespace Cohere
         {
             ToolCallDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromToolCallDelta(global::Cohere.ChatToolCallDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -460,6 +565,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromToolCallEnd(global::Cohere.ChatToolCallEndEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageEndEvent?)value);
 
         /// <summary>
@@ -478,6 +588,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromMessageEnd(global::Cohere.ChatMessageEndEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatDebugEvent value) => new StreamedChatResponseV2((global::Cohere.ChatDebugEvent?)value);
 
         /// <summary>
@@ -492,6 +607,11 @@ namespace Cohere
         {
             Debug = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromDebug(global::Cohere.ChatDebugEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 

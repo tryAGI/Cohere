@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatContentStartEvent6xvlq1? Event6xvlq1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event6xvlq1;
             return IsEvent6xvlq1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatContentStartEvent6xvlq1 PickEvent6xvlq1() => IsEvent6xvlq1
+            ? Event6xvlq1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event6xvlq1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentStartEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatContentStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentStartEvent(global::Cohere.ChatContentStartEvent6xvlq1 value) => new ChatContentStartEvent((global::Cohere.ChatContentStartEvent6xvlq1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Event6xvlq1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentStartEvent FromEvent6xvlq1(global::Cohere.ChatContentStartEvent6xvlq1? value) => new ChatContentStartEvent(value);
 
         /// <summary>
         /// 

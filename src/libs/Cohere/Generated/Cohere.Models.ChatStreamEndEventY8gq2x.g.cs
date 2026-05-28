@@ -63,5 +63,6 @@ namespace Cohere
         public ChatStreamEndEventY8gq2x()
         {
         }
+
     }
 }

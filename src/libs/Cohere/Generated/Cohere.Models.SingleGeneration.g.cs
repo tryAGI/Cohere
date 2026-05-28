@@ -81,5 +81,6 @@ namespace Cohere
         public SingleGeneration()
         {
         }
+
     }
 }

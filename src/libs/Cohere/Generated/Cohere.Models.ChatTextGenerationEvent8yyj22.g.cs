@@ -42,5 +42,6 @@ namespace Cohere
         public ChatTextGenerationEvent8yyj22()
         {
         }
+
     }
 }

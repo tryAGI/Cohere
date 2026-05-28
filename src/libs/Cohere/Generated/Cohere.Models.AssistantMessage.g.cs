@@ -79,5 +79,6 @@ namespace Cohere
         public AssistantMessage()
         {
         }
+
     }
 }

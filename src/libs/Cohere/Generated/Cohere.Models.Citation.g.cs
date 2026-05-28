@@ -95,5 +95,6 @@ namespace Cohere
         public Citation()
         {
         }
+
     }
 }

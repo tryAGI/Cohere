@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickChatStreamEvent() => IsChatStreamEvent
+            ? ChatStreamEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamEvent' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamStartEvent5v9jyv? Event5v9jyv { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event5v9jyv;
             return IsEvent5v9jyv;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatStreamStartEvent5v9jyv PickEvent5v9jyv() => IsEvent5v9jyv
+            ? Event5v9jyv!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event5v9jyv' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatStreamStartEvent FromChatStreamEvent(global::Cohere.ChatStreamEvent? value) => new ChatStreamStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatStreamStartEvent(global::Cohere.ChatStreamStartEvent5v9jyv value) => new ChatStreamStartEvent((global::Cohere.ChatStreamStartEvent5v9jyv?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Event5v9jyv = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatStreamStartEvent FromEvent5v9jyv(global::Cohere.ChatStreamStartEvent5v9jyv? value) => new ChatStreamStartEvent(value);
 
         /// <summary>
         /// 

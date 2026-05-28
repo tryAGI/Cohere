@@ -42,5 +42,6 @@ namespace Cohere
         public ChatCitationGenerationEventLg3v2o()
         {
         }
+
     }
 }

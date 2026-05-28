@@ -40,5 +40,6 @@ namespace Cohere
         public SystemMessageV2ContentVariant2ItemDiscriminator()
         {
         }
+
     }
 }

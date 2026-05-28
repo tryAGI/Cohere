@@ -124,5 +124,6 @@ namespace Cohere
         public CreateConnectorRequest()
         {
         }
+
     }
 }

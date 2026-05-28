@@ -39,5 +39,6 @@ namespace Cohere
         public ChatToolCallEndEventT6ph9s()
         {
         }
+
     }
 }

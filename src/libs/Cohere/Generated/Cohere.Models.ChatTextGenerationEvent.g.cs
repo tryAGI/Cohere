@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent8yyj22? Event8yyj22 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = Event8yyj22;
             return IsEvent8yyj22;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatTextGenerationEvent8yyj22 PickEvent8yyj22() => IsEvent8yyj22
+            ? Event8yyj22!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event8yyj22' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatTextGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatTextGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEvent8yyj22 value) => new ChatTextGenerationEvent((global::Cohere.ChatTextGenerationEvent8yyj22?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             Event8yyj22 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatTextGenerationEvent FromEvent8yyj22(global::Cohere.ChatTextGenerationEvent8yyj22? value) => new ChatTextGenerationEvent(value);
 
         /// <summary>
         /// 

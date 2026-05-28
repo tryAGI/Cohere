@@ -61,5 +61,6 @@ namespace Cohere
         public SummarizeResponse()
         {
         }
+
     }
 }

@@ -51,5 +51,6 @@ namespace Cohere
         public ChatToolCallsChunkEventT7lliu()
         {
         }
+
     }
 }

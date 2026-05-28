@@ -55,5 +55,6 @@ namespace Cohere
         public Document()
         {
         }
+
     }
 }

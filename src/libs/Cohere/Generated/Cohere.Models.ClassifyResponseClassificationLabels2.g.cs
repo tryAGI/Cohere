@@ -39,5 +39,6 @@ namespace Cohere
         public ClassifyResponseClassificationLabels2()
         {
         }
+
     }
 }

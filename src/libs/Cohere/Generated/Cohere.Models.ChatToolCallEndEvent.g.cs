@@ -42,6 +42,13 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallEndEventT6ph9s? T6ph9s { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Cohere
             value = T6ph9s;
             return IsT6ph9s;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatToolCallEndEventT6ph9s PickT6ph9s() => IsT6ph9s
+            ? T6ph9s!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'T6ph9s' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallEndEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatToolCallEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallEndEvent(global::Cohere.ChatToolCallEndEventT6ph9s value) => new ChatToolCallEndEvent((global::Cohere.ChatToolCallEndEventT6ph9s?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Cohere
         {
             T6ph9s = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallEndEvent FromT6ph9s(global::Cohere.ChatToolCallEndEventT6ph9s? value) => new ChatToolCallEndEvent(value);
 
         /// <summary>
         /// 

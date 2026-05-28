@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.UserMessageV2 PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = Assistant;
             return IsAssistant;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.AssistantMessage PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
         /// A message from the system.
@@ -105,6 +119,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.SystemMessageV2 PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message with Tool outputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace Cohere
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ToolMessageV2 PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Cohere
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageV2 FromUser(global::Cohere.UserMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageV2 FromAssistant(global::Cohere.AssistantMessage? value) => new ChatMessageV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.SystemMessageV2 value) => new ChatMessageV2((global::Cohere.SystemMessageV2?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageV2 FromSystem(global::Cohere.SystemMessageV2? value) => new ChatMessageV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.ToolMessageV2 value) => new ChatMessageV2((global::Cohere.ToolMessageV2?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Cohere
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageV2 FromTool(global::Cohere.ToolMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
         /// 

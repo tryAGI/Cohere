@@ -107,5 +107,6 @@ namespace Cohere
         public V2RerankRequest()
         {
         }
+
     }
 }

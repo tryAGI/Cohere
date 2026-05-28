@@ -58,5 +58,6 @@ namespace Cohere
         public ListClusterJobsResponse()
         {
         }
+
     }
 }

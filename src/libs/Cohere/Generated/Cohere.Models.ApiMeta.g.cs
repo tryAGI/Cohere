@@ -77,5 +77,6 @@ namespace Cohere
         public ApiMeta()
         {
         }
+
     }
 }

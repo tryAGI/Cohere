@@ -45,6 +45,13 @@ namespace Cohere
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ChatTextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Document content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Cohere
             value = Document;
             return IsDocument;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.DocumentContent PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public static ToolContent FromText(global::Cohere.ChatTextContent? value) => new ToolContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolContent(global::Cohere.DocumentContent value) => new ToolContent((global::Cohere.DocumentContent?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Cohere
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolContent FromDocument(global::Cohere.DocumentContent? value) => new ToolContent(value);
 
         /// <summary>
         /// 

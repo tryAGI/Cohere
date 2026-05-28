@@ -93,5 +93,6 @@ namespace Cohere
         public EmbedByTypeResponse()
         {
         }
+
     }
 }

@@ -56,5 +56,6 @@ namespace Cohere
         public Thinking()
         {
         }
+
     }
 }

@@ -45,5 +45,6 @@ namespace Cohere
         public ChatTextResponseFormat()
         {
         }
+
     }
 }

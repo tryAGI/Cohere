@@ -132,5 +132,6 @@ namespace Cohere
         public SummarizeRequest()
         {
         }
+
     }
 }

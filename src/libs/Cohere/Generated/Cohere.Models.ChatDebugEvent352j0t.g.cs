@@ -39,5 +39,6 @@ namespace Cohere
         public ChatDebugEvent352j0t()
         {
         }
+
     }
 }

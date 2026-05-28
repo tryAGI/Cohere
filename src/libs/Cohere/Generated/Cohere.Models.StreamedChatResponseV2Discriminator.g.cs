@@ -40,5 +40,6 @@ namespace Cohere
         public StreamedChatResponseV2Discriminator()
         {
         }
+
     }
 }

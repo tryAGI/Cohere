@@ -144,5 +144,6 @@ namespace Cohere
         public FinetuningUpdateFinetunedModelRequest()
         {
         }
+
     }
 }

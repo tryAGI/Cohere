@@ -48,5 +48,6 @@ namespace Cohere
         public BadRequestErrorBody28()
         {
         }
+
     }
 }
