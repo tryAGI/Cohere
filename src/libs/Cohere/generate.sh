@@ -14,4 +14,5 @@ autosdk generate openapi.yaml \
   --clientClassName CohereClient \
   --targetFramework net10.0 \
   --output Generated \
+  --auth-env-var COHERE_API_KEY \
   --exclude-deprecated-operations

@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError49d5xw? Error49d5xw { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error49d5xw))]
 #endif
         public bool IsError49d5xw => Error49d5xw != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError49d5xw(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamError49d5xw? value)
+        {
+            value = Error49d5xw;
+            return IsError49d5xw;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.GenerateStreamEvent?, TResult>? @event = null,
-            global::System.Func<global::Cohere.GenerateStreamError49d5xw?, TResult>? error49d5xw = null,
+            global::System.Func<global::Cohere.GenerateStreamEvent, TResult>? @event = null,
+            global::System.Func<global::Cohere.GenerateStreamError49d5xw, TResult>? error49d5xw = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.GenerateStreamEvent?>? @event = null,
-            global::System.Action<global::Cohere.GenerateStreamError49d5xw?>? error49d5xw = null,
+            global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
+
+            global::System.Action<global::Cohere.GenerateStreamError49d5xw>? error49d5xw = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsError49d5xw)
+            {
+                error49d5xw?.Invoke(Error49d5xw!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
+            global::System.Action<global::Cohere.GenerateStreamError49d5xw>? error49d5xw = null,
             bool validate = true)
         {
             if (validate)

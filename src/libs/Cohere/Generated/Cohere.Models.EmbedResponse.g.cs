@@ -34,6 +34,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsFloats(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.EmbedFloatsResponse? value)
+        {
+            value = EmbeddingsFloats;
+            return IsEmbeddingsFloats;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
 #endif
         public bool IsEmbeddingsByType => EmbeddingsByType != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsByType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.EmbedByTypeResponse? value)
+        {
+            value = EmbeddingsByType;
+            return IsEmbeddingsByType;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.EmbedFloatsResponse?, TResult>? embeddingsFloats = null,
-            global::System.Func<global::Cohere.EmbedByTypeResponse?, TResult>? embeddingsByType = null,
+            global::System.Func<global::Cohere.EmbedFloatsResponse, TResult>? embeddingsFloats = null,
+            global::System.Func<global::Cohere.EmbedByTypeResponse, TResult>? embeddingsByType = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.EmbedFloatsResponse?>? embeddingsFloats = null,
-            global::System.Action<global::Cohere.EmbedByTypeResponse?>? embeddingsByType = null,
+            global::System.Action<global::Cohere.EmbedFloatsResponse>? embeddingsFloats = null,
+
+            global::System.Action<global::Cohere.EmbedByTypeResponse>? embeddingsByType = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsFloats)
+            {
+                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+            }
+            else if (IsEmbeddingsByType)
+            {
+                embeddingsByType?.Invoke(EmbeddingsByType!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.EmbedFloatsResponse>? embeddingsFloats = null,
+            global::System.Action<global::Cohere.EmbedByTypeResponse>? embeddingsByType = null,
             bool validate = true)
         {
             if (validate)

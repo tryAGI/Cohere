@@ -17,10 +17,10 @@
       "Slug": "checkapikey",
       "Description": "Checks that the api key in the Authorization header is valid and active",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar response = await client.CheckAPIKeyAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar response = await client.CheckAPIKeyAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
       "Format": "sdk",
       "OperationId": "checkAPIKey",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 3,
@@ -61,10 +61,10 @@
       "Slug": "tokenize",
       "Description": "This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page.",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Cohere.TokenizeRequest\u003E(\n    @\u0022{\n  \u0022\u0022text\u0022\u0022: \u0022\u0022tokenize me! :D\u0022\u0022,\n  \u0022\u0022model\u0022\u0022: \u0022\u0022command\u0022\u0022\n}\u0022)!;\n\nvar response = await client.TokenizeAsync(\n    request: request,\n    xClientName: \u0022my-cool-project\u0022\n);\n\n// Example response:\n// {\n//   \u0022tokens\u0022: [\n//     34160,\n//     974,\n//     514,\n//     34,\n//     1420,\n//     69\n//   ],\n//   \u0022token_strings\u0022: [\n//     \u0022token\u0022,\n//     \u0022ize\\u0027\u0022,\n//     \u0022 me\u0022,\n//     \u0022!\u0022,\n//     \u0022 :\u0022,\n//     \u0022D\u0022\n//   ],\n//   \u0022meta\u0022: {\n//     \u0022api_version\u0022: {\n//       \u0022version\u0022: \u00221\u0022\n//     }\n//   }\n// }",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Cohere.TokenizeRequest\u003E(\n    @\u0022{\n  \u0022\u0022text\u0022\u0022: \u0022\u0022tokenize me! :D\u0022\u0022,\n  \u0022\u0022model\u0022\u0022: \u0022\u0022command\u0022\u0022\n}\u0022)!;\n\nvar response = await client.TokenizeAsync(\n    request: request,\n    xClientName: \u0022my-cool-project\u0022\n);\n\n// Example response:\n// {\n//   \u0022tokens\u0022: [\n//     34160,\n//     974,\n//     514,\n//     34,\n//     1420,\n//     69\n//   ],\n//   \u0022token_strings\u0022: [\n//     \u0022token\u0022,\n//     \u0022ize\\u0027\u0022,\n//     \u0022 me\u0022,\n//     \u0022!\u0022,\n//     \u0022 :\u0022,\n//     \u0022D\u0022\n//   ],\n//   \u0022meta\u0022: {\n//     \u0022api_version\u0022: {\n//       \u0022version\u0022: \u00221\u0022\n//     }\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "tokenize",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 7,
@@ -94,10 +94,10 @@
       "Slug": "listbatches",
       "Description": "List the batches for the current user",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);\n\n// Example response:\n// {\n//   \u0022batches\u0022: [\n//     {\n//       \u0022id\u0022: \u00229439e0e3-49a4-4336-93e3-485fc420bc18\u0022,\n//       \u0022name\u0022: \u0022my-batch\u0022,\n//       \u0022creator_id\u0022: \u0022b5e1ffb9-49a1-4653-9927-94083316309d\u0022,\n//       \u0022org_id\u0022: \u002262603116-1750-4c04-b1b6-9d5046764bc4\u0022,\n//       \u0022status\u0022: \u0022BATCH_STATUS_IN_PROGRESS\u0022,\n//       \u0022model\u0022: \u0022command\u0022,\n//       \u0022input_dataset_id\u0022: \u0022my-requests-dataset\u0022,\n//       \u0022num_records\u0022: 5000\n//     }\n//   ]\n// }",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);\n\n// Example response:\n// {\n//   \u0022batches\u0022: [\n//     {\n//       \u0022id\u0022: \u00229439e0e3-49a4-4336-93e3-485fc420bc18\u0022,\n//       \u0022name\u0022: \u0022my-batch\u0022,\n//       \u0022creator_id\u0022: \u0022b5e1ffb9-49a1-4653-9927-94083316309d\u0022,\n//       \u0022org_id\u0022: \u002262603116-1750-4c04-b1b6-9d5046764bc4\u0022,\n//       \u0022status\u0022: \u0022BATCH_STATUS_IN_PROGRESS\u0022,\n//       \u0022model\u0022: \u0022command\u0022,\n//       \u0022input_dataset_id\u0022: \u0022my-requests-dataset\u0022,\n//       \u0022num_records\u0022: 5000\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "ListBatches",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 10,
@@ -149,10 +149,10 @@
       "Slug": "get-dataset-usage",
       "Description": "View the dataset storage usage for your Organization. Each Organization can have up to 10GB of storage across all their users.",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar response = await client.Datasets.GetUsageAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar response = await client.Datasets.GetUsageAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
       "Format": "sdk",
       "OperationId": "get-dataset-usage",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 15,
@@ -160,10 +160,10 @@
       "Slug": "list-datasets",
       "Description": "List datasets that have been created.",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
       "Format": "sdk",
       "OperationId": "list-datasets",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 16,
@@ -204,10 +204,10 @@
       "Slug": "list-embed-jobs",
       "Description": "The list embed job endpoint allows users to view all embed jobs history for that specific user.",
       "Language": "csharp",
-      "Code": "using var client = new CohereClient(apiKey);\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
+      "Code": "using var client = CohereClient.CreateFromEnvironment();\n\nvar response = await client.Batches.ListAsync(\n    xClientName: \u0022my-cool-project\u0022\n);",
       "Format": "sdk",
       "OperationId": "list-embed-jobs",
-      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Cohere;\u0060 is in scope and a configured credential environment variable is set: \u0060COHERE_API_KEY\u0060."
     },
     {
       "Order": 20,

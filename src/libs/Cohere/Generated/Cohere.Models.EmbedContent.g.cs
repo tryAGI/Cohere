@@ -32,6 +32,19 @@ namespace Cohere
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.EmbedImage? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
+
+        /// <summary>
         /// Text content of the input.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.EmbedText? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.EmbedImage?, TResult>? imageUrl = null,
-            global::System.Func<global::Cohere.EmbedText?, TResult>? text = null,
+            global::System.Func<global::Cohere.EmbedImage, TResult>? imageUrl = null,
+            global::System.Func<global::Cohere.EmbedText, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.EmbedImage?>? imageUrl = null,
-            global::System.Action<global::Cohere.EmbedText?>? text = null,
+            global::System.Action<global::Cohere.EmbedImage>? imageUrl = null,
+
+            global::System.Action<global::Cohere.EmbedText>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.EmbedImage>? imageUrl = null,
+            global::System.Action<global::Cohere.EmbedText>? text = null,
             bool validate = true)
         {
             if (validate)

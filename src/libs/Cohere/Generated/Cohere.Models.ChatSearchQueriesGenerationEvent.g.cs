@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent6evypd? Event6evypd { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event6evypd))]
 #endif
         public bool IsEvent6evypd => Event6evypd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent6evypd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatSearchQueriesGenerationEvent6evypd? value)
+        {
+            value = Event6evypd;
+            return IsEvent6evypd;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::Cohere.ChatSearchQueriesGenerationEvent6evypd?, TResult>? event6evypd = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatSearchQueriesGenerationEvent6evypd, TResult>? event6evypd = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::Cohere.ChatSearchQueriesGenerationEvent6evypd?>? event6evypd = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::Cohere.ChatSearchQueriesGenerationEvent6evypd>? event6evypd = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsEvent6evypd)
+            {
+                event6evypd?.Invoke(Event6evypd!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+            global::System.Action<global::Cohere.ChatSearchQueriesGenerationEvent6evypd>? event6evypd = null,
             bool validate = true)
         {
             if (validate)

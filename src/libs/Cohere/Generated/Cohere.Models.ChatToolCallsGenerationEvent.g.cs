@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsGenerationEventNykiww? Nykiww { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Nykiww))]
 #endif
         public bool IsNykiww => Nykiww != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNykiww(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatToolCallsGenerationEventNykiww? value)
+        {
+            value = Nykiww;
+            return IsNykiww;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::Cohere.ChatToolCallsGenerationEventNykiww?, TResult>? nykiww = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatToolCallsGenerationEventNykiww, TResult>? nykiww = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::Cohere.ChatToolCallsGenerationEventNykiww?>? nykiww = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::Cohere.ChatToolCallsGenerationEventNykiww>? nykiww = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsNykiww)
+            {
+                nykiww?.Invoke(Nykiww!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+            global::System.Action<global::Cohere.ChatToolCallsGenerationEventNykiww>? nykiww = null,
             bool validate = true)
         {
             if (validate)

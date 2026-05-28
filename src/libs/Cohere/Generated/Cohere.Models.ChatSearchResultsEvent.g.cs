@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchResultsEvent44axt5? Event44axt5 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event44axt5))]
 #endif
         public bool IsEvent44axt5 => Event44axt5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent44axt5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatSearchResultsEvent44axt5? value)
+        {
+            value = Event44axt5;
+            return IsEvent44axt5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::Cohere.ChatSearchResultsEvent44axt5?, TResult>? event44axt5 = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::Cohere.ChatSearchResultsEvent44axt5, TResult>? event44axt5 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::Cohere.ChatSearchResultsEvent44axt5?>? event44axt5 = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::Cohere.ChatSearchResultsEvent44axt5>? event44axt5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsEvent44axt5)
+            {
+                event44axt5?.Invoke(Event44axt5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
+            global::System.Action<global::Cohere.ChatSearchResultsEvent44axt5>? event44axt5 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatStreamEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamEvent? value)
+        {
+            value = ChatStreamEvent;
+            return IsChatStreamEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamStartEvent5v9jyv? Event5v9jyv { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event5v9jyv))]
 #endif
         public bool IsEvent5v9jyv => Event5v9jyv != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent5v9jyv(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ChatStreamStartEvent5v9jyv? value)
+        {
+            value = Event5v9jyv;
+            return IsEvent5v9jyv;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Cohere
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Cohere.ChatStreamEvent?, TResult>? chatStreamEvent = null,
-            global::System.Func<global::Cohere.ChatStreamStartEvent5v9jyv?, TResult>? event5v9jyv = null,
+            global::System.Func<global::Cohere.ChatStreamEvent, TResult>? chatStreamEvent = null,
+            global::System.Func<global::Cohere.ChatStreamStartEvent5v9jyv, TResult>? event5v9jyv = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Cohere.ChatStreamEvent?>? chatStreamEvent = null,
-            global::System.Action<global::Cohere.ChatStreamStartEvent5v9jyv?>? event5v9jyv = null,
+            global::System.Action<global::Cohere.ChatStreamEvent>? chatStreamEvent = null,
+
+            global::System.Action<global::Cohere.ChatStreamStartEvent5v9jyv>? event5v9jyv = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatStreamEvent)
+            {
+                chatStreamEvent?.Invoke(ChatStreamEvent!);
+            }
+            else if (IsEvent5v9jyv)
+            {
+                event5v9jyv?.Invoke(Event5v9jyv!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ChatStreamEvent>? chatStreamEvent = null,
+            global::System.Action<global::Cohere.ChatStreamStartEvent5v9jyv>? event5v9jyv = null,
             bool validate = true)
         {
             if (validate)

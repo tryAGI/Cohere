@@ -34,6 +34,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamText? value)
+        {
+            value = TextGeneration;
+            return IsTextGeneration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEnd? StreamEnd { get; init; }
 #else
@@ -51,6 +64,19 @@ namespace Cohere
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamEnd? value)
+        {
+            value = StreamEnd;
+            return IsStreamEnd;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError? StreamError { get; init; }
 #else
@@ -64,6 +90,19 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
 #endif
         public bool IsStreamError => StreamError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.GenerateStreamError? value)
+        {
+            value = StreamError;
+            return IsStreamError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -195,6 +234,36 @@ namespace Cohere
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Cohere.GenerateStreamText?>? textGeneration = null,
+
+            global::System.Action<global::Cohere.GenerateStreamEnd?>? streamEnd = null,
+
+            global::System.Action<global::Cohere.GenerateStreamError?>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextGeneration)
+            {
+                textGeneration?.Invoke(TextGeneration!);
+            }
+            else if (IsStreamEnd)
+            {
+                streamEnd?.Invoke(StreamEnd!);
+            }
+            else if (IsStreamError)
+            {
+                streamError?.Invoke(StreamError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Cohere.GenerateStreamText?>? textGeneration = null,
             global::System.Action<global::Cohere.GenerateStreamEnd?>? streamEnd = null,
             global::System.Action<global::Cohere.GenerateStreamError?>? streamError = null,
