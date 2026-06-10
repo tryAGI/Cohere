@@ -1,0 +1,54 @@
+
+#nullable enable
+
+namespace Cohere
+{
+    /// <summary>
+    /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
+    /// When `NONE` is specified, the model will be forced **not** to use one of the specified tools, and give a direct response.<br/>
+    /// If tool_choice isn't specified, then the model is free to choose whether to use the specified tools or not.<br/>
+    /// **Note**: This parameter is only compatible with models [Command-r7b](https://docs.cohere.com/v2/docs/command-r7b) and newer.
+    /// </summary>
+    public enum Promptv2RequestToolChoice
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Required,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class Promptv2RequestToolChoiceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this Promptv2RequestToolChoice value)
+        {
+            return value switch
+            {
+                Promptv2RequestToolChoice.None => "NONE",
+                Promptv2RequestToolChoice.Required => "REQUIRED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static Promptv2RequestToolChoice? ToEnum(string value)
+        {
+            return value switch
+            {
+                "NONE" => Promptv2RequestToolChoice.None,
+                "REQUIRED" => Promptv2RequestToolChoice.Required,
+                _ => null,
+            };
+        }
+    }
+}
