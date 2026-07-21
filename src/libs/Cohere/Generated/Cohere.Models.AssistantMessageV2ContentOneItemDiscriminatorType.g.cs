@@ -6,7 +6,7 @@ namespace Cohere
     /// <summary>
     /// 
     /// </summary>
-    public enum AssistantMessageContentVariant2ItemDiscriminatorType
+    public enum AssistantMessageV2ContentOneItemDiscriminatorType
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace Cohere
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AssistantMessageContentVariant2ItemDiscriminatorTypeExtensions
+    public static class AssistantMessageV2ContentOneItemDiscriminatorTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AssistantMessageContentVariant2ItemDiscriminatorType value)
+        public static string ToValueString(this AssistantMessageV2ContentOneItemDiscriminatorType value)
         {
             return value switch
             {
-                AssistantMessageContentVariant2ItemDiscriminatorType.Text => "text",
-                AssistantMessageContentVariant2ItemDiscriminatorType.Thinking => "thinking",
+                AssistantMessageV2ContentOneItemDiscriminatorType.Text => "text",
+                AssistantMessageV2ContentOneItemDiscriminatorType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AssistantMessageContentVariant2ItemDiscriminatorType? ToEnum(string value)
+        public static AssistantMessageV2ContentOneItemDiscriminatorType? ToEnum(string value)
         {
             return value switch
             {
-                "text" => AssistantMessageContentVariant2ItemDiscriminatorType.Text,
-                "thinking" => AssistantMessageContentVariant2ItemDiscriminatorType.Thinking,
+                "text" => AssistantMessageV2ContentOneItemDiscriminatorType.Text,
+                "thinking" => AssistantMessageV2ContentOneItemDiscriminatorType.Thinking,
                 _ => null,
             };
         }
