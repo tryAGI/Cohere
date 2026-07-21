@@ -16,9 +16,9 @@ namespace Cohere
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatStreamEndEventY8gq2xFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.ChatStreamEndEventY8gq2xFinishReason FinishReason { get; set; }
+        public required global::Cohere.ChatStreamEndEventFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.
@@ -50,7 +50,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatStreamEndEventY8gq2x(
-            global::Cohere.ChatStreamEndEventY8gq2xFinishReason finishReason,
+            global::Cohere.ChatStreamEndEventFinishReason finishReason,
             global::Cohere.NonStreamedChatResponse response)
         {
             this.FinishReason = finishReason;

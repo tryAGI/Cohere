@@ -3,10 +3,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AssistantMessageContentVariant2ItemDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType>
+    public sealed class ChatStreamEndEventFinishReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ChatStreamEndEventFinishReason?>
     {
         /// <inheritdoc />
-        public override global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType Read(
+        public override global::Cohere.ChatStreamEndEventFinishReason? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Cohere.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Cohere.ChatStreamEndEventFinishReasonExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Cohere.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType)numValue;
+                    return (global::Cohere.ChatStreamEndEventFinishReason)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType);
+                    return default(global::Cohere.ChatStreamEndEventFinishReason?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorType value,
+            global::Cohere.ChatStreamEndEventFinishReason? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Cohere.AssistantMessageContentVariant2ItemDiscriminatorTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Cohere.ChatStreamEndEventFinishReasonExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

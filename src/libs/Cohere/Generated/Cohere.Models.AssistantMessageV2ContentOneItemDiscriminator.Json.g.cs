@@ -2,7 +2,7 @@
 
 namespace Cohere
 {
-    public sealed partial class UnprocessableEntityErrorBody31
+    public sealed partial class AssistantMessageV2ContentOneItemDiscriminator
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.UnprocessableEntityErrorBody31? FromJson(
+        public static global::Cohere.AssistantMessageV2ContentOneItemDiscriminator? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Cohere.UnprocessableEntityErrorBody31),
-                jsonSerializerContext) as global::Cohere.UnprocessableEntityErrorBody31;
+                typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminator),
+                jsonSerializerContext) as global::Cohere.AssistantMessageV2ContentOneItemDiscriminator;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.UnprocessableEntityErrorBody31? FromJson(
+        public static global::Cohere.AssistantMessageV2ContentOneItemDiscriminator? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Cohere.UnprocessableEntityErrorBody31? FromJson(
+        public static global::Cohere.AssistantMessageV2ContentOneItemDiscriminator? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Cohere
                     global::Cohere.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.UnprocessableEntityErrorBody31>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.UnprocessableEntityErrorBody31?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Cohere.UnprocessableEntityErrorBody31),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.UnprocessableEntityErrorBody31;
+                typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminator),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.AssistantMessageV2ContentOneItemDiscriminator;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.UnprocessableEntityErrorBody31?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.UnprocessableEntityErrorBody31?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Cohere
                     global::Cohere.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.UnprocessableEntityErrorBody31?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
