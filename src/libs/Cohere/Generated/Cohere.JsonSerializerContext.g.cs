@@ -165,6 +165,18 @@ namespace Cohere
 
             typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseBlockTypeJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseTableFormatJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter),
+
             typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter),
 
             typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter),
@@ -405,6 +417,8 @@ namespace Cohere
 
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
 
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>),
+
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
 
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
@@ -623,6 +637,20 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType), TypeInfoPropertyName = "StreamedChatResponseV2DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.PromptResponseV2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocument))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType), TypeInfoPropertyName = "ParseDocumentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.OneOf<string, global::Cohere.ImageUrl>), TypeInfoPropertyName = "OneOfStringImageUrl2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType), TypeInfoPropertyName = "ParseBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTable))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableFormat), TypeInfoPropertyName = "ParseTableFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseTable>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParsePage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.SingleGeneration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.SingleGenerationTokenLikelihoodsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.SingleGenerationTokenLikelihoodsItem))]
@@ -901,20 +929,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InvalidTokenErrorBody8))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody17))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody18))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ServiceUnavailableErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotImplementedErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.TooManyRequestsErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InvalidTokenErrorBody9))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody10))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody19))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody10))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody20))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1077,6 +1091,18 @@ namespace Cohere
             typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter),
 
             typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseBlockTypeJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseTableFormatJsonConverter),
+
+            typeof(global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter),
 
             typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter),
 
@@ -1318,6 +1344,8 @@ namespace Cohere
 
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
 
+            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>),
+
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
 
             typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
@@ -1328,6 +1356,20 @@ namespace Cohere
 
             typeof(global::Cohere.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody18))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ServiceUnavailableErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotImplementedErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.TooManyRequestsErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InvalidTokenErrorBody9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody10))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody19))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody10))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody20))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody10))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody10))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody10))]
@@ -1677,6 +1719,10 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ChatMessageEndEvent?), TypeInfoPropertyName = "NullableChatMessageEndEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2?), TypeInfoPropertyName = "NullableStreamedChatResponseV22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType?), TypeInfoPropertyName = "NullableStreamedChatResponseV2DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType?), TypeInfoPropertyName = "NullableParseDocumentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.OneOf<string, global::Cohere.ImageUrl>?), TypeInfoPropertyName = "NullableOneOfStringImageUrl2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType?), TypeInfoPropertyName = "NullableParseBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableFormat?), TypeInfoPropertyName = "NullableParseTableFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamEventEventType?), TypeInfoPropertyName = "NullableGenerateStreamEventEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamText?), TypeInfoPropertyName = "NullableGenerateStreamText2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamEnd?), TypeInfoPropertyName = "NullableGenerateStreamEnd2")]
@@ -1752,6 +1798,10 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.LogprobItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseTable>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParsePage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.SingleGenerationTokenLikelihoodsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.SingleGeneration>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.SingleGenerationInStream>))]
@@ -1904,6 +1954,12 @@ namespace Cohere
             options.Converters.Add(new global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseBlockTypeJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseTableFormatJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter());
@@ -2024,6 +2080,7 @@ namespace Cohere
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>());
+            options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>());
