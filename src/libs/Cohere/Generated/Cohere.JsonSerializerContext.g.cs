@@ -13,421 +13,6 @@ namespace Cohere
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Cohere.JsonConverters.ChatRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageDiscriminatorRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageDiscriminatorRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.FinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ImageUrlDetailJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ImageUrlDetailNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UserMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UserMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolCallV2TypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatThinkingContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatThinkingContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DocumentContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DocumentContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolV2TypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolV2TypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationOptionsModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationOptionsModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2NullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ThinkingTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ThinkingTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatFinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventTypeTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventTypeTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseBlockTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseTableFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedInputTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedInputTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbeddingTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbeddingTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BatchStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BatchStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetValidationStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetValidationStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ConnectorAuthStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ConnectorAuthStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AuthTokenTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AuthTokenTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CompatibleEndpointJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CompatibleEndpointNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BaseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BaseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StrategyJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StrategyNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.LoraTargetModulesJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.LoraTargetModulesNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestPromptTruncationJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestPromptTruncationNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestCitationQualityJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestCitationQualityNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.V2EmbedRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.V2EmbedRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestLengthNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestFormatNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatAcceptsJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatAcceptsNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatSearchQueriesGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatSearchResultsEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallsGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallsChunkEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatDebugEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentVariant2ItemJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentVariant2Item2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentItemJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolPlanDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamTextJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEndJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamErrorJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.Content>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>),
-
-            typeof(global::Cohere.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
@@ -639,7 +224,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.PromptResponseV2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocument))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType), TypeInfoPropertyName = "ParseDocumentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.OneOf<string, global::Cohere.ImageUrl>), TypeInfoPropertyName = "OneOfStringImageUrl2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType), TypeInfoPropertyName = "ParseBlockType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImage))]
@@ -929,6 +513,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InvalidTokenErrorBody8))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody17))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody9))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -940,423 +525,7 @@ namespace Cohere
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Cohere.JsonConverters.ChatRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageDiscriminatorRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageDiscriminatorRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.FinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ImageUrlDetailJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ImageUrlDetailNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UserMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UserMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolCallV2TypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatThinkingContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatThinkingContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DocumentContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DocumentContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolMessageV2RoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolMessageV2RoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolV2TypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolV2TypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationOptionsModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationOptionsModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatTypeV2NullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ThinkingTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ThinkingTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatFinishReasonJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatFinishReasonNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventTypeTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEventTypeTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseBlockTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseTableFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedInputTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedInputTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbeddingTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbeddingTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BatchStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BatchStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedJobTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetValidationStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetValidationStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.DatasetTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ConnectorAuthStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ConnectorAuthStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AuthTokenTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.AuthTokenTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GetClusterJobResponseStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.UpdateClusterJobRequestStatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CompatibleEndpointJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CompatibleEndpointNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BaseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.BaseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StrategyJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StrategyNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.LoraTargetModulesJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.LoraTargetModulesNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StatusJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StatusNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestPromptTruncationJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestPromptTruncationNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestCitationQualityJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestCitationQualityNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatRequestSafetyModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.Chatv2RequestToolChoiceNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.V2EmbedRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.V2EmbedRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyRequestTruncateJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyRequestTruncateNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestLengthNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestFormatNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SummarizeRequestExtractivenessNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatAcceptsJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatAcceptsNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeNullableJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.MessageJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatSearchQueriesGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatSearchResultsEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatTextGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatCitationGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallsGenerationEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatStreamEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallsChunkEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatDebugEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.SourceJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentVariant2ItemJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentVariant2Item2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ToolContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ResponseFormatV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ContentItemJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatContentEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolPlanDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallDeltaEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatToolCallEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationStartEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.CitationEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.ChatMessageEndEventJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.StreamedChatResponseV2JsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamTextJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamEndJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamErrorJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.GenerateStreamedResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedContentJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.EmbedResponseJsonConverter),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.Content>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>),
-
-            typeof(global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>),
-
-            typeof(global::Cohere.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody18))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody9))]
@@ -1720,7 +889,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2?), TypeInfoPropertyName = "NullableStreamedChatResponseV22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType?), TypeInfoPropertyName = "NullableStreamedChatResponseV2DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType?), TypeInfoPropertyName = "NullableParseDocumentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.OneOf<string, global::Cohere.ImageUrl>?), TypeInfoPropertyName = "NullableOneOfStringImageUrl2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType?), TypeInfoPropertyName = "NullableParseBlockType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableFormat?), TypeInfoPropertyName = "NullableParseTableFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamEventEventType?), TypeInfoPropertyName = "NullableGenerateStreamEventEventType2")]
@@ -1844,11 +1012,7 @@ namespace Cohere
     /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-            SourceGenerationContextChunk0.Default,
-
-            SourceGenerationContextChunk1.Default
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -1878,166 +1042,6 @@ namespace Cohere
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             };
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.MessageDiscriminatorRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.MessageDiscriminatorRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatCitationTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatCitationTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.FinishReasonJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.FinishReasonNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEventEventTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatTextContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatTextContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ImageUrlDetailJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ImageUrlDetailNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ContentDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ContentDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.UserMessageV2RoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.UserMessageV2RoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolCallV2TypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatThinkingContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatThinkingContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SourceDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SourceDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CitationTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CitationTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SystemMessageV2RoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SystemMessageV2RoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DocumentContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DocumentContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolContentDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolMessageV2RoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolMessageV2RoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolV2TypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ToolV2TypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CitationOptionsModeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CitationOptionsModeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatTypeV2JsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatTypeV2NullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ThinkingTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ThinkingTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatFinishReasonJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatFinishReasonNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageResponseRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEventTypeTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamEventTypeTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseBlockTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseTableFormatJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedInputTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedInputTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbeddingTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbeddingTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedContentTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedContentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.BatchStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.BatchStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedJobStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedJobStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedJobTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DatasetValidationStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DatasetValidationStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DatasetTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.DatasetTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ConnectorAuthStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ConnectorAuthStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AuthTokenTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.AuthTokenTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GetClusterJobResponseStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.UpdateClusterJobRequestStatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CompatibleEndpointJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.CompatibleEndpointNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.BaseTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.BaseTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StrategyJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StrategyNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.LoraTargetModulesJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.LoraTargetModulesNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StatusJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.StatusNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestPromptTruncationJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestPromptTruncationNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestCitationQualityJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestCitationQualityNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestSafetyModeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatRequestSafetyModeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.Chatv2RequestToolChoiceNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateRequestTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedRequestTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedRequestTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.V2EmbedRequestTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.V2EmbedRequestTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ClassifyRequestTruncateJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ClassifyRequestTruncateNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestLengthNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestFormatNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.SummarizeRequestExtractivenessNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatAcceptsJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ChatAcceptsNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeNullableJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter());
-            options.Converters.Add(new global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeNullableJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.MessageJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamStartEventJsonConverter());
@@ -2080,14 +1084,1196 @@ namespace Cohere
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ToolContent>>());
-            options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.Document>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.RerankDocument>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>());
             options.Converters.Add(new global::Cohere.JsonConverters.UnixTimestampJsonConverter());
 
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::Cohere.ChatRole)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRole?)
+
+                    || typeToConvert == typeof(global::Cohere.MessageDiscriminatorRole)
+
+                    || typeToConvert == typeof(global::Cohere.MessageDiscriminatorRole?)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatType)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatType?)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatCitationType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatCitationType?)
+
+                    || typeToConvert == typeof(global::Cohere.FinishReason)
+
+                    || typeToConvert == typeof(global::Cohere.FinishReason?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEventEventType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEventEventType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEndEventFinishReason)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEndEventFinishReason?)
+
+                    || typeToConvert == typeof(global::Cohere.StreamedChatResponseDiscriminatorEventType)
+
+                    || typeToConvert == typeof(global::Cohere.StreamedChatResponseDiscriminatorEventType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatTextContentType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatTextContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.ContentType)
+
+                    || typeToConvert == typeof(global::Cohere.ContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.ImageUrlDetail)
+
+                    || typeToConvert == typeof(global::Cohere.ImageUrlDetail?)
+
+                    || typeToConvert == typeof(global::Cohere.ContentDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ContentDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.UserMessageV2Role)
+
+                    || typeToConvert == typeof(global::Cohere.UserMessageV2Role?)
+
+                    || typeToConvert == typeof(global::Cohere.ToolCallV2Type)
+
+                    || typeToConvert == typeof(global::Cohere.ToolCallV2Type?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatThinkingContentType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatThinkingContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.SourceDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.SourceDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.CitationType)
+
+                    || typeToConvert == typeof(global::Cohere.CitationType?)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageRole)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageRole?)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.SystemMessageV2Role)
+
+                    || typeToConvert == typeof(global::Cohere.SystemMessageV2Role?)
+
+                    || typeToConvert == typeof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.DocumentContentType)
+
+                    || typeToConvert == typeof(global::Cohere.DocumentContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.ToolContentDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ToolContentDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ToolMessageV2Role)
+
+                    || typeToConvert == typeof(global::Cohere.ToolMessageV2Role?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatMessageV2DiscriminatorRole)
+
+                    || typeToConvert == typeof(global::Cohere.ChatMessageV2DiscriminatorRole?)
+
+                    || typeToConvert == typeof(global::Cohere.ToolV2Type)
+
+                    || typeToConvert == typeof(global::Cohere.ToolV2Type?)
+
+                    || typeToConvert == typeof(global::Cohere.CitationOptionsMode)
+
+                    || typeToConvert == typeof(global::Cohere.CitationOptionsMode?)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatTypeV2)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatTypeV2?)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatV2DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ResponseFormatV2DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ThinkingType)
+
+                    || typeToConvert == typeof(global::Cohere.ThinkingType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatFinishReason)
+
+                    || typeToConvert == typeof(global::Cohere.ChatFinishReason?)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageResponseRole)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageResponseRole?)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageResponseContentItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.AssistantMessageResponseContentItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEventTypeType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatStreamEventTypeType?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatMessageStartEventDeltaMessageRole)
+
+                    || typeToConvert == typeof(global::Cohere.ChatMessageStartEventDeltaMessageRole?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatContentStartEventDeltaMessageContentType)
+
+                    || typeToConvert == typeof(global::Cohere.ChatContentStartEventDeltaMessageContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseDocumentType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseDocumentType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlockType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlockType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableFormat)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableFormat?)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType?)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateStreamedResponseDiscriminatorEventType)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateStreamedResponseDiscriminatorEventType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedInputType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedInputType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbeddingType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbeddingType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedFloatsResponseResponseType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedFloatsResponseResponseType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedByTypeResponseResponseType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedByTypeResponseResponseType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedContentType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedContentDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedContentDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.BatchStatus)
+
+                    || typeToConvert == typeof(global::Cohere.BatchStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedJobStatus)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedJobStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedJobTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedJobTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.DatasetValidationStatus)
+
+                    || typeToConvert == typeof(global::Cohere.DatasetValidationStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.DatasetType)
+
+                    || typeToConvert == typeof(global::Cohere.DatasetType?)
+
+                    || typeToConvert == typeof(global::Cohere.ConnectorAuthStatus)
+
+                    || typeToConvert == typeof(global::Cohere.ConnectorAuthStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.AuthTokenType)
+
+                    || typeToConvert == typeof(global::Cohere.AuthTokenType?)
+
+                    || typeToConvert == typeof(global::Cohere.GetClusterJobResponseStatus)
+
+                    || typeToConvert == typeof(global::Cohere.GetClusterJobResponseStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.UpdateClusterJobRequestStatus)
+
+                    || typeToConvert == typeof(global::Cohere.UpdateClusterJobRequestStatus?)
+
+                    || typeToConvert == typeof(global::Cohere.CompatibleEndpoint)
+
+                    || typeToConvert == typeof(global::Cohere.CompatibleEndpoint?)
+
+                    || typeToConvert == typeof(global::Cohere.BaseType)
+
+                    || typeToConvert == typeof(global::Cohere.BaseType?)
+
+                    || typeToConvert == typeof(global::Cohere.Strategy)
+
+                    || typeToConvert == typeof(global::Cohere.Strategy?)
+
+                    || typeToConvert == typeof(global::Cohere.LoraTargetModules)
+
+                    || typeToConvert == typeof(global::Cohere.LoraTargetModules?)
+
+                    || typeToConvert == typeof(global::Cohere.Status)
+
+                    || typeToConvert == typeof(global::Cohere.Status?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestPromptTruncation)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestPromptTruncation?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestCitationQuality)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestCitationQuality?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestSafetyMode)
+
+                    || typeToConvert == typeof(global::Cohere.ChatRequestSafetyMode?)
+
+                    || typeToConvert == typeof(global::Cohere.Chatv2RequestSafetyMode)
+
+                    || typeToConvert == typeof(global::Cohere.Chatv2RequestSafetyMode?)
+
+                    || typeToConvert == typeof(global::Cohere.Chatv2RequestToolChoice)
+
+                    || typeToConvert == typeof(global::Cohere.Chatv2RequestToolChoice?)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateRequestTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateRequestReturnLikelihoods)
+
+                    || typeToConvert == typeof(global::Cohere.GenerateRequestReturnLikelihoods?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedRequestTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.V2EmbedRequestTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.V2EmbedRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.ClassifyRequestTruncate)
+
+                    || typeToConvert == typeof(global::Cohere.ClassifyRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestLength)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestLength?)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestFormat)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestFormat?)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestExtractiveness)
+
+                    || typeToConvert == typeof(global::Cohere.SummarizeRequestExtractiveness?)
+
+                    || typeToConvert == typeof(global::Cohere.ChatAccepts)
+
+                    || typeToConvert == typeof(global::Cohere.ChatAccepts?)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedResponseDiscriminatorResponseType)
+
+                    || typeToConvert == typeof(global::Cohere.EmbedResponseDiscriminatorResponseType?)
+
+                    || typeToConvert == typeof(global::Cohere.ClassifyResponseClassificationClassificationType)
+
+                    || typeToConvert == typeof(global::Cohere.ClassifyResponseClassificationClassificationType?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::Cohere.ChatRole))
+                {
+                    return new global::Cohere.JsonConverters.ChatRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRole?))
+                {
+                    return new global::Cohere.JsonConverters.ChatRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.MessageDiscriminatorRole))
+                {
+                    return new global::Cohere.JsonConverters.MessageDiscriminatorRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.MessageDiscriminatorRole?))
+                {
+                    return new global::Cohere.JsonConverters.MessageDiscriminatorRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatType))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatType?))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatCitationType))
+                {
+                    return new global::Cohere.JsonConverters.ChatCitationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatCitationType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatCitationTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.FinishReason))
+                {
+                    return new global::Cohere.JsonConverters.FinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.FinishReason?))
+                {
+                    return new global::Cohere.JsonConverters.FinishReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEventEventType))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEventEventTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEventEventType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEndEventFinishReason))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEndEventFinishReason?))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEndEventFinishReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.StreamedChatResponseDiscriminatorEventType))
+                {
+                    return new global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.StreamedChatResponseDiscriminatorEventType?))
+                {
+                    return new global::Cohere.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatTextContentType))
+                {
+                    return new global::Cohere.JsonConverters.ChatTextContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatTextContentType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatTextContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ContentType))
+                {
+                    return new global::Cohere.JsonConverters.ContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ContentType?))
+                {
+                    return new global::Cohere.JsonConverters.ContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ImageUrlDetail))
+                {
+                    return new global::Cohere.JsonConverters.ImageUrlDetailJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ImageUrlDetail?))
+                {
+                    return new global::Cohere.JsonConverters.ImageUrlDetailNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ContentDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ContentDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ContentDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ContentDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.UserMessageV2Role))
+                {
+                    return new global::Cohere.JsonConverters.UserMessageV2RoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.UserMessageV2Role?))
+                {
+                    return new global::Cohere.JsonConverters.UserMessageV2RoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolCallV2Type))
+                {
+                    return new global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolCallV2Type?))
+                {
+                    return new global::Cohere.JsonConverters.ToolCallV2TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatThinkingContentType))
+                {
+                    return new global::Cohere.JsonConverters.ChatThinkingContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatThinkingContentType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatThinkingContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SourceDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.SourceDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SourceDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.SourceDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CitationType))
+                {
+                    return new global::Cohere.JsonConverters.CitationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CitationType?))
+                {
+                    return new global::Cohere.JsonConverters.CitationTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageRole))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageRole?))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageV2ContentOneItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SystemMessageV2Role))
+                {
+                    return new global::Cohere.JsonConverters.SystemMessageV2RoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SystemMessageV2Role?))
+                {
+                    return new global::Cohere.JsonConverters.SystemMessageV2RoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.SystemMessageV2ContentVariant2ItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DocumentContentType))
+                {
+                    return new global::Cohere.JsonConverters.DocumentContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DocumentContentType?))
+                {
+                    return new global::Cohere.JsonConverters.DocumentContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolContentDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ToolContentDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolContentDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolMessageV2Role))
+                {
+                    return new global::Cohere.JsonConverters.ToolMessageV2RoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolMessageV2Role?))
+                {
+                    return new global::Cohere.JsonConverters.ToolMessageV2RoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatMessageV2DiscriminatorRole))
+                {
+                    return new global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatMessageV2DiscriminatorRole?))
+                {
+                    return new global::Cohere.JsonConverters.ChatMessageV2DiscriminatorRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolV2Type))
+                {
+                    return new global::Cohere.JsonConverters.ToolV2TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ToolV2Type?))
+                {
+                    return new global::Cohere.JsonConverters.ToolV2TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CitationOptionsMode))
+                {
+                    return new global::Cohere.JsonConverters.CitationOptionsModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CitationOptionsMode?))
+                {
+                    return new global::Cohere.JsonConverters.CitationOptionsModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatTypeV2))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatTypeV2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatTypeV2?))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatTypeV2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatV2DiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ResponseFormatV2DiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ResponseFormatV2DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ThinkingType))
+                {
+                    return new global::Cohere.JsonConverters.ThinkingTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ThinkingType?))
+                {
+                    return new global::Cohere.JsonConverters.ThinkingTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatFinishReason))
+                {
+                    return new global::Cohere.JsonConverters.ChatFinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatFinishReason?))
+                {
+                    return new global::Cohere.JsonConverters.ChatFinishReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageResponseRole))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageResponseRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageResponseRole?))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageResponseRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageResponseContentItemDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AssistantMessageResponseContentItemDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEventTypeType))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEventTypeTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatStreamEventTypeType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatStreamEventTypeTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatMessageStartEventDeltaMessageRole))
+                {
+                    return new global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatMessageStartEventDeltaMessageRole?))
+                {
+                    return new global::Cohere.JsonConverters.ChatMessageStartEventDeltaMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatContentStartEventDeltaMessageContentType))
+                {
+                    return new global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatContentStartEventDeltaMessageContentType?))
+                {
+                    return new global::Cohere.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseDocumentType))
+                {
+                    return new global::Cohere.JsonConverters.ParseDocumentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseDocumentType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlockType))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlockTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlockType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableFormat))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableFormat?))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType))
+                {
+                    return new global::Cohere.JsonConverters.GenerateStreamEventEventTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType?))
+                {
+                    return new global::Cohere.JsonConverters.GenerateStreamEventEventTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateStreamedResponseDiscriminatorEventType))
+                {
+                    return new global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateStreamedResponseDiscriminatorEventType?))
+                {
+                    return new global::Cohere.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedInputType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedInputTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedInputType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedInputTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbeddingType))
+                {
+                    return new global::Cohere.JsonConverters.EmbeddingTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbeddingType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbeddingTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedFloatsResponseResponseType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedFloatsResponseResponseType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedByTypeResponseResponseType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedByTypeResponseResponseType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedByTypeResponseResponseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedContentType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedContentType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedContentDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedContentDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedContentDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.BatchStatus))
+                {
+                    return new global::Cohere.JsonConverters.BatchStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.BatchStatus?))
+                {
+                    return new global::Cohere.JsonConverters.BatchStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedJobStatus))
+                {
+                    return new global::Cohere.JsonConverters.EmbedJobStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedJobStatus?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedJobStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedJobTruncate))
+                {
+                    return new global::Cohere.JsonConverters.EmbedJobTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedJobTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedJobTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate))
+                {
+                    return new global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DatasetValidationStatus))
+                {
+                    return new global::Cohere.JsonConverters.DatasetValidationStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DatasetValidationStatus?))
+                {
+                    return new global::Cohere.JsonConverters.DatasetValidationStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DatasetType))
+                {
+                    return new global::Cohere.JsonConverters.DatasetTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.DatasetType?))
+                {
+                    return new global::Cohere.JsonConverters.DatasetTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ConnectorAuthStatus))
+                {
+                    return new global::Cohere.JsonConverters.ConnectorAuthStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ConnectorAuthStatus?))
+                {
+                    return new global::Cohere.JsonConverters.ConnectorAuthStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AuthTokenType))
+                {
+                    return new global::Cohere.JsonConverters.AuthTokenTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.AuthTokenType?))
+                {
+                    return new global::Cohere.JsonConverters.AuthTokenTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GetClusterJobResponseStatus))
+                {
+                    return new global::Cohere.JsonConverters.GetClusterJobResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GetClusterJobResponseStatus?))
+                {
+                    return new global::Cohere.JsonConverters.GetClusterJobResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.UpdateClusterJobRequestStatus))
+                {
+                    return new global::Cohere.JsonConverters.UpdateClusterJobRequestStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.UpdateClusterJobRequestStatus?))
+                {
+                    return new global::Cohere.JsonConverters.UpdateClusterJobRequestStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CompatibleEndpoint))
+                {
+                    return new global::Cohere.JsonConverters.CompatibleEndpointJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.CompatibleEndpoint?))
+                {
+                    return new global::Cohere.JsonConverters.CompatibleEndpointNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.BaseType))
+                {
+                    return new global::Cohere.JsonConverters.BaseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.BaseType?))
+                {
+                    return new global::Cohere.JsonConverters.BaseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Strategy))
+                {
+                    return new global::Cohere.JsonConverters.StrategyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Strategy?))
+                {
+                    return new global::Cohere.JsonConverters.StrategyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.LoraTargetModules))
+                {
+                    return new global::Cohere.JsonConverters.LoraTargetModulesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.LoraTargetModules?))
+                {
+                    return new global::Cohere.JsonConverters.LoraTargetModulesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Status))
+                {
+                    return new global::Cohere.JsonConverters.StatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Status?))
+                {
+                    return new global::Cohere.JsonConverters.StatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestPromptTruncation))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestPromptTruncationJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestPromptTruncation?))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestPromptTruncationNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestCitationQuality))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestCitationQualityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestCitationQuality?))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestCitationQualityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestSafetyMode))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestSafetyModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatRequestSafetyMode?))
+                {
+                    return new global::Cohere.JsonConverters.ChatRequestSafetyModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Chatv2RequestSafetyMode))
+                {
+                    return new global::Cohere.JsonConverters.Chatv2RequestSafetyModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Chatv2RequestSafetyMode?))
+                {
+                    return new global::Cohere.JsonConverters.Chatv2RequestSafetyModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Chatv2RequestToolChoice))
+                {
+                    return new global::Cohere.JsonConverters.Chatv2RequestToolChoiceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.Chatv2RequestToolChoice?))
+                {
+                    return new global::Cohere.JsonConverters.Chatv2RequestToolChoiceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateRequestTruncate))
+                {
+                    return new global::Cohere.JsonConverters.GenerateRequestTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateRequestTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.GenerateRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateRequestReturnLikelihoods))
+                {
+                    return new global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.GenerateRequestReturnLikelihoods?))
+                {
+                    return new global::Cohere.JsonConverters.GenerateRequestReturnLikelihoodsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedRequestTruncate))
+                {
+                    return new global::Cohere.JsonConverters.EmbedRequestTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedRequestTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.V2EmbedRequestTruncate))
+                {
+                    return new global::Cohere.JsonConverters.V2EmbedRequestTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.V2EmbedRequestTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.V2EmbedRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ClassifyRequestTruncate))
+                {
+                    return new global::Cohere.JsonConverters.ClassifyRequestTruncateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ClassifyRequestTruncate?))
+                {
+                    return new global::Cohere.JsonConverters.ClassifyRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestLength))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestLengthJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestLength?))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestLengthNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestFormat))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestFormat?))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestExtractiveness))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestExtractivenessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.SummarizeRequestExtractiveness?))
+                {
+                    return new global::Cohere.JsonConverters.SummarizeRequestExtractivenessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatAccepts))
+                {
+                    return new global::Cohere.JsonConverters.ChatAcceptsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ChatAccepts?))
+                {
+                    return new global::Cohere.JsonConverters.ChatAcceptsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedResponseDiscriminatorResponseType))
+                {
+                    return new global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.EmbedResponseDiscriminatorResponseType?))
+                {
+                    return new global::Cohere.JsonConverters.EmbedResponseDiscriminatorResponseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ClassifyResponseClassificationClassificationType))
+                {
+                    return new global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ClassifyResponseClassificationClassificationType?))
+                {
+                    return new global::Cohere.JsonConverters.ClassifyResponseClassificationClassificationTypeNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
         }
     }
 }

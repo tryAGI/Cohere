@@ -16,13 +16,11 @@ namespace Cohere
         public global::Cohere.ParseDocumentType Type { get; set; }
 
         /// <summary>
-        /// Image to parse. Accepts either a bare URL / data URI string, or an object with<br/>
-        /// `url` and optional `detail`.
+        /// Image URL or base64 data URI to parse.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::Cohere.ImageUrl>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.OneOf<string, global::Cohere.ImageUrl> ImageUrl { get; set; }
+        public required string ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,8 +32,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ParseDocument" /> class.
         /// </summary>
         /// <param name="imageUrl">
-        /// Image to parse. Accepts either a bare URL / data URI string, or an object with<br/>
-        /// `url` and optional `detail`.
+        /// Image URL or base64 data URI to parse.
         /// </param>
         /// <param name="type">
         /// Discriminator for the document payload.
@@ -44,11 +41,11 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ParseDocument(
-            global::Cohere.OneOf<string, global::Cohere.ImageUrl> imageUrl,
+            string imageUrl,
             global::Cohere.ParseDocumentType type)
         {
             this.Type = type;
-            this.ImageUrl = imageUrl;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

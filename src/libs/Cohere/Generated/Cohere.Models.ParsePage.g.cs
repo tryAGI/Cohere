@@ -24,6 +24,13 @@ namespace Cohere
         public required string Markdown { get; set; }
 
         /// <summary>
+        /// Unparsed model generation for this page. Only present when<br/>
+        /// `enable_debugging` was `true` in the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("raw_generation")]
+        public string? RawGeneration { get; set; }
+
+        /// <summary>
         /// Ordered content blocks with optional bounding boxes. Only present when<br/>
         /// `include_blocks` was `true` in the request.
         /// </summary>
@@ -58,6 +65,10 @@ namespace Cohere
         /// Page content as markdown. Image and table assets are referenced with<br/>
         /// placeholders such as `![img-0](img-0)` and `[tbl-0](tbl-0)`.
         /// </param>
+        /// <param name="rawGeneration">
+        /// Unparsed model generation for this page. Only present when<br/>
+        /// `enable_debugging` was `true` in the request.
+        /// </param>
         /// <param name="blocks">
         /// Ordered content blocks with optional bounding boxes. Only present when<br/>
         /// `include_blocks` was `true` in the request.
@@ -74,12 +85,14 @@ namespace Cohere
         public ParsePage(
             int index,
             string markdown,
+            string? rawGeneration,
             global::System.Collections.Generic.IList<global::Cohere.ParseBlock>? blocks,
             global::System.Collections.Generic.IList<global::Cohere.ParseImage>? images,
             global::System.Collections.Generic.IList<global::Cohere.ParseTable>? tables)
         {
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
+            this.RawGeneration = rawGeneration;
             this.Blocks = blocks;
             this.Images = images;
             this.Tables = tables;
