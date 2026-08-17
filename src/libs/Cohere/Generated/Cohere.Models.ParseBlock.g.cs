@@ -17,8 +17,12 @@ namespace Cohere
         public required global::Cohere.ParseBlockType Type { get; set; }
 
         /// <summary>
-        /// Block content. For text blocks this is the extracted text; for image blocks<br/>
-        /// this is the image annotation; for table blocks this is the table HTML.
+        /// Content for this block. For text blocks this is the extracted text (same<br/>
+        /// span as in `page.markdown`); for image blocks this is<br/>
+        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`; for table blocks this is the table<br/>
+        /// HTML. When `table_format=html`, `page.markdown` uses a placeholder such as<br/>
+        /// `[tbl-0.html](tbl-0.html)` while this field and `page.tables[].content`<br/>
+        /// still carry the HTML.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +59,8 @@ namespace Cohere
         public string? ImageId { get; set; }
 
         /// <summary>
-        /// ID of the corresponding entry in `page.tables` when `type` is `table`.
+        /// ID of the corresponding entry in `page.tables` when `type` is `table` and<br/>
+        /// `table_format` extracted tables (for example `html`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table_id")]
         public string? TableId { get; set; }
@@ -73,8 +78,12 @@ namespace Cohere
         /// Block kind.
         /// </param>
         /// <param name="content">
-        /// Block content. For text blocks this is the extracted text; for image blocks<br/>
-        /// this is the image annotation; for table blocks this is the table HTML.
+        /// Content for this block. For text blocks this is the extracted text (same<br/>
+        /// span as in `page.markdown`); for image blocks this is<br/>
+        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`; for table blocks this is the table<br/>
+        /// HTML. When `table_format=html`, `page.markdown` uses a placeholder such as<br/>
+        /// `[tbl-0.html](tbl-0.html)` while this field and `page.tables[].content`<br/>
+        /// still carry the HTML.
         /// </param>
         /// <param name="topLeftX">
         /// X coordinate of the top-left corner of the block bounding box.
@@ -92,7 +101,8 @@ namespace Cohere
         /// ID of the corresponding entry in `page.images` when `type` is `image`.
         /// </param>
         /// <param name="tableId">
-        /// ID of the corresponding entry in `page.tables` when `type` is `table`.
+        /// ID of the corresponding entry in `page.tables` when `type` is `table` and<br/>
+        /// `table_format` extracted tables (for example `html`).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

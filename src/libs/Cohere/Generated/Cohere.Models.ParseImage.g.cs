@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class ParseImage
     {
         /// <summary>
-        /// Unique identifier for the image within the page (for example `img-0`).
+        /// Unique identifier for the image within the page (for example `img-0.jpeg`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,7 +56,7 @@ namespace Cohere
         /// Initializes a new instance of the <see cref="ParseImage" /> class.
         /// </summary>
         /// <param name="id">
-        /// Unique identifier for the image within the page (for example `img-0`).
+        /// Unique identifier for the image within the page (for example `img-0.jpeg`).
         /// </param>
         /// <param name="imageAnnotation">
         /// Model-generated description / annotation of the image.
