@@ -224,15 +224,33 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.PromptResponseV2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocument))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType), TypeInfoPropertyName = "ParseDocumentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlock))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType), TypeInfoPropertyName = "ParseBlockType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTable))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableFormat), TypeInfoPropertyName = "ParseTableFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseOutputFormat), TypeInfoPropertyName = "ParseOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTextBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTextContentBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTextContentBlockType), TypeInfoPropertyName = "ParseTextContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageCategory), TypeInfoPropertyName = "ParseImageCategory2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBoundingBox))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBoundingBoxNormalized))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageContentBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageContentBlockType), TypeInfoPropertyName = "ParseImageContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableContentType), TypeInfoPropertyName = "ParseTableContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableContentBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableContentBlockType), TypeInfoPropertyName = "ParseTableContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlock), TypeInfoPropertyName = "ParseBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockDiscriminatorType), TypeInfoPropertyName = "ParseBlockDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlocksPageVariant))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlocksPageVariantType), TypeInfoPropertyName = "ParseBlocksPageVariantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseTable>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseMarkdownPage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParseImageBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseMarkdownPageVariant))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseMarkdownPageVariantType), TypeInfoPropertyName = "ParseMarkdownPageVariantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePage), TypeInfoPropertyName = "ParsePage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePageDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePageDiscriminatorType), TypeInfoPropertyName = "ParsePageDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.ParsePage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.SingleGeneration))]
@@ -496,6 +514,18 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ServiceUnavailableErrorBody7))]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotImplementedErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.TooManyRequestsErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InvalidTokenErrorBody7))]
@@ -514,18 +544,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody17))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody9))]
-    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody18))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody9))]
@@ -889,8 +907,18 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2?), TypeInfoPropertyName = "NullableStreamedChatResponseV22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.StreamedChatResponseV2DiscriminatorType?), TypeInfoPropertyName = "NullableStreamedChatResponseV2DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseDocumentType?), TypeInfoPropertyName = "NullableParseDocumentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockType?), TypeInfoPropertyName = "NullableParseBlockType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableFormat?), TypeInfoPropertyName = "NullableParseTableFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseOutputFormat?), TypeInfoPropertyName = "NullableParseOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTextContentBlockType?), TypeInfoPropertyName = "NullableParseTextContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageCategory?), TypeInfoPropertyName = "NullableParseImageCategory2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseImageContentBlockType?), TypeInfoPropertyName = "NullableParseImageContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableContentType?), TypeInfoPropertyName = "NullableParseTableContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseTableContentBlockType?), TypeInfoPropertyName = "NullableParseTableContentBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlock?), TypeInfoPropertyName = "NullableParseBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlockDiscriminatorType?), TypeInfoPropertyName = "NullableParseBlockDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseBlocksPageVariantType?), TypeInfoPropertyName = "NullableParseBlocksPageVariantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParseMarkdownPageVariantType?), TypeInfoPropertyName = "NullableParseMarkdownPageVariantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePage?), TypeInfoPropertyName = "NullableParsePage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ParsePageDiscriminatorType?), TypeInfoPropertyName = "NullableParsePageDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamEventEventType?), TypeInfoPropertyName = "NullableGenerateStreamEventEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamText?), TypeInfoPropertyName = "NullableGenerateStreamText2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GenerateStreamEnd?), TypeInfoPropertyName = "NullableGenerateStreamEnd2")]
@@ -967,8 +995,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.LogprobItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseTable>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParseImageBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ParsePage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.SingleGenerationTokenLikelihoodsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.SingleGeneration>))]
@@ -999,12 +1026,24 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.OneOf<string, global::Cohere.Document>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.EmbedInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.OneOf<string, global::Cohere.RerankDocument>>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ClassifyExample>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.RerankResponseResultsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.V2RerankResponseResultsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ClassifyResponseClassification>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Dataset>))]
-    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
     /// <summary>
@@ -1074,6 +1113,8 @@ namespace Cohere
             options.Converters.Add(new global::Cohere.JsonConverters.CitationEndEventJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.ChatMessageEndEventJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.StreamedChatResponseV2JsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParseBlockJsonConverter());
+            options.Converters.Add(new global::Cohere.JsonConverters.ParsePageJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamTextJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamEndJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.GenerateStreamErrorJsonConverter());
@@ -1257,13 +1298,45 @@ namespace Cohere
 
                     || typeToConvert == typeof(global::Cohere.ParseDocumentType?)
 
-                    || typeToConvert == typeof(global::Cohere.ParseBlockType)
+                    || typeToConvert == typeof(global::Cohere.ParseOutputFormat)
 
-                    || typeToConvert == typeof(global::Cohere.ParseBlockType?)
+                    || typeToConvert == typeof(global::Cohere.ParseOutputFormat?)
 
-                    || typeToConvert == typeof(global::Cohere.ParseTableFormat)
+                    || typeToConvert == typeof(global::Cohere.ParseTextContentBlockType)
 
-                    || typeToConvert == typeof(global::Cohere.ParseTableFormat?)
+                    || typeToConvert == typeof(global::Cohere.ParseTextContentBlockType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseImageCategory)
+
+                    || typeToConvert == typeof(global::Cohere.ParseImageCategory?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseImageContentBlockType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseImageContentBlockType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableContentType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableContentType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableContentBlockType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseTableContentBlockType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlockDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlockDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlocksPageVariantType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseBlocksPageVariantType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParseMarkdownPageVariantType)
+
+                    || typeToConvert == typeof(global::Cohere.ParseMarkdownPageVariantType?)
+
+                    || typeToConvert == typeof(global::Cohere.ParsePageDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Cohere.ParsePageDiscriminatorType?)
 
                     || typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType)
 
@@ -1816,24 +1889,104 @@ namespace Cohere
                     return new global::Cohere.JsonConverters.ParseDocumentTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Cohere.ParseBlockType))
+                if (typeToConvert == typeof(global::Cohere.ParseOutputFormat))
                 {
-                    return new global::Cohere.JsonConverters.ParseBlockTypeJsonConverter();
+                    return new global::Cohere.JsonConverters.ParseOutputFormatJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Cohere.ParseBlockType?))
+                if (typeToConvert == typeof(global::Cohere.ParseOutputFormat?))
                 {
-                    return new global::Cohere.JsonConverters.ParseBlockTypeNullableJsonConverter();
+                    return new global::Cohere.JsonConverters.ParseOutputFormatNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Cohere.ParseTableFormat))
+                if (typeToConvert == typeof(global::Cohere.ParseTextContentBlockType))
                 {
-                    return new global::Cohere.JsonConverters.ParseTableFormatJsonConverter();
+                    return new global::Cohere.JsonConverters.ParseTextContentBlockTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Cohere.ParseTableFormat?))
+                if (typeToConvert == typeof(global::Cohere.ParseTextContentBlockType?))
                 {
-                    return new global::Cohere.JsonConverters.ParseTableFormatNullableJsonConverter();
+                    return new global::Cohere.JsonConverters.ParseTextContentBlockTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseImageCategory))
+                {
+                    return new global::Cohere.JsonConverters.ParseImageCategoryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseImageCategory?))
+                {
+                    return new global::Cohere.JsonConverters.ParseImageCategoryNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseImageContentBlockType))
+                {
+                    return new global::Cohere.JsonConverters.ParseImageContentBlockTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseImageContentBlockType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseImageContentBlockTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableContentType))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableContentType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableContentBlockType))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableContentBlockTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseTableContentBlockType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseTableContentBlockTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlockDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlockDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlockDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlockDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlocksPageVariantType))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlocksPageVariantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseBlocksPageVariantType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseBlocksPageVariantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseMarkdownPageVariantType))
+                {
+                    return new global::Cohere.JsonConverters.ParseMarkdownPageVariantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParseMarkdownPageVariantType?))
+                {
+                    return new global::Cohere.JsonConverters.ParseMarkdownPageVariantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParsePageDiscriminatorType))
+                {
+                    return new global::Cohere.JsonConverters.ParsePageDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.ParsePageDiscriminatorType?))
+                {
+                    return new global::Cohere.JsonConverters.ParsePageDiscriminatorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Cohere.GenerateStreamEventEventType))
@@ -2232,7 +2385,7 @@ namespace Cohere
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[3];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -2271,6 +2424,8 @@ namespace Cohere
                     0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
 
                     1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    2 => new SourceGenerationContextChunk2(new global::System.Text.Json.JsonSerializerOptions()),
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

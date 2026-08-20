@@ -2,7 +2,7 @@
 
 namespace Cohere
 {
-    public sealed partial class ParseImage
+    public sealed partial class ParseTextContentBlock
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.ParseImage? FromJson(
+        public static global::Cohere.ParseTextContentBlock? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Cohere.ParseImage),
-                jsonSerializerContext) as global::Cohere.ParseImage;
+                typeof(global::Cohere.ParseTextContentBlock),
+                jsonSerializerContext) as global::Cohere.ParseTextContentBlock;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Cohere.ParseImage? FromJson(
+        public static global::Cohere.ParseTextContentBlock? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Cohere.ParseImage? FromJson(
+        public static global::Cohere.ParseTextContentBlock? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Cohere
                     global::Cohere.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.ParseImage>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.ParseTextContentBlock>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Cohere
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.ParseImage?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.ParseTextContentBlock?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Cohere.ParseImage),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.ParseImage;
+                typeof(global::Cohere.ParseTextContentBlock),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.ParseTextContentBlock;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.ParseImage?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.ParseTextContentBlock?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Cohere.ParseImage?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.ParseTextContentBlock?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Cohere
                     global::Cohere.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.ParseImage?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.ParseTextContentBlock?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

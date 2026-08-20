@@ -1,106 +1,303 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace Cohere
 {
     /// <summary>
-    /// A single parsed page.
+    /// A single parsed page. The payload shape depends on `output_format`.
     /// </summary>
-    public sealed partial class ParsePage
+    public readonly partial struct ParsePage : global::System.IEquatable<ParsePage>
     {
         /// <summary>
-        /// Zero-based page index.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        public global::Cohere.ParsePageDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Page content as markdown. Images are embedded as<br/>
-        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`. By default, tables are inlined as HTML.<br/>
-        /// When `table_format=html`, tables are replaced with placeholders such as<br/>
-        /// `[tbl-0.html](tbl-0.html)` that map to `tables`.
+        /// A parsed page with structured content blocks.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("markdown")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Markdown { get; set; }
-
-        /// <summary>
-        /// Ordered content blocks with optional bounding boxes. Only present when<br/>
-        /// `include_blocks` was `true` in the request. Text and image block `content`<br/>
-        /// match the corresponding span in `markdown`. Table block `content` is the<br/>
-        /// table HTML (see `ParseBlock`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("blocks")]
-        public global::System.Collections.Generic.IList<global::Cohere.ParseBlock>? Blocks { get; set; }
-
-        /// <summary>
-        /// Images extracted from the page.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        public global::System.Collections.Generic.IList<global::Cohere.ParseImage>? Images { get; set; }
-
-        /// <summary>
-        /// Tables extracted from the page. Only present when `table_format` is set<br/>
-        /// (for example `html`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
-        public global::System.Collections.Generic.IList<global::Cohere.ParseTable>? Tables { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParsePage" /> class.
-        /// </summary>
-        /// <param name="index">
-        /// Zero-based page index.
-        /// </param>
-        /// <param name="markdown">
-        /// Page content as markdown. Images are embedded as<br/>
-        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`. By default, tables are inlined as HTML.<br/>
-        /// When `table_format=html`, tables are replaced with placeholders such as<br/>
-        /// `[tbl-0.html](tbl-0.html)` that map to `tables`.
-        /// </param>
-        /// <param name="blocks">
-        /// Ordered content blocks with optional bounding boxes. Only present when<br/>
-        /// `include_blocks` was `true` in the request. Text and image block `content`<br/>
-        /// match the corresponding span in `markdown`. Table block `content` is the<br/>
-        /// table HTML (see `ParseBlock`).
-        /// </param>
-        /// <param name="images">
-        /// Images extracted from the page.
-        /// </param>
-        /// <param name="tables">
-        /// Tables extracted from the page. Only present when `table_format` is set<br/>
-        /// (for example `html`).
-        /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::Cohere.ParseBlocksPageVariant? Blocks { get; init; }
+#else
+        public global::Cohere.ParseBlocksPageVariant? Blocks { get; }
 #endif
-        public ParsePage(
-            int index,
-            string markdown,
-            global::System.Collections.Generic.IList<global::Cohere.ParseBlock>? blocks,
-            global::System.Collections.Generic.IList<global::Cohere.ParseImage>? images,
-            global::System.Collections.Generic.IList<global::Cohere.ParseTable>? tables)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Blocks))]
+#endif
+        public bool IsBlocks => Blocks != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBlocks(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ParseBlocksPageVariant? value)
         {
-            this.Index = index;
-            this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
-            this.Blocks = blocks;
-            this.Images = images;
-            this.Tables = tables;
+            value = Blocks;
+            return IsBlocks;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParsePage" /> class.
+        /// 
         /// </summary>
-        public ParsePage()
+        public global::Cohere.ParseBlocksPageVariant PickBlocks() => IsBlocks
+            ? Blocks!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Blocks' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A parsed page with markdown content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ParseMarkdownPageVariant? Markdown { get; init; }
+#else
+        public global::Cohere.ParseMarkdownPageVariant? Markdown { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Markdown))]
+#endif
+        public bool IsMarkdown => Markdown != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMarkdown(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ParseMarkdownPageVariant? value)
         {
+            value = Markdown;
+            return IsMarkdown;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ParseMarkdownPageVariant PickMarkdown() => IsMarkdown
+            ? Markdown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Markdown' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ParsePage(global::Cohere.ParseBlocksPageVariant value) => new ParsePage((global::Cohere.ParseBlocksPageVariant?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ParseBlocksPageVariant?(ParsePage @this) => @this.Blocks;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParsePage(global::Cohere.ParseBlocksPageVariant? value)
+        {
+            Blocks = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParsePage FromBlocks(global::Cohere.ParseBlocksPageVariant? value) => new ParsePage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ParsePage(global::Cohere.ParseMarkdownPageVariant value) => new ParsePage((global::Cohere.ParseMarkdownPageVariant?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ParseMarkdownPageVariant?(ParsePage @this) => @this.Markdown;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParsePage(global::Cohere.ParseMarkdownPageVariant? value)
+        {
+            Markdown = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParsePage FromMarkdown(global::Cohere.ParseMarkdownPageVariant? value) => new ParsePage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParsePage(
+            global::Cohere.ParsePageDiscriminatorType? type,
+            global::Cohere.ParseBlocksPageVariant? blocks,
+            global::Cohere.ParseMarkdownPageVariant? markdown
+            )
+        {
+            Type = type;
+
+            Blocks = blocks;
+            Markdown = markdown;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Markdown as object ??
+            Blocks as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Blocks?.ToString() ??
+            Markdown?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsBlocks && !IsMarkdown || !IsBlocks && IsMarkdown;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.ParseBlocksPageVariant, TResult>? blocks = null,
+            global::System.Func<global::Cohere.ParseMarkdownPageVariant, TResult>? markdown = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBlocks && blocks != null)
+            {
+                return blocks(Blocks!);
+            }
+            else if (IsMarkdown && markdown != null)
+            {
+                return markdown(Markdown!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.ParseBlocksPageVariant>? blocks = null,
+
+            global::System.Action<global::Cohere.ParseMarkdownPageVariant>? markdown = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBlocks)
+            {
+                blocks?.Invoke(Blocks!);
+            }
+            else if (IsMarkdown)
+            {
+                markdown?.Invoke(Markdown!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ParseBlocksPageVariant>? blocks = null,
+            global::System.Action<global::Cohere.ParseMarkdownPageVariant>? markdown = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBlocks)
+            {
+                blocks?.Invoke(Blocks!);
+            }
+            else if (IsMarkdown)
+            {
+                markdown?.Invoke(Markdown!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Blocks,
+                typeof(global::Cohere.ParseBlocksPageVariant),
+                Markdown,
+                typeof(global::Cohere.ParseMarkdownPageVariant),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ParsePage other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseBlocksPageVariant?>.Default.Equals(Blocks, other.Blocks) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseMarkdownPageVariant?>.Default.Equals(Markdown, other.Markdown) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ParsePage obj1, ParsePage obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ParsePage>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ParsePage obj1, ParsePage obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ParsePage o && Equals(o);
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Cohere
 {
-    public sealed partial class ParseBlock
+    public readonly partial struct ParseBlock
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Cohere
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Cohere.ParseBlock),
-                jsonSerializerContext) as global::Cohere.ParseBlock;
+                jsonSerializerContext) as global::Cohere.ParseBlock?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Cohere
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Cohere.ParseBlock),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.ParseBlock;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.ParseBlock?;
         }
 
         /// <summary>
