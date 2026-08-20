@@ -3,10 +3,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ParseTableFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseTableFormat?>
+    public sealed class ParseImageCategoryNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseImageCategory?>
     {
         /// <inheritdoc />
-        public override global::Cohere.ParseTableFormat? Read(
+        public override global::Cohere.ParseImageCategory? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Cohere.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Cohere.ParseTableFormatExtensions.ToEnum(stringValue);
+                        return global::Cohere.ParseImageCategoryExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Cohere.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Cohere.ParseTableFormat)numValue;
+                    return (global::Cohere.ParseImageCategory)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Cohere.ParseTableFormat?);
+                    return default(global::Cohere.ParseImageCategory?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.ParseTableFormat? value,
+            global::Cohere.ParseImageCategory? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Cohere.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Cohere.ParseTableFormatExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Cohere.ParseImageCategoryExtensions.ToValueString(value.Value));
             }
         }
     }

@@ -1,138 +1,386 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace Cohere
 {
     /// <summary>
-    /// A content block on a parsed page. Present when `include_blocks` is `true`.
+    /// A content block on a parsed page.
     /// </summary>
-    public sealed partial class ParseBlock
+    public readonly partial struct ParseBlock : global::System.IEquatable<ParseBlock>
     {
         /// <summary>
-        /// Block kind.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ParseBlockTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Cohere.ParseBlockType Type { get; set; }
+        public global::Cohere.ParseBlockDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Content for this block. For text blocks this is the extracted text (same<br/>
-        /// span as in `page.markdown`); for image blocks this is<br/>
-        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`; for table blocks this is the table<br/>
-        /// HTML. When `table_format=html`, `page.markdown` uses a placeholder such as<br/>
-        /// `[tbl-0.html](tbl-0.html)` while this field and `page.tables[].content`<br/>
-        /// still carry the HTML.
+        /// A text content block.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
-
-        /// <summary>
-        /// X coordinate of the top-left corner of the block bounding box.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_left_x")]
-        public int? TopLeftX { get; set; }
-
-        /// <summary>
-        /// Y coordinate of the top-left corner of the block bounding box.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_left_y")]
-        public int? TopLeftY { get; set; }
-
-        /// <summary>
-        /// X coordinate of the bottom-right corner of the block bounding box.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_x")]
-        public int? BottomRightX { get; set; }
-
-        /// <summary>
-        /// Y coordinate of the bottom-right corner of the block bounding box.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_y")]
-        public int? BottomRightY { get; set; }
-
-        /// <summary>
-        /// ID of the corresponding entry in `page.images` when `type` is `image`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
-        public string? ImageId { get; set; }
-
-        /// <summary>
-        /// ID of the corresponding entry in `page.tables` when `type` is `table` and<br/>
-        /// `table_format` extracted tables (for example `html`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("table_id")]
-        public string? TableId { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParseBlock" /> class.
-        /// </summary>
-        /// <param name="type">
-        /// Block kind.
-        /// </param>
-        /// <param name="content">
-        /// Content for this block. For text blocks this is the extracted text (same<br/>
-        /// span as in `page.markdown`); for image blocks this is<br/>
-        /// `![&lt;image_annotation&gt;](&lt;image_id&gt;)`; for table blocks this is the table<br/>
-        /// HTML. When `table_format=html`, `page.markdown` uses a placeholder such as<br/>
-        /// `[tbl-0.html](tbl-0.html)` while this field and `page.tables[].content`<br/>
-        /// still carry the HTML.
-        /// </param>
-        /// <param name="topLeftX">
-        /// X coordinate of the top-left corner of the block bounding box.
-        /// </param>
-        /// <param name="topLeftY">
-        /// Y coordinate of the top-left corner of the block bounding box.
-        /// </param>
-        /// <param name="bottomRightX">
-        /// X coordinate of the bottom-right corner of the block bounding box.
-        /// </param>
-        /// <param name="bottomRightY">
-        /// Y coordinate of the bottom-right corner of the block bounding box.
-        /// </param>
-        /// <param name="imageId">
-        /// ID of the corresponding entry in `page.images` when `type` is `image`.
-        /// </param>
-        /// <param name="tableId">
-        /// ID of the corresponding entry in `page.tables` when `type` is `table` and<br/>
-        /// `table_format` extracted tables (for example `html`).
-        /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::Cohere.ParseTextContentBlock? Text { get; init; }
+#else
+        public global::Cohere.ParseTextContentBlock? Text { get; }
 #endif
-        public ParseBlock(
-            global::Cohere.ParseBlockType type,
-            string content,
-            int? topLeftX,
-            int? topLeftY,
-            int? bottomRightX,
-            int? bottomRightY,
-            string? imageId,
-            string? tableId)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ParseTextContentBlock? value)
         {
-            this.Type = type;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.TopLeftX = topLeftX;
-            this.TopLeftY = topLeftY;
-            this.BottomRightX = bottomRightX;
-            this.BottomRightY = bottomRightY;
-            this.ImageId = imageId;
-            this.TableId = tableId;
+            value = Text;
+            return IsText;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParseBlock" /> class.
+        /// 
         /// </summary>
-        public ParseBlock()
+        public global::Cohere.ParseTextContentBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// An image content block.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ParseImageContentBlock? Image { get; init; }
+#else
+        public global::Cohere.ParseImageContentBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ParseImageContentBlock? value)
         {
+            value = Image;
+            return IsImage;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ParseImageContentBlock PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A table content block.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Cohere.ParseTableContentBlock? Table { get; init; }
+#else
+        public global::Cohere.ParseTableContentBlock? Table { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Table))]
+#endif
+        public bool IsTable => Table != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Cohere.ParseTableContentBlock? value)
+        {
+            value = Table;
+            return IsTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Cohere.ParseTableContentBlock PickTable() => IsTable
+            ? Table!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ParseBlock(global::Cohere.ParseTextContentBlock value) => new ParseBlock((global::Cohere.ParseTextContentBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ParseTextContentBlock?(ParseBlock @this) => @this.Text;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParseBlock(global::Cohere.ParseTextContentBlock? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParseBlock FromText(global::Cohere.ParseTextContentBlock? value) => new ParseBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ParseBlock(global::Cohere.ParseImageContentBlock value) => new ParseBlock((global::Cohere.ParseImageContentBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ParseImageContentBlock?(ParseBlock @this) => @this.Image;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParseBlock(global::Cohere.ParseImageContentBlock? value)
+        {
+            Image = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParseBlock FromImage(global::Cohere.ParseImageContentBlock? value) => new ParseBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ParseBlock(global::Cohere.ParseTableContentBlock value) => new ParseBlock((global::Cohere.ParseTableContentBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Cohere.ParseTableContentBlock?(ParseBlock @this) => @this.Table;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParseBlock(global::Cohere.ParseTableContentBlock? value)
+        {
+            Table = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParseBlock FromTable(global::Cohere.ParseTableContentBlock? value) => new ParseBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParseBlock(
+            global::Cohere.ParseBlockDiscriminatorType? type,
+            global::Cohere.ParseTextContentBlock? text,
+            global::Cohere.ParseImageContentBlock? image,
+            global::Cohere.ParseTableContentBlock? table
+            )
+        {
+            Type = type;
+
+            Text = text;
+            Image = image;
+            Table = table;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Table as object ??
+            Image as object ??
+            Text as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Text?.ToString() ??
+            Image?.ToString() ??
+            Table?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsText && !IsImage && !IsTable || !IsText && IsImage && !IsTable || !IsText && !IsImage && IsTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Cohere.ParseTextContentBlock, TResult>? text = null,
+            global::System.Func<global::Cohere.ParseImageContentBlock, TResult>? image = null,
+            global::System.Func<global::Cohere.ParseTableContentBlock, TResult>? table = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsImage && image != null)
+            {
+                return image(Image!);
+            }
+            else if (IsTable && table != null)
+            {
+                return table(Table!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Cohere.ParseTextContentBlock>? text = null,
+
+            global::System.Action<global::Cohere.ParseImageContentBlock>? image = null,
+
+            global::System.Action<global::Cohere.ParseTableContentBlock>? table = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsTable)
+            {
+                table?.Invoke(Table!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Cohere.ParseTextContentBlock>? text = null,
+            global::System.Action<global::Cohere.ParseImageContentBlock>? image = null,
+            global::System.Action<global::Cohere.ParseTableContentBlock>? table = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsTable)
+            {
+                table?.Invoke(Table!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Text,
+                typeof(global::Cohere.ParseTextContentBlock),
+                Image,
+                typeof(global::Cohere.ParseImageContentBlock),
+                Table,
+                typeof(global::Cohere.ParseTableContentBlock),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ParseBlock other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseTextContentBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseImageContentBlock?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseTableContentBlock?>.Default.Equals(Table, other.Table) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ParseBlock obj1, ParseBlock obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ParseBlock>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ParseBlock obj1, ParseBlock obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ParseBlock o && Equals(o);
+        }
     }
 }

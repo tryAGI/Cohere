@@ -3,10 +3,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ParseBlockTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseBlockType?>
+    public sealed class ParseBlocksPageVariantTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseBlocksPageVariantType?>
     {
         /// <inheritdoc />
-        public override global::Cohere.ParseBlockType? Read(
+        public override global::Cohere.ParseBlocksPageVariantType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Cohere.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Cohere.ParseBlockTypeExtensions.ToEnum(stringValue);
+                        return global::Cohere.ParseBlocksPageVariantTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Cohere.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Cohere.ParseBlockType)numValue;
+                    return (global::Cohere.ParseBlocksPageVariantType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Cohere.ParseBlockType?);
+                    return default(global::Cohere.ParseBlocksPageVariantType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.ParseBlockType? value,
+            global::Cohere.ParseBlocksPageVariantType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Cohere.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Cohere.ParseBlockTypeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Cohere.ParseBlocksPageVariantTypeExtensions.ToValueString(value.Value));
             }
         }
     }

@@ -3,10 +3,10 @@
 namespace Cohere.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ParseTableFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseTableFormat>
+    public sealed class ParseBlockDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Cohere.ParseBlockDiscriminatorType>
     {
         /// <inheritdoc />
-        public override global::Cohere.ParseTableFormat Read(
+        public override global::Cohere.ParseBlockDiscriminatorType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Cohere.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Cohere.ParseTableFormatExtensions.ToEnum(stringValue) ?? default;
+                        return global::Cohere.ParseBlockDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Cohere.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Cohere.ParseTableFormat)numValue;
+                    return (global::Cohere.ParseBlockDiscriminatorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Cohere.ParseTableFormat);
+                    return default(global::Cohere.ParseBlockDiscriminatorType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace Cohere.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Cohere.ParseTableFormat value,
+            global::Cohere.ParseBlockDiscriminatorType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Cohere.ParseTableFormatExtensions.ToValueString(value));
+            writer.WriteStringValue(global::Cohere.ParseBlockDiscriminatorTypeExtensions.ToValueString(value));
         }
     }
 }

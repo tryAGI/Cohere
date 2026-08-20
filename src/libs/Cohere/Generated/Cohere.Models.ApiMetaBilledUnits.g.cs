@@ -45,6 +45,12 @@ namespace Cohere
         public double? Classifications { get; set; }
 
         /// <summary>
+        /// The number of billed pages parsed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
+        public double? Pages { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +77,9 @@ namespace Cohere
         /// <param name="classifications">
         /// The number of billed classifications units.
         /// </param>
+        /// <param name="pages">
+        /// The number of billed pages parsed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +89,8 @@ namespace Cohere
             double? imageTokens,
             double? outputTokens,
             double? searchUnits,
-            double? classifications)
+            double? classifications,
+            double? pages)
         {
             this.Images = images;
             this.InputTokens = inputTokens;
@@ -88,6 +98,7 @@ namespace Cohere
             this.OutputTokens = outputTokens;
             this.SearchUnits = searchUnits;
             this.Classifications = classifications;
+            this.Pages = pages;
         }
 
         /// <summary>
