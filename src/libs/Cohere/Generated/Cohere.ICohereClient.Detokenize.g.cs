@@ -50,9 +50,9 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Cohere.DetokenizeResponse> DetokenizeAsync(
-            global::System.Collections.Generic.IList<int> tokens,
             string model,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<int>? tokens = default,
             global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

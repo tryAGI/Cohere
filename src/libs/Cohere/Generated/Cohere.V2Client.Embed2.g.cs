@@ -962,16 +962,16 @@ namespace Cohere
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Cohere.EmbedByTypeResponse> Embed2Async(
-            global::System.Collections.Generic.IList<string> texts,
-            string model,
             global::Cohere.EmbedInputType inputType,
-            global::System.Collections.Generic.IList<global::Cohere.EmbeddingType> embeddingTypes,
-            global::Cohere.V2EmbedRequestTruncate truncate,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? texts = default,
             global::System.Collections.Generic.IList<string>? images = default,
+            string? model = default,
             global::System.Collections.Generic.IList<global::Cohere.EmbedInput>? inputs = default,
             int? maxTokens = default,
             int? outputDimension = default,
+            global::System.Collections.Generic.IList<global::Cohere.EmbeddingType>? embeddingTypes = default,
+            global::Cohere.V2EmbedRequestTruncate? truncate = default,
             int? priority = default,
             global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
