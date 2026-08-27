@@ -15,12 +15,12 @@ namespace Cohere
     public readonly partial struct ResponseFormatV2 : global::System.IEquatable<ResponseFormatV2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ResponseFormatV2DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextResponseFormatV2? Text { get; init; }
@@ -29,7 +29,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -37,7 +37,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -50,14 +50,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextResponseFormatV2 PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.JsonResponseFormatV2? JsonObject { get; init; }
@@ -66,7 +66,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
@@ -74,7 +74,7 @@ namespace Cohere
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonObject(
 #if NET6_0_OR_GREATER
@@ -87,23 +87,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.JsonResponseFormatV2 PickJsonObject() => IsJsonObject
             ? JsonObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseFormatV2(global::Cohere.ChatTextResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.ChatTextResponseFormatV2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextResponseFormatV2?(ResponseFormatV2 @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseFormatV2(global::Cohere.ChatTextResponseFormatV2? value)
         {
@@ -111,22 +111,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseFormatV2 FromText(global::Cohere.ChatTextResponseFormatV2? value) => new ResponseFormatV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseFormatV2(global::Cohere.JsonResponseFormatV2 value) => new ResponseFormatV2((global::Cohere.JsonResponseFormatV2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.JsonResponseFormatV2?(ResponseFormatV2 @this) => @this.JsonObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseFormatV2(global::Cohere.JsonResponseFormatV2? value)
         {
@@ -134,12 +134,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseFormatV2 FromJsonObject(global::Cohere.JsonResponseFormatV2? value) => new ResponseFormatV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseFormatV2(
             global::Cohere.ResponseFormatV2DiscriminatorType? type,
@@ -154,23 +154,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             JsonObject as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            JsonObject?.ToString() 
+            JsonObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -178,7 +178,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextResponseFormatV2, TResult>? text = null,
@@ -203,7 +203,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextResponseFormatV2>? text = null,
@@ -227,7 +227,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatTextResponseFormatV2>? text = null,
@@ -250,7 +250,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -271,18 +271,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponseFormatV2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextResponseFormatV2?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.JsonResponseFormatV2?>.Default.Equals(JsonObject, other.JsonObject) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.JsonResponseFormatV2?>.Default.Equals(JsonObject, other.JsonObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponseFormatV2 obj1, ResponseFormatV2 obj2)
         {
@@ -290,7 +290,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponseFormatV2 obj1, ResponseFormatV2 obj2)
         {
@@ -298,7 +298,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -25,7 +25,7 @@ namespace Cohere
         public required string Message { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::Cohere.ToolCall>? ToolCalls { get; set; }

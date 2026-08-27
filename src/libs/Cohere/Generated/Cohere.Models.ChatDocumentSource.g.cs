@@ -15,7 +15,7 @@ namespace Cohere
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
         public object? Document { get; set; }

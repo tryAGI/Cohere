@@ -12,11 +12,11 @@ namespace Cohere
     public enum Chatv2RequestToolChoice
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class UpdateClusterJobResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

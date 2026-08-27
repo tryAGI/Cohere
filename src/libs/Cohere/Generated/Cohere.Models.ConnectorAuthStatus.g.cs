@@ -9,11 +9,11 @@ namespace Cohere
     public enum ConnectorAuthStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expired,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Valid,
     }

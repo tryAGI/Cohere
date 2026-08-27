@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Dataset
     {
@@ -65,13 +65,13 @@ namespace Cohere
         public string? Schema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_fields")]
         public global::System.Collections.Generic.IList<string>? RequiredFields { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preserve_fields")]
         public global::System.Collections.Generic.IList<string>? PreserveFields { get; set; }
@@ -95,7 +95,7 @@ namespace Cohere
         public global::Cohere.ParseInfo? ParseInfo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         public global::Cohere.Metrics? Metrics { get; set; }

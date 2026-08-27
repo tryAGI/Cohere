@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatTextGenerationEvent : global::System.IEquatable<ChatTextGenerationEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEvent? Stream { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStream => Stream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStream(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEvent PickStream() => IsStream
             ? Stream!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent8yyj22? Event8yyj22 { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event8yyj22))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsEvent8yyj22 => Event8yyj22 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent8yyj22(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextGenerationEvent8yyj22 PickEvent8yyj22() => IsEvent8yyj22
             ? Event8yyj22!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event8yyj22' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatTextGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatTextGenerationEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEvent?(ChatTextGenerationEvent @this) => @this.Stream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatTextGenerationEvent(global::Cohere.ChatStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatTextGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatTextGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEvent8yyj22 value) => new ChatTextGenerationEvent((global::Cohere.ChatTextGenerationEvent8yyj22?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextGenerationEvent8yyj22?(ChatTextGenerationEvent @this) => @this.Event8yyj22;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatTextGenerationEvent(global::Cohere.ChatTextGenerationEvent8yyj22? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatTextGenerationEvent FromEvent8yyj22(global::Cohere.ChatTextGenerationEvent8yyj22? value) => new ChatTextGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatTextGenerationEvent(
             global::Cohere.ChatStreamEvent? stream,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Event8yyj22 as object ??
-            Stream as object 
+            Stream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Stream?.ToString() ??
-            Event8yyj22?.ToString() 
+            Event8yyj22?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatTextGenerationEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextGenerationEvent8yyj22?>.Default.Equals(Event8yyj22, other.Event8yyj22) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextGenerationEvent8yyj22?>.Default.Equals(Event8yyj22, other.Event8yyj22)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatTextGenerationEvent obj1, ChatTextGenerationEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatTextGenerationEvent obj1, ChatTextGenerationEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

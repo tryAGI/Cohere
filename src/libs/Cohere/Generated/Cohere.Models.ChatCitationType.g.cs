@@ -9,11 +9,11 @@ namespace Cohere
     public enum ChatCitationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextContent,
     }

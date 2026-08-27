@@ -20,7 +20,7 @@ namespace Cohere.JsonConverters
                     {
                         return global::Cohere.ParseTableContentBlockTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

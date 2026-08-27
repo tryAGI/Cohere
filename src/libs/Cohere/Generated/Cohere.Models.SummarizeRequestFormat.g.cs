@@ -11,11 +11,11 @@ namespace Cohere
     public enum SummarizeRequestFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bullets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Paragraph,
     }

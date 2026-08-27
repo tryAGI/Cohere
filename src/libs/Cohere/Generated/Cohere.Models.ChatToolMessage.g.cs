@@ -17,7 +17,7 @@ namespace Cohere
         public required global::Cohere.ChatRole Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_results")]
         public global::System.Collections.Generic.IList<global::Cohere.ToolResult>? ToolResults { get; set; }

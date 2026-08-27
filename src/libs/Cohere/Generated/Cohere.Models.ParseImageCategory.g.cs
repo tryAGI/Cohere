@@ -9,19 +9,19 @@ namespace Cohere
     public enum ParseImageCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flowchart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Logo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Signature,
     }

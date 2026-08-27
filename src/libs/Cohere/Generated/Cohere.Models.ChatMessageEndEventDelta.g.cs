@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatMessageEndEventDelta
     {
@@ -28,7 +28,7 @@ namespace Cohere
         public global::Cohere.ChatFinishReason? FinishReason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::Cohere.Usage? Usage { get; set; }

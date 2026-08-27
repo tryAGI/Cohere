@@ -4,44 +4,44 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StreamedChatResponseDiscriminatorEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CitationGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Debug,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchQueriesGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchResults,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallsChunk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallsGeneration,
     }

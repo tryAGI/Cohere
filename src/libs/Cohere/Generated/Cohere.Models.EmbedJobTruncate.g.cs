@@ -9,11 +9,11 @@ namespace Cohere
     public enum EmbedJobTruncate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         End,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Start,
     }

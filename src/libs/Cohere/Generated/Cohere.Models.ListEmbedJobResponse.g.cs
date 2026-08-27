@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListEmbedJobResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embed_jobs")]
         public global::System.Collections.Generic.IList<global::Cohere.EmbedJob>? EmbedJobs { get; set; }

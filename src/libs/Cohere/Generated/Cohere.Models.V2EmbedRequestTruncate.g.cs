@@ -13,15 +13,15 @@ namespace Cohere
     public enum V2EmbedRequestTruncate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         End,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Start,
     }

@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerateStreamTextYai5v6
     {
@@ -22,7 +22,7 @@ namespace Cohere
         public int? Index { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_finished")]
         [global::System.Text.Json.Serialization.JsonRequired]

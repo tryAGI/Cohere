@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolMessageV2Role
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

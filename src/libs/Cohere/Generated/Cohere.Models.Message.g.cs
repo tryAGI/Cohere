@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Message : global::System.IEquatable<Message>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.MessageDiscriminatorRole? Role { get; }
 
@@ -25,7 +25,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chatbot))]
@@ -33,7 +33,7 @@ namespace Cohere
         public bool IsChatbot => Chatbot != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatbot(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatMessage PickChatbot() => IsChatbot
             ? Chatbot!
@@ -62,7 +62,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
@@ -70,7 +70,7 @@ namespace Cohere
         public bool IsTool => Tool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTool(
 #if NET6_0_OR_GREATER
@@ -83,23 +83,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolMessage PickTool() => IsTool
             ? Tool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Message(global::Cohere.ChatMessage value) => new Message((global::Cohere.ChatMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatMessage?(Message @this) => @this.Chatbot;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Message(global::Cohere.ChatMessage? value)
         {
@@ -107,22 +107,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Message FromChatbot(global::Cohere.ChatMessage? value) => new Message(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Message(global::Cohere.ChatToolMessage value) => new Message((global::Cohere.ChatToolMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolMessage?(Message @this) => @this.Tool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Message(global::Cohere.ChatToolMessage? value)
         {
@@ -130,12 +130,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Message FromTool(global::Cohere.ChatToolMessage? value) => new Message(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Message(
             global::Cohere.MessageDiscriminatorRole? role,
@@ -150,23 +150,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Tool as object ??
-            Chatbot as object 
+            Chatbot as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Chatbot?.ToString() ??
-            Tool?.ToString() 
+            Tool?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -174,7 +174,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatMessage, TResult>? chatbot = null,
@@ -199,7 +199,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatMessage>? chatbot = null,
@@ -223,7 +223,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatMessage>? chatbot = null,
@@ -246,7 +246,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -267,18 +267,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Message other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessage?>.Default.Equals(Chatbot, other.Chatbot) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolMessage?>.Default.Equals(Tool, other.Tool) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolMessage?>.Default.Equals(Tool, other.Tool)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Message obj1, Message obj2)
         {
@@ -286,7 +286,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Message obj1, Message obj2)
         {
@@ -294,7 +294,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Cohere
     public enum ChatMessageStartEventDeltaMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
     }

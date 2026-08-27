@@ -13,23 +13,23 @@ namespace Cohere
     public enum ChatStreamEndEventFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorToxic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
     }

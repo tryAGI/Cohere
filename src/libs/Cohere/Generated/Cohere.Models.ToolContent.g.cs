@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct ToolContent : global::System.IEquatable<ToolContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ToolContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextContent PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsDocument => Document != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDocument(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.DocumentContent PickDocument() => IsDocument
             ? Document!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolContent(global::Cohere.ChatTextContent value) => new ToolContent((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextContent?(ToolContent @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolContent(global::Cohere.ChatTextContent? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolContent FromText(global::Cohere.ChatTextContent? value) => new ToolContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolContent(global::Cohere.DocumentContent value) => new ToolContent((global::Cohere.DocumentContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.DocumentContent?(ToolContent @this) => @this.Document;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolContent(global::Cohere.DocumentContent? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolContent FromDocument(global::Cohere.DocumentContent? value) => new ToolContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolContent(
             global::Cohere.ToolContentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Document as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Document?.ToString() 
+            Document?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextContent, TResult>? text = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.DocumentContent?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.DocumentContent?>.Default.Equals(Document, other.Document)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolContent obj1, ToolContent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolContent obj1, ToolContent obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

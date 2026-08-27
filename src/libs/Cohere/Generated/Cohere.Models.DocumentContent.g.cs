@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class DocumentContent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.DocumentContentTypeJsonConverter))]

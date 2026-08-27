@@ -5,17 +5,17 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbedResponse : global::System.IEquatable<EmbedResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedResponseDiscriminatorResponseType? ResponseType { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedFloatsResponse? EmbeddingsFloats { get; init; }
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsFloats))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsEmbeddingsFloats => EmbeddingsFloats != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsFloats(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedFloatsResponse PickEmbeddingsFloats() => IsEmbeddingsFloats
             ? EmbeddingsFloats!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsFloats' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.EmbedByTypeResponse? EmbeddingsByType { get; init; }
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsEmbeddingsByType => EmbeddingsByType != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsByType(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedByTypeResponse PickEmbeddingsByType() => IsEmbeddingsByType
             ? EmbeddingsByType!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsByType' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbedResponse(global::Cohere.EmbedFloatsResponse value) => new EmbedResponse((global::Cohere.EmbedFloatsResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.EmbedFloatsResponse?(EmbedResponse @this) => @this.EmbeddingsFloats;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedResponse(global::Cohere.EmbedFloatsResponse? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbedResponse FromEmbeddingsFloats(global::Cohere.EmbedFloatsResponse? value) => new EmbedResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbedResponse(global::Cohere.EmbedByTypeResponse value) => new EmbedResponse((global::Cohere.EmbedByTypeResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.EmbedByTypeResponse?(EmbedResponse @this) => @this.EmbeddingsByType;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedResponse(global::Cohere.EmbedByTypeResponse? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbedResponse FromEmbeddingsByType(global::Cohere.EmbedByTypeResponse? value) => new EmbedResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedResponse(
             global::Cohere.EmbedResponseDiscriminatorResponseType? responseType,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EmbeddingsByType as object ??
-            EmbeddingsFloats as object 
+            EmbeddingsFloats as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EmbeddingsFloats?.ToString() ??
-            EmbeddingsByType?.ToString() 
+            EmbeddingsByType?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.EmbedFloatsResponse, TResult>? embeddingsFloats = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.EmbedFloatsResponse>? embeddingsFloats = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.EmbedFloatsResponse>? embeddingsFloats = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbedResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedFloatsResponse?>.Default.Equals(EmbeddingsFloats, other.EmbeddingsFloats) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedByTypeResponse?>.Default.Equals(EmbeddingsByType, other.EmbeddingsByType) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedByTypeResponse?>.Default.Equals(EmbeddingsByType, other.EmbeddingsByType)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbedResponse obj1, EmbedResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbedResponse obj1, EmbedResponse obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

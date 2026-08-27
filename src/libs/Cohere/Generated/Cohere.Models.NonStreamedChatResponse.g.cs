@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NonStreamedChatResponse
     {
@@ -58,14 +58,14 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.ChatSearchResult>? SearchResults { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.FinishReasonJsonConverter))]
         public global::Cohere.FinishReason? FinishReason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::Cohere.ToolCall>? ToolCalls { get; set; }
@@ -77,7 +77,7 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.Message>? ChatHistory { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

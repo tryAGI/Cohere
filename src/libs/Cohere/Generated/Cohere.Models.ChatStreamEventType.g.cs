@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class ChatStreamEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ChatStreamEventTypeTypeJsonConverter))]

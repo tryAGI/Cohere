@@ -9,7 +9,7 @@ namespace Cohere
     public enum ParseDocumentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
     }

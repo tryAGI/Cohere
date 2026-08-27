@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SystemMessageV2Role
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
     }

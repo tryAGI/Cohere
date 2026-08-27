@@ -17,7 +17,7 @@ namespace Cohere
         /// </summary>
         Contextual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
         /// <summary>

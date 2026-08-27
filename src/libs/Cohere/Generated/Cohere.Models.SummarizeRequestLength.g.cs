@@ -11,15 +11,15 @@ namespace Cohere
     public enum SummarizeRequestLength
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Long,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Short,
     }

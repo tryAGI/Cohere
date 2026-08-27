@@ -10,15 +10,15 @@ namespace Cohere
     public enum AuthTokenType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Basic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bearer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Noscheme,
     }

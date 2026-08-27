@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FinetuneDatasetMetrics
     {
@@ -45,19 +45,19 @@ namespace Cohere
         public double? EvalSizeBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reranker_data_metrics")]
         public global::Cohere.RerankerDataMetrics? RerankerDataMetrics { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_data_metrics")]
         public global::Cohere.ChatDataMetrics? ChatDataMetrics { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classify_data_metrics")]
         public global::Cohere.ClassifyDataMetrics? ClassifyDataMetrics { get; set; }

@@ -4,56 +4,56 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StreamedChatResponseV2DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CitationEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CitationStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Debug,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolPlanDelta,
     }

@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct ParseBlock : global::System.IEquatable<ParseBlock>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseBlockDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseTextContentBlock PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseImageContentBlock PickImage() => IsImage
             ? Image!
@@ -98,7 +98,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Table))]
@@ -106,7 +106,7 @@ namespace Cohere
         public bool IsTable => Table != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTable(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseTableContentBlock PickTable() => IsTable
             ? Table!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ParseBlock(global::Cohere.ParseTextContentBlock value) => new ParseBlock((global::Cohere.ParseTextContentBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ParseTextContentBlock?(ParseBlock @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParseBlock(global::Cohere.ParseTextContentBlock? value)
         {
@@ -143,22 +143,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ParseBlock FromText(global::Cohere.ParseTextContentBlock? value) => new ParseBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ParseBlock(global::Cohere.ParseImageContentBlock value) => new ParseBlock((global::Cohere.ParseImageContentBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ParseImageContentBlock?(ParseBlock @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParseBlock(global::Cohere.ParseImageContentBlock? value)
         {
@@ -166,22 +166,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ParseBlock FromImage(global::Cohere.ParseImageContentBlock? value) => new ParseBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ParseBlock(global::Cohere.ParseTableContentBlock value) => new ParseBlock((global::Cohere.ParseTableContentBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ParseTableContentBlock?(ParseBlock @this) => @this.Table;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParseBlock(global::Cohere.ParseTableContentBlock? value)
         {
@@ -189,12 +189,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ParseBlock FromTable(global::Cohere.ParseTableContentBlock? value) => new ParseBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParseBlock(
             global::Cohere.ParseBlockDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Table as object ??
             Image as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
             Image?.ToString() ??
-            Table?.ToString() 
+            Table?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ParseTextContentBlock, TResult>? text = null,
@@ -267,7 +267,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ParseTextContentBlock>? text = null,
@@ -297,7 +297,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ParseTextContentBlock>? text = null,
@@ -325,7 +325,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ParseBlock other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseTextContentBlock?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseImageContentBlock?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseTableContentBlock?>.Default.Equals(Table, other.Table) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseTableContentBlock?>.Default.Equals(Table, other.Table)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ParseBlock obj1, ParseBlock obj2)
         {
@@ -368,7 +368,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ParseBlock obj1, ParseBlock obj2)
         {
@@ -376,7 +376,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
