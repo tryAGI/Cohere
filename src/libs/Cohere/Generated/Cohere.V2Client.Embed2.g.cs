@@ -361,19 +361,19 @@ namespace Cohere
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::Cohere.NotFoundErrorBody5? __value_400 = null;
+                                global::Cohere.NotFoundErrorBody6? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Cohere.NotFoundErrorBody5.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Cohere.NotFoundErrorBody6.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Cohere.NotFoundErrorBody5.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Cohere.NotFoundErrorBody6.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -382,7 +382,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.NotFoundErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.NotFoundErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -398,19 +398,19 @@ namespace Cohere
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::Cohere.UnauthorizedErrorBody9? __value_401 = null;
+                                global::Cohere.UnauthorizedErrorBody11? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::Cohere.UnauthorizedErrorBody9.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::Cohere.UnauthorizedErrorBody11.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::Cohere.UnauthorizedErrorBody9.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::Cohere.UnauthorizedErrorBody11.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -419,7 +419,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.UnauthorizedErrorBody9>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.UnauthorizedErrorBody11>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -435,19 +435,19 @@ namespace Cohere
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Cohere.BadRequestErrorBody5? __value_403 = null;
+                                global::Cohere.BadRequestErrorBody6? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Cohere.BadRequestErrorBody5.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Cohere.BadRequestErrorBody6.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Cohere.BadRequestErrorBody5.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Cohere.BadRequestErrorBody6.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -456,7 +456,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.BadRequestErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.BadRequestErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -472,19 +472,19 @@ namespace Cohere
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::Cohere.UnauthorizedErrorBody10? __value_404 = null;
+                                global::Cohere.UnauthorizedErrorBody12? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::Cohere.UnauthorizedErrorBody10.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::Cohere.UnauthorizedErrorBody12.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::Cohere.UnauthorizedErrorBody10.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::Cohere.UnauthorizedErrorBody12.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -493,7 +493,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.UnauthorizedErrorBody10>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.UnauthorizedErrorBody12>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -509,19 +509,19 @@ namespace Cohere
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::Cohere.UnprocessableEntityErrorBody5? __value_422 = null;
+                                global::Cohere.UnprocessableEntityErrorBody6? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Cohere.UnprocessableEntityErrorBody5.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::Cohere.UnprocessableEntityErrorBody6.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::Cohere.UnprocessableEntityErrorBody5.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::Cohere.UnprocessableEntityErrorBody6.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -530,7 +530,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.UnprocessableEntityErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.UnprocessableEntityErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -546,19 +546,19 @@ namespace Cohere
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::Cohere.GatewayTimeoutErrorBody5? __value_429 = null;
+                                global::Cohere.GatewayTimeoutErrorBody6? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::Cohere.GatewayTimeoutErrorBody5.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::Cohere.GatewayTimeoutErrorBody6.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::Cohere.GatewayTimeoutErrorBody5.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::Cohere.GatewayTimeoutErrorBody6.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -567,7 +567,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.GatewayTimeoutErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.GatewayTimeoutErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -583,19 +583,19 @@ namespace Cohere
                             {
                                 string? __content_498 = null;
                                 global::System.Exception? __exception_498 = null;
-                                global::Cohere.ForbiddenErrorBody5? __value_498 = null;
+                                global::Cohere.ForbiddenErrorBody6? __value_498 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_498 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_498 = global::Cohere.ForbiddenErrorBody5.FromJson(__content_498, JsonSerializerContext);
+                                        __value_498 = global::Cohere.ForbiddenErrorBody6.FromJson(__content_498, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_498 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_498 = global::Cohere.ForbiddenErrorBody5.FromJson(__content_498, JsonSerializerContext);
+                                        __value_498 = global::Cohere.ForbiddenErrorBody6.FromJson(__content_498, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -604,7 +604,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.ForbiddenErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.ForbiddenErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_498,
@@ -620,19 +620,19 @@ namespace Cohere
                             {
                                 string? __content_499 = null;
                                 global::System.Exception? __exception_499 = null;
-                                global::Cohere.InternalServerErrorBody5? __value_499 = null;
+                                global::Cohere.InternalServerErrorBody6? __value_499 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_499 = global::Cohere.InternalServerErrorBody5.FromJson(__content_499, JsonSerializerContext);
+                                        __value_499 = global::Cohere.InternalServerErrorBody6.FromJson(__content_499, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_499 = global::Cohere.InternalServerErrorBody5.FromJson(__content_499, JsonSerializerContext);
+                                        __value_499 = global::Cohere.InternalServerErrorBody6.FromJson(__content_499, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -641,7 +641,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.InternalServerErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.InternalServerErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_499,
@@ -657,19 +657,19 @@ namespace Cohere
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::Cohere.ServiceUnavailableErrorBody5? __value_500 = null;
+                                global::Cohere.ServiceUnavailableErrorBody6? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::Cohere.ServiceUnavailableErrorBody5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::Cohere.ServiceUnavailableErrorBody6.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::Cohere.ServiceUnavailableErrorBody5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::Cohere.ServiceUnavailableErrorBody6.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -678,7 +678,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.ServiceUnavailableErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.ServiceUnavailableErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -694,19 +694,19 @@ namespace Cohere
                             {
                                 string? __content_501 = null;
                                 global::System.Exception? __exception_501 = null;
-                                global::Cohere.NotImplementedErrorBody5? __value_501 = null;
+                                global::Cohere.NotImplementedErrorBody6? __value_501 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_501 = global::Cohere.NotImplementedErrorBody5.FromJson(__content_501, JsonSerializerContext);
+                                        __value_501 = global::Cohere.NotImplementedErrorBody6.FromJson(__content_501, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_501 = global::Cohere.NotImplementedErrorBody5.FromJson(__content_501, JsonSerializerContext);
+                                        __value_501 = global::Cohere.NotImplementedErrorBody6.FromJson(__content_501, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -715,7 +715,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.NotImplementedErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.NotImplementedErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_501,
@@ -731,19 +731,19 @@ namespace Cohere
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::Cohere.TooManyRequestsErrorBody5? __value_503 = null;
+                                global::Cohere.TooManyRequestsErrorBody6? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::Cohere.TooManyRequestsErrorBody5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Cohere.TooManyRequestsErrorBody6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::Cohere.TooManyRequestsErrorBody5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Cohere.TooManyRequestsErrorBody6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -752,7 +752,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.TooManyRequestsErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.TooManyRequestsErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
@@ -768,19 +768,19 @@ namespace Cohere
                             {
                                 string? __content_504 = null;
                                 global::System.Exception? __exception_504 = null;
-                                global::Cohere.InvalidTokenErrorBody5? __value_504 = null;
+                                global::Cohere.InvalidTokenErrorBody6? __value_504 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_504 = global::Cohere.InvalidTokenErrorBody5.FromJson(__content_504, JsonSerializerContext);
+                                        __value_504 = global::Cohere.InvalidTokenErrorBody6.FromJson(__content_504, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_504 = global::Cohere.InvalidTokenErrorBody5.FromJson(__content_504, JsonSerializerContext);
+                                        __value_504 = global::Cohere.InvalidTokenErrorBody6.FromJson(__content_504, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -789,7 +789,7 @@ namespace Cohere
                                 }
 
 
-                                throw global::Cohere.ApiException<global::Cohere.InvalidTokenErrorBody5>.Create(
+                                throw global::Cohere.ApiException<global::Cohere.InvalidTokenErrorBody6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_504,
