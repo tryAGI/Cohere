@@ -4,18 +4,18 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatToolCallDeltaEvent2bxzoc
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public int? Index { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         public global::Cohere.ChatToolCallDeltaEventDelta? Delta { get; set; }

@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Metrics
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetune_dataset_metrics")]
         public global::Cohere.FinetuneDatasetMetrics? FinetuneDatasetMetrics { get; set; }

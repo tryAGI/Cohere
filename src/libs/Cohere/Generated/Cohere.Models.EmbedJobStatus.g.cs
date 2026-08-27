@@ -9,23 +9,23 @@ namespace Cohere
     public enum EmbedJobStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

@@ -23,7 +23,7 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<global::Cohere.ParsePage> Pages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

@@ -10,12 +10,12 @@ namespace Cohere
     public readonly partial struct GenerateStreamedResponse : global::System.IEquatable<GenerateStreamedResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamedResponseDiscriminatorEventType? EventType { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamText? TextGeneration { get; init; }
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextGeneration(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamText PickTextGeneration() => IsTextGeneration
             ? TextGeneration!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEnd? StreamEnd { get; init; }
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsStreamEnd => StreamEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamEnd(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamEnd PickStreamEnd() => IsStreamEnd
             ? StreamEnd!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError? StreamError { get; init; }
@@ -98,7 +98,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
@@ -106,7 +106,7 @@ namespace Cohere
         public bool IsStreamError => StreamError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamError(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamError PickStreamError() => IsStreamError
             ? StreamError!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamError' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamText value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamText?(GenerateStreamedResponse @this) => @this.TextGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamedResponse(global::Cohere.GenerateStreamText? value)
         {
@@ -143,22 +143,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamedResponse FromTextGeneration(global::Cohere.GenerateStreamText? value) => new GenerateStreamedResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamEnd value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamEnd?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamEnd?(GenerateStreamedResponse @this) => @this.StreamEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamedResponse(global::Cohere.GenerateStreamEnd? value)
         {
@@ -166,22 +166,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamedResponse FromStreamEnd(global::Cohere.GenerateStreamEnd? value) => new GenerateStreamedResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamedResponse(global::Cohere.GenerateStreamError value) => new GenerateStreamedResponse((global::Cohere.GenerateStreamError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamError?(GenerateStreamedResponse @this) => @this.StreamError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamedResponse(global::Cohere.GenerateStreamError? value)
         {
@@ -189,12 +189,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamedResponse FromStreamError(global::Cohere.GenerateStreamError? value) => new GenerateStreamedResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamedResponse(
             global::Cohere.GenerateStreamedResponseDiscriminatorEventType? eventType,
@@ -211,25 +211,25 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             StreamError as object ??
             StreamEnd as object ??
-            TextGeneration as object 
+            TextGeneration as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextGeneration?.ToString() ??
             StreamEnd?.ToString() ??
-            StreamError?.ToString() 
+            StreamError?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.GenerateStreamText?, TResult>? textGeneration = null,
@@ -267,7 +267,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.GenerateStreamText?>? textGeneration = null,
@@ -297,7 +297,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.GenerateStreamText?>? textGeneration = null,
@@ -325,7 +325,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GenerateStreamedResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamText?>.Default.Equals(TextGeneration, other.TextGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEnd?>.Default.Equals(StreamEnd, other.StreamEnd) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamError?>.Default.Equals(StreamError, other.StreamError) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamError?>.Default.Equals(StreamError, other.StreamError)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GenerateStreamedResponse obj1, GenerateStreamedResponse obj2)
         {
@@ -368,7 +368,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GenerateStreamedResponse obj1, GenerateStreamedResponse obj2)
         {
@@ -376,7 +376,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

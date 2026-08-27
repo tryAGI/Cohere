@@ -27,7 +27,7 @@ namespace Cohere
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         public global::System.Collections.Generic.IList<global::Cohere.Source>? Sources { get; set; }

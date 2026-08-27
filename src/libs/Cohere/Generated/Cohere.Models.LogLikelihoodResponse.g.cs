@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LogLikelihoodResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,7 +37,7 @@ namespace Cohere
         public required global::System.Collections.Generic.IList<global::Cohere.TokenLikelihood> RawPromptTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct ParsePage : global::System.IEquatable<ParsePage>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParsePageDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Blocks))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsBlocks => Blocks != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBlocks(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseBlocksPageVariant PickBlocks() => IsBlocks
             ? Blocks!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Markdown))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsMarkdown => Markdown != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMarkdown(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ParseMarkdownPageVariant PickMarkdown() => IsMarkdown
             ? Markdown!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Markdown' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ParsePage(global::Cohere.ParseBlocksPageVariant value) => new ParsePage((global::Cohere.ParseBlocksPageVariant?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ParseBlocksPageVariant?(ParsePage @this) => @this.Blocks;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParsePage(global::Cohere.ParseBlocksPageVariant? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ParsePage FromBlocks(global::Cohere.ParseBlocksPageVariant? value) => new ParsePage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ParsePage(global::Cohere.ParseMarkdownPageVariant value) => new ParsePage((global::Cohere.ParseMarkdownPageVariant?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ParseMarkdownPageVariant?(ParsePage @this) => @this.Markdown;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParsePage(global::Cohere.ParseMarkdownPageVariant? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ParsePage FromMarkdown(global::Cohere.ParseMarkdownPageVariant? value) => new ParsePage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParsePage(
             global::Cohere.ParsePageDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Markdown as object ??
-            Blocks as object 
+            Blocks as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Blocks?.ToString() ??
-            Markdown?.ToString() 
+            Markdown?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ParseBlocksPageVariant, TResult>? blocks = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ParseBlocksPageVariant>? blocks = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ParseBlocksPageVariant>? blocks = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ParsePage other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseBlocksPageVariant?>.Default.Equals(Blocks, other.Blocks) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseMarkdownPageVariant?>.Default.Equals(Markdown, other.Markdown) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ParseMarkdownPageVariant?>.Default.Equals(Markdown, other.Markdown)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ParsePage obj1, ParsePage obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ParsePage obj1, ParsePage obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

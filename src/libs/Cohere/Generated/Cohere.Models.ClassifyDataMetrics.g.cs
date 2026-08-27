@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ClassifyDataMetrics
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label_metrics")]
         public global::System.Collections.Generic.IList<global::Cohere.LabelMetric>? LabelMetrics { get; set; }

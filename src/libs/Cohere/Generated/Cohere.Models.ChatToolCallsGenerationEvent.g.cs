@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatToolCallsGenerationEvent : global::System.IEquatable<ChatToolCallsGenerationEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEvent? Stream { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStream => Stream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStream(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEvent PickStream() => IsStream
             ? Stream!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsGenerationEventNykiww? Nykiww { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Nykiww))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsNykiww => Nykiww != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNykiww(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallsGenerationEventNykiww PickNykiww() => IsNykiww
             ? Nykiww!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nykiww' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallsGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatToolCallsGenerationEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEvent?(ChatToolCallsGenerationEvent @this) => @this.Stream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsGenerationEvent(global::Cohere.ChatStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallsGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatToolCallsGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallsGenerationEvent(global::Cohere.ChatToolCallsGenerationEventNykiww value) => new ChatToolCallsGenerationEvent((global::Cohere.ChatToolCallsGenerationEventNykiww?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallsGenerationEventNykiww?(ChatToolCallsGenerationEvent @this) => @this.Nykiww;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsGenerationEvent(global::Cohere.ChatToolCallsGenerationEventNykiww? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallsGenerationEvent FromNykiww(global::Cohere.ChatToolCallsGenerationEventNykiww? value) => new ChatToolCallsGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsGenerationEvent(
             global::Cohere.ChatStreamEvent? stream,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Nykiww as object ??
-            Stream as object 
+            Stream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Stream?.ToString() ??
-            Nykiww?.ToString() 
+            Nykiww?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatToolCallsGenerationEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsGenerationEventNykiww?>.Default.Equals(Nykiww, other.Nykiww) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsGenerationEventNykiww?>.Default.Equals(Nykiww, other.Nykiww)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatToolCallsGenerationEvent obj1, ChatToolCallsGenerationEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatToolCallsGenerationEvent obj1, ChatToolCallsGenerationEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

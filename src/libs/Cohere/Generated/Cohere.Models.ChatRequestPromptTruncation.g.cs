@@ -24,7 +24,7 @@ namespace Cohere
         /// </summary>
         AutoPreserveOrder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
     }

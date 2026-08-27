@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EmbedFloatsResponseResponseType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmbeddingsByType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmbeddingsFloats,
     }

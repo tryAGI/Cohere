@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatToolCallsChunkEvent : global::System.IEquatable<ChatToolCallsChunkEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEvent? Stream { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStream => Stream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStream(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEvent PickStream() => IsStream
             ? Stream!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsChunkEventT7lliu? T7lliu { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T7lliu))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsT7lliu => T7lliu != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickT7lliu(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallsChunkEventT7lliu PickT7lliu() => IsT7lliu
             ? T7lliu!
             : throw new global::System.InvalidOperationException($"Expected union variant 'T7lliu' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallsChunkEvent(global::Cohere.ChatStreamEvent value) => new ChatToolCallsChunkEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEvent?(ChatToolCallsChunkEvent @this) => @this.Stream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsChunkEvent(global::Cohere.ChatStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallsChunkEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatToolCallsChunkEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallsChunkEvent(global::Cohere.ChatToolCallsChunkEventT7lliu value) => new ChatToolCallsChunkEvent((global::Cohere.ChatToolCallsChunkEventT7lliu?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallsChunkEventT7lliu?(ChatToolCallsChunkEvent @this) => @this.T7lliu;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsChunkEvent(global::Cohere.ChatToolCallsChunkEventT7lliu? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallsChunkEvent FromT7lliu(global::Cohere.ChatToolCallsChunkEventT7lliu? value) => new ChatToolCallsChunkEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallsChunkEvent(
             global::Cohere.ChatStreamEvent? stream,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             T7lliu as object ??
-            Stream as object 
+            Stream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Stream?.ToString() ??
-            T7lliu?.ToString() 
+            T7lliu?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatToolCallsChunkEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsChunkEventT7lliu?>.Default.Equals(T7lliu, other.T7lliu) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsChunkEventT7lliu?>.Default.Equals(T7lliu, other.T7lliu)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatToolCallsChunkEvent obj1, ChatToolCallsChunkEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatToolCallsChunkEvent obj1, ChatToolCallsChunkEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,21 +9,21 @@ namespace Cohere
     public sealed partial class ToolCallV2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.ToolCallV2TypeJsonConverter))]
         public global::Cohere.ToolCallV2Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         public global::Cohere.ToolCallV2Function? Function { get; set; }

@@ -10,11 +10,11 @@ namespace Cohere
     public enum ResponseFormatTypeV2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

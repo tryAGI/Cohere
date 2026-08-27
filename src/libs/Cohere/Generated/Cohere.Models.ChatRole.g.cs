@@ -9,19 +9,19 @@ namespace Cohere
     public enum ChatRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chatbot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

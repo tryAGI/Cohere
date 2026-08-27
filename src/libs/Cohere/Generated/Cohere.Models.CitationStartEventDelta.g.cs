@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CitationStartEventDelta
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public global::Cohere.CitationStartEventDeltaMessage? Message { get; set; }

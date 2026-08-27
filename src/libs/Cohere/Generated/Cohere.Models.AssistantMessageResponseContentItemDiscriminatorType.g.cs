@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AssistantMessageResponseContentItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
     }

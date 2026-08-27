@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SummarizeResponse
     {
@@ -21,7 +21,7 @@ namespace Cohere
         public string? Summary { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

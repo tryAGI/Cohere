@@ -40,38 +40,38 @@ namespace Cohere
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchesClient Batches { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedJobsClient EmbedJobs { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public V2Client V2 { get; }
 

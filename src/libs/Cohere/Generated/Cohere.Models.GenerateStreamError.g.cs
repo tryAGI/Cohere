@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GenerateStreamError : global::System.IEquatable<GenerateStreamError>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEvent? Event { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsEvent => Event != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
             ? Event!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamError49d5xw? Error49d5xw { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error49d5xw))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsError49d5xw => Error49d5xw != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError49d5xw(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamError49d5xw PickError49d5xw() => IsError49d5xw
             ? Error49d5xw!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error49d5xw' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamEvent value) => new GenerateStreamError((global::Cohere.GenerateStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamEvent?(GenerateStreamError @this) => @this.Event;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamError(global::Cohere.GenerateStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamError FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamError(global::Cohere.GenerateStreamError49d5xw value) => new GenerateStreamError((global::Cohere.GenerateStreamError49d5xw?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamError49d5xw?(GenerateStreamError @this) => @this.Error49d5xw;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamError(global::Cohere.GenerateStreamError49d5xw? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamError FromError49d5xw(global::Cohere.GenerateStreamError49d5xw? value) => new GenerateStreamError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamError(
             global::Cohere.GenerateStreamEvent? @event,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Error49d5xw as object ??
-            Event as object 
+            Event as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Event?.ToString() ??
-            Error49d5xw?.ToString() 
+            Error49d5xw?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.GenerateStreamEvent, TResult>? @event = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GenerateStreamError other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Event, other.Event) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamError49d5xw?>.Default.Equals(Error49d5xw, other.Error49d5xw) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamError49d5xw?>.Default.Equals(Error49d5xw, other.Error49d5xw)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GenerateStreamError obj1, GenerateStreamError obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GenerateStreamError obj1, GenerateStreamError obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

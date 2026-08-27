@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AssistantMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
     }

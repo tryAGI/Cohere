@@ -9,31 +9,31 @@ namespace Cohere
     public enum CompatibleEndpoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classify,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rerank,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summarize,
     }

@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class EmbedImageUrl
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

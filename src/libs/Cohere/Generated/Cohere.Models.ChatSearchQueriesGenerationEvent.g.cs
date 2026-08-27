@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatSearchQueriesGenerationEvent : global::System.IEquatable<ChatSearchQueriesGenerationEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEvent? Stream { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStream => Stream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStream(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEvent PickStream() => IsStream
             ? Stream!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent6evypd? Event6evypd { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event6evypd))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsEvent6evypd => Event6evypd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent6evypd(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatSearchQueriesGenerationEvent6evypd PickEvent6evypd() => IsEvent6evypd
             ? Event6evypd!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event6evypd' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatSearchQueriesGenerationEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEvent?(ChatSearchQueriesGenerationEvent @this) => @this.Stream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatSearchQueriesGenerationEvent(global::Cohere.ChatStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatSearchQueriesGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatSearchQueriesGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatSearchQueriesGenerationEvent(global::Cohere.ChatSearchQueriesGenerationEvent6evypd value) => new ChatSearchQueriesGenerationEvent((global::Cohere.ChatSearchQueriesGenerationEvent6evypd?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatSearchQueriesGenerationEvent6evypd?(ChatSearchQueriesGenerationEvent @this) => @this.Event6evypd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatSearchQueriesGenerationEvent(global::Cohere.ChatSearchQueriesGenerationEvent6evypd? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatSearchQueriesGenerationEvent FromEvent6evypd(global::Cohere.ChatSearchQueriesGenerationEvent6evypd? value) => new ChatSearchQueriesGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatSearchQueriesGenerationEvent(
             global::Cohere.ChatStreamEvent? stream,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Event6evypd as object ??
-            Stream as object 
+            Stream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Stream?.ToString() ??
-            Event6evypd?.ToString() 
+            Event6evypd?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatSearchQueriesGenerationEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatSearchQueriesGenerationEvent6evypd?>.Default.Equals(Event6evypd, other.Event6evypd) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatSearchQueriesGenerationEvent6evypd?>.Default.Equals(Event6evypd, other.Event6evypd)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatSearchQueriesGenerationEvent obj1, ChatSearchQueriesGenerationEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatSearchQueriesGenerationEvent obj1, ChatSearchQueriesGenerationEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

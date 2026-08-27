@@ -13,15 +13,15 @@ namespace Cohere
     public enum GenerateRequestTruncate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         End,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Start,
     }

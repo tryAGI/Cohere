@@ -4,19 +4,19 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EmbedFloatsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.EmbedFloatsResponseResponseTypeJsonConverter))]
         public global::Cohere.EmbedFloatsResponseResponseType? ResponseType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,7 +43,7 @@ namespace Cohere
         public global::System.Collections.Generic.IList<global::Cohere.Image>? Images { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

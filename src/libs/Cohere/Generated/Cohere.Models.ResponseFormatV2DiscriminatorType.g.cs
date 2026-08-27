@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponseFormatV2DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

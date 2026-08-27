@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolCallV2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

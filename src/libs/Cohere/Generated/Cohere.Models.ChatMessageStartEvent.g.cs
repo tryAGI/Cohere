@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamType))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStreamType => StreamType != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamType(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
             ? StreamType!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatMessageStartEventLsegeq? Lsegeq { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lsegeq))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsLsegeq => Lsegeq != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLsegeq(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatMessageStartEventLsegeq PickLsegeq() => IsLsegeq
             ? Lsegeq!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lsegeq' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageStartEvent(global::Cohere.ChatStreamEventType value) => new ChatMessageStartEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEventType?(ChatMessageStartEvent @this) => @this.StreamType;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageStartEvent(global::Cohere.ChatStreamEventType? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageStartEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatMessageStartEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageStartEvent(global::Cohere.ChatMessageStartEventLsegeq value) => new ChatMessageStartEvent((global::Cohere.ChatMessageStartEventLsegeq?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatMessageStartEventLsegeq?(ChatMessageStartEvent @this) => @this.Lsegeq;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageStartEvent(global::Cohere.ChatMessageStartEventLsegeq? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageStartEvent FromLsegeq(global::Cohere.ChatMessageStartEventLsegeq? value) => new ChatMessageStartEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageStartEvent(
             global::Cohere.ChatStreamEventType? streamType,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Lsegeq as object ??
-            StreamType as object 
+            StreamType as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StreamType?.ToString() ??
-            Lsegeq?.ToString() 
+            Lsegeq?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEventType, TResult>? streamType = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatMessageStartEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(StreamType, other.StreamType) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessageStartEventLsegeq?>.Default.Equals(Lsegeq, other.Lsegeq) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessageStartEventLsegeq?>.Default.Equals(Lsegeq, other.Lsegeq)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatMessageStartEvent obj1, ChatMessageStartEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatMessageStartEvent obj1, ChatMessageStartEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

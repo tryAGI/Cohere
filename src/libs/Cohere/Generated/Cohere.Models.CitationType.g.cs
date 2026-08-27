@@ -9,15 +9,15 @@ namespace Cohere
     public enum CitationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextContent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThinkingContent,
     }

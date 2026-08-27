@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ParsePageDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Markdown,
     }

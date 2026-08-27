@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatToolPlanDeltaEvent2obfex
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         public global::Cohere.ChatToolPlanDeltaEventDelta? Delta { get; set; }

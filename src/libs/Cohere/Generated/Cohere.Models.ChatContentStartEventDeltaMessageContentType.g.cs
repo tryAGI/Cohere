@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatContentStartEventDeltaMessageContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
     }

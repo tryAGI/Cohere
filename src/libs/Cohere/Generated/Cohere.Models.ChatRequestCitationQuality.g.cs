@@ -11,23 +11,23 @@ namespace Cohere
     public enum ChatRequestCitationQuality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accurate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
     }

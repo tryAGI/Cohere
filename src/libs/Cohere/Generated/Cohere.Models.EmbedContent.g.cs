@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbedContent : global::System.IEquatable<EmbedContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageUrl(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedImage PickImageUrl() => IsImageUrl
             ? ImageUrl!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.EmbedText PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbedContent(global::Cohere.EmbedImage value) => new EmbedContent((global::Cohere.EmbedImage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.EmbedImage?(EmbedContent @this) => @this.ImageUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedContent(global::Cohere.EmbedImage? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbedContent FromImageUrl(global::Cohere.EmbedImage? value) => new EmbedContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbedContent(global::Cohere.EmbedText value) => new EmbedContent((global::Cohere.EmbedText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.EmbedText?(EmbedContent @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedContent(global::Cohere.EmbedText? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbedContent FromText(global::Cohere.EmbedText? value) => new EmbedContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbedContent(
             global::Cohere.EmbedContentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Text as object ??
-            ImageUrl as object 
+            ImageUrl as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ImageUrl?.ToString() ??
-            Text?.ToString() 
+            Text?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.EmbedImage, TResult>? imageUrl = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.EmbedImage>? imageUrl = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.EmbedImage>? imageUrl = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbedContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedImage?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedText?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.EmbedText?>.Default.Equals(Text, other.Text)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbedContent obj1, EmbedContent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbedContent obj1, EmbedContent obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

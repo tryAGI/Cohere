@@ -17,7 +17,7 @@ namespace Cohere
         public required global::Cohere.ContentType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

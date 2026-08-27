@@ -4,19 +4,19 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SingleGenerationTokenLikelihoodsItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Token { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("likelihood")]
         [global::System.Text.Json.Serialization.JsonRequired]

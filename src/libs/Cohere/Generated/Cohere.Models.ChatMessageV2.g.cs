@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct ChatMessageV2 : global::System.IEquatable<ChatMessageV2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatMessageV2DiscriminatorRole? Role { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsUser => User != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUser(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.UserMessageV2 PickUser() => IsUser
             ? User!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsAssistant => Assistant != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAssistant(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.AssistantMessage PickAssistant() => IsAssistant
             ? Assistant!
@@ -98,7 +98,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
@@ -106,7 +106,7 @@ namespace Cohere
         public bool IsSystem => System != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSystem(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.SystemMessageV2 PickSystem() => IsSystem
             ? System!
@@ -135,7 +135,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
@@ -143,7 +143,7 @@ namespace Cohere
         public bool IsTool => Tool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTool(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ToolMessageV2 PickTool() => IsTool
             ? Tool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.UserMessageV2 value) => new ChatMessageV2((global::Cohere.UserMessageV2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.UserMessageV2?(ChatMessageV2 @this) => @this.User;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageV2(global::Cohere.UserMessageV2? value)
         {
@@ -180,22 +180,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageV2 FromUser(global::Cohere.UserMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.AssistantMessage value) => new ChatMessageV2((global::Cohere.AssistantMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.AssistantMessage?(ChatMessageV2 @this) => @this.Assistant;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageV2(global::Cohere.AssistantMessage? value)
         {
@@ -203,22 +203,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageV2 FromAssistant(global::Cohere.AssistantMessage? value) => new ChatMessageV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.SystemMessageV2 value) => new ChatMessageV2((global::Cohere.SystemMessageV2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.SystemMessageV2?(ChatMessageV2 @this) => @this.System;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageV2(global::Cohere.SystemMessageV2? value)
         {
@@ -226,22 +226,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageV2 FromSystem(global::Cohere.SystemMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessageV2(global::Cohere.ToolMessageV2 value) => new ChatMessageV2((global::Cohere.ToolMessageV2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ToolMessageV2?(ChatMessageV2 @this) => @this.Tool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageV2(global::Cohere.ToolMessageV2? value)
         {
@@ -249,12 +249,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessageV2 FromTool(global::Cohere.ToolMessageV2? value) => new ChatMessageV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessageV2(
             global::Cohere.ChatMessageV2DiscriminatorRole? role,
@@ -273,27 +273,27 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Tool as object ??
             System as object ??
             Assistant as object ??
-            User as object 
+            User as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             User?.ToString() ??
             Assistant?.ToString() ??
             System?.ToString() ??
-            Tool?.ToString() 
+            Tool?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.UserMessageV2, TResult>? user = null,
@@ -336,7 +336,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.UserMessageV2>? user = null,
@@ -372,7 +372,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.UserMessageV2>? user = null,
@@ -405,7 +405,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatMessageV2 other)
         {
@@ -438,12 +438,12 @@ namespace Cohere
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.UserMessageV2?>.Default.Equals(User, other.User) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.AssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.SystemMessageV2?>.Default.Equals(System, other.System) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolMessageV2?>.Default.Equals(Tool, other.Tool) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ToolMessageV2?>.Default.Equals(Tool, other.Tool)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatMessageV2 obj1, ChatMessageV2 obj2)
         {
@@ -451,7 +451,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatMessageV2 obj1, ChatMessageV2 obj2)
         {
@@ -459,7 +459,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

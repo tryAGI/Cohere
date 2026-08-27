@@ -9,27 +9,27 @@ namespace Cohere
     public enum DatasetValidationStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Validated,
     }

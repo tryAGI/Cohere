@@ -9,11 +9,11 @@ namespace Cohere
     public enum ContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

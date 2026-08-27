@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatStreamType))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsChatStreamType => ChatStreamType != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatStreamType(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEventType PickChatStreamType() => IsChatStreamType
             ? ChatStreamType!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.CitationEndEventFs3igt? Fs3igt { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fs3igt))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsFs3igt => Fs3igt != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFs3igt(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.CitationEndEventFs3igt PickFs3igt() => IsFs3igt
             ? Fs3igt!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fs3igt' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CitationEndEvent(global::Cohere.ChatStreamEventType value) => new CitationEndEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEventType?(CitationEndEvent @this) => @this.ChatStreamType;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CitationEndEvent(global::Cohere.ChatStreamEventType? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CitationEndEvent FromChatStreamType(global::Cohere.ChatStreamEventType? value) => new CitationEndEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CitationEndEvent(global::Cohere.CitationEndEventFs3igt value) => new CitationEndEvent((global::Cohere.CitationEndEventFs3igt?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.CitationEndEventFs3igt?(CitationEndEvent @this) => @this.Fs3igt;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CitationEndEvent(global::Cohere.CitationEndEventFs3igt? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CitationEndEvent FromFs3igt(global::Cohere.CitationEndEventFs3igt? value) => new CitationEndEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CitationEndEvent(
             global::Cohere.ChatStreamEventType? chatStreamType,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Fs3igt as object ??
-            ChatStreamType as object 
+            ChatStreamType as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatStreamType?.ToString() ??
-            Fs3igt?.ToString() 
+            Fs3igt?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEventType, TResult>? chatStreamType = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEventType>? chatStreamType = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEventType>? chatStreamType = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CitationEndEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(ChatStreamType, other.ChatStreamType) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.CitationEndEventFs3igt?>.Default.Equals(Fs3igt, other.Fs3igt) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.CitationEndEventFs3igt?>.Default.Equals(Fs3igt, other.Fs3igt)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CitationEndEvent obj1, CitationEndEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CitationEndEvent obj1, CitationEndEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

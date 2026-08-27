@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentVariant2Item : global::System.IEquatable<ContentVariant2Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextContent PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatThinkingContent PickThinking() => IsThinking
             ? Thinking!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Cohere.ChatTextContent value) => new ContentVariant2Item((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextContent?(ContentVariant2Item @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(global::Cohere.ChatTextContent? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentVariant2Item FromText(global::Cohere.ChatTextContent? value) => new ContentVariant2Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Cohere.ChatThinkingContent value) => new ContentVariant2Item((global::Cohere.ChatThinkingContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatThinkingContent?(ContentVariant2Item @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(global::Cohere.ChatThinkingContent? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentVariant2Item FromThinking(global::Cohere.ChatThinkingContent? value) => new ContentVariant2Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(
             global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Thinking as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Thinking?.ToString() 
+            Thinking?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextContent, TResult>? text = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentVariant2Item other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatThinkingContent?>.Default.Equals(Thinking, other.Thinking) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatThinkingContent?>.Default.Equals(Thinking, other.Thinking)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentVariant2Item obj1, ContentVariant2Item obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentVariant2Item obj1, ContentVariant2Item obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Cohere
     public enum ParseTableContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
     }

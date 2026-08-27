@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GenerateStreamText : global::System.IEquatable<GenerateStreamText>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEvent? Event { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsEvent => Event != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
             ? Event!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamTextYai5v6? Yai5v6 { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Yai5v6))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsYai5v6 => Yai5v6 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickYai5v6(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamTextYai5v6 PickYai5v6() => IsYai5v6
             ? Yai5v6!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Yai5v6' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamEvent value) => new GenerateStreamText((global::Cohere.GenerateStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamEvent?(GenerateStreamText @this) => @this.Event;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamText(global::Cohere.GenerateStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamText FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamText(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamText(global::Cohere.GenerateStreamTextYai5v6 value) => new GenerateStreamText((global::Cohere.GenerateStreamTextYai5v6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamTextYai5v6?(GenerateStreamText @this) => @this.Yai5v6;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamText(global::Cohere.GenerateStreamTextYai5v6? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamText FromYai5v6(global::Cohere.GenerateStreamTextYai5v6? value) => new GenerateStreamText(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamText(
             global::Cohere.GenerateStreamEvent? @event,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Yai5v6 as object ??
-            Event as object 
+            Event as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Event?.ToString() ??
-            Yai5v6?.ToString() 
+            Yai5v6?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.GenerateStreamEvent, TResult>? @event = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GenerateStreamText other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Event, other.Event) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamTextYai5v6?>.Default.Equals(Yai5v6, other.Yai5v6) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamTextYai5v6?>.Default.Equals(Yai5v6, other.Yai5v6)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GenerateStreamText obj1, GenerateStreamText obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GenerateStreamText obj1, GenerateStreamText obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

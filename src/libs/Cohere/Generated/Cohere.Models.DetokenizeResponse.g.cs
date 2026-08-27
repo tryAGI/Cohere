@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetokenizeResponse
     {
@@ -16,7 +16,7 @@ namespace Cohere
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Cohere.ApiMeta? Meta { get; set; }

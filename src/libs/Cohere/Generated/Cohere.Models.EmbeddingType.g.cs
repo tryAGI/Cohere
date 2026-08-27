@@ -9,27 +9,27 @@ namespace Cohere
     public enum EmbeddingType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Binary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Int8,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ubinary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uint8,
     }

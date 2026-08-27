@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SourceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Document,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

@@ -4,20 +4,20 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GenerateStreamedResponseDiscriminatorEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextGeneration,
     }

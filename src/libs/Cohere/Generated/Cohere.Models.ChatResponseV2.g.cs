@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatResponseV2
     {
@@ -37,13 +37,13 @@ namespace Cohere
         public required global::Cohere.AssistantMessageResponse Message { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::Cohere.Usage? Usage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::System.Collections.Generic.IList<global::Cohere.LogprobItem>? Logprobs { get; set; }

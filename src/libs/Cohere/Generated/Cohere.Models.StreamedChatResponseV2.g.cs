@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct StreamedChatResponseV2 : global::System.IEquatable<StreamedChatResponseV2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.StreamedChatResponseV2DiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStart))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStart(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatMessageStartEvent PickMessageStart() => IsMessageStart
             ? MessageStart!.Value
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentStart))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsContentStart => ContentStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentStart(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatContentStartEvent PickContentStart() => IsContentStart
             ? ContentStart!.Value
@@ -98,7 +98,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentDelta))]
@@ -106,7 +106,7 @@ namespace Cohere
         public bool IsContentDelta => ContentDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentDelta(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatContentDeltaEvent PickContentDelta() => IsContentDelta
             ? ContentDelta!.Value
@@ -135,7 +135,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentEnd))]
@@ -143,7 +143,7 @@ namespace Cohere
         public bool IsContentEnd => ContentEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentEnd(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatContentEndEvent PickContentEnd() => IsContentEnd
             ? ContentEnd!.Value
@@ -172,7 +172,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolPlanDelta))]
@@ -180,7 +180,7 @@ namespace Cohere
         public bool IsToolPlanDelta => ToolPlanDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolPlanDelta(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolPlanDeltaEvent PickToolPlanDelta() => IsToolPlanDelta
             ? ToolPlanDelta!.Value
@@ -209,7 +209,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallStart))]
@@ -217,7 +217,7 @@ namespace Cohere
         public bool IsToolCallStart => ToolCallStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCallStart(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallStartEvent PickToolCallStart() => IsToolCallStart
             ? ToolCallStart!.Value
@@ -246,7 +246,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallDelta))]
@@ -254,7 +254,7 @@ namespace Cohere
         public bool IsToolCallDelta => ToolCallDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCallDelta(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallDeltaEvent PickToolCallDelta() => IsToolCallDelta
             ? ToolCallDelta!.Value
@@ -283,7 +283,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallEnd))]
@@ -291,7 +291,7 @@ namespace Cohere
         public bool IsToolCallEnd => ToolCallEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCallEnd(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallEndEvent PickToolCallEnd() => IsToolCallEnd
             ? ToolCallEnd!.Value
@@ -320,7 +320,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageEnd))]
@@ -328,7 +328,7 @@ namespace Cohere
         public bool IsMessageEnd => MessageEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageEnd(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatMessageEndEvent PickMessageEnd() => IsMessageEnd
             ? MessageEnd!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageEnd' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
@@ -357,7 +357,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
@@ -365,7 +365,7 @@ namespace Cohere
         public bool IsDebug => Debug != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDebug(
 #if NET6_0_OR_GREATER
@@ -378,23 +378,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatDebugEvent PickDebug() => IsDebug
             ? Debug!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatMessageStartEvent?(StreamedChatResponseV2 @this) => @this.MessageStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatMessageStartEvent? value)
         {
@@ -402,22 +402,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromMessageStart(global::Cohere.ChatMessageStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatContentStartEvent?(StreamedChatResponseV2 @this) => @this.ContentStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatContentStartEvent? value)
         {
@@ -425,22 +425,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromContentStart(global::Cohere.ChatContentStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatContentDeltaEvent?(StreamedChatResponseV2 @this) => @this.ContentDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatContentDeltaEvent? value)
         {
@@ -448,22 +448,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromContentDelta(global::Cohere.ChatContentDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatContentEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatContentEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatContentEndEvent?(StreamedChatResponseV2 @this) => @this.ContentEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatContentEndEvent? value)
         {
@@ -471,22 +471,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromContentEnd(global::Cohere.ChatContentEndEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolPlanDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolPlanDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolPlanDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatToolPlanDeltaEvent? value)
         {
@@ -494,22 +494,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromToolPlanDelta(global::Cohere.ChatToolPlanDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallStartEvent?(StreamedChatResponseV2 @this) => @this.ToolCallStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatToolCallStartEvent? value)
         {
@@ -517,22 +517,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromToolCallStart(global::Cohere.ChatToolCallStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolCallDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatToolCallDeltaEvent? value)
         {
@@ -540,22 +540,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromToolCallDelta(global::Cohere.ChatToolCallDeltaEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatToolCallEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallEndEvent?(StreamedChatResponseV2 @this) => @this.ToolCallEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatToolCallEndEvent? value)
         {
@@ -563,22 +563,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromToolCallEnd(global::Cohere.ChatToolCallEndEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::Cohere.ChatMessageEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatMessageEndEvent?(StreamedChatResponseV2 @this) => @this.MessageEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatMessageEndEvent? value)
         {
@@ -586,22 +586,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromMessageEnd(global::Cohere.ChatMessageEndEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponseV2(global::Cohere.ChatDebugEvent value) => new StreamedChatResponseV2((global::Cohere.ChatDebugEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatDebugEvent?(StreamedChatResponseV2 @this) => @this.Debug;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(global::Cohere.ChatDebugEvent? value)
         {
@@ -609,12 +609,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponseV2 FromDebug(global::Cohere.ChatDebugEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponseV2(
             global::Cohere.StreamedChatResponseV2DiscriminatorType? type,
@@ -645,7 +645,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Debug as object ??
@@ -657,11 +657,11 @@ namespace Cohere
             ContentEnd as object ??
             ContentDelta as object ??
             ContentStart as object ??
-            MessageStart as object 
+            MessageStart as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessageStart?.ToString() ??
@@ -673,11 +673,11 @@ namespace Cohere
             ToolCallDelta?.ToString() ??
             ToolCallEnd?.ToString() ??
             MessageEnd?.ToString() ??
-            Debug?.ToString() 
+            Debug?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -685,7 +685,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatMessageStartEvent?, TResult>? messageStart = null,
@@ -750,7 +750,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatMessageStartEvent?>? messageStart = null,
@@ -822,7 +822,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatMessageStartEvent?>? messageStart = null,
@@ -885,7 +885,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -922,7 +922,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StreamedChatResponseV2 other)
         {
@@ -936,12 +936,12 @@ namespace Cohere
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallDeltaEvent?>.Default.Equals(ToolCallDelta, other.ToolCallDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallEndEvent?>.Default.Equals(ToolCallEnd, other.ToolCallEnd) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatMessageEndEvent?>.Default.Equals(MessageEnd, other.MessageEnd) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatDebugEvent?>.Default.Equals(Debug, other.Debug) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatDebugEvent?>.Default.Equals(Debug, other.Debug)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StreamedChatResponseV2 obj1, StreamedChatResponseV2 obj2)
         {
@@ -949,7 +949,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StreamedChatResponseV2 obj1, StreamedChatResponseV2 obj2)
         {
@@ -957,7 +957,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

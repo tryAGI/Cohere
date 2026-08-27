@@ -4,18 +4,18 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Usage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billed_units")]
         public global::Cohere.UsageBilledUnits? BilledUnits { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         public global::Cohere.UsageTokens? Tokens { get; set; }

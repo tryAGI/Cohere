@@ -9,11 +9,11 @@ namespace Cohere
     public enum EmbedContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamType))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStreamType => StreamType != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamType(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
             ? StreamType!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallDeltaEvent2bxzoc? Event2bxzoc { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event2bxzoc))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsEvent2bxzoc => Event2bxzoc != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent2bxzoc(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallDeltaEvent2bxzoc PickEvent2bxzoc() => IsEvent2bxzoc
             ? Event2bxzoc!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event2bxzoc' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallDeltaEvent(global::Cohere.ChatStreamEventType value) => new ChatToolCallDeltaEvent((global::Cohere.ChatStreamEventType?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEventType?(ChatToolCallDeltaEvent @this) => @this.StreamType;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallDeltaEvent(global::Cohere.ChatStreamEventType? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallDeltaEvent FromStreamType(global::Cohere.ChatStreamEventType? value) => new ChatToolCallDeltaEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolCallDeltaEvent(global::Cohere.ChatToolCallDeltaEvent2bxzoc value) => new ChatToolCallDeltaEvent((global::Cohere.ChatToolCallDeltaEvent2bxzoc?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallDeltaEvent2bxzoc?(ChatToolCallDeltaEvent @this) => @this.Event2bxzoc;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallDeltaEvent(global::Cohere.ChatToolCallDeltaEvent2bxzoc? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolCallDeltaEvent FromEvent2bxzoc(global::Cohere.ChatToolCallDeltaEvent2bxzoc? value) => new ChatToolCallDeltaEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolCallDeltaEvent(
             global::Cohere.ChatStreamEventType? streamType,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Event2bxzoc as object ??
-            StreamType as object 
+            StreamType as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StreamType?.ToString() ??
-            Event2bxzoc?.ToString() 
+            Event2bxzoc?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEventType, TResult>? streamType = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEventType>? streamType = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatToolCallDeltaEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEventType?>.Default.Equals(StreamType, other.StreamType) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallDeltaEvent2bxzoc?>.Default.Equals(Event2bxzoc, other.Event2bxzoc) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallDeltaEvent2bxzoc?>.Default.Equals(Event2bxzoc, other.Event2bxzoc)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatToolCallDeltaEvent obj1, ChatToolCallDeltaEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatToolCallDeltaEvent obj1, ChatToolCallDeltaEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

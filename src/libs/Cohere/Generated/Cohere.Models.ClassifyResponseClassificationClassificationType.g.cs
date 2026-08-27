@@ -9,11 +9,11 @@ namespace Cohere
     public enum ClassifyResponseClassificationClassificationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiLabel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleLabel,
     }

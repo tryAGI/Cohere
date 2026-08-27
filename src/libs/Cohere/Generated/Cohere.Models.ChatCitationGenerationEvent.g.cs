@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatCitationGenerationEvent : global::System.IEquatable<ChatCitationGenerationEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEvent? Stream { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsStream => Stream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStream(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEvent PickStream() => IsStream
             ? Stream!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lg3v2o))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsLg3v2o => Lg3v2o != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLg3v2o(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatCitationGenerationEventLg3v2o PickLg3v2o() => IsLg3v2o
             ? Lg3v2o!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lg3v2o' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCitationGenerationEvent(global::Cohere.ChatStreamEvent value) => new ChatCitationGenerationEvent((global::Cohere.ChatStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEvent?(ChatCitationGenerationEvent @this) => @this.Stream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCitationGenerationEvent(global::Cohere.ChatStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCitationGenerationEvent FromStream(global::Cohere.ChatStreamEvent? value) => new ChatCitationGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCitationGenerationEvent(global::Cohere.ChatCitationGenerationEventLg3v2o value) => new ChatCitationGenerationEvent((global::Cohere.ChatCitationGenerationEventLg3v2o?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatCitationGenerationEventLg3v2o?(ChatCitationGenerationEvent @this) => @this.Lg3v2o;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCitationGenerationEvent(global::Cohere.ChatCitationGenerationEventLg3v2o? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCitationGenerationEvent FromLg3v2o(global::Cohere.ChatCitationGenerationEventLg3v2o? value) => new ChatCitationGenerationEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCitationGenerationEvent(
             global::Cohere.ChatStreamEvent? stream,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Lg3v2o as object ??
-            Stream as object 
+            Stream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Stream?.ToString() ??
-            Lg3v2o?.ToString() 
+            Lg3v2o?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamEvent, TResult>? stream = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamEvent>? stream = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatCitationGenerationEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatCitationGenerationEventLg3v2o?>.Default.Equals(Lg3v2o, other.Lg3v2o) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatCitationGenerationEventLg3v2o?>.Default.Equals(Lg3v2o, other.Lg3v2o)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatCitationGenerationEvent obj1, ChatCitationGenerationEvent obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatCitationGenerationEvent obj1, ChatCitationGenerationEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

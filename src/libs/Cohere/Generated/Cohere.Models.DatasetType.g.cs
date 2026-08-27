@@ -9,51 +9,51 @@ namespace Cohere
     public enum DatasetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchChatInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchChatV2Input,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchEmbedV2Input,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchOpenaiChatInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatFinetuneInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClusterOutliers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClusterResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmbedInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmbedResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiLabelClassificationFinetuneInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RerankerFinetuneInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleLabelClassificationFinetuneInput,
     }

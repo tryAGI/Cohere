@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DocumentContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Document,
     }

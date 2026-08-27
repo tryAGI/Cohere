@@ -5,12 +5,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GenerateStreamEnd : global::System.IEquatable<GenerateStreamEnd>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEvent? Event { get; init; }
@@ -19,7 +19,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event))]
@@ -27,7 +27,7 @@ namespace Cohere
         public bool IsEvent => Event != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvent(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
             ? Event!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.GenerateStreamEndUbzr0t? Ubzr0t { get; init; }
@@ -56,7 +56,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ubzr0t))]
@@ -64,7 +64,7 @@ namespace Cohere
         public bool IsUbzr0t => Ubzr0t != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUbzr0t(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.GenerateStreamEndUbzr0t PickUbzr0t() => IsUbzr0t
             ? Ubzr0t!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ubzr0t' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamEnd(global::Cohere.GenerateStreamEvent value) => new GenerateStreamEnd((global::Cohere.GenerateStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamEvent?(GenerateStreamEnd @this) => @this.Event;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamEnd(global::Cohere.GenerateStreamEvent? value)
         {
@@ -101,22 +101,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamEnd FromEvent(global::Cohere.GenerateStreamEvent? value) => new GenerateStreamEnd(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerateStreamEnd(global::Cohere.GenerateStreamEndUbzr0t value) => new GenerateStreamEnd((global::Cohere.GenerateStreamEndUbzr0t?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.GenerateStreamEndUbzr0t?(GenerateStreamEnd @this) => @this.Ubzr0t;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamEnd(global::Cohere.GenerateStreamEndUbzr0t? value)
         {
@@ -124,12 +124,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerateStreamEnd FromUbzr0t(global::Cohere.GenerateStreamEndUbzr0t? value) => new GenerateStreamEnd(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerateStreamEnd(
             global::Cohere.GenerateStreamEvent? @event,
@@ -141,23 +141,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Ubzr0t as object ??
-            Event as object 
+            Event as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Event?.ToString() ??
-            Ubzr0t?.ToString() 
+            Ubzr0t?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.GenerateStreamEvent, TResult>? @event = null,
@@ -190,7 +190,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -214,7 +214,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.GenerateStreamEvent>? @event = null,
@@ -237,7 +237,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GenerateStreamEnd other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEvent?>.Default.Equals(Event, other.Event) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEndUbzr0t?>.Default.Equals(Ubzr0t, other.Ubzr0t) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.GenerateStreamEndUbzr0t?>.Default.Equals(Ubzr0t, other.Ubzr0t)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GenerateStreamEnd obj1, GenerateStreamEnd obj2)
         {
@@ -277,7 +277,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GenerateStreamEnd obj1, GenerateStreamEnd obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

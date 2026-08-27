@@ -4,40 +4,40 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorToxic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopSequence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserCancel,
     }

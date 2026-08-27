@@ -16,11 +16,11 @@ namespace Cohere
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

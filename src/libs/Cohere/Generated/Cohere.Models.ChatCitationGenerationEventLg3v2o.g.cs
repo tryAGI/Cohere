@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatCitationGenerationEventLg3v2o
     {

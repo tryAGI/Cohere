@@ -9,7 +9,7 @@ namespace Cohere
     public sealed partial class UserMessageV2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.UserMessageV2RoleJsonConverter))]

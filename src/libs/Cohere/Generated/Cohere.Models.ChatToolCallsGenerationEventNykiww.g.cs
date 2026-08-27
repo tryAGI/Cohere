@@ -4,7 +4,7 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatToolCallsGenerationEventNykiww
     {
@@ -15,7 +15,7 @@ namespace Cohere
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]

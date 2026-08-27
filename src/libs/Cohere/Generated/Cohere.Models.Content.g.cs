@@ -10,7 +10,7 @@ namespace Cohere
     public readonly partial struct Content : global::System.IEquatable<Content>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextContent PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageUrl(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ImageContent PickImageUrl() => IsImageUrl
             ? ImageUrl!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Content(global::Cohere.ChatTextContent value) => new Content((global::Cohere.ChatTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextContent?(Content @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content(global::Cohere.ChatTextContent? value)
         {
@@ -106,22 +106,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Content FromText(global::Cohere.ChatTextContent? value) => new Content(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Content(global::Cohere.ImageContent value) => new Content((global::Cohere.ImageContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ImageContent?(Content @this) => @this.ImageUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content(global::Cohere.ImageContent? value)
         {
@@ -129,12 +129,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Content FromImageUrl(global::Cohere.ImageContent? value) => new Content(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content(
             global::Cohere.ContentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ImageUrl as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            ImageUrl?.ToString() 
+            ImageUrl?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatTextContent, TResult>? text = null,
@@ -198,7 +198,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -222,7 +222,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatTextContent>? text = null,
@@ -245,7 +245,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Content other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ImageContent?>.Default.Equals(ImageUrl, other.ImageUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ImageContent?>.Default.Equals(ImageUrl, other.ImageUrl)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Content obj1, Content obj2)
         {
@@ -285,7 +285,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Content obj1, Content obj2)
         {
@@ -293,7 +293,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,12 +10,12 @@ namespace Cohere
     public readonly partial struct StreamedChatResponse : global::System.IEquatable<StreamedChatResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.StreamedChatResponseDiscriminatorEventType? EventType { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamStartEvent? StreamStart { get; init; }
@@ -24,7 +24,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamStart))]
@@ -32,7 +32,7 @@ namespace Cohere
         public bool IsStreamStart => StreamStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamStart(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamStartEvent PickStreamStart() => IsStreamStart
             ? StreamStart!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStart' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
@@ -61,7 +61,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
@@ -69,7 +69,7 @@ namespace Cohere
         public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchQueriesGeneration(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatSearchQueriesGenerationEvent PickSearchQueriesGeneration() => IsSearchQueriesGeneration
             ? SearchQueriesGeneration!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchQueriesGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatSearchResultsEvent? SearchResults { get; init; }
@@ -98,7 +98,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
@@ -106,7 +106,7 @@ namespace Cohere
         public bool IsSearchResults => SearchResults != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchResults(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatSearchResultsEvent PickSearchResults() => IsSearchResults
             ? SearchResults!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResults' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatTextGenerationEvent? TextGeneration { get; init; }
@@ -135,7 +135,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
@@ -143,7 +143,7 @@ namespace Cohere
         public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextGeneration(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatTextGenerationEvent PickTextGeneration() => IsTextGeneration
             ? TextGeneration!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatCitationGenerationEvent? CitationGeneration { get; init; }
@@ -172,7 +172,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
@@ -180,7 +180,7 @@ namespace Cohere
         public bool IsCitationGeneration => CitationGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCitationGeneration(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatCitationGenerationEvent PickCitationGeneration() => IsCitationGeneration
             ? CitationGeneration!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
@@ -209,7 +209,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
@@ -217,7 +217,7 @@ namespace Cohere
         public bool IsToolCallsGeneration => ToolCallsGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCallsGeneration(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallsGenerationEvent PickToolCallsGeneration() => IsToolCallsGeneration
             ? ToolCallsGeneration!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatStreamEndEvent? StreamEnd { get; init; }
@@ -246,7 +246,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
@@ -254,7 +254,7 @@ namespace Cohere
         public bool IsStreamEnd => StreamEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStreamEnd(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatStreamEndEvent PickStreamEnd() => IsStreamEnd
             ? StreamEnd!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
@@ -283,7 +283,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
@@ -291,7 +291,7 @@ namespace Cohere
         public bool IsToolCallsChunk => ToolCallsChunk != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCallsChunk(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatToolCallsChunkEvent PickToolCallsChunk() => IsToolCallsChunk
             ? ToolCallsChunk!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsChunk' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Cohere.ChatDebugEvent? Debug { get; init; }
@@ -320,7 +320,7 @@ namespace Cohere
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
@@ -328,7 +328,7 @@ namespace Cohere
         public bool IsDebug => Debug != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDebug(
 #if NET6_0_OR_GREATER
@@ -341,23 +341,23 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Cohere.ChatDebugEvent PickDebug() => IsDebug
             ? Debug!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatStreamStartEvent value) => new StreamedChatResponse((global::Cohere.ChatStreamStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamStartEvent?(StreamedChatResponse @this) => @this.StreamStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatStreamStartEvent? value)
         {
@@ -365,22 +365,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromStreamStart(global::Cohere.ChatStreamStartEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatSearchQueriesGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatSearchQueriesGenerationEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatSearchQueriesGenerationEvent?(StreamedChatResponse @this) => @this.SearchQueriesGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatSearchQueriesGenerationEvent? value)
         {
@@ -388,22 +388,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromSearchQueriesGeneration(global::Cohere.ChatSearchQueriesGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatSearchResultsEvent value) => new StreamedChatResponse((global::Cohere.ChatSearchResultsEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatSearchResultsEvent?(StreamedChatResponse @this) => @this.SearchResults;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatSearchResultsEvent? value)
         {
@@ -411,22 +411,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromSearchResults(global::Cohere.ChatSearchResultsEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatTextGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatTextGenerationEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatTextGenerationEvent?(StreamedChatResponse @this) => @this.TextGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatTextGenerationEvent? value)
         {
@@ -434,22 +434,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromTextGeneration(global::Cohere.ChatTextGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatCitationGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatCitationGenerationEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatCitationGenerationEvent?(StreamedChatResponse @this) => @this.CitationGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatCitationGenerationEvent? value)
         {
@@ -457,22 +457,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromCitationGeneration(global::Cohere.ChatCitationGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatToolCallsGenerationEvent value) => new StreamedChatResponse((global::Cohere.ChatToolCallsGenerationEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallsGenerationEvent?(StreamedChatResponse @this) => @this.ToolCallsGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatToolCallsGenerationEvent? value)
         {
@@ -480,22 +480,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromToolCallsGeneration(global::Cohere.ChatToolCallsGenerationEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatStreamEndEvent value) => new StreamedChatResponse((global::Cohere.ChatStreamEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatStreamEndEvent?(StreamedChatResponse @this) => @this.StreamEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatStreamEndEvent? value)
         {
@@ -503,22 +503,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromStreamEnd(global::Cohere.ChatStreamEndEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatToolCallsChunkEvent value) => new StreamedChatResponse((global::Cohere.ChatToolCallsChunkEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatToolCallsChunkEvent?(StreamedChatResponse @this) => @this.ToolCallsChunk;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatToolCallsChunkEvent? value)
         {
@@ -526,22 +526,22 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromToolCallsChunk(global::Cohere.ChatToolCallsChunkEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StreamedChatResponse(global::Cohere.ChatDebugEvent value) => new StreamedChatResponse((global::Cohere.ChatDebugEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Cohere.ChatDebugEvent?(StreamedChatResponse @this) => @this.Debug;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(global::Cohere.ChatDebugEvent? value)
         {
@@ -549,12 +549,12 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StreamedChatResponse FromDebug(global::Cohere.ChatDebugEvent? value) => new StreamedChatResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamedChatResponse(
             global::Cohere.StreamedChatResponseDiscriminatorEventType? eventType,
@@ -583,7 +583,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Debug as object ??
@@ -594,11 +594,11 @@ namespace Cohere
             TextGeneration as object ??
             SearchResults as object ??
             SearchQueriesGeneration as object ??
-            StreamStart as object 
+            StreamStart as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StreamStart?.ToString() ??
@@ -609,11 +609,11 @@ namespace Cohere
             ToolCallsGeneration?.ToString() ??
             StreamEnd?.ToString() ??
             ToolCallsChunk?.ToString() ??
-            Debug?.ToString() 
+            Debug?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -621,7 +621,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Cohere.ChatStreamStartEvent?, TResult>? streamStart = null,
@@ -681,7 +681,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Cohere.ChatStreamStartEvent?>? streamStart = null,
@@ -747,7 +747,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Cohere.ChatStreamStartEvent?>? streamStart = null,
@@ -805,7 +805,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -840,7 +840,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StreamedChatResponse other)
         {
@@ -853,12 +853,12 @@ namespace Cohere
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsGenerationEvent?>.Default.Equals(ToolCallsGeneration, other.ToolCallsGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatStreamEndEvent?>.Default.Equals(StreamEnd, other.StreamEnd) &&
                 global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatToolCallsChunkEvent?>.Default.Equals(ToolCallsChunk, other.ToolCallsChunk) &&
-                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatDebugEvent?>.Default.Equals(Debug, other.Debug) 
+                global::System.Collections.Generic.EqualityComparer<global::Cohere.ChatDebugEvent?>.Default.Equals(Debug, other.Debug)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StreamedChatResponse obj1, StreamedChatResponse obj2)
         {
@@ -866,7 +866,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StreamedChatResponse obj1, StreamedChatResponse obj2)
         {
@@ -874,7 +874,7 @@ namespace Cohere
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -20,7 +20,7 @@ namespace Cohere.JsonConverters
                     {
                         return global::Cohere.SummarizeRequestExtractivenessExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

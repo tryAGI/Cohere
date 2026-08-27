@@ -4,16 +4,16 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

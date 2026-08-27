@@ -4,19 +4,19 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateClusterJobRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EmbeddingsUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dataset_id")]
         public string? InputDatasetId { get; set; }
@@ -43,7 +43,7 @@ namespace Cohere
         public bool? IsDeterministic { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_descriptions")]
         public bool? GenerateDescriptions { get; set; }

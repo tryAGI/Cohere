@@ -4,12 +4,12 @@
 namespace Cohere
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ParseBlocksPageVariantType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocks,
     }

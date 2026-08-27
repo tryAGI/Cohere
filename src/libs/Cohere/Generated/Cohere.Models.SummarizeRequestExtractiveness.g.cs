@@ -11,15 +11,15 @@ namespace Cohere
     public enum SummarizeRequestExtractiveness
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
     }
