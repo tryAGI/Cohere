@@ -6,7 +6,11 @@ namespace Cohere
     /// <summary>
     /// Describes the truncation strategy for when the prompt exceeds the context length. Defaults to 'none'
     /// </summary>
-    public sealed partial class TruncationStrategy
+    [global::System.Text.Json.Serialization.JsonPolymorphic(
+        TypeDiscriminatorPropertyName = "type",
+        IgnoreUnrecognizedTypeDiscriminators = true,
+        UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+    public partial class TruncationStrategy
     {
 
         /// <summary>

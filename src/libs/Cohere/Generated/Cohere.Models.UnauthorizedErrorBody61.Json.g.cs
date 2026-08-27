@@ -2,7 +2,7 @@
 
 namespace Cohere
 {
-    public partial class TruncationStrategy
+    public sealed partial class UnauthorizedErrorBody61
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -12,7 +12,7 @@ namespace Cohere
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                typeof(TruncationStrategy),
+                this.GetType(),
                 jsonSerializerContext);
         }
 
@@ -41,32 +41,29 @@ namespace Cohere
 
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                typeof(TruncationStrategy),
                 jsonSerializerOptions);
         }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static T? FromJson<T>(
+        public static global::Cohere.UnauthorizedErrorBody61? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            where T : TruncationStrategy
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(TruncationStrategy),
-                jsonSerializerContext) as T;
+                typeof(global::Cohere.UnauthorizedErrorBody61),
+                jsonSerializerContext) as global::Cohere.UnauthorizedErrorBody61;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static T? FromJson<T>(
+        public static global::Cohere.UnauthorizedErrorBody61? FromJson(
             string json)
-            where T : TruncationStrategy
         {
-            return FromJson<T>(
+            return FromJson(
                 json,
                 global::Cohere.SourceGenerationContext.Default);
         }
@@ -78,45 +75,42 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static T? FromJson<T>(
+        public static global::Cohere.UnauthorizedErrorBody61? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            where T : TruncationStrategy
         {
             if (jsonSerializerOptions is null)
             {
-                return FromJson<T>(
+                return FromJson(
                     json,
                     global::Cohere.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<TruncationStrategy>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Cohere.UnauthorizedErrorBody61>(
                 json,
-                jsonSerializerOptions) as T;
+                jsonSerializerOptions);
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
+        public static async global::System.Threading.Tasks.ValueTask<global::Cohere.UnauthorizedErrorBody61?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            where T : TruncationStrategy
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(TruncationStrategy),
-                jsonSerializerContext).ConfigureAwait(false)) as T;
+                typeof(global::Cohere.UnauthorizedErrorBody61),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Cohere.UnauthorizedErrorBody61;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.UnauthorizedErrorBody61?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
-            where T : TruncationStrategy
         {
-            return FromJsonStreamAsync<T>(
+            return FromJsonStreamAsync(
                 jsonStream,
                 global::Cohere.SourceGenerationContext.Default);
         }
@@ -128,21 +122,20 @@ namespace Cohere
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static async global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
+        public static global::System.Threading.Tasks.ValueTask<global::Cohere.UnauthorizedErrorBody61?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            where T : TruncationStrategy
         {
             if (jsonSerializerOptions is null)
             {
-                return await FromJsonStreamAsync<T>(
+                return FromJsonStreamAsync(
                     jsonStream,
-                    global::Cohere.SourceGenerationContext.Default).ConfigureAwait(false);
+                    global::Cohere.SourceGenerationContext.Default);
             }
 
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<TruncationStrategy?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Cohere.UnauthorizedErrorBody61?>(
                 jsonStream,
-                jsonSerializerOptions).ConfigureAwait(false)) as T;
+                jsonSerializerOptions);
         }
     }
 }
