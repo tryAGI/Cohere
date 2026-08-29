@@ -16,6 +16,7 @@ namespace Cohere
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ChatRole), TypeInfoPropertyName = "ChatRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ToolCall))]
@@ -513,7 +514,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody7))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody7))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,6 +526,7 @@ namespace Cohere
         Converters = new global::System.Type[]
         {
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ServiceUnavailableErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotImplementedErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.TooManyRequestsErrorBody7))]
@@ -983,7 +984,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.EmbedResponseDiscriminatorResponseType?), TypeInfoPropertyName = "NullableEmbedResponseDiscriminatorResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ClassifyResponseClassificationClassificationType?), TypeInfoPropertyName = "NullableClassifyResponseClassificationClassificationType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ToolCall>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ToolResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ChatCitation>))]
