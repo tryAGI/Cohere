@@ -1066,6 +1066,7 @@ namespace Cohere
     {
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
+
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
         /// <summary>
@@ -1087,13 +1088,8 @@ namespace Cohere
             return Resolver.GetTypeInfo(type, Options);
         }
 
-        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+         static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            var options = new global::System.Text.Json.JsonSerializerOptions
-            {
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                TypeInfoResolver = Resolver,
-            };
             options.Converters.Add(new global::Cohere.JsonConverters.MessageJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.ResponseFormatJsonConverter());
             options.Converters.Add(new global::Cohere.JsonConverters.ChatStreamStartEventJsonConverter());
@@ -1143,8 +1139,17 @@ namespace Cohere
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>());
             options.Converters.Add(new global::Cohere.JsonConverters.OneOfJsonConverter<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>());
             options.Converters.Add(new global::Cohere.JsonConverters.UnixTimestampJsonConverter());
-
             options.Converters.Add(new LazyEnumJsonConverterFactory());
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
 
             return options;
         }
