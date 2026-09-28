@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ParseTextContentBlock PickText() => IsText
-            ? Text!
+        public global::Cohere.ParseTextContentBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ParseImageContentBlock PickImage() => IsImage
-            ? Image!
+        public global::Cohere.ParseImageContentBlock PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ParseTableContentBlock PickTable() => IsTable
-            ? Table!
+        public global::Cohere.ParseTableContentBlock PickTable() => Table is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsTable && table != null)
+            else if (Table is { } __value2 && table != null)
             {
-                return table(Table!);
+                return table(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsTable)
+            else if (Table is { } __value2)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsTable)
+            else if (Table is { } __value2)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value2);
             }
         }
 

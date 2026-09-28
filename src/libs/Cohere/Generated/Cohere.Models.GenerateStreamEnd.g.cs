@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
-            ? Event!
+        public global::Cohere.GenerateStreamEvent PickEvent() => Event is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GenerateStreamEndUbzr0t PickUbzr0t() => IsUbzr0t
-            ? Ubzr0t!
+        public global::Cohere.GenerateStreamEndUbzr0t PickUbzr0t() => Ubzr0t is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ubzr0t' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent && @event != null)
+            if (Event is { } __value0 && @event != null)
             {
-                return @event(Event!);
+                return @event(__value0);
             }
-            else if (IsUbzr0t && ubzr0t != null)
+            else if (Ubzr0t is { } __value1 && ubzr0t != null)
             {
-                return ubzr0t(Ubzr0t!);
+                return ubzr0t(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsUbzr0t)
+            else if (Ubzr0t is { } __value1)
             {
-                ubzr0t?.Invoke(Ubzr0t!);
+                ubzr0t?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsUbzr0t)
+            else if (Ubzr0t is { } __value1)
             {
-                ubzr0t?.Invoke(Ubzr0t!);
+                ubzr0t?.Invoke(__value1);
             }
         }
 

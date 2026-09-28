@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::Cohere.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatMessageEndEventU3fzny PickU3fzny() => IsU3fzny
-            ? U3fzny!
+        public global::Cohere.ChatMessageEndEventU3fzny PickU3fzny() => U3fzny is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'U3fzny' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsU3fzny && u3fzny != null)
+            else if (U3fzny is { } __value1 && u3fzny != null)
             {
-                return u3fzny(U3fzny!);
+                return u3fzny(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsU3fzny)
+            else if (U3fzny is { } __value1)
             {
-                u3fzny?.Invoke(U3fzny!);
+                u3fzny?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsU3fzny)
+            else if (U3fzny is { } __value1)
             {
-                u3fzny?.Invoke(U3fzny!);
+                u3fzny?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GenerateStreamEvent PickEvent() => IsEvent
-            ? Event!
+        public global::Cohere.GenerateStreamEvent PickEvent() => Event is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GenerateStreamTextYai5v6 PickYai5v6() => IsYai5v6
-            ? Yai5v6!
+        public global::Cohere.GenerateStreamTextYai5v6 PickYai5v6() => Yai5v6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Yai5v6' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent && @event != null)
+            if (Event is { } __value0 && @event != null)
             {
-                return @event(Event!);
+                return @event(__value0);
             }
-            else if (IsYai5v6 && yai5v6 != null)
+            else if (Yai5v6 is { } __value1 && yai5v6 != null)
             {
-                return yai5v6(Yai5v6!);
+                return yai5v6(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsYai5v6)
+            else if (Yai5v6 is { } __value1)
             {
-                yai5v6?.Invoke(Yai5v6!);
+                yai5v6?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsYai5v6)
+            else if (Yai5v6 is { } __value1)
             {
-                yai5v6?.Invoke(Yai5v6!);
+                yai5v6?.Invoke(__value1);
             }
         }
 

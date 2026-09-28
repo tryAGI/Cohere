@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatTextContent PickText() => IsText
-            ? Text!
+        public global::Cohere.ChatTextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
         }
 

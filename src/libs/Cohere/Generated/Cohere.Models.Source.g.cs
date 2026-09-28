@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatToolSource PickTool() => IsTool
-            ? Tool!
+        public global::Cohere.ChatToolSource PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatDocumentSource PickDocument() => IsDocument
-            ? Document!
+        public global::Cohere.ChatDocumentSource PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsTool && tool != null)
+            if (Tool is { } __value0 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value0);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value1 && document != null)
             {
-                return document(Document!);
+                return document(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsTool)
+            if (Tool is { } __value0)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsTool)
+            if (Tool is { } __value0)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 

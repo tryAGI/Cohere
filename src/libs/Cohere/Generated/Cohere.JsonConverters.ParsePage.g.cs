@@ -59,13 +59,13 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ParseBlocksPageVariant), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ParseBlocksPageVariant?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ParseBlocksPageVariant).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Blocks!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBlocks(), typeInfo);
             }
             else if (value.IsMarkdown)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ParseMarkdownPageVariant), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ParseMarkdownPageVariant?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ParseMarkdownPageVariant).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Markdown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMarkdown(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEvent PickStream() => IsStream
-            ? Stream!
+        public global::Cohere.ChatStreamEvent PickStream() => Stream is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatSearchQueriesGenerationEvent6evypd PickEvent6evypd() => IsEvent6evypd
-            ? Event6evypd!
+        public global::Cohere.ChatSearchQueriesGenerationEvent6evypd PickEvent6evypd() => Event6evypd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event6evypd' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream && stream != null)
+            if (Stream is { } __value0 && stream != null)
             {
-                return stream(Stream!);
+                return stream(__value0);
             }
-            else if (IsEvent6evypd && event6evypd != null)
+            else if (Event6evypd is { } __value1 && event6evypd != null)
             {
-                return event6evypd(Event6evypd!);
+                return event6evypd(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsEvent6evypd)
+            else if (Event6evypd is { } __value1)
             {
-                event6evypd?.Invoke(Event6evypd!);
+                event6evypd?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsEvent6evypd)
+            else if (Event6evypd is { } __value1)
             {
-                event6evypd?.Invoke(Event6evypd!);
+                event6evypd?.Invoke(__value1);
             }
         }
 

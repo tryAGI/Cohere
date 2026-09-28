@@ -48,8 +48,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatMessage PickChatbot() => IsChatbot
-            ? Chatbot!
+        public global::Cohere.ChatMessage PickChatbot() => Chatbot is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chatbot' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatToolMessage PickTool() => IsTool
-            ? Tool!
+        public global::Cohere.ChatToolMessage PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -186,13 +186,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatbot && chatbot != null)
+            if (Chatbot is { } __value0 && chatbot != null)
             {
-                return chatbot(Chatbot!);
+                return chatbot(__value0);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value1 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatbot)
+            if (Chatbot is { } __value0)
             {
-                chatbot?.Invoke(Chatbot!);
+                chatbot?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatbot)
+            if (Chatbot is { } __value0)
             {
-                chatbot?.Invoke(Chatbot!);
+                chatbot?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 
