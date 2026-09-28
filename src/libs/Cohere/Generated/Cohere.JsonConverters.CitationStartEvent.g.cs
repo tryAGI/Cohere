@@ -70,7 +70,7 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatStreamEventType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatStreamEventType?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatStreamEventType).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.ChatStreamType!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickChatStreamType(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.CitationStartEventT3df62), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.CitationStartEventT3df62?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.CitationStartEventT3df62).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.T3df62!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickT3df62(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

@@ -68,19 +68,19 @@ namespace Cohere.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ParseTextContentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ParseTextContentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ParseTextContentBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ParseImageContentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ParseImageContentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ParseImageContentBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImage(), typeInfo);
             }
             else if (value.IsTable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ParseTableContentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ParseTableContentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ParseTableContentBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Table!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTable(), typeInfo);
             }
         }
     }

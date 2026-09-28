@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEvent PickChatStreamEvent() => IsChatStreamEvent
-            ? ChatStreamEvent!
+        public global::Cohere.ChatStreamEvent PickChatStreamEvent() => ChatStreamEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEndEventY8gq2x PickY8gq2x() => IsY8gq2x
-            ? Y8gq2x!
+        public global::Cohere.ChatStreamEndEventY8gq2x PickY8gq2x() => Y8gq2x is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Y8gq2x' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatStreamEvent && chatStreamEvent != null)
+            if (ChatStreamEvent is { } __value0 && chatStreamEvent != null)
             {
-                return chatStreamEvent(ChatStreamEvent!);
+                return chatStreamEvent(__value0);
             }
-            else if (IsY8gq2x && y8gq2x != null)
+            else if (Y8gq2x is { } __value1 && y8gq2x != null)
             {
-                return y8gq2x(Y8gq2x!);
+                return y8gq2x(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatStreamEvent)
+            if (ChatStreamEvent is { } __value0)
             {
-                chatStreamEvent?.Invoke(ChatStreamEvent!);
+                chatStreamEvent?.Invoke(__value0);
             }
-            else if (IsY8gq2x)
+            else if (Y8gq2x is { } __value1)
             {
-                y8gq2x?.Invoke(Y8gq2x!);
+                y8gq2x?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsChatStreamEvent)
+            if (ChatStreamEvent is { } __value0)
             {
-                chatStreamEvent?.Invoke(ChatStreamEvent!);
+                chatStreamEvent?.Invoke(__value0);
             }
-            else if (IsY8gq2x)
+            else if (Y8gq2x is { } __value1)
             {
-                y8gq2x?.Invoke(Y8gq2x!);
+                y8gq2x?.Invoke(__value1);
             }
         }
 

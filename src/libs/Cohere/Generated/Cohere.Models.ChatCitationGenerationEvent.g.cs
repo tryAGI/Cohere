@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEvent PickStream() => IsStream
-            ? Stream!
+        public global::Cohere.ChatStreamEvent PickStream() => Stream is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatCitationGenerationEventLg3v2o PickLg3v2o() => IsLg3v2o
-            ? Lg3v2o!
+        public global::Cohere.ChatCitationGenerationEventLg3v2o PickLg3v2o() => Lg3v2o is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lg3v2o' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream && stream != null)
+            if (Stream is { } __value0 && stream != null)
             {
-                return stream(Stream!);
+                return stream(__value0);
             }
-            else if (IsLg3v2o && lg3v2o != null)
+            else if (Lg3v2o is { } __value1 && lg3v2o != null)
             {
-                return lg3v2o(Lg3v2o!);
+                return lg3v2o(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsLg3v2o)
+            else if (Lg3v2o is { } __value1)
             {
-                lg3v2o?.Invoke(Lg3v2o!);
+                lg3v2o?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsLg3v2o)
+            else if (Lg3v2o is { } __value1)
             {
-                lg3v2o?.Invoke(Lg3v2o!);
+                lg3v2o?.Invoke(__value1);
             }
         }
 

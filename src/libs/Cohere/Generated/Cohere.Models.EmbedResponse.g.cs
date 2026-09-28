@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.EmbedFloatsResponse PickEmbeddingsFloats() => IsEmbeddingsFloats
-            ? EmbeddingsFloats!
+        public global::Cohere.EmbedFloatsResponse PickEmbeddingsFloats() => EmbeddingsFloats is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsFloats' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.EmbedByTypeResponse PickEmbeddingsByType() => IsEmbeddingsByType
-            ? EmbeddingsByType!
+        public global::Cohere.EmbedByTypeResponse PickEmbeddingsByType() => EmbeddingsByType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsByType' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEmbeddingsFloats && embeddingsFloats != null)
+            if (EmbeddingsFloats is { } __value0 && embeddingsFloats != null)
             {
-                return embeddingsFloats(EmbeddingsFloats!);
+                return embeddingsFloats(__value0);
             }
-            else if (IsEmbeddingsByType && embeddingsByType != null)
+            else if (EmbeddingsByType is { } __value1 && embeddingsByType != null)
             {
-                return embeddingsByType(EmbeddingsByType!);
+                return embeddingsByType(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEmbeddingsFloats)
+            if (EmbeddingsFloats is { } __value0)
             {
-                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+                embeddingsFloats?.Invoke(__value0);
             }
-            else if (IsEmbeddingsByType)
+            else if (EmbeddingsByType is { } __value1)
             {
-                embeddingsByType?.Invoke(EmbeddingsByType!);
+                embeddingsByType?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsEmbeddingsFloats)
+            if (EmbeddingsFloats is { } __value0)
             {
-                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+                embeddingsFloats?.Invoke(__value0);
             }
-            else if (IsEmbeddingsByType)
+            else if (EmbeddingsByType is { } __value1)
             {
-                embeddingsByType?.Invoke(EmbeddingsByType!);
+                embeddingsByType?.Invoke(__value1);
             }
         }
 

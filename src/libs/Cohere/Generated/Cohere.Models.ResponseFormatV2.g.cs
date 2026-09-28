@@ -52,8 +52,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatTextResponseFormatV2 PickText() => IsText
-            ? Text!
+        public global::Cohere.ChatTextResponseFormatV2 PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.JsonResponseFormatV2 PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::Cohere.JsonResponseFormatV2 PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -190,13 +190,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value1 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value1);
             }
 
             return default(TResult);
@@ -216,13 +216,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 
@@ -239,13 +239,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 

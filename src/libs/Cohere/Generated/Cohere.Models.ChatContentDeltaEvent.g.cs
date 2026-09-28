@@ -42,8 +42,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::Cohere.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatContentDeltaEvent3m0vqs PickEvent3m0vqs() => IsEvent3m0vqs
-            ? Event3m0vqs!
+        public global::Cohere.ChatContentDeltaEvent3m0vqs PickEvent3m0vqs() => Event3m0vqs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event3m0vqs' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsEvent3m0vqs && event3m0vqs != null)
+            else if (Event3m0vqs is { } __value1 && event3m0vqs != null)
             {
-                return event3m0vqs(Event3m0vqs!);
+                return event3m0vqs(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsEvent3m0vqs)
+            else if (Event3m0vqs is { } __value1)
             {
-                event3m0vqs?.Invoke(Event3m0vqs!);
+                event3m0vqs?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsEvent3m0vqs)
+            else if (Event3m0vqs is { } __value1)
             {
-                event3m0vqs?.Invoke(Event3m0vqs!);
+                event3m0vqs?.Invoke(__value1);
             }
         }
 

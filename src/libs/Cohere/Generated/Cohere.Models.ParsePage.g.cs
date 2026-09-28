@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ParseBlocksPageVariant PickBlocks() => IsBlocks
-            ? Blocks!
+        public global::Cohere.ParseBlocksPageVariant PickBlocks() => Blocks is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Blocks' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ParseMarkdownPageVariant PickMarkdown() => IsMarkdown
-            ? Markdown!
+        public global::Cohere.ParseMarkdownPageVariant PickMarkdown() => Markdown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Markdown' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsBlocks && blocks != null)
+            if (Blocks is { } __value0 && blocks != null)
             {
-                return blocks(Blocks!);
+                return blocks(__value0);
             }
-            else if (IsMarkdown && markdown != null)
+            else if (Markdown is { } __value1 && markdown != null)
             {
-                return markdown(Markdown!);
+                return markdown(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsBlocks)
+            if (Blocks is { } __value0)
             {
-                blocks?.Invoke(Blocks!);
+                blocks?.Invoke(__value0);
             }
-            else if (IsMarkdown)
+            else if (Markdown is { } __value1)
             {
-                markdown?.Invoke(Markdown!);
+                markdown?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsBlocks)
+            if (Blocks is { } __value0)
             {
-                blocks?.Invoke(Blocks!);
+                blocks?.Invoke(__value0);
             }
-            else if (IsMarkdown)
+            else if (Markdown is { } __value1)
             {
-                markdown?.Invoke(Markdown!);
+                markdown?.Invoke(__value1);
             }
         }
 

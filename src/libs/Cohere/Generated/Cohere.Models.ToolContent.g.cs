@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ChatTextContent PickText() => IsText
-            ? Text!
+        public global::Cohere.ChatTextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.DocumentContent PickDocument() => IsDocument
-            ? Document!
+        public global::Cohere.DocumentContent PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value1 && document != null)
             {
-                return document(Document!);
+                return document(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 

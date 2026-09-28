@@ -47,8 +47,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UserMessageV2 PickUser() => IsUser
-            ? User!
+        public global::Cohere.UserMessageV2 PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.AssistantMessage PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::Cohere.AssistantMessage PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.SystemMessageV2 PickSystem() => IsSystem
-            ? System!
+        public global::Cohere.SystemMessageV2 PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ToolMessageV2 PickTool() => IsTool
-            ? Tool!
+        public global::Cohere.ToolMessageV2 PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsUser && user != null)
+            if (User is { } __value0 && user != null)
             {
-                return user(User!);
+                return user(__value0);
             }
-            else if (IsAssistant && assistant != null)
+            else if (Assistant is { } __value1 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value1);
             }
-            else if (IsSystem && system != null)
+            else if (System is { } __value2 && system != null)
             {
-                return system(System!);
+                return system(__value2);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value3 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value1)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Cohere
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value1)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
         }
 
