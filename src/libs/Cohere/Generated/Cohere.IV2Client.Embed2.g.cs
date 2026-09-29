@@ -76,7 +76,7 @@ namespace Cohere
         /// </param>
         /// <param name="outputDimension">
         /// The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.<br/>
-        /// Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.
+        /// For supported dimensions, please refer to the [Embed models](https://docs.cohere.com/docs/cohere-embed) page.
         /// </param>
         /// <param name="embeddingTypes">
         /// Specifies the types of embeddings you want to get back. Can be one or more of the following types.<br/>
