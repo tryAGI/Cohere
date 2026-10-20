@@ -309,6 +309,9 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.CreateEmbedJobRequestTruncate), TypeInfoPropertyName = "CreateEmbedJobRequestTruncate2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.CreateEmbedJobResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.RerankDocument))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.RerankRelevantSpans))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.RerankRelevantSpansMode), TypeInfoPropertyName = "RerankRelevantSpansMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.RerankRelevantSpanResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ClassifyExample))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.DatasetValidationStatus), TypeInfoPropertyName = "DatasetValidationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.DatasetType), TypeInfoPropertyName = "DatasetType2")]
@@ -552,9 +555,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody13))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody14))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody7))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody7))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody7))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -565,6 +565,9 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
     )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnprocessableEntityErrorBody7))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.GatewayTimeoutErrorBody7))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ForbiddenErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.InternalServerErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ServiceUnavailableErrorBody7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotImplementedErrorBody7))]
@@ -637,6 +640,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.V2RerankResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.V2RerankResponseResultsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.V2RerankResponseResultsItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Cohere.RerankRelevantSpanResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.NotFoundErrorBody13))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.UnauthorizedErrorBody25))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.BadRequestErrorBody13))]
@@ -990,6 +994,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.EmbedJobStatus?), TypeInfoPropertyName = "NullableEmbedJobStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.EmbedJobTruncate?), TypeInfoPropertyName = "NullableEmbedJobTruncate2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.CreateEmbedJobRequestTruncate?), TypeInfoPropertyName = "NullableCreateEmbedJobRequestTruncate2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.RerankRelevantSpansMode?), TypeInfoPropertyName = "NullableRerankRelevantSpansMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.DatasetValidationStatus?), TypeInfoPropertyName = "NullableDatasetValidationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.DatasetType?), TypeInfoPropertyName = "NullableDatasetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Cohere.ConnectorAuthStatus?), TypeInfoPropertyName = "NullableConnectorAuthStatus2")]
@@ -1068,11 +1073,6 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Batch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.EmbedJob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.EmbeddingType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.LabelMetric>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.DatasetPart>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Connector>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ConnectorLog>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.TokenLikelihood>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1083,6 +1083,11 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
     )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.LabelMetric>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.DatasetPart>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Connector>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ConnectorLog>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.TokenLikelihood>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Cluster>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.GetClusterJobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.CompatibleEndpoint>))]
@@ -1105,6 +1110,7 @@ namespace Cohere
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ClassifyExample>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.RerankResponseResultsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.V2RerankResponseResultsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.RerankRelevantSpanResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.ClassifyResponseClassification>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Cohere.Dataset>))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -1457,6 +1463,10 @@ namespace Cohere
                     || typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate)
 
                     || typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate?)
+
+                    || typeToConvert == typeof(global::Cohere.RerankRelevantSpansMode)
+
+                    || typeToConvert == typeof(global::Cohere.RerankRelevantSpansMode?)
 
                     || typeToConvert == typeof(global::Cohere.DatasetValidationStatus)
 
@@ -2179,6 +2189,16 @@ namespace Cohere
                 if (typeToConvert == typeof(global::Cohere.CreateEmbedJobRequestTruncate?))
                 {
                     return new global::Cohere.JsonConverters.CreateEmbedJobRequestTruncateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.RerankRelevantSpansMode))
+                {
+                    return new global::Cohere.JsonConverters.RerankRelevantSpansModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Cohere.RerankRelevantSpansMode?))
+                {
+                    return new global::Cohere.JsonConverters.RerankRelevantSpansModeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Cohere.DatasetValidationStatus))

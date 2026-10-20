@@ -23,6 +23,12 @@ namespace Cohere
         public required float RelevanceScore { get; set; }
 
         /// <summary>
+        /// The spans of this document that are most relevant to the query, ordered from most to least relevant. Only returned when the request enabled `relevant_spans` and the model found at least one span for the document.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("relevant_spans")]
+        public global::System.Collections.Generic.IList<global::Cohere.RerankRelevantSpanResponse>? RelevantSpans { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace Cohere
         /// <param name="relevanceScore">
         /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45
         /// </param>
+        /// <param name="relevantSpans">
+        /// The spans of this document that are most relevant to the query, ordered from most to least relevant. Only returned when the request enabled `relevant_spans` and the model found at least one span for the document.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public V2RerankResponseResultsItem(
             int index,
-            float relevanceScore)
+            float relevanceScore,
+            global::System.Collections.Generic.IList<global::Cohere.RerankRelevantSpanResponse>? relevantSpans)
         {
             this.Index = index;
             this.RelevanceScore = relevanceScore;
+            this.RelevantSpans = relevantSpans;
         }
 
         /// <summary>

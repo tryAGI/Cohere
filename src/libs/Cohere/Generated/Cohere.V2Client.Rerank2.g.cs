@@ -898,7 +898,7 @@ namespace Cohere
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="model">
-        /// The identifier of the model to use, eg `rerank-v3.5`.
+        /// The identifier of the model to use, eg `rerank-v5.0-pro`.
         /// </param>
         /// <param name="query">
         /// The search query
@@ -915,6 +915,9 @@ namespace Cohere
         /// <param name="maxTokensPerDoc">
         /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
         /// </param>
+        /// <param name="relevantSpans">
+        /// When enabled, the API response will include the relevant spans of each document that contributed to its rank. This feature is only supported for Rerank v5 and newer models.
+        /// </param>
         /// <param name="priority">
         /// Controls how early the request is handled. Lower numbers indicate higher priority (default: 0, the highest). When the system is under load, higher-priority requests are processed first and are the least likely to be dropped.<br/>
         /// Default Value: 0
@@ -929,6 +932,7 @@ namespace Cohere
             string? xClientName = default,
             int? topN = default,
             int? maxTokensPerDoc = default,
+            global::Cohere.RerankRelevantSpans? relevantSpans = default,
             int? priority = default,
             global::Cohere.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -940,6 +944,7 @@ namespace Cohere
                 Documents = documents,
                 TopN = topN,
                 MaxTokensPerDoc = maxTokensPerDoc,
+                RelevantSpans = relevantSpans,
                 Priority = priority,
             };
 
