@@ -31,6 +31,10 @@ namespace Cohere.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::Cohere.ChatStreamStartEvent5v9jyv? event5v9jyv = default;
             try
@@ -44,6 +48,10 @@ namespace Cohere.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
             var __value = new global::Cohere.ChatStreamStartEvent(
                 chatStreamEvent,
