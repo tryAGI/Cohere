@@ -27,6 +27,12 @@ namespace Cohere
         public double? ImageTokens { get; set; }
 
         /// <summary>
+        /// The number of billed text tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
+        public double? TextTokens { get; set; }
+
+        /// <summary>
         /// The number of billed output tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
@@ -68,6 +74,9 @@ namespace Cohere
         /// <param name="imageTokens">
         /// The number of billed image tokens.
         /// </param>
+        /// <param name="textTokens">
+        /// The number of billed text tokens.
+        /// </param>
         /// <param name="outputTokens">
         /// The number of billed output tokens.
         /// </param>
@@ -87,6 +96,7 @@ namespace Cohere
             double? images,
             double? inputTokens,
             double? imageTokens,
+            double? textTokens,
             double? outputTokens,
             double? searchUnits,
             double? classifications,
@@ -95,6 +105,7 @@ namespace Cohere
             this.Images = images;
             this.InputTokens = inputTokens;
             this.ImageTokens = imageTokens;
+            this.TextTokens = textTokens;
             this.OutputTokens = outputTokens;
             this.SearchUnits = searchUnits;
             this.Classifications = classifications;
