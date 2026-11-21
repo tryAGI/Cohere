@@ -17,30 +17,21 @@ namespace Cohere.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.AssistantMessageV2ContentOneItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.AssistantMessageV2ContentOneItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Cohere.ChatTextContent? text = default;
-            if (discriminator?.Type == global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType.Text)
+            if (discriminator?.Type == global::Cohere.SystemMessageV2ContentVariant2ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatTextContent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Cohere.ChatThinkingContent? thinking = default;
-            if (discriminator?.Type == global::Cohere.AssistantMessageV2ContentOneItemDiscriminatorType.Thinking)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatThinkingContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatThinkingContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Cohere.ChatThinkingContent)}");
-                thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             var __value = new global::Cohere.ContentVariant2Item(
                 discriminator?.Type,
-                text,
-
-                thinking
+                text
                 );
 
             return __value;
@@ -60,12 +51,6 @@ namespace Cohere.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatTextContent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatTextContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
-            }
-            else if (value.IsThinking)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Cohere.ChatThinkingContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Cohere.ChatThinkingContent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Cohere.ChatThinkingContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickThinking(), typeInfo);
             }
         }
     }

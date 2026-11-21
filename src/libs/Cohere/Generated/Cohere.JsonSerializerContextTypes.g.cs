@@ -434,15 +434,15 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? Type99 { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>? Type100 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ContentVariant2Item? Type101 { get; set; }
+        public global::Cohere.ContentVariant2Item2? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -466,15 +466,15 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>? Type107 { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>? Type108 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ContentVariant2Item2? Type109 { get; set; }
+        public global::Cohere.ContentVariant2Item? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1710,1591 +1710,147 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody2? Type418 { get; set; }
+        public global::Cohere.UnprocessableEntityErrorBody? Type418 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody? Type419 { get; set; }
+        public global::Cohere.GatewayTimeoutErrorBody? Type419 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody? Type420 { get; set; }
+        public global::Cohere.ForbiddenErrorBody? Type420 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ForbiddenErrorBody? Type421 { get; set; }
+        public global::Cohere.InternalServerErrorBody? Type421 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InternalServerErrorBody? Type422 { get; set; }
+        public global::Cohere.ServiceUnavailableErrorBody? Type422 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody? Type423 { get; set; }
+        public global::Cohere.NotImplementedErrorBody? Type423 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotImplementedErrorBody? Type424 { get; set; }
+        public global::Cohere.TooManyRequestsErrorBody? Type424 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody? Type425 { get; set; }
+        public global::Cohere.InvalidTokenErrorBody? Type425 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InvalidTokenErrorBody? Type426 { get; set; }
+        public global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>? Type426 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.OneOf<global::Cohere.ChatResponseV2, global::Cohere.StreamedChatResponseV2?>? Type427 { get; set; }
+        public global::Cohere.EmbedResponse? Type427 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotFoundErrorBody2? Type428 { get; set; }
+        public global::Cohere.EmbedResponseDiscriminator? Type428 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody3? Type429 { get; set; }
+        public global::Cohere.EmbedResponseDiscriminatorResponseType? Type429 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.BadRequestErrorBody2? Type430 { get; set; }
+        public global::Cohere.AudioTranscriptionsCreateResponse? Type430 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody4? Type431 { get; set; }
+        public global::Cohere.RerankResponse? Type431 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody2? Type432 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.RerankResponseResultsItem>? Type432 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody2? Type433 { get; set; }
+        public global::Cohere.RerankResponseResultsItem? Type433 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ForbiddenErrorBody2? Type434 { get; set; }
+        public global::Cohere.RerankResponseResultsItemDocument? Type434 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InternalServerErrorBody2? Type435 { get; set; }
+        public global::Cohere.V2RerankResponse? Type435 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody2? Type436 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.V2RerankResponseResultsItem>? Type436 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotImplementedErrorBody2? Type437 { get; set; }
+        public global::Cohere.V2RerankResponseResultsItem? Type437 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody2? Type438 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.RerankRelevantSpanResponse>? Type438 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InvalidTokenErrorBody2? Type439 { get; set; }
+        public global::Cohere.ClassifyResponse? Type439 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotFoundErrorBody3? Type440 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification>? Type440 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody5? Type441 { get; set; }
+        public global::Cohere.ClassifyResponseClassification? Type441 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.BadRequestErrorBody3? Type442 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ClassifyResponseClassificationLabels2>? Type442 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody6? Type443 { get; set; }
+        public global::Cohere.ClassifyResponseClassificationLabels2? Type443 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody3? Type444 { get; set; }
+        public global::Cohere.ClassifyResponseClassificationClassificationType? Type444 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody3? Type445 { get; set; }
+        public global::Cohere.DatasetsCreateResponse? Type445 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ForbiddenErrorBody3? Type446 { get; set; }
+        public global::Cohere.DatasetsListResponse? Type446 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InternalServerErrorBody3? Type447 { get; set; }
+        public global::System.Collections.Generic.IList<global::Cohere.Dataset>? Type447 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody3? Type448 { get; set; }
+        public global::Cohere.DatasetsGetUsageResponse? Type448 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotImplementedErrorBody3? Type449 { get; set; }
+        public global::Cohere.DatasetsGetResponse? Type449 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody3? Type450 { get; set; }
+        public global::Cohere.SummarizeResponse? Type450 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.InvalidTokenErrorBody3? Type451 { get; set; }
+        public global::Cohere.TokenizeResponse? Type451 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.NotFoundErrorBody4? Type452 { get; set; }
+        public global::Cohere.DetokenizeResponse? Type452 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.UnauthorizedErrorBody7? Type453 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody4? Type454 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody8? Type455 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody4? Type456 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody4? Type457 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody4? Type458 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody4? Type459 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody4? Type460 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody4? Type461 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody4? Type462 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody4? Type463 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.EmbedResponse? Type464 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.EmbedResponseDiscriminator? Type465 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.EmbedResponseDiscriminatorResponseType? Type466 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody5? Type467 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody9? Type468 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody5? Type469 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody10? Type470 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody5? Type471 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody5? Type472 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody5? Type473 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody5? Type474 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody5? Type475 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody5? Type476 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody5? Type477 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody5? Type478 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody6? Type479 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody11? Type480 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody6? Type481 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody12? Type482 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody6? Type483 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody6? Type484 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody6? Type485 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody6? Type486 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody6? Type487 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody6? Type488 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody6? Type489 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody6? Type490 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.AudioTranscriptionsCreateResponse? Type491 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody7? Type492 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody13? Type493 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody7? Type494 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody14? Type495 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody7? Type496 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody7? Type497 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody7? Type498 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody7? Type499 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody7? Type500 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody7? Type501 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody7? Type502 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody7? Type503 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody8? Type504 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody15? Type505 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody8? Type506 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody16? Type507 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody8? Type508 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody8? Type509 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody8? Type510 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody8? Type511 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody8? Type512 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody8? Type513 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody8? Type514 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody8? Type515 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody9? Type516 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody17? Type517 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody9? Type518 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody18? Type519 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody9? Type520 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody9? Type521 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody9? Type522 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody9? Type523 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody9? Type524 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody9? Type525 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody9? Type526 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody9? Type527 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody10? Type528 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody19? Type529 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody10? Type530 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody20? Type531 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody10? Type532 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody10? Type533 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody10? Type534 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody10? Type535 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody10? Type536 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody10? Type537 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody10? Type538 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody10? Type539 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody11? Type540 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody21? Type541 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody11? Type542 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody22? Type543 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody11? Type544 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody11? Type545 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody11? Type546 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody11? Type547 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody11? Type548 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody11? Type549 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody11? Type550 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody11? Type551 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.RerankResponse? Type552 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.RerankResponseResultsItem>? Type553 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.RerankResponseResultsItem? Type554 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.RerankResponseResultsItemDocument? Type555 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody12? Type556 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody23? Type557 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody12? Type558 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody24? Type559 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody12? Type560 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody12? Type561 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody12? Type562 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody12? Type563 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody12? Type564 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody12? Type565 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody12? Type566 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody12? Type567 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.V2RerankResponse? Type568 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.V2RerankResponseResultsItem>? Type569 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.V2RerankResponseResultsItem? Type570 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.RerankRelevantSpanResponse>? Type571 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody13? Type572 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody25? Type573 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody13? Type574 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody26? Type575 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody13? Type576 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody13? Type577 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody13? Type578 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody13? Type579 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody13? Type580 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody13? Type581 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody13? Type582 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody13? Type583 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ClassifyResponse? Type584 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.ClassifyResponseClassification>? Type585 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ClassifyResponseClassification? Type586 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Cohere.ClassifyResponseClassificationLabels2>? Type587 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ClassifyResponseClassificationLabels2? Type588 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ClassifyResponseClassificationClassificationType? Type589 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody14? Type590 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody27? Type591 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody14? Type592 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody28? Type593 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody14? Type594 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody14? Type595 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody14? Type596 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody14? Type597 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody14? Type598 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody14? Type599 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody14? Type600 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody14? Type601 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.DatasetsCreateResponse? Type602 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody15? Type603 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody29? Type604 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody15? Type605 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody30? Type606 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody15? Type607 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody15? Type608 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody15? Type609 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody15? Type610 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody15? Type611 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody15? Type612 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody15? Type613 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody15? Type614 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.DatasetsListResponse? Type615 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Cohere.Dataset>? Type616 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody16? Type617 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody31? Type618 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody16? Type619 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody32? Type620 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody16? Type621 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody16? Type622 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody16? Type623 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody16? Type624 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody16? Type625 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody16? Type626 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody16? Type627 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody16? Type628 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.DatasetsGetUsageResponse? Type629 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody17? Type630 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody33? Type631 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody17? Type632 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody34? Type633 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody17? Type634 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody17? Type635 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody17? Type636 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody17? Type637 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody17? Type638 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody17? Type639 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody17? Type640 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody17? Type641 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.DatasetsGetResponse? Type642 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody18? Type643 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody35? Type644 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody18? Type645 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody36? Type646 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody18? Type647 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody18? Type648 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody18? Type649 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody18? Type650 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody18? Type651 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody18? Type652 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody18? Type653 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody18? Type654 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody19? Type655 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody37? Type656 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody19? Type657 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody38? Type658 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody19? Type659 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody19? Type660 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody19? Type661 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody19? Type662 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody19? Type663 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody19? Type664 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody19? Type665 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody19? Type666 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.SummarizeResponse? Type667 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody20? Type668 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody39? Type669 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody20? Type670 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody40? Type671 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody20? Type672 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody20? Type673 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody20? Type674 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody20? Type675 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody20? Type676 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody20? Type677 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody20? Type678 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody20? Type679 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TokenizeResponse? Type680 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody21? Type681 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody41? Type682 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody21? Type683 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody42? Type684 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody21? Type685 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody21? Type686 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody21? Type687 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody21? Type688 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody21? Type689 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody21? Type690 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody21? Type691 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody21? Type692 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.DetokenizeResponse? Type693 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody22? Type694 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody43? Type695 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody22? Type696 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody44? Type697 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody22? Type698 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody22? Type699 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody22? Type700 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody22? Type701 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody22? Type702 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody22? Type703 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody22? Type704 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody22? Type705 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody23? Type706 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody45? Type707 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody23? Type708 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody46? Type709 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody23? Type710 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody23? Type711 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody23? Type712 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody23? Type713 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody23? Type714 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody23? Type715 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody23? Type716 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody23? Type717 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody24? Type718 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody47? Type719 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody24? Type720 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody48? Type721 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody24? Type722 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody24? Type723 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody24? Type724 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody24? Type725 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody24? Type726 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody24? Type727 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody24? Type728 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody24? Type729 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody25? Type730 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody49? Type731 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody25? Type732 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody50? Type733 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody25? Type734 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody25? Type735 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody25? Type736 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody25? Type737 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody25? Type738 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody25? Type739 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody25? Type740 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody25? Type741 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody26? Type742 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody51? Type743 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody26? Type744 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody52? Type745 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody26? Type746 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody26? Type747 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody26? Type748 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody26? Type749 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody26? Type750 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody26? Type751 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody26? Type752 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody26? Type753 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody27? Type754 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody53? Type755 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody27? Type756 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody54? Type757 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody27? Type758 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody27? Type759 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody27? Type760 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody27? Type761 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody27? Type762 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody27? Type763 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody27? Type764 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody27? Type765 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody28? Type766 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody55? Type767 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody28? Type768 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody56? Type769 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody28? Type770 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody28? Type771 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody28? Type772 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody28? Type773 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody28? Type774 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody28? Type775 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody28? Type776 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody28? Type777 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody29? Type778 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody57? Type779 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody29? Type780 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody58? Type781 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody29? Type782 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody29? Type783 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody29? Type784 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody29? Type785 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody29? Type786 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody29? Type787 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody29? Type788 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody29? Type789 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody30? Type790 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody59? Type791 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody30? Type792 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody60? Type793 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody30? Type794 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody30? Type795 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody30? Type796 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody30? Type797 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody30? Type798 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody30? Type799 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody30? Type800 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody30? Type801 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.CheckApiKeyResponse? Type802 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotFoundErrorBody31? Type803 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody61? Type804 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.BadRequestErrorBody31? Type805 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnauthorizedErrorBody62? Type806 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.UnprocessableEntityErrorBody31? Type807 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.GatewayTimeoutErrorBody31? Type808 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ForbiddenErrorBody31? Type809 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InternalServerErrorBody31? Type810 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.ServiceUnavailableErrorBody31? Type811 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.NotImplementedErrorBody31? Type812 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.TooManyRequestsErrorBody31? Type813 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Cohere.InvalidTokenErrorBody31? Type814 { get; set; }
+        public global::Cohere.CheckApiKeyResponse? Type453 { get; set; }
 
         /// <summary>
         ///
@@ -3351,11 +1907,11 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item>>? ListType13 { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item2>>? ListType13 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item2>? ListType14 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3363,11 +1919,11 @@ namespace Cohere
         /// <summary>
         ///
         /// </summary>
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item2>>? ListType16 { get; set; }
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item>>? ListType16 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item2>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::Cohere.ContentVariant2Item>? ListType17 { get; set; }
         /// <summary>
         ///
         /// </summary>
