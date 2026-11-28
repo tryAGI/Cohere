@@ -31,8 +31,8 @@ namespace Cohere
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>))]
-        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Cohere.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>))]
+        public global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
         ///
@@ -63,7 +63,7 @@ namespace Cohere
             global::Cohere.AssistantMessageRole role,
             global::System.Collections.Generic.IList<global::Cohere.ToolCallV2>? toolCalls,
             string? toolPlan,
-            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item>>? content,
+            global::Cohere.OneOf<string, global::System.Collections.Generic.IList<global::Cohere.ContentVariant2Item2>>? content,
             global::System.Collections.Generic.IList<global::Cohere.Citation>? citations)
         {
             this.Role = role;
